@@ -12,13 +12,14 @@ import classnames from '@utils/classnames'
 import { Lato, Lexend, Poppins } from '@assets/fonts'
 
 // Lazy components
+const Header = dynamic(() => import('@components/Header'))
 const Footer = dynamic(() => import('@components/Footer'))
 
 function MainLayout({ children }: OnlyChildrenProp) {
   return (
     <main role="main" className={classnames([Lato.className, Lexend.variable, Poppins.variable])}>
+      <Header />
       {children}
-
       <Footer />
     </main>
   )
