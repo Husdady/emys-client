@@ -1,0 +1,90 @@
+// Component Styles
+@import '@components/Icon/styles.scss';
+@import '@components/Button/styles.scss';
+@import '@components/Footer/styles.scss';
+
+// Library styles
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .hide-scrollbar {
+    &::-webkit-scrollbar {
+      @apply hidden;
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 20px;
+
+    &:vertical {
+      width: 18px;
+    }
+
+    &:horizontal {
+      height: 18px;
+    }
+
+    @media only screen and (max-width: 768px) {
+      & {
+        @apply hidden;
+      }
+    }
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-[#ffffff] dark:bg-gray-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+    @apply bg-gray-600 dark:bg-gray-400;
+
+    &:hover {
+      @apply bg-gray-400 dark:bg-gray-500;
+    }
+  }
+
+  body {
+    font-size: 0.88rem;
+    font-family: 'Lato', sans-serif;
+  }
+
+  button,
+  [type='button'],
+  [type='reset'],
+  [type='submit'] {
+    @apply bg-gray-100;
+  }
+
+  .without-transform {
+    &:active {
+      transform: none !important;
+    }
+  }
+}
+
+.ant-input-number-handler-wrap {
+  display: none !important;
+}
+
+html {
+  @media only screen and (min-width: 1450px) {
+    font-size: 18px;
+  }
+
+  @media only screen and (min-width: 2200px) {
+    font-size: 24px;
+  }
+
+  @media only screen and (min-width: 3400px) {
+    font-size: 30px;
+  }
+
+  @media only screen and (max-width: 640px) {
+    font-size: 18px;
+  }
+}

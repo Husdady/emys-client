@@ -1,0 +1,47 @@
+.main-footer {
+  & .btn-omnilife-client,
+  & .btn-entrepreneur-client {
+    @apply font-poppins font-semibold hover:underline;
+  }
+
+  & .footer-link {
+    @apply flex items-center gap-x-1.5 px-2.5 py-[0.35rem] rounded hover:bg-stone-600;
+  }
+
+  @media screen and (min-width: 1081px) {
+    & .footer-content {
+      @apply mx-auto max-w-[1300px];
+    }
+  }
+
+  @media screen and (max-width: 1080px) {
+    & .footer-content {
+      @apply flex-wrap gap-x-6 px-6;
+
+      & .footer-section,
+      & .footer-membership {
+        @apply min-w-[260px];
+      }
+    }
+  }
+
+  @media screen and (max-width: 876px) {
+    & .footer-content {
+      @apply justify-start;
+
+      & .footer-section,
+      & .footer-membership {
+        @apply min-w-[240px];
+      }
+    }
+  }
+
+  @media screen and (max-width: 816px) {
+    & .footer-content {
+      & .footer-section,
+      & .footer-membership {
+        @apply min-w-[280px];
+      }
+    }
+  }
+}

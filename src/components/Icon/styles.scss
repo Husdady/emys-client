@@ -1,0 +1,79 @@
+$sizes: (
+  'xs': 13px,
+  'smaller': 14px,
+  'sm': 18px,
+  'smx': 19px,
+  'smd': 20px,
+  'md': 22px,
+  'lg': 24px,
+  'xl': 26px,
+  'xxl': 30px,
+  'xxxl': 35px,
+  'bigger': 50px
+);
+
+.icon {
+  &.hover-transition {
+    @media screen and (min-width: 769px) {
+      transition: background-color cubic-bezier(0.17, 0.67, 0.5, 0.71) 400ms;
+    }
+
+    &.clear-icon {
+      z-index: 1;
+      @apply relative;
+
+      &::after {
+        content: '';
+        z-index: -1;
+        transform: translate(-50%, -50%);
+        @apply absolute opacity-0 bg-gray-300/40 dark:bg-gray-500/40 w-full h-full top-[50%] left-[50%] p-[0.75rem] rounded-full;
+      }
+
+      &.mxs::after {
+        @apply p-[1.15rem];
+      }
+
+      &:hover::after {
+        @apply opacity-100;
+      }
+    }
+  }
+
+  &.stroke-3 {
+    > svg {
+      stroke-width: 2.5px;
+    }
+  }
+
+  &.stroke-4 {
+    > svg {
+      stroke-width: 4px !important;
+    }
+  }
+
+  @each $size, $value in $sizes {
+    &.#{$size} {
+      svg {
+        width: $value;
+        height: $value;
+
+        @media only screen and (max-width: 640px) {
+          & {
+            width: $value + 2;
+            height: $value + 2;
+          }
+        }
+      }
+    }
+  }
+}
+
+html.dark {
+  & .icon > svg {
+    stroke-width: 2px;
+  }
+
+  & .action-buttons .stroke-3 > svg {
+    stroke-width: 2.5px;
+  }
+}
