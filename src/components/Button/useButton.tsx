@@ -22,7 +22,7 @@ export default function useButton({
     () =>
       classnames([
         className,
-        'btn rounded overflow-hidden relative outline-none flex flex-wrap items-center justify-center gap-x-2 gap-y-1'
+        'btn overflow-hidden relative outline-none flex flex-wrap items-center justify-center gap-x-2 gap-y-1'
       ]),
     [className]
   )

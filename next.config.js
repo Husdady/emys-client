@@ -1,5 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        port: '',
+        protocol: 'https',
+        hostname: 'i.imgur.com'
+      }
+    ]
+  },
   env: {
     APP_NAME: process.env.APP_NAME,
     SECRET_PASSWORD: process.env.SECRET_PASSWORD,

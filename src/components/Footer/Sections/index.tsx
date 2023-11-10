@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic'
 // Data
 import sections from './sections'
 
-// Lazy Components
+// Dynamic Components
 const Section = dynamic(() => import('./Section'))
 const Buttons = dynamic(() => import('./Buttons'))
 

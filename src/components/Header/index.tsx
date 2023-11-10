@@ -1,15 +1,23 @@
 // Librarys
+import { memo } from 'react'
 import dynamic from 'next/dynamic'
 
 // Dynamic Components
-// const Navigation = dynamic(() => import('./Navigation'))
-const BackgroundImage = dynamic(() => import('./BackgroundImage'))
+const Welcome = dynamic(() => import('./Welcome'))
+const Navigation = dynamic(() => import('./Navigation'))
+const HomeWelcomeTopWave = dynamic(() => import('@assets/waves/home-welcome-top-wave'))
 
-export default function Header() {
+function Header() {
   return (
-    <header className="position-relative overflow-hidden">
-      <BackgroundImage />
-      {/* <Navigation /> */}
+    <header className="main-header relative overflow-hidden min-h-[300px] bg-pink-200">
+      <div className="main-inner-header max-w-[1300px] mx-auto px-[3rem] relative z-[9999] overflow-hidden">
+        <Navigation />
+        <Welcome />
+      </div>
+
+      <HomeWelcomeTopWave />
     </header>
   )
 }
+
+export default memo(Header)

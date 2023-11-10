@@ -1,12 +1,13 @@
-// Component Styles
-@import '@components/Icon/styles.scss';
-@import '@components/Button/styles.scss';
-@import '@components/Footer/styles.scss';
-
 // Library styles
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+// Component Styles
+@import '@components/Icon/styles.scss';
+@import '@components/Button/styles.scss';
+@import '@components/Header/styles.scss';
+@import '@components/Footer/styles.scss';
 
 @layer base {
   .hide-scrollbar {
@@ -65,6 +66,10 @@
       transform: none !important;
     }
   }
+}
+
+.break-word {
+  word-break: break-word;
 }
 
 .ant-input-number-handler-wrap {

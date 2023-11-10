@@ -11,14 +11,24 @@ import classnames from '@utils/classnames'
 // Assets
 import { Lato, Lexend, Poppins } from '@assets/fonts'
 
-// Lazy components
+// Dynamic Components
 const Header = dynamic(() => import('@components/Header'))
 const Footer = dynamic(() => import('@components/Footer'))
+const HomeWelcomeBottomWave = dynamic(() => import('@assets/waves/home-welcome-bottom-wave'))
 
 function MainLayout({ children }: OnlyChildrenProp) {
   return (
-    <main role="main" className={classnames([Lato.className, Lexend.variable, Poppins.variable])}>
+    <main
+      role="main"
+      className={classnames([
+        Lato.className,
+        Lexend.variable,
+        Poppins.variable,
+        'max-w-[1366px] mx-auto'
+      ])}
+    >
       <Header />
+      <HomeWelcomeBottomWave />
       {children}
       <Footer />
     </main>

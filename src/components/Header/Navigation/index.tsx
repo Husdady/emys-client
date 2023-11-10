@@ -1,73 +1,43 @@
-// React
-import React from 'react'
-
-// Components
-import { Dropdown } from '@components'
-import HeaderMenu from './Header.Menu'
-import HeaderMenuItem from './Header.MenuItem'
-import NavigationItem from './Header.NavigationItem'
-
 // Librarys
+import { memo } from 'react'
 import Image from 'next/image'
-
-// Interfaces
-import { HeaderNavigationLink, HeaderNavigationSubLink } from '@interfaces'
+import dynamic from 'next/dynamic'
 
 // Images
-import seytuLogo from '@images/logo-seytu.webp'
+import logo from '@assets/images/logo.webp'
 
-// JSON
-const navigation: HeaderNavigationLink[] = require('@data/navigation.json')
+// Dynamic Components
+const Button = dynamic(() => import('@components/Button'))
+const Login = dynamic(() => import('@assets/icons/login'))
+const NavigationLinks = dynamic(() => import('./NavigationLinks'))
 
-export default function HeaderNavigation() {
-  // Render navigation sub link
-  const renderNavigationSubLink = (subLink: HeaderNavigationSubLink) => {
-    return {
-      el: <NavigationItem tag="div" key={subLink.id} {...subLink} />
-    }
-  }
-
-  // Render navigation link
-  const renderNavigationLink = (item: HeaderNavigationLink) => {
-    // Navigation link without submenu
-    if (!item.submenu) {
-      return <NavigationItem key={item.id} {...item} />
-    }
-
-    const subItems = item.submenu.map(renderNavigationSubLink)
-
-    return (
-      <li key={item.id} className="navigation-item d-inline-block">
-        <Dropdown subItems={subItems}>
-          <span className="link pointer">
-            <HeaderMenuItem showArrow icon={item.icon} title={item.title} />
-          </span>
-        </Dropdown>
-      </li>
-    )
-  }
-
+function Navigation() {
   return (
-    <nav id="navigation" className="shortcut-navigation">
-      <div className="wrapper mx-auto d-flex jc-between align-items-center">
-        {/* Seytú Logo */}
-        <figure id="logo-seytu" className="mb-0 position-relative">
-          <Image
-            priority
-            alt="seytu-logo"
-            loading="eager"
-            layout="fill"
-            objectFit="contain"
-            src={seytuLogo.src}
-          />
-        </figure>
+    <nav className="mt-[1.5rem] navigation flex gap-x-[1.5rem] justify-between font-poppins bg-white shadow-xl rounded-full items-center py-1 ps-[2rem] pe-4 z-[9999] overflow-hidden">
+      <div className="flex items-center gap-x-[1.25rem]">
+        <Image
+          priority
+          width={65}
+          height={80}
+          src={logo.src}
+          loading="eager"
+          alt="logo-image"
+          objectFit="contain"
+        />
 
-        {/* Navigation Menu */}
-        <HeaderMenu />
-        <ul className="navigation-item-wrapper m-0 p-0">
-          {navigation.map(renderNavigationLink)}
-        </ul>
+        <NavigationLinks />
+      </div>
+
+      <div>
+        <Button
+          icon={<Login size="sm" />}
+          title="Iniciar sesión"
+          titlePopup="Iniciar sesión en emys.pe"
+          className="btn-login py-1.5 place-self-start bg-main-500 border-2 border-main-700 outline outline-1 outline-main-700 rounded-full text-white hover:bg-pink-500 hover:border-pink-700 hover:outline-pink-700"
+        />
       </div>
     </nav>
   )
 }
+
+export default memo(Navigation)

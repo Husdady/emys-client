@@ -1,7 +1,7 @@
 // Types
 import type { ReactNode } from 'react'
 import type { LinkType } from './constants'
-import { Url } from 'next/dist/shared/lib/router/router'
+import type { Url } from 'next/dist/shared/lib/router/router'
 
 export interface Link {
   href?: Url

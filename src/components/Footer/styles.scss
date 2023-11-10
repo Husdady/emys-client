@@ -44,4 +44,48 @@
       }
     }
   }
+
+  @media screen and (max-width: 640px) {
+    & .footer-link-item {
+      @apply mb-2;
+
+      & > span {
+        @apply mb-4;
+      }
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+    #copyright {
+      @apply text-center flex-col;
+
+      & .icon {
+        & svg {
+          @apply w-[16px] h-[16px];
+        }
+      }
+
+      & > span {
+        @apply ms-0 my-1 max-w-[200px] leading-tight;
+      }
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    & .footer-content {
+      @apply px-4;
+
+      & .footer-section,
+      & .footer-membership {
+        word-break: break-word;
+        @apply min-w-[initial] leading-snug;
+      }
+    }
+  }
+
+  @media screen and (max-width: 300px) {
+    & .footer-content {
+      @apply px-3;
+    }
+  }
 }

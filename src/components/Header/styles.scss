@@ -1,241 +1,109 @@
-.navigation-item {
-  .link {
-    font-size: 15px;
-    font-weight: normal;
-    font-family: 'Roboto Condensed', sans-serif;
+.main-header {
+  & .btn-login {
+    transition: all linear 0.1s;
 
     &:hover {
-      color: $nav-bg;
+      @apply text-pink-100;
     }
   }
 
-  .link,
-  .link:active {
-    display: block;
-    padding: 5px 15px;
-    color: $opacity-black-850;
+  & .animate-circle-arrow-left {
+    animation: slideLeft 0.5s ease infinite alternate;
+  }
+
+  @keyframes slideLeft {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-2px);
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    &.relative {
+      @apply bg-pink-100;
+    }
+
+    & .home-welcome-top-wave {
+      @apply max-h-[460px];
+
+      & path {
+        @apply fill-rose-200;
+      }
+    }
+
+    & .main-inner-header {
+      & .header-welcome {
+        @apply flex-wrap flex-col-reverse;
+
+        & .header-inner-welcome {
+          @apply mt-0 max-w-[600px];
+        }
+
+        & .header-welcome-image {
+          @apply left-0 w-[400px] h-[300px] min-w-[400px] min-h-[300px];
+
+          @media only screen and (max-width: 475px) {
+            @apply w-[90%] h-[260px] min-w-[initial] min-h-[initial];
+          }
+
+          @media only screen and (max-width: 400px) {
+            @apply w-full;
+          }
+
+          @media only screen and (max-width: 350px) {
+            @apply h-[230px];
+          }
+
+          @media only screen and (max-width: 315px) {
+            @apply h-[215px];
+          }
+
+          @media only screen and (max-width: 290px) {
+            @apply h-[200px];
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    & .main-inner-header {
+      @apply px-6;
+    }
+  }
+
+  @media only screen and (max-width: 450px) {
+    & .main-title {
+      @apply text-[2.25rem];
+    }
+
+    & .welcome-message {
+      @apply text-[1rem];
+    }
+  }
+
+  @media only screen and (max-width: 375px) {
+    & .main-title {
+      @apply text-[2rem];
+    }
+
+    & .main-inner-header {
+      @apply px-4;
+    }
+  }
+
+  @media only screen and (max-width: 300px) {
+    & .main-inner-header {
+      @apply px-2.5;
+    }
   }
 }
 
-header {
-  &::before {
-    content: ' ';
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-image: url('/images/background-header.webp');
-    background-color: $header-bg;
-    z-index: -1;
-  }
-
-  .logo-omnilife {
-    width: 70%;
-    max-width: 3000px;
-    height: 534px;
-  }
-
-  #navigation {
-    color: $white;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    line-height: initial;
-    border-top: 3px solid $black;
-    border-bottom: 3px solid $black;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: $darkpurple;
-    background-image: url('/images/background-nav.webp');
-
-    .wrapper {
-      #logo-seytu {
-        width: 135px;
-        height: 65px;
-      }
-
-      .navigation-item-wrapper {
-        .navigation-item {
-          border-radius: 30px;
-
-          &:hover {
-            color: $yellow;
-            cursor: pointer;
-            background-color: $nav-bg;
-          }
-        }
-
-        .link {
-          color: inherit;
-          padding: 10px 20px;
-        }
-      }
-
-      @media screen and (min-width: 1280px) {
-        max-width: 1160px;
-      }
-
-      @media screen and (min-width: 1025px) {
-        #menu, .wrapper-nav-menu-icon {
-          display: none;
-        }
-      }
-    }
-  }
-
-  @media screen and (max-width: 1279px) {
-    #navigation {
-      padding-left: 4em;
-      padding-right: 4em;
-    }
-  }
-
-  @media screen and (max-width: 1024px) {
-    .logo-omnilife {
-      display: none;
-    }
-
-    #navigation {
-      top: 0;
-      width: 100%;
-      padding-left: 2em;
-      padding-right: 2em;
-      height: 80px;
-      font-size: 17px;
-      z-index: 9999999999;
-      border: none;
-      position: fixed;
-      border-bottom: 2px solid;
-      border-bottom-color: $black;
-      border-bottom-color: $opacity-black-500;
-      box-shadow: 0 4px 20px 0 $opacity-black-500;
-
-      .wrapper {
-        > ul.navigation-item-wrapper {
-          display: none;
-        }
-
-        .wrapper-nav-menu-icon {
-          padding: 8px 12px;
-          background-color: $violet;
-
-          &:active {
-            transform: scale(85%);
-          }
-
-          #nav-menu-icon {
-            font-size: 1.55em;
-          }
-        }
-
-        #menu {
-          top: 100%;
-          right: 0;
-          width: 500px;
-          height: 100vh;
-          font-size: 0.8em;
-          font-weight: bold;
-          border-bottom: 3px solid $black;
-          position: absolute;
-          border-top: 2px solid;
-          border-top-color: $black;
-          border-top-color: $opacity-black-850;
-          background-color: $white;
-          box-shadow: 0 0 10px 0 $opacity-black-500;
-          transform: translateX(100%);
-          transition: transform 0.7s linear 0s;
-
-          &.open {
-            transform: translateX(0%);
-          }
-
-          > figure {
-            width: 35%;
-            display: block;
-            margin: 40px auto 0;
-          }
-
-          .navigation-item {
-            width: 100%;
-            display: block;
-            color: $black;
-            padding: 10px 20px 10px 0;
-            border-bottom: 1px solid;
-            border-bottom-color: $black;
-            border-bottom-color: $opacity-black-100;
-            border-radius: 0;
-            font-weight: normal;
-            font-size: 1.25em;
-
-            &:hover {
-              color: $yellow;
-              box-shadow: 3px 0 0 0 $yellow inset;
-            }
-          }
-        }
-
-        .ant-collapse {
-          border: none;
-          background-color: inherit;
-
-          > .ant-collapse-item {
-            border-bottom: none;
-          }
-
-          .ant-collapse-content {
-            border-top: none;
-
-            .ant-collapse-content-box {
-              padding: 7px 16px;
-            }
-          }
-
-          .ant-collapse-header {
-            padding: 0;
-          }
-        }
-      }
-    }
-  }
-
-  @media (max-width: 768px) {
-    #navigation {
-      height: 60px;
-
-      .wrapper {
-        #logo-seytu {
-          width: 100px;
-          height: 45px;
-        }
-
-        .wrapper-nav-menu-icon {
-          padding: 6px 10px;
-          font-size: 15px;
-        }
-      }
-    }
-  }
-
-  @media screen and (max-width: 600px) {
-    #navigation {
-      padding-left: 1em;
-      padding-right: 1em;
-
-      .wrapper {
-        #menu {
-          width: 100%;
-        }
-      }
-    }
-  }
-
-  @media screen and (max-width: 360px) {
-    #navigation {
-      padding-left: 3vw;
-      padding-right: 3vw;
-    }
+@media only screen and (max-width: 900px) {
+  .home-welcome-bottom-wave path {
+    @apply fill-pink-100;
   }
 }

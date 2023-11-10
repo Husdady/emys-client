@@ -26,7 +26,7 @@ function Section(props: SectionProps) {
               className="footer-link-item text-white font-lexend text-[0.84rem] mb-[0.15rem] last:mb-0"
             >
               {props.type === TEXT_TYPE && (
-                <span className="flex items-center block my-3 gap-x-1.5">
+                <span className="flex items-center block my-3 gap-x-1.5 px-2.5">
                   {link.icon}
                   <span>{link.text}</span>
                 </span>
