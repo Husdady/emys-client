@@ -16,14 +16,12 @@
     &:hover {
       @apply text-pink-100;
     }
+  }
 
-    // @media screen and (max-width: 1075px) {
-    //   @apply px-2 rounded;
-
-    //   & > span {
-    //     @apply hidden;
-    //   }
-    // }
+  & .btn-see-all-products {
+    @media only screen and (max-width: 900px) {
+      @apply bg-indigo-600 border-indigo-300;
+    }
   }
 
   & .animate-circle-arrow-left {
@@ -43,6 +41,10 @@
   @media only screen and (max-width: 900px) {
     &.relative {
       @apply bg-pink-100;
+    }
+
+    & .main-title {
+      @apply text-indigo-600;
     }
 
     & .home-welcome-top-wave {

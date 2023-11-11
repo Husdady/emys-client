@@ -18,28 +18,21 @@ function MobileNavigation() {
       <div>
         <Button
           title=""
-          icon={<MenuDeep size="xl" />}
+          icon={<MenuDeep size="xl" className='stroke-3' />}
           className="btn-menu active py-1.5 !px-2 rounded bg-stone-200 text-main-700"
         />
       </div>
 
-      <div className="flex items-center">
-        <Image
-          priority
-          width={45}
-          height={35}
-          // src={logo.src}
-          src="https://1000marcas.net/wp-content/uploads/2019/11/Apple-Logo.jpg"
-          loading="eager"
-          alt="logo-image"
-          objectFit="cover"
-          className="min-w-[45px] min-h-[35px]"
-        />
-
-        <span className="font-lexend text-[1.15rem] leading-snug">Emys</span>
-
-        {/* <NavigationLinks /> */}
-      </div>
+      <Image
+        priority
+        width={60}
+        height={50}
+        src={logo.src}
+        loading="eager"
+        alt="logo-image"
+        objectFit="cover"
+        className="min-w-[60px] min-h-[50px]"
+      />
 
       <UserCircleSolid size="xl" className="text-gray-600" />
     </nav>
