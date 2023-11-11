@@ -1,45 +1,32 @@
 // Hooks
+import { useState } from 'react'
 import useMounted from './useMounted'
-import { useState, useCallback } from 'react'
 
 /**
  * Hook for implements Media Query validations
- * @param {string} query Media Query
+ * @param {number} windowWidth Window width
  * @returns {boolean} Boolean
  */
-export function useMediaQuery(query: string): boolean {
-  // Callback for get matches
-  const getMatches = useCallback((query: string): boolean => {
-    // Prevents SSR issues
-    if (typeof window !== 'undefined') {
-      return window.matchMedia(query).matches
-    }
-
-    return false
-  }, [])
-
-  const [matches, setMatches] = useState<boolean>(getMatches(query))
-
-  // Callback for change the matches of the query
-  const handleChange = useCallback(() => {
-    setMatches(getMatches(query))
-  }, [])
+export default function useMediaQuery(windowWidth: number): boolean {
+  const [matches, setMatches] = useState(false)
 
   useMounted(() => {
-    const matchMedia = window.matchMedia(query)
-
-    // Triggered at the first client-side load and if query changes
-    handleChange()
-
-    // Listen matchMedia
-
-    matchMedia.addEventListener('change', handleChange)
-
-    return () => {
-      matchMedia.removeEventListener('change', handleChange)
+    // Función que se ejecuta al cargar la página y al cambiar el tamaño de la ventana
+    const handleResize = () => {
+      setMatches(window.innerWidth <= windowWidth)
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [query])
+
+    // Configurar el evento de cambio de tamaño
+    window.addEventListener('resize', handleResize)
+
+    // Llamar a la función inicialmente para establecer el estado inicial
+    handleResize()
+
+    // Limpiar el evento al desmontar el componente
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   return matches
 }

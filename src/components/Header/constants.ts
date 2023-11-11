@@ -1,2 +1,2 @@
 // Constants
-export const MEDIA_QUERY_FOR_DESKTOP_DEVICES = '(min-width: 901px)'
+export const MEDIA_QUERY_FOR_MOBILE_DEVICES = 1200

@@ -24,7 +24,7 @@ function Welcome() {
         </h4>
 
         <q className="welcome-message relative font-semibold text-[1.1rem] text-indigo-700 bg-white block py-2 px-3 rounded-bl-xl rounded-br-xl shadow-xl font-lexend">
-          <CircleCheck size="xl" className="absolute top-[-10px] right-[-10px] text-lime-600" />
+          <CircleCheck size="lg" className="absolute top-[-10px] right-[-10px] text-lime-600" />
 
           <span>
             Aquí encontrarás una gran variedad de productos de buena calidad, principalmente

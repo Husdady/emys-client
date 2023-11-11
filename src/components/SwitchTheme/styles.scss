@@ -1,0 +1,73 @@
+$dark-bg: #2c2c2c;
+$light-bg: #e98d1a;
+
+.fa-sun:before {
+  content: '\f185';
+}
+
+.fa-moon-stars:before {
+  content: '\f755';
+}
+
+@font-face {
+  font-family: 'Font Awesome 5 Pro';
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url(https://pro.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.eot);
+  src: url(https://pro.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.eot?#iefix)
+      format('embedded-opentype'),
+    url(https://pro.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.woff2) format('woff2'),
+    url(https://pro.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.woff) format('woff'),
+    url(https://pro.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.ttf) format('truetype'),
+    url(https://pro.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.svg#fontawesome)
+      format('svg');
+}
+
+.ant-switch {
+  &,
+  & .ant-switch-inner {
+    transition: none !important;
+  }
+}
+
+button.select-theme {
+  &.ant-switch {
+    @apply  will-change-auto;
+
+    &,
+    &:hover {
+      @apply bg-gray-600;
+    }
+
+    & .ant-switch-handle {
+      &::before {
+        content: '\f755';
+        @apply bg-black;
+        color: $light-bg;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-weight: 900;
+        font-family: 'Font Awesome 5 Pro';
+      }
+    }
+
+    &-checked:not(.ant-switch-disabled),
+    &-checked:hover:not(.ant-switch-disabled) {
+      @apply bg-[#b6e1e5];
+    }
+
+    &-checked {
+      & .ant-switch-handle {
+        &::before {
+          content: '\f185';
+          color: $light-bg;
+          background-color: transparent;
+          border: 3px solid #ffffff;
+        }
+      }
+    }
+  }
+}
