@@ -14,7 +14,7 @@ import woman from '@assets/images/woman.webp'
 
 function Welcome() {
   return (
-    <section className="header-welcome flex items-center mt-[1rem] justify-around xl:justify-between max-w-[1000px] mx-auto overflow-hidden">
+    <section className="header-welcome flex items-center mt-[6rem] justify-around xl:justify-between max-w-[1000px] mx-auto overflow-hidden">
       <div className="header-inner-welcome max-w-[500px] mb-[3rem] mt-[2.25rem]">
         <h4 className="main-title break-word text-[2.5rem] mb-4 font-lexend leading-tight font-semibold text-indigo-500">
           Bienvenid@ a {APP_NAME} a buen precio

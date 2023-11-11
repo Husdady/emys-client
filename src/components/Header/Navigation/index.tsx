@@ -13,7 +13,7 @@ const NavigationLinks = dynamic(() => import('./NavigationLinks'))
 
 function Navigation() {
   return (
-    <nav className="mt-[1.5rem] navigation flex gap-x-[1.5rem] justify-between font-poppins bg-white shadow-xl rounded-full items-center py-1 ps-[2rem] pe-4 z-[9999] overflow-hidden">
+    <nav className="main-navigation top-[1.5rem] fixed max-w-[1104px] mx-auto left-0 right-0 navigation flex gap-x-[1.5rem] justify-between font-poppins bg-white shadow-xl rounded-full items-center py-1 ps-[1.65rem] pe-4 z-[9999] overflow-y-hidden overflow-x-auto whitespace-nowrap">
       <div className="flex items-center gap-x-[1.25rem]">
         <Image
           priority

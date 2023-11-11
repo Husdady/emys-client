@@ -1,10 +1,29 @@
 .main-header {
+  & .main-navigation {
+    &::-webkit-scrollbar {
+      @apply hidden;
+    }
+
+    @media screen and (max-width: 1200px) {
+
+    }
+
+  }
+
   & .btn-login {
     transition: all linear 0.1s;
 
     &:hover {
       @apply text-pink-100;
     }
+
+    // @media screen and (max-width: 1075px) {
+    //   @apply px-2 rounded;
+
+    //   & > span {
+    //     @apply hidden;
+    //   }
+    // }
   }
 
   & .animate-circle-arrow-left {
@@ -36,7 +55,7 @@
 
     & .main-inner-header {
       & .header-welcome {
-        @apply flex-wrap flex-col-reverse;
+        @apply sm:mt-[6.75rem] mt-[4.5rem] flex-wrap flex-col-reverse;
 
         & .header-inner-welcome {
           @apply mt-0 max-w-[600px];

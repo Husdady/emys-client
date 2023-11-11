@@ -6,6 +6,11 @@ const nextConfig = {
         port: '',
         protocol: 'https',
         hostname: 'i.imgur.com'
+      },
+      {
+        port: '',
+        protocol: 'https',
+        hostname: '1000marcas.net'
       }
     ]
   },
