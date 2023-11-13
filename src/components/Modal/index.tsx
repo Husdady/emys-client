@@ -7,7 +7,7 @@ import { memo, Suspense } from 'react'
 import CircleXmarkSolid from '@assets/icons/circle-xmark-solid'
 
 // Hooks
-import useModalSettings from './hooks/useModal'
+import useModal from './hooks/useModal'
 
 // Constants
 import { modalStyle, ModalContainer } from './constants'
@@ -34,7 +34,7 @@ function Modal() {
     cancelButtonProps,
     isShowing,
     ...modalProps
-  } = useModalSettings()
+  } = useModal()
 
   if (!isShowing) return null
 

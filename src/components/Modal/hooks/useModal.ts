@@ -6,7 +6,6 @@ import useModalContext from '@hooks/useModal'
 
 /**
  * Hook for implements the logic of the Modal component
- * @returns
  */
 export default function useModal() {
   const { onAccept, onCancel, onCloseModal, hideModal, ...modal } = useModalContext()
