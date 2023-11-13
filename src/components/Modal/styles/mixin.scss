@@ -1,0 +1,13 @@
+@mixin adjust-modal-footer($width, $selector) {
+  @media only screen and (max-width: $width) {
+    #{$selector} {
+      @apply flex-col-reverse;
+
+      & > button {
+        flex-grow: 1 !important;
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+      }
+    }
+  }
+}

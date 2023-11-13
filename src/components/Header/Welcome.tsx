@@ -44,10 +44,10 @@ function Welcome() {
 
       <Image
         alt="woman"
-        width={380}
-        height={290}
+        width={330}
+        height={250}
         src={woman.src}
-        className="header-welcome-image relative left-[6%] xl:left-[3%] min-w-[380px] min-h-[290px]"
+        className="header-welcome-image relative left-[6%] xl:left-[3%] min-w-[330px] min-h-[250px]"
       />
     </section>
   )

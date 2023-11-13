@@ -30,13 +30,12 @@ export interface ButtonProps
     Omit<ButtonType, 'title' | 'onDoubleClick'> {
   id?: string
   form?: string
-  icon?: React.ReactNode
-  loadingTitle?: string
-  isShowingSpin?: boolean
-  customSpin?: SpinProps
   disabled?: boolean
   titlePopup?: string
+  loadingTitle?: string
+  icon?: React.ReactNode
+  customSpin?: SpinProps
+  isShowingSpin?: boolean
   type?: 'button' | 'reset' | 'submit'
   onDoubleClick?: (e: React.MouseEvent<HTMLButtonElement>) => void
-  depsForDoubleClick?: React.DependencyList
 }

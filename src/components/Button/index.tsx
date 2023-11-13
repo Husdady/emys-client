@@ -10,6 +10,9 @@ import useButton from './useButton'
 // Interfaces
 import { ButtonProps } from './interfaces'
 
+// Utils
+import isUndefined from '@utils/isUndefined'
+
 // Constants
 import { ButtonProps as Props } from './constants'
 
@@ -26,7 +29,6 @@ const Button: React.FC<ButtonProps> = ({
   className,
   onClick,
   onDoubleClick,
-  depsForDoubleClick,
   isShowingSpin,
   customSpin = {},
   ...props
@@ -34,8 +36,7 @@ const Button: React.FC<ButtonProps> = ({
   const { buttonClassName, handleDoubleClick } = useButton({
     className: className,
     onClick: onClick,
-    onDoubleClick: onDoubleClick,
-    depsForDoubleClick: depsForDoubleClick
+    onDoubleClick: onDoubleClick
   })
 
   return (
@@ -47,7 +48,7 @@ const Button: React.FC<ButtonProps> = ({
       title={titlePopup}
       className={buttonClassName}
       disabled={disabled || isShowingSpin === true}
-      onClick={typeof onDoubleClick === 'undefined' ? onClick : handleDoubleClick}
+      onClick={isUndefined(onDoubleClick) ? onClick : handleDoubleClick}
     >
       <ButtonContent
         icon={icon}
@@ -71,6 +72,7 @@ export default React.memo(Button, (prevProps, nextProps) => {
     prevProps.disabled === nextProps.disabled &&
     prevProps.className === nextProps.className &&
     prevProps.loadingTitle === nextProps.loadingTitle &&
-    prevProps.isShowingSpin === nextProps.isShowingSpin
+    prevProps.isShowingSpin === nextProps.isShowingSpin &&
+    prevProps.onDoubleClick === nextProps.onDoubleClick
   )
 })

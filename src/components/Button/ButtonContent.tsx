@@ -8,6 +8,7 @@ import Spin from './Spin'
 import { ButtonContentProps } from './interfaces'
 
 // Utils
+import isString from '@utils/isString'
 import classnames from '@utils/classnames'
 
 const ButtonContent: React.FC<ButtonContentProps> = ({
@@ -33,9 +34,9 @@ const ButtonContent: React.FC<ButtonContentProps> = ({
     <React.Fragment>
       {icon}
 
-      {typeof title !== 'string' && title}
+      {!isString(title) && title}
 
-      {typeof title === 'string' && title.length > 0 && (
+      {isString(title) && title.length > 0 && (
         <span style={titleStyle} className={titleClasses}>
           {title}
         </span>

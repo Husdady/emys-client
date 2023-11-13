@@ -1,6 +1,9 @@
 // Librarys
 import React from 'react'
 
+// Utils
+import isFunction from '@utils/isFunction'
+
 /**
  * Hook that prevents the error 'Cannot update component when it has been unmounted'
  * @param {React.EffectCallback} effect Callback that executes when component is mounted
@@ -23,7 +26,7 @@ export default function useMounted(
     return () => {
       mounted = false // Unmounted component
 
-      if (typeof unmount.current === 'function') {
+      if (isFunction(unmount.current)) {
         unmount.current() // Run callback when component is unmounted
       }
     }

@@ -4,6 +4,9 @@ import useSpin from './useSpin'
 // Interfaces
 import { SpinProps } from '@components/Button/interfaces'
 
+// Utils
+import isString from '@utils/isString'
+
 // Constants
 import { SpinnerProps as Props } from '@components/Button/constants'
 
@@ -37,9 +40,7 @@ export default function Spin({
         ></path>
       </svg>
 
-      {typeof title === 'string' && title.length > 0 && (
-        <span {...spinSettings.title}>{title}</span>
-      )}
+      {isString(title) && title.length > 0 && <span {...spinSettings.title}>{title}</span>}
     </div>
   )
 }

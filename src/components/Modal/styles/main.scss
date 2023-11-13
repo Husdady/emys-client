@@ -1,0 +1,108 @@
+// Mixins
+@import './mixin.scss';
+
+.ant-modal-close {
+  transition: none !important;
+  background-color: transparent !important;
+}
+
+.ant-modal-content {
+  padding: 0 !important;
+  border-radius: 2px 2px 0 0 !important;
+  @apply my-4 dark:bg-dark-800 border-b border-gray-200 dark:border-gray-700;
+}
+
+.ant-modal,
+.ant-modal-mask,
+.ant-modal-wrap,
+.ant-modal-root,
+.ant-modal-content {
+  @apply font-lato;
+}
+
+.ant-modal-mask {
+  background-color: rgba(51, 51, 51, 0.5);
+}
+
+.ant-modal-body {
+  overflow-x: initial !important;
+  @apply py-3 pb-6 px-5 overflow-x-auto dark:bg-dark-800;
+
+  @media only screen and (max-width: 500px) {
+    @apply px-4;
+  }
+}
+
+.ant-modal-header {
+  margin-bottom: 0 !important;
+  @apply flex flex-col justify-center py-2 pl-4 pr-[2.85rem] min-h-[56px] border-b max-h-[150px] overflow-x-hidden overflow-y-auto;
+
+  &::-webkit-scrollbar {
+    width: 16px;
+  }
+}
+
+.ant-modal-footer {
+  margin: 0 !important;
+  @apply pt-[13px] border-t border-gray-200 py-3 px-4;
+
+  & .btn {
+    @apply min-h-[48px] sm:min-h-[44px] sm:max-h-[44px];
+  }
+
+  @media only screen and (max-width: 640px) {
+    @apply text-[0.85rem];
+  }
+}
+
+.ant-modal-header,
+.ant-modal-footer,
+.ant-modal-close-x > .icon {
+  @apply dark:bg-dark-800 border-gray-300 dark:border-gray-600;
+}
+
+.ant-modal-close-x {
+  @apply flex items-center justify-center;
+}
+
+.btn-cancel-modal,
+.btn-accept-modal {
+  &:active {
+    transform: none !important;
+  }
+}
+
+.dark {
+  .ant-modal-mask {
+    background-color: rgba(106, 106, 141, 0.55);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  body {
+    width: 100% !important;
+  }
+
+  .ant-modal-wrap::-webkit-scrollbar {
+    @apply hidden;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .ant-modal {
+    max-width: 100% !important;
+  }
+
+  .ant-modal-wrap {
+    @apply px-2;
+  }
+}
+
+@include adjust-modal-footer(500px, '.ant-modal-footer.mf > .flex');
+@include adjust-modal-footer(400px, '.ant-modal-footer:not(.mf) > .flex');
+
+@media only screen and (max-width: 220px) {
+  .modal-title-message {
+    word-break: break-all;
+  }
+}

@@ -1,5 +1,5 @@
 // Types
-import type { Theme } from './types'
+import type { Theme } from './constants'
 
 export interface ThemeContext {
   theme: string

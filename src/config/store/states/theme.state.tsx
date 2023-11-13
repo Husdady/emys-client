@@ -2,16 +2,13 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 // Types
-import type { Theme } from './types'
 import type { PayloadAction } from '@reduxjs/toolkit'
+import type { Theme } from '@components/SwitchTheme/constants'
 
 // Constants
-import darkMatches from '@hooks/useLoadTheme/darkMatches'
+import { LIGHT } from '@components/SwitchTheme/constants'
 
-// Styles
-import './styles.scss'
-
-export const initialState = darkMatches ? 'dark' : 'light'
+export const initialState = LIGHT
 
 export const themeSlice = createSlice({
   name: 'theme',

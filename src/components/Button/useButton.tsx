@@ -11,12 +11,7 @@ import classnames from '@utils/classnames'
  * Generate the logic of the Button component
  * @param {UseButtonParams} props Receive Button component props
  */
-export default function useButton({
-  className,
-  onClick,
-  onDoubleClick,
-  depsForDoubleClick
-}: UseButtonParams) {
+export default function useButton({ onClick, onDoubleClick, className }: UseButtonParams) {
   // Define component classes
   const buttonClassName = React.useMemo(
     () =>
@@ -31,16 +26,12 @@ export default function useButton({
   const handleDoubleClick = React.useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
       // One click on button
-      if (e.detail === 1) {
-        typeof onClick === 'function' && onClick(e)
-      }
+      if (e.detail === 1) onClick?.(e)
 
       // Double click on button
-      if (e.detail === 2) {
-        typeof onDoubleClick === 'function' && onDoubleClick(e)
-      }
+      if (e.detail === 2) onDoubleClick?.(e)
     },
-    [depsForDoubleClick]
+    [onClick, onDoubleClick]
   )
 
   return {

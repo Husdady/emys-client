@@ -64,10 +64,10 @@
         }
 
         & .header-welcome-image {
-          @apply left-0 w-[400px] h-[300px] min-w-[400px] min-h-[300px];
+          @apply left-0 w-[375px] h-[300px] min-w-[375px] min-h-[300px];
 
           @media only screen and (max-width: 475px) {
-            @apply w-[90%] h-[260px] min-w-[initial] min-h-[initial];
+            @apply w-[95%] h-[285px] min-w-[initial] min-h-[initial];
           }
 
           @media only screen and (max-width: 400px) {
@@ -75,15 +75,15 @@
           }
 
           @media only screen and (max-width: 350px) {
-            @apply h-[230px];
+            @apply h-[250px];
           }
 
           @media only screen and (max-width: 315px) {
-            @apply h-[215px];
+            @apply h-[230px];
           }
 
           @media only screen and (max-width: 290px) {
-            @apply h-[200px];
+            @apply h-[215px];
           }
         }
       }

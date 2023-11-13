@@ -1,8 +1,13 @@
 // Librarys
 import Head from 'next/head'
+import { Provider } from 'react-redux'
+import { PersistGate } from 'redux-persist/integration/react'
 
 // Types
 import type { AppProps } from 'next/app'
+
+// Store config
+import { store, persistor } from '@config/store'
 
 // Constants
 import { APP_NAME } from '@config/envs'
@@ -17,7 +22,11 @@ export default function EmysApp({ Component, pageProps }: AppProps) {
         <title>{APP_NAME}</title>
       </Head>
 
-      <Component {...pageProps} />
+      <Provider store={store}>
+        <PersistGate persistor={persistor} loading={null}>
+          <Component {...pageProps} />
+        </PersistGate>
+      </Provider>
     </>
   )
 }

@@ -1,4 +1,7 @@
 // Library styles
+@import 'antd/dist/reset.css';
+
+// Tailwind styles
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,6 +11,7 @@
 @import '@components/Button/styles.scss';
 @import '@components/Header/styles.scss';
 @import '@components/Footer/styles.scss';
+@import '@components/SwitchTheme/styles.scss';
 
 @layer base {
   .hide-scrollbar {

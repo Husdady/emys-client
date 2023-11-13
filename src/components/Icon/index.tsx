@@ -6,6 +6,7 @@ import { IconProps } from './interfaces'
 
 // Utils
 import classnames from '@utils/classnames'
+import isUndefined from '@utils/isUndefined'
 
 const Icon = ({
   children,
@@ -36,7 +37,7 @@ const Icon = ({
   )
 
   // Icon hidden
-  if (typeof children === 'undefined' || children === null) return null
+  if (isUndefined(children) || children === null) return null
 
   return (
     <div title={title} onClick={onClick} style={iconStyle} className={iconClasses} {...props}>
