@@ -1,15 +1,13 @@
 // Librarys
-import { memo, Suspense } from 'react'
+import dynamic from 'next/dynamic'
 import AntdModal from 'antd/lib/modal'
+import { memo, Suspense } from 'react'
 
 // Components
 import CircleXmarkSolid from '@assets/icons/circle-xmark-solid'
 
 // Hooks
 import useModalSettings from './hooks/useModal'
-
-// Utils
-import lazy from '@utils/lazy'
 
 // Constants
 import { modalStyle, ModalContainer } from './constants'
@@ -18,8 +16,8 @@ import { modalStyle, ModalContainer } from './constants'
 import './styles/main.scss'
 
 // Lazy Components
-const ModalTitle = lazy(() => import('./Title'))
-const ModalFooter = lazy(() => import('./Footer'))
+const ModalTitle = dynamic(() => import('./Title'))
+const ModalFooter = dynamic(() => import('./Footer'))
 
 function Modal() {
   const {

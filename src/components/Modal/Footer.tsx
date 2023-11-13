@@ -1,15 +1,15 @@
 // Librarys
+import dynamic from 'next/dynamic'
 import { Fragment, Suspense } from 'react'
 
 // Interfaces
 import { ModalFooterProps } from './interfaces'
 
 // Utils
-import lazy from '@utils/lazy'
 import classnames from '@utils/classnames'
 
 // Lazy Components
-const Button = lazy(() => import('@components/Button'))
+const Button = dynamic(() => import('@components/Button'))
 
 export default function ModalFooter({
   custom,
