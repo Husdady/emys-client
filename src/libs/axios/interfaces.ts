@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // Types
-import type { UseFormSetError } from 'react-hook-form/dist/types'
+import type { UseFormSetError } from 'react-hook-form'
 import type { InfoStatus, ErrorStatus, SuccessStatus, WarningStatus } from './status'
 
 // Interfaces
@@ -31,11 +31,11 @@ export interface AxiosParams {
   url: string
   signOut?: () => void
   hideModal?: () => void
+  setError?: UseFormSetError<any>
   method?: AxiosRequestConfig['method']
   data?: AxiosRequestConfig['data']
   params?: AxiosRequestConfig['params']
   headers?: AxiosRequestConfig['headers']
-  setError?: UseFormSetError<any>
 }
 
 export interface ValidateBadResponseParams {
