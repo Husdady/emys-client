@@ -1,40 +1,20 @@
 // Hooks
-import { useMemo } from 'react'
-import { useSelector, useDispatch } from './useRedux'
-
-// Actions
-import { themeActions } from '@root/src/config/store/states/theme.state'
-
-// Interfaces
-import { ThemeContext } from '@components/SwitchTheme/interfaces'
-
-// Types
-import type { Theme } from '@components/SwitchTheme/constants'
+import { useTheme as useNextTheme } from 'next-themes'
 
 // Constants
-import { DARK, LIGHT } from '@components/SwitchTheme/constants'
+import { DARK, LIGHT, SYSTEM } from '@components/SwitchTheme/constants'
 
 /**
  * Hook that theme state for change the current theme of the application
- * @return {ThemeContext}
  */
-export default function useTheme(): ThemeContext {
-  const dispatch = useDispatch() // Get dispatch
-  const theme = useSelector((state) => state.theme) // Get theme state
-
-  // Get context actions
-  const actions = useMemo(
-    () => ({
-      // Switch current theme
-      switchTheme: (th: Theme) => dispatch(themeActions.switchTheme(th))
-    }),
-    []
-  )
+export default function useTheme() {
+  const { theme, setTheme, systemTheme } = useNextTheme()
+  const currentTheme = theme === SYSTEM ? systemTheme : theme
 
   return {
-    theme: theme,
+    setTheme: setTheme,
+    theme: currentTheme,
     isDarkTheme: theme === DARK,
-    isLightTheme: theme === LIGHT,
-    ...actions
+    isLightTheme: theme === LIGHT
   }
 }

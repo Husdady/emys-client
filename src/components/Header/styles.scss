@@ -1,13 +1,28 @@
 .main-header {
+  & .header-welcome {
+    @media screen and (min-width: 901px) {
+      @apply items-start;
+    }
+  }
+
+  & .white-shadow {
+    line-height: 0.9rem;
+    text-shadow: 4px 2px #ffffff;
+  }
+
+  & .circle-check {
+    & svg {
+      stroke-width: 4px !important;
+    }
+  }
+
   & .main-navigation {
     &::-webkit-scrollbar {
       @apply hidden;
     }
 
     @media screen and (max-width: 1200px) {
-
     }
-
   }
 
   & .btn-login {
@@ -101,6 +116,10 @@
       @apply text-[2.25rem];
     }
 
+    & .white-shadow {
+      @apply text-[2.75rem];
+    }
+
     & .welcome-message {
       @apply text-[1rem];
     }
@@ -109,6 +128,10 @@
   @media only screen and (max-width: 375px) {
     & .main-title {
       @apply text-[2rem];
+    }
+
+    & .white-shadow {
+      @apply text-[2.5rem];
     }
 
     & .main-inner-header {

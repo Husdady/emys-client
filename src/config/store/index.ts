@@ -28,7 +28,7 @@ const persistConfig = {
   version: 1,
   key: REDUX_KEY,
   storage: storage,
-  whitelist: ['theme']
+  whitelist: []
 }
 
 const persistedReducer = persistReducer(persistConfig, reducers)

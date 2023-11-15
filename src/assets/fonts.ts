@@ -1,5 +1,8 @@
 // Librarys
 import localFont from 'next/font/local'
+import { Mansalva as MansalvaFont } from 'next/font/google'
+
+export const Mansalva = MansalvaFont({ subsets: ['latin'], weight: ['400'] })
 
 export const Lato = localFont({
   variable: '--lato-regular',

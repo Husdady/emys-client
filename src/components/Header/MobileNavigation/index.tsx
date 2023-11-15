@@ -17,12 +17,12 @@ const UserCircleSolid = dynamic(() => import('@assets/icons/user-circle-solid'))
 
 function MobileNavigation() {
   return (
-    <nav className="min-h-[60px] main-mobile-navigation top-0 sm:top-[1.5rem] fixed mx-auto left-0 right-0 navigation flex gap-x-[1.5rem] justify-between font-poppins bg-white shadow-xl items-center py-1 pl-4 pr-2 z-[9999] overflow-y-hidden overflow-x-auto whitespace-nowrap sm:mx-[2rem] sm:max-w-[970px] lg:mx-auto sm:rounded-full sm:pl-6 sm:pr-3">
+    <nav className="min-h-[60px] main-mobile-navigation top-0 sm:top-[1.5rem] fixed mx-auto left-0 right-0 navigation flex gap-x-[1.5rem] justify-between font-poppins bg-white shadow-xl items-center py-1 pl-4 pr-[0.3rem] z-[9999] overflow-y-hidden overflow-x-auto whitespace-nowrap sm:mx-[2rem] sm:max-w-[970px] lg:mx-auto sm:rounded-full sm:pl-6 sm:pr-[0.55rem] dark:bg-gray-800">
       <div className="flex items-center gap-x-5">
         <Button
           title=""
           icon={<Menu size="xl" className="stroke-3" />}
-          className="btn-menu active py-1.5 !px-2 rounded bg-[#eeeeee] text-main-700"
+          className="btn-menu active py-1.5 !px-2 rounded bg-[#eeeeee] text-main-700 dark:bg-gray-600 dark:text-main-200"
         />
 
         <SwitchTheme />
@@ -42,14 +42,14 @@ function MobileNavigation() {
       <div className="flex items-center">
         <Button
           title=""
-          icon={<MagnifyingGlass size="smd" className="text-gray-600" />}
-          className="btn-search-navigation-links py-3 bg-transparent !px-3"
+          icon={<MagnifyingGlass size="smd" />}
+          className="btn-search-navigation-links py-3 bg-transparent !px-3 text-gray-600 dark:text-gray-300"
         />
 
         <Button
           title=""
-          className="btn-auth py-2.5 bg-transparent !px-3"
-          icon={<UserCircleSolid size="xl" className="text-gray-600" />}
+          icon={<UserCircleSolid size="xl" />}
+          className="btn-auth py-2.5 bg-transparent !px-3 text-gray-600 dark:text-gray-300"
         />
       </div>
     </nav>

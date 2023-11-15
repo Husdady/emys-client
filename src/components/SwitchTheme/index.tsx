@@ -14,12 +14,12 @@ export const style = {
 }
 
 export default function SwitchTheme() {
-  const { switchTheme, isLightTheme } = useTheme()
+  const { setTheme, isLightTheme } = useTheme()
 
   // Event 'onChange' in Switch component for change current theme
   const handleOnChange = useCallback((isActive: boolean) => {
-    if (!isActive) return switchTheme(DARK)
-    switchTheme(LIGHT)
+    if (!isActive) return setTheme(DARK)
+    setTheme(LIGHT)
   }, [])
 
   return (
