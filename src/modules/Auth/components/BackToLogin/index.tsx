@@ -8,7 +8,7 @@ import Login from '@assets/icons/login'
 import Fallback from '@components/SubmitButton/Fallback'
 
 // Constants
-import { LOGIN_PATH } from '@root/src/components/Header/Navigation'
+import { LOGIN_PATH } from '@assets/paths'
 
 // Dynamic components
 const SubmitButton = dynamic(() => import('@components/SubmitButton'), { loading: Fallback })

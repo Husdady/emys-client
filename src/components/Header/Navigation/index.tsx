@@ -7,7 +7,7 @@ import dynamic from 'next/dynamic'
 // Hooks
 import { usePathname } from 'next/navigation'
 
-// Costants
+// Constants
 import { LOGIN_PATH } from '@assets/paths'
 
 // Images
