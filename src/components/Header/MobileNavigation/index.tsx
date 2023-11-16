@@ -1,10 +1,14 @@
 // Librarys
 import { memo } from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
 
 // Components
-import MagnifyingGlass from '@root/src/assets/icons/magnifying-glass'
+import MagnifyingGlass from '@assets/icons/magnifying-glass'
+
+// Constants
+import { HOME_PATH } from '@assets/paths'
 
 // Images
 import logo from '@assets/images/logo.webp'
@@ -28,27 +32,29 @@ function MobileNavigation() {
         <SwitchTheme />
       </div>
 
-      <Image
-        priority
-        width={60}
-        height={50}
-        src={logo.src}
-        loading="eager"
-        alt="logo-image"
-        className="min-w-[60px] min-h-[50px]"
-      />
+      <Link href={HOME_PATH}>
+        <Image
+          priority
+          width={60}
+          height={50}
+          src={logo.src}
+          loading="eager"
+          alt="logo-image"
+          className="min-w-[60px] min-h-[50px]"
+        />
+      </Link>
 
       <div className="flex items-center">
         <Button
           title=""
           icon={<MagnifyingGlass size="smd" />}
-          className="btn-search-navigation-links py-3 bg-transparent !px-3 text-gray-600 dark:text-gray-300"
+          className="btn-search-navigation-links py-3 bg-transparent !px-3 text-gray-600 dark:text-gray-400"
         />
 
         <Button
           title=""
           icon={<UserCircleSolid size="xl" />}
-          className="btn-auth py-2.5 bg-transparent !px-3 text-gray-600 dark:text-gray-300"
+          className="btn-auth py-2.5 bg-transparent !px-3 text-gray-600 dark:text-gray-400"
         />
       </div>
     </nav>
