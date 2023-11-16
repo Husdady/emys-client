@@ -1,35 +1,29 @@
 // Librarys
-import { Suspense, useCallback } from 'react'
+import dynamic from 'next/dynamic'
 
 // Components
 import Login from '@assets/icons/login'
 import Fallback from '@components/SubmitButton/Fallback'
 
 // Hooks
-import { useNavigate } from 'react-router-dom'
-
-// Utils
-import lazy from '@utils/lazy'
+import { useCallback } from 'react'
+import { useRouter } from 'next/router'
 
 // Lazy Components
-const SubmitButton = lazy(() => import('@components/SubmitButton'))
+const SubmitButton = dynamic(() => import('@components/SubmitButton'), { loading: Fallback })
 
 export default function BackToAccountPage() {
-  const navigate = useNavigate()
+  const router = useRouter()
 
   // Navigate to Account route
-  const navigateToAccountPage = useCallback(() => {
-    navigate('/dashboard/account', { replace: true })
-  }, [])
+  const navigateToAccountPage = useCallback(() => router.push('/cuenta'), [])
 
   return (
-    <Suspense fallback={<Fallback />}>
-      <SubmitButton
-        type="button"
-        title="Volver a mi cuenta"
-        icon={<Login size="md" className="mr-1" />}
-        onClick={navigateToAccountPage}
-      />
-    </Suspense>
+    <SubmitButton
+      type="button"
+      title="Volver a mi cuenta"
+      icon={<Login size="md" className="mr-1" />}
+      onClick={navigateToAccountPage}
+    />
   )
 }

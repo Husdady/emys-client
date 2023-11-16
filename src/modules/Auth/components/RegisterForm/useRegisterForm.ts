@@ -3,18 +3,29 @@ import { saveBearerTokenOnAxios } from '@libs/axios'
 import { showFloatInfoMessage } from '@libs/antd/message'
 
 // Hooks
-import { useCallback } from 'react'
 import { useForm } from 'react-hook-form'
-import { useSearchParams } from 'react-router-dom'
+import { useMemo, useCallback } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { useRegisterUserMutation } from '@modules/Auth/api/register'
 import useMounted from '@hooks/useMounted'
 
 // Interfaces
 import { RegisterFormState } from './interfaces'
 
+// Utils
+import isObject from '@utils/isObject'
+
+export const EMAIL_QUERY_PARAM = 'email'
+export const STATUS_QUERY_PARAM = 'status'
+export const MESSAGE_ID_QUERY_PARAM = 'messageId'
+
 export default function useRegisterForm() {
-  const [searchParams, setSeachParams] = useSearchParams()
+  const searchParams = useSearchParams()
   const [registerUser, result] = useRegisterUserMutation()
+
+  // Define the query params
+  const params = useMemo(() => new URLSearchParams(searchParams), [searchParams])
+
   const {
     register,
     setError,
@@ -37,7 +48,7 @@ export default function useRegisterForm() {
     })
 
     if ('error' in payload) return // Exists an error from the API
-    if (!('result' in payload.data)) return // Validate result
+    if (isObject(payload.data) && !('result' in payload.data)) return // Validate result
 
     const { result } = payload.data // Get result
     if (!('emailConfirmation' in result)) return // Validate emailConfirmation
@@ -48,24 +59,29 @@ export default function useRegisterForm() {
     // Get email messageId
     const messageId = String(emailConfirmation.result.emailResponse?.body?.messageId)
 
-    // Define query params structure
-    const query = {
-      status: status,
-      messageId: messageId,
-      email: formState.email
-    }
-
     const token = emailConfirmation?.result?.token // Get token
 
-    showFloatInfoMessage(result.emailConfirmation.message) // Show float message
-    setSeachParams(query) // Create query params
+    showFloatInfoMessage(result.emailConfirmation?.message) // Show float message
+
+    params.set(STATUS_QUERY_PARAM, status)
+    params.set(MESSAGE_ID_QUERY_PARAM, messageId)
+    params.set(EMAIL_QUERY_PARAM, formState.email)
+
     saveBearerTokenOnAxios(token) // Save token on axios
   }, [])
 
   useMounted(() => {
-    const query = Object.fromEntries([...searchParams]) // Get query params
-    if ('status' in query && 'messageId' in query && 'email' in query) {
-      setSeachParams({}) // Reset query params
+    const query = Object.fromEntries([...params.entries()]) // Get query params
+
+    if (
+      isObject(query) &&
+      EMAIL_QUERY_PARAM in query &&
+      STATUS_QUERY_PARAM in query &&
+      MESSAGE_ID_QUERY_PARAM in query
+    ) {
+      params.delete(EMAIL_QUERY_PARAM)
+      params.delete(STATUS_QUERY_PARAM)
+      params.delete(MESSAGE_ID_QUERY_PARAM)
     }
   }, [])
 

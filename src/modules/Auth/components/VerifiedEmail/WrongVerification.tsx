@@ -14,6 +14,7 @@ import useRequestVerification from '@modules/Auth/hooks/useRequestVerification'
 import { WrongVerificationProps } from './interfaces'
 
 // Constants
+import { WARNING_STATUS } from '@libs/axios/status'
 import {
   NOTE_MESSAGE,
   WARNING_MESSAGE,
@@ -28,28 +29,27 @@ export default function WrongVerification({ status, title }: WrongVerificationPr
   return (
     <div className="flex flex-col gap-y-5">
       <Message value={title} {...getVerificationMessageProps(status)} />
-      <Note value={status !== 'warning' ? NOTE_MESSAGE : WARNING_MESSAGE} />
+      <Note value={status !== WARNING_STATUS ? NOTE_MESSAGE : WARNING_MESSAGE} />
 
       <div className="flex flex-col gap-y-2">
-        {status !== 'warning' && (
-          <SubmitButton
-            type="button"
-            title="Verificar de nuevo mi cuenta"
-            onClick={submit}
-            disabled={requestLimit}
-            isShowingSpin={result.isLoading}
-            icon={<Mail size="md" className="mr-2" />}
-          />
-        )}
+        {status !== WARNING_STATUS && (
+          <>
+            <SubmitButton
+              type="button"
+              title="Verificar de nuevo mi cuenta"
+              icon={<Mail size="md" className="mr-2" />}
+              isShowingSpin={result.isLoading}
+              disabled={requestLimit}
+              onClick={submit}
+            />
 
-        {status !== 'warning' && (
-          <TotalRequest
-            maxRequest={maxRequest}
-            timesRequested={timesRequested}
-            requestLimit={requestLimit}
-          />
+            <TotalRequest
+              maxRequest={maxRequest}
+              timesRequested={timesRequested}
+              requestLimit={requestLimit}
+            />
+          </>
         )}
-
         <BackToLogin />
       </div>
     </div>

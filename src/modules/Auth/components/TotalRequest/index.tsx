@@ -1,6 +1,8 @@
 // Interfaces
-import classnames from '@utils/classnames'
 import { TotalRequestProps } from './interfaces'
+
+// Utils
+import classnames from '@utils/classnames'
 
 export default function TotalRequest({
   className,
