@@ -2,7 +2,7 @@
 import { memo } from 'react'
 
 // Interfaces
-import { CheckboxPlaceholderProps } from '../interfaces'
+import { CheckboxPlaceholderProps } from '@components/Checkbox/interfaces'
 
 // Utils
 import createList from '@utils/createList'

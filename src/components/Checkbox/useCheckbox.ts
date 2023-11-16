@@ -5,11 +5,11 @@ import { createId } from '@libs/nanoid'
 import { useMemo, useState, useCallback } from 'react'
 
 // Types
-import type { UseCheckboxParams } from 'components/Checkbox/types'
+import type { UseCheckboxParams } from './types'
 
 // Interfaces
+import { CheckboxEventParams } from './interfaces'
 import { IconProps } from '@components/Icon/interfaces'
-import { CheckboxEventParams } from 'components/Checkbox/interfaces'
 
 // Utils
 import isString from '@utils/isString'
