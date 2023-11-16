@@ -1,0 +1,5 @@
+.input-error {
+  & svg {
+    @apply w-[15px] h-[15px] min-w-[15px] min-h-[15px] max-w-[15px] max-h-[15px];
+  }
+}

@@ -1,12 +1,14 @@
 // Layouts
 import MainLayout from '@layouts/MainLayout'
+import AuthLayout from '@root/src/layouts/AuthLayouts/AuthLayout'
+import LoginLayout from '@layouts/AuthLayouts/LoginLayout'
 
 export default function LoginPage() {
   return (
     <MainLayout>
-      <div>
-        <span>hola</span>
-      </div>
+      <AuthLayout>
+        <LoginLayout />
+      </AuthLayout>
     </MainLayout>
   )
 }

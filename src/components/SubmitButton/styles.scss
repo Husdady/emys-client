@@ -1,0 +1,18 @@
+.submit-button {
+  @apply min-h-[54px];
+
+
+  &:enabled:hover {
+    @apply bg-[#d62057] dark:bg-[#c72424];
+
+    & span {
+      @apply underline;
+    }
+  }
+}
+
+#menu-left {
+  & .submit-button {
+    @apply xl:min-h-[48px]
+  }
+}

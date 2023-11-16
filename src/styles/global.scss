@@ -9,9 +9,16 @@
 // Component Styles
 @import '@components/Icon/styles.scss';
 @import '@components/Button/styles.scss';
+@import '@components/Loader/styles.scss';
 @import '@components/Header/styles.scss';
 @import '@components/Footer/styles.scss';
+@import '@components/Checkbox/styles.scss';
+@import '@components/InputError/styles.scss';
 @import '@components/SwitchTheme/styles.scss';
+@import '@components/SubmitButton/styles.scss';
+@import '@components/InputText/styles/main.scss';
+@import '@modules/Auth/components/AppLogo/styles.scss';
+@import '@layouts/AuthLayouts/AuthLayout/styles/main.scss';
 
 @layer base {
   .hide-scrollbar {

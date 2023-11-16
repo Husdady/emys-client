@@ -1,0 +1,8 @@
+@mixin input-shadow($color) {
+  border: 1px solid $color !important;
+  box-shadow: 0px 0px 8px -1px $color;
+
+  & .icon:first-of-type {
+    color: $color !important;
+  }
+}

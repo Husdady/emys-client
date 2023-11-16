@@ -1,0 +1,18 @@
+// Light theme colors
+$purple-light: #a770ef;
+$orange-light: #fdb99b;
+$purple-light-300: #cf8bf3;
+
+$purple-dark: #6711d8;
+$orange-dark: #af8f8f;
+$purple-dark-300: #b04613;
+
+@mixin light-background {
+  background: $purple-light;
+  background: linear-gradient(90deg, $orange-light, $purple-light-300, $purple-light);
+}
+
+@mixin dark-background {
+  background: $purple-dark;
+  background: linear-gradient(90deg, $orange-dark, $purple-dark-300, $purple-dark);
+}

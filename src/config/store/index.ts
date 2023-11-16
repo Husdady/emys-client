@@ -36,12 +36,11 @@ const persistedReducer = persistReducer(persistConfig, reducers)
 // Create store configuration
 export const store = configureStore({
   devTools: isDevMode,
-  reducer: persistedReducer
-  // middleware: (getDefaultMiddleware) => {
-  //   return getDefaultMiddleware({ serializableCheck: false })
-  //     .concat(api.middleware)
-  //     .concat(graphqlAPI.middleware)
-  // }
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) => {
+    return getDefaultMiddleware({ serializableCheck: false }).concat(api.middleware)
+    // .concat(graphqlAPI.middleware)
+  }
 })
 
 setupListeners(store.dispatch)

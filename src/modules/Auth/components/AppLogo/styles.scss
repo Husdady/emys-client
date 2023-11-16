@@ -1,0 +1,15 @@
+.app-logo {
+  @apply min-w-[300px];
+
+  @media only screen and (max-width: 350px) {
+    & {
+      @apply min-w-[250px];
+    }
+  }
+
+  @media only screen and (max-width: 280px) {
+    & {
+      @apply min-w-[200px];
+    }
+  }
+}

@@ -1,0 +1,47 @@
+// Custom styles
+@import '@styles/colors';
+
+.checkbox {
+  & > .inner {
+    &,
+    & svg,
+    & input,
+    & .icon,
+    & .inner-wrapper {
+      cursor: pointer !important;
+    }
+
+    & .status {
+      border-radius: 4px;
+
+      @media screen and (min-width: 769px) {
+        transition: linear 0.2s background-color;
+      }
+
+      &:checked {
+        @apply bg-gray-200 dark:bg-gray-700;
+      }
+    }
+
+    & .icon {
+      & > svg {
+        stroke-width: 4px;
+        @apply w-[16px] h-[16px] min-w-[16px] min-h-[16px];
+
+        @media (min-width: 769px) {
+          @apply w-[14px] h-[14px] min-w-[14px] min-h-[14px];
+        }
+      }
+    }
+  }
+}
+
+.checkbox:not(.has-check-color) {
+  & > .inner {
+    & .icon {
+      & > svg {
+        @apply dark:text-main-200;
+      }
+    }
+  }
+}

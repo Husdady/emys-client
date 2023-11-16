@@ -14,7 +14,6 @@ import { Lato, Lexend, Poppins } from '@assets/fonts'
 // Dynamic Components
 const Header = dynamic(() => import('@components/Header'))
 const Footer = dynamic(() => import('@components/Footer'))
-const HomeWelcomeBottomWave = dynamic(() => import('@assets/waves/home-welcome-bottom-wave'))
 
 function MainLayout({ children }: OnlyChildrenProp) {
   return (
@@ -28,7 +27,6 @@ function MainLayout({ children }: OnlyChildrenProp) {
       ])}
     >
       <Header />
-      <HomeWelcomeBottomWave />
       {children}
       <Footer />
     </main>
