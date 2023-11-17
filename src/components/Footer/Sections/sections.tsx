@@ -11,7 +11,13 @@ import BrandWhatsapp from '@assets/icons/brand-whatsapp'
 import { SectionProps } from './interfaces'
 
 // Constants
-import { LINK_TYPE, TEXT_TYPE, sharedIconProps } from './constants'
+import {
+  LINK_TYPE,
+  TEXT_TYPE,
+  sharedIconProps,
+  sharedFacebookIconProps,
+  sharedWhatsappIconProps
+} from './constants'
 import {
   CONTACT_EMAIL_01,
   CONTACT_EMAIL_02,
@@ -25,6 +31,7 @@ import {
   CONTACT_FACEBOOK_PAGE_NAME_01,
   CONTACT_FACEBOOK_PAGE_NAME_02
 } from '@config/envs'
+import classnames from '@root/src/utils/classnames'
 
 const sections: SectionProps[] = [
   {
@@ -61,22 +68,22 @@ const sections: SectionProps[] = [
       {
         href: CONTACT_FACEBOOK_PAGE_URL_01,
         text: CONTACT_FACEBOOK_PAGE_NAME_01,
-        icon: <Facebook {...sharedIconProps} />
+        icon: <Facebook {...sharedFacebookIconProps} />
       },
       {
         href: CONTACT_FACEBOOK_PAGE_URL_02,
         text: CONTACT_FACEBOOK_PAGE_NAME_02,
-        icon: <Facebook {...sharedIconProps} />
+        icon: <Facebook {...sharedFacebookIconProps} />
       },
       {
         href: WHATSAPP_CONTACT_URL_01,
         text: WHATSAPP_CONTACT_NUMBER_01,
-        icon: <BrandWhatsapp {...sharedIconProps} />
+        icon: <BrandWhatsapp {...sharedWhatsappIconProps} />
       },
       {
         href: WHATSAPP_CONTACT_URL_02,
         text: WHATSAPP_CONTACT_NUMBER_02,
-        icon: <BrandWhatsapp {...sharedIconProps} />
+        icon: <BrandWhatsapp {...sharedWhatsappIconProps} />
       }
     ]
   },

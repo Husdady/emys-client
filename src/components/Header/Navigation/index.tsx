@@ -1,6 +1,5 @@
 // Librarys
 import { memo } from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
 
@@ -14,6 +13,7 @@ import { LOGIN_PATH } from '@assets/paths'
 import logo from '@assets/images/logo.webp'
 
 // Dynamic Components
+const Link = dynamic(() => import('@components/Link'))
 const Login = dynamic(() => import('@assets/icons/login'))
 const Button = dynamic(() => import('@components/Button'))
 const NavigationLinks = dynamic(() => import('./NavigationLinks'))

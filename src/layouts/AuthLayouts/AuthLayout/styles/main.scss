@@ -2,12 +2,8 @@
 @import './mixins.scss';
 
 #auth-content {
-  @media screen and (max-width: 450px) {
-    @apply border-y border-gray-100 dark:border-gray-500;
-
-    & > .auth-container {
-      @apply pb-6;
-    }
+  @media only screen and (max-width: 450px) {
+    @apply border-b border-gray-200 dark:border-gray-500;
   }
 }
 

@@ -1,6 +1,7 @@
 {
   "name": "emys-client",
-  "version": "0.1.0",
+  "version": "0.0.1",
+  "description": "Emys es una tienda online en la cúal puedes hacer pedidos de productos Omnilife, Seytú, entre otros. En nuestra página hablamos sobre el negocio Omnilife, su programa de afiliación y cómo funciona el negocio, además nos centramos en vender productos variados y de calidad de diversos vendedores.",
   "private": true,
   "homepage": "https://github.com/Husdady/emys-client",
   "author": {
@@ -26,6 +27,7 @@
     "nanoid": "4.0.0",
     "next": "14.0.1",
     "next-themes": "0.2.1",
+    "nprogress": "0.2.0",
     "react": "18",
     "react-dom": "18",
     "react-hook-form": "7.36.1",
@@ -35,6 +37,7 @@
   },
   "devDependencies": {
     "@types/node": "20",
+    "@types/nprogress": "0.2.3",
     "@types/react": "18",
     "@types/react-dom": "18",
     "autoprefixer": "10.0.1",

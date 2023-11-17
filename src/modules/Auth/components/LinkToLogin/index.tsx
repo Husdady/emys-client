@@ -1,5 +1,11 @@
-// Librarys
-import Link from "next/link";
+// Components
+import dynamic from 'next/dynamic'
+
+// Constants
+import { LOGIN_PATH } from '@assets/paths'
+
+// Dynamic Components
+const Link = dynamic(() => import('@components/Link'))
 
 export default function LinkToLogin() {
   return (
@@ -7,7 +13,7 @@ export default function LinkToLogin() {
       <span className="font-lexend"> ¿Ya tienes una cuenta?</span>
 
       <Link
-        href="/"
+        href={LOGIN_PATH}
         className="ml-[0.35rem] font-semibold text-main-700 dark:text-main-200 hover:underline"
       >
         Iniciar sesión

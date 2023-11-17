@@ -1,0 +1,118 @@
+.welcome {
+  & .white-shadow {
+    line-height: 0.9rem;
+    text-shadow: 4px 2px #ffffff;
+  }
+
+  & .circle-check {
+    & svg {
+      stroke-width: 4px !important;
+    }
+  }
+
+  & .animate-circle-arrow-left {
+    animation: slideLeft 0.5s ease infinite alternate;
+
+    @keyframes slideLeft {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-2px);
+      }
+    }
+  }
+
+  @media screen and (min-width: 901px) {
+    & .main-inner-welcome {
+      @apply items-start;
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    &.relative {
+      @apply bg-pink-100;
+    }
+
+    & .main-inner-welcome {
+      @apply sm:mt-[6.75rem] mt-[4.5rem] flex-wrap flex-col-reverse;
+    }
+
+    & .welcome-content {
+      @apply mt-0 max-w-[600px];
+    }
+
+    & .welcome-image {
+      @apply left-0 w-[375px] h-[300px] min-w-[375px] min-h-[300px];
+
+      @media only screen and (max-width: 475px) {
+        @apply w-[95%] h-[285px] min-w-[initial] min-h-[initial];
+      }
+
+      @media only screen and (max-width: 400px) {
+        @apply w-full;
+      }
+
+      @media only screen and (max-width: 350px) {
+        @apply h-[250px];
+      }
+
+      @media only screen and (max-width: 315px) {
+        @apply h-[230px];
+      }
+
+      @media only screen and (max-width: 290px) {
+        @apply h-[215px];
+      }
+    }
+
+    & .welcome-top-wave {
+      @apply max-h-[460px];
+
+      & path {
+        @apply fill-rose-200;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    & .main-wrapper-welcome {
+      @apply px-6;
+    }
+  }
+
+  @media only screen and (max-width: 450px) {
+    & .welcome-message {
+      @apply text-[1rem];
+    }
+
+    & .white-shadow {
+      @apply text-[2.75rem];
+    }
+  }
+
+  @media only screen and (max-width: 375px) {
+    & .white-shadow {
+      @apply text-[2.5rem];
+    }
+
+    & .main-wrapper-welcome {
+      @apply px-4;
+    }
+  }
+
+  @media only screen and (max-width: 300px) {
+    & .main-wrapper-welcome {
+      @apply px-2.5;
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .welcome-bottom-wave {
+    & path {
+      @apply fill-pink-100;
+    }
+  }
+}

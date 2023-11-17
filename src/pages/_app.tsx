@@ -1,8 +1,11 @@
 // Librarys
 import Head from 'next/head'
 import { Provider } from 'react-redux'
-import { PersistGate } from 'redux-persist/integration/react'
 import { ThemeProvider } from 'next-themes'
+import { PersistGate } from 'redux-persist/integration/react'
+
+// Hooks
+import useNprogressDone from '../hooks/useNprogressDone'
 
 // Types
 import type { AppProps } from 'next/app'
@@ -17,6 +20,8 @@ import { APP_NAME } from '@config/envs'
 import '@styles/global.scss'
 
 export default function EmysApp({ Component, pageProps }: AppProps) {
+  useNprogressDone()
+
   return (
     <>
       <Head>

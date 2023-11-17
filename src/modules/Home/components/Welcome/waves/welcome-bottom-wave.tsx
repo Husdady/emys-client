@@ -1,12 +1,12 @@
 // Librarys
 import { memo } from 'react'
 
-function HomeWelcomeBottomWave() {
+function WelcomeBottomWave() {
   return (
     <svg
       viewBox="0 0 1440 320"
       xmlns="http://www.w3.org/2000/svg"
-      className="home-welcome-bottom-wave"
+      className="welcome-bottom-wave"
     >
       <path
         fillOpacity="1"
@@ -17,4 +17,4 @@ function HomeWelcomeBottomWave() {
   )
 }
 
-export default memo(HomeWelcomeBottomWave)
+export default memo(WelcomeBottomWave)

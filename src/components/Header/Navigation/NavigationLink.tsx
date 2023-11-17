@@ -1,13 +1,18 @@
 // Librarys
 import { memo } from 'react'
-import Link from 'next/link'
+import dynamic from 'next/dynamic'
 
 // Hooks
 import { useRouter } from 'next/router'
 
 // Interfaces
 import { NavigationLinkProps } from './interfaces'
-import classnames from '@root/src/utils/classnames'
+
+// Utils
+import classnames from '@utils/classnames'
+
+// Dynamic Components
+const Link = dynamic(() => import('@components/Link'))
 
 function NavigationLink({ href, icon, text }: NavigationLinkProps) {
   const router = useRouter()

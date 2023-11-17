@@ -1,12 +1,15 @@
 // Librarys
 import React from 'react'
-import Link from 'next/link'
 import dynamic from 'next/dynamic'
 
 // Interfaces
 import { LoginRememberProps } from './interfaces'
 
+// Constants
+import { FORGOT_PASSWORD_PATH } from '@assets/paths'
+
 // Dynamic Components
+const Link = dynamic(() => import('@components/Link'))
 const Checkbox = dynamic(() => import('@components/Checkbox'))
 
 export const customLabel = {
@@ -27,7 +30,7 @@ const Remember: React.FC<LoginRememberProps> = ({ remember, onRemember }: LoginR
       />
 
       <Link
-        href="/forgot-password"
+        href={FORGOT_PASSWORD_PATH}
         className="text-sm font-semibold text-main-700 dark:text-main-200 hover:underline whitespace-nowrap"
       >
         ¿Contraseña olvidada?

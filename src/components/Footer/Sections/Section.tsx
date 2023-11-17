@@ -1,7 +1,7 @@
 // Librarys
-import Link from 'next/link'
 import { memo } from 'react'
 import { createId } from '@libs/nanoid'
+import dynamic from 'next/dynamic'
 
 // Interfaces
 import { SectionProps } from './interfaces'
@@ -11,6 +11,9 @@ import isString from '@utils/isString'
 
 // Constants
 import { LINK_TYPE, TEXT_TYPE } from './constants'
+
+// Dynamic Components
+const Link = dynamic(() => import('@components/Link'))
 
 function Section(props: SectionProps) {
   return (

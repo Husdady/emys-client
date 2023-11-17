@@ -1,5 +1,6 @@
 // Library styles
 @import 'antd/dist/reset.css';
+@import 'nprogress/nprogress.css';
 
 // Tailwind styles
 @tailwind base;
@@ -17,7 +18,12 @@
 @import '@components/SwitchTheme/styles.scss';
 @import '@components/SubmitButton/styles.scss';
 @import '@components/InputText/styles/main.scss';
+
+// Module Styles
+@import '@modules/Home/components/Welcome/styles.scss';
 @import '@modules/Auth/components/AppLogo/styles.scss';
+
+// Layout Styles
 @import '@layouts/AuthLayouts/AuthLayout/styles/main.scss';
 
 @layer base {
