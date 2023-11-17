@@ -35,6 +35,14 @@
       @apply bg-pink-100;
     }
 
+    & .main-title {
+      @apply text-indigo-600;
+    }
+
+    & .btn-see-all-products {
+      @apply bg-indigo-600 border-indigo-300;
+    }
+
     & .main-inner-welcome {
       @apply sm:mt-[6.75rem] mt-[4.5rem] flex-wrap flex-col-reverse;
     }
@@ -76,6 +84,14 @@
     }
   }
 
+  @media only screen and (max-width: 640px) {
+    & .btn-see-all-products {
+      & svg {
+        @apply w-[26px] h-[26px] min-w-[26px] min-h-[26px];
+      }
+    }
+  }
+
   @media only screen and (max-width: 600px) {
     & .main-wrapper-welcome {
       @apply px-6;
@@ -83,16 +99,24 @@
   }
 
   @media only screen and (max-width: 450px) {
-    & .welcome-message {
-      @apply text-[1rem];
+    & .main-title {
+      @apply text-[2.25rem];
     }
 
     & .white-shadow {
       @apply text-[2.75rem];
     }
+
+    & .welcome-message {
+      @apply text-[1rem];
+    }
   }
 
   @media only screen and (max-width: 375px) {
+    & .main-title {
+      @apply text-[2rem];
+    }
+
     & .white-shadow {
       @apply text-[2.5rem];
     }

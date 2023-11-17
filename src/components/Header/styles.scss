@@ -16,35 +16,13 @@
     }
   }
 
-  & .btn-see-all-products {
-    @media only screen and (max-width: 900px) {
-      @apply bg-indigo-600 border-indigo-300;
-    }
-  }
-
-  @media only screen and (max-width: 900px) {
-    & .main-title {
-      @apply text-indigo-600;
-    }
-  }
-
   @media only screen and (max-width: 600px) {
     & .main-inner-header {
       @apply px-6;
     }
   }
 
-  @media only screen and (max-width: 450px) {
-    & .main-title {
-      @apply text-[2.25rem];
-    }
-  }
-
   @media only screen and (max-width: 375px) {
-    & .main-title {
-      @apply text-[2rem];
-    }
-
     & .main-inner-header {
       @apply px-4;
     }
