@@ -15,7 +15,7 @@ html {
       @apply py-0 mt-[61px];
 
       & > .auth-container {
-        @apply w-full border-none max-w-full h-full min-h-[100vh] rounded-none;
+        @apply w-full border-none max-w-full h-full rounded-none;
 
         & > .loader-container {
           min-height: 100vh !important;

@@ -9,7 +9,7 @@ const Link = dynamic(() => import('@components/Link'))
 
 export default function LinkToRegister() {
   return (
-    <p className="text-sm font-light text-gray-600 dark:text-gray-400 leading-tight">
+    <p className="text-sm font-light text-gray-600 dark:text-gray-400 leading-tight mb-1 sm:mb-0">
       <span className="font-lexend text-[0.91rem] mr-[0.35rem]">¿Aún no tienes una cuenta?</span>
 
       <Link

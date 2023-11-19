@@ -42,7 +42,11 @@ export default function ForgotPasswordForm() {
   }
 
   return (
-    <form noValidate className="flex flex-col gap-y-4" onSubmit={handleSubmit(submit)}>
+    <form
+      noValidate
+      onSubmit={handleSubmit(submit)}
+      className="forgot-password-form mb-2 sm:mb-0 flex flex-col gap-y-4"
+    >
       <InputFallback classLabel="w-44">
         <InputText
           type="email"

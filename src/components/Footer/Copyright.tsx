@@ -14,7 +14,7 @@ function Copyright() {
   return (
     <section
       id="copyright"
-      className="py-2 px-4 flex items-center justify-center font-lexend text-[0.75rem] text-white border-t border-amber-200 overflow-hidden"
+      className="py-2 px-4 flex items-center justify-center font-lexend text-[0.75rem] text-white border-t border-gray-500 overflow-hidden"
     >
       <CopyrightIcon className="text-amber-400" />
       <span className="ms-1">

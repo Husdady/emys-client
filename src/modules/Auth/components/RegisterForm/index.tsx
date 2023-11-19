@@ -30,7 +30,11 @@ export default function RegisterForm() {
   }
 
   return (
-    <form noValidate onSubmit={handleSubmit(submit)} className="flex flex-col gap-y-5 sm:gap-y-4">
+    <form
+      noValidate
+      onSubmit={handleSubmit(submit)}
+      className="register-form flex flex-col gap-y-5 sm:gap-y-4"
+    >
       <InputText
         label={labels.fullname}
         customInput={register('fullname')}

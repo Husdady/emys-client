@@ -26,7 +26,11 @@ export default function LoginForm() {
 
   return (
     <>
-      <form noValidate onSubmit={handleSubmit(submit)} className="flex flex-col gap-y-4">
+      <form
+        noValidate
+        onSubmit={handleSubmit(submit)}
+        className="login-form mb-2 sm:mb-0 flex flex-col gap-y-4"
+      >
         <InputText
           type="email"
           label={labels.email}

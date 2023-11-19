@@ -34,7 +34,11 @@ export default function ForgotEmailForm() {
   }
 
   return (
-    <form noValidate onSubmit={handleSubmit(submit)} className="flex flex-col gap-y-5">
+    <form
+      noValidate
+      onSubmit={handleSubmit(submit)}
+      className="forgot-email-form mb-2 sm:mb-0 flex flex-col gap-y-5"
+    >
       <InputText
         label={labels.code}
         hidePlaceholderOnFocus
