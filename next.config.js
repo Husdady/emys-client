@@ -1,21 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    remotePatterns: [
-      {
-        port: '',
-        protocol: 'https',
-        hostname: 'i.imgur.com'
-      },
-      {
-        port: '',
-        protocol: 'https',
-        hostname: '1000marcas.net'
-      }
-    ]
+    remotePatterns: [ ]
   },
   env: {
+    API_URL: process.env.API_URL,
     APP_NAME: process.env.APP_NAME,
+    PUBLIC_URL: process.env.PUBLIC_URL,
     SECRET_PASSWORD: process.env.SECRET_PASSWORD,
     DEVELOPER_LINKEDIN_URL: process.env.DEVELOPER_LINKEDIN_URL,
     CONTACT_EMAIL_01: process.env.CONTACT_EMAIL_01,

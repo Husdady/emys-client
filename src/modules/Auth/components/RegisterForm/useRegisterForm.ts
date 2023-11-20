@@ -14,6 +14,8 @@ import { RegisterFormState } from './interfaces'
 
 // Utils
 import isObject from '@utils/isObject'
+import isString from '@utils/isString'
+import isEmptyString from '@utils/isEmptyString'
 
 export const EMAIL_QUERY_PARAM = 'email'
 export const STATUS_QUERY_PARAM = 'status'
@@ -50,24 +52,31 @@ export default function useRegisterForm() {
     if ('error' in payload) return // Exists an error from the API
     if (isObject(payload.data) && !('result' in payload.data)) return // Validate result
 
-    const { result } = payload.data // Get result
+    const result = payload?.data?.result // Get email confirmation
+    if (!isObject(result)) return
     if (!('emailConfirmation' in result)) return // Validate emailConfirmation
 
-    const { emailConfirmation } = payload.data.result // Get email confirmation
-    const status = String(emailConfirmation?.status) // Get email status
+    // Get email confirmation and validates it
+    const emailConfirmation = result?.emailConfirmation
+    if (!isObject(emailConfirmation)) return
 
-    // Get email messageId
-    const messageId = String(emailConfirmation.result.emailResponse?.body?.messageId)
+    // Get 'status' of email confirmation and validates it
+    const status = emailConfirmation.status // Get email status
+    if (!isString(status) || isEmptyString(status)) return
 
-    const token = emailConfirmation?.result?.token // Get token
+    // Get email messageId and validates it
+    const messageId = emailConfirmation?.emailResponse?.body?.messageId
+    if (!isString(messageId) || isEmptyString(messageId)) return
+
+    // Get token and vaidates it
+    const token = emailConfirmation?.result?.token
+    if (!isString(token) || isEmptyString(token)) return
 
     showFloatInfoMessage(result.emailConfirmation?.message) // Show float message
 
-    params.set(STATUS_QUERY_PARAM, status)
-    params.set(MESSAGE_ID_QUERY_PARAM, messageId)
     params.set(EMAIL_QUERY_PARAM, formState.email)
-
-    saveBearerTokenOnAxios(token) // Save token on axios
+    params.set(STATUS_QUERY_PARAM, String(status))
+    params.set(MESSAGE_ID_QUERY_PARAM, String(messageId))
   }, [])
 
   useMounted(() => {

@@ -1,8 +1,7 @@
 // Librarys
-import storage from 'redux-persist/lib/storage'
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
-import { persistReducer, persistStore } from 'redux-persist'
+import { persistStore, persistReducer } from 'redux-persist'
 // import { loadBearerTokenOnGraphqlClient } from '@libs/graphql'
 // import { loadBearerTokenOnAxios } from '@libs/axios'
 
@@ -11,12 +10,13 @@ import reducers from './reducers'
 
 // API's
 import { api } from './api'
-import { api as graphqlAPI } from './graphql'
+// import { api as graphqlAPI } from './graphql'
 
 // Environment variables
 import { APP_NAME, isDevMode } from '@config/envs'
 
 // Utils
+import createStorage from './utils/createStorage'
 import convertEmptySpacesInHyphens from '@utils/convertEmptySpacesInHyphens'
 
 export const REDUX_KEY = 'app-' + convertEmptySpacesInHyphens(APP_NAME ?? '')
@@ -24,14 +24,16 @@ export const REDUX_KEY = 'app-' + convertEmptySpacesInHyphens(APP_NAME ?? '')
 // loadBearerTokenOnAxios(REDUX_KEY)
 // loadBearerTokenOnGraphqlClient(REDUX_KEY)
 
-const persistConfig = {
+export const storage = createStorage()
+
+export const persistConfig = {
   version: 1,
   key: REDUX_KEY,
   storage: storage,
   whitelist: []
 }
 
-const persistedReducer = persistReducer(persistConfig, reducers)
+export const persistedReducer = persistReducer(persistConfig, reducers)
 
 // Create store configuration
 export const store = configureStore({

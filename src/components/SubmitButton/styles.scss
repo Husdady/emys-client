@@ -1,6 +1,5 @@
 .submit-button {
-  @apply min-h-[54px];
-
+  @apply min-h-[50px];
 
   &:enabled:hover {
     @apply bg-[#d62057] dark:bg-[#c72424];
@@ -13,6 +12,6 @@
 
 #menu-left {
   & .submit-button {
-    @apply xl:min-h-[48px]
+    @apply xl:min-h-[48px];
   }
 }

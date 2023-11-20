@@ -5,6 +5,7 @@ import { Html, Head, Main, NextScript } from 'next/document'
 import Favicons from '@components/Favicons'
 
 // Data
+import fonts from '@assets/fonts'
 import pk from '@root/package.json'
 
 export default function Document() {
@@ -17,7 +18,7 @@ export default function Document() {
         <Favicons />
       </Head>
 
-      <body>
+      <body className={fonts}>
         <Main />
         <NextScript />
       </body>

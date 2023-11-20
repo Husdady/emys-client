@@ -5,7 +5,7 @@ import { ThemeProvider } from 'next-themes'
 import { PersistGate } from 'redux-persist/integration/react'
 
 // Hooks
-import useNprogressDone from '../hooks/useNprogressDone'
+import useNprogressDone from '@hooks/useNprogressDone'
 
 // Types
 import type { AppProps } from 'next/app'
@@ -13,7 +13,8 @@ import type { AppProps } from 'next/app'
 // Store config
 import { store, persistor } from '@config/store'
 
-// Constants
+// Data
+import fonts from '@assets/fonts'
 import { APP_NAME } from '@config/envs'
 
 // Styles
@@ -25,13 +26,15 @@ export default function EmysApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>{APP_NAME}, Variedad y Calidad</title>
+        <title>{`${APP_NAME}, Variedad y Calidad`}</title>
       </Head>
 
       <Provider store={store}>
         <PersistGate persistor={persistor} loading={null}>
           <ThemeProvider attribute="class">
-            <Component {...pageProps} />
+            <main className={fonts}>
+              <Component {...pageProps} />
+            </main>
           </ThemeProvider>
         </PersistGate>
       </Provider>

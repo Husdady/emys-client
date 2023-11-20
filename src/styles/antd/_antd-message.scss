@@ -1,0 +1,35 @@
+.ant-message {
+  z-index: 999999;
+
+  & > div {
+    & .ant-message-notice {
+      &-content {
+        @apply rounded dark:bg-slate-800 dark:shadow-none dark:border-2 dark:border-gray-600;
+
+        & .ant-message-custom-content {
+          @apply flex items-center font-bold dark:font-normal dark:text-gray-300;
+
+          & > span {
+            @apply font-poppins;
+          }
+
+          @media only screen and (max-width: 640px) {
+            @apply text-[0.9rem];
+          }
+
+          & .anticon-check-circle {
+            @apply dark:text-lime-500;
+          }
+
+          & .anticon-info-circle {
+            @apply dark:text-blue-500;
+          }
+
+          & .anticon-close-circle {
+            @apply dark:text-main-400;
+          }
+        }
+      }
+    }
+  }
+}

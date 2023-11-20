@@ -20,8 +20,6 @@ const UserRegistered = dynamic(() => import('./UserRegistered'))
 const InputText = dynamic(() => import('@components/InputText'))
 const SubmitButton = dynamic(() => import('@components/SubmitButton'))
 
-export const containerSubmitButtonStyle = { marginTop: '0.85rem' }
-
 export default function RegisterForm() {
   const { errors, submit, result, isValid, register, handleSubmit } = useRegisterForm()
 
@@ -74,7 +72,7 @@ export default function RegisterForm() {
         hasError={isString(errors.confirmPassword?.message)}
       />
 
-      <div style={containerSubmitButtonStyle}>
+      <div className="mt-[0.35rem]">
         <SubmitButton
           title="Crear cuenta"
           loadingTitle="Creando cuenta..."

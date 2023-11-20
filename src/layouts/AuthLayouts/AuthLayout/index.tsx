@@ -9,7 +9,7 @@ const AppLogo = dynamic(() => import('@modules/Auth/components/AppLogo'))
 
 export default function AuthLayout({ children }: OnlyChildrenProp) {
   return (
-    <main
+    <section
       id="auth-content"
       className="pt-[5.5rem] pb-[2.5rem] sm:pt-[7.5rem] xl:pt-[8.5rem] sm:pb-[5rem] xl:pb-[4rem] flex flex-col items-center justify-center h-full"
     >
@@ -17,6 +17,6 @@ export default function AuthLayout({ children }: OnlyChildrenProp) {
         <AppLogo />
         {children}
       </section>
-    </main>
+    </section>
   )
 }

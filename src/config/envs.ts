@@ -4,7 +4,7 @@ export const APP_NAME = process.env.APP_NAME
 export const PUBLIC_URL = process.env.PUBLIC_URL
 export const SECRET_PASSWORD = process.env.SECRET_PASSWORD
 export const DEVELOPER_LINKEDIN_URL = process.env.DEVELOPER_LINKEDIN_URL
-
+console.log({ API_URL })
 export const CONTACT_EMAIL_01 = process.env.CONTACT_EMAIL_01
 export const CONTACT_EMAIL_02 = process.env.CONTACT_EMAIL_02
 export const CONTACT_EMAIL_03 = process.env.CONTACT_EMAIL_03

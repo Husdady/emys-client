@@ -10,7 +10,7 @@ export default function RegisterLayout() {
     <>
       <RegisterForm />
 
-      <div className="pb-2 pt-3">
+      <div className="pt-3">
         <LinkToLogin />
       </div>
     </>

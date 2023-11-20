@@ -32,7 +32,7 @@ export default function useInputText({
   // Event 'onChange' in Container
   const handleOnChange = useMemo(
     () => (isUndefined(props.customInput?.onChange) ? props.onChange : props.customInput?.onChange),
-    [props.onChange, props.customInput?.onChange]
+    [props.onChange, props.customInput]
   )
 
   // Component settings
@@ -67,7 +67,7 @@ export default function useInputText({
       refInput.current = ref
       props?.customInput?.ref?.(ref)
     },
-    [refInput.current, props?.customInput?.ref]
+    [refInput.current, props?.customInput]
   )
 
   // Event 'keyDown' in Inner
@@ -93,13 +93,16 @@ export default function useInputText({
       // Define the shadow type
       const shadowType = hasError === true ? 'shadow-field-error' : 'shadow-field'
 
-      if (props.preventAutoComplete === true) e.target.removeAttribute('readOnly')
+      if (props.preventAutoComplete === true) {
+        e.target.removeAttribute('readOnly')
+      }
+
       props.onFocus?.(e)
 
       if (refInner.current === null) return
       refInner.current.classList.add(shadowType)
     },
-    [props.onFocus, refInner.current, props.preventAutoComplete]
+    [hasError, props.onFocus, refInner.current, props.preventAutoComplete]
   )
 
   // Event 'onBlur' at the Input tag
