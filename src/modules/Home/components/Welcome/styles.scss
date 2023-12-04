@@ -53,26 +53,6 @@
 
     & .welcome-image {
       @apply left-0 w-[375px] h-[300px] min-w-[375px] min-h-[300px];
-
-      @media only screen and (max-width: 475px) {
-        @apply w-[95%] h-[285px] min-w-[initial] min-h-[initial];
-      }
-
-      @media only screen and (max-width: 400px) {
-        @apply w-full;
-      }
-
-      @media only screen and (max-width: 350px) {
-        @apply h-[250px];
-      }
-
-      @media only screen and (max-width: 315px) {
-        @apply h-[230px];
-      }
-
-      @media only screen and (max-width: 290px) {
-        @apply h-[215px];
-      }
     }
 
     & .welcome-top-wave {
@@ -129,6 +109,28 @@
   @media only screen and (max-width: 300px) {
     & .main-wrapper-welcome {
       @apply px-2.5;
+    }
+  }
+
+  & .welcome-image {
+    @media only screen and (max-width: 475px) {
+      @apply w-[95%] h-[285px] min-w-[initial] min-h-[initial];
+    }
+
+    @media only screen and (max-width: 400px) {
+      @apply w-full;
+    }
+
+    @media only screen and (max-width: 350px) {
+      @apply h-[250px] min-w-[257px];
+    }
+
+    @media only screen and (max-width: 315px) {
+      @apply h-[230px];
+    }
+
+    @media only screen and (max-width: 290px) {
+      @apply h-[215px];
     }
   }
 }

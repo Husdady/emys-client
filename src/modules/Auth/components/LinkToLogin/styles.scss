@@ -1,0 +1,9 @@
+@media only screen and (max-width: 340px) {
+  .login-link-container {
+    @apply text-center;
+
+    & .link-to-login-form {
+      @apply ml-0 block;
+    }
+  }
+}

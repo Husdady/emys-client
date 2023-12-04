@@ -1,0 +1,49 @@
+.select,
+.multi-select {
+  &.multi-filter,
+  &.select-filter {
+    & .options-selected,
+    & .option-selected {
+      @apply dark:outline-gray-300/30 dark:border-gray-300/30;
+
+      @media only screen and (max-width: 640px) {
+        & > button {
+          @apply py-[0.18rem];
+        }
+      }
+    }
+
+    & .btn {
+      & > span {
+        @apply text-[0.8rem] leading-[35px];
+      }
+
+      & > .icon > svg {
+        @apply w-[17px] h-[17px];
+      }
+
+      & > .icon.sort-icon > svg {
+        @apply w-[13px] h-[13px];
+      }
+    }
+
+    & .select-options,
+    & .virtualized-options {
+      & .select-option,
+      & .virtualized-option-item {
+        & > .option,
+        & > .virtualized-option {
+          @media only screen and (min-width: 769px) {
+            @apply py-2;
+          }
+        }
+      }
+    }
+  }
+}
+
+.select.select-filter .btn,
+.multi-select.multi-filter .btn,
+.select-filters-fallback {
+  @apply min-h-[42px] max-h-[42px] sm:min-h-[35px] sm:max-h-[35px];
+}

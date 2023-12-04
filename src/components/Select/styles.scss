@@ -1,0 +1,73 @@
+// Mixins
+@import '@styles/mixins/select';
+
+.select {
+  @include select-button;
+
+  & .wrapper-options {
+    position: absolute !important;
+    @apply w-full mt-1 top-[100%] z-[9999];
+
+    & .select-options,
+    & .virtualized-options {
+      @include select-scrollbar;
+      @apply bg-white dark:bg-gray-900 rounded w-full border-t border-l border-gray-400 dark:border-gray-500;
+
+      & .select-option,
+      & .virtualized-option-item {
+        @apply w-full text-left dark:text-gray-300 dark:bg-gray-900;
+
+        &:hover {
+          & > .option,
+          & > .virtualized-option {
+            @apply bg-gray-200/80 dark:bg-gray-700;
+          }
+        }
+
+        &:hover,
+        &.active {
+          & > .option,
+          & > .virtualized-option {
+            @apply text-blue-700 dark:text-sky-200;
+          }
+        }
+
+        &.active {
+          & > .option,
+          & > .virtualized-option {
+            @apply cursor-default bg-blue-500/10 dark:text-sky-100 dark:bg-sky-900;
+          }
+        }
+
+        & > .option,
+        & > .virtualized-option {
+          word-break: normal;
+          @apply bg-transparent text-left w-full block font-poppins px-4 border-b border-r border-gray-400 dark:border-gray-500 leading-snug;
+        }
+      }
+    }
+  }
+
+  &:not(.select-filter) {
+    & .option,
+    & .virtualized-option {
+      @apply py-[0.65rem];
+    }
+
+    & .search-options {
+      font-size: 0.84rem;
+    }
+  }
+}
+
+@include mq-select-float-options(
+  '.select',
+  '.option',
+  '.select-option',
+  '.select-options',
+  '.virtualized-option',
+  '.virtualized-option-item',
+  '.virtualized-options'
+);
+
+@include mq-fix-width-select('.select', '.option', '.virtualized-option');

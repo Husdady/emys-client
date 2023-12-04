@@ -1,0 +1,16 @@
+.main-mobile-navigation {
+  @media only screen and (max-width: 500px) {
+    & .empty,
+    & .btn-float-contact,
+    & .btn-float-whatsapp {
+      @apply hidden;
+    }
+  }
+
+  @media only screen and (max-width: 350px) {
+    & .ant-switch,
+    & .btn-search-navigation-links {
+      display: none !important;
+    }
+  }
+}

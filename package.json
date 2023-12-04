@@ -16,6 +16,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@plaiceholder/next": "3.0.0",
     "@reduxjs/toolkit": "1.8.5",
     "@rtk-query/graphql-request-base-query": "2.2.0",
     "antd": "5.10.1",
@@ -26,20 +27,25 @@
     "million": "2.6.4",
     "nanoid": "4.0.0",
     "next": "14.0.1",
+    "next-auth": "4.24.5",
     "next-themes": "0.2.1",
     "nprogress": "0.2.0",
+    "plaiceholder": "3.0.0",
     "react": "18",
     "react-dom": "18",
     "react-hook-form": "7.36.1",
     "react-redux": "8.0.2",
+    "react-window": "1.8.9",
     "redux": "4.2.0",
-    "redux-persist": "6.0.0"
+    "redux-persist": "6.0.0",
+    "sharp": "0.32.6"
   },
   "devDependencies": {
     "@types/node": "20",
     "@types/nprogress": "0.2.3",
     "@types/react": "18",
     "@types/react-dom": "18",
+    "@types/react-window": "1.8.5",
     "autoprefixer": "10.0.1",
     "eslint": "8",
     "eslint-config-next": "14.0.1",

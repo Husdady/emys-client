@@ -28,7 +28,7 @@ export interface ForgotPasswordParams {
   setError?: UseFormSetError<ForgotPasswordFormState>
 }
 
-export interface ResetPasswordParams {
+export interface NewPasswordParams {
   token: string
   data: ResetPasswordFormState
   setError: UseFormSetError<ResetPasswordFormState>

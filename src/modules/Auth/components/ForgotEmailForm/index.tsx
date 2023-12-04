@@ -4,8 +4,8 @@ import Lock from '@assets/icons/lock'
 import Loader from '@components/Loader'
 import LockOpen from '@assets/icons/lock-open'
 import ShieldLock from '@assets/icons/shield-lock'
+import SubmitButton from '@components/SubmitButton'
 import FallbackItem from '@components/Fallback/FallbackItem'
-import SubmitFallback from '@components/SubmitButton/Fallback'
 
 // Hooks
 import useForgotEmailForm from './useForgotEmailForm'
@@ -20,10 +20,9 @@ import dynamic from 'next/dynamic'
 
 // Dynamic Components
 const Email = dynamic(() => import('./Email'), { loading: () => <Loader height="250px" /> })
-const SubmitButton = dynamic(() => import('@components/SubmitButton'), { loading: SubmitFallback })
 
 const InputText = dynamic(() => import('@components/InputText'), {
-  loading: () => <FallbackItem classComp="w-48" />
+  loading: () => <FallbackItem classComp="w-32" />
 })
 
 export default function ForgotEmailForm() {
@@ -60,8 +59,9 @@ export default function ForgotEmailForm() {
       />
 
       <SubmitButton
-        icon={<Lock size="sm" className="mr-1" />}
+        icon={<Lock size="sm" />}
         title="Solicitar mi correo electrónico"
+        className="gap-x-2 py-2.5 leading-tight"
         loadingTitle="Solicitando correo electrónico..."
         isShowingSpin={result.isLoading}
         disabled={!isValid}

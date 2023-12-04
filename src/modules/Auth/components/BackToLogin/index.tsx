@@ -1,17 +1,13 @@
 // Librarys
-import dynamic from 'next/dynamic'
+import { useCallback } from 'react'
 import { useRouter } from 'next/router'
-import { Suspense, useCallback } from 'react'
 
 // Components
 import Login from '@assets/icons/login'
-import Fallback from '@components/SubmitButton/Fallback'
+import SubmitButton from '@components/SubmitButton'
 
 // Constants
-import { LOGIN_PATH } from '@assets/paths'
-
-// Dynamic components
-const SubmitButton = dynamic(() => import('@components/SubmitButton'), { loading: Fallback })
+import { LOGIN_PATH } from '@assets/data/paths'
 
 export default function BackToLogin() {
   const router = useRouter()
@@ -20,13 +16,11 @@ export default function BackToLogin() {
   const navigateToLogin = useCallback(() => router.push(LOGIN_PATH), [])
 
   return (
-    <Suspense fallback={<Fallback />}>
-      <SubmitButton
-        type="button"
-        title="Volver al inicio de sesión"
-        icon={<Login size="md" className="mr-1" />}
-        onClick={navigateToLogin}
-      />
-    </Suspense>
+    <SubmitButton
+      type="button"
+      title="Volver al inicio de sesión"
+      icon={<Login size="md" className="mr-1" />}
+      onClick={navigateToLogin}
+    />
   )
 }

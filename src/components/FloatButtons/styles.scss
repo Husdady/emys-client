@@ -1,0 +1,43 @@
+// Font Awesome 5 PRO
+@import '@styles/fontawesome/icons.scss';
+
+.float-buttons {
+  transform: translateY(-50%);
+
+  @media only screen and (min-width: 1367px) {
+    right: calc((100% - 1366px) / 2);
+  }
+
+  @media only screen and (min-width: 1450px) {
+    right: calc((100% - 1200px) / 2);
+  }
+
+  @media only screen and (min-width: 1540px) {
+    right: calc((100% - 1300px) / 2);
+  }
+
+  & > button {
+    @apply flex items-center justify-center cursor-pointer hover:opacity-70;
+  }
+
+  & .btn-float-theme {
+    &::before {
+      font-family: 'Font Awesome 5 Pro';
+      @apply flex items-center justify-center font-black rounded-full cursor-pointer;
+    }
+
+    &.dark {
+      &::before {
+        content: '\f755';
+        @apply text-amber-300;
+      }
+    }
+
+    &.light {
+      &::before {
+        content: '\f185';
+        color: $light-bg;
+      }
+    }
+  }
+}

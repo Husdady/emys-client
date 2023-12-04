@@ -9,8 +9,6 @@ import type { AxiosBaseQueryResponse } from './types'
 import { APIResponse, APIBadResponse } from './interfaces'
 
 // Utils
-import isObject from '@utils/isObject'
-import isString from '@utils/isString'
 import isUndefined from '@utils/isUndefined'
 import AxiosValidations from './validations'
 
@@ -79,19 +77,19 @@ export const axiosBaseQuery = (): AxiosBaseQueryResponse => {
 }
 
 /**
- * Save token in axios
+ * Save token in Axios
  * @param token Access token
  * @return {void} Void
  */
-export function saveBearerTokenOnAxios(token: string): void {
+export function saveTokenOnAxios(token: string): void {
   instance.defaults.headers.common.Authorization = `Bearer ${token}`
 }
 
 /**
- * Remove axios token
+ * Remove Axios token
  * @return {void} Void
  */
-export function removeBearerTokenFromAxios(): void {
+export function removeTokenFromAxios(): void {
   delete instance.defaults.headers.common.Authorization
 }
 
@@ -111,42 +109,4 @@ export function addFormDataToPutRequestOnAxios(): void {
 export function removeFormDataToPutRequestOnAxios(): void {
   delete instance.defaults.headers.common.Accept
   delete instance.defaults.headers.common['Content-Type']
-}
-
-/**
- * Get token from localstorage
- * @param {string} REDUX_KEY Redux Key
- * @return {string | undefined} Token
- */
-export function getTokenFromLocalStorage(REDUX_KEY: string): string | undefined {
-  if (typeof window === 'undefined') return
-
-  // Get 'storage'
-  const storage = window.localStorage.getItem('persist:' + REDUX_KEY)
-  if (storage === null) return // Terminate the function if the 'storage' does not exist
-
-  // Convert 'storage' from string to object
-  const store = JSON.parse(storage)
-
-  // End function if the 'auth' property does not exist in the 'store'
-  if (!isObject(store) || (isObject(store) && !('auth' in store))) return
-
-  // Convert 'auth' from string to object
-  const auth = JSON.parse(store.auth)
-  if (!isObject(auth) || (isObject(auth) && !('token' in auth))) return // End function if token does not exist
-
-  return auth.token
-}
-
-/**
- * Load token from localstorage in Axios
- * @param {string} REDUX_KEY Redux Key
- * @return {void} Void
- */
-export function loadBearerTokenOnAxios(REDUX_KEY: string): void {
-  // Get token and validates it
-  const token = getTokenFromLocalStorage(REDUX_KEY)
-  if (!isString(token)) return
-
-  saveBearerTokenOnAxios(token)
 }

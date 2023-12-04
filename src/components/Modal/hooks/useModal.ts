@@ -1,5 +1,5 @@
 // Librarys
-import { useCallback } from 'react'
+import { useMemo, useCallback } from 'react'
 
 // Hooks
 import useModalContext from '@hooks/useModal'
@@ -10,22 +10,26 @@ import useModalContext from '@hooks/useModal'
 export default function useModal() {
   const { onAccept, onCancel, onCloseModal, hideModal, ...modal } = useModalContext()
 
+  // Define 'getContainer' prop
+  const getContainer = useMemo(() => window.innerWidth <= 900 ? '#root' : undefined, [])  
+
   // Callback for close the modal
   const handleClose = useCallback(() => {
     onCloseModal?.()
     hideModal()
-  }, [onCloseModal])
+  }, [hideModal, onCloseModal])
 
   // Event 'click' in 'Cancel' button
   const handleCancel = useCallback(() => {
     onCancel?.()
     hideModal()
-  }, [onCancel])
+  }, [onCancel, hideModal])
 
   return {
     ...modal,
     onAccept: onAccept,
     handleClose: handleClose,
-    handleCancel: handleCancel
+    handleCancel: handleCancel,
+    getContainer: getContainer
   }
 }

@@ -1,28 +1,5 @@
-$dark-bg: #2c2c2c;
-$light-bg: #e98d1a;
-
-.fa-sun:before {
-  content: '\f185';
-}
-
-.fa-moon-stars:before {
-  content: '\f755';
-}
-
-@font-face {
-  font-family: 'Font Awesome 5 Pro';
-  font-style: normal;
-  font-weight: 900;
-  font-display: block;
-  src: url(https://pro.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.eot);
-  src: url(https://pro.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.eot?#iefix)
-      format('embedded-opentype'),
-    url(https://pro.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.woff2) format('woff2'),
-    url(https://pro.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.woff) format('woff'),
-    url(https://pro.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.ttf) format('truetype'),
-    url(https://pro.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.svg#fontawesome)
-      format('svg');
-}
+// Font Awesome 5 PRO
+@import '@styles/fontawesome/icons.scss';
 
 .ant-switch {
   &,
@@ -33,7 +10,7 @@ $light-bg: #e98d1a;
 
 button.select-theme {
   &.ant-switch {
-    @apply  will-change-auto;
+    @apply will-change-auto;
 
     &,
     &:hover {
@@ -43,14 +20,9 @@ button.select-theme {
     & .ant-switch-handle {
       &::before {
         content: '\f755';
-        @apply bg-black;
         color: $light-bg;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        font-weight: 900;
         font-family: 'Font Awesome 5 Pro';
+        @apply flex items-center justify-center bg-black font-black rounded-full;
       }
     }
 

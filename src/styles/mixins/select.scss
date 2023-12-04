@@ -1,0 +1,117 @@
+@mixin select-button {
+  & .search-options {
+    @apply mb-1;
+  }
+
+  & .btn {
+    @apply min-h-[43px] w-full justify-between pl-4 pr-[0.87rem] flex-nowrap bg-white py-0 flex-row-reverse dark:bg-gray-900 dark:text-gray-300;
+
+    & > span {
+      @apply truncate;
+    }
+
+    & > .icon > svg {
+      @apply text-gray-500 dark:text-gray-400 dark:text-gray-300;
+    }
+
+    & > .icon.sort-icon > svg {
+      @apply w-[13px] h-[13px];
+    }
+
+    &:active {
+      transform: none;
+    }
+
+    &:disabled {
+      @apply opacity-100 bg-gray-100 dark:bg-gray-700;
+    }
+  }
+}
+
+@mixin select-scrollbar {
+  &::-webkit-scrollbar {
+    @apply bg-gray-200;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @apply bg-gray-400;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500;
+  }
+}
+
+@mixin mq-select-float-options(
+  $selectSelector,
+  $optionSelector,
+  $liOptionSelector,
+  $optionsSelector,
+  $virtualizedOptionSelector,
+  $virtualizedLiOptionSelector,
+  $virtualizedOptionsSelector
+) {
+  @media only screen and (max-width: 768px) {
+    #{$selectSelector} {
+      & .wrapper-options {
+        position: fixed !important;
+        min-height: 75vh;
+        max-height: 75vh !important;
+        transform: translate(-50%, -50%);
+
+        @apply w-[70%] border-0 max-w-[350px] mx-auto h-[700px] mt-0 top-[50%] left-[50%];
+
+        & .search-options {
+          @apply shadow-lg;
+        }
+
+        & #{$optionsSelector},
+        & #{$virtualizedOptionsSelector} {
+          @apply shadow-xl min-h-[65vh];
+        }
+
+        & #{$liOptionSelector},
+        & #{$virtualizedLiOptionSelector} {
+          & > #{$optionSelector},
+          & > #{$virtualizedOptionSelector} {
+            @apply text-[1.25rem] border-gray-300 px-5 py-3 border-r-0 dark:border-gray-500;
+
+            &::last-of-type {
+              @apply border-b;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin mq-fix-width-select($selectSelector, $optionSelector, $virtualizedOptionSelector) {
+  @media only screen and (max-width: 480px) {
+    #{$selectSelector} {
+      & .wrapper-options {
+        width: 80%;
+      }
+
+      & #{$optionSelector},
+      & #{$virtualizedOptionSelector} {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    #{$selectSelector} {
+      & .wrapper-options {
+        width: 90%;
+      }
+
+      & #{$optionSelector},
+      & #{$virtualizedOptionSelector} {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+      }
+    }
+  }
+}

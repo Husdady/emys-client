@@ -3,7 +3,7 @@
  * @param {unknown} array Array as param
  * @returns {boolean} Boolean
  */
-export function isEmptyArray(array: unknown): array is [] {
+export default function isEmptyArray(array: unknown): array is [] {
   if (!Array.isArray(array)) return false
   return array.length === 0
 }

@@ -6,14 +6,26 @@
 
     @media screen and (max-width: 1200px) {
     }
+
+    @media screen and (min-width: 1450px) {
+      @apply min-w-[1200px] max-w-[1200px];
+    }
+
+    @media screen and (min-width: 1536px) {
+      @apply min-w-[1300px] max-w-[1300px];
+    }
+  }
+
+  & .home-icon,
+  & .products-icon,
+  & .testimonials-icon {
+    & svg {
+      @apply dark:stroke-[0.09875rem];
+    }
   }
 
   & .btn-login {
     transition: all linear 0.1s;
-
-    &:hover {
-      @apply text-pink-100;
-    }
   }
 
   @media only screen and (max-width: 600px) {

@@ -5,8 +5,14 @@ import { combineReducers } from 'redux'
 import { loginApi } from '@modules/Auth/api/login'
 import { registerApi } from '@modules/Auth/api/register'
 import { forgotEmailApi } from '@modules/Auth/api/forgot-email'
-import { resetPasswordApi } from '@modules/Auth/api/reset-password'
 import { forgotPasswordApi } from '@modules/Auth/api/forgot-password'
+import { resetPasswordApi } from '@modules/Auth/api/reset-password'
+
+// GraphQL states
+import { regionsGraphqlApi } from '@modules/Ubigeo/api/regions/graphql'
+import { countriesGraphqlApi } from '@modules/Ubigeo/api/countries/graphql'
+import { provincesGraphqlApi } from '@modules/Ubigeo/api/provinces/graphql'
+import { districtsGraphqlApi } from '@modules/Ubigeo/api/districts/graphql'
 
 // Global states
 import { modalSlice } from './states/modal'
@@ -24,7 +30,13 @@ const reducers = combineReducers({
   [registerApi.reducerPath]: registerApi.reducer,
   [forgotEmailApi.reducerPath]: forgotEmailApi.reducer,
   [resetPasswordApi.reducerPath]: resetPasswordApi.reducer,
-  [forgotPasswordApi.reducerPath]: forgotPasswordApi.reducer
+  [forgotPasswordApi.reducerPath]: forgotPasswordApi.reducer,
+
+  // GraphQL API
+  [regionsGraphqlApi.reducerPath]: regionsGraphqlApi.reducer,
+  [countriesGraphqlApi.reducerPath]: countriesGraphqlApi.reducer,
+  [provincesGraphqlApi.reducerPath]: provincesGraphqlApi.reducer,
+  [districtsGraphqlApi.reducerPath]: districtsGraphqlApi.reducer
 })
 
 export default reducers

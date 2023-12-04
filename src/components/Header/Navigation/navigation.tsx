@@ -9,17 +9,21 @@ import ReportMedical from '@root/src/assets/icons/report-medical'
 import Mail from '@root/src/assets/icons/mail'
 
 const navigation: NavigationLinkProps[] = [
-  { icon: <Home className="smd" />, href: '/', text: 'Inicio' },
-  { icon: <BoxSeam className="smd" />, href: '/productos', text: 'Productos' },
+  { icon: <Home className="smd home-icon" />, href: '/', text: 'Inicio' },
   {
-    icon: <Users className="smx stroke-3" />,
-    href: '/programa-de-afiliados',
-    text: 'Programa de Afiliados'
+    text: 'Productos',
+    href: '/productos',
+    icon: <BoxSeam className="smd products-icon" />
   },
   {
-    icon: <ReportMedical className="smd" />,
+    text: 'Programa de Afiliados',
+    href: '/programa-de-afiliados',
+    icon: <Users className="smx stroke-3" />
+  },
+  {
+    text: 'Testimonios Omnilife',
     href: '/testimonios-omnilife',
-    text: 'Testimonios Omnilife'
+    icon: <ReportMedical className="smd testimonials-icon" />
   },
   { icon: <Mail className="smx" />, href: '/contacto', text: 'Contacto' }
 ]

@@ -1,0 +1,68 @@
+// Mixins
+@import '@styles/mixins/select';
+
+.multi-select {
+  @include select-button;
+
+  & .wrapper-options {
+    cursor: default;
+    position: absolute !important;
+    @apply w-full mt-1 top-[100%] z-[9999];
+
+    & .checkbox-options,
+    & .virtualized-checkbox-options {
+      @include select-scrollbar;
+      @apply bg-white dark:bg-gray-900 rounded w-full border-t border-l border-gray-400 dark:border-gray-500;
+    }
+
+    & .checkbox-option-item,
+    & .virtualized-checkbox-option-item {
+      @apply w-full text-left dark:bg-gray-900;
+
+      & > .checkbox-option {
+        @apply py-3;
+      }
+
+      & > .checkbox-option,
+      & > .virtualized-checkbox-option {
+        word-break: normal;
+        @apply bg-transparent cursor-default text-left w-full h-full font-poppins px-4 border-b border-r border-gray-400 dark:border-gray-500 leading-snug;
+
+        & > label {
+          @apply font-normal dark:text-gray-300 truncate;
+        }
+
+        & .inner,
+        & > label {
+          @apply cursor-pointer;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .multi-select {
+    & input[type='checkbox'] {
+      width: 1.15rem !important;
+      height: 1.15rem !important;
+    }
+
+    & .inner svg {
+      width: 12px !important;
+      height: 12px !important;
+    }
+  }
+}
+
+@include mq-select-float-options(
+  '.multi-select',
+  '.checkbox-option',
+  '.checkbox-option-item',
+  '.checkbox-options',
+  '.virtualized-checkbox-option',
+  '.virtualized-checkbox-option-item',
+  '.virtualized-checkbox-options'
+);
+
+@include mq-fix-width-select('.multi-select', '.checkbox-option', '.virtualized-checkbox-option');

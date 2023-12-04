@@ -1,18 +1,17 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 // Librarys
-import { Suspense } from 'react'
+import dynamic from 'next/dynamic'
 
 // Components
-import Loader from '@components/Loader'
-import InputFallback from '@components/Fallback'
-import SubmitFallback from '@components/SubmitButton/Fallback'
 import Lock from '@assets/icons/lock'
+import Loader from '@components/Loader'
+import SubmitButton from '@components/SubmitButton'
+import FallbackItem from '@components/Fallback/FallbackItem'
 
 // Hooks
 import useForgotPasswordForm from '@modules/Auth/components/ForgotPasswordForm/useForgotPasswordForm'
 
 // Utils
-import lazy from '@utils/lazy'
 import isString from '@utils/isString'
 import isEmptyObject from '@utils/isEmptyObject'
 import getFormError from '@utils/getFormError'
@@ -21,9 +20,13 @@ import getFormError from '@utils/getFormError'
 import { label } from './constants'
 
 // Lazy Components
-const InputText = lazy(() => import('@components/InputText'))
-const SubmitButton = lazy(() => import('@components/SubmitButton'))
-const VerificationSended = lazy(() => import('./VerificationSended'))
+const InputText = dynamic(() => import('@components/InputText'), {
+  loading: () => <FallbackItem classLabel="w-44" />
+})
+
+const VerificationSended = dynamic(() => import('./VerificationSended'), {
+  loading: () => <Loader height="200px" />
+})
 
 export default function ForgotPasswordForm() {
   const { errors, result, register, submit, isSended, handleSubmit, sendAgainVerification } =
@@ -31,13 +34,11 @@ export default function ForgotPasswordForm() {
 
   if (isSended) {
     return (
-      <Suspense fallback={<Loader height="200px" />}>
-        <VerificationSended
-          isLoading={result.isLoading}
-          message={result.data?.message}
-          sendAgainVerification={sendAgainVerification}
-        />
-      </Suspense>
+      <VerificationSended
+        isLoading={result.isLoading}
+        message={result.data?.message}
+        sendAgainVerification={sendAgainVerification}
+      />
     )
   }
 
@@ -47,26 +48,23 @@ export default function ForgotPasswordForm() {
       onSubmit={handleSubmit(submit)}
       className="forgot-password-form mb-2 sm:mb-0 flex flex-col gap-y-4"
     >
-      <InputFallback classLabel="w-44">
-        <InputText
-          type="email"
-          label={label}
-          preventAutoComplete
-          customInput={register('email')}
-          error={getFormError('email', errors)}
-          hasError={isString(errors.email?.message)}
-        />
-      </InputFallback>
+      <InputText
+        type="email"
+        label={label}
+        preventAutoComplete
+        customInput={register('email')}
+        error={getFormError('email', errors)}
+        hasError={isString(errors.email?.message)}
+      />
 
-      <Suspense fallback={<SubmitFallback />}>
-        <SubmitButton
-          title="Solicitar cambio de contraseña"
-          loadingTitle="Solicitando cambio de contraseña..."
-          icon={<Lock size="sm" className="mr-1" />}
-          disabled={result.isSuccess || !isEmptyObject(errors)}
-          isShowingSpin={result.isLoading}
-        />
-      </Suspense>
+      <SubmitButton
+        icon={<Lock size="sm" />}
+        title="Solicitar cambio de contraseña"
+        className="gap-x-2 py-2.5 leading-tight"
+        loadingTitle="Solicitando cambio de contraseña..."
+        disabled={result.isSuccess || !isEmptyObject(errors)}
+        isShowingSpin={result.isLoading}
+      />
     </form>
   )
 }

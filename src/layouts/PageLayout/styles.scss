@@ -1,0 +1,16 @@
+// Styles
+@import '@styles/mixins/background';
+
+html {
+  @media screen and (min-width: 641px) {
+    & .main-section {
+      @include light-background;
+    }
+
+    &.dark {
+      & .main-section {
+        @include dark-background;
+      }
+    }
+  }
+}

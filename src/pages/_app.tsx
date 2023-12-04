@@ -14,13 +14,13 @@ import type { AppProps } from 'next/app'
 import { store, persistor } from '@config/store'
 
 // Data
-import fonts from '@assets/fonts'
+import fonts from '@root/src/assets/data/fonts'
 import { APP_NAME } from '@config/envs'
 
 // Styles
 import '@styles/global.scss'
 
-export default function EmysApp({ Component, pageProps }: AppProps) {
+export default function EmysApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   useNprogressDone()
 
   return (

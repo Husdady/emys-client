@@ -15,7 +15,7 @@ export default function ForgotPasswordLayout() {
     <>
       <ForgotPasswordForm />
 
-      <div className="pl-2 pr-2 pt-3">
+      <div className="pt-3">
         <LinkToForgottenEmailRecovery />
         <LinkToRegister />
         <LinkToLogin />

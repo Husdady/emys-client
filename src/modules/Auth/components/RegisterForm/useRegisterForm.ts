@@ -1,5 +1,5 @@
 // Librarys
-import { saveBearerTokenOnAxios } from '@libs/axios'
+import { saveTokenOnAxios } from '@libs/axios'
 import { showFloatInfoMessage } from '@libs/antd/message'
 
 // Hooks
@@ -77,6 +77,8 @@ export default function useRegisterForm() {
     params.set(EMAIL_QUERY_PARAM, formState.email)
     params.set(STATUS_QUERY_PARAM, String(status))
     params.set(MESSAGE_ID_QUERY_PARAM, String(messageId))
+
+    saveTokenOnAxios(token) // Save token on axios
   }, [])
 
   useMounted(() => {

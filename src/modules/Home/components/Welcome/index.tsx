@@ -12,7 +12,7 @@ import classnames from '@utils/classnames'
 
 // Constants
 import { APP_NAME } from '@config/envs'
-import { Mansalva } from '@assets/fonts'
+import { Mansalva } from '@root/src/assets/data/fonts'
 
 // Images
 import woman from '@assets/images/woman.webp'
@@ -59,6 +59,7 @@ function Welcome() {
                 </span>{' '}
                 a buen precio
               </h4>
+
               <q className="welcome-message relative font-semibold text-[1.1rem] text-indigo-700 bg-white block py-2 px-3 rounded-bl-xl rounded-br-xl shadow-xl font-lexend dark:text-indigo-200 dark:bg-gray-800 dark:font-normal">
                 <div className="absolute top-[-10px] right-[-10px] bg-lime-500 rounded-full w-[27px] h-[27px] sm:w-[24px] sm:h-[24px] flex items-center justify-center">
                   <CircleCheck size="smaller" className="circle-check text-white" />
@@ -69,6 +70,7 @@ function Welcome() {
                   productos para la salud y el cuidado personal, entre otros productos.
                 </span>
               </q>
+
               <Link
                 href="/productos"
                 title="Navegar a la sección de productos"

@@ -1,0 +1,22 @@
+.ant-tooltip {
+  @apply z-[999999999];
+
+  & .ant-tooltip-inner {
+    @apply dark:border-2 dark:border-slate-700 z-[999999999] font-poppins;
+  }
+
+  @media only screen and (max-width: 412px) {
+    &.ant-zoom-big-fast-leave,
+    &.ant-zoom-big-fast-leave-active {
+      display: none !important;
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
+
+html.dark {
+  .ant-tooltip-arrow-content {
+    --antd-arrow-background-color: #334155 !important;
+  }
+}

@@ -1,38 +1,42 @@
 // Librarys
-import { Suspense } from 'react'
+import dynamic from 'next/dynamic'
 
 // Components
 import Fallback from './Fallback'
-import Button from '@components/Button'
 
 // Interfaces
 import { SubmitButtonProps } from './types'
 
+// Utils
+import classnames from '@utils/classnames'
+
 // Constants
 import { SubmitButtonProps as Props } from './constants'
+
+// Dynamic Components
+const Button = dynamic(() => import('@components/Button'), { loading: () => <Fallback /> })
 
 export default function SubmitButton({
   type = Props.TYPE,
   icon,
   title,
-  disabled,
-  isShowingSpin,
   onClick,
-  loadingTitle
+  disabled,
+  className,
+  loadingTitle,
+  isShowingSpin
 }: SubmitButtonProps) {
   return (
-    <Suspense fallback={<Fallback />}>
-      <Button
-        icon={icon}
-        type={type}
-        title={title}
-        onClick={onClick}
-        disabled={disabled}
-        isShowingSpin={isShowingSpin}
-        loadingTitle={loadingTitle}
-        className={Props.CLASSNAME}
-        customTitle={Props.CUSTOM_TITLE}
-      />
-    </Suspense>
+    <Button
+      icon={icon}
+      type={type}
+      title={title}
+      onClick={onClick}
+      disabled={disabled}
+      isShowingSpin={isShowingSpin}
+      loadingTitle={loadingTitle}
+      customTitle={Props.CUSTOM_TITLE}
+      className={classnames([className, Props.CLASSNAME])}
+    />
   )
 }

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // Librarys
-import { saveBearerTokenOnAxios } from '@libs/axios'
-import { saveBearerTokenOnGraphqlClient } from '@libs/graphql'
+import { saveTokenOnAxios } from '@libs/axios'
+import { saveTokenOnGraphqlClient } from '@libs/graphql'
 import {
   showFloatInfoMessage,
   showFloatErrorMessage,
@@ -64,8 +64,8 @@ export default class AxiosValidations {
 
     // Check if exists a 'refreshToken'
     if (isString(refreshToken)) {
-      saveBearerTokenOnAxios(refreshToken)
-      saveBearerTokenOnGraphqlClient(refreshToken)
+      saveTokenOnAxios(refreshToken)
+      saveTokenOnGraphqlClient(refreshToken)
     }
   }
 

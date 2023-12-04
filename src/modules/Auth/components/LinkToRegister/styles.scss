@@ -1,0 +1,13 @@
+@media only screen and (max-width: 340px) {
+  .register-link-container {
+    @apply text-center;
+
+    & .text {
+      @apply mr-0
+    }
+
+    & .link-to-register-form {
+      @apply block mt-[0.1rem];
+    }
+  }
+}

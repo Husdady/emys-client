@@ -11,7 +11,7 @@ const NavigationLink = dynamic(() => import('./NavigationLink'))
 
 function NavigationLinks() {
   return (
-    <ul className="navigation-links flex text-main-700 font-semibold gap-x-2">
+    <ul className="navigation-links flex text-main-700 font-semibold dark:font-medium gap-x-2 dark:text-pink-300">
       {navigation
         .map((link) => ({ id: createId(), ...link }))
         .map((link) => (

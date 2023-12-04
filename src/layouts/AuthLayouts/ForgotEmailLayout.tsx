@@ -11,7 +11,7 @@ export default function ForgotEmailLayout() {
     <>
       <ForgotEmailForm />
 
-      <div className="pl-2 pr-2 pt-3">
+      <div className="pt-3">
         <LinkToRegister />
         <LinkToLogin />
       </div>

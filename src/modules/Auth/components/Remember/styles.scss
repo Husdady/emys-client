@@ -1,6 +1,6 @@
 #auth-content {
   & .remember {
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 358px) {
       @apply flex-wrap justify-end gap-y-2.5;
     }
   }

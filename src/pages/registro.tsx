@@ -1,5 +1,5 @@
 // Layouts
-import MainLayout from '@layouts/MainLayout'
+import MainLayout from '@root/src/layouts/MainLayout'
 import AuthLayout from '@layouts/AuthLayouts/AuthLayout'
 import RegisterLayout from '@layouts/AuthLayouts/RegisterLayout'
 

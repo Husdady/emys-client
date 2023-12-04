@@ -5,6 +5,7 @@ import React from 'react'
 import { ChangeParams } from '@components/Upload/interfaces'
 import { InputErrorProps } from '@components/InputError/interfaces'
 import { InputLabelProps } from '@components/InputLabel/interfaces'
+import { APIResponse, APIBadResponse } from '@libs/axios/interfaces'
 
 export interface UnknownObj {
   [key: string]: unknown
@@ -36,6 +37,10 @@ export interface OnlyErrorProp {
 
 export interface OnlyMessageProp {
   message: string
+}
+
+export interface LoaderResponse {
+  apiResponse: APIResponse | APIBadResponse | null
 }
 
 export interface TitleProp<T extends HTMLElement = HTMLSpanElement> {

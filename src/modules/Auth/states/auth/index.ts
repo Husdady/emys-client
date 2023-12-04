@@ -1,13 +1,15 @@
 // Librarys
 import { createSlice } from '@reduxjs/toolkit'
-import { removeBearerTokenFromAxios } from '@libs/axios'
-import { removeBearerTokenFromGraphqlClient } from '@libs/graphql'
+import { removeTokenFromAxios } from '@libs/axios'
+import { removeTokenFromGraphqlClient } from '@libs/graphql'
 
 // Types
 import type { PayloadAction } from '@reduxjs/toolkit'
 
 // Interfaces
 import { User, AuthState, AuthPayload } from './interfaces'
+
+export const AUTH_KEY = 'auth'
 
 const initialState: AuthState = {
   user: null,
@@ -16,7 +18,7 @@ const initialState: AuthState = {
 }
 
 export const authSlice = createSlice({
-  name: 'auth',
+  name: AUTH_KEY,
   initialState: initialState,
   reducers: {
     // Authenticate user
@@ -43,8 +45,8 @@ export const authSlice = createSlice({
     signOut: (state) => {
       state.user = initialState.user // Reset user info
       state.token = initialState.token // Remove token
-      removeBearerTokenFromAxios() // Remove token from axios
-      removeBearerTokenFromGraphqlClient() // Remove token from GraphQL client
+      removeTokenFromAxios() // Remove token from axios
+      removeTokenFromGraphqlClient() // Remove token from GraphQL client
 
       return state
     }

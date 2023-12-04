@@ -1,0 +1,42 @@
+// Styles
+@import '@styles/mixins/background';
+
+#auth-content {
+  @media screen and (min-width: 1080px) {
+    @apply min-h-[100vh];
+  }
+
+  @media only screen and (max-width: 450px) {
+    @apply border-b border-gray-200 dark:border-gray-500;
+  }
+}
+
+html {
+  & #auth-content {
+    @include light-background;
+
+    @media screen and (max-width: 450px) {
+      @apply py-0 mt-[61px];
+
+      & > .auth-container {
+        @apply w-full border-none max-w-full h-full rounded-none;
+
+        & > .loader-container {
+          min-height: 100vh !important;
+        }
+      }
+    }
+
+    @media screen and (max-width: 375px) {
+      & > .auth-container {
+        @apply px-3;
+      }
+    }
+  }
+
+  &.dark {
+    & #auth-content {
+      @include dark-background;
+    }
+  }
+}

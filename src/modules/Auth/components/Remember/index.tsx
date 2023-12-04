@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic'
 import { LoginRememberProps } from './interfaces'
 
 // Constants
-import { FORGOT_PASSWORD_PATH } from '@assets/paths'
+import { FORGOT_PASSWORD_PATH } from '@assets/data/paths'
 
 // Dynamic Components
 const Link = dynamic(() => import('@components/Link'))

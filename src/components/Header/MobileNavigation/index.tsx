@@ -10,7 +10,7 @@ import MagnifyingGlass from '@assets/icons/magnifying-glass'
 import useTheme from '@hooks/useTheme'
 
 // Constants
-import { HOME_PATH } from '@assets/paths'
+import { HOME_PATH } from '@assets/data/paths'
 
 // Images
 import logo from '@assets/images/logo.webp'
@@ -22,21 +22,25 @@ const Menu = dynamic(() => import('@assets/icons/menu'))
 const Button = dynamic(() => import('@components/Button'))
 const SwitchTheme = dynamic(() => import('@components/SwitchTheme'))
 const UserCircleSolid = dynamic(() => import('@assets/icons/user-circle-solid'))
+const ContactButton = dynamic(() => import('@components/FloatButtons/ContactButton'))
+const WhatsappButton = dynamic(() => import('@components/FloatButtons/WhatsappButton'))
 
 function MobileNavigation() {
   const { isLightTheme } = useTheme()
 
   return (
-    <nav className="min-h-[60px] main-mobile-navigation top-0 sm:top-[1.5rem] fixed mx-auto left-0 right-0 navigation flex gap-x-[1.5rem] justify-between font-poppins bg-white shadow-xl items-center py-1 pl-4 pr-[0.3rem] z-[9999] overflow-y-hidden overflow-x-auto whitespace-nowrap sm:mx-[2rem] sm:max-w-[970px] lg:mx-auto sm:rounded-full sm:pl-6 sm:pr-[0.55rem] dark:bg-black border-b border-gray-200 dark:border-gray-600 sm:border-none">
+    <nav className="min-h-[60px] main-mobile-navigation top-0 sm:top-[1.5rem] fixed mx-auto left-0 right-0 navigation flex gap-x-[1.5rem] justify-between font-poppins bg-white shadow-xl items-center py-1 pl-4 pr-[0.15rem] sm:pr-[0.3rem] z-[9999] overflow-y-hidden overflow-x-auto whitespace-nowrap sm:mx-[2rem] sm:max-w-[970px] lg:mx-auto sm:rounded-full sm:pl-6 sm:pr-[0.55rem] dark:bg-black border-b border-gray-200 dark:border-gray-600 sm:border-none">
       <div className="flex items-center gap-x-5">
         <Button
           title=""
           icon={<Menu size="xl" className="stroke-3" />}
-          className="btn-menu scale py-1.5 !px-2 rounded bg-gray-200 text-main-700 dark:bg-gray-700 dark:text-main-200"
+          className="btn-menu scale py-1.5 !px-2 rounded bg-gray-200 text-main-700 dark:bg-gray-700/80 dark:text-main-200"
         />
 
         <SwitchTheme />
       </div>
+
+      <div className='empty'></div>
 
       <Link href={HOME_PATH}>
         <Image
@@ -56,6 +60,9 @@ function MobileNavigation() {
           icon={<MagnifyingGlass size="smd" />}
           className="btn-search-navigation-links py-3 bg-transparent !px-3 text-gray-600 dark:text-gray-400"
         />
+
+        <ContactButton className="mx-2" />
+        <WhatsappButton className="mx-2" />
 
         <Button
           title=""

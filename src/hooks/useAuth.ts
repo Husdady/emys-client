@@ -38,8 +38,5 @@ export default function useAuth(): AuthContext {
     []
   )
 
-  return {
-    ...auth,
-    ...actions
-  }
+  return { ...auth, ...actions }
 }

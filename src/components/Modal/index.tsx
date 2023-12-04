@@ -10,7 +10,7 @@ import CircleXmarkSolid from '@assets/icons/circle-xmark-solid'
 import useModal from './hooks/useModal'
 
 // Constants
-import { modalStyle, ModalContainer } from './constants'
+import { modalStyle } from './constants'
 
 // Styles
 import './styles/main.scss'
@@ -28,6 +28,7 @@ function Modal() {
     onAccept,
     handleClose,
     handleCancel,
+    getContainer,
     isShowingAcceptButton,
     isShowingCancelButton,
     acceptButtonProps,
@@ -47,7 +48,7 @@ function Modal() {
       maskTransitionName="none"
       style={modalStyle}
       onCancel={handleCancel}
-      getContainer={ModalContainer}
+      getContainer={getContainer}
       title={
         <Suspense fallback={null}>
           <ModalTitle icon={icon} title={title} />
