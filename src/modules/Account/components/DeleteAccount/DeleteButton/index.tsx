@@ -21,7 +21,7 @@ export default function DeleteAccountButton() {
   const { showModal } = useModal()
 
   // Event click on button for create new role
-  const handleGetUserConsent = useCallback(() => {
+  const handleShowDeleteModal = useCallback(() => {
     showModal({
       width: 500,
       icon: <AlertTriangle />,
@@ -43,7 +43,7 @@ export default function DeleteAccountButton() {
       titlePopup="Cerrar mi cuenta"
       className="!py-3 !px-4 ml-auto bg-red-600 hover:bg-rose-500 dark:hover:bg-rose-700 dark:bg-red-800 text-white rounded-xl"
       icon={<Power size="sm" className="stroke-3" />}
-      onClick={handleGetUserConsent}
+      onClick={handleShowDeleteModal}
     />
   )
 }

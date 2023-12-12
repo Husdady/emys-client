@@ -55,7 +55,6 @@
     #{$selectSelector} {
       & .wrapper-options {
         position: fixed !important;
-        max-height: 75vh !important;
         transform: translate(-50%, -50%);
 
         @apply w-[70%] border-0 max-w-[350px] mx-auto mt-0 top-[50%] left-[50%];

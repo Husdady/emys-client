@@ -1,8 +1,8 @@
 // Components
-import Mail from '@assets/icons/mail'
 import Home from '@assets/icons/home'
 import Users from '@assets/icons/users'
 import BoxSeam from '@assets/icons/box-seam'
+import HeadPhones from '@assets/icons/headphones'
 import ReportMedical from '@assets/icons/report-medical'
 
 // Interfaces
@@ -25,7 +25,7 @@ const navigation: NavigationLinkProps[] = [
     href: '/testimonios-omnilife',
     icon: <ReportMedical className="smd testimonials-icon" />
   },
-  { icon: <Mail className="smx" />, href: '/contacto', text: 'Contacto' }
+  { icon: <HeadPhones className="smx" />, href: '/contacto', text: 'Contacto' }
 ]
 
 export default navigation

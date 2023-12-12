@@ -20,13 +20,13 @@ $sizes: (
 
     &.clear-icon {
       z-index: 1;
-      @apply relative;
+      @apply relative after:bg-gray-300/40 dark:after:bg-gray-500/40;
 
       &::after {
         content: '';
         z-index: -1;
         transform: translate(-50%, -50%);
-        @apply absolute opacity-0 bg-gray-300/40 dark:bg-gray-500/40 w-full h-full top-[50%] left-[50%] p-[0.75rem] rounded-full;
+        @apply absolute opacity-0 w-full h-full top-[50%] left-[50%] p-[0.75rem] rounded-full;
       }
 
       &.mxs::after {

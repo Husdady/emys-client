@@ -10,7 +10,7 @@ export const DEFAULT_CAN_SEARCH_OPTIONS = false
 export const DEFAULT_ENABLE_VIRTUALIZATION = false
 export const VIRTUALIZED_OPTION_HEIGHT_FOR_MOBILE = 55
 export const VIRTUALIZED_OPTION_HEIGHT_FOR_DESKTOP = 41
-export const MIN_OPTIONS_TO_SHOW = window.innerWidth > 768 ? 4 : 6
+export const MIN_OPTIONS_TO_SHOW = window.innerWidth > 768 ? 4 : 7
 export const OPTIONS_CONTAINER_SELECTOR = '.select-options'
 export const ACTIVE_OPTION_SELECTOR = '.active'
 

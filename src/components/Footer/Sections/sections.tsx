@@ -11,13 +11,7 @@ import BrandWhatsapp from '@assets/icons/brand-whatsapp'
 import { SectionProps } from './interfaces'
 
 // Constants
-import {
-  LINK_TYPE,
-  TEXT_TYPE,
-  sharedIconProps,
-  sharedFacebookIconProps,
-  sharedWhatsappIconProps
-} from './constants'
+import { sharedIconProps, sharedFacebookIconProps, sharedWhatsappIconProps } from './constants'
 import {
   CONTACT_EMAIL_01,
   CONTACT_EMAIL_02,
@@ -31,11 +25,9 @@ import {
   CONTACT_FACEBOOK_PAGE_NAME_01,
   CONTACT_FACEBOOK_PAGE_NAME_02
 } from '@config/envs'
-import classnames from '@root/src/utils/classnames'
 
 const sections: SectionProps[] = [
   {
-    type: LINK_TYPE,
     title: 'Enlaces rápidos',
     links: [
       {
@@ -61,7 +53,6 @@ const sections: SectionProps[] = [
     ]
   },
   {
-    type: LINK_TYPE,
     hasExternalLinks: true,
     title: 'Redes Sociales',
     links: [
@@ -88,10 +79,10 @@ const sections: SectionProps[] = [
     ]
   },
   {
-    type: TEXT_TYPE,
     title: 'Correo electrónico',
     links: [CONTACT_EMAIL_01, CONTACT_EMAIL_02, CONTACT_EMAIL_03].map((email) => ({
       text: email,
+      href: `mailto:${email}`,
       icon: <Mail {...sharedIconProps} />
     }))
   }

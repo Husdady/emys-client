@@ -22,25 +22,23 @@ const Icon = ({
   // Define styles
   const iconStyle = useMemo(() => ({ ...style, color: color }), [color, style])
 
-  // Define component classes
-  const iconClasses = useMemo(
-    () =>
-      classnames([
+  if (children === null || isUndefined(children)) return null
+
+  return (
+    <div
+      {...props}
+      title={title}
+      onClick={onClick}
+      style={iconStyle}
+      className={classnames([
         'icon select-none',
         size,
         className,
         useHoverEffect === true
-          ? 'rounded-full hover-transition hover:cursor-pointer hover:bg-opacity-20 dark:hover:!bg-opacity-30'
+          ? 'rounded-full hover-transition hover:cursor-pointer hover:bg-opacity-20 dark:hover:after:!bg-opacity-30'
           : null
-      ]),
-    [size, className]
-  )
-
-  // Icon hidden
-  if (isUndefined(children) || children === null) return null
-
-  return (
-    <div title={title} onClick={onClick} style={iconStyle} className={iconClasses} {...props}>
+      ])}
+    >
       {children}
     </div>
   )

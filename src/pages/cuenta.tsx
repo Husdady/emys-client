@@ -1,6 +1,6 @@
 // Layouts
 import PageLayout from '@layouts/PageLayout'
-import MainLayout from '@root/src/layouts/MainLayout'
+import MainLayout from '@layouts/MainLayout'
 import AccountLayout from '@layouts/PageLayouts/AccountLayout'
 
 export default function AccountPage() {

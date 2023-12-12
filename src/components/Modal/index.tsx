@@ -12,9 +12,6 @@ import useModal from './hooks/useModal'
 // Constants
 import { modalStyle } from './constants'
 
-// Styles
-import './styles/main.scss'
-
 // Lazy Components
 const ModalTitle = dynamic(() => import('./Title'))
 const ModalFooter = dynamic(() => import('./Footer'))

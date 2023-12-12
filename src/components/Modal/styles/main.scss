@@ -20,7 +20,12 @@
   @apply font-lato;
 }
 
+.ant-modal-wrap {
+  z-index: 999999 !important;
+}
+
 .ant-modal-mask {
+  z-index: 99999 !important;
   background-color: rgba(51, 51, 51, 0.5);
 }
 

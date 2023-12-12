@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 // Components
+import dynamic from 'next/dynamic'
 import Fallback from '@components/Fallback'
 
 // Hooks
@@ -11,8 +12,10 @@ import isString from '@utils/isString'
 import getFormError from '@utils/getFormError'
 
 // Lazy Components
-const Instructions = lazy(() => import('./Instructions'))
 const InputText = lazy(() => import('@components/InputText'))
+
+// Dynamic COmponents
+const Instructions = dynamic(() => import('./Instructions'))
 
 export const DELETE_ACCOUNT_FORM_ID = 'delete-account-form-09417iia'
 
@@ -22,7 +25,7 @@ export default function ConfirmForm() {
   return (
     <form
       noValidate
-      className="mt-6 flex flex-col gap-y-8"
+      className="flex flex-col gap-y-3"
       id={DELETE_ACCOUNT_FORM_ID}
       onSubmit={handleSubmit(submit)}
     >
@@ -36,7 +39,7 @@ export default function ConfirmForm() {
         />
       </Fallback>
 
-      <Fallback classLabel="w-60">
+      <Fallback classLabel="w-56">
         <InputText
           textLabel={<Instructions />}
           customInput={register('secretMessage')}

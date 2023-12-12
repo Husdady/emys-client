@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic'
 import { MainLayoutProps } from './interfaces'
 
 // Dynamic Components
+const Modal = dynamic(() => import('@components/Modal'))
 const Header = dynamic(() => import('@components/Header'))
 const Footer = dynamic(() => import('@components/Footer'))
 const FloatButtons = dynamic(() => import('@components/FloatButtons'))
@@ -16,6 +17,7 @@ function MainLayout({ children, isShowingFloatButtons = true }: MainLayoutProps)
       <Header />
       {children}
       <Footer />
+      <Modal />
       {isShowingFloatButtons && <FloatButtons />}
     </>
   )

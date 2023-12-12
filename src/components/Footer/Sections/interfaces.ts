@@ -1,6 +1,5 @@
 // Types
 import type { ReactNode } from 'react'
-import type { LinkType } from './constants'
 import type { Url } from 'next/dist/shared/lib/router/router'
 
 export interface Link {
@@ -11,7 +10,6 @@ export interface Link {
 
 export interface SectionProps {
   title: string
-  type: LinkType
   links: Link[]
   hasExternalLinks?: boolean
 }

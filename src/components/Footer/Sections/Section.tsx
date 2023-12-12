@@ -9,9 +9,6 @@ import { SectionProps } from './interfaces'
 // Utils
 import isString from '@utils/isString'
 
-// Constants
-import { LINK_TYPE, TEXT_TYPE } from './constants'
-
 // Dynamic Components
 const Link = dynamic(() => import('@components/Link'))
 
@@ -28,14 +25,7 @@ function Section(props: SectionProps) {
               key={link.id}
               className="footer-link-item text-white font-lexend text-[0.84rem] mb-[0.15rem] last:mb-0"
             >
-              {props.type === TEXT_TYPE && (
-                <span className="flex items-center block my-3 gap-x-1.5 px-2.5">
-                  {link.icon}
-                  <span>{link.text}</span>
-                </span>
-              )}
-
-              {props.type === LINK_TYPE && isString(link.href) && (
+              {isString(link.href) && (
                 <>
                   {!props.hasExternalLinks && (
                     <Link href={link.href} className="footer-link">

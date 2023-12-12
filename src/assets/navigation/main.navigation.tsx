@@ -1,40 +1,40 @@
 // Components
-import Mail from '@assets/icons/mail'
 import Home from '@assets/icons/home'
 import Users from '@assets/icons/users'
 import BoxSeam from '@assets/icons/box-seam'
+import HeadPhones from '@assets/icons/headphones'
 import ReportMedical from '@assets/icons/report-medical'
 
 // Interfaces
 import { NavigationLink } from '@components/Header/MobileNavigation/MenuContent/NavigationItem/interfaces'
 
-const navigation: NavigationLink[] = [
+const mainNavigation: NavigationLink[] = [
   {
     navigationTitle: 'Enlaces de navegación',
     navigationItems: [
       {
         path: '/dashboard/clients',
         title: 'Inicio',
-        icon: <Home className="smd home-icon" />
+        icon: <Home className="md home-icon" />
       },
+      { icon: <HeadPhones className="smd" />, path: '/contacto', title: 'Contacto' },
       {
         title: 'Productos',
         path: '/productos',
-        icon: <BoxSeam className="smd products-icon" />
-      },
-      {
-        title: 'Programa de Afiliados',
-        path: '/programa-de-afiliados',
-        icon: <Users className="smx stroke-3" />
+        icon: <BoxSeam className="md products-icon" />
       },
       {
         title: 'Testimonios Omnilife',
         path: '/testimonios-omnilife',
-        icon: <ReportMedical className="smd testimonials-icon" />
+        icon: <ReportMedical className="md testimonials-icon" />
       },
-      { icon: <Mail className="smx" />, path: '/contacto', title: 'Contacto' }
+      {
+        title: 'Programa de Afiliados',
+        path: '/programa-de-afiliados',
+        icon: <Users className="md stroke-3" />
+      }
     ]
   }
 ]
 
-export default navigation
+export default mainNavigation

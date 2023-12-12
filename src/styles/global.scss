@@ -1,11 +1,27 @@
-// Library styles
-@import 'antd/dist/reset.css';
-@import 'nprogress/nprogress.css';
-
 // Tailwind styles
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+// Library styles
+@import 'antd/dist/reset.css';
+@import 'nprogress/nprogress.css';
+
+// Antd Styles
+@import './antd/antd-message';
+@import './antd/antd-tooltip';
+
+// Layout Styles
+@import '@layouts/PageLayout/styles.scss';
+@import '@layouts/AuthLayouts/AuthLayout/styles.scss';
+
+// Module Styles
+@import '@modules/Home/components/Welcome/styles.scss';
+@import '@modules/Auth/components/Remember/styles.scss';
+@import '@modules/Auth/components/LinkToLogin/styles.scss';
+@import '@modules/Auth/components/LinkToRegister/styles.scss';
+@import '@modules/Account/components/AccountStatus/styles.scss';
+@import '@modules/Auth/components/LinkToForgottenEmailRecovery/styles.scss';
 
 // Component Styles
 @import '@components/Icon/styles.scss';
@@ -17,6 +33,7 @@
 @import '@components/Select/styles.scss';
 @import '@components/AppLogo/styles.scss';
 @import '@components/Checkbox/styles.scss';
+@import '@components/Modal/styles/main.scss';
 @import '@components/InputError/styles.scss';
 @import '@components/MultiSelect/styles.scss';
 @import '@components/SwitchTheme/styles.scss';
@@ -24,22 +41,7 @@
 @import '@components/SubmitButton/styles.scss';
 @import '@components/InputText/styles/main.scss';
 @import '@components/Header/MobileNavigation/styles.scss';
-
-// Module Styles
-@import '@modules/Home/components/Welcome/styles.scss';
-@import '@modules/Auth/components/Remember/styles.scss';
-@import '@modules/Auth/components/LinkToLogin/styles.scss';
-@import '@modules/Auth/components/LinkToRegister/styles.scss';
-@import '@modules/Account/components/AccountStatus/styles.scss';
-@import '@modules/Auth/components/LinkToForgottenEmailRecovery/styles.scss';
-
-// Layout Styles
-@import '@layouts/PageLayout/styles.scss';
-@import '@layouts/AuthLayouts/AuthLayout/styles.scss';
-
-// Antd Styles
-@import './antd/antd-message';
-@import './antd/antd-tooltip';
+@import '@components/Header/MobileNavigation/MenuContent/styles.scss';
 
 @layer base {
   .hide-scrollbar {
@@ -57,12 +59,6 @@
 
     &:horizontal {
       height: 18px;
-    }
-
-    @media only screen and (max-width: 768px) {
-      & {
-        @apply hidden;
-      }
     }
   }
 
