@@ -11,9 +11,6 @@ import useMounted from '@hooks/useMounted'
 // Constants
 import { succesMessageProps } from '@modules/Auth/components/Message/constants'
 
-// Styles
-import '@routes/AuthRoute/styles.scss'
-
 export default function AccountVerified() {
   const auth = useAuth()
 
