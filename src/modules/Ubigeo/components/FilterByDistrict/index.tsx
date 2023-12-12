@@ -1,6 +1,6 @@
 // Components
-import SelectFilter from '@modules/Dashboard/components/SelectFilter'
-import Fallback from '@modules/Dashboard/components/SelectFilter/Fallback'
+import SelectFilter from '@components/SelectFilter'
+import Fallback from '@components/SelectFilter/Fallback'
 
 // Hooks
 import useDistrictList from '@modules/Ubigeo/hooks/useDistrictList'

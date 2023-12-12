@@ -8,7 +8,7 @@ import type { UseUbigeoFiltersParams } from './types'
 import { Option } from '@components/Select/interfaces'
 
 // Constants
-import { NULLABLE } from '@modules/Dashboard/components/SelectFilter/constants'
+import { NULLABLE } from '@components/SelectFilter/constants'
 import { REGION_FIELD, COUNTRY_FIELD, DISTRICT_FIELD, PROVINCE_FIELD } from './constants'
 
 /**
