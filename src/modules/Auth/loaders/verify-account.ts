@@ -9,7 +9,7 @@ import isString from '@utils/isString'
 import isEmptyString from '@utils/isEmptyString'
 
 // Constants
-import { DEFAULT_LOADER_RESPONSE } from '@assets/loaders'
+import { DEFAULT_LOADER_RESPONSE } from '@assets/data/loaders'
 
 // Environment variables
 import { API_URL, SECRET_PASSWORD } from '@config/envs'
