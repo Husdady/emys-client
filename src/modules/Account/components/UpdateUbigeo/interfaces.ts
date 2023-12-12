@@ -1,5 +1,4 @@
 // Interfaces
-
 export interface UpdateUbigeoFormState {
   countryId?: string
   regionId?: string

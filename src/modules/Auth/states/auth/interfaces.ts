@@ -1,9 +1,9 @@
 // Interfaces
 import { Image, TimeStamps } from '@libs/axios/interfaces'
-// import { Region } from '@modules/Ubigeo/modules/Regions/api/interfaces'
-// import { Country } from '@modules/Ubigeo/modules/Countries/api/interfaces'
-// import { District } from '@modules/Ubigeo/modules/Districts/api/interfaces'
-// import { Province } from '@modules/Ubigeo/modules/Provinces/api/interfaces'
+import { Region } from '@modules/Ubigeo/api/regions/interfaces'
+import { Country } from '@modules/Ubigeo/api/countries/interfaces'
+import { District } from '@modules/Ubigeo/api/districts/interfaces'
+import { Province } from '@modules/Ubigeo/api/provinces/interfaces'
 
 export interface View {
   id: string
@@ -49,10 +49,10 @@ export interface User extends TimeStamps {
   email: string
   status: string
   secretKey: string
-  // country?: Country
-  // region?: Region
-  // province?: Province
-  // district?: District
+  country?: Country
+  region?: Region
+  province?: Province
+  district?: District
   profilePhoto?: Image | null
   role: Omit<Role, 'viewsId' | 'permissionsId'>
 }
