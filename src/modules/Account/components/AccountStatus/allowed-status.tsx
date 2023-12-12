@@ -1,6 +1,6 @@
 // Components
 import Ban from '@assets/icons/ban'
-import ShieldCheck from '@assets/icons/shield-check'
+import ShieldCheck from '@assets/icons/discount-check-filled'
 import ExclamationCircle from '@assets/icons/exclamation-circle'
 
 // Interfaces
@@ -16,8 +16,9 @@ const statusAllowed: Record<string, TagProps> = {
   [VERIFIED]: {
     title: 'Cuenta verificada',
     titlePopup: 'Tu cuenta ha sido verificada',
-    icon: <ShieldCheck className="sm" />,
-    className: '!bg-emerald-500 dark:!bg-green-600 text-white float-right !rounded-full !px-4'
+    className:
+      'bg-lime-200 dark:bg-lime-300 text-lime-900 !font-semibold border-2 outline outline-1 outline-lime-500 border-lime-300 dark:outline-lime-500 dark:border-lime-800',
+    icon: <ShieldCheck className="sm" />
   },
 
   // Unverified account
@@ -26,7 +27,7 @@ const statusAllowed: Record<string, TagProps> = {
     titlePopup: 'Verifica tu cuenta',
     icon: <ExclamationCircle className="sm" />,
     className:
-      'bg-yellow-500 dark:bg-yellow-700 text-white dark:!text-yellow-300 float-right !rounded-full !px-4'
+      '!bg-yellow-200 dark:!bg-yellow-300 text-yellow-600 border-2 outline outline-1 outline-yellow-400 border-yellow-300 dark:outline-yellow-700 dark:border-yellow-800 !font-semibold dark:text-yellow-800'
   },
 
   // Blocked account
@@ -35,7 +36,7 @@ const statusAllowed: Record<string, TagProps> = {
     titlePopup: 'Tu cuenta ha sido bloqueada',
     icon: <Ban className="sm" />,
     className:
-      'bg-red-500 dark:bg-red-700 text-red-100 dark:!text-red-200 float-right !rounded-full !px-4'
+      'bg-red-200 dark:bg-red-500 text-red-700 border-2 outline outline-1 outline-red-300 border-red-300 dark:outline-red-400 dark:border-red-800 !font-semibold dark:text-white dark:!font-normal'
   }
 }
 

@@ -9,4 +9,5 @@ export interface TagProps extends OnlyClassNameProp, Omit<SpanType, 'title'> {
   title: string
   icon?: ReactNode
   titlePopup?: string
+  innerClassName?: string
 }

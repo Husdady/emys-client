@@ -10,7 +10,7 @@ export default function AccountStatus() {
     <Aside
       title="Estado de la cuenta"
       className="items-center px-4 py-6 sm:px-6"
-      titleClassName="text-emerald-500 dark:!text-emerald-300"
+      titleClassName="text-lime-600 dark:!text-lime-400"
       description="Es importante saber el estado actual de tu cuenta. Actualmente existen 3 estados de cuenta 'VERIFICADA', 'NO VERIFICADA' y 'BLOQUEADA'."
     >
       <Status />

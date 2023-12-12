@@ -1,0 +1,7 @@
+.account-status {
+  @apply float-right rounded-full max-h-[38px] px-[0.7rem];
+
+  & > div {
+    @apply gap-x-1;
+  }
+}

@@ -1,21 +1,9 @@
 // Interfaces
-import { NavigationLink } from '@modules/Dashboard/components/MenuLeft/interfaces'
+import { NavigationLink } from '@components/Header/MobileNavigation/MenuContent/NavigationItem/interfaces'
 
 // Navigation
-import usersNavigation from './users.navigation'
-import salesNavigation from './sales.navigation'
-import productsNavigation from './products.navigation'
-import businessNavigation from './business.navigation'
-import permissionsNavigation from './permissions.navigation'
-import extraContentNavigation from './extraContent.navigation'
+import mainNavigation from './main.navigation'
 
-const navigation: NavigationLink[] = [
-  ...usersNavigation,
-  ...productsNavigation,
-  ...salesNavigation,
-  ...businessNavigation,
-  ...permissionsNavigation,
-  ...extraContentNavigation
-]
+const navigation: NavigationLink[] = [...mainNavigation]
 
 export default navigation

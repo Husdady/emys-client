@@ -17,21 +17,21 @@ export default function useMountedNavigationItem() {
 
   // Callback for make scroll to the active navigation item
   const scrollToActiveNavigationItem = useCallback(() => {
-    if (window.innerWidth > 1080) {
-      timeout.current = setTimeout(() => {
-        if (navigationRef.current !== null) {
-          // Get the active navigation item
-          const activeNavigationItem = navigationRef.current.querySelector(
-            ACTIVE_NAVIGATION_ITEM
-          ) as HTMLElement
+    if (window.innerWidth <= 1080) return
 
-          if (activeNavigationItem === null) return // Stop function
+    timeout.current = setTimeout(() => {
+      if (navigationRef.current !== null) {
+        // Get the active navigation item
+        const activeNavigationItem = navigationRef.current.querySelector(
+          ACTIVE_NAVIGATION_ITEM
+        ) as HTMLElement
 
-          // Make scroll to the active navigation item
-          activeNavigationItem.scrollIntoView(scrollIntoViewArgs)
-        }
-      }, SCROLL_DELAY)
-    }
+        if (activeNavigationItem === null) return // Stop function
+
+        // Make scroll to the active navigation item
+        activeNavigationItem.scrollIntoView(scrollIntoViewArgs)
+      }
+    }, SCROLL_DELAY)
   }, [])
 
   useMounted(() => {

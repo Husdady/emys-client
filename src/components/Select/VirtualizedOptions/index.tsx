@@ -23,6 +23,7 @@ const VirtualizedOptions: React.FC<VirtualizedOptionsProps> = ({
   options,
   onChange,
   emptyText,
+  hideOptions,
   selectedValue,
   searchPalceholder,
   enableVirtualization,

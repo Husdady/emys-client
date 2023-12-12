@@ -71,6 +71,7 @@ export default function useSelect({
       emptyText: emptyText,
       selectedValue: value,
       onChange: handleOnChange,
+      hideOptions: hideOptions,
       canSearchOptions: canSearchOptions,
       searchPalceholder: searchPalceholder,
       enableVirtualization: enableVirtualization
@@ -79,6 +80,7 @@ export default function useSelect({
       value,
       options,
       emptyText,
+      hideOptions,
       handleOnChange,
       searchPalceholder,
       canSearchOptions,

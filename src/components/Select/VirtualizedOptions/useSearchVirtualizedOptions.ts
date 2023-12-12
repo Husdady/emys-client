@@ -1,20 +1,13 @@
 // Hooks
-import { useMemo, useCallback } from 'react'
+import { useCallback } from 'react'
 import useMounted from '@hooks/useMounted'
 import useHeightForVirtualizedOption from '@hooks/useHeightForVirtualizedOption'
 import useSearchOptions, {
   UseSearchOptionsParams
 } from '@components/Select/Options/useSearchOptions'
 
-// Utils
-import isMobile from '@utils/isMobile'
-
 // Constants
-import {
-  MIN_OPTIONS_TO_SHOW,
-  VIRTUALIZED_OPTION_HEIGHT_FOR_MOBILE,
-  VIRTUALIZED_OPTION_HEIGHT_FOR_DESKTOP
-} from '@components/Select/constants'
+import { DEFAULT_LIST_HEIGHT, DEFAULT_OPTION_HEIGHT } from '@components/Select/constants'
 
 /**
  * Hook for search virtualized options of the Select component
@@ -23,22 +16,9 @@ import {
 export default function useSearchVirtualizedOptions(params: UseSearchOptionsParams) {
   const searchData = useSearchOptions(params)
 
-  // Define height for each option
-  const defaultOptionHeight = useMemo(
-    () =>
-      isMobile() ? VIRTUALIZED_OPTION_HEIGHT_FOR_MOBILE : VIRTUALIZED_OPTION_HEIGHT_FOR_DESKTOP,
-    []
-  )
-
-  // Define the list height
-  const defaultContainerHeight = useMemo(
-    () => defaultOptionHeight * MIN_OPTIONS_TO_SHOW + defaultOptionHeight / 2,
-    [defaultOptionHeight]
-  )
-
   const adjusts = useHeightForVirtualizedOption({
-    defaultOptionHeight: defaultOptionHeight,
-    defaultContainerHeight: defaultContainerHeight
+    defaultOptionHeight: DEFAULT_OPTION_HEIGHT,
+    defaultContainerHeight: DEFAULT_LIST_HEIGHT
   })
 
   // Callback for find the active item index

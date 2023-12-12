@@ -1,12 +1,12 @@
 // Components
-import Home from '@root/src/assets/icons/home'
-import Users from '@root/src/assets/icons/users'
-import BoxSeam from '@root/src/assets/icons/box-seam'
+import Mail from '@assets/icons/mail'
+import Home from '@assets/icons/home'
+import Users from '@assets/icons/users'
+import BoxSeam from '@assets/icons/box-seam'
+import ReportMedical from '@assets/icons/report-medical'
 
 // Interfaces
 import { NavigationLinkProps } from './interfaces'
-import ReportMedical from '@root/src/assets/icons/report-medical'
-import Mail from '@root/src/assets/icons/mail'
 
 const navigation: NavigationLinkProps[] = [
   { icon: <Home className="smd home-icon" />, href: '/', text: 'Inicio' },

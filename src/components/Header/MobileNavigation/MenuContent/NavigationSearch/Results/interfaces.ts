@@ -1,5 +1,5 @@
 // Interfaces
-import { NavigationItemProps } from '@modules/Dashboard/components/MenuLeft/interfaces'
+import { NavigationItemProps } from '@components/Header/MobileNavigation/MenuContent/NavigationItem/interfaces'
 
 export interface ResultProps extends Omit<NavigationItemProps, 'navigationItems'> {
   hideResults: () => void

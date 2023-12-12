@@ -22,7 +22,7 @@ export default function UserRole() {
     <Aside
       title="Rol del usuario"
       className="items-center px-4 py-6 sm:px-6"
-      titleClassName="text-purple-500 dark:text-purple-300"
+      titleClassName="text-purple-600 dark:text-purple-300"
       description="Dependiendo del rol que tengas asignado, podrás realizar ciertas acciones. Mientras más permisos se te hayan asignado, más actividades podrás realizar."
     >
       <Role name={auth.user.role.name} className="float-right" />

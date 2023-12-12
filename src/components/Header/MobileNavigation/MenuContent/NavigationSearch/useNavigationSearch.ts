@@ -1,14 +1,16 @@
 // Hooks
 import useAuth from '@hooks/useAuth'
-import useFilterNavigation from '@modules/Dashboard/hooks/useFilterNavigation'
-import { useMemo, useCallback } from 'react'
 import { useForm } from 'react-hook-form'
+import { useMemo, useCallback } from 'react'
 
 // Interfaces
 import { SeekerFormState } from './interfaces'
 
 // Utils
 import { extractNavigation } from './utils'
+
+// Data
+import navigation from '@assets/navigation'
 
 export const DEFAULT_VALUES: SeekerFormState = {
   search: '',
@@ -20,7 +22,6 @@ export const DEFAULT_VALUES: SeekerFormState = {
  */
 export default function useNavigationSearch() {
   const { user } = useAuth()
-  const navigation = useFilterNavigation()
 
   const { watch, register, setValue } = useForm<SeekerFormState>({
     defaultValues: DEFAULT_VALUES

@@ -29,6 +29,7 @@ const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
   return (
     <NextLink
       {...rest}
+      shallow
       ref={ref}
       href={href}
       onClick={(event) => {

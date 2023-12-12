@@ -6,6 +6,7 @@ import { useMemo } from 'react'
 import useAuth from '@hooks/useAuth'
 
 // Utils
+import classnames from '@utils/classnames'
 import isUndefined from '@utils/isUndefined'
 
 // Constants
@@ -25,5 +26,5 @@ export default function Status() {
   // Account Status not exists
   if (isUndefined(tagProps)) return null
 
-  return <Tag {...tagProps} />
+  return <Tag {...tagProps} className={classnames(['account-status', tagProps.className])} />
 }

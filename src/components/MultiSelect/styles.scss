@@ -10,7 +10,7 @@
     @apply w-full mt-1 top-[100%] z-[9999];
 
     & .checkbox-options,
-    & .virtualized-checkbox-options {
+    & .virtualized-checkbox-options > div {
       @include select-scrollbar;
       @apply bg-white dark:bg-gray-900 rounded w-full border-t border-l border-gray-400 dark:border-gray-500;
     }
@@ -28,7 +28,7 @@
         word-break: normal;
         @apply bg-transparent cursor-default text-left w-full h-full font-poppins px-4 border-b border-r border-gray-400 dark:border-gray-500 leading-snug;
 
-        & > label {
+        & label {
           @apply font-normal dark:text-gray-300 truncate;
         }
 

@@ -5,6 +5,9 @@ import dynamic from 'next/dynamic'
 // Hooks
 import useMenuContent from './useMenuContent'
 
+// Interfaces
+import { MenuLeftData } from '@components/Header/MobileNavigation/useMobileNavigation/interfaces'
+
 // Data
 import navigation from '@assets/navigation'
 
@@ -12,7 +15,7 @@ import navigation from '@assets/navigation'
 const NavigationItem = dynamic(() => import('./NavigationItem'))
 const NavigationSearch = dynamic(() => import('./NavigationSearch'))
 
-export default function MenuContent() {
+export default function MenuContent(props: MenuLeftData) {
   const { navigationRef } = useMenuContent()
 
   return (
@@ -33,7 +36,7 @@ export default function MenuContent() {
 
               <ul className="navigation-list">
                 {item.navigationItems.map((navigationItem, k) => (
-                  <NavigationItem key={k} {...navigationItem} />
+                  <NavigationItem key={k} {...navigationItem} menuLeftData={props} />
                 ))}
               </ul>
             </Fragment>

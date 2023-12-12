@@ -9,9 +9,9 @@ import isString from '@utils/isString'
 import isUndefined from '@utils/isUndefined'
 import classnames from '@utils/classnames'
 
-const Tag = ({ title, className, icon, titlePopup, ...props }: TagProps) => {
+const Tag = ({ title, className, icon, titlePopup, innerClassName, ...props }: TagProps) => {
   return (
-    <span
+    <article
       {...props}
       title={titlePopup}
       className={classnames([
@@ -19,14 +19,14 @@ const Tag = ({ title, className, icon, titlePopup, ...props }: TagProps) => {
         isUndefined(className) || (isString(className) && className.includes('bg-'))
           ? 'bg-gray-200'
           : null,
-        'inline-block rounded-xl px-3.5 py-[0.55rem] text-sm text-gray-700 bg-gray-200 font-poppins font-normal'
+        'inline-flex items-center justify-center rounded-xl px-3 py-[0.55rem] text-sm text-gray-700 bg-gray-200 font-poppins font-normal whitespace-nowrap'
       ])}
     >
-      <div className="flex items-center gap-x-1.5">
+      <div className={classnames([innerClassName, 'flex items-center gap-x-1.5'])}>
         {icon}
         <span>{title}</span>
       </div>
-    </span>
+    </article>
   )
 }
 

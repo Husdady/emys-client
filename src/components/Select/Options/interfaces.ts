@@ -10,4 +10,5 @@ export interface OptionsProps
     'options' | 'emptyText' | 'selectedValue' | 'searchPalceholder' | 'canSearchOptions'
   > {
   onChange: OnChangeOption
+  hideOptions: () => void
 }

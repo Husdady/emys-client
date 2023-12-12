@@ -4,9 +4,6 @@ import QuickSearch from './QuickSearch'
 // Hooks
 import useNavigationSearch from './useNavigationSearch'
 
-// Styles
-import './styles.scss'
-
 export default function NavigationSearch() {
   const {
     register,

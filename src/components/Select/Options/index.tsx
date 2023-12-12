@@ -18,7 +18,7 @@ import classnames from '@utils/classnames'
 // cONSTANTS
 import { DEFAULT_LIST_HEIGHT, DEFAULT_CAN_SEARCH_OPTIONS } from '@components/Select/constants'
 
-export const style: React.CSSProperties = { maxHeight: DEFAULT_LIST_HEIGHT }
+export const selectOptionsStyle = { maxHeight: `${DEFAULT_LIST_HEIGHT}px` }
 
 const Options: React.FC<OptionsProps> = ({
   options,
@@ -55,7 +55,7 @@ const Options: React.FC<OptionsProps> = ({
       {filteredOptions.length === 0 && <EmptyOptions text={emptyText} />}
 
       {filteredOptions.length > 0 && (
-        <ul style={style} className="select-options overflow-y-auto">
+        <ul style={selectOptionsStyle} className="select-options overflow-y-auto">
           {filteredOptions.map((item) => (
             <li
               key={item.value}

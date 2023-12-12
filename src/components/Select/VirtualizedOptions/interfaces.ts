@@ -15,6 +15,7 @@ export interface VirtualizedOptionsProps
     | 'enableVirtualization'
   > {
   onChange: OnChangeOption
+  hideOptions: () => void
 }
 
 export interface VirtualizedOptionProps extends Option, Pick<VirtualizedOptionsProps, 'onChange'> {

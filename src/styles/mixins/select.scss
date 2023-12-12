@@ -30,15 +30,15 @@
 
 @mixin select-scrollbar {
   &::-webkit-scrollbar {
-    @apply bg-gray-200;
+    @apply bg-gray-100;
   }
 
   &::-webkit-scrollbar-thumb {
-    @apply bg-gray-400;
+    @apply bg-gray-400/80;
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    @apply bg-gray-500;
+    @apply bg-gray-400;
   }
 }
 
@@ -55,11 +55,10 @@
     #{$selectSelector} {
       & .wrapper-options {
         position: fixed !important;
-        min-height: 75vh;
         max-height: 75vh !important;
         transform: translate(-50%, -50%);
 
-        @apply w-[70%] border-0 max-w-[350px] mx-auto h-[700px] mt-0 top-[50%] left-[50%];
+        @apply w-[70%] border-0 max-w-[350px] mx-auto mt-0 top-[50%] left-[50%];
 
         & .search-options {
           @apply shadow-lg;
@@ -67,14 +66,14 @@
 
         & #{$optionsSelector},
         & #{$virtualizedOptionsSelector} {
-          @apply shadow-xl min-h-[65vh];
+          @apply h-full shadow-xl;
         }
 
         & #{$liOptionSelector},
         & #{$virtualizedLiOptionSelector} {
           & > #{$optionSelector},
           & > #{$virtualizedOptionSelector} {
-            @apply text-[1.25rem] border-gray-300 px-5 py-3 border-r-0 dark:border-gray-500;
+            @apply text-[1.25rem] border-b-gray-300 px-5 py-3 dark:border-gray-500;
 
             &::last-of-type {
               @apply border-b;

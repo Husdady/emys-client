@@ -7,7 +7,11 @@ import useSearchOptions, {
 } from '@components/MultiSelect/Options/useSearchOptions'
 
 // Constants
-import { DEFAULT_LIST_HEIGHT, DEFAULT_OPTION_HEIGHT } from '@components/MultiSelect/constants'
+import {
+  MIN_OPTIONS_TO_SHOW,
+  DEFAULT_LIST_HEIGHT,
+  DEFAULT_OPTION_HEIGHT
+} from '@components/MultiSelect/constants'
 
 /**
  * Hook for search virtualized options of the MultiSelect component
@@ -32,7 +36,11 @@ export default function useSearchVirtualizedOptions(params: UseSearchOptionsPara
 
   // Hacer scroll al elemento activo cuando cambie
   useMounted(() => {
-    if (lastActiveItemIndex !== -1 && adjusts.listRef.current !== null) {
+    if (
+      lastActiveItemIndex !== -1 &&
+      adjusts.listRef.current !== null &&
+      params.initialOptions.length > MIN_OPTIONS_TO_SHOW + 1
+    ) {
       adjusts.listRef.current.scrollToItem(lastActiveItemIndex, 'start')
     }
   }, [])

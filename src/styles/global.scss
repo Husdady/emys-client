@@ -30,6 +30,7 @@
 @import '@modules/Auth/components/Remember/styles.scss';
 @import '@modules/Auth/components/LinkToLogin/styles.scss';
 @import '@modules/Auth/components/LinkToRegister/styles.scss';
+@import '@modules/Account/components/AccountStatus/styles.scss';
 @import '@modules/Auth/components/LinkToForgottenEmailRecovery/styles.scss';
 
 // Layout Styles
@@ -65,23 +66,42 @@
     }
   }
 
-  ::-webkit-scrollbar-track {
-    @apply bg-[#ffffff] dark:bg-gray-900;
-  }
-
   ::-webkit-scrollbar-thumb {
     border-radius: 20px;
     border: 6px solid transparent;
     background-clip: content-box;
-    @apply bg-gray-600 dark:bg-gray-400;
-
-    &:hover {
-      @apply bg-gray-400 dark:bg-gray-500;
-    }
   }
 
   body {
     @apply font-lato text-[0.88rem];
+  }
+
+  html:not(.dark) {
+    ::-webkit-scrollbar-track {
+      @apply bg-[#ffffff];
+    }
+
+    ::-webkit-scrollbar-thumb {
+      @apply bg-gray-600;
+
+      &:hover {
+        @apply bg-gray-400;
+      }
+    }
+  }
+
+  html.dark {
+    ::-webkit-scrollbar-track {
+      @apply bg-gray-900;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      @apply bg-gray-400;
+
+      &:hover {
+        @apply bg-gray-500;
+      }
+    }
   }
 
   button,
