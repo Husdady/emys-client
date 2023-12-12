@@ -1,9 +1,9 @@
 // Interfaces
+import { Region } from './regions/interfaces'
+import { Country } from './countries/interfaces'
+import { Province } from './provinces/interfaces'
+import { District } from './districts/interfaces'
 import { TimeStamps } from '@libs/axios/interfaces'
-import { Region } from '@modules/Ubigeo/modules/Regions/api/interfaces'
-import { Country } from '@modules/Ubigeo/modules/Countries/api/interfaces'
-import { Province } from '@modules/Ubigeo/modules/Provinces/api/interfaces'
-import { District } from '@modules/Ubigeo/modules/Districts/api/interfaces'
 
 export interface Ubigeo extends TimeStamps {
   region: Region | null
