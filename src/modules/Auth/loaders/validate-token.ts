@@ -12,7 +12,7 @@ import isString from '@utils/isString'
 import isEmptyString from '@utils/isEmptyString'
 
 // Constants
-import { DEFAULT_LOADER_RESPONSE } from '@assets/loaders'
+import { DEFAULT_LOADER_RESPONSE } from '@assets/data/loaders'
 
 /**
  * Validate API token
