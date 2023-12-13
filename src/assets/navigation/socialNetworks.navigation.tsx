@@ -3,13 +3,10 @@ import Facebook from '@assets/icons/facebook'
 import BrandWhatsapp from '@assets/icons/brand-whatsapp'
 
 // Interfaces
-import { NavigationLink } from '@components/Header/MobileNavigation/MenuContent/NavigationItem/interfaces'
+import { IconProps } from '@components/Icon/interfaces'
+import { NavigationLink } from '@components/Header/MobileNavigation/FloatMenu/MenuContent/NavigationItem/interfaces'
 
 // Constants
-import {
-  sharedFacebookIconProps,
-  sharedWhatsappIconProps
-} from '@components/Footer/Sections/constants'
 import {
   WHATSAPP_CONTACT_URL_01,
   WHATSAPP_CONTACT_URL_02,
@@ -20,6 +17,16 @@ import {
   CONTACT_FACEBOOK_PAGE_NAME_01,
   CONTACT_FACEBOOK_PAGE_NAME_02
 } from '@config/envs'
+
+export const sharedFacebookIconProps: IconProps = {
+  size: 'sm',
+  className: 'stroke-3 text-blue-600 dark:!text-blue-200'
+}
+
+export const sharedWhatsappIconProps: IconProps = {
+  size: 'sm',
+  className: 'stroke-3 text-lime-700 dark:!text-lime-300'
+}
 
 const socialNetworksNavigation: NavigationLink[] = [
   {

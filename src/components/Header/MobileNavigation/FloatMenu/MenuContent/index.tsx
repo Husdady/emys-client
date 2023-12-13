@@ -10,7 +10,6 @@ import { MenuLeftData } from '@components/Header/MobileNavigation/useMobileNavig
 
 // Data
 import navigation from '@assets/navigation'
-import classnames from '@root/src/utils/classnames'
 
 // Dynamic Components
 const NavigationItem = dynamic(() => import('./NavigationItem'))
@@ -20,13 +19,7 @@ export default function MenuContent(props: MenuLeftData) {
   const { navigationRef } = useMenuContent()
 
   return (
-    <section
-      ref={navigationRef}
-      className={classnames([
-        props.isShowingMenu ? null : 'hidden',
-        'navigation mobile-menu-content overflow-y-auto sm:max-w-[640px] top-[60px] sm:top-[6rem] sm:rounded-xl dark:sm:shadow-gray-700 fixed mx-auto left-0 right-0 bg-white shadow-xl dark:bg-black border-b border-gray-200 dark:border-gray-600 sm:border-none'
-      ])}
-    >
+    <section ref={navigationRef} className="navigation mobile-menu-content overflow-y-auto sm:mt-[0.15rem] sm:mr-[0.21rem]">
       <h6 className="navigation-title text-[0.76rem] mt-4 ml-4 mr-5 sm:ml-5 sm:mr-6 font-bold uppercase font-lato tracking-wider text-main-700 dark:text-main-200">
         Búsqueda de navegación
       </h6>

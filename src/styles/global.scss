@@ -41,7 +41,8 @@
 @import '@components/SubmitButton/styles.scss';
 @import '@components/InputText/styles/main.scss';
 @import '@components/Header/MobileNavigation/styles.scss';
-@import '@components/Header/MobileNavigation/MenuContent/styles.scss';
+@import '@components/Header/MobileNavigation/FloatMenu/MenuContent/styles.scss';
+@import '@components/Header/MobileNavigation/FloatMenu/MenuContent/NavigationSearch/styles.scss';
 
 @layer base {
   .hide-scrollbar {

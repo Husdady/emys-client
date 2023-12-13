@@ -22,7 +22,7 @@ export default function Result({ icon, path, title, hideResults }: ResultProps) 
     if (!pathname.includes(routePath)) return
     hideResults() // Execute the callback that hide the results
 
-    if (window.innerWidth >= 1081) return // Stop callback execution
+    if (window.innerWidth >= 1200) return // Stop callback execution
     const menuLeft = document.getElementById('menu-left') // Get Menu Left
     if (menuLeft === null) return // Check if Menu Left exists
 
@@ -40,7 +40,7 @@ export default function Result({ icon, path, title, hideResults }: ResultProps) 
         <div className="flex items-center gap-x-2">
           {icon}
 
-          <span className="text font-poppins capitalize leading-relaxed text-[0.93rem]">
+          <span className="text font-poppins leading-relaxed text-[0.93rem]">
             {title}
           </span>
         </div>

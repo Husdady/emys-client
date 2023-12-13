@@ -19,7 +19,7 @@ import logoDark from '@assets/images/logo-dark.webp'
 // Dynamic Components
 const MenuIcon = dynamic(() => import('./MenuIcon'))
 const Link = dynamic(() => import('@components/Link'))
-const MenuContent = dynamic(() => import('./MenuContent'))
+const FloatMenu = dynamic(() => import('./FloatMenu'))
 const Button = dynamic(() => import('@components/Button'))
 const SwitchTheme = dynamic(() => import('@components/SwitchTheme'))
 const UserCircleSolid = dynamic(() => import('@assets/icons/user-circle-solid'))
@@ -31,7 +31,7 @@ function MobileNavigation() {
 
   return (
     <>
-      <nav className="min-h-[60px] main-mobile-navigation top-0 sm:top-[1.5rem] fixed mx-auto left-0 right-0 navigation flex gap-x-[1.5rem] justify-between font-poppins bg-white shadow-xl items-center py-1 pl-4 pr-[0.15rem] sm:pr-[0.3rem] z-[9999] overflow-y-hidden overflow-x-auto whitespace-nowrap sm:mx-[2rem] sm:max-w-[970px] lg:mx-auto sm:rounded-full sm:pl-6 sm:pr-[0.55rem] dark:bg-black border-b border-gray-200 dark:border-gray-600 sm:border-none">
+      <nav className="min-h-[60px] overflow-hidden main-mobile-navigation top-0 sm:top-[1.5rem] fixed mx-auto left-0 right-0 navigation flex gap-x-[1.5rem] justify-between font-poppins bg-white shadow-xl items-center py-1 pl-4 pr-[0.15rem] sm:pr-[0.3rem] z-[9999] whitespace-nowrap sm:mx-[2rem] sm:max-w-[970px] lg:mx-auto sm:rounded-full sm:pl-6 sm:pr-[0.55rem] dark:bg-black border-b border-gray-200 dark:border-gray-600 sm:border-none">
         <div className="flex items-center gap-x-5">
           <MenuIcon {...menuLeftData} />
           <SwitchTheme />
@@ -69,7 +69,7 @@ function MobileNavigation() {
         </div>
       </nav>
 
-      <MenuContent {...menuLeftData} />
+      <FloatMenu {...menuLeftData} />
     </>
   )
 }

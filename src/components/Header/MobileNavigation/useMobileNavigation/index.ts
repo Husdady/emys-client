@@ -4,7 +4,7 @@ import { useRef, useState, useCallback } from 'react'
 
 // Constants
 import { scrollIntoViewArgs } from '@assets/data/scroll'
-import { ACTIVE_NAVIGATION_ITEM } from '@components/Header/MobileNavigation/MenuContent/useMenuContent'
+import { ACTIVE_NAVIGATION_ITEM } from '@components/Header/MobileNavigation/FloatMenu/MenuContent/useMenuContent'
 
 /**
  * Hook for implements the logic of the MenuLeft component
@@ -19,8 +19,9 @@ export default function useMobileNavigation() {
 
   // Callback for toggle the menu
   const toggleMenu = useCallback(() => {
-    // Toggle scrollbar from body
-    document.body.classList.toggle('overflow-hidden')
+      // Toggle scrollbar from body
+      document.body.classList.toggle('overflow-hidden')
+    
 
     setShowingMenu((s) => {
       // Check if Menu is not showing
