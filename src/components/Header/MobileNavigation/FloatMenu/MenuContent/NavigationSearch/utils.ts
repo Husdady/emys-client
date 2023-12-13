@@ -3,7 +3,7 @@ import { ResultsProps } from './Results/interfaces'
 import {
   NavigationLink,
   NavigationItemProps
-} from '@components/Header/MobileNavigation/MenuContent/NavigationItem/interfaces'
+} from '@components/Header/MobileNavigation/FloatMenu/MenuContent/NavigationItem/interfaces'
 
 /**
  * Extract nested navigation item

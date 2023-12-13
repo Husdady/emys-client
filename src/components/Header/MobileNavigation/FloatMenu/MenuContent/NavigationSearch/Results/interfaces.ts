@@ -1,5 +1,5 @@
 // Interfaces
-import { NavigationItemProps } from '@components/Header/MobileNavigation/MenuContent/NavigationItem/interfaces'
+import { NavigationItemProps } from '@components/Header/MobileNavigation/FloatMenu/MenuContent/NavigationItem/interfaces'
 
 export interface ResultProps extends Omit<NavigationItemProps, 'navigationItems'> {
   hideResults: () => void

@@ -1,6 +1,6 @@
 // Interfaces
 import { InputTextProps } from '@components/InputText/interfaces'
-import { NavigationItemProps } from '@components/Header/MobileNavigation/MenuContent/NavigationItem/interfaces'
+import { NavigationItemProps } from '@components/Header/MobileNavigation/FloatMenu/MenuContent/NavigationItem/interfaces'
 
 export interface SeekerFormState {
   search: string
