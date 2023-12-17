@@ -1,6 +1,6 @@
 // Librarys
-import Image from 'next/image'
 import dynamic from 'next/dynamic'
+import Image, { StaticImageData } from 'next/image'
 
 // Hooks
 import useScreen from './useScreen'
@@ -43,8 +43,8 @@ export default function Screen({
         <Image
           {...image}
           priority
-          src={image.src as string}
           alt={image.alt as string}
+          src={image.src as string | StaticImageData}
           className={classnames([image.className, 'object-cover mx-auto'])}
         />
       )}
