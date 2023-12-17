@@ -16,6 +16,10 @@
   }
 
   @media screen and (max-width: 1200px) {
+    & .empty-results {
+      @apply py-8 gap-y-1;
+    }
+
     & > #navigation-results-separator {
       @apply hidden;
     }
@@ -24,7 +28,7 @@
       @apply bg-transparent h-auto table mx-0 mb-0 mt-2 p-0 relative w-full max-w-full;
 
       & > .navigation-seeker {
-        @apply w-full max-w-full  min-w-full m-0 pb-0 pr-[1.1rem] overflow-auto max-h-[initial];
+        @apply w-full max-w-full  min-w-full m-0 pb-0 pl-3 pr-0 overflow-auto max-h-[initial];
 
         & > h5 {
           @apply pt-2;

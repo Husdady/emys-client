@@ -1,0 +1,17 @@
+.page-screen {
+  word-break: break-word;
+
+  @media only screen and (max-width: 450px) {
+    & img {
+      @apply min-w-[300px];
+    }
+
+    & .main-title {
+      @apply text-2xl leading-tight;
+    }
+
+    & .screen-description {
+      @apply text-justify;
+    }
+  }
+}

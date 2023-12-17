@@ -8,6 +8,9 @@ import { forgotEmailApi } from '@modules/Auth/api/forgot-email'
 import { forgotPasswordApi } from '@modules/Auth/api/forgot-password'
 import { resetPasswordApi } from '@modules/Auth/api/reset-password'
 
+// Authenticated API states
+import { verifySessionApi } from '@routes/DashboardRoute/verify-session'
+
 // GraphQL states
 import { regionsGraphqlApi } from '@modules/Ubigeo/api/regions/graphql'
 import { countriesGraphqlApi } from '@modules/Ubigeo/api/countries/graphql'
@@ -31,6 +34,9 @@ const reducers = combineReducers({
   [forgotEmailApi.reducerPath]: forgotEmailApi.reducer,
   [resetPasswordApi.reducerPath]: resetPasswordApi.reducer,
   [forgotPasswordApi.reducerPath]: forgotPasswordApi.reducer,
+
+  // Authenticated API
+  [verifySessionApi.reducerPath]: verifySessionApi.reducer,
 
   // GraphQL API
   [regionsGraphqlApi.reducerPath]: regionsGraphqlApi.reducer,

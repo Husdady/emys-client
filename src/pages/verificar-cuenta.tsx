@@ -1,3 +1,6 @@
+// Routes
+import AuthRoute from '@routes/AuthRoute'
+
 // Layouts
 import MainLayout from '@root/src/layouts/MainLayout'
 import AuthLayout from '@layouts/AuthLayouts/AuthLayout'
@@ -16,11 +19,13 @@ import verifyAccount from '@modules/Auth/loaders/verify-account'
 
 export default function VerifyAccountPage() {
   return (
-    <MainLayout>
-      <AuthLayout>
-        <VerifiedEmail />
-      </AuthLayout>
-    </MainLayout>
+    <AuthRoute>
+      <MainLayout>
+        <AuthLayout>
+          <VerifiedEmail />
+        </AuthLayout>
+      </MainLayout>
+    </AuthRoute>
   )
 }
 

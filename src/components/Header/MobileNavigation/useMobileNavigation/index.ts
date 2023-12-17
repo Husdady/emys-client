@@ -1,6 +1,8 @@
 // Hooks
 import useTheme from '@hooks/useTheme'
+import useCustomQueries from './useCustomQueries'
 import { useRef, useState, useCallback } from 'react'
+import useShowQuickSearchModal from '@components/FloatButtons/SearchButton/useShowQuickSearchModal'
 
 // Constants
 import { scrollIntoViewArgs } from '@assets/data/scroll'
@@ -11,17 +13,18 @@ import { ACTIVE_NAVIGATION_ITEM } from '@components/Header/MobileNavigation/Floa
  */
 export default function useMobileNavigation() {
   const { isLightTheme } = useTheme()
+  const customQueries = useCustomQueries()
   const menuRef = useRef<HTMLDivElement | null>(null)
   const [isShowingMenu, setShowingMenu] = useState(false)
+  const showQuickSearchModal = useShowQuickSearchModal()
 
   // Callback for hide the menu
   const hideMenu = useCallback(() => setShowingMenu(false), [])
 
   // Callback for toggle the menu
   const toggleMenu = useCallback(() => {
-      // Toggle scrollbar from body
-      document.body.classList.toggle('overflow-hidden')
-    
+    // Toggle scrollbar from body
+    document.body.classList.toggle('overflow-hidden')
 
     setShowingMenu((s) => {
       // Check if Menu is not showing
@@ -47,6 +50,8 @@ export default function useMobileNavigation() {
     hideMenu: hideMenu,
     toggleMenu: toggleMenu,
     isLightTheme: isLightTheme,
-    isShowingMenu: isShowingMenu
+    isShowingMenu: isShowingMenu,
+    customQueries: customQueries,
+    showQuickSearchModal: showQuickSearchModal
   }
 }

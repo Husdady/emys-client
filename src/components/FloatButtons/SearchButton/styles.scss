@@ -1,0 +1,68 @@
+.modal-quickly-search {
+  & .ant-modal-body {
+    @apply pb-4;
+  }
+
+  & .navigation-seeker-container {
+    & > .navigation-seeker {
+      @apply mt-1 px-0;
+
+      & .navigation-seeker-results {
+        @apply mb-0;
+        border-bottom-width: 2px !important;
+      }
+    }
+
+    & h5 {
+      border-bottom-width: 2px !important;
+    }
+
+    & .empty-results {
+      @apply gap-y-1 pt-6 pb-8;
+    }
+  }
+
+  & .form-control {
+    @apply pt-1;
+
+    & label {
+      @apply mb-[0.4rem];
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    & .navigation-seeker {
+      &::-webkit-scrollbar {
+        @apply w-[0.95rem];
+      }
+    }
+
+    & .navigation-seeker {
+      @apply max-h-[260px];
+    }
+
+    & .navigation-seeker {
+      & h5 {
+        @apply pt-2;
+      }
+    }
+
+    & .form-control {
+      @apply pb-2;
+
+      & input {
+        @apply text-[1rem];
+      }
+
+      & .clear-icon {
+        & svg {
+          @apply w-[16px] h-[16px];
+        }
+
+        &:after {
+          @apply p-[0.9rem];
+        }
+      }
+    }
+  }
+}

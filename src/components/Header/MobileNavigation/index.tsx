@@ -27,17 +27,18 @@ const ContactButton = dynamic(() => import('@components/FloatButtons/ContactButt
 const WhatsappButton = dynamic(() => import('@components/FloatButtons/WhatsappButton'))
 
 function MobileNavigation() {
-  const { isLightTheme, ...menuLeftData } = useMobileNavigation()
+  const { isLightTheme, customQueries, showQuickSearchModal, ...menuLeftData } =
+    useMobileNavigation()
 
   return (
     <>
       <nav className="min-h-[60px] overflow-hidden main-mobile-navigation top-0 sm:top-[1.5rem] fixed mx-auto left-0 right-0 navigation flex gap-x-[1.5rem] justify-between font-poppins bg-white shadow-xl items-center py-1 pl-4 pr-[0.15rem] sm:pr-[0.3rem] z-[9999] whitespace-nowrap sm:mx-[2rem] sm:max-w-[970px] lg:mx-auto sm:rounded-full sm:pl-6 sm:pr-[0.55rem] dark:bg-black border-b border-gray-200 dark:border-gray-600 sm:border-none">
         <div className="flex items-center gap-x-5">
           <MenuIcon {...menuLeftData} />
-          <SwitchTheme />
+          {!customQueries.isXsMobileDevice && <SwitchTheme />}
         </div>
 
-        <div className="empty"></div>
+        {!customQueries.isSmallMobileDevice && <div className="empty"></div>}
 
         <Link href={HOME_PATH}>
           <Image
@@ -52,14 +53,21 @@ function MobileNavigation() {
         </Link>
 
         <div className="flex items-center">
-          <Button
-            title=""
-            icon={<MagnifyingGlass size="smd" />}
-            className="btn-search-navigation-links py-3 bg-transparent !px-3 text-gray-600 dark:text-gray-400"
-          />
+          {!customQueries.isXsMobileDevice && (
+            <Button
+              title=""
+              onClick={showQuickSearchModal}
+              icon={<MagnifyingGlass size="smd" />}
+              className="btn-search-navigation-links py-3 bg-transparent !px-3 text-gray-600 dark:text-gray-400"
+            />
+          )}
 
-          <ContactButton className="mx-2" />
-          <WhatsappButton className="mx-2" />
+          {!customQueries.isSmallMobileDevice && (
+            <>
+              <ContactButton className="mx-2" />
+              <WhatsappButton className="mx-2" />
+            </>
+          )}
 
           <Button
             title=""

@@ -12,7 +12,6 @@
 @import './antd/antd-tooltip';
 
 // Layout Styles
-@import '@layouts/PageLayout/styles.scss';
 @import '@layouts/AuthLayouts/AuthLayout/styles.scss';
 
 // Module Styles
@@ -31,6 +30,7 @@
 @import '@components/Header/styles.scss';
 @import '@components/Footer/styles.scss';
 @import '@components/Select/styles.scss';
+@import '@components/Screen/styles.scss';
 @import '@components/AppLogo/styles.scss';
 @import '@components/Checkbox/styles.scss';
 @import '@components/Modal/styles/main.scss';
@@ -39,8 +39,10 @@
 @import '@components/SwitchTheme/styles.scss';
 @import '@components/FloatButtons/styles.scss';
 @import '@components/SubmitButton/styles.scss';
+@import '@components/MainContainer/styles.scss';
 @import '@components/InputText/styles/main.scss';
 @import '@components/Header/MobileNavigation/styles.scss';
+@import '@components/FloatButtons/SearchButton/styles.scss';
 @import '@components/Header/MobileNavigation/FloatMenu/MenuContent/styles.scss';
 @import '@components/Header/MobileNavigation/FloatMenu/MenuContent/NavigationSearch/styles.scss';
 

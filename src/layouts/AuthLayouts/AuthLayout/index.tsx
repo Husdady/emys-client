@@ -1,6 +1,3 @@
-// Librarys
-import dynamic from 'next/dynamic'
-
 // Components
 import AppLogo from '@root/src/components/AppLogo'
 
@@ -9,9 +6,6 @@ import { AuthLayoutProps } from './interfaces'
 
 // Utils
 import classnames from '@utils/classnames'
-
-// Dynamic components
-// const AppLogo = dynamic(() => import('@components/AppLogo'))
 
 export default function AuthLayout({ children, className, containerClassName }: AuthLayoutProps) {
   return (

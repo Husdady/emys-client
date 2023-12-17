@@ -82,6 +82,7 @@ function Welcome() {
             </div>
 
             <Image
+              priority
               alt="woman"
               width={330}
               height={250}

@@ -1,14 +1,16 @@
+// Components
+import MainContainer from '@components/MainContainer'
+
 // Layouts
-import PageLayout from '@layouts/PageLayout'
 import MainLayout from '@layouts/MainLayout'
 import AccountLayout from '@layouts/PageLayouts/AccountLayout'
 
 export default function AccountPage() {
   return (
-    <PageLayout>
+    <MainContainer>
       <MainLayout>
         <AccountLayout />
       </MainLayout>
-    </PageLayout>
+    </MainContainer>
   )
 }

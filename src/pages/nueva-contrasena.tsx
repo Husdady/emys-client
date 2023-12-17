@@ -1,3 +1,6 @@
+// Routes
+import AuthRoute from '@routes/AuthRoute'
+
 // Types
 import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next'
 
@@ -14,11 +17,13 @@ import validateToken from '@modules/Auth/loaders/validate-token'
 
 export default function NewPasswordPage(props: LoaderResponse) {
   return (
-    <MainLayout>
-      <AuthLayout>
-        <ResetPasswordLayout {...props} />
-      </AuthLayout>
-    </MainLayout>
+    <AuthRoute>
+      <MainLayout>
+        <AuthLayout>
+          <ResetPasswordLayout {...props} />
+        </AuthLayout>
+      </MainLayout>
+    </AuthRoute>
   )
 }
 
