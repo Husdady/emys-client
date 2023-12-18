@@ -8,7 +8,7 @@ const SignOut = dynamic(() => import('./SignOut'))
 
 function MenuBottom() {
   return (
-    <div className="mt-3 h-[calc(38vh-0.75rem)]">
+    <div className="mt-3">
       <hr className="h-[2px] border-none bg-gray-300/30 dark:bg-gray-700" />
 
       <div className="menu-left-bottom pt-4 px-4 pb-3">
