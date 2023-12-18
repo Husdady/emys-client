@@ -1,7 +1,7 @@
 // Hooks
 import useResponsiveQuery from '@hooks/useResponsiveQuery'
 
-export const MEDIA_QUERY_FOR_XS_DEVICES = 375
+export const MEDIA_QUERY_FOR_XS_DEVICES = 373
 export const MEDIA_QUERY_FOR_SMALL_DEVICES = 480
 
 /**

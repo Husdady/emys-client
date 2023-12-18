@@ -19,7 +19,7 @@ export default function MenuContent(props: MenuLeftData) {
   const { navigationRef } = useMenuContent()
 
   return (
-    <section ref={navigationRef} className="navigation mobile-menu-content overflow-y-auto sm:mt-[0.15rem] sm:mr-[0.21rem] overflow-x-hidden">
+    <section ref={navigationRef} className="navigation mobile-menu-content overflow-y-auto sm:mt-[0.15rem] sm:mr-[0.21rem] overflow-x-hidden h-[62vh]">
       <h6 className="navigation-title text-[0.76rem] mt-4 ml-4 mr-5 sm:ml-5 sm:mr-6 font-bold uppercase font-lato tracking-wider text-main-700 dark:text-main-200">
         Búsqueda de navegación
       </h6>
