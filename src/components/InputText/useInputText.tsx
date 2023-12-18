@@ -135,7 +135,7 @@ export default function useInputText({
       useHoverEffect: true,
       className: classnames([
         props.clearIconClassName,
-        'clear-icon text-gray-400 dark:text-gray-500'
+        'clear-icon text-gray-400'
       ])
     }
   }, [props.onClear, props.clearIconClassName])

@@ -4,9 +4,6 @@
       @apply hidden;
     }
 
-    @media screen and (max-width: 1200px) {
-    }
-
     @media screen and (min-width: 1450px) {
       @apply min-w-[1200px] max-w-[1200px];
     }

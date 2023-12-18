@@ -70,7 +70,7 @@ function Modal() {
             size="sm"
             useHoverEffect
             onClick={handleClose}
-            className="clear-icon mxs flex items-center justify-center text-gray-600/40 dark:text-gray-400"
+            className="clear-icon mxs flex items-center justify-center text-gray-400"
           />
         </Suspense>
       }

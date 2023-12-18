@@ -35,12 +35,12 @@ export default function Result({ icon, path, title, hideResults }: ResultProps) 
         href={path}
         onClick={() => handleClick(path as string)}
         title={`Navegar a la ruta '${String(path)}'`}
-        className="navigation-seeker-link flex my-2 items-center px-3 py-[0.85rem] gap-x-12 justify-between border-l-[5px] text-main-700 hover:text-main-700 border-main-700 bg-main-700/5 hover:bg-main-700/10 dark:bg-main-200/10 dark:hover:bg-main-200/20 dark:border-main-200 dark:text-main-200 font-semibold dark:font-normal dark:font-semibold"
+        className="navigation-seeker-link break-word flex my-2 items-center px-3 py-[0.85rem] gap-x-12 justify-between border-l-[5px] text-main-700 hover:text-main-700 border-main-700 bg-main-700/5 hover:bg-main-700/10 dark:bg-main-200/10 dark:hover:bg-main-200/20 dark:border-main-200 dark:text-main-200 font-semibold dark:font-normal dark:font-semibold"
       >
         <div className="flex items-center gap-x-2">
           {icon}
 
-          <span className="text font-poppins leading-relaxed text-[0.93rem]">
+          <span className="text font-poppins leading-relaxed text-[0.93rem] break-word">
             {title}
           </span>
         </div>
