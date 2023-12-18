@@ -17,12 +17,12 @@ import logo from '@assets/images/logo.webp'
 import logoDark from '@assets/images/logo-dark.webp'
 
 // Dynamic Components
+const User = dynamic(() => import('./User'))
 const MenuIcon = dynamic(() => import('./MenuIcon'))
 const Link = dynamic(() => import('@components/Link'))
 const FloatMenu = dynamic(() => import('./FloatMenu'))
 const Button = dynamic(() => import('@components/Button'))
 const SwitchTheme = dynamic(() => import('@components/SwitchTheme'))
-const UserCircleSolid = dynamic(() => import('@assets/icons/user-circle-solid'))
 const ContactButton = dynamic(() => import('@components/FloatButtons/ContactButton'))
 const WhatsappButton = dynamic(() => import('@components/FloatButtons/WhatsappButton'))
 
@@ -69,11 +69,7 @@ function MobileNavigation() {
             </>
           )}
 
-          <Button
-            title=""
-            icon={<UserCircleSolid size="xl" />}
-            className="btn-auth py-2.5 bg-transparent !px-3 text-gray-600 dark:text-gray-400"
-          />
+          <User />
         </div>
       </nav>
 

@@ -8,7 +8,7 @@ export default function BlockedRoute() {
   return (
     <Screen
       showButton
-      className="!mt-6 mb-2"
+      className="pb-[1.25rem]"
       image={constants.DEFAULT_IMAGE}
       title={constants.DEFAULT_TITLE}
       button={constants.DEFAULT_BUTTON}

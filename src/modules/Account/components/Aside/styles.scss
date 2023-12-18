@@ -1,0 +1,5 @@
+.aside {
+  @media screen and (max-width: 375px) {
+    @apply px-4
+  }
+}

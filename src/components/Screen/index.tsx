@@ -36,7 +36,7 @@ export default function Screen({
       style={style}
       className={classnames([
         className,
-        'page-screen flex flex-col items-center justify-center container mx-auto px-4 lg:px-0 dark:bg-gray-900 overflow-hidden'
+        'page-screen flex flex-col items-center justify-center container mx-auto px-4 lg:px-0 dark:bg-gray-900 overflow-hidden min-h-[100vh]'
       ])}
     >
       {!isUndefined(image.src) && (
@@ -53,7 +53,7 @@ export default function Screen({
         {...customTitle}
         className={classnames([
           customTitle.className,
-          'font-poppins font-bold text-3xl text-center main-title'
+          'font-poppins font-bold text-3xl text-center main-title max-w-[550px] leading-tight'
         ])}
       >
         {title}
@@ -63,7 +63,7 @@ export default function Screen({
         {...customDescription}
         className={classnames([
           customDescription.className,
-          'screen-description font-poppins font-bold text-[0.93rem] text-gray-700 sm-container text-center md:w-7/12 block mt-2 mb-6 dark:text-gray-300'
+          'screen-description font-poppins font-bold text-base text-gray-700 sm-container text-center block mt-2 mb-6 dark:text-gray-300 max-w-[650px]'
         ])}
       >
         {description}
@@ -77,7 +77,7 @@ export default function Screen({
           customTitle={constants.DEFAULT_CUSTOM_TITLE}
           className={classnames([
             button.className,
-            'text-white font-poppins ring-2 ring-transparent hover:bg-transparent !py-[0.9rem] rounded-full dark:hover:bg-transparent'
+            'text-white font-poppins ring-2 ring-transparent hover:bg-transparent !py-[0.9rem] rounded-full dark:hover:bg-transparent hover:font-semibold dark:hover:font-normal !gap-x-1.5'
           ])}
         />
       )}

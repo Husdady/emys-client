@@ -20,15 +20,11 @@ export const DEFAULT_CUSTOM_TITLE = {
   className: 'text-red-500 w-full sm:w-6/12 dark:text-red-400'
 }
 
-export const DEFAULT_CUSTOM_DESCRIPTION = {
-  className: 'md:w-7/12 lg:w-5/12'
-}
-
 export const DEFAULT_BUTTON: ButtonProps = {
-  icon: <Home size="md" className="mr-1" />,
+  icon: <Home size="smd" />,
   title: 'Volver a la sección inicial',
   className:
-    'bg-red-500 hover:ring-red-500 dark:bg-red-600 dark:hover:ring-red-400 hover:text-red-600 hover:font-semibold dark:hover:font-normal dark:hover:text-red-400'
+    'bg-red-500 hover:ring-red-500 dark:bg-red-600 dark:hover:ring-red-400 hover:text-red-600 dark:hover:text-red-400'
 }
 
 export const DEFAULT_IMAGE: ImageProps = {

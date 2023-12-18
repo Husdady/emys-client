@@ -16,6 +16,7 @@
 
 // Module Styles
 @import '@modules/Home/components/Welcome/styles.scss';
+@import '@modules/Account/components/Aside/styles.scss';
 @import '@modules/Auth/components/Remember/styles.scss';
 @import '@modules/Auth/components/LinkToLogin/styles.scss';
 @import '@modules/Auth/components/LinkToRegister/styles.scss';
@@ -41,8 +42,9 @@
 @import '@components/SubmitButton/styles.scss';
 @import '@components/MainContainer/styles.scss';
 @import '@components/InputText/styles/main.scss';
-@import '@components/Header/MobileNavigation/styles.scss';
 @import '@components/FloatButtons/SearchButton/styles.scss';
+@import '@components/Header/MobileNavigation/User/styles.scss';
+@import '@components/Header/MobileNavigation/FloatMenu/styles.scss';
 @import '@components/Header/MobileNavigation/FloatMenu/MenuContent/styles.scss';
 @import '@components/Header/MobileNavigation/FloatMenu/MenuContent/NavigationSearch/styles.scss';
 

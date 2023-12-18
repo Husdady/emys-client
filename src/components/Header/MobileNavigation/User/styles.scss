@@ -1,0 +1,5 @@
+.user-profile-photo {
+  @media only screen and (max-width: 375px) {
+    @apply w-[40px] h-[40px];
+  }
+}
