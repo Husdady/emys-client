@@ -26,6 +26,6 @@ export default function useUser() {
 
   return {
     avatarUrl: avatarUrl,
-    isAuthenticated: isAuthenticated
+    isAuthenticated: isAuthenticated,
   }
 }

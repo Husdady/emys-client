@@ -17,15 +17,15 @@ export default function NavigationItem({ icon, path, title, menuData }: Navigati
   const router = useRouter()
 
   return (
-    <li className="navigation-list-item pl-1">
+    <li className="navigation-list-item border-b border-gray-200">
       <Link
         href={path}
-        onClick={menuData?.toggleMenu}
+        onClick={menuData?.hideMenu}
         className={classnames([
           router.pathname === path
             ? 'bg-main-700/10 text-main-700 !border-main-700 dark:bg-main-200/30 dark:text-pink-200 dark:!border-main-200'
             : 'dark:text-gray-200',
-          'navigation-list-item-link flex items-center gap-x-5 justify-between border-l-[5px] border-transparent py-3.5 px-3 font-semibold tracking-wide md:hover:bg-main-700/10 md:hover:text-main-700 dark:!font-normal dark:md:hover:!font-normal dark:md:hover:bg-main-200/30 dark:md:hover:text-pink-200'
+          'navigation-list-item-link flex items-center gap-x-5 justify-between border-l-[5px] border-transparent py-3.5 sm:py-3 px-3 font-semibold tracking-wide md:hover:bg-main-700/10 md:hover:text-main-700 dark:!font-normal dark:md:hover:!font-normal dark:md:hover:bg-main-200/30 dark:md:hover:text-pink-200 whitespace-normal'
         ])}
       >
         <div className="inner flex items-center gap-x-2">
@@ -33,8 +33,6 @@ export default function NavigationItem({ icon, path, title, menuData }: Navigati
 
           <span className="font-poppins text-[0.84rem] lg:leading-snug break-word">{title}</span>
         </div>
-
-        <ChevronRight size="smaller" className="chevron-right dark:text-gray-200 stroke-4" />
       </Link>
     </li>
   )

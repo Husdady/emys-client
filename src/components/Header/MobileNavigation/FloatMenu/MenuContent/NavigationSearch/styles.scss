@@ -1,43 +1,43 @@
-.navigation-seeker-container {
-  & > .navigation-seeker {
-    & > .navigation-seeker-results {
-      & > .navigation-seeker-item {
-        @media only screen and (max-width: 437px) {
-          & .text {
-            @apply leading-snug;
-          }
-        }
+// .navigation-seeker-container {
+//   & > .navigation-seeker {
+//     & > .navigation-seeker-results {
+//       & > .navigation-seeker-item {
+//         @media only screen and (max-width: 437px) {
+//           & .text {
+//             @apply leading-snug;
+//           }
+//         }
 
-        & > .navigation-seeker-link:first-of-type {
-          @apply mt-0;
-        }
-      }
-    }
-  }
+//         & > .navigation-seeker-link:first-of-type {
+//           @apply mt-0;
+//         }
+//       }
+//     }
+//   }
 
-  @media screen and (max-width: 1200px) {
-    & .empty-results {
-      @apply py-8 gap-y-1;
-    }
+//   @media screen and (max-width: 1200px) {
+//     & .empty-results {
+//       @apply py-8 gap-y-1;
+//     }
 
-    & > #navigation-results-separator {
-      @apply hidden;
-    }
+//     & > #navigation-results-separator {
+//       @apply hidden;
+//     }
 
-    & {
-      @apply bg-transparent h-auto mx-0 mb-0 mt-2 p-0 relative w-full max-w-full;
+//     & {
+//       @apply bg-transparent h-auto mx-0 mb-0 mt-2 p-0 relative w-full max-w-full;
 
-      & > .navigation-seeker {
-        @apply w-full max-w-full  min-w-full m-0 pb-0 pl-3 pr-0 overflow-auto max-h-[initial];
+//       & > .navigation-seeker {
+//         @apply w-full max-w-full  min-w-full m-0 pb-0 pl-3 pr-0 overflow-auto max-h-[initial];
 
-        & > h5 {
-          @apply pt-2;
-        }
+//         & > h5 {
+//           @apply pt-2;
+//         }
 
-        & > .navigation-seeker-results {
-          @apply mb-0;
-        }
-      }
-    }
-  }
-}
+//         & > .navigation-seeker-results {
+//           @apply mb-0;
+//         }
+//       }
+//     }
+//   }
+// }

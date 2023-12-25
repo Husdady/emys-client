@@ -1,26 +1,37 @@
 // Librarys
 import dynamic from 'next/dynamic'
 
+// Hooks
+import useAuth from '@hooks/useAuth'
+
 // Interfaces
-import { MenuLeftData } from '@components/Header/MobileNavigation/useMobileNavigation/interfaces'
+import { MenuData } from '@components/Header/MobileNavigation/useMobileNavigation/interfaces'
 
 // Utils
 import classnames from '@utils/classnames'
 
 // Dynamic Components
-const MenuBottom = dynamic(() => import('./MenuBottom'))
 const MenuContent = dynamic(() => import('./MenuContent'))
+const MenuBottom = dynamic(() => import('@components/Header/User/FloatMenu/MenuBottom'))
 
-export default function FloatMenu(props: MenuLeftData) {
+export default function FloatMenu(props: MenuData) {
+  const { isAuthenticated } = useAuth()
+
   return (
-    <div
-      className={classnames([
-        props.isShowingMenu ? null : 'hidden',
-        'float-menu sm:max-w-[970px] top-[60px] sm:top-[6rem] sm:rounded-xl sm:mx-[2rem] dark:sm:shadow-gray-700 fixed left-0 right-0 bg-white shadow-xl dark:bg-black border-b border-gray-200 dark:border-gray-600 sm:border-none h-[calc(100%-60px)] flex flex-col sm:h-[calc(100%-115px)]'
-      ])}
-    >
-      <MenuContent {...props} />
-      <MenuBottom />
-    </div>
+    <>
+      <div
+        className={classnames([
+          props.isShowingMenu ? null : 'hidden',
+          'float-menu z-[999999] md:max-w-[970px] top-[60px] md:top-[5.5rem] md:rounded-lg md:mx-[2rem] dark:md:shadow-gray-700 fixed left-0 right-0 bg-white shadow-xl dark:bg-black border-b border-gray-200 dark:border-gray-600 md:border-none h-[calc(100%-60px)] flex flex-col md:h-[calc(100%-100px)]'
+        ])}
+      >
+        <MenuContent {...props} />
+        {isAuthenticated && <MenuBottom />}
+      </div>
+
+      {props.isShowingMenu && (
+        <div className="w-full h-full fixed !z-[999] ant-modal-mask hidden md:block"></div>
+      )}
+    </>
   )
 }

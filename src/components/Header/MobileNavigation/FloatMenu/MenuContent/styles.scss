@@ -2,4 +2,30 @@
   &::-webkit-scrollbar {
     width: 17px;
   }
+
+  & .navigation-seeker-results {
+    @apply mb-0 pb-2;
+  }
+
+  & .fast-search {
+    & .inner {
+      @media only screen and (max-width: 480px) {
+        @apply px-4 gap-x-2.5;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 350px) {
+    & .form-control {
+      @apply pl-3 pr-1;
+    }
+
+    & .navigation-title {
+      @apply ml-3;
+    }
+
+    & .navigation-list-item {
+      @apply pl-0
+    }
+  }
 }

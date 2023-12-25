@@ -38,13 +38,13 @@
 @import '@components/InputError/styles.scss';
 @import '@components/MultiSelect/styles.scss';
 @import '@components/SwitchTheme/styles.scss';
+@import '@components/Header/User/styles.scss';
 @import '@components/FloatButtons/styles.scss';
 @import '@components/SubmitButton/styles.scss';
 @import '@components/MainContainer/styles.scss';
 @import '@components/InputText/styles/main.scss';
+@import '@components/Header/User/FloatMenu/styles.scss';
 @import '@components/FloatButtons/SearchButton/styles.scss';
-@import '@components/Header/MobileNavigation/User/styles.scss';
-@import '@components/Header/MobileNavigation/FloatMenu/styles.scss';
 @import '@components/Header/MobileNavigation/FloatMenu/MenuContent/styles.scss';
 @import '@components/Header/MobileNavigation/FloatMenu/MenuContent/NavigationSearch/styles.scss';
 
@@ -83,7 +83,7 @@
     }
 
     ::-webkit-scrollbar-thumb {
-      @apply bg-gray-600;
+      @apply bg-gray-300;
 
       &:hover {
         @apply bg-gray-400;
@@ -97,7 +97,7 @@
     }
 
     ::-webkit-scrollbar-thumb {
-      @apply bg-gray-400;
+      @apply bg-gray-600;
 
       &:hover {
         @apply bg-gray-500;

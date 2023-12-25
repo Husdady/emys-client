@@ -1,0 +1,32 @@
+.float-menu {
+  @media only screen and (min-width: 1024px) {
+    @apply mx-auto;
+  }
+
+  &.unauthenticated-links {
+    @media only screen and (min-width: 350px) {
+      @apply min-w-[350px];
+    }
+  }
+
+  @media only screen and (max-width: 373px) {
+    @apply w-full max-w-[initial];
+  }
+
+  & .main-mobile-navigation {
+    @media only screen and (max-width: 500px) {
+      & .empty,
+      & .btn-float-contact,
+      & .btn-float-whatsapp {
+        @apply hidden;
+      }
+    }
+
+    @media only screen and (max-width: 350px) {
+      & .ant-switch,
+      & .btn-search-navigation-links {
+        display: none !important;
+      }
+    }
+  }
+}

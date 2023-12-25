@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic'
 import useMenuContent from './useMenuContent'
 
 // Interfaces
-import { MenuLeftData } from '@components/Header/MobileNavigation/useMobileNavigation/interfaces'
+import { MenuData } from '@components/Header/MobileNavigation/useMobileNavigation/interfaces'
 
 // Data
 import navigation from '@assets/navigation'
@@ -15,11 +15,14 @@ import navigation from '@assets/navigation'
 const NavigationItem = dynamic(() => import('./NavigationItem'))
 const NavigationSearch = dynamic(() => import('./NavigationSearch'))
 
-export default function MenuContent(props: MenuLeftData) {
+export default function MenuContent(props: MenuData) {
   const { navigationRef } = useMenuContent()
 
   return (
-    <section ref={navigationRef} className="navigation mobile-menu-content overflow-y-auto sm:mt-[0.15rem] sm:mr-[0.21rem] overflow-x-hidden">
+    <section
+      ref={navigationRef}
+      className="navigation mobile-menu-content overflow-y-auto sm:mt-[0.15rem] sm:mr-[0.21rem] overflow-x-hidden"
+    >
       <h6 className="navigation-title text-[0.76rem] mt-4 ml-4 mr-5 sm:ml-5 sm:mr-6 font-bold uppercase font-lato tracking-wider text-main-700 dark:text-main-200">
         Búsqueda de navegación
       </h6>
@@ -35,7 +38,7 @@ export default function MenuContent(props: MenuLeftData) {
 
             <ul className="navigation-list">
               {item.navigationItems.map((navigationItem, k) => (
-                <NavigationItem key={k} {...navigationItem} menuLeftData={props} />
+                <NavigationItem key={k} {...navigationItem} menuData={props} />
               ))}
             </ul>
           </Fragment>

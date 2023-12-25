@@ -1,5 +1,5 @@
 // Interfaces
-export interface MenuLeftData {
+export interface MenuData {
   hideMenu: () => void
   toggleMenu: () => void
   isShowingMenu: boolean

@@ -76,7 +76,7 @@ const InputText: React.FC<InputTextProps> = ({
         className={classnames([
           props.innerClassName,
           props.hasError === true ? 'shadow-field-error' : null,
-          'inner z-50 relative cursor-text flex items-center gap-x-3 w-full py-3 px-4 rounded border leading-tight bg-white dark:bg-gray-900 border-gray-400/50 dark:border-gray-400/70 outline outline-1 outline-gray-400/50 shadow-sm dark:outline-gray-400/70'
+          'overflow-hidden inner z-50 relative cursor-text flex items-center gap-x-3 w-full py-3 px-4 rounded border leading-tight bg-white dark:bg-gray-900 border-gray-400/50 dark:border-gray-400/70 outline outline-1 outline-gray-400/50 shadow-sm dark:outline-gray-400/70'
         ])}
       >
         <InputIcon icon={icon} type={type} />
