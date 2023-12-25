@@ -6,6 +6,8 @@ import AntdAvatar from 'antd/lib/avatar'
 import Button from '@components/Button'
 import Camera from '@assets/icons/camera'
 
+// Types
+import type { ReactNode } from 'react'
 // Interfaces
 import { AvatarProps } from './interfaces'
 
@@ -24,7 +26,7 @@ function Avatar({ src, onOpen }: AvatarProps) {
         size="large"
         alt="user-profile-photo"
         className="!bg-main-700 z-20 border-2 border-gray-400 dark:border-gray-700"
-        src={src}
+        src={src as ReactNode}
       />
     </div>
   )
