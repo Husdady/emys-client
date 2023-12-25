@@ -29,10 +29,10 @@ export default function useAvatar() {
     const img = user.profilePhoto // Get profile photo
 
     // Return default image if not exists a user profile photo
-    if (img === null || isUndefined(img)) return avatarImage
+    if (img === null || isUndefined(img)) return avatarImage.src
     return img.url // Return the user profile photo
   }, [user?.profilePhoto?.url])
-
+console.log({ user })
   // Define callback for show a modal
   const onChangePhoto = useCallback(() => {
     showModal({

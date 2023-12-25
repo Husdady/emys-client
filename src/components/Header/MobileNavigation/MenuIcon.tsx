@@ -21,5 +21,8 @@ function MenuIcon({ toggleMenu, isShowingMenu }: MenuData) {
 }
 
 export default memo(MenuIcon, (prevProps, nextProps) => {
-  return prevProps.isShowingMenu === nextProps.isShowingMenu
+  return (
+    prevProps.toggleMenu === nextProps.toggleMenu &&
+    prevProps.isShowingMenu === nextProps.isShowingMenu
+  )
 })

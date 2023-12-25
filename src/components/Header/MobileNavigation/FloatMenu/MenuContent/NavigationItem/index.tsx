@@ -1,3 +1,6 @@
+// Librarys
+import dynamic from 'next/dynamic'
+
 // Components
 import ChevronRight from '@assets/icons/chevron-right'
 
@@ -11,7 +14,7 @@ import { NavigationItemProps } from './interfaces'
 import classnames from '@utils/classnames'
 
 // Dynamic Components
-import Link from '@components/Link'
+const Link = dynamic(() => import('@components/Link'))
 
 export default function NavigationItem({ icon, path, title, menuData }: NavigationItemProps) {
   const router = useRouter()

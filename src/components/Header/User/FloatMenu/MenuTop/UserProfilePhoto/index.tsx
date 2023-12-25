@@ -12,7 +12,7 @@ import { StaticImageData } from 'next/image'
 
 function UserProfilePhoto() {
   const { src, onOpen } = useUserProfilePhoto()
-  return <Avatar src={src as StaticImageData} onOpen={onOpen} />
+  return <Avatar src={src as string|StaticImageData} onOpen={onOpen} />
 }
 
 export default memo(UserProfilePhoto)

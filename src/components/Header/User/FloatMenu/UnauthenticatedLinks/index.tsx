@@ -1,9 +1,6 @@
 // Librarys
 import dynamic from 'next/dynamic'
 
-// Hooks
-import useMenuContent from './useMenuContent'
-
 // Interfaces
 import { MenuData } from '@components/Header/User/interfaces'
 
@@ -14,29 +11,32 @@ import navigation from '@assets/navigation/unauthenticated.navigation'
 // Dynamic Components
 const Header = dynamic(() => import('./Header'))
 const Link = dynamic(() => import('@components/Link'))
-const NavigationItem = dynamic(() => import('./NavigationItem'))
+const NavigationItem = dynamic(() => import('@components/Header/User/FloatMenu/NavigationItem'))
 
-export default function MenuContent(props: MenuData) {
-  const { navigationRef } = useMenuContent()
-
+export default function UnauthenticatedLinks(props: MenuData) {
   return (
-    <section
-      ref={navigationRef}
-      className="navigation mobile-menu-content overflow-y-auto sm:mt-[0.15rem] sm:mr-[0.21rem] overflow-x-hidden"
-    >
+    <section className="navigation mobile-menu-content sm:mr-[0.21rem] overflow-x-hidden">
       <Header {...props} />
 
       {navigation.map((item, i: number) => {
         return (
           <ul key={i} className="navigation-list">
             {item.navigationItems.map((navigationItem, k) => (
-              <NavigationItem key={k} {...navigationItem} menuData={props} />
+              <li
+                key={k}
+                className="navigation-list-item border-b border-gray-300 dark:border-gray-600"
+              >
+                <NavigationItem {...navigationItem} menuData={props} />
+              </li>
             ))}
           </ul>
         )
       })}
 
-      <Link href={CONTACT_PATH} className="text-blue-500 underline text-center mx-4 mt-5 block dark:text-sky-300">
+      <Link
+        href={CONTACT_PATH}
+        className="text-blue-500 underline text-center mx-4 mt-5 block dark:text-sky-300"
+      >
         ¿Necesitas ayuda?
       </Link>
     </section>

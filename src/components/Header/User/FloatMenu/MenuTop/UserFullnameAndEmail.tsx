@@ -10,8 +10,8 @@ function UserFullnameAndEmail() {
   if (user === null) return null
 
   return (
-    <div className="user-information tracking-wide">
-      <h3 className="user-fullname font-bold font-poppins text-md leading-tight dark:font-normal dark:text-gray-200">
+    <div className="user-information tracking-wide truncate">
+      <h3 className="user-fullname font-bold font-poppins text-md leading-tight dark:font-normal dark:text-gray-200 truncate">
         {user.fullname.split(' ').slice(0, 2).join(' ')}
       </h3>
 

@@ -3,6 +3,6 @@ import { StaticImageData } from 'next/image'
 import { ButtonProps } from '@components/Button/interfaces'
 
 export interface AvatarProps {
-  src?: StaticImageData
+  src?: string|StaticImageData
   onOpen: ButtonProps['onClick']
 }

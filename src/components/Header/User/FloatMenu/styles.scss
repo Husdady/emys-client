@@ -4,7 +4,7 @@
   }
 
   &.unauthenticated-links {
-    @media screen and (min-width: 350px) {
+    @media screen and (min-width: 400px) {
       @apply min-w-[350px];
     }
 
@@ -15,7 +15,7 @@
     }
   }
 
-  @media only screen and (max-width: 373px) {
+  @media only screen and (max-width: 450px) {
     @apply w-full max-w-[initial];
   }
 

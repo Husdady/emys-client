@@ -8,6 +8,7 @@ import Camera from '@assets/icons/camera'
 
 // Types
 import type { ReactNode } from 'react'
+
 // Interfaces
 import { AvatarProps } from './interfaces'
 

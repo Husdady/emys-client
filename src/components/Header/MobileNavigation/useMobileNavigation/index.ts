@@ -1,4 +1,5 @@
 // Hooks
+import useMounted from '@hooks/useMounted'
 import useCustomQueries from './useCustomQueries'
 import { useRef, useState, useCallback, useMemo } from 'react'
 import useShowQuickSearchModal from '@components/FloatButtons/SearchButton/useShowQuickSearchModal'
@@ -32,12 +33,20 @@ export default function useMobileNavigation() {
   }, [mode, isShowingMenu])
 
   // Callback for hide the menu
-  const hideMenu = useCallback(() => setShowingMenu(false), [])
+  const hideMenu = useCallback(() => {
+    setShowingMenu(false)
+
+    // Add scrollbar to the body
+    document.body.classList.remove('overflow-hidden')
+  }, [])
 
   // Callback for show the User menu
   const showUserMenu = useCallback(() => {
     setMode(USER_MENU)
     setShowingMenu(true)
+
+    // Toggle scrollbar from body
+    document.body.classList.toggle('overflow-hidden')
   }, [])
 
   // Callback for toggle the Default Menu
@@ -68,6 +77,12 @@ export default function useMobileNavigation() {
       return !s
     })
   }, [mode, isShowingMenu])
+
+  useMounted(() => {
+    return () => {
+      document.body.classList.remove('overflow-hidden')
+    }
+  }, [])
 
   return {
     menuRef: menuRef,
