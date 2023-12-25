@@ -36,7 +36,7 @@ export default function MenuContent(props: MenuData) {
         )
       })}
 
-      <Link href={CONTACT_PATH} className="text-blue-500 underline text-center mx-4 mt-5 block">
+      <Link href={CONTACT_PATH} className="text-blue-500 underline text-center mx-4 mt-5 block dark:text-sky-300">
         ¿Necesitas ayuda?
       </Link>
     </section>

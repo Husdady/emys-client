@@ -4,8 +4,14 @@
   }
 
   &.unauthenticated-links {
-    @media only screen and (min-width: 350px) {
+    @media screen and (min-width: 350px) {
       @apply min-w-[350px];
+    }
+
+    @media only screen and (max-width: 300px) {
+      & .hide-menu-text {
+        @apply hidden;
+      }
     }
   }
 

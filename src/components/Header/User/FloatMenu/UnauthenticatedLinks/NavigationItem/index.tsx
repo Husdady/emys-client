@@ -17,7 +17,7 @@ export default function NavigationItem({ icon, path, title, menuData }: Navigati
   const router = useRouter()
 
   return (
-    <li className="navigation-list-item border-b border-gray-200">
+    <li className="navigation-list-item border-b border-gray-300 dark:border-gray-600">
       <Link
         href={path}
         onClick={menuData?.hideMenu}

@@ -93,14 +93,14 @@
 
   html.dark {
     ::-webkit-scrollbar-track {
-      @apply bg-gray-900;
+      @apply bg-black;
     }
 
     ::-webkit-scrollbar-thumb {
-      @apply bg-gray-600;
+      @apply bg-gray-500;
 
       &:hover {
-        @apply bg-gray-500;
+        @apply bg-gray-400;
       }
     }
   }
