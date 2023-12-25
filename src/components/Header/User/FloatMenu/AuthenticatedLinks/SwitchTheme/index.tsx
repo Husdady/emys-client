@@ -18,11 +18,11 @@ function CustomSwitchTheme() {
     <article
       role="button"
       onClick={handleChangeTheme}
-      className="custom-switch-theme flex items-center justify-between border-l-[5px] border-transparent py-3.5 sm:py-3 !px-3 sm:!px-3.5 font-semibold tracking-wide dark:!font-normal dark:md:hover:!font-normal whitespace-normal bg-transparent border-b border-b-gray-300 dark:border-b-gray-600"
+      className="custom-switch-theme flex items-center justify-between border-l-[5px] border-l-transparent py-3.5 sm:py-3 !px-3 sm:!px-3.5 font-semibold tracking-wide dark:!font-normal dark:md:hover:!font-normal whitespace-normal bg-transparent gap-x-5"
     >
       <div className="flex items-center gap-x-2">
         <Brush size="smx" />
-        <span>Cambiar de tema</span>
+        <span className="leading-snug">Cambiar de tema</span>
       </div>
 
       <SwitchTheme />
