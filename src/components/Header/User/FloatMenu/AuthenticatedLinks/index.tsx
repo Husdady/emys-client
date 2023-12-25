@@ -2,6 +2,7 @@
 import dynamic from 'next/dynamic'
 
 // Components
+import Camera from '@assets/icons/camera'
 import Settings from '@assets/icons/settings'
 
 // Interfaces
@@ -11,6 +12,8 @@ import { MenuData } from '@components/Header/User/interfaces'
 import { ACCOUNT_PATH } from '@assets/data/paths'
 
 // Dynamic Components
+const SwitchTheme = dynamic(() => import('./SwitchTheme'))
+const UpdateProfilePhoto = dynamic(() => import('./UpdateProfilePhoto'))
 const NavigationItem = dynamic(() => import('@components/Header/User/FloatMenu/NavigationItem'))
 
 export default function UnauthenticatedLinks(props: MenuData) {
@@ -19,9 +22,13 @@ export default function UnauthenticatedLinks(props: MenuData) {
       <NavigationItem
         icon={<Settings />}
         title="Administrar mi Cuenta"
+        className="border-b border-b-gray-300 dark:border-b-gray-600"
         path={ACCOUNT_PATH}
         menuData={props}
       />
+
+      <UpdateProfilePhoto {...props} />
+      <SwitchTheme />
     </section>
   )
 }

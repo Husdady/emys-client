@@ -2,11 +2,7 @@
 import Switch from 'antd/lib/switch'
 
 // Hooks
-import { useCallback } from 'react'
-import useTheme from '@hooks/useTheme'
-
-// Constants
-import { DARK, LIGHT } from './constants'
+import useSwitchTheme from './useSwitchTheme'
 
 export const style = {
   display: 'block',
@@ -14,19 +10,13 @@ export const style = {
 }
 
 export default function SwitchTheme() {
-  const { setTheme, isLightTheme } = useTheme()
-
-  // Event 'onChange' in Switch component for change current theme
-  const handleOnChange = useCallback((isActive: boolean) => {
-    if (!isActive) return setTheme(DARK)
-    setTheme(LIGHT)
-  }, [])
+  const { isLightTheme, handleChangeTheme } = useSwitchTheme()
 
   return (
     <Switch
       style={style}
       checked={isLightTheme}
-      onChange={handleOnChange}
+      onChange={handleChangeTheme}
       className="select-theme"
     />
   )

@@ -1,14 +1,7 @@
-// Components
-import Camera from '@assets/icons/camera'
-import DeviceFloppy from '@assets/icons/device-floppy'
-import UpdateProfilePhotoForm, {
-  UPDATE_PROFILE_PHOTO_FORM_ID
-} from '@components/UpdateProfilePhoto'
-
 // Hooks
+import { useMemo } from 'react'
 import useAuth from '@hooks/useAuth'
-import useModal from '@hooks/useModal'
-import { useMemo, useCallback } from 'react'
+import useShowProfilePhotoModal from './useShowProfilePhotoModal'
 
 // Utils
 import isUndefined from '@utils/isUndefined'
@@ -19,9 +12,9 @@ import avatarImage from '@assets/images/avatar.webp'
 /**
  * Hook that implements the logic of Avatar component
  */
-export default function useAvatar() {
+export default function useUserProfilePhoto() {
   const { user } = useAuth()
-  const { showModal } = useModal()
+  const showModalForUpdateProfilePhoto = useShowProfilePhotoModal()
 
   // Define the avatar image
   const avatarUrl = useMemo(() => {
@@ -32,25 +25,9 @@ export default function useAvatar() {
     if (img === null || isUndefined(img)) return avatarImage.src
     return img.url // Return the user profile photo
   }, [user?.profilePhoto?.url])
-console.log({ user })
-  // Define callback for show a modal
-  const onChangePhoto = useCallback(() => {
-    showModal({
-      width: 400,
-      icon: <Camera />,
-      content: <UpdateProfilePhotoForm />,
-      title: 'Actualizar mi foto de perfil',
-      acceptButtonProps: {
-        type: 'submit',
-        icon: <DeviceFloppy size="md" />,
-        title: 'Actualizar imagen',
-        form: UPDATE_PROFILE_PHOTO_FORM_ID
-      }
-    })
-  }, [])
 
   return {
     src: avatarUrl,
-    onOpen: onChangePhoto
+    onOpen: showModalForUpdateProfilePhoto
   }
 }

@@ -25,7 +25,7 @@ export default function FloatMenu(props: MenuData) {
       <div
         className={classnames([
           props.isShowingMenu ? null : 'hidden',
-          'float-menu overflow-y-auto h-[calc(100%-60px)] unauthenticated-links z-[999999] max-w-[300px] top-[60px] md:top-[5.5rem] md:rounded-lg md:mx-[2rem] dark:md:shadow-gray-700 fixed right-0 bg-white shadow-xl dark:bg-black border-b border-gray-200 dark:border-gray-600 md:border-none flex flex-col md:h-[calc(100%-100px)] flex flex-col justify-between'
+          'float-menu overflow-y-auto h-full top-0 unauthenticated-links z-[999999] max-w-[300px] md:top-[5.5rem] md:rounded-lg md:mx-[2rem] dark:md:shadow-gray-700 fixed right-0 bg-white shadow-xl dark:bg-black border-b border-gray-200 dark:border-gray-600 md:border-none flex flex-col md:h-[calc(100%-100px)] flex flex-col justify-between'
         ])}
       >
         <div>
@@ -39,7 +39,7 @@ export default function FloatMenu(props: MenuData) {
 
           <AppVersion
             className={classnames([
-              isAuthenticated ? 'border-t-2 border-gray-300 dark:border-gray-700 pt-2' : "mt-8"
+              isAuthenticated ? 'border-t-2 border-gray-300/30 dark:border-gray-700 pt-2' : "mt-8"
             ])}
           />
         </div>
