@@ -1,6 +1,7 @@
 // Hooks
 import { useMemo } from 'react'
 import useAuth from '@hooks/useAuth'
+import useTabletScreen from '@hooks/useTabletScreen'
 
 // Utils
 import isUndefined from '@utils/isUndefined'
@@ -12,6 +13,7 @@ import avatarImage from '@assets/images/avatar.webp'
  * Hook that implements the logic of Avatar component
  */
 export default function useUser() {
+  const isTabletScreen = useTabletScreen()
   const { user, isAuthenticated } = useAuth()
 
   // Define the avatar image
@@ -25,7 +27,9 @@ export default function useUser() {
   }, [user?.profilePhoto?.url])
 
   return {
+    user: user,
     avatarUrl: avatarUrl,
-    isAuthenticated: isAuthenticated,
+    isTabletScreen: isTabletScreen,
+    isAuthenticated: isAuthenticated
   }
 }

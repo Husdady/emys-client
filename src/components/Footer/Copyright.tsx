@@ -14,11 +14,11 @@ function Copyright() {
   return (
     <section
       id="copyright"
-      className="py-2 px-4 flex items-center justify-center font-lexend text-[0.75rem] text-white border-t border-gray-500 overflow-hidden"
+      className="py-2 px-4 flex items-center justify-center font-lexend text-[0.75rem] text-gray-300 border-t border-gray-500 overflow-hidden"
     >
-      <CopyrightIcon className="text-amber-400" />
+      <CopyrightIcon className="text-main-200" />
       <span className="ms-1">
-        Aplicación web desarrollada por&nbsp;
+        Aplicación desarrollada por&nbsp;
         <a
           id="developer"
           target="_blank"

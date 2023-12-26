@@ -3,3 +3,9 @@
     @apply w-[40px] h-[40px];
   }
 }
+
+.user-avatar-container {
+  @media screen and (min-width: 1200px) {
+    @apply min-w-[210px];
+  }
+}

@@ -133,10 +133,7 @@ export default function useInputText({
       role: 'button',
       onClick: props.onClear,
       useHoverEffect: true,
-      className: classnames([
-        props.clearIconClassName,
-        'clear-icon text-gray-400'
-      ])
+      className: classnames([props.clearIconClassName, 'clear-icon text-gray-400'])
     }
   }, [props.onClear, props.clearIconClassName])
 

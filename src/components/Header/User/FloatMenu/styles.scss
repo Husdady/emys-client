@@ -1,4 +1,24 @@
 .float-menu {
+  @media only screen and (min-width: 1040px) and (max-width: 1080px) {
+    @apply right-[0.5rem];
+  }
+
+  @media only screen and (min-width: 1081px) and (max-width: 1110px) {
+    @apply right-[1rem];
+  }
+
+  @media only screen and (min-width: 1111px) and (max-width: 1140px) {
+    @apply right-[1.5rem];
+  }
+
+  @media only screen and (min-width: 1141px) and (max-width: 1160px) {
+    @apply right-[3.5rem];
+  }
+
+  @media only screen and (min-width: 1161px) and (max-width: 1199px) {
+    @apply right-[4rem];
+  }
+
   @media only screen and (min-width: 1024px) {
     @apply mx-auto;
   }

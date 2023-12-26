@@ -92,6 +92,8 @@
   }
 
   html.dark {
+    @apply bg-gray-700;
+
     ::-webkit-scrollbar-track {
       @apply bg-black;
     }

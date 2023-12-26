@@ -55,8 +55,18 @@
     }
   }
 
-  @media screen and (max-width: 375px) {
-    #copyright {
+  @media screen and (max-width: 350px) {
+    & .footer-content {
+      @apply px-4;
+
+      & .footer-section,
+      & .footer-membership {
+        word-break: break-word;
+        @apply min-w-[initial] leading-snug;
+      }
+    }
+
+    & #copyright {
       @apply text-center flex-col;
 
       & .icon {
@@ -67,18 +77,6 @@
 
       & > span {
         @apply ms-0 my-1 max-w-[200px] leading-tight;
-      }
-    }
-  }
-
-  @media screen and (max-width: 350px) {
-    & .footer-content {
-      @apply px-4;
-
-      & .footer-section,
-      & .footer-membership {
-        word-break: break-word;
-        @apply min-w-[initial] leading-snug;
       }
     }
   }

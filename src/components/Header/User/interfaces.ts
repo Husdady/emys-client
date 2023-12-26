@@ -8,4 +8,5 @@ export interface MenuData {
 
 export interface UserProps {
   menuData: MenuData
+  className?: string
 }

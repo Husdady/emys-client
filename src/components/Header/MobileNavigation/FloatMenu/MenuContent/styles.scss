@@ -9,7 +9,7 @@
 
   & .fast-search {
     & .inner {
-      @media only screen and (max-width: 480px) {
+      @media only screen and (max-width: 640px) {
         @apply px-4 gap-x-2.5;
       }
     }
