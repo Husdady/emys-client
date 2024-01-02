@@ -41,7 +41,7 @@ export default function useInputSearch({ products, setResults }: InputSearchProp
 
         const hasResult = fieldsForSearch.some((item) => item.includes(lowerValue))
         const hasSomeValuePart = fieldsForSearch.some((item) => [lowerValue].includes(item))
-        console.log({ hasResult, hasSomeValuePart, lowerValue, fieldsForSearch })
+
         return hasResult || hasSomeValuePart
       })
 

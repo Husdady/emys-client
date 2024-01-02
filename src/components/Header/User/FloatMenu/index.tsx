@@ -21,7 +21,7 @@ export default function FloatMenu(props: MenuData) {
   const { isAuthenticated } = useAuth()
 
   return (
-    <>
+    <div>
       <div
         className={classnames([
           props.isShowingMenu ? null : 'hidden',
@@ -48,9 +48,9 @@ export default function FloatMenu(props: MenuData) {
       {props.isShowingMenu && (
         <div
           onClick={props.hideMenu}
-          className="w-full h-full fixed top-0 left-0 !z-[999] ant-modal-mask"
+          className="w-full h-full fixed top-0 left-0 !z-[99999] ant-modal-mask"
         ></div>
       )}
-    </>
+    </div>
   )
 }

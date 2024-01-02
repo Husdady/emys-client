@@ -11,31 +11,32 @@ import Placeholder from './InputSearch/Placeholder'
 import useResults from './useResults'
 
 // Interfaces
-import { ResultsProps } from './interfaces'
+import { ProductsProps } from '@modules/Home/components/LatestAddedProducts/Products/interfaces'
 
 // Utils
 import lazy from '@utils/lazy'
+import classnames from '@utils/classnames'
 
 // Constants
 import { PRODUCT_ITEMS_ID } from './constants'
-import classnames from '@root/src/utils/classnames'
 
 // Dynamic Components
 const InputSearch = lazy(() => import('./InputSearch'))
 const Product = lazy(() => import('@modules/Products/components/Product'))
 
-export default function Results({ products }: ResultsProps) {
+export default function Results({ products, productItemsRef }: Omit<ProductsProps, 'isLoading'>) {
   const {
     results,
     setResults,
-    productItemsRef,
+    handleScroll,
     handleMouseMove,
     handleMouseDown,
-    isShowingShadowLeft,
-    isShowingShadowRight,
+    isShowingLeftShadow,
+    isShowingRightShadow,
     isBiggestTabletScreen
   } = useResults({
-    products: products
+    products: products,
+    productItemsRef: productItemsRef
   })
 
   return (
@@ -45,12 +46,13 @@ export default function Results({ products }: ResultsProps) {
       </Suspense>
 
       <div className="relative product-items-container">
-        {isShowingShadowLeft && <ShadowLeft />}
-        {isShowingShadowRight && <ShadowRight />}
+        {isShowingLeftShadow && <ShadowLeft />}
+        {isShowingRightShadow && <ShadowRight />}
 
         <ul
           ref={productItemsRef}
           id={PRODUCT_ITEMS_ID}
+          onScroll={handleScroll}
           onMouseMove={handleMouseMove}
           onMouseDown={handleMouseDown}
           className={classnames([

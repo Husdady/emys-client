@@ -29,7 +29,6 @@ export default function QuickSearch({
   placeholder = 'Búsqueda rápida',
   ...props
 }: QuickSearchProps) {
-  console.log({ results, isShowingResults })
   return (
     <>
       <InputText

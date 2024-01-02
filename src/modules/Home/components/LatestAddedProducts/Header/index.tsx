@@ -10,6 +10,9 @@ import LongArrowRight from '@assets/icons/long-arrow-right'
 // Hooks
 import useHeader from './useHeader'
 
+// Interfaces
+import { HeaderProps } from './interfaces'
+
 // Constants
 import { PRODUCTS_PATH } from '@assets/data/paths'
 
@@ -17,9 +20,12 @@ import { PRODUCTS_PATH } from '@assets/data/paths'
 const Link = dynamic(() => import('@components/Link'))
 const Button = dynamic(() => import('@components/Button'))
 
-function Header() {
-  const { showNextProducts, showPreviousProducts } = useHeader()
-
+function Header({
+  showNextProducts,
+  showPreviousProducts,
+  isDisabledNextArrow,
+  isDisabledPreviousArrow
+}: HeaderProps) {
   return (
     <div className="latest-added-products-header flex flex-wrap items-center justify-between px-3 max-w-[1100px] mx-auto gap-x-[2.5rem] gap-y-4">
       <h5 className="text-3xl font-lexend text-main-500 dark:text-rose-300 break-word">
@@ -36,19 +42,21 @@ function Header() {
           <span>Ver todos los productos</span>
         </Link>
 
-        <div className='flex items-center gap-x-1.5 arrows-wrapper'>
+        <div className="flex items-center gap-x-1.5 arrows-wrapper">
           <Button
             title=""
             onClick={showPreviousProducts}
+            disabled={isDisabledPreviousArrow}
             icon={<LongArrowLeft size="smd" onClick={showPreviousProducts} />}
-            className="btn-show-previous-products py-1 !px-3 rounded-full scale text-white bg-main-500 dark:bg-rose-300 dark:text-rose-900 hover:bg-rose-500 dark:hover:text-white dark:hover:bg-rose-500"
+            className="btn-show-previous-products py-1 !px-3 rounded-full scale text-white bg-main-500 dark:bg-rose-300 dark:text-rose-900 enabled:hover:bg-rose-500 dark:enabled:hover:text-white dark:enabled:hover:bg-rose-500"
           />
 
           <Button
             title=""
             onClick={showNextProducts}
+            disabled={isDisabledNextArrow}
             icon={<LongArrowRight size="smd" onClick={showNextProducts} />}
-            className="btn-show-next-products py-1 !px-3 rounded-full scale text-white bg-main-500 dark:bg-rose-300 dark:text-rose-900 hover:bg-rose-500 dark:hover:text-white dark:hover:bg-rose-500"
+            className="btn-show-next-products py-1 !px-3 rounded-full scale text-white bg-main-500 dark:bg-rose-300 dark:text-rose-900 enabled:hover:bg-rose-500 dark:enabled:hover:text-white dark:enabled:hover:bg-rose-500"
           />
         </div>
       </div>
@@ -56,4 +64,9 @@ function Header() {
   )
 }
 
-export default memo(Header)
+export default memo(Header, (prevProps, nextProps) => {
+  return (
+    prevProps.isDisabledNextArrow === nextProps.isDisabledNextArrow &&
+    prevProps.isDisabledPreviousArrow === nextProps.isDisabledPreviousArrow
+  )
+})

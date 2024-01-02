@@ -1,6 +1,7 @@
 // Librarys
 import dynamic from 'next/dynamic'
 import AntdAvatar from 'antd/lib/avatar'
+import { createPortal } from 'react-dom'
 
 // Hooks
 import useUser from './useUser'
@@ -30,7 +31,7 @@ export default function User({ menuData, className }: UserProps) {
           ])}
         />
 
-        <FloatMenu {...menuData} />
+        {createPortal(<FloatMenu {...menuData} />, document.body)}
       </>
     )
   }
@@ -61,7 +62,7 @@ export default function User({ menuData, className }: UserProps) {
         )}
       </article>
 
-      <FloatMenu {...menuData} />
+      {createPortal(<FloatMenu {...menuData} />, document.body)}
     </>
   )
 }

@@ -37,16 +37,16 @@
   }
 
   & .shadow-right {
-    background: linear-gradient(to left, #e1e1e1, 25%, transparent);
+    background: linear-gradient(to left, #e1e1e1, 35%, transparent);
   }
 
   @media only screen and (max-width: 1024px) {
     & .shadow-left {
-      background: linear-gradient(to right, #e1e1e1, 15%, transparent);
+      background: linear-gradient(to right, #e1e1e1, 10%, transparent);
     }
 
     & .shadow-right {
-      background: linear-gradient(to left, #e1e1e1, 15%, transparent);
+      background: linear-gradient(to left, #e1e1e1, 10%, transparent);
     }
   }
 
@@ -158,11 +158,11 @@
 
     @media only screen and (max-width: 1024px) {
       & .shadow-left {
-        background: linear-gradient(to right, #636363, 15%, transparent);
+        background: linear-gradient(to right, #636363, 10%, transparent);
       }
 
       & .shadow-right {
-        background: linear-gradient(to left, #636363, 15%, transparent);
+        background: linear-gradient(to left, #636363, 10%, transparent);
       }
     }
   }

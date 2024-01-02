@@ -1,7 +1,7 @@
 // Hooks
 import { useMemo } from 'react'
 import { useInView } from 'react-intersection-observer'
-import useMobileScreen from './useMobileScreen'
+import useBiggestTabletScreen from './useBiggestTabletScreen'
 
 // Utils
 import classnames from '@utils/classnames'
@@ -11,13 +11,13 @@ import classnames from '@utils/classnames'
  */
 export default function useAnimationInView(animationName: string) {
   const { ref, inView } = useInView()
-  const isMobileScreen = useMobileScreen()
+  const isBiggestTabletScreen = useBiggestTabletScreen()
 
   // Define the animate
   const animationClassName = useMemo(() => {
-    if (isMobileScreen) return
+    if (isBiggestTabletScreen) return
     return classnames(['animate__animated', inView ? animationName : null])
-  }, [inView, isMobileScreen])
+  }, [inView, isBiggestTabletScreen])
 
   return {
     ref: ref,

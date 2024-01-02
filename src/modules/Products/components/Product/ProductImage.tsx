@@ -14,7 +14,6 @@ export default function ProductImage({ coverImage }: Pick<Product, 'coverImage'>
   if (isObject(coverImage)) {
     return (
       <Image
-        objectFit="cover"
         width={coverImage?.width}
         height={coverImage?.height}
         src={coverImage?.url as string}

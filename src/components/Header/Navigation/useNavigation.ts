@@ -1,19 +1,27 @@
 // Hooks
 import useAuth from '@hooks/useAuth'
 import useMounted from '@hooks/useMounted'
-import { useRef, useCallback } from 'react'
+import { usePathname } from 'next/navigation'
+import { useRef, useMemo, useCallback } from 'react'
+
+// Constants
+import { HOME_PATH } from '@assets/data/paths'
 
 /**
  * Hook for implements the logic of the Navigation component
  */
 export default function useNavigation() {
+  const pathname = usePathname()
   const { isAuthenticated } = useAuth()
   const navRef = useRef<HTMLElement | null>(null)
   const timeout = useRef<ReturnType<typeof setTimeout> | number>(0)
 
+  // Check if is the Home page
+  const isHomePage = useMemo(() => pathname === HOME_PATH, [pathname])
+
   // Callback for show or hide the navigation in Desktop devices
   const handleToggleShowNav = useCallback(() => {
-    if (navRef.current === null) return
+    if (!isHomePage || navRef.current === null) return
 
     if (window.scrollY > 450) {
       if (!navRef.current.classList.contains('animate__fadeOutDown')) {
@@ -44,7 +52,7 @@ export default function useNavigation() {
         navRef.current.classList.remove('hidden', 'animate__fadeOutDown')
       }
     }
-  }, [])
+  }, [isHomePage])
 
   useMounted(() => {
     window.addEventListener('scroll', handleToggleShowNav)
@@ -52,7 +60,7 @@ export default function useNavigation() {
     return () => {
       window.removeEventListener('scroll', handleToggleShowNav)
     }
-  }, [])
+  }, [handleToggleShowNav])
 
   return {
     navRef: navRef,

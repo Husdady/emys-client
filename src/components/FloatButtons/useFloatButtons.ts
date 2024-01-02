@@ -1,20 +1,26 @@
 // Hooks
-import { useRef, useCallback } from 'react'
-import useBiggestTabletScreen from '@hooks/useBiggestTabletScreen'
-import useMobileScreen from '@hooks/useMobileScreen'
 import useMounted from '@hooks/useMounted'
+import useBiggestTabletScreen from '@hooks/useBiggestTabletScreen'
+import { useRef, useCallback, useMemo } from 'react'
+import { usePathname } from 'next/navigation'
+
+// Constants
+import { HOME_PATH } from '@assets/data/paths'
 
 /**
  * Hook for implements the logic of the FloatButtons component
  */
 export default function useFloatButtons() {
-  const isMobileScreen = useMobileScreen()
+  const pathname = usePathname()
   const isBiggestTabletScreen = useBiggestTabletScreen()
   const floatButtonsRef = useRef<HTMLDivElement | null>(null)
 
+  // Check if is the Home page
+  const isHomePage = useMemo(() => pathname === HOME_PATH, [pathname])
+
   // Callback for show or hide the navigation in Desktop devices
   const handleMoveFloatButtons = useCallback(() => {
-    if (floatButtonsRef.current === null) return
+    if (!isHomePage || floatButtonsRef.current === null) return
 
     if (window.scrollY > 450 && !isBiggestTabletScreen) {
       floatButtonsRef.current.classList.add('right-[1%]')

@@ -7,7 +7,6 @@ export default function Seller() {
       <Image
         width={30}
         height={30}
-        objectFit="cover"
         alt="seller-photo"
         className="min-h-[30px] min-w-[30px] max-h-[30px] max-w-[30px] rounded-full border-gray-400"
         src="https://boo-prod.b-cdn.net/Wns3xFYDebZ8FiVtaIiRN6Orw7M2/170363835758919615d8db742b46e600d3286c3ff430d.jpg"

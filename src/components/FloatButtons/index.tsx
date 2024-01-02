@@ -18,7 +18,7 @@ function FloatButtons() {
   return (
     <div
       ref={floatButtonsRef}
-      className="fixed py-[0.55rem] px-[0.35rem] rounded-full top-[50%] right-[2.5%] float-buttons animate__animated  animate__zoomIn flex flex-col gap-y-2.5 bg-white dark:bg-gray-700 min-h-[70px] shadow-xl dark:shadow-gray-600 z-[9999] border border-gray-200 dark:border-gray-500"
+      className="fixed py-[0.55rem] px-[0.35rem] rounded-full top-[50%] right-[2.5%] float-buttons animate__animated  animate__zoomIn flex flex-col gap-y-2.5 bg-white dark:bg-gray-700 min-h-[70px] shadow-xl dark:shadow-gray-600 z-[99999] border border-gray-200 dark:border-gray-500"
     >
       <SearchButton />
       <ThemeButton />
