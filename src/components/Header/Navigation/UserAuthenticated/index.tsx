@@ -7,7 +7,7 @@ const User = dynamic(() => import('@components/Header/User'))
 const FloatMenu = dynamic(() => import('@components/Header/User/FloatMenu'))
 
 export default function UserAuthenticated() {
-  const { user, menuData } = useUserAuthenticated()
+  const { menuData } = useUserAuthenticated()
 
   return (
     <>

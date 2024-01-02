@@ -6,6 +6,7 @@
 // Library styles
 @import 'antd/dist/reset.css';
 @import 'nprogress/nprogress.css';
+@import 'animate.css';
 
 // Antd Styles
 @import './antd/antd-message';
@@ -22,6 +23,7 @@
 @import '@modules/Auth/components/LinkToRegister/styles.scss';
 @import '@modules/Account/components/AccountStatus/styles.scss';
 @import '@modules/Auth/components/LinkToForgottenEmailRecovery/styles.scss';
+@import '@modules/Home/components/LatestAddedProducts/styles.scss';
 
 // Component Styles
 @import '@components/Icon/styles.scss';
@@ -92,7 +94,7 @@
   }
 
   html.dark {
-    @apply bg-gray-700;
+    @apply bg-gray-800;
 
     ::-webkit-scrollbar-track {
       @apply bg-black;

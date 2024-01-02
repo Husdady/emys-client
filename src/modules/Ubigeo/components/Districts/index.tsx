@@ -23,9 +23,9 @@ export default function Districts({ provinceId, ...props }: DistrictsProps) {
       disabled={isError}
       canSearchOptions
       enableVirtualization
+      emptyText="Selecciona una provincia"
       searchPalceholder="Buscar distritos..."
       noSelectionLabel="Selecciona un distrito"
-      emptyText="Por favor selecciona una provincia"
       options={!isString(provinceId) || isEmptyString(provinceId) ? [] : options}
     />
   )

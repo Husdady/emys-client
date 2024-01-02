@@ -2,6 +2,7 @@
 @import '@styles/fontawesome/icons.scss';
 
 .float-buttons {
+  transition: all linear 0.4s;
   transform: translateY(-50%);
 
   @media only screen and (min-width: 1367px) {

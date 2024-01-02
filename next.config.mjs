@@ -5,7 +5,10 @@ import withPlaiceholder from '@plaiceholder/next'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    remotePatterns: []
+    remotePatterns: [
+      { protocol: 'https', hostname: 'res.cloudinary.com' },
+      { protocol: 'https', hostname: 'boo-prod.b-cdn.net' }
+    ]
   },
   env: {
     API_URL: process.env.API_URL,

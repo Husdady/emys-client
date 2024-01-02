@@ -22,11 +22,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (!isString(src) || isEmptyString(src)) {
     return res.status(400).json({ error: 'Missing "src" query parameter' })
   }
-  console.log({ src })
+
   try {
     // Fetch Image Url
     const response = await fetch(`${PUBLIC_URL}${src as string}`)
-    console.log({ response })
+
     // Validates response
     if (!response.ok) {
       throw new Error(`Failed to fetch image: ${response.status} ${response.statusText}`)

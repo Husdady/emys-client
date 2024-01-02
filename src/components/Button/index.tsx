@@ -45,8 +45,8 @@ const Button: React.FC<ButtonProps> = ({
       id={id}
       type={type}
       style={style}
-      title={titlePopup}
       className={buttonClassName}
+      title={titlePopup ?? title as string}
       disabled={disabled || isShowingSpin === true}
       onClick={isUndefined(onDoubleClick) ? onClick : handleDoubleClick}
     >

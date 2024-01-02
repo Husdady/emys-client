@@ -13,6 +13,18 @@ export interface IconProps
     Omit<DivType, 'name' | 'onClick' | 'className' | 'style'> {
   color?: React.CSSProperties['color']
   useHoverEffect?: boolean
-  size?: 'xs' | 'smaller' | 'sm' | 'smx' | 'smd' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl' | 'bigger'
+  size?:
+    | 'xs'
+    | 'smaller'
+    | 'xsm'
+    | 'sm'
+    | 'smx'
+    | 'smd'
+    | 'md'
+    | 'lg'
+    | 'xl'
+    | 'xxl'
+    | 'xxxl'
+    | 'bigger'
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void
 }

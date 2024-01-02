@@ -15,7 +15,7 @@ import navigation from '@assets/navigation'
 
 export const DEFAULT_VALUES: SeekerFormState = {
   search: '',
-  isShowingResults: false
+  isShowingResults: true
 }
 
 /**
@@ -43,11 +43,6 @@ export default function useNavigationSearch() {
         navigationItem.title.toLowerCase().includes(watch('search').toLowerCase())
     )
   }, [user, watch('search'), watch('isShowingResults'), navigationItems])
-
-  // watch('search').length > 0
-  const isShowingResults = useMemo(() => {
-    return watch('isShowingResults') && !isEmptyString(watch('search'))
-  }, [watch('search'), watch('isShowingResults')])
 
   // Clear seeker value
   const onClearSearch = useCallback(() => {
@@ -92,8 +87,8 @@ export default function useNavigationSearch() {
     showResults: showResults,
     hideResults: hideResults,
     onClearSearch: onClearSearch,
-    isShowingResults: isShowingResults,
     isShowingClearIcon: isShowingClearIcon,
-    navigationSeekerRef: navigationSeekerRef
+    navigationSeekerRef: navigationSeekerRef,
+    isShowingResults: watch('isShowingResults')
   }
 }

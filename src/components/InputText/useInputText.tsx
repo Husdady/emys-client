@@ -129,11 +129,11 @@ export default function useInputText({
   // Define the custom props for the clear icon
   const clearIconSettings = useMemo<Partial<IconProps>>(() => {
     return {
-      size: 'smaller',
       role: 'button',
+      size: 'smaller',
       onClick: props.onClear,
       useHoverEffect: true,
-      className: classnames([props.clearIconClassName, 'clear-icon text-gray-400'])
+      className: classnames([props.clearIconClassName, 'clear-icon text-gray-400 flex items-center justify-center'])
     }
   }, [props.onClear, props.clearIconClassName])
 

@@ -12,6 +12,9 @@ import { APIResponse, APIBadResponse } from './interfaces'
 import isUndefined from '@utils/isUndefined'
 import AxiosValidations from './validations'
 
+// Constants
+import { common, multipart } from './constants'
+
 // Environment variables
 import { API_URL, SECRET_PASSWORD } from '@config/envs'
 
@@ -97,16 +100,19 @@ export function removeTokenFromAxios(): void {
  * Add 'multipart/form-data' to Axios instance
  * @return {void} Void
  */
-export function addFormDataToPutRequestOnAxios(): void {
-  instance.defaults.headers.put.Accept = 'multipart/form-data'
-  instance.defaults.headers.put['Content-Type'] = 'multipart/form-data'
+export function addFormDataToRequestOnAxios(): void {
+  Object.assign(instance.defaults.headers.put, multipart)
+  Object.assign(instance.defaults.headers.post, multipart)
+  Object.assign(instance.defaults.headers.common, multipart)
 }
 
 /**
  * Remove 'multipart/form-data' to Axios instance
  * @return {void} Void
  */
-export function removeFormDataToPutRequestOnAxios(): void {
-  delete instance.defaults.headers.common.Accept
-  delete instance.defaults.headers.common['Content-Type']
+export function clearFormDataFromRequestOnAxios(): void {
+  Object.assign(instance.defaults.headers.put, common)
+  Object.assign(instance.defaults.headers.post, common)
+  Object.assign(instance.defaults.headers.common, common)
 }
+

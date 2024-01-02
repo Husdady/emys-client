@@ -1,5 +1,169 @@
 .latest-added-products {
-  & .latest-added-products-header {
-    
+  & .product-items {
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &.drag {
+      scroll-behavior: auto;
+      @apply cursor-grab;
+
+      & .product,
+      & .product-item {
+        @apply select-none pointer-events-none;
+      }
+    }
+
+    & .product-item {
+      &:first-of-type {
+        @apply ml-3;
+      }
+
+      &:last-of-type {
+        @apply mr-3;
+      }
+    }
+  }
+
+  & .shadow-left,
+  & .shadow-right {
+    @apply bg-white z-[999];
+  }
+
+  & .shadow-left {
+    background: linear-gradient(to right, #e1e1e1, 35%, transparent);
+  }
+
+  & .shadow-right {
+    background: linear-gradient(to left, #e1e1e1, 25%, transparent);
+  }
+
+  @media only screen and (max-width: 1024px) {
+    & .shadow-left {
+      background: linear-gradient(to right, #e1e1e1, 15%, transparent);
+    }
+
+    & .shadow-right {
+      background: linear-gradient(to left, #e1e1e1, 15%, transparent);
+    }
+  }
+
+  & .input-search-latest-products {
+    & .inner {
+      @apply shadow-lg border-gray-200 dark:border-gray-400/70;
+    }
+
+    & .clear-icon {
+      & svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      &:hover::after {
+        @apply p-4;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 640px) and (max-width: 1200px) {
+    & .input-search-latest-products,
+    & .latest-added-products-header {
+      @apply mx-4;
+    }
+  }
+
+  @media only screen and (min-width: 521px) and (max-width: 639px) {
+    & .input-search-latest-products,
+    & .latest-added-products-header {
+      @apply mx-2.5;
+    }
+  }
+
+  @media only screen and (max-width: 892px) {
+    & #products {
+      @apply mt-2;
+    }
+
+    & .product-items {
+      @apply mt-[1.5rem];
+    }
+
+    & .latest-added-products-header {
+      @apply px-0;
+    }
+
+    & .inner-wrapper {
+      @apply my-2 justify-between;
+    }
+
+    & .inner-wrapper,
+    & .see-all-products-link {
+      @apply w-full;
+    }
+
+    & .see-all-products-link {
+      @apply max-w-[480px] py-3.5 text-[1rem];
+
+      & .icon {
+        & svg {
+          @apply w-[21px] h-[21px] min-w-[21px] min-h-[21px];
+        }
+      }
+    }
+
+    & .btn-show-next-products,
+    & .btn-show-previous-products {
+      @apply py-1.5;
+      padding-left: 1.35rem !important;
+      padding-right: 1.35rem !important;
+
+      & .icon {
+        & svg {
+          @apply w-[24px] h-[24px] min-w-[24px] min-h-[24px];
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 515px) {
+    & #products {
+      @apply mt-3;
+    }
+
+    & .inner-wrapper {
+      @apply mb-0 gap-y-3 flex-wrap flex-col-reverse;
+
+      & .arrows-wrapper {
+        @apply ml-auto flex-wrap gap-y-2 justify-center;
+      }
+
+      & .see-all-products-link {
+        @apply mr-0;
+      }
+    }
+  }
+}
+
+.dark {
+  & .latest-added-products {
+    & .shadow-left {
+      background: linear-gradient(to right, #636363, 35%, transparent);
+    }
+
+    & .shadow-right {
+      background: linear-gradient(to left, #636363, 35%, transparent);
+    }
+
+    @media only screen and (max-width: 1024px) {
+      & .shadow-left {
+        background: linear-gradient(to right, #636363, 15%, transparent);
+      }
+
+      & .shadow-right {
+        background: linear-gradient(to left, #636363, 15%, transparent);
+      }
+    }
   }
 }

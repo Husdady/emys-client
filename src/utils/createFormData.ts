@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 // Librarys
-import { addFormDataToPutRequestOnAxios, removeFormDataToPutRequestOnAxios } from '@libs/axios'
+import { addFormDataToRequestOnAxios, clearFormDataFromRequestOnAxios } from '@libs/axios'
 
 // Utils
 import isUndefined from './isUndefined'
@@ -22,7 +22,7 @@ export default function createFormData<T extends object>({
 
   // Get form state entries
   const entries = Object.entries(state)
-  addFormDataToPutRequestOnAxios() // Add 'multipart/formData'
+  addFormDataToRequestOnAxios() // Add 'multipart/formData'
 
   // Add state values to form data object
   for (const [key, value] of entries) {
@@ -36,6 +36,6 @@ export default function createFormData<T extends object>({
 
   return {
     data: data,
-    clearData: removeFormDataToPutRequestOnAxios
+    clearData: clearFormDataFromRequestOnAxios
   }
 }

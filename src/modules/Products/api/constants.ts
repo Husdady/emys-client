@@ -1,0 +1,11 @@
+// Constants
+export const GRAMS = 'grams'
+export const KILOGRAMS = 'kilograms'
+export const SEYTU_TYPE = 'seytu'
+export const OMNILIFE_TYPE = 'omnilife'
+export const PRODUCT_TYPE = 'product'
+export const SUNS_CURRENCY = 'suns'
+export const DOLLARS_CURRENCY = 'dollars'
+export const LIST_TYPE = 'list'
+export const TEXT_TYPE = 'text'
+export const LARGE_TEXT_TYPE = 'large-text'

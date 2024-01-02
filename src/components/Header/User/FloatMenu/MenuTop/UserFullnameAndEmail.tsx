@@ -15,7 +15,7 @@ function UserFullnameAndEmail() {
         {user.fullname.split(' ').slice(0, 2).join(' ')}
       </h3>
 
-      <span className="user-email font-poppins text-gray-500 text-[0.8rem] dark:text-gray-300/80">
+      <span className="user-email font-poppins text-gray-500 text-[0.84rem] dark:text-gray-300/80">
         {user.email}
       </span>
     </div>

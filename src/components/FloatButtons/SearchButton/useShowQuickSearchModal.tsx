@@ -28,7 +28,7 @@ export default function useShowQuickSearchModal() {
         <NavigationSearch
           containerClassName="!px-0"
           searchPlaceholder="Por ejemplo: Contacto..."
-          seekerTextLabel="Búsqueda de elementos de navegación"
+          seekerTextLabel="Búsqueda de enlaces de navegación"
         />
       )
     })

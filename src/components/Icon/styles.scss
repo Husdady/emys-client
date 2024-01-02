@@ -1,6 +1,7 @@
 $sizes: (
   'xs': 13px,
   'smaller': 14px,
+  'xsm': 16px,
   'sm': 18px,
   'smx': 19px,
   'smd': 20px,
@@ -26,11 +27,11 @@ $sizes: (
         content: '';
         z-index: -1;
         transform: translate(-50%, -50%);
-        @apply absolute opacity-0 w-full h-full top-[50%] left-[50%] p-[0.75rem] rounded-full;
+        @apply absolute opacity-0 w-full h-full top-[50%] left-[50%] p-[0.85rem] rounded-full;
       }
 
       &.mxs::after {
-        @apply p-[1.15rem];
+        @apply p-4;
       }
 
       &:hover::after {
