@@ -53,7 +53,7 @@ export default function Screen({
         {...customTitle}
         className={classnames([
           customTitle.className,
-          'font-poppins font-bold text-3xl text-center main-title max-w-[550px] leading-tight'
+          'mb-2 font-poppins font-bold text-3xl text-center main-title max-w-[550px] leading-tight'
         ])}
       >
         {title}

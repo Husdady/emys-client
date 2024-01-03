@@ -144,6 +144,12 @@
       }
     }
   }
+
+  @media only screen and (max-width: 450px) {
+    & .page-screen img {
+      @apply h-full;
+    }
+  }
 }
 
 .dark {

@@ -39,18 +39,7 @@ export default function LatestAddedProducts() {
         isDisabledPreviousArrow={isDisabledPreviousArrow}
       />
 
-      {isError && <Error />}
-
-      {!isError && !isLoading && hasEmptyProducts && <EmptyLatestProducts />}
-
-      {(isLoading || (!isError && !hasEmptyProducts)) && (
-        <Products
-          products={products}
-          isLoading={isLoading}
-          hasScrollbar={hasScrollbar}
-          productItemsRef={productItemsRef}
-        />
-      )}
+      <EmptyLatestProducts />
     </section>
   )
 }

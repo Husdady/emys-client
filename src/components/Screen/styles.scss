@@ -3,11 +3,11 @@
 
   @media only screen and (max-width: 450px) {
     & img {
-      @apply min-w-[300px];
+      @apply min-w-[260px];
     }
 
     & .main-title {
-      @apply text-2xl;
+      @apply text-[1.65rem] leading-tight;
     }
 
     & .screen-description {

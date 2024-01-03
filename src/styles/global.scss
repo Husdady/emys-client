@@ -50,6 +50,10 @@
 @import '@components/Header/MobileNavigation/FloatMenu/MenuContent/styles.scss';
 @import '@components/Header/MobileNavigation/FloatMenu/MenuContent/NavigationSearch/styles.scss';
 
+// Routes styles
+@import '@routes/BlockedRoute/styles.scss';
+@import '@routes/MissingRoute/styles.scss';
+
 @layer base {
   .hide-scrollbar {
     &::-webkit-scrollbar {

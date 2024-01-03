@@ -1,0 +1,55 @@
+.missing-route {
+  @media only screen and (max-width: 425px) {
+    & img {
+      @apply min-w-[375px];
+    }
+  }
+
+  @media only screen and (max-width: 385px) {
+    & img {
+      // @apply h-[250px];
+    }
+  }
+
+  @media only screen and (max-width: 365px) {
+    & img {
+      // @apply h-[260px];
+    }
+  }
+
+  @media only screen and (max-width: 350px) {
+    & img {
+      @apply h-[240px] min-w-[335px];
+    }
+  }
+
+  @media only screen and (max-width: 330px) {
+    & img {
+      @apply h-[240px] min-w-[325px];
+    }
+  }
+
+  @media only screen and (max-width: 315px) {
+    & img {
+      @apply h-[240px] min-w-[315px];
+    }
+  }
+
+  @media only screen and (max-width: 300px) {
+    & img {
+      @apply h-[210px] min-w-[280px];
+    }
+  }
+
+  @media only screen and (max-width: 285px) {
+    & img {
+      @apply min-w-[260px];
+    }
+  }
+
+  @media only screen and (max-width: 260px) {
+    & img {
+      @apply h-[200px];
+    }
+  }
+}

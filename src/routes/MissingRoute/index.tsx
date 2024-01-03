@@ -11,12 +11,12 @@ export default function MissingRoute() {
   return (
     <Screen
       showButton
-      className="pb-[1.5rem]"
       image={constants.DEFAULT_IMAGE}
       title={constants.DEFAULT_TITLE}
       button={constants.DEFAULT_BUTTON}
       description={constants.DEFAULT_DESCRIPTION}
       customTitle={constants.DEFAULT_CUSTOM_TITLE}
+      className="!px-5 pb-[1.5rem] missing-route"
     />
   )
 }

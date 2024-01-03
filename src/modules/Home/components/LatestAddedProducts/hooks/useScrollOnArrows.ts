@@ -53,13 +53,11 @@ export default function useScrollOnArrows({
 
     // Scroll is at start position and disable previous arrow
     if (scrollLeft < 1 && isDisabledPreviousArrow === false) {
-      console.log('[ASASA]')
       setDisabledPreviousArrow(true)
     }
-    console.log({ scrollLeft, isDisabledPreviousArrow })
+
     // Scroll not is at start position and enable previous arrow
     if (scrollLeft >= 1 && isDisabledPreviousArrow) {
-      console.log('[ASASA23]')
       setDisabledPreviousArrow(false)
     }
 
