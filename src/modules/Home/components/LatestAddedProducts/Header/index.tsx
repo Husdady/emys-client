@@ -7,9 +7,6 @@ import Eye from '@assets/icons/eye'
 import LongArrowLeft from '@assets/icons/long-arrow-left'
 import LongArrowRight from '@assets/icons/long-arrow-right'
 
-// Hooks
-import useHeader from './useHeader'
-
 // Interfaces
 import { HeaderProps } from './interfaces'
 

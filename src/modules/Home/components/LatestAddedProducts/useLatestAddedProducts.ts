@@ -1,7 +1,11 @@
 // Hooks
-import { useRef } from 'react'
+import { useMemo, useRef } from 'react'
 import { useGetLatestProductsQuery } from '@modules/Home/api/get-latest-products/graphql'
+import useCheckScrollbar from './hooks/useCheckScrollbar'
 import useScrollOnArrows from './hooks/useScrollOnArrows'
+
+// Utils
+import isEmptyArray from '@utils/isEmptyArray'
 
 // Constants
 import { LIMIT_LATEST_PRODUCTS } from './constants'
@@ -11,22 +15,49 @@ import { LIMIT_LATEST_PRODUCTS } from './constants'
  */
 export default function useLatestAddedProducts() {
   const productItemsRef = useRef<HTMLUListElement | null>(null)
-  const queryData = useGetLatestProductsQuery({ populate: true, limit: LIMIT_LATEST_PRODUCTS })
+
+  const queryData = useGetLatestProductsQuery(
+    { populate: true, limit: LIMIT_LATEST_PRODUCTS },
+    {
+      refetchOnFocus: true,
+      refetchOnReconnect: true,
+      refetchOnMountOrArgChange: true
+    }
+  )
+
+  // Define the latest products
+  const products = useMemo(
+    () => queryData?.data?.latestProducts ?? [],
+    [queryData?.data?.latestProducts]
+  )
+
+  // Check if has empty latest products
+  const hasEmptyProducts = useMemo(() => isEmptyArray(products), [products])
+
+  const hasScrollbar = useCheckScrollbar({
+    isLoading: queryData.isLoading,
+    productItemsRef: productItemsRef
+  })
 
   const { showNextProducts, showPreviousProducts, isDisabledNextArrow, isDisabledPreviousArrow } =
     useScrollOnArrows({
+      hasScrollbar: hasScrollbar,
+      isError: queryData.isError,
       isLoading: queryData.isLoading,
-      productItemsRef: productItemsRef
+      productItemsRef: productItemsRef,
+      hasEmptyProducts: hasEmptyProducts
     })
 
   return {
+    products: products,
+    hasScrollbar: hasScrollbar,
     isError: queryData.isError,
     isLoading: queryData.isLoading,
     productItemsRef: productItemsRef,
+    hasEmptyProducts: hasEmptyProducts,
     showNextProducts: showNextProducts,
     showPreviousProducts: showPreviousProducts,
     isDisabledNextArrow: isDisabledNextArrow,
-    isDisabledPreviousArrow: isDisabledPreviousArrow,
-    products: queryData?.data?.latestProducts ?? []
+    isDisabledPreviousArrow: isDisabledPreviousArrow
   }
 }

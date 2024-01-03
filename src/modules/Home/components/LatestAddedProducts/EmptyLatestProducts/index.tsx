@@ -1,20 +1,15 @@
-// Librarys
-import dynamic from 'next/dynamic'
+// Components
+import Screen from '@components/Screen'
 
 // Constants
 import * as constants from './constants'
 
-// Dynamic Components
-const Screen = dynamic(() => import('@components/Screen'))
-
-export default function MissingRoute() {
+export default function EmptyLatestProducts() {
   return (
     <Screen
-      showButton
-      className="pb-[1.5rem]"
+      className="pt-5 !pb-0 !bg-transparent"
       image={constants.DEFAULT_IMAGE}
       title={constants.DEFAULT_TITLE}
-      button={constants.DEFAULT_BUTTON}
       description={constants.DEFAULT_DESCRIPTION}
       customTitle={constants.DEFAULT_CUSTOM_TITLE}
     />

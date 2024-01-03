@@ -24,7 +24,11 @@ import { PRODUCT_ITEMS_ID } from './constants'
 const InputSearch = lazy(() => import('./InputSearch'))
 const Product = lazy(() => import('@modules/Products/components/Product'))
 
-export default function Results({ products, productItemsRef }: Omit<ProductsProps, 'isLoading'>) {
+export default function Results({
+  products,
+  hasScrollbar,
+  productItemsRef
+}: Omit<ProductsProps, 'isLoading'>) {
   const {
     results,
     setResults,
@@ -46,8 +50,8 @@ export default function Results({ products, productItemsRef }: Omit<ProductsProp
       </Suspense>
 
       <div className="relative product-items-container">
-        {isShowingLeftShadow && <ShadowLeft />}
-        {isShowingRightShadow && <ShadowRight />}
+        {hasScrollbar && isShowingLeftShadow && <ShadowLeft />}
+        {hasScrollbar && isShowingRightShadow && <ShadowRight />}
 
         <ul
           ref={productItemsRef}

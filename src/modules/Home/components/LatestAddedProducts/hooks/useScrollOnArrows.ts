@@ -1,20 +1,36 @@
 // Librarys
 import useMounted from '@root/src/hooks/useMounted'
-import { useCallback, MutableRefObject, useState } from 'react'
+import { useCallback, MutableRefObject, useState, useMemo } from 'react'
 
 export const MIN_WIDTH = 1000
 
 export interface Params {
+  isError: boolean
   isLoading: boolean
+  hasScrollbar: boolean
+  hasEmptyProducts: boolean
   productItemsRef: MutableRefObject<HTMLUListElement | null>
 }
 
 /**
  * Hook for implements the logic of the Header component
+ * @param {Params} params Receive a 'isError', 'isLoading', 'hasScrollbar', 'productItemsRef' and 'hasEmptyProducts'
  */
-export default function useScrollOnArrows({ isLoading, productItemsRef }: Params) {
+export default function useScrollOnArrows({
+  isError,
+  isLoading,
+  hasScrollbar,
+  productItemsRef,
+  hasEmptyProducts
+}: Params) {
   const [isDisabledNextArrow, setDisabledNextArrow] = useState(false)
   const [isDisabledPreviousArrow, setDisabledPreviousArrow] = useState(true)
+
+  // Define shared flags for disable the arrows
+  const sharedFlagsForDisableArrows = useMemo(
+    () => isError || isLoading || hasEmptyProducts || !hasScrollbar,
+    [isError, isLoading, hasScrollbar, hasEmptyProducts]
+  )
 
   // Callback for make scroll and show the next products
   const showNextProducts = useCallback(() => {
@@ -37,11 +53,13 @@ export default function useScrollOnArrows({ isLoading, productItemsRef }: Params
 
     // Scroll is at start position and disable previous arrow
     if (scrollLeft < 1 && isDisabledPreviousArrow === false) {
+      console.log('[ASASA]')
       setDisabledPreviousArrow(true)
     }
-
+    console.log({ scrollLeft, isDisabledPreviousArrow })
     // Scroll not is at start position and enable previous arrow
     if (scrollLeft >= 1 && isDisabledPreviousArrow) {
+      console.log('[ASASA23]')
       setDisabledPreviousArrow(false)
     }
 
@@ -74,7 +92,7 @@ export default function useScrollOnArrows({ isLoading, productItemsRef }: Params
   return {
     showNextProducts: showNextProducts,
     showPreviousProducts: showPreviousProducts,
-    isDisabledNextArrow: isLoading || isDisabledNextArrow,
-    isDisabledPreviousArrow: isLoading || isDisabledPreviousArrow
+    isDisabledNextArrow: sharedFlagsForDisableArrows || isDisabledNextArrow,
+    isDisabledPreviousArrow: sharedFlagsForDisableArrows || isDisabledPreviousArrow
   }
 }

@@ -7,6 +7,8 @@ export interface NavigationSearchProps {
   seekerTextLabel?: string
   searchPlaceholder?: string
   containerClassName?: string
+  hideResultsWhenSearchIsEmpty?: boolean
+  isShowingResults?: boolean
 }
 
 export interface SeekerFormState {

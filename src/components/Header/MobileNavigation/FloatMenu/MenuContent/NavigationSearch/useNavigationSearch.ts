@@ -13,20 +13,26 @@ import isEmptyString from '@utils/isEmptyString'
 // Data
 import navigation from '@assets/navigation'
 
-export const DEFAULT_VALUES: SeekerFormState = {
-  search: '',
-  isShowingResults: true
+export interface Params {
+  isShowingResults?: boolean
+  hideResultsWhenSearchIsEmpty?: boolean
 }
 
 /**
  * Hook that implements the Seeker functionality in the navigation
  */
-export default function useNavigationSearch() {
+export default function useNavigationSearch({
+  isShowingResults = false,
+  hideResultsWhenSearchIsEmpty = true
+}: Params = {}) {
   const { user } = useAuth()
   const navigationSeekerRef = useRef<HTMLDivElement | null>(null)
 
   const { watch, register, setValue } = useForm<SeekerFormState>({
-    defaultValues: DEFAULT_VALUES
+    defaultValues: {
+      search: '',
+      isShowingResults: isShowingResults
+    }
   })
 
   // Get navigation items
@@ -34,6 +40,16 @@ export default function useNavigationSearch() {
 
   // Check if needs to show clear icon
   const isShowingClearIcon = useMemo(() => !isEmptyString(watch('search')), [watch('search')])
+
+  // // Check if is showing the results
+  const isShowingResultsFlag = useMemo(() => {
+    // Hide results when the search value is empty
+    if (hideResultsWhenSearchIsEmpty) {
+      return watch('isShowingResults') && !isEmptyString(watch('search'))
+    }
+
+    return watch('isShowingResults')
+  }, [watch('search'), watch('isShowingResults'), hideResultsWhenSearchIsEmpty])
 
   // Get results of the filtered navigation items
   const results = useMemo(() => {
@@ -56,23 +72,6 @@ export default function useNavigationSearch() {
     setValue('isShowingResults', true) // Show results
   }, [watch('isShowingResults')])
 
-  // Event 'blur' on InputText
-  const handleBlur = useCallback((e: React.FocusEvent<HTMLInputElement, Element>) => {
-    // Validate navigation seeker ref
-    if (navigationSeekerRef.current === null) return
-
-    // Blur on navigation results
-    const didClickResults = navigationSeekerRef.current.contains(e.relatedTarget)
-
-    // Check if is target the close button modal
-    const isCloseButtonModal = e.relatedTarget?.classList.contains('btn-cancel-modal')
-
-    // Validate target
-    if (!didClickResults && !isCloseButtonModal) {
-      // hideResults()
-    }
-  }, [])
-
   // Hide the current results
   const hideResults = useCallback(() => {
     if (!watch('isShowingResults')) return // Check if its already hidden
@@ -83,12 +82,11 @@ export default function useNavigationSearch() {
     watch: watch,
     results: results,
     register: register,
-    handleBlur: handleBlur,
     showResults: showResults,
     hideResults: hideResults,
     onClearSearch: onClearSearch,
+    isShowingResults: isShowingResultsFlag,
     isShowingClearIcon: isShowingClearIcon,
-    navigationSeekerRef: navigationSeekerRef,
-    isShowingResults: watch('isShowingResults')
+    navigationSeekerRef: navigationSeekerRef
   }
 }

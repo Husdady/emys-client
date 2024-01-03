@@ -8,6 +8,7 @@ import useAnimationInView from '@hooks/useAnimationInView'
 import { InputSearchProps } from './interfaces'
 
 // Utils
+import isEmptyArray from '@utils/isEmptyArray'
 import isEmptyString from '@utils/isEmptyString'
 
 /**
@@ -45,7 +46,9 @@ export default function useInputSearch({ products, setResults }: InputSearchProp
         return hasResult || hasSomeValuePart
       })
 
-      setResults(newResults)
+      // Define the new results
+      const results = isEmptyArray(newResults) ? products : newResults
+      setResults(results) // Update results
     },
     [products]
   )

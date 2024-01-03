@@ -21,9 +21,9 @@ export default function Results({ data, hideResults, navigationSeekerRef }: Resu
 
       <div
         ref={navigationSeekerRef}
-        className="navigation-seeker min-w-[350px] overflow-y-auto pl-5 pr-3 bg-white dark:bg-dark-800"
+        className="navigation-seeker lg:min-w-[350px] overflow-y-auto pl-5 pr-3 bg-white dark:bg-dark-800"
       >
-        <h5 className="flex items-center justify-between text-base font-semibold dark:font-normal font-poppins dark:text-gray-400 pt-4 pb-3 border-b-[3px] border-gray-300 dark:border-gray-700">
+        <h5 className="flex items-center gap-x-5 justify-between text-base font-semibold dark:font-normal font-poppins dark:text-gray-400 pt-4 pb-3 border-b-[3px] border-gray-300 dark:border-gray-700 leading-snug">
           <span>Resultados encontrados: {data.length}</span>
 
           <CircleXmarkSolid

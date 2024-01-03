@@ -10,24 +10,23 @@ import { NavigationSearchProps } from './interfaces'
 export default function NavigationSearch({
   seekerTextLabel,
   searchPlaceholder,
-  containerClassName
+  containerClassName,
+  ...props
 }: NavigationSearchProps) {
   const {
-    register,
     results,
-    handleBlur,
+    register,
     showResults,
     hideResults,
     onClearSearch,
     isShowingResults,
     isShowingClearIcon,
     navigationSeekerRef
-  } = useNavigationSearch()
+  } = useNavigationSearch(props)
 
   return (
     <QuickSearch
       results={results}
-      onBlur={handleBlur}
       onFocus={showResults}
       textLabel={seekerTextLabel}
       customInput={register('search')}

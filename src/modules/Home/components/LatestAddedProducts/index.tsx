@@ -8,15 +8,19 @@ import useLatestAddedProducts from './useLatestAddedProducts'
 import { LATEST_ADDED_PRODUCTS_ID } from './constants'
 
 // Dynamic Components
+const Error = dynamic(() => import('./Error'))
 const Header = dynamic(() => import('./Header'))
 const Products = dynamic(() => import('./Products'))
+const EmptyLatestProducts = dynamic(() => import('./EmptyLatestProducts'))
 
 export default function LatestAddedProducts() {
   const {
     isError,
     isLoading,
+    hasScrollbar,
     products,
     productItemsRef,
+    hasEmptyProducts,
     showNextProducts,
     showPreviousProducts,
     isDisabledNextArrow,
@@ -35,7 +39,18 @@ export default function LatestAddedProducts() {
         isDisabledPreviousArrow={isDisabledPreviousArrow}
       />
 
-      <Products products={products} isLoading={isLoading} productItemsRef={productItemsRef} />
+      {isError && <Error />}
+
+      {!isError && !isLoading && hasEmptyProducts && <EmptyLatestProducts />}
+
+      {(isLoading || (!isError && !hasEmptyProducts)) && (
+        <Products
+          products={products}
+          isLoading={isLoading}
+          hasScrollbar={hasScrollbar}
+          productItemsRef={productItemsRef}
+        />
+      )}
     </section>
   )
 }
