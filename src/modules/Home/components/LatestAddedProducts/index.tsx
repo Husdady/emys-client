@@ -6,6 +6,7 @@ import useLatestAddedProducts from './useLatestAddedProducts'
 
 // Constants
 import { LATEST_ADDED_PRODUCTS_ID } from './constants'
+import classnames from '@root/src/utils/classnames'
 
 // Dynamic Components
 const Error = dynamic(() => import('./Error'))
@@ -30,7 +31,10 @@ export default function LatestAddedProducts() {
   return (
     <section
       id={LATEST_ADDED_PRODUCTS_ID}
-      className="latest-added-products mx-auto pt-4 pb-[3.5rem] px-4 xl:px-0"
+      className={classnames([
+        hasEmptyProducts ? 'pb-3' : 'pb-[3.5rem]',
+        'latest-added-products mx-auto pt-4 px-4 xl:px-0'
+      ])}
     >
       <Header
         showNextProducts={showNextProducts}

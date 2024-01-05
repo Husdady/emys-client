@@ -128,12 +128,16 @@
   }
 
   @media only screen and (max-width: 515px) {
+    & .latest-added-products-header {
+      @apply gap-y-3;
+    }
+
     & #products {
       @apply mt-3;
     }
 
     & .inner-wrapper {
-      @apply mb-0 gap-y-3 flex-wrap flex-col-reverse;
+      @apply my-0 gap-y-3 flex-wrap flex-col-reverse;
 
       & .arrows-wrapper {
         @apply ml-auto flex-wrap gap-y-2 justify-center;

@@ -45,8 +45,6 @@
       }
 
       @media only screen and (max-width: 798px) {
-        @apply gap-y-6;
-
         & .home-card {
           @apply w-[450px] h-[200px];
         }
