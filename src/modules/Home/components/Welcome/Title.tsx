@@ -12,7 +12,7 @@ import { APP_NAME } from '@config/envs'
 import { Mansalva } from '@assets/data/fonts'
 
 function Title() {
-  const { ref, animationClassName } = useAnimationInView('animate__fadeIn')
+  const { ref, animationClassName } = useAnimationInView('animate__fadeIn animate__slow')
 
   return (
     <h4

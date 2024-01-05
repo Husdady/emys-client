@@ -16,14 +16,18 @@
 @import '@layouts/AuthLayouts/AuthLayout/styles.scss';
 
 // Module Styles
+@import '@modules/Home/components/Card/styles.scss';
 @import '@modules/Home/components/Welcome/styles.scss';
 @import '@modules/Account/components/Aside/styles.scss';
 @import '@modules/Auth/components/Remember/styles.scss';
+@import '@modules/Home/components/SeytuCards/styles.scss';
+@import '@modules/Products/components/Product/styles.scss';
 @import '@modules/Auth/components/LinkToLogin/styles.scss';
+@import '@modules/Home/components/OmnilifeCards/styles.scss';
 @import '@modules/Auth/components/LinkToRegister/styles.scss';
 @import '@modules/Account/components/AccountStatus/styles.scss';
-@import '@modules/Auth/components/LinkToForgottenEmailRecovery/styles.scss';
 @import '@modules/Home/components/LatestAddedProducts/styles.scss';
+@import '@modules/Auth/components/LinkToForgottenEmailRecovery/styles.scss';
 
 // Component Styles
 @import '@components/Icon/styles.scss';
@@ -98,7 +102,7 @@
   }
 
   html.dark {
-    @apply bg-gray-800;
+    @apply bg-gray-700;
 
     ::-webkit-scrollbar-track {
       @apply bg-black;

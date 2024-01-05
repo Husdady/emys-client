@@ -15,7 +15,7 @@ import classnames from '@utils/classnames'
 const Link = dynamic(() => import('@components/Link'))
 
 function SeeAllProducts() {
-  const { ref, animationClassName } = useAnimationInView('animate__backInUp')
+  const { ref, animationClassName } = useAnimationInView('animate__fadeIn animate__slow')
 
   return (
     <div ref={ref}>

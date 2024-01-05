@@ -10,7 +10,11 @@ import LongArrowRight from '@assets/icons/long-arrow-right'
 // Interfaces
 import { HeaderProps } from './interfaces'
 
+// Utils
+import classnames from '@utils/classnames'
+
 // Constants
+import { sharedClassName } from './constants'
 import { PRODUCTS_PATH } from '@assets/data/paths'
 
 // Dynamic Components
@@ -33,7 +37,10 @@ function Header({
         <Link
           href={PRODUCTS_PATH}
           title="Ver todos los productos"
-          className="see-all-products-link bg-main-500 dark:bg-rose-300 text-white dark:text-rose-900 py-2 !px-4 rounded-full gap-x-1.5 me-2 hover:bg-rose-500 flex items-center justify-center font-poppins dark:hover:text-white dark:hover:bg-rose-500 dark:font-semibold dark:hover:font-normal"
+          className={classnames([
+            sharedClassName,
+            'see-all-products-link py-2 !px-4 gap-x-1.5 me-2 flex items-center justify-center font-poppins dark:font-semibold dark:hover:font-normal hover:underline'
+          ])}
         >
           <Eye className="sm" />
           <span>Ver todos los productos</span>
@@ -45,7 +52,7 @@ function Header({
             onClick={showPreviousProducts}
             disabled={isDisabledPreviousArrow}
             icon={<LongArrowLeft size="smd" onClick={showPreviousProducts} />}
-            className="btn-show-previous-products py-1 !px-3 rounded-full scale text-white bg-main-500 dark:bg-rose-300 dark:text-rose-900 enabled:hover:bg-rose-500 dark:enabled:hover:text-white dark:enabled:hover:bg-rose-500"
+            className={classnames([sharedClassName, 'btn-show-previous-products py-1 !px-3 scale'])}
           />
 
           <Button
@@ -53,7 +60,7 @@ function Header({
             onClick={showNextProducts}
             disabled={isDisabledNextArrow}
             icon={<LongArrowRight size="smd" onClick={showNextProducts} />}
-            className="btn-show-next-products py-1 !px-3 rounded-full scale text-white bg-main-500 dark:bg-rose-300 dark:text-rose-900 enabled:hover:bg-rose-500 dark:enabled:hover:text-white dark:enabled:hover:bg-rose-500"
+            className={classnames([sharedClassName, 'btn-show-next-products py-1 !px-3 scale'])}
           />
         </div>
       </div>

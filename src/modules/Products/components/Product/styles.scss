@@ -1,0 +1,10 @@
+.product {
+  @media screen and (min-width: 1450px) {
+    min-width: 270px !important;
+    max-width: 270px !important;
+
+    & .product-description {
+      max-width: initial;
+    }
+  }
+}

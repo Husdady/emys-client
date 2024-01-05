@@ -17,7 +17,7 @@ export const DEFAULT_DESCRIPTION =
   'La ruta que intentas acceder no existe o tal vez está mal escrita. Te recomendamos que verifiques la ruta por si exista un error tipográfico o en cambio, puedes volver a una ruta inicial de la aplicación.'
 
 export const DEFAULT_CUSTOM_TITLE = {
-  className: 'text-red-500 w-full sm:w-6/12 dark:text-red-400'
+  className: 'mt-1 text-red-500 w-full dark:text-red-400'
 }
 
 export const DEFAULT_BUTTON: ButtonProps = {
@@ -29,8 +29,8 @@ export const DEFAULT_BUTTON: ButtonProps = {
 
 export const DEFAULT_IMAGE: ImageProps = {
   width: 375,
-  height: 275,
+  height: 250,
   src: missingImage,
-  className: 'h-[275px]',
+  className: 'h-[250px]',
   alt: 'missing-route-image'
 }

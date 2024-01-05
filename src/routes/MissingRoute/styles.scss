@@ -1,19 +1,11 @@
 .missing-route {
+  & img {
+    @apply object-contain;
+  }
+
   @media only screen and (max-width: 425px) {
     & img {
       @apply min-w-[375px];
-    }
-  }
-
-  @media only screen and (max-width: 385px) {
-    & img {
-      // @apply h-[250px];
-    }
-  }
-
-  @media only screen and (max-width: 365px) {
-    & img {
-      // @apply h-[260px];
     }
   }
 

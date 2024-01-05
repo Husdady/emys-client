@@ -11,7 +11,7 @@ import CircleCheck from '@assets/icons/circle-check'
 import classnames from '@utils/classnames'
 
 function Message() {
-  const { ref, animationClassName } = useAnimationInView('animate__fadeIn')
+  const { ref, animationClassName } = useAnimationInView('animate__fadeIn animate__slow')
 
   return (
     <q

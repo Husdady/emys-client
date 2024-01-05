@@ -34,7 +34,7 @@ export default function NavigationItem({ icon, path, title, menuData }: Navigati
         <div className="inner flex items-center gap-x-2">
           {icon}
 
-          <span className="font-poppins text-[0.84rem] lg:leading-snug break-word">{title}</span>
+          <span className="font-poppins text-[0.84rem] leading-snug break-word">{title}</span>
         </div>
 
         <ChevronRight size="smaller" className="chevron-right dark:text-gray-200 stroke-4" />

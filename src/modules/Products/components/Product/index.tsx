@@ -49,8 +49,8 @@ export default function Product({
       className={classnames([
         isInStock
           ? 'hover:shadow-sky-200 hover:border-sky-200 hover:border-sky-400 dark:hover:border-sky-400'
-          : 'hover:shadow-red-200 hover:border-red-200 hover:border-red-400 dark:hover:border-rose-600',
-        'product animate__animated animate__fadeIn h-full relative bg-white shadow-lg border border-gray-200 min-w-[290px] max-w-[290px] md:min-w-[240px] md:max-w-[240px] min-h-[200px] rounded pb-3 pt-3.5 px-3.5 dark:shadow-none dark:bg-gray-700 dark:border-gray-600'
+          : 'hover:shadow-red-200 hover:border-red-200 hover:border-red-400 dark:hover:border-pink-600',
+        'product animate__animated animate__fadeIn h-full relative bg-white shadow-lg border border-gray-200 min-w-[290px] max-w-[290px] md:min-w-[250px] md:max-w-[250px] min-h-[200px] rounded-xl pb-4 pt-3.5 px-3.5 dark:shadow-none dark:bg-gray-800 dark:border-gray-500'
       ])}
     >
       <Heart />

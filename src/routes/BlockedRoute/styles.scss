@@ -1,37 +1,11 @@
 .blocked-route {
-  @media only screen and (max-width: 360px) {
-    @apply mt-[17.75rem];
-
+  @media only screen and (max-width: 365px) {
     & img {
-      @apply absolute top-[5.5%] min-w-[330px];
+      @apply h-full min-w-[200px];
     }
-  }
 
-  @media only screen and (max-width: 335px) {
-    @apply mt-[16.5rem];
-
-    & img {
-      @apply h-[305px] min-w-[290px];
-    }
-  }
-
-  @media only screen and (max-width: 312px) {
-    @apply mt-[16.65rem];
-  }
-
-  @media only screen and (max-width: 300px) {
-    @apply mt-[15.35rem];
-
-    & img {
-      @apply min-w-[270px] top-[3%];
-    }
-  }
-
-  @media only screen and (max-width: 280px) {
-    @apply mt-0;
-
-    & img {
-      @apply relative h-[50vh] min-w-[initial];
+    & .main-title {
+      @apply mt-0;
     }
   }
 }

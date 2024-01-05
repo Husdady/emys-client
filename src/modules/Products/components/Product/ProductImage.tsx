@@ -24,7 +24,7 @@ export default function ProductImage({ coverImage }: Pick<Product, 'coverImage'>
   }
 
   return (
-    <div className="mb-2 w-[90px] min-w-[90px] max-w-[90px] h-[120px] min-h-[120px] max-h-[120px] bg-gray-100 flex items-center justify-center rounded mx-auto dark:bg-gray-800 dark:text-gray-500">
+    <div className="mb-2 w-[90px] min-w-[90px] max-w-[90px] h-[120px] min-h-[120px] max-h-[120px] bg-gray-100 flex items-center justify-center rounded mx-auto dark:bg-gray-700 dark:text-gray-400">
       <Photo size="xxl" />
     </div>
   )

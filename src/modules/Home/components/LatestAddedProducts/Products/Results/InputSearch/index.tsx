@@ -7,7 +7,9 @@ import useInputSearch from './useInputSearch'
 
 // Interfaces
 import { InputSearchProps } from './interfaces'
-import classnames from '@root/src/utils/classnames'
+
+// Utils
+import classnames from '@utils/classnames'
 
 export default function InputSearch({ products, setResults }: InputSearchProps) {
   const {
@@ -34,7 +36,7 @@ export default function InputSearch({ products, setResults }: InputSearchProps) 
           animationClassName,
           'input-search-latest-products !border-none max-w-[1100px] mx-auto animate__animated animate__fadeIn'
         ])}
-        innerClassName="!rounded-full !px-7 !py-4 text-[0.95rem] !outline-transparent"
+        innerClassName="!rounded-full !px-7 !py-4 text-[0.95rem] !outline-transparent dark:!bg-gray-800"
         placeholder="Buscar productos..."
       />
     </div>
