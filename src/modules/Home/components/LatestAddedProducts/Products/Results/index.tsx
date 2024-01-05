@@ -60,7 +60,7 @@ export default function Results({
           onMouseMove={handleMouseMove}
           onMouseDown={handleMouseDown}
           className={classnames([
-            'product-items mt-[2.5rem] flex gap-x-4 pb-[1.1rem] relative',
+            'product-items mt-[2.5rem] flex gap-y-3 gap-x-2.5 pb-[1.1rem] relative flex-wrap sm:flex-nowrap sm:gap-x-4',
             isBiggestTabletScreen ? 'overflow-x-auto' : 'overflow-x-hidden'
           ])}
         >

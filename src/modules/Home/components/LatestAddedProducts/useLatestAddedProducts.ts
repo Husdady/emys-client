@@ -8,7 +8,7 @@ import useScrollOnArrows from './hooks/useScrollOnArrows'
 import isEmptyArray from '@utils/isEmptyArray'
 
 // Constants
-import { LIMIT_LATEST_PRODUCTS } from './constants'
+import { LIMIT_LATEST_PRODUCTS, LIMIT_LATEST_PRODUCTS_FOR_MOBILE } from './constants'
 
 /**
  * Hook for implements the logic of the LatestAddedProducts component
@@ -17,7 +17,10 @@ export default function useLatestAddedProducts() {
   const productItemsRef = useRef<HTMLUListElement | null>(null)
 
   const queryData = useGetLatestProductsQuery(
-    { populate: true, limit: LIMIT_LATEST_PRODUCTS },
+    {
+      populate: true,
+      limit: window.innerHeight <= 640 ? LIMIT_LATEST_PRODUCTS_FOR_MOBILE : LIMIT_LATEST_PRODUCTS
+    },
     {
       refetchOnFocus: true,
       refetchOnReconnect: true,
