@@ -32,7 +32,7 @@ export default function LatestAddedProducts() {
     <section
       id={LATEST_ADDED_PRODUCTS_ID}
       className={classnames([
-        hasEmptyProducts ? 'pb-3' : 'pb-[3.5rem]',
+        hasEmptyProducts ? 'pb-3' : 'pb-[2rem]',
         'latest-added-products mx-auto pt-4 px-4 xl:px-0'
       ])}
     >
