@@ -11,7 +11,7 @@ export default function EmptyLatestProducts() {
       title={constants.DEFAULT_TITLE}
       description={constants.DEFAULT_DESCRIPTION}
       customTitle={constants.DEFAULT_CUSTOM_TITLE}
-      className="pt-5 !px-0 !pb-0 !bg-transparent"
+      className="pt-5 !px-0 !pb-0 !bg-transparent min-h-[500px]"
     />
   )
 }
