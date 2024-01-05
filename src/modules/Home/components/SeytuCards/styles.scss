@@ -3,6 +3,14 @@
     @apply py-[2.5rem];
   }
 
+  @media only screen and (max-width: 640px) {
+    @apply py-[2rem];
+  }
+
+  @media only screen and (max-width: 500px) {
+    @apply px-4 py-[1.5rem];
+  }
+
   & .inner-wrapper {
     & .seytu-card-item {
       & .home-card {
@@ -70,7 +78,7 @@
         }
       }
 
-      @media only screen and (max-width: 489px) {
+      @media only screen and (max-width: 500px) {
         & .home-card {
           @apply w-full h-[initial] min-h-[250px];
 
