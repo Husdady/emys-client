@@ -1,11 +1,28 @@
-// Components
-import Cards from './Cards'
+// Librarys
+import dynamic from 'next/dynamic'
 
-export default function OmnilifeCards() {
+// Hooks
+import useSeytuCards from './useSeytuCards'
+
+// Data
+import cards from './card-list'
+
+// Dynamic Components
+const HomeCard = dynamic(() => import('@modules/Home/components/Card'))
+
+export default function SeytuCards() {
+  const { createCardAction } = useSeytuCards()
+
   return (
-    <section className="seytu-cards bg-pink-100 dark:bg-pink-500 py-[3rem] px-[1.85rem]">
-      <div className="inner-wrapper max-w-[1105px] mx-auto w-full h-full">
-        <Cards />
+    <section className="seytu-cards">
+      <div className="inner-wrapper">
+        <ul className="card-list">
+          {cards.map((card) => (
+            <li key={card.id} className="card-item">
+              <HomeCard {...card} onClick={createCardAction(card.id as string)} />
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   )

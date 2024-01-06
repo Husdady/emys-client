@@ -10,8 +10,13 @@ import seytuMakeupImage from '@assets/images/seytu-makeup.webp'
 import beautyProductsImage from '@assets/images/beauty-products.webp'
 
 // Constants
+export const CARD_01_ID = createId()
+export const CARD_02_ID = createId()
+export const CARD_03_ID = createId()
+
 const cards: HomeCardProps[] = [
   {
+    id: CARD_01_ID,
     className: 'flex-row-reverse',
     title: 'Nosotros también vendemos Seytú',
     imageProps: { alt: 'omnilife-campus', src: seytuMakeupImage },
@@ -19,6 +24,7 @@ const cards: HomeCardProps[] = [
       'SEYTÚ es la línea nutricional no testada en animales, libre de parabenos, con fórmulas orgánicas; contiene...'
   },
   {
+    id: CARD_02_ID,
     animationUtilityClassName: 'animate__delay-1s',
     title: 'Productos de belleza y cuidado de la piel',
     buttonTitle: 'Que interesante!',
@@ -27,6 +33,7 @@ const cards: HomeCardProps[] = [
       'SEYTÚ, es una reconocida marca en el mundo del cuidado de la piel y la belleza, ofrece una gama excepcional de...'
   },
   {
+    id: CARD_03_ID,
     className: 'flex-row-reverse',
     title: 'No contienen parabenos',
     buttonTitle: 'Impresionante!',
@@ -35,6 +42,6 @@ const cards: HomeCardProps[] = [
     description:
       'Los parabenos son una clase de compuestos químicos utilizados comúnmente como conservantes en productos...'
   }
-].map((card) => ({ ...card, id: createId() }))
+]
 
 export default cards

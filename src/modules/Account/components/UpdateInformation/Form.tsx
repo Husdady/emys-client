@@ -84,7 +84,6 @@ export default function UpdateInformationForm() {
           disabled={!isEmptyObject(errors)}
           icon={<DeviceFloppy size="md" />}
           title="Actualizar mi información"
-          titlePopup="Actualizar mi información"
           loadingTitle="Actualizando información..."
           className="!font-lexend !px-4 !py-3 ml-auto bg-blue-500 hover:bg-sky-500 text-white rounded-xl dark:hover:opacity-70 dark:bg-blue-600"
         />

@@ -45,7 +45,7 @@ export default function HomeCard({
         <Button
           onClick={onClick}
           title={buttonTitle}
-          className="btn-know-more w-[80%] mt-2 !py-2 flex items-center rounded-full hover:!text-white text-[0.8rem] font-semibold"
+          className="btn-card-action w-[80%] mt-2 !py-2 flex items-center rounded-full hover:!text-white text-[0.8rem] font-semibold"
         />
       </div>
 

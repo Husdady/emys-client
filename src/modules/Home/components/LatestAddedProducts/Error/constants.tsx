@@ -17,7 +17,11 @@ export const DEFAULT_DESCRIPTION =
   '¡Lo sentimos! Parece que hemos encontrado un problema al intentar obtener la información de los últimos productos agregados.'
 
 export const DEFAULT_CUSTOM_TITLE = {
-  className: 'text-red-500 w-full sm:w-6/12 dark:text-red-400'
+  className: 'text-red-500 w-full !px-0 dark:text-red-400 mb-4 md:mb-2'
+}
+
+export const DEFAULT_CUSTOM_DESCRIPTION = {
+  className: '!px-0'
 }
 
 export const DEFAULT_BUTTON: ButtonProps = {
@@ -31,6 +35,6 @@ export const DEFAULT_IMAGE: ImageProps = {
   width: 375,
   height: 275,
   src: missingImage,
-  className: 'h-[275px]',
-  alt: 'missing-route-image'
+  alt: 'error-latest-added-products',
+  className: 'h-[275px]'
 }

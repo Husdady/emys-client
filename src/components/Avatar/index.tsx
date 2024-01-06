@@ -19,8 +19,8 @@ function Avatar({ src, onOpen }: AvatarProps) {
         title=""
         onClick={onOpen}
         icon={<Camera size="smaller" className="center" />}
-        titlePopup="Actualizar mi foto de perfil"
         className="!p-0 !absolute bg-dark-800/50 w-full h-full rounded-full z-50 text-gray-200 dark:bg-dark-800/80 opacity-0 hover:opacity-100 hover:cursor-pointer"
+        titlePopup="Actualizar mi foto de perfil"
       />
 
       <AntdAvatar

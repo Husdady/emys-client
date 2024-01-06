@@ -1,0 +1,107 @@
+@mixin createHomeCardStyles(
+  $mainSelector,
+  $bgMainSelector,
+  $bgHomeCard,
+  $textColorDescription,
+  $sharedTextColor,
+  $btnKnowMore
+) {
+  #{$mainSelector} {
+    @apply #{$bgMainSelector} py-[3rem] px-[1.85rem];
+
+    @media only screen and (max-width: 798px) {
+      @apply py-[2.5rem];
+    }
+
+    @media only screen and (max-width: 640px) {
+      @apply py-[2rem];
+    }
+
+    @media only screen and (max-width: 500px) {
+      @apply px-4;
+    }
+
+    & .inner-wrapper {
+      @apply max-w-[1105px] mx-auto w-full h-full;
+
+      & .card-list {
+        @apply flex items-center justify-center gap-3 justify-between;
+      }
+
+      & .card-item {
+        & .home-card {
+          @apply #{$bgHomeCard};
+
+          & .description {
+            @apply #{$textColorDescription};
+          }
+
+          & .title,
+          & .description {
+            @apply dark:font-semibold #{$sharedTextColor};
+          }
+
+          & .btn-card-action {
+            @apply dark:text-white dark:font-normal #{$btnKnowMore};
+          }
+        }
+      }
+
+      @media screen and (min-width: 1450px) {
+        @apply max-w-[1400px];
+      }
+
+      & .card-list {
+        @media screen and (max-width: 1185px) {
+          @apply flex-wrap gap-5;
+        }
+
+        @media screen and (max-width: 1162px) {
+          @apply justify-center;
+        }
+
+        @media only screen and (max-width: 798px) {
+          & .home-card {
+            @apply w-[450px] h-[200px];
+          }
+
+          & .card-item {
+            &:nth-of-type(2) {
+              @apply ml-[7rem];
+            }
+
+            &:nth-of-type(3) {
+              @apply mr-[2rem];
+            }
+          }
+        }
+
+        @media only screen and (max-width: 640px) {
+          & .home-card {
+            @apply h-[250px];
+          }
+
+          & .card-item {
+            &:nth-of-type(2) {
+              @apply ml-0;
+            }
+
+            &:nth-of-type(3) {
+              @apply mr-0;
+            }
+          }
+        }
+
+        @media only screen and (max-width: 500px) {
+          & .home-card {
+            @apply w-full h-[initial] min-h-[250px];
+
+            & img {
+              @apply h-auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
