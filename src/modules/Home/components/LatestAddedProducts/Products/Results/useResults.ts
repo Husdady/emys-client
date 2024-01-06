@@ -3,6 +3,7 @@ import { useRef, useState, useCallback, MouseEvent, useMemo } from 'react'
 
 // Hooks
 import useMounted from '@hooks/useMounted'
+import useMobileScreen from '@hooks/useMobileScreen'
 import useBiggestTabletScreen from '@hooks/useBiggestTabletScreen'
 
 // Interfaces
@@ -14,6 +15,7 @@ import { ResultsProps } from './interfaces'
  */
 export default function useResults({ products, productItemsRef }: ResultsProps) {
   const prevScrollLeft = useRef(0)
+  const isMobileScreen = useMobileScreen()
   const [results, setResults] = useState(products)
   const [isTabsDragging, setTabsDragging] = useState(false)
   const isBiggestTabletScreen = useBiggestTabletScreen()
@@ -139,8 +141,8 @@ export default function useResults({ products, productItemsRef }: ResultsProps) 
     productItemsRef: productItemsRef,
     handleMouseMove: handleMouseMove,
     handleMouseDown: handleMouseDown,
-    isShowingLeftShadow: isShowingLeftShadow,
-    isShowingRightShadow: isShowingRightShadow,
-    isBiggestTabletScreen: isBiggestTabletScreen
+    isBiggestTabletScreen: isBiggestTabletScreen,
+    isShowingLeftShadow: isShowingLeftShadow && !isMobileScreen,
+    isShowingRightShadow: isShowingRightShadow && !isMobileScreen
   }
 }

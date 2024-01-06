@@ -1,102 +1,9 @@
+// Styles
+@import './styles/search.scss';
+@import './styles/shadows.scss';
+@import './styles/product-items.scss';
+
 .latest-added-products {
-  @media only screen and (max-width: 640px) {
-    @apply px-2;
-
-    & .product-items {
-      @apply gap-x-2 gap-y-2.5;
-    }
-
-    & .input-search-latest-products,
-    & .latest-added-products-header {
-      @apply mx-2;
-    }
-
-    & .btn-heart {
-      & svg {
-        width: 19px !important;
-        height: 19px !important;
-        min-width: 19px !important;
-        min-height: 19px !important;
-      }
-    }
-
-    & .product-item {
-      width: calc(50% - 0.375rem);
-
-      & .product {
-        @apply w-full min-w-[initial] max-w-[initial];
-      }
-    }
-  }
-
-  & .product-items {
-    scroll-behavior: smooth;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    &.drag {
-      scroll-behavior: auto;
-      @apply cursor-grab;
-
-      & .product,
-      & .product-item {
-        @apply select-none pointer-events-none;
-      }
-    }
-
-    & .product-item {
-      &:first-of-type {
-        @apply sm:ml-3;
-      }
-
-      &:last-of-type {
-        @apply sm:mr-3;
-      }
-    }
-  }
-
-  & .shadow-left,
-  & .shadow-right {
-    @apply bg-white z-[999];
-  }
-
-  & .shadow-left {
-    background: linear-gradient(to right, #e1e1e1, 35%, transparent);
-  }
-
-  & .shadow-right {
-    background: linear-gradient(to left, #e1e1e1, 35%, transparent);
-  }
-
-  @media only screen and (max-width: 1024px) {
-    & .shadow-left {
-      background: linear-gradient(to right, #e1e1e1, 10%, transparent);
-    }
-
-    & .shadow-right {
-      background: linear-gradient(to left, #e1e1e1, 10%, transparent);
-    }
-  }
-
-  & .input-search-latest-products {
-    & .inner {
-      @apply shadow-lg border-gray-200 dark:border-gray-400/70;
-    }
-
-    & .clear-icon {
-      & svg {
-        width: 18px;
-        height: 18px;
-      }
-
-      &:hover::after {
-        @apply p-4;
-      }
-    }
-  }
-
   @media only screen and (min-width: 640px) and (max-width: 1200px) {
     & .input-search-latest-products,
     & .latest-added-products-header {
@@ -157,6 +64,36 @@
     }
   }
 
+  @media only screen and (max-width: 640px) {
+    @apply px-2;
+
+    & .input-search-latest-products,
+    & .latest-added-products-header {
+      @apply mx-2;
+    }
+
+    & .btn-heart {
+      & svg {
+        width: 19px !important;
+        height: 19px !important;
+        min-width: 19px !important;
+        min-height: 19px !important;
+      }
+    }
+
+    & .product-item {
+      width: calc(50% - 0.375rem);
+
+      & .product {
+        @apply pt-5 w-full min-w-[initial] max-w-[initial];
+
+        & .btn-heart {
+          @apply top-2.5 right-2.5;
+        }
+      }
+    }
+  }
+
   @media only screen and (max-width: 515px) {
     & .latest-added-products-header {
       @apply gap-y-3;
@@ -182,28 +119,6 @@
   @media only screen and (max-width: 450px) {
     & .page-screen img {
       @apply h-full;
-    }
-  }
-}
-
-.dark {
-  & .latest-added-products {
-    & .shadow-left {
-      background: linear-gradient(to right, #636363, 35%, transparent);
-    }
-
-    & .shadow-right {
-      background: linear-gradient(to left, #636363, 35%, transparent);
-    }
-
-    @media only screen and (max-width: 1024px) {
-      & .shadow-left {
-        background: linear-gradient(to right, #636363, 10%, transparent);
-      }
-
-      & .shadow-right {
-        background: linear-gradient(to left, #636363, 10%, transparent);
-      }
     }
   }
 }

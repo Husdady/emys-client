@@ -2,7 +2,11 @@
 import Head from 'next/head'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from 'next-themes'
+import { Online, Offline } from 'react-detect-offline'
 import { PersistGate } from 'redux-persist/integration/react'
+
+// Components
+import OfflineView from '@components/OfflineView'
 
 // Hooks
 import useNprogressDone from '@hooks/useNprogressDone'
@@ -32,9 +36,15 @@ export default function EmysApp({ Component, pageProps: { session, ...pageProps 
       <Provider store={store}>
         <PersistGate persistor={persistor} loading={null}>
           <ThemeProvider attribute="class">
-            <main className={fonts}>
-              <Component {...pageProps} />
-            </main>
+            <Online>
+              <main className={fonts}>
+                <Component {...pageProps} />
+              </main>
+            </Online>
+
+            <Offline>
+              <OfflineView />
+            </Offline>
           </ThemeProvider>
         </PersistGate>
       </Provider>

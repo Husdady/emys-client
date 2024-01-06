@@ -17,7 +17,7 @@ export const DEFAULT_CUSTOM_TITLE = {
 export const DEFAULT_IMAGE: ImageProps = {
   width: 375,
   height: 275,
-  src: emptyLatestProductsImage,
   className: 'h-[275px]',
-  alt: 'empty-latest-products'
+  alt: 'empty-latest-products',
+  src: emptyLatestProductsImage
 }

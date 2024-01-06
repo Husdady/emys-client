@@ -1,0 +1,18 @@
+.latest-added-products {
+  & .input-search-latest-products {
+    & .inner {
+      @apply shadow-lg border-gray-200 dark:border-gray-400/70;
+    }
+
+    & .clear-icon {
+      & svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      &:hover::after {
+        @apply p-4;
+      }
+    }
+  }
+}

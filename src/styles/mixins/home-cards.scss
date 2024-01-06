@@ -25,7 +25,7 @@
       @apply max-w-[1105px] mx-auto w-full h-full;
 
       & .card-list {
-        @apply flex items-center justify-center gap-3 justify-between;
+        @apply flex items-center justify-center gap-y-3 gap-x-4 justify-between;
       }
 
       & .card-item {
@@ -42,7 +42,7 @@
           }
 
           & .btn-card-action {
-            @apply dark:text-white dark:font-normal #{$btnKnowMore};
+            @apply max-w-[152px] dark:text-white dark:font-normal #{$btnKnowMore};
           }
         }
       }
@@ -53,11 +53,7 @@
 
       & .card-list {
         @media screen and (max-width: 1185px) {
-          @apply flex-wrap gap-5;
-        }
-
-        @media screen and (max-width: 1162px) {
-          @apply justify-center;
+          @apply flex-wrap gap-5 justify-center;
         }
 
         @media only screen and (max-width: 798px) {
@@ -79,6 +75,11 @@
         @media only screen and (max-width: 640px) {
           & .home-card {
             @apply h-[250px];
+          }
+
+          & .btn-card-action {
+            @apply w-full;
+            max-width: 170px !important;
           }
 
           & .card-item {

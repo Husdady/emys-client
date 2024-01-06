@@ -4,8 +4,8 @@ import { Suspense } from 'react'
 // Components
 import ShadowLeft from './ShadowLeft'
 import ShadowRight from './ShadowRight'
-import PlaceholderItem from './Placeholder/Item'
-import Placeholder from './InputSearch/Placeholder'
+import InputSearchPlaceholder from './InputSearch/Placeholder'
+import ProductPlaceholder from '@modules/Products/components/Product/Placeholder'
 
 // Hooks
 import useResults from './useResults'
@@ -45,7 +45,7 @@ export default function Results({
 
   return (
     <>
-      <Suspense fallback={<Placeholder />}>
+      <Suspense fallback={<InputSearchPlaceholder />}>
         <InputSearch products={products} setResults={setResults} />
       </Suspense>
 
@@ -60,13 +60,13 @@ export default function Results({
           onMouseMove={handleMouseMove}
           onMouseDown={handleMouseDown}
           className={classnames([
-            'product-items mt-[2.5rem] flex gap-y-3 gap-x-2.5 pb-[1.1rem] relative flex-wrap sm:flex-nowrap sm:gap-x-4',
+            'product-items mt-[2.5rem] flex gap-y-3.5 gap-x-3 pb-[1.1rem] relative flex-wrap sm:flex-nowrap sm:gap-x-3.5',
             isBiggestTabletScreen ? 'overflow-x-auto' : 'overflow-x-hidden'
           ])}
         >
           {results.map((product) => (
             <li key={product.id} className="product-item">
-              <Suspense fallback={<PlaceholderItem />}>
+              <Suspense fallback={<ProductPlaceholder />}>
                 <Product {...product} />
               </Suspense>
             </li>

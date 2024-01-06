@@ -19,7 +19,7 @@ export default function useLatestAddedProducts() {
   const queryData = useGetLatestProductsQuery(
     {
       populate: true,
-      limit: window.innerHeight <= 640 ? LIMIT_LATEST_PRODUCTS_FOR_MOBILE : LIMIT_LATEST_PRODUCTS
+      limit: window.innerWidth <= 640 ? LIMIT_LATEST_PRODUCTS_FOR_MOBILE : LIMIT_LATEST_PRODUCTS
     },
     {
       refetchOnFocus: true,
