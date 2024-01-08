@@ -102,6 +102,24 @@
             }
           }
         }
+
+        @media only screen and (max-width: 500px) {
+          & .home-card {
+            @apply flex-col-reverse;
+
+            & > img {
+              @apply w-full h-[150px];
+            }
+
+            & .card-information {
+              @apply w-full;
+
+              & .title {
+                @apply max-w-[280px];
+              }
+            }
+          }
+        }
       }
     }
   }

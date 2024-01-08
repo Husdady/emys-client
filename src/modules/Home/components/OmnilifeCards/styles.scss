@@ -20,3 +20,19 @@
   // Colors of the Button of the Home Card
   'text-purple-700 hover:bg-pink-400 dark:bg-purple-700 dark:hover:bg-pink-500'
 );
+
+@media only screen and (max-width: 500px) {
+  .omnilife-cards {
+    & .card-item {
+      &:last-of-type {
+        & .home-card {
+          & .card-information {
+            & .title {
+              @apply max-w-[initial];
+            }
+          }
+        }
+      }
+    }
+  }
+}
