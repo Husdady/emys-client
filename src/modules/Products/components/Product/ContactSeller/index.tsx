@@ -18,7 +18,7 @@ export default function ContactSeller({ isInStock }: Pick<Product, 'isInStock'>)
         !isInStock
           ? 'text-gray-500 bg-gray-300 opacity-100 line-through dark:bg-gray-400 dark:text-gray-200'
           : 'text-white bg-lime-500 enabled:hover:bg-green-600 dark:bg-lime-400 dark:text-lime-900 dark:font-semibold dark:enabled:hover:bg-lime-400',
-        'btn-contact-seller mt-3.5 flex-nowrap rounded-xl !px-2 !py-[0.6rem] whitespace-nowrap !gap-x-1 w-full'
+        'btn-contact-seller mt-3.5 flex-nowrap rounded-xl !px-2 !py-[0.6rem] whitespace-nowrap !gap-x-1.5 w-full'
       ])}
     />
   )

@@ -8,6 +8,7 @@ import useScrollOnArrows from './hooks/useScrollOnArrows'
 import isEmptyArray from '@utils/isEmptyArray'
 
 // Constants
+import { THREE_MINUTES } from '@assets/data/interval'
 import { LIMIT_LATEST_PRODUCTS, LIMIT_LATEST_PRODUCTS_FOR_MOBILE } from './constants'
 
 /**
@@ -24,7 +25,8 @@ export default function useLatestAddedProducts() {
     {
       refetchOnFocus: true,
       refetchOnReconnect: true,
-      refetchOnMountOrArgChange: true
+      refetchOnMountOrArgChange: true,
+      pollingInterval: THREE_MINUTES
     }
   )
 

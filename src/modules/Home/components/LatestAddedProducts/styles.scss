@@ -121,4 +121,10 @@
       @apply h-full;
     }
   }
+
+  @media only screen and (max-width: 375px) {
+    & .product-item {
+      @apply w-full;
+    }
+  }
 }
