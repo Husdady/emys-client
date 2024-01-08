@@ -15,15 +15,7 @@ import isFunction from '@utils/isFunction'
 // Constants
 import { PRODUCTS_PATH } from '@assets/data/paths'
 import { CARD_01_ID, CARD_02_ID, CARD_03_ID } from './card-list'
-
-export const sharedShowModalProps = {
-  width: 500,
-  icon: null,
-  isShowingAcceptButton: false,
-  cancelButtonProps: {
-    title: 'Ocultar modal'
-  }
-}
+import sharedShowModalProps from '@modules/Home/data/shared-show-modal-props'
 
 /**
  * Hook for manage the logic of the SeytuCards component
@@ -42,7 +34,8 @@ export default function useSeytuCards() {
     showModal({
       ...sharedShowModalProps,
       title: 'Acerca de Seytú',
-      content: <AboutSeytuCompany />
+      content: <AboutSeytuCompany />,
+      centered: true
     })
   }, [])
 

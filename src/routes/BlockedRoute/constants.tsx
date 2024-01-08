@@ -17,7 +17,7 @@ export const DEFAULT_DESCRIPTION =
   'La ruta que intentas acceder, está protegida, por lo que no puede ser visualizada como debe ser. Te recomendamos que vuelvas al Inicio de sesión.'
 
 export const DEFAULT_CUSTOM_TITLE = {
-  className: 'mt-2 text-purple-700 dark:text-purple-300'
+  className: '!mb-1 text-purple-700 dark:text-purple-300 2xl:mt-4 2xl:max-w-[700px]'
 }
 
 export const DEFAULT_BUTTON: ButtonProps = {
@@ -28,9 +28,9 @@ export const DEFAULT_BUTTON: ButtonProps = {
 }
 
 export const DEFAULT_IMAGE: ImageProps = {
-  width: 350,
+  width: 280,
   height: 280,
   src: unauthorizedImage,
-  className: 'h-[330px]',
+  className: 'h-[280px]',
   alt: 'blocked-route-image'
 }

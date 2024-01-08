@@ -19,6 +19,7 @@ const initialState: ModalState = {
   content: null,
   isShowing: false,
   onAccept: undefined,
+  centered: undefined,
   isShowingAcceptButton: true,
   isShowingCancelButton: true,
   wrapClassName: undefined,

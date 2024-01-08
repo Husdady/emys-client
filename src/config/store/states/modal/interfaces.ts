@@ -13,8 +13,6 @@ export interface ModalState
       ModalProps,
       | 'open'
       | 'style'
-      | 'centered'
-      | 'className'
       | 'onCancel'
       | 'onAccept'
       | 'closeIcon'
