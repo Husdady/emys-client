@@ -20,7 +20,7 @@ import classnames from '@utils/classnames'
 // Constants
 import { PRODUCT_ITEMS_ID } from './constants'
 
-// Dynamic Components
+// Lazy Components
 const InputSearch = lazy(() => import('./InputSearch'))
 const Product = lazy(() => import('@modules/Products/components/Product'))
 

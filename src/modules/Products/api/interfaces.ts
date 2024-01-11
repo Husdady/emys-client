@@ -36,10 +36,10 @@ export interface Product extends TimeStamps {
   isInStock: boolean
   isShowingPrice: boolean
   totalUnits?: number | null
-  allowedSellers: Seller[]
-  allowedSellersId: string[]
-  disallowedSellers: Seller[]
-  disallowedSellersId: string[]
+  mainSeller?: Seller | null
+  mainSellerId?: string | null
+  alliedSellers: Seller[]
+  alliedSellersId: string[]
   extraInformation: ExtraInformation[]
   relatedProducts: Product[]
   relatedProductsId: string[]
@@ -58,7 +58,6 @@ export interface Product extends TimeStamps {
   characteristics: string[]
   images: Image[] | null
   imagesId: string[] | null
-  whatsappContactMessage?: string | null
   customProductFields: CustomProductField[]
   customProductFieldsId?: string[] | null
 }

@@ -22,12 +22,7 @@ export default function useLatestAddedProducts() {
       populate: true,
       limit: window.innerWidth <= 640 ? LIMIT_LATEST_PRODUCTS_FOR_MOBILE : LIMIT_LATEST_PRODUCTS
     },
-    {
-      refetchOnFocus: true,
-      refetchOnReconnect: true,
-      refetchOnMountOrArgChange: true,
-      pollingInterval: THREE_MINUTES
-    }
+    { pollingInterval: THREE_MINUTES }
   )
 
   // Define the latest products

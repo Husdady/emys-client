@@ -36,8 +36,9 @@ export default function Product({
   sku,
   name,
   price,
-  coverImage,
   isInStock,
+  mainSeller,
+  coverImage,
   description,
   currencyType
 }: Product) {
@@ -69,8 +70,8 @@ export default function Product({
 
       <div>
         <Price price={price} currencyType={currencyType} />
-        <Seller />
-        <ContactSeller isInStock={isInStock} />
+        <Seller {...(mainSeller ?? {})} />
+        <ContactSeller name={name} isInStock={isInStock} mainSeller={mainSeller} />
       </div>
     </article>
   )

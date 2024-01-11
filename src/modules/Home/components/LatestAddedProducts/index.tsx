@@ -4,9 +4,11 @@ import dynamic from 'next/dynamic'
 // Hooks
 import useLatestAddedProducts from './useLatestAddedProducts'
 
+// Utils
+import classnames from '@utils/classnames'
+
 // Constants
 import { LATEST_ADDED_PRODUCTS_ID } from './constants'
-import classnames from '@root/src/utils/classnames'
 
 // Dynamic Components
 const Error = dynamic(() => import('./Error'))
@@ -32,7 +34,7 @@ export default function LatestAddedProducts() {
     <section
       id={LATEST_ADDED_PRODUCTS_ID}
       className={classnames([
-        hasEmptyProducts ? 'pb-4 lg:pb-[3rem]' : 'pb-4',
+        hasEmptyProducts ? 'pb-4 lg:pb-[3rem]' : 'pb-[0.65rem] sm:pb-4',
         'latest-added-products mx-auto pt-4 px-4 xl:px-0'
       ])}
     >

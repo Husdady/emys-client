@@ -6,7 +6,9 @@ import { graphqlRequestBaseQuery } from '@rtk-query/graphql-request-base-query'
 // Constants
 import {
   REDUCER_PATH,
+  SELLERS_KEY,
   PRODUCTS_KEY,
+  TESTIMONIALS_KEY,
 
   // Ubigeo keys
   REGIONS_KEY,
@@ -21,7 +23,9 @@ export const api = createApi({
   refetchOnMountOrArgChange: true,
   baseQuery: graphqlRequestBaseQuery({ client: client }),
   tagTypes: [
+    SELLERS_KEY,
     PRODUCTS_KEY,
+    TESTIMONIALS_KEY,
 
     // Ubigeo
     REGIONS_KEY,

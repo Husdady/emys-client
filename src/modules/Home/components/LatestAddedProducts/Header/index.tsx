@@ -39,7 +39,7 @@ function Header({
           title="Ver todos los productos"
           className={classnames([
             sharedClassName,
-            'see-all-products-link py-2 !px-4 gap-x-1.5 me-2 flex items-center justify-center font-poppins dark:font-semibold dark:hover:font-normal hover:underline'
+            'see-all-products-link py-2 !px-4 gap-x-1.5 me-2 flex items-center justify-center font-poppins dark:font-semibold hover:underline'
           ])}
         >
           <Eye className="sm" />

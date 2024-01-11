@@ -11,6 +11,14 @@ export const LatestProductsDocument = gql`
       isInStock
       description
       currencyType
+      mainSeller {
+        fullname
+        photo {
+          url
+          width
+          height
+        }
+      }
       coverImage {
         url
         width

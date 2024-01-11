@@ -7,7 +7,7 @@
   $btnKnowMore
 ) {
   #{$mainSelector} {
-    @apply #{$bgMainSelector} py-[3rem] px-[1.85rem];
+    @apply #{$bgMainSelector} py-[3rem] px-[1.85rem] min-h-[316px];
 
     @media only screen and (max-width: 798px) {
       @apply py-[2.5rem];

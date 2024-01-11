@@ -35,6 +35,6 @@ export const DEFAULT_IMAGE: ImageProps = {
   width: 375,
   height: 275,
   src: missingImage,
-  alt: 'error-latest-added-products',
-  className: 'h-[275px]'
+  className: 'h-[275px]',
+  alt: 'error-latest-added-products'
 }

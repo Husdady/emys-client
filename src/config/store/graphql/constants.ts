@@ -1,6 +1,8 @@
 // Constants
 export const REDUCER_PATH = 'gql'
+export const SELLERS_KEY = 'Sellers'
 export const PRODUCTS_KEY = 'Products'
+export const TESTIMONIALS_KEY = 'Testimonials'
 
 // Ubigeo
 export const REGIONS_KEY = 'Regions'

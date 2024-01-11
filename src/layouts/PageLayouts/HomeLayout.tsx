@@ -6,6 +6,12 @@ const Welcome = dynamic(() => import('@modules/Home/components/Welcome'))
 const SeytuCards = dynamic(() => import('@modules/Home/components/SeytuCards'))
 const OmnilifeCards = dynamic(() => import('@modules/Home/components/OmnilifeCards'))
 const LatestAddedProducts = dynamic(() => import('@modules/Home/components/LatestAddedProducts'))
+const LatestAddedTestimonials = dynamic(
+  () => import('@modules/Home/components/LatestAddedTestimonials')
+)
+const LatestRegisteredSellers = dynamic(
+  () => import('@modules/Home/components/LatestRegisteredSellers')
+)
 
 export default function HomeLayout() {
   return (
@@ -13,9 +19,9 @@ export default function HomeLayout() {
       <Welcome />
       <LatestAddedProducts />
       <SeytuCards />
-      <div className="h-[500px]"></div>
+      <LatestRegisteredSellers />
       <OmnilifeCards />
-      <div className="h-[500px]"></div>
+      <LatestAddedTestimonials />
     </>
   )
 }

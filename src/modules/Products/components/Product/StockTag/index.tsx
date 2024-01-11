@@ -4,7 +4,7 @@ import { Product } from '@modules/Products/api/interfaces'
 export default function StockTag({ isInStock }: Pick<Product, 'isInStock'>) {
   if (isInStock) {
     return (
-      <span className="available-product font-semibold text-sky-500 bg-sky-100 rounded px-2 py-[0.15rem] flex items-center dark:bg-sky-600 dark:text-white">
+      <span className="available-product font-semibold text-sky-500 bg-sky-100 rounded px-2 py-[0.15rem] flex items-center dark:bg-sky-500 dark:text-white">
         Disponible
       </span>
     )

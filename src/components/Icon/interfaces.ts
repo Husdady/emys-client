@@ -25,6 +25,7 @@ export interface IconProps
     | 'xl'
     | 'xxl'
     | 'xxxl'
+    | 'xml'
     | 'bigger'
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void
 }
