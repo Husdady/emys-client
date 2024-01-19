@@ -15,15 +15,15 @@ import isEmptyString from '@utils/isEmptyString'
  * Hook for implements the logic of the InputSearch component
  * @param {InputSearchProps} params Receive props of the InputSearch component
  */
-export default function useInputSearch({ sellers, setResults }: InputSearchProps) {
+export default function useInputSearch({ setResults, testimonials }: InputSearchProps) {
   const [searchValue, setSearchValue] = useState('')
   const { ref, animationClassName } = useAnimationInView('animate__fadeInUp')
 
   // Callback for clear the search value
   const handleClearSearchValue = useCallback(() => {
     setSearchValue('')
-    setResults(sellers)
-  }, [sellers])
+    setResults(testimonials)
+  }, [testimonials])
 
   // Callback for search sellers
   const handleSearchProducts = useCallback(
@@ -34,14 +34,14 @@ export default function useInputSearch({ sellers, setResults }: InputSearchProps
       const lowerValue = value.toLowerCase() // Get input value in lowercase
 
       // Filter the new results
-      const newResults = sellers.filter((seller) => {
+      const newResults = testimonials.filter((testimony) => {
         // Define the fields that can search
         const fieldsForSearch = [
-          seller.fullname,
-          seller.dni,
-          seller.ruc,
-          seller.email,
-          seller.phone
+          testimony.author,
+          testimony.region?.region,
+          testimony.country?.country,
+          testimony.province?.province,
+          testimony.district?.district
         ].map((item) => String(item).toLowerCase())
 
         const hasResult = fieldsForSearch.some((item) => item.includes(lowerValue))
@@ -51,10 +51,10 @@ export default function useInputSearch({ sellers, setResults }: InputSearchProps
       })
 
       // Define the new results
-      const results = isEmptyArray(newResults) ? sellers : newResults
+      const results = isEmptyArray(newResults) ? testimonials : newResults
       setResults(results) // Update results
     },
-    [sellers]
+    [testimonials]
   )
 
   return {

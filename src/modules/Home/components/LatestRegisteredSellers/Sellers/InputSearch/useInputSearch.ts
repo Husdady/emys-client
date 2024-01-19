@@ -37,11 +37,15 @@ export default function useInputSearch({ sellers, setResults }: InputSearchProps
       const newResults = sellers.filter((seller) => {
         // Define the fields that can search
         const fieldsForSearch = [
-          seller.fullname,
           seller.dni,
           seller.ruc,
           seller.email,
-          seller.phone
+          seller.phone,
+          seller.fullname,
+          seller.region?.region,
+          seller.country?.country,
+          seller.province?.province,
+          seller.district?.district
         ].map((item) => String(item).toLowerCase())
 
         const hasResult = fieldsForSearch.some((item) => item.includes(lowerValue))
