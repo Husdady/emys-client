@@ -16,7 +16,7 @@ export default function Placeholder() {
     <>
       <InputSearchPlaceholder />
 
-      <ul className="mt-[2.5rem] product-items flex flex-wrap sm:flex-nowrap items-start overflow-x-auto px-3 pb-4 gap-y-3.5 gap-x-3 sm:gap-x-3.5">
+      <ul className="mt-[2.5rem] product-items flex flex-wrap sm:flex-nowrap items-start overflow-x-auto px-3 pb-4 gap-y-3.5 gap-x-3 sm:gap-x-3">
         {createList(
           window.innerWidth <= 640 ? LIMIT_LATEST_PRODUCTS_FOR_MOBILE : LIMIT_LATEST_PRODUCTS
         ).map((i) => (

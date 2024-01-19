@@ -11,36 +11,34 @@ import classnames from '@utils/classnames'
 import { LATEST_ADDED_TESTIMONIALS_ID } from './constants'
 
 // Dynamic Components
-// const Error = dynamic(() => import('./Error'))
+const Error = dynamic(() => import('./Error'))
 const Header = dynamic(() => import('./Header'))
-// const Products = dynamic(() => import('./Products'))
-// const EmptyLatestProducts = dynamic(() => import('./EmptyLatestProducts'))
+const Testimonials = dynamic(() => import('./Testimonials'))
+const EmptyLatestTestimonials = dynamic(() => import('./EmptyLatestTestimonials'))
 
 export default function LatestAddedTestimonials() {
-  const { testimonials, isError, isLoading, hasEmptyTestimonials } = useLatestAddedTestimonials()
-  console.log({ testimonials })
+  const { testimonials, isError, isLoading, hasEmptyTestimonials } =
+    useLatestAddedTestimonials()
+
   return (
     <section
       id={LATEST_ADDED_TESTIMONIALS_ID}
       className={classnames([
-        hasEmptyTestimonials ? 'pb-4 lg:pb-[3rem]' : 'pb-[0.65rem] sm:pb-4',
-        'latest-added-testimonials mx-auto pt-[3rem] px-4 xl:px-0'
+        isLoading ? 'lg:!pb-[1.25rem]' : null,
+        isError || isLoading ? 'pt-[2.2rem]' : null,
+        isError || (!isLoading && hasEmptyTestimonials) ? 'white-screen' : 'pt-[4rem]',
+        !isError && hasEmptyTestimonials ? 'pb-4 lg:pb-[4rem]' : 'pb-[1.65rem] sm:pb-4',
+        'latest-added-testimonials mx-auto px-4 xl:px-0'
       ])}
     >
-      <Header />
+      {!isError && <Header />}
 
-      {/* {isError && <Error />}
-
-      {!isError && !isLoading && hasEmptyTestimonials && <EmptyLatestProducts />}
+      {isError && <Error />}
+      {!isError && !isLoading && hasEmptyTestimonials && <EmptyLatestTestimonials />}
 
       {(isLoading || (!isError && !hasEmptyTestimonials)) && (
-        <Products
-          testimonials={testimonials}
-          isLoading={isLoading}
-          hasScrollbar={hasScrollbar}
-          productItemsRef={productItemsRef}
-        />
-      )} */}
+        <Testimonials testimonials={testimonials} isLoading={isLoading} />
+      )}
     </section>
   )
 }

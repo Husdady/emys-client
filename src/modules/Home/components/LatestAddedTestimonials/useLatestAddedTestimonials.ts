@@ -7,17 +7,14 @@ import isEmptyArray from '@utils/isEmptyArray'
 
 // Constants
 import { THREE_MINUTES } from '@assets/data/interval'
-import { LIMIT_LATEST_TESTIMONIALS, LIMIT_LATEST_TESTIMONIALS_FOR_MOBILE } from './constants'
+import { LIMIT_LATEST_TESTIMONIALS } from './constants'
 
 /**
- * Hook for implements the logic of the LatestAddedTestimonials component
+ * Hook for implements the logic of the LatestRegisteredTestimonials component
  */
-export default function useLatestAddedTestimonials() {
+export default function useLatestRegisteredTestimonials() {
   const queryData = useGetLatestTestimonialsQuery(
-    {
-      populate: true,
-      limit: window.innerWidth <= 768 ? LIMIT_LATEST_TESTIMONIALS_FOR_MOBILE : LIMIT_LATEST_TESTIMONIALS
-    },
+    { populate: true, limit: LIMIT_LATEST_TESTIMONIALS },
     {
       refetchOnFocus: true,
       refetchOnReconnect: true,
@@ -39,6 +36,6 @@ export default function useLatestAddedTestimonials() {
     testimonials: testimonials,
     isError: queryData.isError,
     isLoading: queryData.isLoading,
-    hasEmptyTestimonials: hasEmptyTestimonials,
+    hasEmptyTestimonials: hasEmptyTestimonials
   }
 }

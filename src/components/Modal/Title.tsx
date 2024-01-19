@@ -6,7 +6,7 @@ export default function ModalTitle({ title, icon }: ModalTitleProps) {
     <span className="flex items-center text-main-700 dark:text-main-200 gap-x-2 tracking-wide">
       {icon}
 
-      <b className="modal-title-message text-lg font-lato leading-[1.27rem]">{title}</b>
+      <b className="modal-title-message text-lg font-lato leading-[1.27rem] lg:leading-snug">{title}</b>
     </span>
   )
 }

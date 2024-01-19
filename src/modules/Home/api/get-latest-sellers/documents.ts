@@ -20,6 +20,12 @@ export const LatestSellersDocument = gql`
         width
         height
       }
+      socialNetworks {
+        id
+        url
+        name
+        type
+      }
     }
   }
 

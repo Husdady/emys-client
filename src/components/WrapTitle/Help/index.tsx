@@ -13,24 +13,10 @@ import { HelpProps } from './interfaces'
 
 // Constants
 import colors from './colors'
+import useHelp from './useHelp'
 
 export default function Help({ title }: HelpProps) {
-  const { isDarkTheme } = useTheme()
-
-  // Define Overlay Inner style
-  const innerStyle: CSSProperties = useMemo(
-    () => ({
-      color: isDarkTheme ? colors.darkTextColor : colors.lightTextColor
-    }),
-    [isDarkTheme]
-  )
-
-  // Get custom container
-  const getContainer = useCallback(() => {
-    const root = document.getElementById('root')
-    if (root === null) return document.body
-    return root
-  }, [])
+  const { innerStyle, getContainer, isDarkTheme } = useHelp()
 
   return (
     <Tooltip

@@ -21,6 +21,10 @@
       @apply px-4;
     }
 
+    @media only screen and (max-width: 350px) {
+      @apply px-2.5 py-[1.5rem];
+    }
+
     & .inner-wrapper {
       @apply max-w-[1105px] mx-auto w-full h-full;
 

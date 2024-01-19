@@ -9,7 +9,7 @@ export const sharedIconProps: IconProps = {
 
 export const sharedFacebookIconProps: IconProps = {
   size: 'sm',
-  className: 'stroke-3 !text-sky-300'
+  className: 'stroke-3 text-[#3b5998] bg-white'
 }
 
 export const sharedWhatsappIconProps: IconProps = {

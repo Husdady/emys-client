@@ -1,0 +1,130 @@
+// Styles
+@import './styles/search.scss';
+@import './styles/shadows.scss';
+@import './styles/product-items.scss';
+
+.latest-added-products {
+  @media only screen and (min-width: 640px) and (max-width: 1200px) {
+    & .input-search-latest-products,
+    & .latest-added-products-header {
+      @apply mx-4;
+    }
+  }
+
+  @media only screen and (min-width: 521px) and (max-width: 639px) {
+    & .input-search-latest-products,
+    & .latest-added-products-header {
+      @apply mx-2.5;
+    }
+  }
+
+  @media only screen and (max-width: 892px) {
+    & #products {
+      @apply mt-2;
+    }
+
+    & .product-items {
+      @apply mt-[1.5rem];
+    }
+
+    & .latest-added-products-header {
+      @apply px-0;
+    }
+
+    & .inner-wrapper {
+      @apply my-2 justify-between;
+    }
+
+    & .inner-wrapper,
+    & .see-all-products-link {
+      @apply w-full;
+    }
+
+    & .see-all-products-link {
+      @apply max-w-[480px] py-3.5 text-[1rem];
+
+      & .icon {
+        & svg {
+          @apply w-[21px] h-[21px] min-w-[21px] min-h-[21px];
+        }
+      }
+    }
+
+    & .btn-show-next-products,
+    & .btn-show-previous-products {
+      @apply py-1.5;
+      padding-left: 1.35rem !important;
+      padding-right: 1.35rem !important;
+
+      & .icon {
+        & svg {
+          @apply w-[24px] h-[24px] min-w-[24px] min-h-[24px];
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 640px) {
+    @apply px-2;
+
+    & .input-search-latest-products,
+    & .latest-added-products-header {
+      @apply mx-2;
+    }
+
+    & .btn-heart {
+      & svg {
+        width: 19px !important;
+        height: 19px !important;
+        min-width: 19px !important;
+        min-height: 19px !important;
+      }
+    }
+
+    & .product-item {
+      width: calc(50% - 0.375rem);
+
+      & .product {
+        @apply pt-5 w-full min-w-[initial] max-w-[initial];
+
+        & .btn-heart {
+          @apply top-2.5 right-2.5;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 515px) {
+    & .latest-added-products-header {
+      @apply gap-y-3;
+    }
+
+    & #products {
+      @apply mt-3;
+    }
+
+    & .inner-wrapper {
+      @apply my-0 gap-y-3 flex-wrap flex-col-reverse;
+
+      & .arrows-wrapper {
+        @apply ml-auto flex-wrap gap-y-2 justify-center;
+      }
+
+      & .see-all-products-link {
+        @apply mr-0;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 450px) {
+    & .page-screen img {
+      @apply h-full;
+    }
+  }
+
+  @media only screen and (max-width: 375px) {
+    & .product-item {
+      @apply w-full;
+    }
+  }
+}

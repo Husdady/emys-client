@@ -33,6 +33,7 @@ const ContactSeller = dynamic(() => import('./ContactSeller'), {
 })
 
 export default function Product({
+  id,
   sku,
   name,
   price,
@@ -54,7 +55,7 @@ export default function Product({
         'product animate__animated animate__fadeIn h-full relative bg-white shadow-lg border border-gray-200 min-w-[290px] max-w-[290px] md:min-w-[250px] md:max-w-[250px] min-h-[200px] rounded-xl pb-4 pt-3.5 px-2.5 sm:px-3.5 dark:shadow-none dark:bg-gray-800 dark:border-gray-500 flex flex-col justify-between'
       ])}
     >
-      <Heart />
+      <Heart productId={id} productName={name} />
 
       <div>
         <ProductImage coverImage={coverImage} />

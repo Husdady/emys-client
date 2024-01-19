@@ -23,13 +23,14 @@ export default function LatestRegisteredSellers() {
     <section
       id={LATEST_REGISTERED_SELLERS_ID}
       className={classnames([
-        isError ? 'pt-[2.2rem]' : null,
-        isError || hasEmptySellers ? 'white-screen' : 'pt-[4rem]',
-        hasEmptySellers ? 'pb-4 lg:pb-[4rem]' : 'pb-[1.65rem] sm:pb-4',
+        isLoading ? 'lg:!pb-[1.25rem]' : null,
+        isError || isLoading ? 'pt-[2.2rem]' : null,
+        isError || (!isLoading && hasEmptySellers) ? 'white-screen' : 'pt-[4rem]',
+        !isError && hasEmptySellers ? 'pb-4 lg:pb-[4rem]' : 'pb-[1.65rem] sm:pb-4',
         'latest-registered-sellers mx-auto px-4 xl:px-0'
       ])}
     >
-      {!isError && !isLoading && !hasEmptySellers && <Header />}
+      {!isError && <Header />}
 
       {isError && <Error />}
       {!isError && !isLoading && hasEmptySellers && <EmptyLatestSellers />}

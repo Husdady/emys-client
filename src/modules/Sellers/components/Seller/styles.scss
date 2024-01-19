@@ -1,0 +1,31 @@
+.seller {
+  @media only screen and (max-width: 1080px) {
+    @apply py-[1.25rem] justify-between;
+
+    & .seller-photo {
+      @apply mx-auto;
+    }
+    
+    & .seller-header {
+      @apply px-2 mb-3 flex-col flex-wrap text-center justify-center;
+    }
+
+    & .btn-contact-seller {
+      padding-top: 1.25rem !important;
+      padding-right: 1rem !important;
+      padding-left: 1rem !important;
+      padding-bottom: 1.25rem !important;
+      @apply py-3 gap-y-1 whitespace-normal;
+
+      & span {
+        @apply leading-5;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    & .btn-contact-seller {
+      @apply flex-col;
+    }
+  }
+}

@@ -1,27 +1,11 @@
-// Types
-import type { SocialNetworkType } from './types'
-
 // Interfaces
+import { Image } from '@libs/axios/interfaces'
 import { Ubigeo } from '@modules/Ubigeo/api/interfaces'
-import { Image, TimeStamps } from '@libs/axios/interfaces'
 
-export interface SocialNetwork extends TimeStamps {
+export interface Testimony extends Ubigeo {
   id: string
-  url: string
-  name: string
-  type: SocialNetworkType
-}
-
-export interface Seller extends Ubigeo {
-  id: string
-  dni: string
-  ruc: string | null
-  code: string
-  email: string
-  status: string
-  phone: string
-  fullname: string
+  author: string
+  testimony: string
   photo: Image | null
-  socialNetworksId?: string[] | null
-  socialNetworks?: SocialNetwork[] | null
+  photoId: string | null
 }

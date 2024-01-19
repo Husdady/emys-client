@@ -1,9 +1,8 @@
 // Librarys
-import { memo } from 'react'
 import dynamic from 'next/dynamic'
 
 // Components
-import LinkIcon from '@assets/icons/link'
+import ExternalLinkIcon from '@assets/icons/external-link'
 
 // Constants
 import { TESTIMONIALS_PATH } from '@assets/data/paths'
@@ -13,14 +12,14 @@ const Link = dynamic(() => import('@components/Link'))
 
 export default function Header() {
   return (
-    <div className="latest-registered-sellers-header px-3 max-w-[1100px] mx-auto text-center flex justify-center">
+    <div className="latest-added-testimonials-header px-3 max-w-[1100px] mx-auto text-center flex justify-center">
       <Link
         href={TESTIMONIALS_PATH}
         title="Ir a la sección de Testimonios Omnilife"
-        className="flex items-center justify-center text-main-500 dark:text-rose-300 hover:text-rose-400 dark:hover:text-rose-400 gap-x-3 gap-y-4"
+        className="flex items-center justify-center text-gray-900 hover:text-rose-100 dark:hover:text-gray-500 gap-x-3 gap-y-4 dark:text-dark-800 dark:font-semibold"
       >
-        <h5 className="text-3xl font-lexend break-word">Testimonios Omnilife</h5>
-        <LinkIcon size="xxl" />
+        <h5 className="text-4xl font-lexend break-word font-semibold">Testimonios Omnilife</h5>
+        <ExternalLinkIcon size="xml" />
       </Link>
     </div>
   )

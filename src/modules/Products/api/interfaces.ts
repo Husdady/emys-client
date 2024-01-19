@@ -61,3 +61,11 @@ export interface Product extends TimeStamps {
   customProductFields: CustomProductField[]
   customProductFieldsId?: string[] | null
 }
+
+export interface ProductId {
+  productId: string
+}
+
+export interface ProductIdParams {
+  data: ProductId
+}

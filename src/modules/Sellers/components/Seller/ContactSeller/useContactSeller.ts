@@ -30,7 +30,7 @@ export default function useContactSeller({
 
     const message = `Hola ${fullname}. Soy ${user.fullname}, te contacto desde ${window.location.origin}, me interesa los productos que vendes. ¿Puedes brindarme más información?`
 
-    window.open(`https://api.whatsapp.com/send?phone=+51${phone}&text=${message}`, '_blank')
+    window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${message}`, '_blank')
   }, [user, phone, fullname])
 
   return {

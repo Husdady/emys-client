@@ -1,5 +1,58 @@
 html {
   & .latest-registered-sellers {
+    @media screen and (min-width: 900px) {
+      & .seller-items {
+        @apply flex-nowrap;
+
+        & .seller-item {
+          @apply min-w-[33.33%] max-w-[33.33%];
+        }
+      }
+    }
+
+    @media screen and (min-width: 1130px) {
+      & .seller-items {
+        & .seller-item {
+          @apply min-w-[350px] max-w-[350px];
+        }
+      }
+    }
+
+    @media screen and (max-width: 899px) {
+      & .seller-items {
+        & .seller-item {
+          min-width: calc(50% - 0.5rem);
+          max-width: calc(50% - 0.5rem);
+        }
+      }
+    }
+
+    @media screen and (max-width: 899px) {
+      & .seller-items {
+        @apply justify-start pb-[2rem];
+      }
+    }
+
+    @media only screen and (max-width: 640px) {
+      @apply pt-[3rem] pb-4;
+
+      & a {
+        & .icon {
+          @apply hidden;
+        }
+      }
+
+      & .seller-items {
+        & .seller-item {
+          @apply mx-auto min-w-[100%] max-w-[100%];
+        }
+      }
+    }
+
+    @media only screen and (max-width: 374px) {
+      @apply px-2;
+    }
+
     &:not(.white-screen) {
       background: rgb(255, 186, 59);
       background: linear-gradient(90deg, rgb(255, 186, 59), rgb(111, 185, 234), rgb(242, 124, 255));

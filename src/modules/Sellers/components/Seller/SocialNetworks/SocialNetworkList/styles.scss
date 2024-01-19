@@ -1,0 +1,27 @@
+.modal-seller-social-networks {
+  & .ant-modal-body {
+    @apply py-5;
+  }
+
+  & .ant-modal-title {
+    & > span {
+      @apply gap-x-2.5;
+    }
+
+    & .icon {
+      & svg {
+        @apply w-[22px] h-[22px];
+      }
+    }
+  }
+
+  & .seller-social-networks {
+    & .seller-social-network-list {
+      & .icon {
+        & svg {
+          @apply w-[20px] h-[20px];
+        }
+      }
+    }
+  }
+}
