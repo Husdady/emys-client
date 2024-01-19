@@ -1,8 +1,8 @@
 // Interfaces
-import { Testimonial } from '@modules/Testimonials/api/interfaces'
+import { Testimony } from '@modules/Testimonials/api/interfaces'
 
 export interface LatestTestimonials {
-  latestTestimonials: Testimonial[]
+  latestTestimonials: Testimony[]
 }
 
 export interface LatestTestimonialsArgs {
