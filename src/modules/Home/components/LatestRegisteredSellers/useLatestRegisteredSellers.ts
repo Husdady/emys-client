@@ -16,7 +16,6 @@ export default function useLatestRegisteredSellers() {
   const queryData = useGetLatestSellersQuery(
     { populate: true, limit: LIMIT_LATEST_SELLERS },
     {
-      refetchOnFocus: true,
       refetchOnReconnect: true,
       refetchOnMountOrArgChange: true,
       pollingInterval: THREE_MINUTES

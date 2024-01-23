@@ -11,10 +11,10 @@ import { ButtonProps } from '@components/Button/interfaces'
 import missingImage from '@assets/images/bug-found.webp'
 
 // Constants
-export const DEFAULT_TITLE = 'Ah ocurrido un error al mostrar los últimos vendedores registrados'
+export const DEFAULT_TITLE = 'Ah ocurrido un error al mostrar los últimos testimonios añadidos'
 
 export const DEFAULT_DESCRIPTION =
-  '¡Lo sentimos! Parece que hemos encontrado un problema al intentar obtener la información de los últimos vendedores registrados.'
+  '¡Lo sentimos! Parece que hemos encontrado un problema al intentar obtener la información de los últimos testimonios añadidos.'
 
 export const DEFAULT_CUSTOM_TITLE = {
   className: 'text-red-500 w-full !px-0 dark:text-red-400 mb-4 md:mb-2'
@@ -36,5 +36,5 @@ export const DEFAULT_IMAGE: ImageProps = {
   height: 275,
   src: missingImage,
   className: 'h-[275px]',
-  alt: 'error-latest-registered-sellers'
+  alt: 'error-latest-added-testimonials'
 }

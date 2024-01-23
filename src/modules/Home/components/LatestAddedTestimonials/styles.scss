@@ -1,50 +1,29 @@
 html {
   & .latest-added-testimonials {
-    @media screen and (min-width: 900px) {
-      & .testimonial-items {
-        @apply flex-nowrap;
-
-        & .testimonial-item {
-          @apply min-w-[33.33%] max-w-[33.33%];
+    & .input-search-latest-testimonials {
+      & .clear-icon {
+        & svg {
+          @apply w-[18px] h-[18px];
         }
       }
     }
 
-    @media screen and (min-width: 1130px) {
-      & .testimonial-items {
-        & .testimonial-item {
-          @apply min-w-[350px] max-w-[350px];
-        }
-      }
-    }
+    @media screen and (max-width: 1145px) {
+      & .testimony-items {
+        @apply flex-wrap;
 
-    @media screen and (max-width: 899px) {
-      & .testimonial-items {
-        & .testimonial-item {
-          min-width: calc(50% - 0.5rem);
-          max-width: calc(50% - 0.5rem);
+        & .testimony-item {
+          @apply min-w-[100%] max-w-[100%];
         }
-      }
-    }
-
-    @media screen and (max-width: 899px) {
-      & .testimonial-items {
-        @apply justify-start pb-[2rem];
       }
     }
 
     @media only screen and (max-width: 640px) {
-      @apply pt-[3rem] pb-4;
+      @apply pt-[3rem] pb-2;
 
       & a {
         & .icon {
           @apply hidden;
-        }
-      }
-
-      & .testimonial-items {
-        & .testimonial-item {
-          @apply mx-auto min-w-[100%] max-w-[100%];
         }
       }
     }
@@ -55,21 +34,12 @@ html {
 
     &:not(.white-screen) {
       background: rgb(59, 203, 255);
-      background: linear-gradient(90deg, rgb(137, 222, 255), rgb(246, 154, 222), rgb(168, 255, 124));
-    }
-  }
-
-  &.dark {
-    & .latest-added-testimonials {
-      &:not(.white-screen) {
-        background: rgb(196, 131, 12);
-        background: linear-gradient(
-          90deg,
-          rgb(242, 210, 152),
-          rgb(169, 221, 255),
-          rgb(236, 70, 254)
-        );
-      }
+      background: linear-gradient(
+        90deg,
+        rgb(137, 222, 255),
+        rgb(246, 154, 222),
+        rgb(168, 255, 124)
+      );
     }
   }
 }

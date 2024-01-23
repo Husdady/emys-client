@@ -1,0 +1,17 @@
+.testimony {
+  @media only screen and (max-width: 475px) {
+    & .testimony-header {
+      @apply flex-wrap text-center;
+
+      &,
+      & .ubigeo-fields,
+      & .author-name-wrapper {
+        @apply justify-center;
+      }
+
+      & .testimony-photo {
+        @apply mb-2;
+      }
+    }
+  }
+}

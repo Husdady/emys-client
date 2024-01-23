@@ -1,5 +1,13 @@
 html {
   & .latest-registered-sellers {
+    & .input-search-latest-sellers {
+      & .clear-icon {
+        & svg {
+          @apply w-[18px] h-[18px];
+        }
+      }
+    }
+
     @media screen and (min-width: 900px) {
       & .seller-items {
         @apply flex-nowrap;

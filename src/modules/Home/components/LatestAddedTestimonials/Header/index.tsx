@@ -8,19 +8,16 @@ import ExternalLinkIcon from '@assets/icons/external-link'
 import { TESTIMONIALS_PATH } from '@assets/data/paths'
 
 // Dynamic Components
-const Link = dynamic(() => import('@components/Link'))
+const HeaderLink = dynamic(() => import('@modules/Home/components/HeaderLink'))
 
 export default function Header() {
   return (
-    <div className="latest-added-testimonials-header px-3 max-w-[1100px] mx-auto text-center flex justify-center">
-      <Link
-        href={TESTIMONIALS_PATH}
-        title="Ir a la sección de Testimonios Omnilife"
-        className="flex items-center justify-center text-gray-900 hover:text-rose-100 dark:hover:text-gray-500 gap-x-3 gap-y-4 dark:text-dark-800 dark:font-semibold"
-      >
-        <h5 className="text-4xl font-lexend break-word font-semibold">Testimonios Omnilife</h5>
-        <ExternalLinkIcon size="xml" />
-      </Link>
-    </div>
+    <HeaderLink
+      href={TESTIMONIALS_PATH}
+      title="Testimonios Omnilife"
+      className="latest-added-testimonials-header"
+      popupTitle="Ir a la sección de Testimonios Omnilife"
+      linkClassName="text-gray-900 hover:text-gray-600 dark:hover:text-gray-600 dark:text-dark-800 font-semibold"
+    />
   )
 }
