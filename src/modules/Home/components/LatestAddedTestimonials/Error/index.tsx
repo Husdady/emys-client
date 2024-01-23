@@ -13,7 +13,7 @@ export default function Error() {
       description={constants.DEFAULT_DESCRIPTION}
       customTitle={constants.DEFAULT_CUSTOM_TITLE}
       customDescription={constants.DEFAULT_CUSTOM_DESCRIPTION}
-      className="pb-0 !bg-transparent min-h-[300px]"
+      className="pb-6 pt-[3rem] !bg-transparent min-h-[300px]"
     />
   )
 }

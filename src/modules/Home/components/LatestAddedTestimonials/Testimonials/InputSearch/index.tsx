@@ -20,6 +20,7 @@ export default function InputSearch({ setResults, testimonials }: InputSearchPro
       value={searchValue}
       onChange={handleSearchProducts}
       onClear={handleClearSearchValue}
+      disabled={testimonials.length <= 1}
       isShowingClearIcon={isShowingClearIcon}
       placeholder="Buscar testimonios por datos del autor..."
       icon={<MagnifyingGlass size="xsm" className="text-gray-400" />}

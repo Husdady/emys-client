@@ -11,7 +11,7 @@ export const DEFAULT_DESCRIPTION =
   'Queremos informarle que, hasta el momento, no se ha registrado ningún vendedor en nuestra plataforma. Estamos trabajando diligentemente para brindarle la mejor experiencia de compra, y pronto incorporaremos vendedores para ampliar nuestra oferta de productos.'
 
 export const DEFAULT_CUSTOM_TITLE = {
-  className: 'text-rose-500 w-full dark:text-pink-300'
+  className: 'text-blue-500 w-full !max-w-[650px] dark:text-blue-300'
 }
 
 export const DEFAULT_IMAGE: ImageProps = {

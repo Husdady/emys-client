@@ -2,6 +2,7 @@
 import dynamic from 'next/dynamic'
 
 // Dynamic Components
+const Contact = dynamic(() => import('@modules/Home/components/Contact'))
 const Welcome = dynamic(() => import('@modules/Home/components/Welcome'))
 const SeytuCards = dynamic(() => import('@modules/Home/components/SeytuCards'))
 const OmnilifeCards = dynamic(() => import('@modules/Home/components/OmnilifeCards'))
@@ -22,6 +23,7 @@ export default function HomeLayout() {
       <LatestRegisteredSellers />
       <OmnilifeCards />
       <LatestAddedTestimonials />
+      <Contact />
     </>
   )
 }

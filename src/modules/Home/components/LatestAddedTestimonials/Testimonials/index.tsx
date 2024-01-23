@@ -34,7 +34,7 @@ export default function Testimonials({ isLoading, testimonials }: TestimonialsPr
       {!isLoading && Array.isArray(testimonials) && !isEmptyArray(testimonials) && (
         <ul
           id={TESTIMONY_ITEMS_ID}
-          className="testimony-items mt-[2rem] lg:mt-[2.15rem] flex gap-y-2.5 sm:gap-y-3.5 gap-x-2 pb-[2.5rem] relative sm:gap-x-2.5 justify-center"
+          className="testimony-items mt-[2rem] lg:mt-[2.15rem] flex gap-y-2.5 sm:gap-y-3.5 gap-x-2 pb-[3rem] relative sm:gap-x-2.5 justify-center"
         >
           {results.map((testimony) => (
             <li key={testimony.id} className="testimony-item min-w-[550px] max-w-[550px]">

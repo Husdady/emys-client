@@ -10,10 +10,10 @@ html {
 
     @media screen and (min-width: 900px) {
       & .seller-items {
-        @apply flex-nowrap;
-
         & .seller-item {
           @apply min-w-[33.33%] max-w-[33.33%];
+          min-width: calc(33.33% - 0.4375rem);
+          max-width: calc(33.33% - 0.4375rem);
         }
       }
     }

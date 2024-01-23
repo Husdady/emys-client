@@ -25,6 +25,7 @@ export default function ContactSeller({
   return (
     <Button
       title="Contactar vendedor"
+      titlePopup={`Contactar a ${fullname}`}
       onClick={openWhatsappAPI}
       disabled={!isAvailableSeller}
       icon={<BrandWhatsapp size="md" />}

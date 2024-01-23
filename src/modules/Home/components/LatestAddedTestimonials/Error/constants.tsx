@@ -21,7 +21,7 @@ export const DEFAULT_CUSTOM_TITLE = {
 }
 
 export const DEFAULT_CUSTOM_DESCRIPTION = {
-  className: '!px-0'
+  className: '!px-0 !mt-1'
 }
 
 export const DEFAULT_BUTTON: ButtonProps = {
