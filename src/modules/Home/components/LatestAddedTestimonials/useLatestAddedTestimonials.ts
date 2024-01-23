@@ -15,12 +15,7 @@ import { LIMIT_LATEST_TESTIMONIALS } from './constants'
 export default function useLatestRegisteredTestimonials() {
   const queryData = useGetLatestTestimonialsQuery(
     { populate: true, limit: LIMIT_LATEST_TESTIMONIALS },
-    {
-      refetchOnFocus: true,
-      refetchOnReconnect: true,
-      refetchOnMountOrArgChange: true,
-      pollingInterval: THREE_MINUTES
-    }
+    { refetchOnReconnect: true, refetchOnMountOrArgChange: true, pollingInterval: THREE_MINUTES }
   )
 
   // Define the latest testimonials

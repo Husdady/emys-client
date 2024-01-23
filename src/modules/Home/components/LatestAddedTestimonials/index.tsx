@@ -17,13 +17,13 @@ const Testimonials = dynamic(() => import('./Testimonials'))
 const EmptyLatestTestimonials = dynamic(() => import('./EmptyLatestTestimonials'))
 
 export default function LatestAddedTestimonials() {
-  const { testimonials, isError, isLoading, hasEmptyTestimonials } =
-    useLatestAddedTestimonials()
+  const { testimonials, isError, isLoading, hasEmptyTestimonials } = useLatestAddedTestimonials()
 
   return (
     <section
       id={LATEST_ADDED_TESTIMONIALS_ID}
       className={classnames([
+        isError ? 'pb-[1.15rem]' : null,
         isLoading ? 'lg:!pb-[1.25rem]' : null,
         isError || isLoading ? 'pt-[2.2rem]' : null,
         isError || (!isLoading && hasEmptyTestimonials) ? 'white-screen' : 'pt-[4rem]',

@@ -15,11 +15,7 @@ import { THREE_MINUTES } from '@assets/data/interval'
 export default function useLatestRegisteredSellers() {
   const queryData = useGetLatestSellersQuery(
     { populate: true, limit: LIMIT_LATEST_SELLERS },
-    {
-      refetchOnReconnect: true,
-      refetchOnMountOrArgChange: true,
-      pollingInterval: THREE_MINUTES
-    }
+    { refetchOnReconnect: true, refetchOnMountOrArgChange: true, pollingInterval: THREE_MINUTES }
   )
 
   // Define the latest sellers
