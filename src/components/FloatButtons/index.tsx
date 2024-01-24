@@ -2,6 +2,7 @@
 import { memo } from 'react'
 
 // Components
+import EyeButton from './EyeButton'
 import ThemeButton from './ThemeButton'
 import SearchButton from './SearchButton'
 import ContactButton from './ContactButton'
@@ -22,6 +23,7 @@ function FloatButtons() {
     >
       <SearchButton />
       <ThemeButton />
+      <EyeButton />
       <ContactButton />
       <WhatsappButton />
     </div>

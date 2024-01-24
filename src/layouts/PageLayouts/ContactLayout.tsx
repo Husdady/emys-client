@@ -1,0 +1,40 @@
+// Librarys
+import dynamic from 'next/dynamic'
+
+// Components
+import HeadPhones from '@assets/icons/headphones'
+import ContactForm from '@modules/Contact/components/ContactForm'
+
+// Constants
+import { APP_NAME } from '@config/envs'
+
+// Dynamic Components
+const BoxWrapper = dynamic(() => import('@components/Wrapper'))
+const BoxTitle = dynamic(() => import('@components/WrapTitle'))
+const Aside = dynamic(() => import('@modules/Account/components/Aside'))
+
+export default function ContactLayout() {
+  return (
+    <section className="contact flex flex-col gap-y-3 mb-4 sm:mb-[3rem] sm:max-w-[700px] md:max-w-[900px] lg:max-w-[1000px] 2xl:max-w-[1200px] px-2 sm:px-[2rem] md:[3rem] lg:px-0 mx-auto">
+      <BoxTitle
+        value="Envíanos un mensaje"
+        icon={<HeadPhones size="md" />}
+        popupTitle="Contáctanos aquí para cualquier pregunta o comentario; te responderemos pronto"
+      />
+
+      <BoxWrapper className="!p-0">
+        <Aside
+          className="p-6 sm:py-8 sm:px-6"
+          title="Contáctanos para resolver tus dudas"
+          description={`Al completar este formulario y enviar tu mensaje, recibiremos tus preguntas o comentarios. Esta acción nos permitirá abordar todas tus inquietudes relacionadas con ${APP_NAME}. Agradecemos tu colaboración.`}
+        >
+          <ContactForm
+            innerClassName="!mb-7"
+            className="!shadow-none !border-none !p-0 !max-w-[initial]"
+            isShowingMessage={false}
+          />
+        </Aside>
+      </BoxWrapper>
+    </section>
+  )
+}

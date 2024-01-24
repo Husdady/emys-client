@@ -23,7 +23,7 @@ export default function useNavigation() {
   const handleToggleShowNav = useCallback(() => {
     if (!isHomePage || navRef.current === null) return
 
-    if (window.scrollY > 450) {
+    if (window.scrollY > 450 && window.scrollY < 1400) {
       if (!navRef.current.classList.contains('animate__fadeOutDown')) {
         navRef.current.classList.add('animate__fadeOutDown')
       }

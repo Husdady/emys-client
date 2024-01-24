@@ -2,20 +2,20 @@
 import useAuth from '@hooks/useAuth'
 import { useForm } from 'react-hook-form'
 import { useMemo, useCallback } from 'react'
+import { useSendMessageMutation } from '@modules/Contact/api'
 
 // Interfaces
 import { ContactFormState } from './interfaces'
 
 // Constants
 import { DEFAULT_VALUES } from './constants'
-import { useSendMessageMutation } from '../../api'
 
 /**
  * Hook for implements the logic of the ContactForm component
  */
 export default function useContactForm() {
-  const [sendMessage, mutationData] = useSendMessageMutation()
   const { user, signOut, isAuthenticated } = useAuth()
+  const [sendMessage, mutationData] = useSendMessageMutation()
 
   // Define the default values
   const defaultValues = useMemo(() => {

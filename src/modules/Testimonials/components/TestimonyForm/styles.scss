@@ -1,0 +1,23 @@
+.testimony-form {
+  & .inner-wrapper {
+    @media screen and (min-width: 641px) {
+      & .select,
+      & .fallback-item,
+      & > .form-control {
+        @apply w-[50%];
+      }
+    }
+
+    @media screen and (max-width: 640px) {
+      & {
+        @apply flex-wrap;
+      }
+
+      & .select,
+      & .fallback-item,
+      & > .form-control {
+        @apply w-full;
+      }
+    }
+  }
+}

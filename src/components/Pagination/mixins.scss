@@ -1,0 +1,13 @@
+@mixin adjustPaginationForModalForms {
+  & .pagination {
+    & .pagination-paginator {
+      & > div {
+        @apply bg-transparent;
+
+        @media screen and (max-width: 640px) {
+          @apply pb-0 px-0 shadow-none;
+        }
+      }
+    }
+  }
+}

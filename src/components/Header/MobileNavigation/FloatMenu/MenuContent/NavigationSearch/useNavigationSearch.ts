@@ -20,6 +20,7 @@ export interface Params {
 
 /**
  * Hook that implements the Seeker functionality in the navigation
+ * @param {Params} params Receive a 'isShowingResults' and 'hideResultsWhenSearchIsEmpty'
  */
 export default function useNavigationSearch({
   isShowingResults = false,
@@ -28,13 +29,13 @@ export default function useNavigationSearch({
   const { user } = useAuth()
   const navigationSeekerRef = useRef<HTMLDivElement | null>(null)
 
-  const { watch, register, setValue } = useForm<SeekerFormState>({
+  const { watch, register, setValue, reset, resetField } = useForm<SeekerFormState>({
     defaultValues: {
       search: '',
       isShowingResults: isShowingResults
     }
   })
-
+  console.log({ watch: watch() })
   // Get navigation items
   const navigationItems = useMemo(() => extractNavigation(navigation), [user])
 

@@ -1,0 +1,50 @@
+#pagination-page::-webkit-inner-spin-button,
+#pagination-page::-webkit-outer-spin-button {
+  display: none;
+}
+
+.pagination {
+  & .btn-prev-page,
+  & .btn-next-page {
+    @apply text-blue-700 flex-row-reverse dark:text-sky-300 enabled:hover:opacity-80;
+  }
+
+  & .btn-prev-page,
+  & .btn-next-page,
+  & .btn-pagination {
+    @apply min-h-[32px] sm:min-h-[28px] min-w-[140px] sm:min-w-[124px] bg-blue-100 dark:bg-gray-700;
+  }
+
+  & .pagination-page,
+  & .max-pagination-page {
+    @apply dark:bg-gray-700;
+  }
+
+  @media only screen and (max-width: 640px) {
+    & .btn-pagination {
+      @apply min-h-[47px];
+    }
+
+    &-paginator {
+      @apply justify-start;
+
+      & > div {
+        @apply flex-wrap gap-y-3 py-3 px-4;
+
+        & > div {
+          @apply justify-center;
+        }
+
+        & > button {
+          padding-top: 0.75rem !important;
+          padding-bottom: 0.75rem !important;
+        }
+
+        & > div,
+        & > button {
+          @apply basis-full;
+        }
+      }
+    }
+  }
+}

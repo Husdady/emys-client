@@ -11,7 +11,7 @@ export default function UpdateInformation() {
   return (
     <Aside
       className="p-6 sm:py-8 sm:px-6"
-      title="Actualizar mi información personal"
+      title="Modificar mis datos personales"
       description="Aquí podrás actualizar tu nombre de usuario, tu foto de perfil y tu correo electrónico. Al actualizar los datos correctamente, se enviará una verificación a tu nuevo correo electrónico."
     >
       <Form />

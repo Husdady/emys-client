@@ -4,7 +4,7 @@ import Button from '@components/Button'
 import Tooltip from '@components/Tooltip'
 
 // Hooks
-import useShowContactFormModal from './useShowContactFormModal'
+import useContactButton from './useContactButton'
 
 // Interfaces
 import { OnlyClassNameProp } from '@config/global-interfaces'
@@ -13,13 +13,17 @@ import { OnlyClassNameProp } from '@config/global-interfaces'
 import classnames from '@utils/classnames'
 
 export default function ContactButton({ className }: OnlyClassNameProp) {
-  const show = useShowContactFormModal()
+  const { show, isContactPage } = useContactButton()
 
   return (
-    <Tooltip trigger={['hover']} title="Presiona el botón para abrir el formulario de contacto">
+    <Tooltip
+      trigger={['hover']}
+      title={isContactPage ? undefined : 'Presiona el botón para abrir el formulario de contacto'}
+    >
       <Button
         title=""
         onClick={show}
+        disabled={isContactPage}
         icon={<Mail size="sm" />}
         className={classnames([
           className,

@@ -25,7 +25,7 @@ export default function UpdateProfilePhotoForm() {
       noValidate
       onSubmit={handleSubmit(submit)}
       id={UPDATE_PROFILE_PHOTO_FORM_ID}
-      className="pt-3 flex flex-col gap-y-4 sm:px-2"
+      className="flex flex-col gap-y-4 sm:px-2"
     >
       <Suspense fallback={<UploadFallback />}>
         <Upload
