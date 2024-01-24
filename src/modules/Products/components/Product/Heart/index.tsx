@@ -1,5 +1,5 @@
 // Librarys
-import Tooltip from 'antd/lib/tooltip'
+import Tooltip from '@components/Tooltip'
 
 // Components
 import Button from '@components/Button'
@@ -13,18 +13,11 @@ import { HeartProps } from './interfaces'
 // Utils
 import classnames from '@utils/classnames'
 
-// Constants
-import colors from './colors'
-
 export default function Heart(props: HeartProps) {
   const {
     disabled,
     HeartIcon,
     titlePopup,
-    innerStyle,
-    isDarkTheme,
-    getContainer,
-    isHeartRegular,
     isAddedToFavorites,
     handleMouseEnter,
     handleMouseLeave,
@@ -32,16 +25,7 @@ export default function Heart(props: HeartProps) {
   } = useHeart(props)
 
   return (
-    <Tooltip
-      placement="top"
-      title={titlePopup}
-      autoAdjustOverflow
-      destroyTooltipOnHide
-      overlayInnerStyle={innerStyle}
-      getPopupContainer={getContainer}
-      getTooltipContainer={getContainer}
-      color={isDarkTheme ? colors.darkBg : colors.lightBg}
-    >
+    <Tooltip placement="top" title={titlePopup} trigger={['hover']}>
       <Button
         title=""
         disabled={disabled}

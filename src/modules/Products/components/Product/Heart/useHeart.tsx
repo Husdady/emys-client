@@ -1,6 +1,6 @@
 // Librarys
 import { showFloatWarningMessage } from '@libs/antd/message'
-import { useRef, useMemo, useState, useCallback, MouseEvent, CSSProperties } from 'react'
+import { useRef, useMemo, useState, useCallback, MouseEvent } from 'react'
 
 // Components
 import HeartSolid from '@assets/icons/heart-solid'
@@ -8,7 +8,6 @@ import HeartRegular from '@assets/icons/heart-regular'
 
 // Hooks
 import useAuth from '@hooks/useAuth'
-import useTheme from '@hooks/useTheme'
 import {
   useAddProductToFavoritesMutation,
   useRemoveProductFromFavoritesMutation
@@ -19,7 +18,6 @@ import { HeartProps } from './interfaces'
 import { IconProps } from '@components/Icon/interfaces'
 
 // Constants
-import colors from './colors'
 import { HEART_SOLID, HEART_REGULAR, type HeartIconType } from './constants'
 
 /**
@@ -27,7 +25,6 @@ import { HEART_SOLID, HEART_REGULAR, type HeartIconType } from './constants'
  * @param {HeartProps} params Receive a 'productId' and 'productName'
  */
 export default function useHeart({ productId, productName }: HeartProps) {
-  const { isDarkTheme } = useTheme()
   const { user, updateUser, isAuthenticated } = useAuth()
   const buttonWrapperRef = useRef<HTMLDivElement | null>(null)
 
@@ -48,14 +45,6 @@ export default function useHeart({ productId, productName }: HeartProps) {
 
   // Check if is a 'heart-regular' icon type
   const isHeartRegular = useMemo(() => iconType === HEART_REGULAR, [iconType])
-
-  // Define Overlay Inner style
-  const innerStyle: CSSProperties = useMemo(
-    () => ({
-      color: isDarkTheme ? colors.darkTextColor : colors.lightTextColor
-    }),
-    [isDarkTheme]
-  )
 
   // Define the title popup of the Heart button
   const titlePopup = useMemo(() => {
@@ -89,13 +78,6 @@ export default function useHeart({ productId, productName }: HeartProps) {
     if (isAddedToFavorites) return handleSetHeartSolid()
     handleSetHeartRegular()
   }, [isAddedToFavorites, handleSetHeartSolid, handleSetHeartRegular])
-
-  // Get custom container
-  const getContainer = useCallback(() => {
-    const root = document.getElementById('__next')
-    if (root === null) return document.body
-    return root
-  }, [])
 
   // Callback for add or remove the product to the favorites
   const handleToggleToFavorites = useCallback(
@@ -160,10 +142,6 @@ export default function useHeart({ productId, productName }: HeartProps) {
   return {
     HeartIcon: HeartIcon,
     titlePopup: titlePopup,
-    innerStyle: innerStyle,
-    isDarkTheme: isDarkTheme,
-    getContainer: getContainer,
-    isHeartRegular: isHeartRegular,
     handleMouseEnter: handleMouseEnter,
     handleMouseLeave: handleMouseLeave,
     buttonWrapperRef: buttonWrapperRef,

@@ -1,0 +1,9 @@
+.modal-contact-form {
+  & .ant-modal-body {
+    @apply pt-[1.45rem];
+
+    & .contact-form {
+      @apply bg-gray-100/30 dark:bg-gray-800 shadow-none border-gray-400 dark:border-gray-500;
+    }
+  }
+}

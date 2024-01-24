@@ -16,6 +16,7 @@ import {
   CONTACT_EMAIL_01,
   CONTACT_EMAIL_02,
   CONTACT_EMAIL_03,
+  CONTACT_EMAIL_04,
   WHATSAPP_CONTACT_URL_01,
   WHATSAPP_CONTACT_URL_02,
   WHATSAPP_CONTACT_NUMBER_01,
@@ -80,11 +81,13 @@ const sections: SectionProps[] = [
   },
   {
     title: 'Correo electrónico',
-    links: [CONTACT_EMAIL_01, CONTACT_EMAIL_02, CONTACT_EMAIL_03].map((email) => ({
-      text: email,
-      href: `mailto:${email}`,
-      icon: <Mail {...sharedIconProps} />
-    }))
+    links: [CONTACT_EMAIL_01, CONTACT_EMAIL_02, CONTACT_EMAIL_03, CONTACT_EMAIL_04].map(
+      (email) => ({
+        text: email,
+        href: `mailto:${email}`,
+        icon: <Mail {...sharedIconProps} />
+      })
+    )
   }
 ]
 

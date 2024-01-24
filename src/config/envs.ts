@@ -8,6 +8,7 @@ export const DEVELOPER_LINKEDIN_URL = process.env.DEVELOPER_LINKEDIN_URL
 export const CONTACT_EMAIL_01 = process.env.CONTACT_EMAIL_01
 export const CONTACT_EMAIL_02 = process.env.CONTACT_EMAIL_02
 export const CONTACT_EMAIL_03 = process.env.CONTACT_EMAIL_03
+export const CONTACT_EMAIL_04 = process.env.CONTACT_EMAIL_04
 
 export const WHATSAPP_CONTACT_URL_01 = process.env.WHATSAPP_CONTACT_URL_01
 export const WHATSAPP_CONTACT_URL_02 = process.env.WHATSAPP_CONTACT_URL_02

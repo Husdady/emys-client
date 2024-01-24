@@ -1,3 +1,6 @@
+// Librarys
+import Tooltip from '@components/Tooltip'
+
 // Components
 import Button from '@components/Button'
 
@@ -8,16 +11,25 @@ import useTheme from '@hooks/useTheme'
 import classnames from '@utils/classnames'
 
 export default function ThemeButton() {
-  const { theme, toggleTheme } = useTheme()
+  const { theme, toggleTheme, isDarkTheme } = useTheme()
 
   return (
-    <Button
-      title=""
-      onClick={toggleTheme}
-      className={classnames([
-        theme,
-        'btn-float-theme rounded-full !w-[1.65rem] !h-[1.65rem] !p-0 bg-sky-100 dark:bg-gray-600 border-2 border-sky-200 dark:border-gray-400'
-      ])}
-    />
+    <Tooltip
+      trigger={['hover']}
+      title={
+        isDarkTheme
+          ? "Presiona el botón para cambiar a 'Tema claro'."
+          : "Presiona el botón para cambiar a 'Tema oscuro'."
+      }
+    >
+      <Button
+        title=""
+        onClick={toggleTheme}
+        className={classnames([
+          theme,
+          'btn-float-theme rounded-full !w-[1.65rem] !h-[1.65rem] !p-0 bg-sky-100 dark:bg-gray-600 border-2 border-sky-200 dark:border-gray-400'
+        ])}
+      />
+    </Tooltip>
   )
 }

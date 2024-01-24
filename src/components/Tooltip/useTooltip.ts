@@ -10,7 +10,7 @@ import colors from './colors'
 /**
  * Hook for implements the logic on the Help component
  */
-export default function useHelp() {
+export default function useTooltip() {
   const { isDarkTheme } = useTheme()
 
   // Define Overlay Inner style

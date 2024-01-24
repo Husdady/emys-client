@@ -26,7 +26,6 @@
 @import '@modules/Products/components/Product/styles.scss';
 @import '@modules/Auth/components/LinkToLogin/styles.scss';
 @import '@modules/Home/components/OmnilifeCards/styles.scss';
-@import '@modules/Contact/components/ContactForm/styles.scss';
 @import '@modules/Auth/components/LinkToRegister/styles.scss';
 @import '@modules/Account/components/AccountStatus/styles.scss';
 @import '@modules/Testimonials/components/Testimony/styles.scss';
@@ -58,6 +57,7 @@
 @import '@components/InputText/styles/main.scss';
 @import '@components/Header/User/FloatMenu/styles.scss';
 @import '@components/FloatButtons/SearchButton/styles.scss';
+@import '@components/FloatButtons/ContactButton/styles.scss';
 @import '@components/Header/MobileNavigation/FloatMenu/MenuContent/styles.scss';
 
 // Routes styles

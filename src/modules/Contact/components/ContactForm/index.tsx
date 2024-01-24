@@ -24,8 +24,12 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit(submit)}
-      className="contact-form bg-gray-100 px-4 pt-4 pb-7 rounded dark:bg-gray-900"
+      className="contact-form px-6 pt-4 pb-7 rounded-lg dark:bg-gray-800 border border-gray-300 shadow-xl max-w-[450px] mx-auto bg-white dark:border-gray-500"
     >
+      <h5 className="font-lexend text-[1.05rem] mb-4 text-main-700 leading-tight dark:text-rose-200">
+        A continuación, rellena los campos del formulario en caso desees enviarnos un mensaje
+      </h5>
+
       <div className="contact-form-inner flex flex-col gap-y-3.5 mb-[2.5rem]">
         <Fallback classLabel="w-28">
           <InputText

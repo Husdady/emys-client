@@ -15,12 +15,11 @@ const Button = dynamic(() => import('@components/Button'))
 const User = dynamic(() => import('@components/Header/User'))
 const AppLogo = dynamic(() => import('@components/Header/AppLogo'))
 const SwitchTheme = dynamic(() => import('@components/SwitchTheme'))
-const ContactButton = dynamic(() => import('@components/FloatButtons/ContactButton'))
-const WhatsappButton = dynamic(() => import('@components/FloatButtons/WhatsappButton'))
+const ContactButton = dynamic(() => import('@root/src/components/FloatButtons/ContactButton'))
+const WhatsappButton = dynamic(() => import('@root/src/components/FloatButtons/WhatsappButton'))
 
 function MobileNavigation() {
-  const { customQueries, showQuickSearchModal, menuData, userMenuData } =
-    useMobileNavigation()
+  const { customQueries, showQuickSearchModal, menuData, userMenuData } = useMobileNavigation()
 
   return (
     <>

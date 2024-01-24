@@ -1,9 +1,0 @@
-.contact-form {
-  & .form-control {
-    &.disabled {
-      & .inner {
-        @apply bg-gray-200;
-      }
-    }
-  }
-}
