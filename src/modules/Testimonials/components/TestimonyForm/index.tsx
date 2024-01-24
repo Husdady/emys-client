@@ -24,19 +24,10 @@ import './styles.scss'
 const TextArea = lazy(() => import('@components/TextArea'))
 const InputText = lazy(() => import('@components/InputText'))
 const UploadPhoto = lazy(() => import('@components/Upload'))
-const Districts = lazy(() => import('@modules/Ubigeo/modules/Districts/components/Districts'))
-
-const Provinces = lazy(
-  () => import('@modules/Ubigeo/modules/Districts/components/DistrictForm/Provinces')
-)
-
-const Regions = lazy(
-  () => import('@modules/Ubigeo/modules/Provinces/components/ProvinceForm/Regions')
-)
-
-const Countries = lazy(
-  () => import('@modules/Ubigeo/modules/Regions/components/RegionForm/Countries')
-)
+const Regions = lazy(() => import('@modules/Ubigeo/components/Regions'))
+const Countries = lazy(() => import('@modules/Ubigeo/components/Countries'))
+const Districts = lazy(() => import('@modules/Ubigeo/components/Districts'))
+const Provinces = lazy(() => import('@modules/Ubigeo/components/Provinces'))
 
 export const TESTIMONY_FORM_ID = 'testimony-form-79530uob'
 
