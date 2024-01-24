@@ -5,7 +5,7 @@ import type { UseFormSetError } from 'react-hook-form'
 import { UpdateUbigeoFormState } from '@modules/Account/components/UpdateUbigeo/interfaces'
 import { UpdatePasswordFormState } from '@modules/Account/components/UpdatePassword/interfaces'
 import { UpdateInformationFormState } from '@modules/Account/components/UpdateInformation/interfaces'
-import { ConfirmFormState } from '@modules/Account/components/DeleteAccount/ConfirmForm/hooks/useConfirmForm'
+import { ConfirmFormState } from '@modules/Account/components/DeleteAccount/UserConsent/ConfirmForm/hooks/useConfirmForm'
 
 export interface GenerateKeyParams {
   signOut: () => void
