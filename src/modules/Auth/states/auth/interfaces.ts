@@ -53,6 +53,10 @@ export interface User extends TimeStamps {
   region?: Region
   province?: Province
   district?: District
+  regionId?: string
+  countryId?: string
+  provinceId?: string
+  districtId?: string
   profilePhoto?: Image | null
   favoriteProductsId?: string[] | null
   role: Omit<Role, 'viewsId' | 'permissionsId'>

@@ -14,6 +14,10 @@
 
 // Layout Styles
 @import '@layouts/AuthLayouts/AuthLayout/styles.scss';
+@import '@layouts/PageLayouts/TestimonialsLayout/styles.scss';
+
+// Container Styles
+@import '@containers/LinearBackgroundContainer/styles.scss';
 
 // Module Styles
 @import '@modules/Home/components/Card/styles.scss';
@@ -30,6 +34,7 @@
 @import '@modules/Account/components/AccountStatus/styles.scss';
 @import '@modules/Testimonials/components/Testimony/styles.scss';
 @import '@modules/Home/components/LatestAddedProducts/styles.scss';
+@import '@modules/Testimonials/components/TestimonyForm/styles.scss';
 @import '@modules/Home/components/LatestAddedTestimonials/styles.scss';
 @import '@modules/Home/components/LatestRegisteredSellers/styles.scss';
 @import '@modules/Auth/components/LinkToForgottenEmailRecovery/styles.scss';
@@ -53,7 +58,6 @@
 @import '@components/Header/User/styles.scss';
 @import '@components/FloatButtons/styles.scss';
 @import '@components/SubmitButton/styles.scss';
-@import '@components/MainContainer/styles.scss';
 @import '@components/InputText/styles/main.scss';
 @import '@components/Header/User/FloatMenu/styles.scss';
 @import '@components/FloatButtons/SearchButton/styles.scss';

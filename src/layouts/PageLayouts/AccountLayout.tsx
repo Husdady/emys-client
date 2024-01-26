@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic'
 
 // Components
 import Edit from '@assets/icons/edit'
+import BoxContainer from '@containers/BoxContainer'
 import UserRole from '@modules/Account/components/UserRole'
 import PersonalCode from '@modules/Account/components/PersonalCode'
 import AccountStatus from '@modules/Account/components/AccountStatus'
@@ -24,7 +25,7 @@ const Separator = dynamic(() => import('@components/Separator'))
 
 export default function AccountLayout() {
   return (
-    <section className="account flex flex-col gap-y-3 mb-4 sm:mb-[3rem] sm:max-w-[700px] md:max-w-[900px] lg:max-w-[1000px] 2xl:max-w-[1200px] px-2 sm:px-[2rem] md:[3rem] lg:px-0 mx-auto">
+    <BoxContainer className="account">
       <BoxTitle
         icon={<Edit />}
         value="Actualizar mi información personal"
@@ -59,6 +60,6 @@ export default function AccountLayout() {
           <DeleteAccount />
         </div>
       </BoxWrapper>
-    </section>
+    </BoxContainer>
   )
 }

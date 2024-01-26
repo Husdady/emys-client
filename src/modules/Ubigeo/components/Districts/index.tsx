@@ -5,15 +5,19 @@ import FallbackItem from '@components/Fallback/FallbackItem'
 // Hooks
 import useDistrictList from '@modules/Ubigeo/hooks/useDistrictList'
 
-// Interfaces
-import { DistrictsProps } from './interfaces'
+// Types
+import type { DistrictsProps } from './types'
 
 // Utils
 import isString from '@utils/isString'
 import isEmptyString from '@utils/isEmptyString'
 
-export default function Districts({ provinceId, ...props }: DistrictsProps) {
-  const { options, isError, isFetching, isLoading } = useDistrictList({ provinceId: provinceId })
+export default function Districts({ regionId, countryId, provinceId, ...props }: DistrictsProps) {
+  const { options, isError, isFetching, isLoading } = useDistrictList({
+    regionId: regionId,
+    countryId: countryId,
+    provinceId: provinceId
+  })
 
   if (isLoading || isFetching) return <FallbackItem classLabel="w-36" />
 

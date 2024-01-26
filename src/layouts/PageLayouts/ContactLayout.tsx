@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic'
 
 // Components
 import HeadPhones from '@assets/icons/headphones'
+import BoxContainer from '@containers/BoxContainer'
 import ContactForm from '@modules/Contact/components/ContactForm'
 
 // Constants
@@ -15,7 +16,7 @@ const Aside = dynamic(() => import('@modules/Account/components/Aside'))
 
 export default function ContactLayout() {
   return (
-    <section className="contact flex flex-col gap-y-3 mb-4 sm:mb-[3rem] sm:max-w-[700px] md:max-w-[900px] lg:max-w-[1000px] 2xl:max-w-[1200px] px-2 sm:px-[2rem] md:[3rem] lg:px-0 mx-auto">
+    <BoxContainer className="contact">
       <BoxTitle
         value="Envíanos un mensaje"
         icon={<HeadPhones size="md" />}
@@ -35,6 +36,6 @@ export default function ContactLayout() {
           />
         </Aside>
       </BoxWrapper>
-    </section>
+    </BoxContainer>
   )
 }

@@ -1,19 +1,21 @@
-// Components
-import MainContainer from '@components/MainContainer'
+// Containers
+import LinearBackgroundContainer from '@containers/LinearBackgroundContainer'
 
 // Routes
 import DashboardRoute from '@routes/DashboardRoute'
 
 // Layouts
 import MainLayout from '@layouts/MainLayout'
-import MembershipLayout from '@layouts/PageLayouts/MembershipLayout'
+import TestimonialsLayout from '@root/src/layouts/PageLayouts/TestimonialsLayout'
 
 export default function OmnilifeTestimonialsPage() {
   return (
     <DashboardRoute>
-      <MainLayout>
-        <MembershipLayout />
-      </MainLayout>
+      <LinearBackgroundContainer className="omnilife-testimonials-page">
+        <MainLayout>
+          <TestimonialsLayout />
+        </MainLayout>
+      </LinearBackgroundContainer>
     </DashboardRoute>
   )
 }

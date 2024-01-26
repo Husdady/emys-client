@@ -1,0 +1,11 @@
+@mixin testimonialsLinearBackground {
+  @media screen and (min-width: 641px) {
+    background: rgb(59, 203, 255) !important;
+    background: linear-gradient(
+      90deg,
+      rgb(137, 222, 255),
+      rgb(246, 154, 222),
+      rgb(168, 255, 124)
+    ) !important;
+  }
+}

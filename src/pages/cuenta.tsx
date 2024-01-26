@@ -1,5 +1,5 @@
 // Components
-import MainContainer from '@components/MainContainer'
+import LinearBackgroundContainer from '@containers/LinearBackgroundContainer'
 
 // Routes
 import DashboardRoute from '@routes/DashboardRoute'
@@ -11,11 +11,11 @@ import AccountLayout from '@layouts/PageLayouts/AccountLayout'
 export default function AccountPage() {
   return (
     <DashboardRoute>
-      <MainContainer>
+      <LinearBackgroundContainer>
         <MainLayout>
           <AccountLayout />
         </MainLayout>
-      </MainContainer>
+      </LinearBackgroundContainer>
     </DashboardRoute>
   )
 }

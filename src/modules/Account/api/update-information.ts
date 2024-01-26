@@ -1,5 +1,5 @@
 // Interfaces
-import { GenerateKeyParams, UpdateInformationParams } from './interfaces'
+import { GenerateKeyParams, UpdateUbigeoParams, UpdateInformationParams } from './interfaces'
 
 // API
 import { api } from '@config/store/api'
@@ -15,6 +15,15 @@ export const updateInformationApi = api.injectEndpoints({
       })
     }),
 
+    // 'PUT' request for update the ubigeo information of the User
+    updateUbigeo: builder.mutation({
+      query: (params: UpdateUbigeoParams) => ({
+        method: 'PUT',
+        url: '/account/ubigeo',
+        ...params
+      })
+    }),
+
     // 'PUT' request for update the user information
     updateInformation: builder.mutation({
       query: (params: UpdateInformationParams) => ({
@@ -26,4 +35,5 @@ export const updateInformationApi = api.injectEndpoints({
   })
 })
 
-export const { useGenerateKeyMutation, useUpdateInformationMutation } = updateInformationApi
+export const { useGenerateKeyMutation, useUpdateUbigeoMutation, useUpdateInformationMutation } =
+  updateInformationApi

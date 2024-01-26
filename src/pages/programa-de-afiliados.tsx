@@ -1,5 +1,5 @@
-// Components
-import MainContainer from '@components/MainContainer'
+// Containers
+import LinearBackgroundContainer from '@containers/LinearBackgroundContainer'
 
 // Routes
 import DashboardRoute from '@routes/DashboardRoute'
@@ -11,11 +11,11 @@ import MembershipLayout from '@layouts/PageLayouts/MembershipLayout'
 export default function MembershipPage() {
   return (
     <DashboardRoute>
-      <MainContainer>
+      <LinearBackgroundContainer>
         <MainLayout>
           <MembershipLayout />
         </MainLayout>
-      </MainContainer>
+      </LinearBackgroundContainer>
     </DashboardRoute>
   )
 }

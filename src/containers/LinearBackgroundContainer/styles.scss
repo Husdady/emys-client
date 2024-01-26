@@ -3,12 +3,12 @@
 
 html {
   @media screen and (min-width: 641px) {
-    & .main-section {
+    & .linear-background-container {
       @include light-background;
     }
 
     &.dark {
-      & .main-section {
+      & .linear-background-container {
         @include dark-background;
       }
     }

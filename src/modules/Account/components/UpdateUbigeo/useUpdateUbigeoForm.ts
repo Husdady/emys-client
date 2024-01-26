@@ -2,21 +2,18 @@
 import useAuth from '@hooks/useAuth'
 import { useCallback } from 'react'
 import { useForm } from 'react-hook-form'
-import { useUpdateInformationMutation } from '@modules/Account/api/update-information'
+import { useUpdateUbigeoMutation } from '@modules/Account/api/update-information'
 
 // Interfaces
 import { Option } from '@components/Select/interfaces'
 import { UpdateUbigeoFormState } from './interfaces'
 
-// Utils
-import createFormData from '@utils/createFormData'
-
 /**
- * Hook that make a request to API for update the information of the user
+ * Hook that make a request to API for update the Ubigeo information of the user
  */
-export default function useUpdateInformationForm() {
+export default function useUpdateUpdateForm() {
   const auth = useAuth()
-  const [updateInformation, result] = useUpdateInformationMutation()
+  const [updateUbigeo, result] = useUpdateUbigeoMutation()
   const {
     watch,
     register,
@@ -48,27 +45,25 @@ export default function useUpdateInformationForm() {
     async (formState: UpdateUbigeoFormState) => {
       if (auth.user === null) return // Check if user exists
 
-      // Create form data for send to API
-      const { data, clearData } = createFormData<UpdateUbigeoFormState>({
-        state: formState
-      })
-
-      // Update user information
-      const payload = await updateInformation({
-        data: data,
+      // Make request for update ubigeo information of the User
+      const payload = await updateUbigeo({
+        data: formState,
         setError: setError,
         signOut: auth.signOut
       })
 
-      clearData() // Remove 'multipart/formData'
       if ('error' in payload) return
 
-      // Update current user information
+      // Update ubigeo information of the User
       auth.updateUser({
         region: payload.data.result.user.region,
         country: payload.data.result.user.country,
         province: payload.data.result.user.province,
-        district: payload.data.result.user.district
+        district: payload.data.result.user.district,
+        regionId: payload.data.result.user.region.id,
+        countryId: payload.data.result.user.country.id,
+        provinceId: payload.data.result.user.province.id,
+        districtId: payload.data.result.user.district.id
       })
     },
     [auth.user]

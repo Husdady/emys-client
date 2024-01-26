@@ -54,6 +54,7 @@ export default function UpdateUbigeoForm() {
       <Fallback classLabel="w-36">
         <Provinces
           regionId={watch('regionId')}
+          countryId={watch('countryId')}
           onChange={change('provinceId')}
           textLabel="Provincia del autor"
           selectedValue={watch('provinceId')}
@@ -63,6 +64,8 @@ export default function UpdateUbigeoForm() {
 
       <Fallback classLabel="w-36">
         <Districts
+          regionId={watch('regionId')}
+          countryId={watch('countryId')}
           onChange={change('districtId')}
           provinceId={watch('provinceId')}
           selectedValue={watch('districtId')}
@@ -78,8 +81,8 @@ export default function UpdateUbigeoForm() {
           disabled={!isEmptyObject(errors)}
           icon={<DeviceFloppy size="smd" />}
           title="Actualizar mi ubicación"
-          loadingTitle="Actualizando ubicación..."
-          className="!font-lexend !px-4 !py-3 ml-auto bg-blue-500 hover:bg-sky-500 text-white min-w-[215px] rounded-xl dark:hover:opacity-70 dark:bg-blue-600"
+          loadingTitle="Actualizando ubicación"
+          className="!font-lexend !px-4 !py-3 ml-auto bg-blue-500 hover:bg-sky-500 text-white min-w-[215px] rounded-xl dark:hover:opacity-70 dark:bg-blue-600 min-h-[46px]"
         />
       </div>
     </form>

@@ -1,0 +1,6 @@
+// Mixins
+@import './mixins.scss';
+
+.omnilife-testimonials-page {
+  @include testimonialsLinearBackground;
+}

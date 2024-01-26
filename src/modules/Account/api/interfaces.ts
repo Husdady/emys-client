@@ -17,9 +17,15 @@ export interface UpdatePasswordParams {
   setError: UseFormSetError<UpdatePasswordFormState>
 }
 
+export interface UpdateUbigeoParams {
+  data: UpdateUbigeoFormState
+  setError: UseFormSetError<UpdateUbigeoFormState>
+  signOut: () => void
+}
+
 export interface UpdateInformationParams {
   data: FormData
-  setError: UseFormSetError<UpdateUbigeoFormState> | UseFormSetError<UpdateInformationFormState>
+  setError: UseFormSetError<UpdateInformationFormState>
   signOut: () => void
 }
 

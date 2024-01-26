@@ -17,9 +17,6 @@ import lazy from '@utils/lazy'
 import isString from '@utils/isString'
 import getFormError from '@utils/getFormError'
 
-// Styles
-import './styles.scss'
-
 // Lazy Components
 const TextArea = lazy(() => import('@components/TextArea'))
 const InputText = lazy(() => import('@components/InputText'))
@@ -97,6 +94,7 @@ export default function TestimonyForm(props: TestimonyFormProps) {
             onChange={change('provinceId')}
             textLabel="Provincia del autor"
             regionId={watch('regionId') ?? ''}
+            countryId={watch('countryId') ?? ''}
             selectedValue={watch('provinceId') ?? ''}
             error={getFormError('provinceId', errors)}
           />

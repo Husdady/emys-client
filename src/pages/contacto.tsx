@@ -1,5 +1,5 @@
-// Components
-import MainContainer from '@components/MainContainer'
+// Containers
+import LinearBackgroundContainer from '@containers/LinearBackgroundContainer'
 
 // Routes
 import DashboardRoute from '@routes/DashboardRoute'
@@ -11,11 +11,11 @@ import ContactLayout from '@layouts/PageLayouts/ContactLayout'
 export default function ContactPage() {
   return (
     <DashboardRoute>
-      <MainContainer>
+      <LinearBackgroundContainer>
         <MainLayout>
           <ContactLayout />
         </MainLayout>
-      </MainContainer>
+      </LinearBackgroundContainer>
     </DashboardRoute>
   )
 }
