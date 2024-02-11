@@ -64,6 +64,7 @@ const Options: React.FC<OptionsProps> = ({
           {filteredOptions.map((item) => (
             <li
               key={item.value}
+              onClick={() => onChange(item)}
               className={classnames([
                 'checkbox-option-item',
                 isLastActived(item) ? 'last-item-actived' : null

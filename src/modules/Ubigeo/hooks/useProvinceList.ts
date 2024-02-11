@@ -11,7 +11,7 @@ import isUndefined from '@utils/isUndefined'
 import isEmptyString from '@utils/isEmptyString'
 
 // Constants
-import { PREDEFINED_VALUE } from '@components/SelectFilter/constants'
+import { PREDEFINED_VALUE } from '@components/Select/constants'
 
 export interface UseProvinceListParams extends ProvinceListArgs {
   addDefaultValue?: boolean

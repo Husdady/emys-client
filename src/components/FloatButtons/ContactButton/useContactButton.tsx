@@ -20,7 +20,7 @@ export default function useContactButton() {
   // Define flag for check if the current page is 'Contact'
   const isContactPage = useMemo(() => pathname === CONTACT_PATH, [pathname])
 
-  // Event click on button for show modal the Contact form
+  // Event click on button for show a modal of the Contact form
   const show = useCallback(() => {
     showModal({
       width: 500,

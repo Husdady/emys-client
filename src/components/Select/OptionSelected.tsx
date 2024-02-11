@@ -20,6 +20,7 @@ import { DEFAULT_ENABLE_VIRTUALIZATION } from './constants'
 export default function OptionSelected({
   icon,
   style,
+  hasError,
   className,
   emptyText,
   enableVirtualization = DEFAULT_ENABLE_VIRTUALIZATION,
@@ -39,6 +40,7 @@ export default function OptionSelected({
           onClick={triggerOptions}
           className={classnames([
             className,
+            hasError === true ? 'has-error' : null,
             'border border-gray-400/50 rounded outline outline-1 outline-offset-0 outline-gray-400/50 dark:outline-gray-400/70 dark:border-gray-400/70'
           ])}
         />

@@ -8,24 +8,33 @@ import ReportMedical from '@assets/icons/report-medical'
 // Interfaces
 import { NavigationLinkProps } from './interfaces'
 
+// Constants
+import {
+  HOME_PATH,
+  CONTACT_PATH,
+  PRODUCTS_PATH,
+  MEMBERSHIP_PATH,
+  TESTIMONIALS_PATH
+} from '@assets/data/paths'
+
 const navigation: NavigationLinkProps[] = [
-  { icon: <Home className="smd home-icon" />, href: '/', text: 'Inicio' },
+  { text: 'Inicio', href: HOME_PATH, icon: <Home className="smd home-icon" /> },
   {
     text: 'Productos',
-    href: '/productos',
+    href: PRODUCTS_PATH,
     icon: <BoxSeam className="smd products-icon" />
   },
   {
+    href: MEMBERSHIP_PATH,
     text: 'Programa de Afiliados',
-    href: '/programa-de-afiliados',
     icon: <Users className="smx stroke-3" />
   },
   {
+    href: TESTIMONIALS_PATH,
     text: 'Testimonios Omnilife',
-    href: '/testimonios-omnilife',
     icon: <ReportMedical className="smd testimonials-icon" />
   },
-  { icon: <HeadPhones className="smx" />, href: '/contacto', text: 'Contacto' }
+  { text: 'Contacto', href: CONTACT_PATH, icon: <HeadPhones className="smx" /> }
 ]
 
 export default navigation

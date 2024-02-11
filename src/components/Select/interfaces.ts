@@ -18,6 +18,11 @@ export interface OptionSelectedProps
     'label' | 'error' | 'customError' | 'textLabel' | 'containerStyle' | 'containerClassName'
   > {
   icon: ReactNode
+  hasError?: boolean
+}
+
+export interface SelectFallbackProps extends OnlyClassNameProp {
+  textLabelClassName?: string
 }
 
 export interface SelectProps

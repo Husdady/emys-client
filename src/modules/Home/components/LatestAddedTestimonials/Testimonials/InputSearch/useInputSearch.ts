@@ -1,9 +1,6 @@
 // Librarys
 import { useState, useCallback, ChangeEvent } from 'react'
 
-// Hooks
-import useAnimationInView from '@hooks/useAnimationInView'
-
 // Interfaces
 import { InputSearchProps } from './interfaces'
 
@@ -17,7 +14,6 @@ import isEmptyString from '@utils/isEmptyString'
  */
 export default function useInputSearch({ setResults, testimonials }: InputSearchProps) {
   const [searchValue, setSearchValue] = useState('')
-  const { ref, animationClassName } = useAnimationInView('animate__fadeInUp')
 
   // Callback for clear the search value
   const handleClearSearchValue = useCallback(() => {
@@ -58,11 +54,9 @@ export default function useInputSearch({ setResults, testimonials }: InputSearch
   )
 
   return {
-    ref: ref,
     searchValue: searchValue,
-    animationClassName: animationClassName,
     handleSearchProducts: handleSearchProducts,
-    isShowingClearIcon: !isEmptyString(searchValue),
-    handleClearSearchValue: handleClearSearchValue
+    handleClearSearchValue: handleClearSearchValue,
+    isShowingClearIcon: !isEmptyString(searchValue)
   }
 }

@@ -37,7 +37,9 @@
 @import '@modules/Testimonials/components/TestimonyForm/styles.scss';
 @import '@modules/Home/components/LatestAddedTestimonials/styles.scss';
 @import '@modules/Home/components/LatestRegisteredSellers/styles.scss';
+@import '@modules/Testimonials/components/TestimonialsFilters/styles.scss';
 @import '@modules/Auth/components/LinkToForgottenEmailRecovery/styles.scss';
+@import '@modules/Testimonials/components/TestimonialsPagination/styles.scss';
 @import '@modules/Sellers/components/Seller/SocialNetworks/SocialNetworkList/styles.scss';
 
 // Component Styles
@@ -51,6 +53,7 @@
 @import '@components/Screen/styles.scss';
 @import '@components/AppLogo/styles.scss';
 @import '@components/Checkbox/styles.scss';
+@import '@components/Pagination/styles.scss';
 @import '@components/Modal/styles/main.scss';
 @import '@components/InputError/styles.scss';
 @import '@components/MultiSelect/styles.scss';

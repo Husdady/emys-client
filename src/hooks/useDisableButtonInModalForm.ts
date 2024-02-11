@@ -14,6 +14,7 @@ import isEmptyObject from '@utils/isEmptyObject'
 /**
  * Hook that implements the logic of disabling the 'accept' button of a modal that contains a form
  * @param {FieldErrorsImpl<FieldValues>} errors Form errors
+ * @param {boolean} isAutoDisableSubmitButton Receive a flag for auto disable the submit button
  */
 export default function useDisableButtonInModalForm<Errors extends FieldValues>(
   errors: FieldErrorsImpl<Errors>,

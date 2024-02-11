@@ -1,6 +1,6 @@
 // Components
-import SelectFilter from '@components/SelectFilter'
-import Fallback from '@components/SelectFilter/Fallback'
+import Select from '@components/Select'
+import Fallback from '@components/Select/Fallback'
 
 // Hooks
 import useProvinceList from '@modules/Ubigeo/hooks/useProvinceList'
@@ -26,11 +26,11 @@ export default function FilterByProvince({
   })
 
   if (isLoading || isFetching) {
-    return <Fallback className={containerClassName} />
+    return <Fallback className={containerClassName} textLabelClassName="w-20" />
   }
 
   return (
-    <SelectFilter
+    <Select
       {...props}
       options={options}
       disabled={isError}
@@ -40,6 +40,7 @@ export default function FilterByProvince({
       containerClassName={containerClassName}
       searchPalceholder="Buscar uno o varias provincias por nombre..."
       emptyText="Sin provincias disponibles"
+      textLabel="Provincias"
     />
   )
 }

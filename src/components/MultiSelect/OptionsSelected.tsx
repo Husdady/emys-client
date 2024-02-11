@@ -13,8 +13,8 @@ import ChevronDown from '@assets/icons/chevron-down'
 // Hooks
 import useMultiSelect from './hooks/useMultiSelect'
 
-// Types
-import type { OptionsSelectedProps } from './types'
+// Interfaces
+import { OptionsSelectedProps } from './interfaces'
 
 // Utils
 import classnames from '@utils/classnames'
@@ -24,6 +24,7 @@ import { DEFAULT_ENABLE_VIRTUALIZATION } from './constants'
 
 const OptionsSelected: React.FC<OptionsSelectedProps> = ({
   style,
+  hasError,
   className,
   emptyText,
   enableVirtualization = DEFAULT_ENABLE_VIRTUALIZATION,
@@ -57,6 +58,7 @@ const OptionsSelected: React.FC<OptionsSelectedProps> = ({
         icon={<ChevronDown />}
         className={classnames([
           className,
+          hasError === true ? 'has-error' : null,
           'border border-gray-400/50 rounded outline outline-1 outline-offset-0 outline-gray-400/50 dark:outline-gray-400/70 dark:border-gray-400/70'
         ])}
         title={

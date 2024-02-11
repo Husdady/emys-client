@@ -1,6 +1,6 @@
 // Components
-import SelectFilter from '@components/SelectFilter'
-import Fallback from '@components/SelectFilter/Fallback'
+import Select from '@components/Select'
+import Fallback from '@components/Select/Fallback'
 
 // Hooks
 import useDistrictList from '@modules/Ubigeo/hooks/useDistrictList'
@@ -28,11 +28,11 @@ export default function FilterByDistrict({
   })
 
   if (isLoading || isFetching) {
-    return <Fallback className={containerClassName} />
+    return <Fallback className={containerClassName} textLabelClassName="w-20" />
   }
 
   return (
-    <SelectFilter
+    <Select
       {...props}
       options={options}
       disabled={isError}
@@ -42,6 +42,7 @@ export default function FilterByDistrict({
       containerClassName={containerClassName}
       searchPalceholder="Buscar uno o varias distritos por nombre..."
       emptyText="Sin distritos disponibles"
+      textLabel="Distritos"
     />
   )
 }

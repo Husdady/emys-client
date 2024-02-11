@@ -19,9 +19,6 @@ import classnames from '@utils/classnames'
 // Constants
 import { customTitle, PaginationProps as Props } from './constants'
 
-// Styles
-import './styles.scss'
-
 // Lazy Components
 const Page = lazy(() => import('./Page'))
 const Button = lazy(() => import('@components/Button'))
@@ -51,8 +48,8 @@ const Pagination: React.FC<PaginationProps> = ({
     <div
       className={classnames([className, 'pagination w-full flex flex-col mt-3 xl:mt-1.5 gap-y-3'])}
     >
-      <div className="limits-wrapper font-semibold text-gray-500 text-[0.75rem] bg-yellow-200/30 py-2 border-l-[5px] border-yellow-400 px-3 rounded-tr rounded-br ml-1 dark:bg-main-200/20 dark:border-main-200 dark:text-main-200">
-        <span>
+      <div className="limits-wrapper font-semibold text-[0.75rem] py-2 border border-gray-300 dark:border-gray-500 border-l-[5px] px-3 rounded-tr rounded-br ml-1 bg-white dark:bg-gray-800 border-l-main-700 text-black dark:border-l-rose-200 dark:text-gray-300">
+        <span className="sm:leading-snug block">
           Límite de &apos;{perPage}&apos; {'documento'.concat(perPage === 1 ? '' : 's')} por página
           &nbsp;|&nbsp; Mostrando &apos;{totalDocs}&apos;{' '}
           {'documento'.concat(total === 1 ? '' : 's')} en la página{' '}

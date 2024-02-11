@@ -19,6 +19,7 @@ import { districtsGraphqlApi } from '@modules/Ubigeo/api/districts/graphql'
 
 // Global states
 import { modalSlice } from './states/modal'
+import { filtersSlice } from './states/filters'
 import { authSlice } from '@modules/Auth/states/auth'
 import { loginSlice } from '@modules/Auth/states/login'
 
@@ -27,6 +28,7 @@ const reducers = combineReducers({
   [authSlice.name]: authSlice.reducer,
   [loginSlice.name]: loginSlice.reducer,
   [modalSlice.name]: modalSlice.reducer,
+  [filtersSlice.name]: filtersSlice.reducer,
 
   // Auth API
   [loginApi.reducerPath]: loginApi.reducer,

@@ -4,7 +4,7 @@ import TestimonialsPagination from '@modules/Testimonials/components/Testimonial
 
 export default function TestimonialsLayout() {
   return (
-    <section className="testimonials">
+    <section className="testimonials mt-2 pb-6">
       <AddMyTestimony />
       <TestimonialsPagination />
     </section>

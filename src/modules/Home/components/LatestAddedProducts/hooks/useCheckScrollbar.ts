@@ -8,8 +8,8 @@ export interface Params {
 }
 
 /**
- * Hook for check if the scroll is at the start or the end on the Products
- * @param {Params} params Receive a 'productItemsRef'
+ * Hook for check if exists the scroll on the Latest Products
+ * @param {Params} params Receive a 'isLoading' and 'productItemsRef'
  */
 export default function useCheckScrollbar({ isLoading, productItemsRef }: Params) {
   // Define callback for check if the products container has scrollbar

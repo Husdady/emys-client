@@ -32,3 +32,11 @@ export interface MultiSelectProps
   containerClassName?: DivType['className']
   onChange?: (values: string[]) => void
 }
+
+export interface OptionsSelectedProps
+  extends Omit<
+    MultiSelectProps,
+    'label' | 'error' | 'customError' | 'textLabel' | 'containerStyle' | 'containerClassName'
+  > {
+  hasError?: boolean
+}

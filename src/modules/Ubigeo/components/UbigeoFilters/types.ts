@@ -6,7 +6,4 @@ import { SelectProps } from '@components/Select/interfaces'
 export type UbigeoFilterFields = 'country' | 'region' | 'province' | 'district'
 export type UbigeoFiltersConfig = Pick<SelectProps, 'noSelectionLabel' | 'containerClassName'>
 
-export type UseUbigeoFiltersParams = Pick<
-  UbigeoFiltersProps,
-  'onFilter' | 'setValue' | 'deleteQueryParam'
->
+export type UseUbigeoFiltersParams = Pick<UbigeoFiltersProps, 'setValue' | 'deleteQueryParam'>

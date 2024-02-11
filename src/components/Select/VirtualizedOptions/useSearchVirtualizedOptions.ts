@@ -1,13 +1,12 @@
 // Hooks
-import { useCallback } from 'react'
-import useMounted from '@hooks/useMounted'
+import { useCallback, useLayoutEffect } from 'react'
 import useHeightForVirtualizedOption from '@hooks/useHeightForVirtualizedOption'
 import useSearchOptions, {
   UseSearchOptionsParams
 } from '@components/Select/Options/useSearchOptions'
 
-// Constants
-import { DEFAULT_LIST_HEIGHT, DEFAULT_OPTION_HEIGHT } from '@components/Select/constants'
+// Utils
+import getDefaultListHeight from '@components/Select/utils/getDefaultListHeight'
 
 /**
  * Hook for search virtualized options of the Select component
@@ -15,10 +14,11 @@ import { DEFAULT_LIST_HEIGHT, DEFAULT_OPTION_HEIGHT } from '@components/Select/c
  */
 export default function useSearchVirtualizedOptions(params: UseSearchOptionsParams) {
   const searchData = useSearchOptions(params)
+  const { defaultListHeight, defaultOptionHeight } = getDefaultListHeight()
 
   const adjusts = useHeightForVirtualizedOption({
-    defaultOptionHeight: DEFAULT_OPTION_HEIGHT,
-    defaultContainerHeight: DEFAULT_LIST_HEIGHT
+    defaultOptionHeight: defaultOptionHeight,
+    defaultContainerHeight: defaultListHeight
   })
 
   // Callback for find the active item index
@@ -27,7 +27,7 @@ export default function useSearchVirtualizedOptions(params: UseSearchOptionsPara
   }, [params.initialOptions])
 
   // Hacer scroll al elemento activo cuando cambie
-  useMounted(() => {
+  useLayoutEffect(() => {
     const activeIndex = findActiveItemIndex()
 
     if (activeIndex !== -1 && adjusts.listRef.current !== null) {

@@ -14,11 +14,10 @@ import { OptionsProps } from './interfaces'
 
 // Utils
 import classnames from '@utils/classnames'
+import isEmptyArray from '@utils/isEmptyArray'
 
-// cONSTANTS
-import { DEFAULT_LIST_HEIGHT, DEFAULT_CAN_SEARCH_OPTIONS } from '@components/Select/constants'
-
-export const selectOptionsStyle = { maxHeight: `${DEFAULT_LIST_HEIGHT}px` }
+// Constants
+import { DEFAULT_CAN_SEARCH_OPTIONS } from '@components/Select/constants'
 
 const Options: React.FC<OptionsProps> = ({
   options,
@@ -34,6 +33,7 @@ const Options: React.FC<OptionsProps> = ({
     handleClear,
     handleSearch,
     filteredOptions,
+    selectOptionsStyle,
     isShowingClearIcon
   } = useSearchOptions({
     initialOptions: options,
@@ -42,7 +42,7 @@ const Options: React.FC<OptionsProps> = ({
 
   return (
     <div ref={wrapperRef} className="wrapper-options">
-      {canSearchOptions && options.length > 0 && (
+      {canSearchOptions && !isEmptyArray(options) && (
         <SearchOptions
           value={searchValue}
           onClear={handleClear}
@@ -52,9 +52,9 @@ const Options: React.FC<OptionsProps> = ({
         />
       )}
 
-      {filteredOptions.length === 0 && <EmptyOptions text={emptyText} />}
+      {isEmptyArray(filteredOptions) && <EmptyOptions text={emptyText} />}
 
-      {filteredOptions.length > 0 && (
+      {!isEmptyArray(filteredOptions) && (
         <ul style={selectOptionsStyle} className="select-options overflow-y-auto">
           {filteredOptions.map((item) => (
             <li

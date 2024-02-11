@@ -38,6 +38,7 @@ export default function EmysApp({ Component, pageProps: { session, ...pageProps 
           <ThemeProvider attribute="class">
             <Online>
               <main className={fonts}>
+                <div id="global-mask"></div>
                 <Component {...pageProps} />
               </main>
             </Online>

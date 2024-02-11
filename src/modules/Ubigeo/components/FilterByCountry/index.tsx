@@ -1,6 +1,6 @@
 // Components
-import SelectFilter from '@components/SelectFilter'
-import Fallback from '@components/SelectFilter/Fallback'
+import Select from '@components/Select'
+import Fallback from '@components/Select/Fallback'
 
 // Hooks
 import useCountryList from '@modules/Ubigeo/hooks/useCountryList'
@@ -19,11 +19,11 @@ export default function FilterByCountry({
   const { options, isError, isFetching, isLoading } = useCountryList()
 
   if (isLoading || isFetching) {
-    return <Fallback className={containerClassName} />
+    return <Fallback className={containerClassName} textLabelClassName="w-12" />
   }
 
   return (
-    <SelectFilter
+    <Select
       {...props}
       options={options}
       disabled={isError}
@@ -33,6 +33,7 @@ export default function FilterByCountry({
       containerClassName={containerClassName}
       searchPalceholder="Buscar uno o varios países por nombre..."
       emptyText="Sin países disponibles"
+      textLabel="Países"
     />
   )
 }

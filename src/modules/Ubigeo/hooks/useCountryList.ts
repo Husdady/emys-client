@@ -11,7 +11,7 @@ import isUndefined from '@utils/isUndefined'
 import isEmptyArray from '@utils/isEmptyArray'
 
 // Constants
-import { PREDEFINED_VALUE } from '@components/SelectFilter/constants'
+import { PREDEFINED_VALUE } from '@components/Select/constants'
 
 export interface UseCountryListParams {
   addDefaultValue?: boolean

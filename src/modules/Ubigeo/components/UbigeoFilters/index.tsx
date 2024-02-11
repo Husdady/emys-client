@@ -14,32 +14,18 @@ import { UbigeoFiltersProps } from './interfaces'
 // Constants
 import { COUNTRY_FIELD, REGION_FIELD, DISTRICT_FIELD, PROVINCE_FIELD } from './constants'
 
-export default function UbigeoFilters({
-  watch,
-  config,
-  getValues,
-  nodeAtStart,
-  nodeAfterRegions,
-  nodeAfterCountries,
-  nodeAfterProvinces,
-  nodeAfterDistricts,
-  ...props
-}: UbigeoFiltersProps) {
+export default function UbigeoFilters({ watch, config, getValues, ...props }: UbigeoFiltersProps) {
   const { onChangeCountry, onChangeRegion, onChangeProvince, onChangeDistrict } =
     useUbigeoFilters(props)
 
   return (
-    <section className="ubigeo-filters flex flex-col items-center flex-col sm:flex-row flex-wrap sm:justify-end gap-x-2 gap-y-2">
-      {nodeAtStart}
-
+    <section className="ubigeo-filters flex flex-col items-center flex-col sm:flex-row flex-wrap sm:justify-end gap-x-3.5 gap-y-3">
       <FilterByCountry
         onChange={onChangeCountry}
         selectedValue={getValues(COUNTRY_FIELD)}
         noSelectionLabel={config[COUNTRY_FIELD]?.noSelectionLabel}
         containerClassName={config[COUNTRY_FIELD]?.containerClassName}
       />
-
-      {nodeAfterCountries}
 
       <FilterByRegion
         onChange={onChangeRegion}
@@ -48,8 +34,6 @@ export default function UbigeoFilters({
         noSelectionLabel={config[REGION_FIELD]?.noSelectionLabel}
         containerClassName={config[REGION_FIELD]?.containerClassName}
       />
-
-      {nodeAfterRegions}
 
       <FilterByProvince
         onChange={onChangeProvince}
@@ -60,8 +44,6 @@ export default function UbigeoFilters({
         containerClassName={config[PROVINCE_FIELD]?.containerClassName}
       />
 
-      {nodeAfterProvinces}
-
       <FilterByDistrict
         onChange={onChangeDistrict}
         regionId={watch(REGION_FIELD)}
@@ -71,8 +53,6 @@ export default function UbigeoFilters({
         noSelectionLabel={config[DISTRICT_FIELD]?.noSelectionLabel}
         containerClassName={config[DISTRICT_FIELD]?.containerClassName}
       />
-
-      {nodeAfterDistricts}
     </section>
   )
 }

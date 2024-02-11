@@ -18,12 +18,12 @@ import classnames from '@utils/classnames'
 
 // Constants
 import { DEFAULT_CAN_SEARCH_OPTIONS } from '@components/Select/constants'
+import isEmptyArray from '@root/src/utils/isEmptyArray'
 
 const VirtualizedOptions: React.FC<VirtualizedOptionsProps> = ({
   options,
   onChange,
   emptyText,
-  hideOptions,
   selectedValue,
   searchPalceholder,
   enableVirtualization,
@@ -52,7 +52,7 @@ const VirtualizedOptions: React.FC<VirtualizedOptionsProps> = ({
 
   return (
     <div ref={wrapperRef} className="wrapper-options">
-      {canSearchOptions && options.length > 0 && (
+      {canSearchOptions && !isEmptyArray(options) && (
         <SearchOptions
           value={searchValue}
           onClear={handleClear}
@@ -63,9 +63,9 @@ const VirtualizedOptions: React.FC<VirtualizedOptionsProps> = ({
       )}
 
       <div ref={containerListRef} style={containerStyle} className="virtualized-options">
-        {filteredOptions.length === 0 && <EmptyOptions text={emptyText} />}
+        {isEmptyArray(filteredOptions) && <EmptyOptions text={emptyText} />}
 
-        {filteredOptions.length > 0 && (
+        {!isEmptyArray(filteredOptions) && (
           <VariableSizeList
             ref={listRef}
             height={listHeight}

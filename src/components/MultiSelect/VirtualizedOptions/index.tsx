@@ -76,6 +76,7 @@ const VirtualizedOptions: React.FC<VirtualizedOptionsProps> = ({
             {({ index, style }) => (
               <li
                 style={style}
+                onClick={() => onChange(filteredOptions[index])}
                 className={classnames([
                   'virtualized-checkbox-option-item',
                   isLastActived(filteredOptions[index]) ? 'last-item-actived' : null

@@ -12,6 +12,7 @@ import { SectionProps } from './interfaces'
 
 // Constants
 import { sharedIconProps, sharedFacebookIconProps, sharedWhatsappIconProps } from './constants'
+import { HOME_PATH, PRODUCTS_PATH, MEMBERSHIP_PATH, TESTIMONIALS_PATH } from '@assets/data/paths'
 import {
   CONTACT_EMAIL_01,
   CONTACT_EMAIL_02,
@@ -32,22 +33,22 @@ const sections: SectionProps[] = [
     title: 'Enlaces rápidos',
     links: [
       {
-        href: '/',
         text: 'Inicio',
+        href: HOME_PATH,
         icon: <Home {...sharedIconProps} />
       },
       {
         text: 'Productos',
-        href: '/productos',
+        href: PRODUCTS_PATH,
         icon: <BoxSeam {...sharedIconProps} />
       },
       {
+        href: MEMBERSHIP_PATH,
         text: 'Programa de afiliados',
-        href: '/programa-de-afiliados',
         icon: <Users {...sharedIconProps} />
       },
       {
-        href: '/testimonios',
+        href: TESTIMONIALS_PATH,
         text: 'Testimonios Omnilife',
         icon: <ReportMedical {...sharedIconProps} />
       }

@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 // Hooks
+import useMountedSelect from './useMountedSelect'
 import { useRef, useMemo, useState, useCallback } from 'react'
 
 // Types
@@ -71,7 +72,6 @@ export default function useSelect({
       emptyText: emptyText,
       selectedValue: value,
       onChange: handleOnChange,
-      hideOptions: hideOptions,
       canSearchOptions: canSearchOptions,
       searchPalceholder: searchPalceholder,
       enableVirtualization: enableVirtualization
@@ -80,13 +80,18 @@ export default function useSelect({
       value,
       options,
       emptyText,
-      hideOptions,
       handleOnChange,
       searchPalceholder,
       canSearchOptions,
       enableVirtualization
     ]
   )
+
+  useMountedSelect({
+    value: value,
+    setValue: setValue,
+    selectedValue: selectedValue
+  })
 
   return {
     ref: ref,

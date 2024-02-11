@@ -6,7 +6,7 @@ import DashboardRoute from '@routes/DashboardRoute'
 
 // Layouts
 import MainLayout from '@layouts/MainLayout'
-import TestimonialsLayout from '@root/src/layouts/PageLayouts/TestimonialsLayout'
+import TestimonialsLayout from '@layouts/PageLayouts/TestimonialsLayout'
 
 export default function OmnilifeTestimonialsPage() {
   return (

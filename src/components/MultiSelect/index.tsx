@@ -10,8 +10,10 @@ import InputError from '@components/InputError'
 import { MultiSelectProps } from './interfaces'
 
 // Utils
+import isString from '@utils/isString'
 import classnames from '@utils/classnames'
 import isUndefined from '@utils/isUndefined'
+import isEmptyString from '@utils/isEmptyString'
 
 const MultiSelect: React.FC<MultiSelectProps> = ({
   label = {},
@@ -28,7 +30,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
       className={classnames(['multi-select relative', containerClassName])}
     >
       <InputLabel {...label} title={isUndefined(label.title) ? textLabel : label.title} />
-      <OptionsSelected {...props} />
+      <OptionsSelected {...props} hasError={isString(error) && !isEmptyString(error)} />
       <InputError {...customError} value={error} />
     </div>
   )

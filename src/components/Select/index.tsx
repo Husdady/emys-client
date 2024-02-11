@@ -12,8 +12,10 @@ import OptionSelected from './OptionSelected'
 import { SelectProps } from './interfaces'
 
 // Utils
+import isString from '@utils/isString'
 import classnames from '@utils/classnames'
 import isUndefined from '@utils/isUndefined'
+import isEmptyString from '@utils/isEmptyString'
 
 // Constants
 import { SORT, DEFAULT_MODE } from './constants'
@@ -37,7 +39,13 @@ const Select: React.FC<SelectProps> = ({
   return (
     <div style={containerStyle} className={classnames(['select relative', containerClassName])}>
       <InputLabel {...label} title={isUndefined(label.title) ? textLabel : label.title} />
-      <OptionSelected {...props} icon={<SelectIcon />} />
+
+      <OptionSelected
+        {...props}
+        icon={<SelectIcon />}
+        hasError={isString(error) && !isEmptyString(error)}
+      />
+
       <InputError {...customError} value={error} />
     </div>
   )
@@ -46,6 +54,7 @@ const Select: React.FC<SelectProps> = ({
 export default React.memo(Select, (prevProps, nextProps) => {
   return (
     prevProps.error === nextProps.error &&
+    prevProps.disabled === nextProps.disabled &&
     prevProps.onChange === nextProps.onChange &&
     prevProps.selectedValue === nextProps.selectedValue
   )

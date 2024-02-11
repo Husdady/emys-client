@@ -1,8 +1,17 @@
 // Mixins
+@import '@styles/colors';
+@import '@styles/form-field';
 @import '@styles/mixins/select';
 
 .multi-select {
   @include select-button;
+
+  & .options-selected {
+    & .has-error {
+      @apply border-red-600 dark:border-red-500;
+      box-shadow: 0px 0px 8px -1px $red;
+    }
+  }
 
   & .wrapper-options {
     cursor: default;
@@ -36,6 +45,16 @@
         & > label {
           @apply cursor-pointer;
         }
+      }
+    }
+  }
+}
+
+.dark {
+  & .multi-select {
+    & .options-selected {
+      & .has-error {
+        box-shadow: 0px 0px 8px -1px $dark-shadow-error-field-color;
       }
     }
   }

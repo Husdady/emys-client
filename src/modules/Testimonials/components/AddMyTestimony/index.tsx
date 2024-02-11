@@ -2,6 +2,7 @@
 import { Suspense } from 'react'
 
 // Components
+import Fallback from './Fallback'
 import Plus from '@assets/icons/plus'
 
 // Hooks
@@ -18,12 +19,12 @@ export default function AddMyTestimony() {
 
   return (
     <div className="mb-3 flex justify-end add-my-testimony-wrapper max-w-[1150px] mx-[2rem]">
-      <Suspense fallback={<div className="w-[224px] h-[42px] rounded-2xl bg-rose-600"></div>}>
+      <Suspense fallback={<Fallback />}>
         <Button
           onClick={show}
           icon={<Plus size="md" />}
           title="Añadir mi testimonio"
-          className="gap-x-4 btn-add-my-testimony bg-rose-600 py-2.5 rounded-2xl hover:bg-rose-500 text-white"
+          className="gap-x-4 btn-add-my-testimony bg-white shadow-lg text-main-700 py-2.5 rounded-2xl hover:opacity-70 dark:text-rose-300 dark:bg-gray-800 font-semibold"
         />
       </Suspense>
     </div>

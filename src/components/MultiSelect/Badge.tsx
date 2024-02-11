@@ -21,7 +21,7 @@ const Badge: React.FC<BadgeProps> = ({ values, options, noSelectionLabel }: Badg
   )
 
   return (
-    <span className="Badge-options-selected py-2 text-inherit font-poppins leading-tight">
+    <span className="badge-options-selected py-2 text-inherit font-poppins leading-tight">
       {!isUndefined(firstOption) ? firstOption.label : noSelectionLabel}
 
       {filteredValues.length > 0 && (

@@ -1,26 +1,15 @@
-// // Interfaces
-// import { SellersPaginationArgs } from './interfaces'
+// Types
+import type { TestimonialsPaginationArgs } from './types'
 
-// // Constants
-// import { UBIGEO_PARAMS } from '@modules/Ubigeo/api/constants'
-// import { QUERY, ALLOWED_QUERY_PARAMS } from '@libs/graphql/constants'
+// Constants
+import { UBIGEO_PARAMS } from '@modules/Ubigeo/api/constants'
+import { QUERY, ALLOWED_QUERY_PARAMS } from '@libs/graphql/constants'
 
-// export const LIMIT = 7
-// export const POPULATE = true
+export const LIMIT = 10
 
-// export const PARAMS = [
-//   ...UBIGEO_PARAMS,
-//   ...ALLOWED_QUERY_PARAMS,
-//   'dni',
-//   'ruc',
-//   'email',
-//   'phone',
-//   'status',
-//   'fullname'
-// ]
+export const PARAMS = [...UBIGEO_PARAMS, ...ALLOWED_QUERY_PARAMS]
 
-// export const DEFAULT_QUERY: SellersPaginationArgs = {
-//   limit: LIMIT,
-//   page: QUERY.page,
-//   populate: POPULATE
-// }
+export const DEFAULT_QUERY: TestimonialsPaginationArgs = {
+  page: QUERY.page,
+  limit: LIMIT
+}

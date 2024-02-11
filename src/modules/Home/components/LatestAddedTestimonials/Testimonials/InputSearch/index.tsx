@@ -1,6 +1,5 @@
 // Components
-import InputText from '@components/InputText'
-import MagnifyingGlass from '@assets/icons/magnifying-glass'
+import MainSeeker from '@modules/Testimonials/components/MainSeeker'
 
 // Hooks
 import useInputSearch from './useInputSearch'
@@ -16,16 +15,12 @@ export default function InputSearch({ setResults, testimonials }: InputSearchPro
     })
 
   return (
-    <InputText
+    <MainSeeker
       value={searchValue}
       onChange={handleSearchProducts}
       onClear={handleClearSearchValue}
-      disabled={testimonials.length <= 1}
       isShowingClearIcon={isShowingClearIcon}
-      placeholder="Buscar testimonios por datos del autor..."
-      icon={<MagnifyingGlass size="xsm" className="text-gray-400" />}
-      innerClassName="!rounded-full !px-7 !py-4 text-[0.95rem] !outline-transparent dark:!bg-gray-800"
-      containerClassName="input-search-latest-testimonials !border-none max-w-[1100px] mx-auto animate__animated animate__fadeIn"
+      containerClassName="mx-auto max-w-[1100px] input-search-latest-testimonials"
     />
   )
 }

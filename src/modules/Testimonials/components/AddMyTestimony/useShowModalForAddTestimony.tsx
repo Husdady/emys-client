@@ -31,7 +31,7 @@ export default function useShowModalForAddMyTestimony() {
     if (user === null || !isAuthenticated) {
       return showFloatWarningMessage(MESSAGE_VALIDATION_FOR_ADD_MY_TESTIMONY)
     }
-    console.log({ user })
+
     // Define the default values
     const defaultValues: TestimonyFormState = {
       testimony: '',
