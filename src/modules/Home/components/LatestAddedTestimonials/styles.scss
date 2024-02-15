@@ -3,14 +3,6 @@
 
 html {
   & .latest-added-testimonials {
-    & .input-search-latest-testimonials {
-      & .clear-icon {
-        & svg {
-          @apply w-[18px] h-[18px];
-        }
-      }
-    }
-
     @media screen and (max-width: 1145px) {
       & .testimony-items {
         @apply flex-wrap;

@@ -2,6 +2,10 @@
 @import './mixins.scss';
 
 .omnilife-testimonials-page {
+  @media screen and (min-width: 641px) and (max-width: 768px) {
+    padding-top: 5rem !important;
+  }
+
   @media screen and (min-width: 641px) {
     @include testimonialsLinearBackground;
   }

@@ -37,8 +37,8 @@ export default function useAddTestimony() {
 
     // Create form data for send to API
     const { data, clearData } = createFormData<TestimonyFormState>({
-      state: state,
-      excludeFields: ['previewAuthorPhoto']
+      excludeFields: ['previewAuthorPhoto'],
+      state: { ...state, userId: auth.user?.id }
     })
 
     // Add my testimony on the application
@@ -53,6 +53,7 @@ export default function useAddTestimony() {
     if ('error' in result) return // Finish function if exists an error
     hideModal() // Close modal
     reload([TESTIMONIALS_KEY]) // Reload Testimonials
+    auth.updateUser({ hasTestimony: true })
   }, [])
 
   return submit

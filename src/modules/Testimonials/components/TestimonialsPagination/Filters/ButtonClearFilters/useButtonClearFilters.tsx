@@ -1,43 +1,17 @@
-// Librarys
-import {
-  showFloatInfoMessage,
-  hideFloatMessageByKey,
-  showFloatLoadingMessage,
-  showFloatWarningMessage
-} from '@libs/antd/message'
-
 // Hooks
 import { useCallback } from 'react'
-import { useLazyGetTestimonialsQuery } from '@modules/Testimonials/api/graphql'
-import useFiltersQuery from '@hooks/useFiltersQuery'
-
-// Types
-import type { TestimonialsPaginationArgs } from '@modules/Testimonials/api/types'
-
-// Utils
-import { showMask, hideMask } from '@utils/mask'
-
-// Constants
-import { PARAMS } from '@modules/Testimonials/api/constants'
-import { ERROR_MESSAGE, SUCCESS_MESSAGE, CLEANING_FILTERS, CLEAR_TESTIMONIALS } from './constants'
+import { useRouter } from 'next/router'
 
 /**
  * Hook for implements the logic of the ButtonClearFilters component
  */
 export default function useButtonClearFilters() {
-  const [trigger] = useLazyGetTestimonialsQuery({}) // Get trigger callback
+  const router = useRouter()
 
-  // Get query filters
-  const { query, deleteQueryParam } = useFiltersQuery<TestimonialsPaginationArgs>({
-    queryParamsFields: PARAMS
-  })
-
-  // Event click on button for show a modal of the Testimonials filters
+  // Event click on button for clear the query params on the URL
   const clear = useCallback(() => {
-    PARAMS.forEach((key) => {
-      deleteQueryParam(key)
-    })
-  }, [])
+    router.replace(router.pathname) // Remove query params from URL
+  }, [router])
 
   return {
     clear: clear

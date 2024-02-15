@@ -1,6 +1,5 @@
 // Components
-import InputText from '@components/InputText'
-import MagnifyingGlass from '@assets/icons/magnifying-glass'
+import MainSeeker from '@components/MainSeeker'
 
 // Hooks
 import useInputSearch from './useInputSearch'
@@ -16,14 +15,12 @@ export default function InputSearch({ sellers, setResults }: InputSearchProps) {
     })
 
   return (
-    <InputText
+    <MainSeeker
       value={searchValue}
       onChange={handleSearchProducts}
       onClear={handleClearSearchValue}
       isShowingClearIcon={isShowingClearIcon}
-      icon={<MagnifyingGlass size="xsm" className="text-gray-400" />}
-      innerClassName="!rounded-full !px-7 !py-4 text-[0.95rem] !outline-transparent dark:!bg-gray-800"
-      containerClassName="input-search-latest-sellers !border-none max-w-[1100px] mx-auto animate__animated animate__fadeIn"
+      containerClassName="input-search-latest-sellers max-w-[1100px] mx-auto"
       placeholder="Buscar vendedores por nombre, dni, ruc, correo electrónico o número telefónico..."
     />
   )

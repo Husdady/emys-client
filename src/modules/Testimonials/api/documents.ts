@@ -13,6 +13,7 @@ export const TestimonyDocument = gql`
     $country: String
     $province: String
     $district: String
+    $authorName: String
     $sortBy: String
     $sortType: String
   ) {
@@ -24,12 +25,14 @@ export const TestimonyDocument = gql`
       country: $country
       province: $province
       district: $district
+      authorName: $authorName
       sortBy: $sortBy
       sortType: $sortType
     ) {
       data {
         id
         author
+        userId
         testimony
         photo {
           url

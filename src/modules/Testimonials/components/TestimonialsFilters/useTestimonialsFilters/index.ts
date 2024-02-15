@@ -14,14 +14,10 @@ import useDisableButtonInModalFilters from '@hooks/useDisableButtonInModalFilter
 import useFiltersQuery from '@hooks/useFiltersQuery'
 import useModal from '@hooks/useModal'
 
-// Types
-import type { TestimonialsPaginationArgs } from '@modules/Testimonials/api/types'
-
 // Interfaces
-import { TestimonialsFiltersState } from './interfaces'
 import { Option } from '@components/Select/interfaces'
-import { PaginationArgs } from '@libs/graphql/interfaces'
-import { SearchFilterProps } from '@components/SearchFilter/interfaces'
+import { TestimonialsFiltersState } from './interfaces'
+import { TestimonialsPaginationArgs } from '@modules/Testimonials/api/interfaces'
 
 // Utils
 import { showMask, hideMask } from '@utils/mask'
@@ -60,7 +56,7 @@ export default function useTestimonialsFilters() {
       province: query.province,
       district: query.district,
       sortType: query.sortType,
-      authorName: query.q ?? ''
+      authorName: query.authorName ?? ''
     }),
     [query]
   )
@@ -100,10 +96,10 @@ export default function useTestimonialsFilters() {
       showFloatLoadingMessage(LOADING_FILTERS) // Show float message
 
       // Define arguments for the filtering
-      const args: PaginationArgs = {
+      const args: TestimonialsPaginationArgs = {
+        ...state,
         page: QUERY.page,
-        q: isEmptyString(authorName) ? undefined : authorName,
-        ...state
+        authorName: isEmptyString(authorName) ? undefined : authorName
       }
 
       const response = await trigger(args) // Filter testimonials
@@ -124,20 +120,6 @@ export default function useTestimonialsFilters() {
     [createQueryParams]
   )
 
-  // Define the dni field
-  const authorField = useMemo<SearchFilterProps>(
-    () => ({
-      onClear: clearSeeker,
-      textLabelClassName: 'w-20',
-      containerClassName: 'w-full',
-      textLabel: 'Nombre del autor',
-      customInput: register('authorName'),
-      placeholder: 'Buscar por nombre del autor...',
-      isShowingClearIcon: isShowingClearIcon
-    }),
-    [register, clearSeeker, isShowingClearIcon]
-  )
-
   useDisableButtonInModalFilters({
     disabled: hasSameObjectData(watch(), defaultValues)
   })
@@ -146,11 +128,13 @@ export default function useTestimonialsFilters() {
     watch: watch,
     submit: submit,
     setValue: setValue,
+    register: register,
     getValues: getValues,
-    authorField: authorField,
+    clearSeeker: clearSeeker,
     handleSubmit: handleSubmit,
     onChangeSortBy: onChangeSortBy,
     deleteQueryParam: deleteQueryParam,
+    isShowingClearIcon: isShowingClearIcon,
     sortBySelectedOption: sortBySelectedOption
   }
 }

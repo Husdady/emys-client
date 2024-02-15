@@ -1,0 +1,13 @@
+.ant-dropdown {
+  z-index: 99999;
+
+  & .ant-dropdown-menu {
+    padding: 0 !important;
+    @apply dark:bg-gray-600;
+
+    & .ant-dropdown-menu-item {
+      padding: 0 !important;
+      background-color: transparent !important;
+    }
+  }
+}

@@ -4,12 +4,15 @@ import type { UseFormSetError } from 'react-hook-form'
 // Interfaces
 import { Image } from '@libs/axios/interfaces'
 import { Ubigeo } from '@modules/Ubigeo/api/interfaces'
+import { PaginationArgs } from '@libs/graphql/interfaces'
+import { UbigeoArgs } from '@modules/Ubigeo/api/interfaces'
 import { GraphQLPagination } from '@libs/graphql/interfaces'
 import { TestimonyFormState } from '@modules/Testimonials/components/TestimonyForm/interfaces'
 
 export interface Testimony extends Ubigeo {
   id: string
   author: string
+  userId?: string
   testimony: string
   photo: Image | null
   photoId: string | null
@@ -17,6 +20,10 @@ export interface Testimony extends Ubigeo {
 
 export interface Testimonials {
   testimonials: GraphQLPagination<Testimony[]>
+}
+
+export interface TestimonialsPaginationArgs extends PaginationArgs, UbigeoArgs {
+  authorName?: string
 }
 
 export interface GlobalParams {

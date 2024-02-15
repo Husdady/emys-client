@@ -1,5 +1,16 @@
-export default function Fallback() {
+// Interfaces
+import { OnlyClassNameProp } from '@config/global-interfaces'
+
+// Utils
+import classnames from '@utils/classnames'
+
+export default function Fallback({ className }: OnlyClassNameProp) {
   return (
-    <div className="box-wrapper rounded-md bg-white shadow-md dark:shadow-none dark:bg-dark-800 h-96" />
+    <div
+      className={classnames([
+        className,
+        'box-wrapper rounded-md bg-white shadow-md dark:shadow-none dark:bg-dark-800 h-96'
+      ])}
+    />
   )
 }

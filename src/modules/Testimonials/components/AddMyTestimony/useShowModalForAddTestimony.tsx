@@ -57,5 +57,5 @@ export default function useShowModalForAddMyTestimony() {
     })
   }, [isAuthenticated])
 
-  return show
+  return { show: show, disabled: user?.hasTestimony }
 }

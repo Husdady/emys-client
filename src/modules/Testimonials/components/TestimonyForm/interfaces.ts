@@ -5,6 +5,7 @@ import type { UseFormSetError } from 'react-hook-form'
 import { ChangeParams } from '@components/Upload/interfaces'
 
 export interface TestimonyFormState {
+  userId?: string
   author: string
   testimony: string
   regionId?: string | null

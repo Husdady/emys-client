@@ -1,0 +1,7 @@
+.main-seeker {
+  & .clear-icon {
+    & svg {
+      @apply w-[18px] h-[18px];
+    }
+  }
+}
