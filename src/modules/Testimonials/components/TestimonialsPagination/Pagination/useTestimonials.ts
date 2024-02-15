@@ -24,10 +24,10 @@ export default function useTestimonialsPagination() {
     defaultQueryParams: DEFAULT_QUERY
   })
 
-  // Get social networks query
+  // Get Testimonials query
   const { data, isError, isFetching } = useGetTestimonialsQuery(query)
 
-  // Paginate social networks
+  // Paginate Testimonials
   const changePage = useCallback(({ page }: PaginationParams) => {
     return createQueryParams({ page: page })
   }, [])

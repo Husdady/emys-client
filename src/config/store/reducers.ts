@@ -12,10 +12,12 @@ import { resetPasswordApi } from '@modules/Auth/api/reset-password'
 import { verifySessionApi } from '@routes/DashboardRoute/verify-session'
 
 // GraphQL states
+import { sellersGraphqlApi } from '@modules/Sellers/api/graphql'
 import { regionsGraphqlApi } from '@modules/Ubigeo/api/regions/graphql'
 import { countriesGraphqlApi } from '@modules/Ubigeo/api/countries/graphql'
 import { provincesGraphqlApi } from '@modules/Ubigeo/api/provinces/graphql'
 import { districtsGraphqlApi } from '@modules/Ubigeo/api/districts/graphql'
+import { testimonialsGraphqlApi } from '@modules/Testimonials/api/graphql'
 
 // Global states
 import { modalSlice } from './states/modal'
@@ -41,10 +43,12 @@ const reducers = combineReducers({
   [verifySessionApi.reducerPath]: verifySessionApi.reducer,
 
   // GraphQL API
+  [sellersGraphqlApi.reducerPath]: sellersGraphqlApi.reducer,
   [regionsGraphqlApi.reducerPath]: regionsGraphqlApi.reducer,
   [countriesGraphqlApi.reducerPath]: countriesGraphqlApi.reducer,
   [provincesGraphqlApi.reducerPath]: provincesGraphqlApi.reducer,
-  [districtsGraphqlApi.reducerPath]: districtsGraphqlApi.reducer
+  [districtsGraphqlApi.reducerPath]: districtsGraphqlApi.reducer,
+  [testimonialsGraphqlApi.reducerPath]: testimonialsGraphqlApi.reducer
 })
 
 export default reducers

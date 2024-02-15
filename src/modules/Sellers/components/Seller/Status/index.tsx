@@ -1,23 +1,24 @@
+// Hooks
+import useStatus from './useStatus'
+
 // Interfaces
 import { Seller } from '@modules/Sellers/api/interfaces'
 
 // Utils
 import classnames from '@utils/classnames'
 
-// Constants
-import { tagProps } from './constants'
-
-export default function SellerStatus({ status }: Pick<Seller, 'status'>) {
-  const props = tagProps[status as keyof typeof tagProps]
+export default function SellerStatus(props: Pick<Seller, 'status' | 'socialNetworks'>) {
+  const { tag, hasSocialNetworksAccounts } = useStatus(props)
 
   return (
     <span
       className={classnames([
-        props.className,
-        'font-semibold rounded-full px-2 py-2 md:py-[0.2rem] dark:text-white text-center flex items-center justify-center dark:font-normal font-lexend'
+        tag.className,
+        !hasSocialNetworksAccounts ? 'mt-2 mb-1.5' : null,
+        'w-full font-semibold rounded-full p-2 md:py-1 dark:text-white text-center flex items-center justify-center dark:font-normal font-lexend'
       ])}
     >
-      {props.title}
+      {tag.title}
     </span>
   )
 }

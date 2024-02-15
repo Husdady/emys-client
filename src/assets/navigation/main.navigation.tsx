@@ -1,8 +1,9 @@
 // Components
 import Home from '@assets/icons/home'
-import Users from '@assets/icons/users'
 import BoxSeam from '@assets/icons/box-seam'
 import HeadPhones from '@assets/icons/headphones'
+import MoodDollar from '@assets/icons/mood-dollar'
+import BrandMyOppo from '@assets/icons/brand-my-oppo'
 import ReportMedical from '@assets/icons/report-medical'
 
 // Interfaces
@@ -12,6 +13,7 @@ import { NavigationLink } from '@components/Header/MobileNavigation/FloatMenu/Me
 import {
   HOME_PATH,
   CONTACT_PATH,
+  SELLERS_PATH,
   PRODUCTS_PATH,
   MEMBERSHIP_PATH,
   TESTIMONIALS_PATH
@@ -27,20 +29,21 @@ const mainNavigation: NavigationLink[] = [
         icon: <Home className="md home-icon" />
       },
       { icon: <HeadPhones className="smd" />, path: CONTACT_PATH, title: 'Contacto' },
+      { icon: <MoodDollar className="smd" />, path: SELLERS_PATH, title: 'Vendedores' },
       {
         path: PRODUCTS_PATH,
         title: 'Productos',
         icon: <BoxSeam className="md products-icon" />
       },
       {
+        title: 'Testimonios',
         path: TESTIMONIALS_PATH,
-        title: 'Testimonios Omnilife',
         icon: <ReportMedical className="md testimonials-icon" />
       },
       {
+        title: 'Afiliación',
         path: MEMBERSHIP_PATH,
-        title: 'Programa de Afiliados',
-        icon: <Users className="md stroke-3" />
+        icon: <BrandMyOppo className="md stroke-3" />
       }
     ]
   }

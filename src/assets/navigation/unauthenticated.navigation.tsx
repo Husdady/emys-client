@@ -17,7 +17,7 @@ import {
 
 const unauthenticatedNavigation: NavigationLink[] = [
   {
-    navigationTitle: 'Afiliación',
+    navigationTitle: 'Autenticación',
     navigationItems: [
       {
         path: REGISTER_PATH,

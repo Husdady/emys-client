@@ -1,0 +1,19 @@
+@mixin darkSellersLinearBackground {
+  background: rgb(196, 131, 12);
+  background: linear-gradient(
+    90deg,
+    rgb(242, 210, 152),
+    rgb(169, 221, 255),
+    rgb(236, 70, 254)
+  ) !important;
+}
+
+@mixin lightSellersLinearBackground {
+  background: rgb(255, 186, 59);
+  background: linear-gradient(
+    90deg,
+    rgb(255, 186, 59),
+    rgb(111, 185, 234),
+    rgb(242, 124, 255)
+  ) !important;
+}

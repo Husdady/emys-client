@@ -1,6 +1,6 @@
 // Hooks
-import { useMemo } from 'react'
 import { useRouter } from 'next/router'
+import { useMemo, useCallback } from 'react'
 
 // Utils
 import isEmptyArray from '@utils/isEmptyArray'
@@ -16,7 +16,13 @@ export default function useButtonClearFilter() {
     return !isEmptyArray(Object.keys(router.query))
   }, [router])
 
+  // Event click on button for clear the query params on the URL
+  const clear = useCallback(() => {
+    router.replace(router.pathname) // Remove query params from URL
+  }, [router])
+
   return {
+    clear: clear,
     disabled: !hasQueryParams
   }
 }

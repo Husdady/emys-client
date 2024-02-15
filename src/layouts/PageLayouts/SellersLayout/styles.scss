@@ -1,0 +1,20 @@
+// Mixins
+@import './mixins.scss';
+
+.sellers-page {
+  @media screen and (min-width: 641px) and (max-width: 768px) {
+    padding-top: 5rem !important;
+  }
+
+  @media screen and (min-width: 641px) {
+    @include lightSellersLinearBackground;
+  }
+}
+
+.dark {
+  & .sellers-page {
+    @media screen and (min-width: 641px) {
+      @include darkSellersLinearBackground;
+    }
+  }
+}

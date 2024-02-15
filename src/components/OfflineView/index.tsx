@@ -7,7 +7,7 @@ import * as constants from './constants'
 export default function OfflineView() {
   return (
     <Screen
-      className="offline-view"
+      className="offline-view py-6"
       image={constants.DEFAULT_IMAGE}
       title={constants.DEFAULT_TITLE}
       description={constants.DEFAULT_DESCRIPTION}

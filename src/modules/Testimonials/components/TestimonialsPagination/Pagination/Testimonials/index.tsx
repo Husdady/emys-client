@@ -14,7 +14,7 @@ import isUndefined from '@utils/isUndefined'
 import isEmptyArray from '@utils/isEmptyArray'
 
 function Testimonials({ docs, isFetching }: TestimonialsProps) {
-  // Get social networks from docs
+  // Get Testimonials from docs
   const testimonials = useMemo(() => {
     if (isUndefined(docs)) return []
     return docs

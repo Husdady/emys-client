@@ -1,5 +1,5 @@
 // Components
-import MainSeeker from '@modules/Testimonials/components/MainSeeker'
+import MainSeeker from '@components/MainSeeker'
 
 // Hooks
 import useInputSearch from './useInputSearch'
@@ -20,6 +20,7 @@ export default function InputSearch() {
       onPressEnter={handlePressEnter}
       onClear={handleClearSearchValue}
       isShowingClearIcon={isShowingClearIcon}
+      placeholder="Buscar testimonios por datos del autor..."
       containerClassName="w-[85%]"
     />
   )

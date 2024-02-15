@@ -1,11 +1,21 @@
 .seller {
-  @media only screen and (max-width: 1080px) {
+  @media screen and (min-width: 1171px) {
+    & .social-network-list {
+      @apply mb-1.5;
+    }
+  }
+
+  @media only screen and (max-width: 1170px) {
     @apply py-[1.25rem] justify-between;
 
     & .seller-photo {
       @apply mx-auto;
     }
-    
+
+    & .social-network-list {
+      @apply mb-2 justify-center;
+    }
+
     & .seller-header {
       @apply px-2 mb-3 flex-col flex-wrap text-center justify-center;
     }

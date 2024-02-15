@@ -1,7 +1,7 @@
 // Components
 import InputSearch from './InputSearch'
 import ButtonShowFilters from './ButtonShowFilters'
-import ButtonClearFilters from './ButtonClearFilters'
+import ButtonClearFilters from '@components/ButtonClearFilters'
 
 export default function Filters() {
   return (

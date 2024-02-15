@@ -5,9 +5,9 @@ import LinearBackgroundContainer from '@containers/LinearBackgroundContainer'
 import MainLayout from '@layouts/MainLayout'
 import TestimonialsLayout from '@layouts/PageLayouts/TestimonialsLayout'
 
-export default function OmnilifeTestimonialsPage() {
+export default function TestimonialsPage() {
   return (
-    <LinearBackgroundContainer className="omnilife-testimonials-page">
+    <LinearBackgroundContainer className="testimonials-page">
       <MainLayout>
         <TestimonialsLayout />
       </MainLayout>

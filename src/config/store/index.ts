@@ -19,6 +19,7 @@ import createStorage from './utils/createStorage'
 import convertEmptySpacesInHyphens from '@utils/convertEmptySpacesInHyphens'
 
 // Constants
+import { FILTERS_KEY } from './states/filters'
 import { AUTH_KEY } from '@modules/Auth/states/auth'
 
 export const storage = createStorage()
@@ -28,7 +29,7 @@ export const persistConfig = {
   version: 1,
   key: REDUX_KEY,
   storage: storage,
-  whitelist: [AUTH_KEY]
+  whitelist: [AUTH_KEY, FILTERS_KEY]
 }
 
 export const persistedReducer = persistReducer(persistConfig, reducers)

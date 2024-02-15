@@ -2,9 +2,9 @@
 import { Suspense } from 'react'
 
 // Components
+import InputSearch from './InputSearch'
 import Placeholder from './Placeholder'
 import TestimonyPlaceholder from '@modules/Testimonials/components/Testimony/Placeholder'
-import InputSearchPlaceholder from '@modules/Testimonials/components/MainSeeker/Placeholder'
 
 // Hooks
 import useTestimonials from './useTestimonials'
@@ -20,7 +20,6 @@ import isEmptyArray from '@utils/isEmptyArray'
 import { TESTIMONY_ITEMS_ID } from './constants'
 
 // Lazy Components
-const InputSearch = lazy(() => import('./InputSearch'))
 const Testimony = lazy(() => import('@modules/Testimonials/components/Testimony'))
 
 export default function Testimonials({ isLoading, testimonials }: TestimonialsProps) {
@@ -28,9 +27,7 @@ export default function Testimonials({ isLoading, testimonials }: TestimonialsPr
 
   return (
     <section id="testimonials" className="mt-[1.25rem] mx-auto max-w-[1200px]">
-      <Suspense fallback={<InputSearchPlaceholder />}>
-        <InputSearch setResults={setResults} testimonials={testimonials} />
-      </Suspense>
+      <InputSearch setResults={setResults} testimonials={testimonials} />
 
       {isLoading && <Placeholder />}
 

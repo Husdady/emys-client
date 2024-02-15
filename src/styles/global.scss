@@ -9,12 +9,14 @@
 @import 'animate.css';
 
 // Antd Styles
+@import './antd/antd-empty';
 @import './antd/antd-message';
 @import './antd/antd-tooltip';
 @import './antd/antd-dropdown';
 
 // Layout Styles
 @import '@layouts/AuthLayouts/AuthLayout/styles.scss';
+@import '@layouts/PageLayouts/SellersLayout/styles.scss';
 @import '@layouts/PageLayouts/TestimonialsLayout/styles.scss';
 
 // Container Styles
@@ -33,8 +35,10 @@
 @import '@modules/Home/components/OmnilifeCards/styles.scss';
 @import '@modules/Auth/components/LinkToRegister/styles.scss';
 @import '@modules/Account/components/AccountStatus/styles.scss';
+@import '@modules/Sellers/components/SellersFilters/styles.scss';
 @import '@modules/Testimonials/components/Testimony/styles.scss';
 @import '@modules/Home/components/LatestAddedProducts/styles.scss';
+@import '@modules/Sellers/components/SellersPagination/styles.scss';
 @import '@modules/Testimonials/components/TestimonyForm/styles.scss';
 @import '@modules/Home/components/LatestAddedTestimonials/styles.scss';
 @import '@modules/Home/components/LatestRegisteredSellers/styles.scss';

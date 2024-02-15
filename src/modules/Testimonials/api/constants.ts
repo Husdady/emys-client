@@ -1,5 +1,5 @@
-// Types
-import type { TestimonialsPaginationArgs } from './types'
+// Interfaces
+import { TestimonialsPaginationArgs } from './interfaces'
 
 // Constants
 import { UBIGEO_PARAMS } from '@modules/Ubigeo/api/constants'

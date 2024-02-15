@@ -2,8 +2,9 @@
 import type { SocialNetworkType } from './types'
 
 // Interfaces
-import { Ubigeo } from '@modules/Ubigeo/api/interfaces'
 import { Image, TimeStamps } from '@libs/axios/interfaces'
+import { Ubigeo, UbigeoArgs } from '@modules/Ubigeo/api/interfaces'
+import { PaginationArgs, GraphQLPagination } from '@libs/graphql/interfaces'
 
 export interface SocialNetwork extends TimeStamps {
   id: string
@@ -24,4 +25,18 @@ export interface Seller extends Ubigeo {
   photo: Image | null
   socialNetworksId?: string[] | null
   socialNetworks?: SocialNetwork[] | null
+}
+
+export interface Sellers {
+  sellers: GraphQLPagination<Seller[]>
+}
+
+export interface SellersPaginationArgs extends UbigeoArgs, PaginationArgs {
+  dni?: string
+  ruc?: string
+  phone?: string
+  email?: string
+  status?: string
+  fullname?: string
+  populate?: boolean
 }

@@ -1,9 +1,11 @@
 // Components
 import Home from '@assets/icons/home'
 import Mail from '@assets/icons/mail'
-import Users from '@assets/icons/users'
 import BoxSeam from '@assets/icons/box-seam'
 import Facebook from '@assets/icons/facebook'
+import HeadPhones from '@assets/icons/headphones'
+import MoodDollar from '@assets/icons/mood-dollar'
+import BrandMyOppo from '@assets/icons/brand-my-oppo'
 import ReportMedical from '@assets/icons/report-medical'
 import BrandWhatsapp from '@assets/icons/brand-whatsapp'
 
@@ -12,7 +14,14 @@ import { SectionProps } from './interfaces'
 
 // Constants
 import { sharedIconProps, sharedFacebookIconProps, sharedWhatsappIconProps } from './constants'
-import { HOME_PATH, PRODUCTS_PATH, MEMBERSHIP_PATH, TESTIMONIALS_PATH } from '@assets/data/paths'
+import {
+  HOME_PATH,
+  CONTACT_PATH,
+  SELLERS_PATH,
+  PRODUCTS_PATH,
+  MEMBERSHIP_PATH,
+  TESTIMONIALS_PATH
+} from '@assets/data/paths'
 import {
   CONTACT_EMAIL_01,
   CONTACT_EMAIL_02,
@@ -43,14 +52,24 @@ const sections: SectionProps[] = [
         icon: <BoxSeam {...sharedIconProps} />
       },
       {
+        text: 'Afiliación',
         href: MEMBERSHIP_PATH,
-        text: 'Programa de afiliados',
-        icon: <Users {...sharedIconProps} />
+        icon: <BrandMyOppo {...sharedIconProps} />
       },
       {
+        text: 'Testimonios',
         href: TESTIMONIALS_PATH,
-        text: 'Testimonios Omnilife',
         icon: <ReportMedical {...sharedIconProps} />
+      },
+      {
+        href: SELLERS_PATH,
+        text: 'Vendedores',
+        icon: <MoodDollar {...sharedIconProps} />
+      },
+      {
+        text: 'Contacto',
+        href: CONTACT_PATH,
+        icon: <HeadPhones {...sharedIconProps} />
       }
     ]
   },

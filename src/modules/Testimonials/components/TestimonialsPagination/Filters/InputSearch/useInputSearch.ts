@@ -8,16 +8,16 @@ import {
 } from '@libs/antd/message'
 
 // Hooks
+import useMounted from '@hooks/useMounted'
 import useFiltersQuery from '@hooks/useFiltersQuery'
 import { useLazyGetTestimonialsQuery } from '@modules/Testimonials/api/graphql'
 
-// Types
-import type { TestimonialsPaginationArgs } from '@modules/Testimonials/api/types'
-
 // Interfaces
 import { PaginationArgs } from '@libs/graphql/interfaces'
+import { TestimonialsPaginationArgs } from '@modules/Testimonials/api/interfaces'
 
 // Utils
+import isString from '@utils/isString'
 import isEmptyString from '@utils/isEmptyString'
 import { showMask, hideMask } from '@utils/mask'
 
@@ -94,6 +94,12 @@ export default function useInputSearch() {
     setSearchValue('')
     void handleFilter?.(CLEAR_VALUE_SLUG)
   }, [handleFilter])
+
+  useMounted(() => {
+    if (!query.q && isString(searchValue) && !isEmptyString(searchValue)) {
+      setSearchValue('')
+    }
+  }, [query.q])
 
   return {
     searchValue: searchValue,

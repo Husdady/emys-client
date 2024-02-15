@@ -2,8 +2,8 @@
 import dynamic from 'next/dynamic'
 
 // Components
-import Users from '@assets/icons/users'
 import BoxContainer from '@containers/BoxContainer'
+import BrandMyOppo from '@assets/icons/brand-my-oppo'
 import DownloadMembershipPDF from '@modules/Membership/components/DownloadMembershipPDF'
 import MembershipDescription from '@modules/Membership/components/MembershipDescription'
 
@@ -16,8 +16,8 @@ export default function MembershipLayout() {
   return (
     <BoxContainer className="membership">
       <BoxTitle
-        icon={<Users size="md" />}
-        value="Programa de Afiliados"
+        icon={<BrandMyOppo size="md" />}
+        value="Afiliación Omnilife"
         popupTitle="En esta sección podrás descargar el PDF sobre el Programa de Afiliados de Omnilife"
       />
 

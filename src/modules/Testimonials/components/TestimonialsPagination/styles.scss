@@ -1,67 +1,10 @@
+// Mixins
+@import '@styles/mixins/pagination.scss';
+
 .testimonials-pagination {
+  @include pagination('.testimony', '.main-testimonials-section', '.main-testimonials-filters');
+
   & .testimony-list {
     @apply grid grid-cols-1 md:grid-cols-2 gap-x-2.5 gap-y-3;
-  }
-
-  & .main-testimonials-filters {
-    @media only screen and (max-width: 950px) {
-      @apply flex-wrap;
-
-      & .main-seeker,
-      & .wrapper-buttons {
-        @apply w-full;
-      }
-
-      & .btn-show-filters,
-      & .btn-clear-filters {
-        @apply w-[50%];
-      }
-    }
-  }
-
-  @media only screen and (max-width: 640px) {
-    @apply pt-5;
-
-    & .testimony {
-      @apply border-0 shadow-gray-300;
-    }
-
-    & .main-title {
-      @apply dark:text-gray-200 dark:font-normal;
-    }
-
-    & .btn-show-filters,
-    & .btn-clear-filters {
-      @apply min-h-[48px];
-    }
-
-    & .btn-show-filters,
-    & .btn-clear-filters {
-      @apply text-gray-600 dark:font-normal;
-    }
-  }
-
-  @media only screen and (max-width: 540px) {
-    & .btn-show-filters,
-    & .btn-clear-filters {
-      width: 100% !important;
-      @apply dark:bg-gray-900;
-    }
-
-    & .wrapper-buttons {
-      @apply flex-wrap;
-    }
-
-    & .main-testimonials-section,
-    & .main-testimonials-filters {
-      @apply px-4;
-    }
-  }
-
-  @media only screen and (max-width: 350px) {
-    & .main-testimonials-section,
-    & .main-testimonials-filters {
-      @apply px-3;
-    }
   }
 }

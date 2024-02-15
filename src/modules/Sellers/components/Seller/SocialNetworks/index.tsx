@@ -6,16 +6,17 @@ import useSocialNetworks from './useSocialNetworks'
 
 // Interfaces
 import { SocialNetworksProps } from './interfaces'
-
-// Constants
-import { socialNetworkList } from './constants'
+import isEmptyArray from '@root/src/utils/isEmptyArray'
 
 export default function SocialNetworks(props: SocialNetworksProps) {
-  const { handleShowAccountOfSocialNetwork } = useSocialNetworks(props)
+  const { socialNetworkList, handleShowAccountOfSocialNetwork } = useSocialNetworks(props)
+
+  // Empty accounts of Social Networks
+  if (isEmptyArray(socialNetworkList)) return null
 
   return (
-    <section className="seller-social-networks px-4">
-      <ul className="social-network-list flex items-center justify-center gap-y-2.5 gap-x-2">
+    <section className="seller-social-networks">
+      <ul className="social-network-list flex items-center justify-start gap-y-2.5 gap-x-2">
         {socialNetworkList.map((socialNetwork) => (
           <li key={socialNetwork.id}>
             <Button

@@ -1,0 +1,14 @@
+// Mixins
+@import '@styles/mixins/pagination.scss';
+
+.sellers-pagination {
+  @include pagination('.seller', '.main-sellers-section', '.main-sellers-filters');
+
+  & .main-title {
+    @apply sm:text-white font-normal dark:text-rose-200 dark:sm:text-gray-800 dark:font-semibold;
+  }
+
+  & .seller-list {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-2.5 gap-y-3;
+  }
+}

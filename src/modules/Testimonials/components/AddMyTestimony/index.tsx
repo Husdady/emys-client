@@ -30,7 +30,7 @@ export default function AddMyTestimony({ className }: OnlyClassNameProp) {
         title="Añadir mi testimonio"
         className={classnames([
           className,
-          'gap-x-2.5 btn-add-my-testimony bg-white shadow-lg text-main-700 py-2.5 rounded-2xl enabled:hover:opacity-70 dark:text-rose-300 dark:bg-gray-800 font-semibold'
+          'gap-x-2.5 btn-add-my-testimony bg-white shadow-lg text-main-700 py-2.5 rounded-2xl enabled:hover:opacity-70 dark:text-rose-300 dark:bg-gray-800 font-semibold min-h-[46px] sm:min-h-[42px]'
         ])}
       />
     </Suspense>
