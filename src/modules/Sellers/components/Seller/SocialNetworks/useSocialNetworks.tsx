@@ -5,7 +5,7 @@ import { showFloatWarningMessage } from '@libs/antd/message'
 import SocialNetworkList from './SocialNetworkList'
 
 // Hooks
-import { useCallback, useMemo } from 'react'
+import { useCallback } from 'react'
 import useModal from '@hooks/useModal'
 
 // Interfaces
@@ -20,8 +20,9 @@ import { socialNetworkList } from './constants'
 
 /**
  * Hook for implements the logic of the SocialNetworks
+ * @param {SocialNetworksProps} data Receive a 'socialNetworks' and 'sellerFullname'
  */
-export default function useSocialNetworks({ sellerFullname, socialNetworks }: SocialNetworksProps) {
+export default function useSocialNetworks({ socialNetworks, sellerFullname }: SocialNetworksProps) {
   const { showModal } = useModal()
 
   // Callback for check if the Social Network has accounts
@@ -35,6 +36,18 @@ export default function useSocialNetworks({ sellerFullname, socialNetworks }: So
     // Social network has accounts
     return !(!Array.isArray(items) || isEmptyArray(items))
   }, [])
+
+  // Callback for define the title popup of Button
+  const getTitlePopup = useCallback((socialNetwork: SocialNetworkItem) => {
+    // Social network has accounts
+    const hasAccounts = checkIfSocialNetowrkHasAccounts(socialNetwork)
+
+    if (hasAccounts) {
+      return `Mostrar cuentas de ${socialNetwork.name} de ${sellerFullname}`
+    }
+
+    return `${sellerFullname} no posee cuentas en ${socialNetwork.name}`
+  }, [sellerFullname])
 
   // Callback for show the list of accounts of a social network
   const handleShowAccountOfSocialNetwork = useCallback(
@@ -74,13 +87,10 @@ export default function useSocialNetworks({ sellerFullname, socialNetworks }: So
     [socialNetworks, sellerFullname]
   )
 
-  // Filter only social networks that have an accounts
-  const filteredSocialNetworkList = useMemo(() => {
-    return socialNetworkList.filter(checkIfSocialNetowrkHasAccounts)
-  }, [])
-
   return {
-    socialNetworkList: filteredSocialNetworkList,
+    getTitlePopup: getTitlePopup,
+    socialNetworkList: socialNetworkList,
+    checkIfSocialNetowrkHasAccounts: checkIfSocialNetowrkHasAccounts,
     handleShowAccountOfSocialNetwork: handleShowAccountOfSocialNetwork
   }
 }

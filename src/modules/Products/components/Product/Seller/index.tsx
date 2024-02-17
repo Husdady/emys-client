@@ -11,7 +11,7 @@ const SellerFullname = dynamic(() => import('./Fullname'))
 
 export default function Seller({ photo, fullname }: Partial<Seller> = {}) {
   return (
-    <div className="seller flex items-start mt-2 gap-x-2 px-3 py-1.5 bg-gray-100 rounded-lg dark:bg-gray-600">
+    <div className="seller flex items-start mt-2 gap-x-1.5 px-3 py-2 bg-gray-100 rounded-lg dark:bg-gray-600">
       <SellerPhoto photo={photo as Image} />
       <SellerFullname fullname={fullname} />
     </div>

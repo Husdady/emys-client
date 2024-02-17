@@ -1,5 +1,5 @@
 // Components
-import AppLogo from '@root/src/components/AppLogo'
+import AppLogo from '@components/AppLogo'
 
 // Interfaces
 import { AuthLayoutProps } from './interfaces'

@@ -1,6 +1,8 @@
 // Librarys
-import useMounted from '@root/src/hooks/useMounted'
-import { useCallback, MutableRefObject, useState, useMemo } from 'react'
+import { useMemo, useState, useCallback, MutableRefObject } from 'react'
+
+// Hooks
+import useMounted from '@hooks/useMounted'
 
 export const MIN_WIDTH = 1000
 

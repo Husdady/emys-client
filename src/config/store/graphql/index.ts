@@ -8,6 +8,7 @@ import {
   REDUCER_PATH,
   SELLERS_KEY,
   PRODUCTS_KEY,
+  CATEGORIES_KEY,
   TESTIMONIALS_KEY,
 
   // Ubigeo keys
@@ -25,6 +26,7 @@ export const api = createApi({
   tagTypes: [
     SELLERS_KEY,
     PRODUCTS_KEY,
+    CATEGORIES_KEY,
     TESTIMONIALS_KEY,
 
     // Ubigeo

@@ -8,7 +8,9 @@ import useUser from './useUser'
 
 // Interfaces
 import { UserProps } from './interfaces'
-import classnames from '@root/src/utils/classnames'
+
+// Utils
+import classnames from '@utils/classnames'
 
 // Dynamic Components
 const FloatMenu = dynamic(() => import('./FloatMenu'))

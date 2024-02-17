@@ -25,7 +25,7 @@ export default function FloatMenu(props: MenuData) {
       <div
         className={classnames([
           props.isShowingMenu ? null : 'hidden',
-          'float-menu overflow-y-auto h-full top-0 md:max-h-[450px] unauthenticated-links z-[999999] max-w-[300px] md:top-[5.5rem] md:rounded-lg md:mx-[2rem] dark:md:shadow-gray-700 fixed right-0 bg-white shadow-xl dark:bg-black border-b border-gray-200 dark:border-gray-600 md:border-none flex flex-col md:h-[calc(100%-100px)] flex flex-col justify-between'
+          'float-menu overflow-y-auto h-full top-0 md:max-h-[455px] unauthenticated-links z-[999999] max-w-[300px] md:top-[5.5rem] md:rounded-lg md:mx-[2rem] dark:md:shadow-gray-700 fixed right-0 bg-white shadow-xl dark:bg-black border-b border-gray-200 dark:border-gray-600 md:border-none flex flex-col md:h-[calc(100%-100px)] flex flex-col justify-between'
         ])}
       >
         <div>

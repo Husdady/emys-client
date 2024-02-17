@@ -1,7 +1,12 @@
+// Mixins
+@import '@styles/mixins/ubigeo.scss';
+
 .sellers-filters-form {
-  & .ubigeo-filters {
-    & .select {
-      @apply w-full sm:w-[calc(50%-0.4375rem)];
+  @include ubigeoFilters;
+
+  & .email-field {
+    & .search-filter {
+      @apply gap-x-0;
     }
   }
 }

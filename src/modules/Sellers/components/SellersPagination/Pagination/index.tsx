@@ -1,6 +1,6 @@
 // Components
 import Error from './Error'
-import Testimonials from './Sellers'
+import Sellers from './Sellers'
 import Pagination from '@components/Pagination'
 
 // Hooks
@@ -17,11 +17,11 @@ export default function CustomPagination() {
 
   return (
     <section className="main-sellers-section px-6 lg:px-[3rem]">
-      <Testimonials isFetching={isFetching} docs={data?.sellers?.data} />
+      <Sellers isFetching={isFetching} docs={data?.sellers?.data} />
 
       {!isUndefined(data) && !isUndefined(data.sellers.meta) && (
         <Pagination
-          className="pt-2.5"
+          className="pt-6"
           onChange={changePage}
           isFetching={isFetching}
           totalDocs={data.sellers.data?.length}

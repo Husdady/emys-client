@@ -21,7 +21,7 @@ export default function CustomPagination() {
 
       {!isUndefined(data) && !isUndefined(data.testimonials.meta) && (
         <Pagination
-          className="pt-2.5"
+          className="pt-6"
           onChange={changePage}
           isFetching={isFetching}
           totalDocs={data.testimonials.data?.length}

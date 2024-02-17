@@ -72,16 +72,16 @@ export default function useTestimonialsFilters() {
     [query.sortBy, query.sortType]
   )
 
-  // Clear seeker value
-  const clearSeeker = useCallback(() => {
-    setValue('authorName', '', { shouldDirty: false }) // Clear seeker value
-  }, [])
-
   // Show clear icon
   const isShowingClearIcon = useMemo(() => {
     const authorName = watch('authorName') // Get authorName value
     return !isEmptyString(authorName ?? '') // Show clear icon when authorName has value
   }, [watch('authorName')])
+
+  // Clear seeker value
+  const clearSeeker = useCallback(() => {
+    setValue('authorName', '', { shouldDirty: false }) // Clear seeker value
+  }, [])
 
   // Event 'change' in Provinces Select component
   const onChangeSortBy = useCallback((option: Option) => {
@@ -112,12 +112,11 @@ export default function useTestimonialsFilters() {
       }
 
       createQueryParams(args as Record<string, unknown>) // Create query params
-      if (isEmptyString(authorName)) return // Some filter not exists
 
       // Show float success message
       return showFloatInfoMessage(SUCCESS_MESSAGE_FILTERS)
     },
-    [createQueryParams]
+    [query, createQueryParams]
   )
 
   useDisableButtonInModalFilters({

@@ -23,11 +23,11 @@ export default function useFloatButtons() {
     if (!isHomePage || floatButtonsRef.current === null) return
 
     if (window.scrollY > 450 && !isBiggestTabletScreen) {
-      floatButtonsRef.current.classList.add('right-[1%]')
-      floatButtonsRef.current.classList.remove('right-[2.5%]')
+      floatButtonsRef.current.classList.add('!right-[1%]')
+      floatButtonsRef.current.classList.remove('!right-[2.5%]')
     } else {
-      floatButtonsRef.current.classList.add('right-[2.5%]')
-      floatButtonsRef.current.classList.remove('right-[1%]')
+      floatButtonsRef.current.classList.add('!right-[2.5%]')
+      floatButtonsRef.current.classList.remove('!right-[1%]')
     }
   }, [isBiggestTabletScreen])
 

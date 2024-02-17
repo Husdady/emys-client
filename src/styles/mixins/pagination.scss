@@ -61,3 +61,30 @@
     }
   }
 }
+
+@mixin productsPagination($listSelector, $sectionContainer, $filtersContainer) {
+  @include pagination('.product', $sectionContainer, $filtersContainer);
+
+  & #{$sectionContainer} {
+    @apply 2xl:px-[3rem];
+  }
+
+  & .main-title-container {
+    & .main-title {
+      @apply sm:text-white font-normal dark:text-rose-200 dark:sm:text-gray-800 dark:font-semibold;
+    }
+  }
+
+  & #{$listSelector} {
+    @apply grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-x-1.5 gap-y-2 flex-wrap;
+
+    & .product {
+      max-width: initial !important;
+      min-width: initial !important;
+    }
+
+    @media only screen and (min-width: 373px) and (max-width: 768px) {
+      @apply grid-cols-2;
+    }
+  }
+}

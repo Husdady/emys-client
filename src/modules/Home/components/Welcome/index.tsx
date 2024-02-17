@@ -23,7 +23,7 @@ export default function Welcome() {
         className="welcome relative overflow-hidden min-h-[300px] bg-pink-200"
       >
         <div className="main-wrapper-welcome max-w-[1300px] mx-auto px-[3rem] overflow-hidden relative z-[9999]">
-          <div className="main-inner-welcome flex items-center mt-[8.5rem] justify-around xl:justify-between max-w-[1000px] mx-auto">
+          <div className="main-inner-welcome transition-ease-out flex items-center mt-[8.5rem] justify-around xl:justify-between max-w-[1000px] mx-auto">
             <div className="welcome-content max-w-[500px] mb-[3rem]">
               <Title />
               <Message />

@@ -29,13 +29,6 @@ html {
 
     &:not(.white-screen) {
       @include testimonialsLinearBackground;
-      // background: rgb(59, 203, 255);
-      // background: linear-gradient(
-      //   90deg,
-      //   rgb(137, 222, 255),
-      //   rgb(246, 154, 222),
-      //   rgb(168, 255, 124)
-      // );
     }
   }
 }

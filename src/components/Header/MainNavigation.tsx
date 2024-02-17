@@ -3,16 +3,16 @@ import { memo } from 'react'
 import dynamic from 'next/dynamic'
 
 // Hooks
-import useMobileScreen from '@root/src/hooks/useSmallDesktopScreen'
+import useSmallDesktopScreen from '@hooks/useSmallDesktopScreen'
 
 // Dynamic Components
 const Navigation = dynamic(() => import('./Navigation'))
 const MobileNavigation = dynamic(() => import('./MobileNavigation'))
 
 function MainNavigation() {
-  const isMobileScreen = useMobileScreen()
+  const isSmallDesktopScreen = useSmallDesktopScreen()
 
-  if (isMobileScreen) return <MobileNavigation />
+  if (isSmallDesktopScreen) return <MobileNavigation />
   return <Navigation />
 }
 

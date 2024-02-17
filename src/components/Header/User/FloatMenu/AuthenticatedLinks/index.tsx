@@ -2,14 +2,14 @@
 import dynamic from 'next/dynamic'
 
 // Components
-import Camera from '@assets/icons/camera'
+import BoxSeam from '@assets/icons/box-seam'
 import Settings from '@assets/icons/settings'
 
 // Interfaces
 import { MenuData } from '@components/Header/User/interfaces'
 
 // Data
-import { ACCOUNT_PATH } from '@assets/data/paths'
+import { ACCOUNT_PATH, FAVORITE_PRODUCTS_PATH } from '@assets/data/paths'
 
 // Dynamic Components
 const SwitchTheme = dynamic(() => import('./SwitchTheme'))
@@ -27,6 +27,13 @@ export default function UnauthenticatedLinks(props: MenuData) {
         icon={<Settings />}
         title="Administrar mi Cuenta"
         path={ACCOUNT_PATH}
+        menuData={props}
+      />
+
+      <NavigationItem
+        icon={<BoxSeam />}
+        title="Ver mis Productos favoritos"
+        path={FAVORITE_PRODUCTS_PATH}
         menuData={props}
       />
 

@@ -1,5 +1,15 @@
 html {
   & .latest-registered-sellers {
+    @media screen and (min-width: 1536px) {
+      & .seller-items {
+        & .seller-item {
+          @apply min-w-[25%] max-w-[25%];
+          min-width: calc(25% - 0.4375rem);
+          max-width: calc(25% - 0.4375rem);
+        }
+      }
+    }
+
     @media screen and (min-width: 900px) {
       & .seller-items {
         & .seller-item {

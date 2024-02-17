@@ -1,0 +1,11 @@
+@mixin addPaddingTopToPage {
+  @media screen and (min-width: 641px) and (max-width: 768px) {
+    padding-top: 5rem !important;
+  }
+}
+
+@mixin fixPositionOfTheFloatButtons {
+  & .float-buttons {
+    right: 0.75% !important;
+  }
+}

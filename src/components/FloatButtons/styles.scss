@@ -2,20 +2,21 @@
 @import '@styles/fontawesome/icons.scss';
 
 .float-buttons {
+  right: 3%;
   transition: all linear 0.4s;
   transform: translateY(-50%);
 
-  @media only screen and (min-width: 1367px) {
-    right: calc((100% - 1366px) / 2);
-  }
+  // @media only screen and (min-width: 1367px) {
+  //   right: 4%;
+  // }
 
-  @media only screen and (min-width: 1450px) {
-    right: calc((100% - 1200px) / 2);
-  }
+  // @media only screen and (min-width: 1450px) {
+  //   right: 6;
+  // }
 
-  @media only screen and (min-width: 1540px) {
-    right: calc((100% - 1300px) / 2);
-  }
+  // @media only screen and (min-width: 1540px) {
+  //   right: calc((100% - 1300px) / 2);
+  // }
 
   & > button {
     @apply flex items-center justify-center cursor-pointer hover:opacity-70;

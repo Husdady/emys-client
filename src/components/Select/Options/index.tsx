@@ -33,8 +33,8 @@ const Options: React.FC<OptionsProps> = ({
     handleClear,
     handleSearch,
     filteredOptions,
-    selectOptionsStyle,
-    isShowingClearIcon
+    isShowingClearIcon,
+    selectOptionsStyle
   } = useSearchOptions({
     initialOptions: options,
     canSearchOptions: canSearchOptions

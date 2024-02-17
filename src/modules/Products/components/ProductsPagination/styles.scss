@@ -1,0 +1,6 @@
+// Mixins
+@import '@styles/mixins/pagination.scss';
+
+.products-pagination {
+  @include productsPagination('.product-list', '.main-products-section', '.main-products-filters');
+}

@@ -3,7 +3,7 @@ import { memo } from 'react'
 import dynamic from 'next/dynamic'
 
 // Components
-import X from '@root/src/assets/icons/x'
+import X from '@assets/icons/x'
 
 // Interfaces
 import { MenuData } from '@components/Header/User/interfaces'

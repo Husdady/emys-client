@@ -16,11 +16,16 @@ export default function ContactSeller({
   isInStock,
   mainSeller
 }: Pick<Product, 'name' | 'isInStock' | 'mainSeller'>) {
-  const { openWhatsappAPI } = useContactSeller({ name: name, mainSeller: mainSeller })
+  const { titlePopup, openWhatsappAPI } = useContactSeller({
+    name: name,
+    isInStock: isInStock,
+    mainSeller: mainSeller
+  })
 
   return (
     <Button
       disabled={!isInStock}
+      titlePopup={titlePopup}
       onClick={openWhatsappAPI}
       title="Contactar vendedor"
       icon={<BrandWhatsapp size="sm" />}

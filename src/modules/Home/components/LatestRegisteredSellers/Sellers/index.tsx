@@ -26,7 +26,7 @@ export default function Sellers({ sellers, isLoading }: SellersProps) {
   const { results, setResults } = useSellers({ sellers, isLoading })
 
   return (
-    <section id="sellers" className="mt-[1.5rem] mx-auto max-w-[1200px]">
+    <section id="sellers" className="mt-[1.5rem] mx-auto max-w-[1200px] 2xl:max-w-[1600px]">
       <InputSearch sellers={sellers} setResults={setResults} />
 
       {isLoading && <Placeholder />}
@@ -37,7 +37,10 @@ export default function Sellers({ sellers, isLoading }: SellersProps) {
           className="seller-items mt-[2rem] lg:mt-[2.15rem] flex gap-y-2.5 sm:gap-y-3.5 gap-x-2 pb-[3rem] relative sm:gap-x-2.5 justify-center flex-wrap"
         >
           {results.map((seller) => (
-            <li key={seller.id} className="seller-item min-w-[350px] max-w-[350px]">
+            <li
+              key={seller.id}
+              className="seller-item min-w-[350px] max-w-[350px] 2xl:!max-w-[400px]"
+            >
               <Suspense fallback={<SellerPlaceholder />}>
                 <Seller {...seller} />
               </Suspense>

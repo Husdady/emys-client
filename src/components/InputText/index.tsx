@@ -130,6 +130,7 @@ export default React.memo(InputText, (prevProps, nextProps) => {
     prevProps.disabled === nextProps.disabled &&
     prevProps.className === nextProps.className &&
     prevProps.customInput === nextProps.customInput &&
+    prevProps.onPressEnter === nextProps.onPressEnter &&
     prevProps.isShowingClearIcon === nextProps.isShowingClearIcon &&
     prevProps.containerClassName === nextProps.containerClassName
   )

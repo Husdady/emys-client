@@ -1,6 +1,3 @@
-// Librarys
-import { createId } from '@libs/nanoid'
-
 // Hooks
 import { useMemo } from 'react'
 
@@ -8,9 +5,8 @@ import { useMemo } from 'react'
 import { Testimony } from '@modules/Testimonials/api/interfaces'
 
 // Utils
-import isObject from '@utils/isObject'
-import isString from '@root/src/utils/isString'
-import isEmptyString from '@root/src/utils/isEmptyString'
+import isString from '@utils/isString'
+import isEmptyString from '@utils/isEmptyString'
 
 export interface UbigeoField {
   id?: string

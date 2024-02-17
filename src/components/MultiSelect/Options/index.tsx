@@ -14,11 +14,10 @@ import { OptionsProps } from './interfaces'
 
 // Utils
 import classnames from '@utils/classnames'
+import isEmptyArray from '@utils/isEmptyArray'
 
 // Constants
-import { DEFAULT_LIST_HEIGHT, DEFAULT_CAN_SEARCH_OPTIONS } from '@components/MultiSelect/constants'
-
-export const style: React.CSSProperties = { maxHeight: DEFAULT_LIST_HEIGHT }
+import { DEFAULT_CAN_SEARCH_OPTIONS } from '@components/MultiSelect/constants'
 
 const Options: React.FC<OptionsProps> = ({
   options,
@@ -37,7 +36,8 @@ const Options: React.FC<OptionsProps> = ({
     handleSearch,
     isLastActived,
     filteredOptions,
-    isShowingClearIcon
+    isShowingClearIcon,
+    selectOptionsStyle
   } = useSearchOptions({
     initialOptions: options,
     selectedValues: selectedValues,
@@ -57,10 +57,10 @@ const Options: React.FC<OptionsProps> = ({
         />
       )}
 
-      {filteredOptions.length === 0 && <EmptyOptions text={emptyText} />}
+      {isEmptyArray(filteredOptions) && <EmptyOptions text={emptyText} />}
 
-      {filteredOptions.length > 0 && (
-        <ul style={style} className="checkbox-options overflow-y-auto">
+      {!isEmptyArray(filteredOptions) && (
+        <ul style={selectOptionsStyle} className="checkbox-options overflow-y-auto">
           {filteredOptions.map((item) => (
             <li
               key={item.value}

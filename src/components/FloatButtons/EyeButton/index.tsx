@@ -18,7 +18,7 @@ export default function EyeButton() {
       <Button
         title=""
         onClick={toggleShowHeader}
-        icon={isShowingHeader ? <Eye size="smaller" /> : <EyeOff size="smaller" />}
+        icon={isShowingHeader ? <Eye size="sm" /> : <EyeOff size="sm" />}
         className="btn-float-toggle-show-header rounded-full !w-[1.65rem] !h-[1.65rem] !p-0 bg-rose-500 dark:bg-rose-200 border-2 border-rose-400 dark:border-rose-100 text-white dark:text-rose-900"
       />
     </Tooltip>

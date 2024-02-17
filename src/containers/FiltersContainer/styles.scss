@@ -1,0 +1,11 @@
+.filters-container {
+  & .btn-show-filters {
+    @media screen and (min-width: 1450px) {
+      @apply min-w-[200px];
+    }
+  }
+
+  @media screen and (min-width: 1367px) {
+    @apply max-w-[1300px];
+  }
+}

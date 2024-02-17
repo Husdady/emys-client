@@ -53,7 +53,7 @@ export default function useFiltersQuery<DefaultQuery extends object>({
 
     if (isUndefined(defaultQueryParams)) return args as DefaultQuery
     return { ...defaultQueryParams, ...args }
-  }, [searchParams])
+  }, [searchParams.toString()])
 
   // Callback to remove a query param
   const deleteQueryParam = useCallback(
@@ -64,7 +64,6 @@ export default function useFiltersQuery<DefaultQuery extends object>({
 
       const search = current.toString() // Get the search value
       const query = search ? `?${search}` : '' // Define the new query string
-
       router.push(`${pathname}${query}`) // Push query param to the router
     },
     [pathname, searchParams]

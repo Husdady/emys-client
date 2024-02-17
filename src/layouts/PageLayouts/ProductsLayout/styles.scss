@@ -1,0 +1,7 @@
+// Mixins
+@import '@styles/mixins/page';
+
+.products-page {
+  @include addPaddingTopToPage;
+  @include fixPositionOfTheFloatButtons;
+}

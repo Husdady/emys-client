@@ -45,16 +45,18 @@ const Pagination: React.FC<PaginationProps> = ({
   })
 
   return (
-    <div
-      className={classnames([className, 'pagination w-full flex flex-col mt-3 xl:mt-1.5 gap-y-3'])}
+    <section
+      className={classnames([className, 'pagination w-full flex flex-col mt-3 xl:mt-1.5 gap-y-2'])}
     >
-      <div className="limits-wrapper font-semibold text-[0.75rem] py-2 border border-gray-300 dark:border-gray-500 border-l-[5px] px-3 rounded-tr rounded-br ml-1 bg-white dark:bg-gray-800 border-l-main-700 text-black dark:border-l-rose-200 dark:text-gray-300">
-        <span className="sm:leading-snug block">
-          Límite de &apos;{perPage}&apos; {'documento'.concat(perPage === 1 ? '' : 's')} por página
-          &nbsp;|&nbsp; Mostrando &apos;{totalDocs}&apos;{' '}
-          {'documento'.concat(total === 1 ? '' : 's')} en la página{' '}
-          {String(currentPage).padStart(2, '0')} &nbsp;|&nbsp; Existen un total de &apos;{total}
-          &apos; documentos registrados
+      <div className='flex justify-center'>
+        <span className="limits-wrapper font-semibold text-[0.75rem] py-2 border border-gray-300 dark:border-gray-500 border-l-[5px] px-3 rounded-tr rounded-br ml-1 bg-white dark:bg-gray-800 border-l-main-700 text-black dark:border-l-rose-200 dark:text-gray-300">
+          <span className="sm:leading-snug block">
+            Límite de &apos;{perPage}&apos; {'documento'.concat(perPage === 1 ? '' : 's')} por
+            página &nbsp;|&nbsp; Mostrando &apos;{totalDocs}&apos;{' '}
+            {'documento'.concat(total === 1 ? '' : 's')} en la página{' '}
+            {String(currentPage).padStart(2, '0')} &nbsp;|&nbsp; Existen un total de &apos;{total}
+            &apos; documentos registrados
+          </span>
         </span>
       </div>
 
@@ -106,7 +108,7 @@ const Pagination: React.FC<PaginationProps> = ({
           </React.Suspense>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

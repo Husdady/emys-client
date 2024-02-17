@@ -34,9 +34,9 @@ export default function useSellersPagination() {
 
   // Auto increment the count of the Sellers document
   useDocumentCount({
+    filterId: SELLERS_COUNT,
     autoIncreaseCount: true,
-    data: data?.sellers?.data,
-    filterId: SELLERS_COUNT
+    data: data?.sellers?.data
   })
 
   return {

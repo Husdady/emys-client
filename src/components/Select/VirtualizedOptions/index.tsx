@@ -15,10 +15,10 @@ import { VirtualizedOptionsProps } from './interfaces'
 
 // Utils
 import classnames from '@utils/classnames'
+import isEmptyArray from '@utils/isEmptyArray'
 
 // Constants
 import { DEFAULT_CAN_SEARCH_OPTIONS } from '@components/Select/constants'
-import isEmptyArray from '@root/src/utils/isEmptyArray'
 
 const VirtualizedOptions: React.FC<VirtualizedOptionsProps> = ({
   options,

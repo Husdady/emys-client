@@ -17,7 +17,7 @@ export default function FallbackItem({
         className={classnames([
           classLabel,
           sharedClassName,
-          'fallback-text-label h-[20.24px] sm:h-[17.99px] rounded mb-[0.35rem]'
+          'fallback-text-label h-[20px] sm:h-[18px] rounded mb-[0.35rem]'
         ])}
       />
 
@@ -25,7 +25,7 @@ export default function FallbackItem({
         className={classnames([
           classComp,
           sharedClassName,
-          'fallback-input h-[45.83px] sm:h-[43px] rounded'
+          'fallback-input h-[46px] sm:h-[43px] rounded'
         ])}
       />
     </div>

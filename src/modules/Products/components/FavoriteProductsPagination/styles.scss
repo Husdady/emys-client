@@ -1,0 +1,10 @@
+// Mixins
+@import '@styles/mixins/pagination.scss';
+
+.favorite-products-pagination {
+  @include productsPagination(
+    '.favorite-product-list',
+    '.main-favorite-products-section',
+    '.main-favorite-products-filters'
+  );
+}

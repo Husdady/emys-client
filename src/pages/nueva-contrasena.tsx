@@ -8,7 +8,7 @@ import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next'
 import { LoaderResponse } from '@config/global-interfaces'
 
 // Layouts
-import MainLayout from '@root/src/layouts/MainLayout'
+import MainLayout from '@layouts/MainLayout'
 import AuthLayout from '@layouts/AuthLayouts/AuthLayout'
 import ResetPasswordLayout from '@layouts/AuthLayouts/ResetPasswordLayout'
 

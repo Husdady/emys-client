@@ -8,8 +8,8 @@ import {
 } from '@libs/antd/message'
 
 // Hooks
-import useMounted from '@hooks/useMounted'
 import useFiltersQuery from '@hooks/useFiltersQuery'
+import useValidateSearchValue from '@components/MainSeeker/useValidateSearchValue'
 import { useLazyGetTestimonialsQuery } from '@modules/Testimonials/api/graphql'
 
 // Interfaces
@@ -17,7 +17,6 @@ import { PaginationArgs } from '@libs/graphql/interfaces'
 import { TestimonialsPaginationArgs } from '@modules/Testimonials/api/interfaces'
 
 // Utils
-import isString from '@utils/isString'
 import isEmptyString from '@utils/isEmptyString'
 import { showMask, hideMask } from '@utils/mask'
 
@@ -50,7 +49,7 @@ export default function useInputSearch() {
   const handleFilter = useCallback(
     async (slug?: string) => {
       // Prevent make request if has invalid search value
-      if ((!query.q && isEmptyString(searchValue)) || searchValue === query.q) return
+      if (!slug && ((!query.q && isEmptyString(searchValue)) || searchValue === query.q)) return
 
       showMask() // Show mask in the screen
       showFloatLoadingMessage(LOADING_FILTERS) // Show float message
@@ -71,12 +70,11 @@ export default function useInputSearch() {
       }
 
       createQueryParams(args as Record<string, unknown>) // Create query params
-      if (isEmptyString(searchValue)) return // Some filter not exists
 
       // Show float success message
       return showFloatInfoMessage(SUCCESS_MESSAGE_FILTERS)
     },
-    [query, searchValue]
+    [query, searchValue, createQueryParams]
   )
 
   // Callback for handle the 'Enter' key pressed
@@ -95,11 +93,11 @@ export default function useInputSearch() {
     void handleFilter?.(CLEAR_VALUE_SLUG)
   }, [handleFilter])
 
-  useMounted(() => {
-    if (!query.q && isString(searchValue) && !isEmptyString(searchValue)) {
-      setSearchValue('')
-    }
-  }, [query.q])
+  useValidateSearchValue<TestimonialsPaginationArgs>({
+    query: query,
+    searchValue: searchValue,
+    setSearchValue: setSearchValue
+  })
 
   return {
     searchValue: searchValue,

@@ -5,7 +5,7 @@ import LinearBackgroundContainer from '@containers/LinearBackgroundContainer'
 import MainLayout from '@layouts/MainLayout'
 import SellersLayout from '@layouts/PageLayouts/SellersLayout'
 
-export default function OmnilifeTestimonialsPage() {
+export default function SellersPage() {
   return (
     <LinearBackgroundContainer className="sellers-page">
       <MainLayout>

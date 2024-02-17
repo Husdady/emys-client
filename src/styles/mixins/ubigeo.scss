@@ -1,0 +1,7 @@
+@mixin ubigeoFilters {
+  & .ubigeo-filters {
+    & .select {
+      @apply w-full sm:w-[calc(50%-0.4375rem)];
+    }
+  }
+}

@@ -1,10 +1,9 @@
 // Mixins
 @import './mixins.scss';
+@import '@styles/mixins/page';
 
 .sellers-page {
-  @media screen and (min-width: 641px) and (max-width: 768px) {
-    padding-top: 5rem !important;
-  }
+  @include addPaddingTopToPage;
 
   @media screen and (min-width: 641px) {
     @include lightSellersLinearBackground;

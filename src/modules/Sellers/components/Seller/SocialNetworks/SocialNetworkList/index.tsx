@@ -1,5 +1,7 @@
+// Components
+import Link from '@components/Link'
+
 // Interfaces
-import Link from '@root/src/components/Link'
 import { SocialNetworkListProps } from './interfaces'
 
 export default function SocialNetworkList({
@@ -12,7 +14,7 @@ export default function SocialNetworkList({
         {socialNetworks.map((socialNetwork) => (
           <li
             key={socialNetwork.id}
-            className="seller-social-network-item flex items-center bg-gray-100 text-lg px-2.5 py-1.5 gap-x-1.5 rounded-lg dark:bg-gray-700"
+            className="seller-social-network-item flex items-center bg-gray-100 text-lg px-2.5 py-1.5 gap-x-2.5 rounded-lg dark:bg-gray-700"
           >
             {socialNetworkIcon}
 

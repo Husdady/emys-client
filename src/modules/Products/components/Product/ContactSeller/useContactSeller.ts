@@ -2,15 +2,15 @@
 import { showFloatWarningMessage } from '@libs/antd/message'
 
 // Hooks
-import { useCallback } from 'react'
+import { useCallback, useMemo } from 'react'
 
 // Interfaces
 import { Product } from '@modules/Products/api/interfaces'
 
 // Utils
 import isObject from '@utils/isObject'
+import isUndefined from '@utils/isUndefined'
 import isEmptyObject from '@utils/isEmptyObject'
-import isUndefined from '@root/src/utils/isUndefined'
 
 export const ANONYMUS_SELLER = 'Este vendedor es anónimo'
 
@@ -20,8 +20,21 @@ export const ANONYMUS_SELLER = 'Este vendedor es anónimo'
  */
 export default function useContactSeller({
   name,
+  isInStock,
   mainSeller
-}: Pick<Product, 'name' | 'mainSeller'>) {
+}: Pick<Product, 'name' | 'isInStock' | 'mainSeller'>) {
+  // Define the title popup of the Contact button
+  const titlePopup = useMemo(() => {
+    if (!mainSeller && !isInStock) return 'Este vendedor no está disponible'
+    if (!mainSeller) return 'Contactar vendedor'
+
+    if (isInStock) {
+      return `Contactar a ${mainSeller.fullname}`
+    }
+
+    return `Actualmente ${mainSeller.fullname} no está disponible`
+  }, [isInStock])
+
   // Callback for open the Whatsapp API
   const openWhatsappAPI = useCallback(() => {
     if (
@@ -42,6 +55,7 @@ export default function useContactSeller({
   }, [mainSeller])
 
   return {
+    titlePopup: titlePopup,
     openWhatsappAPI: openWhatsappAPI
   }
 }

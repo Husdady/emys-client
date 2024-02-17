@@ -15,14 +15,12 @@ import { ResetPasswordFormState } from './interfaces'
 import { LoaderResponse } from '@config/global-interfaces'
 
 // Utils
-// import isString from '@utils/isString'
-// import isEmptyString from '@utils/isEmptyString'
+import isString from '@utils/isString'
+import isEmptyString from '@utils/isEmptyString'
 import getQueryParam from '@utils/getQueryParam'
 
 // Constants
 import { HOME_PATH } from '@assets/data/paths'
-import isString from '@root/src/utils/isString'
-import isEmptyString from '@root/src/utils/isEmptyString'
 
 export const DEFAULT_VALUES = {
   password: '',

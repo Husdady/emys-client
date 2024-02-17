@@ -1,0 +1,7 @@
+// Mixins
+@import '@styles/mixins/page';
+
+.my-favorite-products-page {
+  @include addPaddingTopToPage;
+  @include fixPositionOfTheFloatButtons;
+}

@@ -1,7 +1,6 @@
+// Mixins
+@import '@styles/mixins/ubigeo.scss';
+
 .testimonials-filters-form {
-  & .ubigeo-filters {
-    & .select {
-      @apply w-full sm:w-[calc(50%-0.4375rem)];
-    }
-  }
+  @include ubigeoFilters;
 }

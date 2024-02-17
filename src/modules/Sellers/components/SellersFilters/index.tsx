@@ -1,4 +1,7 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
+// Librarys
+import { createId } from '@libs/nanoid'
+
 // Components
 import SortBy from './SortBy'
 import FilterByStatus from './FilterByStatus'
@@ -11,22 +14,19 @@ import useSellersFilters from './useSellersFilters'
 // Constants
 import { ubigeoConfigFilters } from './constants'
 
+export const SELLERS_FILTERS_FORM_ID = createId()
+
 export default function SellersFiltersForm() {
   const {
     watch,
     submit,
     register,
-    onFilter,
     setValue,
     getValues,
-    emailField,
-    phoneField,
-    statusField,
     handleSubmit,
     onClear,
     onChangeSortBy,
-    isMobileScreen,
-    // isDesktopScreen,
+    onChangeStatus,
     deleteQueryParam,
     handlePressEnter,
     isShowingClearIcon,
@@ -36,6 +36,7 @@ export default function SellersFiltersForm() {
   return (
     <form
       noValidate
+      id={SELLERS_FILTERS_FORM_ID}
       onSubmit={handleSubmit(submit)}
       className="sellers-filters-form flex flex-col gap-y-3 mt-1.5 mb-3"
     >
@@ -56,7 +57,7 @@ export default function SellersFiltersForm() {
           customInput={register('dni')}
           onPressEnter={handlePressEnter('dni')}
           isShowingClearIcon={isShowingClearIcon('dni')}
-          containerClassName="w-full md:w-[50%]"
+          containerClassName="w-full sm:w-[50%]"
           placeholder="Buscar vendedores por DNI..."
           textLabelClassName="w-8"
           textLabel="DNI"
@@ -68,15 +69,43 @@ export default function SellersFiltersForm() {
           customInput={register('ruc')}
           onPressEnter={handlePressEnter('ruc')}
           isShowingClearIcon={isShowingClearIcon('ruc')}
-          containerClassName="w-full md:w-[50%]"
+          containerClassName="w-full sm:w-[50%]"
           placeholder="Buscar vendedores por RUC..."
           textLabelClassName="w-8"
           textLabel="RUC"
         />
       </div>
 
-      {isMobileScreen && <SearchFilter {...emailField} />}
-      {isMobileScreen && <FilterByStatus {...statusField} />}
+      <div className="flex items-center flex-wrap sm:flex-nowrap gap-x-2.5 gap-y-3">
+        <SearchFilter
+          type="email"
+          textLabelClassName="w-28"
+          textLabel="Correo electrónico"
+          onClear={onClear('email')}
+          customInput={register('email')}
+          containerClassName="w-full sm:w-[50%] email-field"
+          onPressEnter={handlePressEnter('email')}
+          isShowingClearIcon={isShowingClearIcon('email')}
+          placeholder="Buscar vendedores por correo electrónico..."
+        />
+
+        <SearchFilter
+          type="number"
+          textLabelClassName="w-24"
+          textLabel="Número telefónico"
+          onClear={onClear('phone')}
+          customInput={register('phone')}
+          containerClassName="w-full sm:w-[50%]"
+          onPressEnter={handlePressEnter('phone')}
+          isShowingClearIcon={isShowingClearIcon('phone')}
+          placeholder="Buscar vendedores por número telefónico..."
+        />
+      </div>
+
+      <div className="flex items-center flex-wrap sm:flex-nowrap gap-x-2.5 gap-y-3">
+        <FilterByStatus onChange={onChangeStatus} selectedValue={getValues('status')} />
+        <SortBy onChange={onChangeSortBy} selectedValue={sortBySelectedOption} />
+      </div>
 
       <UbigeoFilters
         watch={watch}
@@ -85,14 +114,6 @@ export default function SellersFiltersForm() {
         config={ubigeoConfigFilters}
         deleteQueryParam={deleteQueryParam}
       />
-
-      <div className="flex items-center flex-wrap sm:flex-nowrap gap-x-2.5 gap-y-3">
-        {!isMobileScreen && (
-          <SearchFilter {...emailField} containerClassName="sm:w-[50%] xl:w-[67%]" />
-        )}
-
-        <SortBy onChange={onChangeSortBy} selectedValue={sortBySelectedOption} />
-      </div>
     </form>
   )
 }

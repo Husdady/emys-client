@@ -15,7 +15,7 @@ export default function Products({
   productItemsRef
 }: ProductsProps) {
   return (
-    <section id="products" className="mt-[1.5rem] mx-auto max-w-[1200px]">
+    <section id="products" className="mt-[1.5rem] mx-auto max-w-[1200px] 2xl:max-w-[1550px]">
       {isLoading && <Placeholder />}
 
       {!isLoading && Array.isArray(products) && !isEmptyArray(products) && (

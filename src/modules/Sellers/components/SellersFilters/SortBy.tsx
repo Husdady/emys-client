@@ -12,8 +12,8 @@ export default function SellersSortBy(props: FilterProps) {
     <SortBy
       {...props}
       options={sortNameAndEmailOptions}
+      containerClassName="w-full md:w-[50%]"
       noSelectionLabel="Ordenar vendedores por"
-      containerClassName="w-full sm:w-[50%] xl:w-[33%]"
     />
   )
 }

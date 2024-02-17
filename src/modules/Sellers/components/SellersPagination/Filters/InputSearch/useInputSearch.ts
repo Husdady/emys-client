@@ -9,6 +9,7 @@ import {
 
 // Hooks
 import useFiltersQuery from '@hooks/useFiltersQuery'
+import useValidateSearchValue from '@components/MainSeeker/useValidateSearchValue'
 import { useLazyGetSellersQuery } from '@modules/Sellers/api/graphql'
 
 // Interfaces
@@ -48,7 +49,7 @@ export default function useInputSearch() {
   const handleFilter = useCallback(
     async (slug?: string) => {
       // Prevent make request if has invalid search value
-      if ((!query.q && isEmptyString(searchValue)) || searchValue === query.q) return
+      if (!slug && ((!query.q && isEmptyString(searchValue)) || searchValue === query.q)) return
 
       showMask() // Show mask in the screen
       showFloatLoadingMessage(LOADING_FILTERS) // Show float message
@@ -59,7 +60,7 @@ export default function useInputSearch() {
         q: slug === CLEAR_VALUE_SLUG || isEmptyString(searchValue) ? undefined : searchValue
       }
 
-      const response = await trigger(args) // Filter testimonials
+      const response = await trigger(args) // Filter sellers
       hideFloatMessageByKey(FILTERING_SELLERS) // Hide float message
       hideMask() // Hide mask from the screen
 
@@ -69,7 +70,6 @@ export default function useInputSearch() {
       }
 
       createQueryParams(args as Record<string, unknown>) // Create query params
-      if (isEmptyString(searchValue)) return // Some filter not exists
 
       // Show float success message
       return showFloatInfoMessage(SUCCESS_MESSAGE_FILTERS)
@@ -92,6 +92,12 @@ export default function useInputSearch() {
     setSearchValue('')
     void handleFilter?.(CLEAR_VALUE_SLUG)
   }, [handleFilter])
+
+  useValidateSearchValue<SellersPaginationArgs>({
+    query: query,
+    searchValue: searchValue,
+    setSearchValue: setSearchValue
+  })
 
   return {
     searchValue: searchValue,

@@ -4,13 +4,9 @@ import type { WeightType, CurrencyType, ProductType, CustomProductFieldsType } f
 // Interfaces
 import { Seller } from '@modules/Sellers/api/interfaces'
 import { Image, TimeStamps } from '@libs/axios/interfaces'
+import { Category } from '@modules/Categories/api/interfaces'
 import { Country } from '@modules/Ubigeo/api/countries/interfaces'
-
-export interface Category extends TimeStamps {
-  id: string
-  name: string
-  type: ProductType
-}
+import { PaginationArgs, GraphQLPagination } from '@libs/graphql/interfaces'
 
 export interface CustomProductField extends TimeStamps {
   id: string
@@ -68,4 +64,31 @@ export interface ProductId {
 
 export interface ProductIdParams {
   data: ProductId
+}
+
+export interface Products {
+  products: GraphQLPagination<Product[]>
+}
+
+export interface FavoriteProducts {
+  myFavoriteProducts: GraphQLPagination<Product[]>
+}
+
+export interface ProductsPaginationArgs extends PaginationArgs {
+  sku?: string
+  code?: string
+  maker?: string
+  origin?: string
+  minPrice?: number
+  maxPrice?: number
+  isInStock?: boolean
+  totalUnits?: number
+  populate?: boolean
+  productName?: string
+  categories?: string[]
+  excludeProducts?: string[]
+}
+
+export interface FavoriteProductsPaginationArgs extends ProductsPaginationArgs {
+  favoriteProductsId: string[]
 }

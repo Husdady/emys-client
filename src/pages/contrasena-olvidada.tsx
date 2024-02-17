@@ -2,7 +2,7 @@
 import AuthRoute from '@routes/AuthRoute'
 
 // Layouts
-import MainLayout from '@root/src/layouts/MainLayout'
+import MainLayout from '@layouts/MainLayout'
 import AuthLayout from '@layouts/AuthLayouts/AuthLayout'
 import ForgotPasswordLayout from '@layouts/AuthLayouts/ForgotPasswordLayout'
 

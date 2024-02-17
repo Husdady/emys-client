@@ -10,7 +10,7 @@ export default function Fallback({ className, textLabelClassName }: SelectFallba
       <div
         className={classnames([
           textLabelClassName,
-          'min-h-[20px] sm:min-h-[18px] sm:min-h-[18px] mb-[0.35rem] bg-gray-300/40 rounded animation-pulse dark:!bg-gray-800'
+          'min-h-[20px] sm:min-h-[18px] sm:min-h-[18px] mb-[0.35rem] bg-gray-300/40 rounded animation-pulse dark:!bg-gray-600'
         ])}
       ></div>
 

@@ -6,10 +6,17 @@ import useSocialNetworks from './useSocialNetworks'
 
 // Interfaces
 import { SocialNetworksProps } from './interfaces'
-import isEmptyArray from '@root/src/utils/isEmptyArray'
+
+// Utils
+import isEmptyArray from '@utils/isEmptyArray'
 
 export default function SocialNetworks(props: SocialNetworksProps) {
-  const { socialNetworkList, handleShowAccountOfSocialNetwork } = useSocialNetworks(props)
+  const {
+    getTitlePopup,
+    socialNetworkList,
+    checkIfSocialNetowrkHasAccounts,
+    handleShowAccountOfSocialNetwork
+  } = useSocialNetworks(props)
 
   // Empty accounts of Social Networks
   if (isEmptyArray(socialNetworkList)) return null
@@ -22,8 +29,10 @@ export default function SocialNetworks(props: SocialNetworksProps) {
             <Button
               title=""
               icon={socialNetwork.icon}
+              titlePopup={getTitlePopup(socialNetwork)}
               onClick={handleShowAccountOfSocialNetwork(socialNetwork)}
-              className="rounded-full !p-2 hover:bg-gray-200 dark:bg-gray-500 dark:hover:bg-gray-400"
+              disabled={!checkIfSocialNetowrkHasAccounts(socialNetwork)}
+              className="rounded-full !p-2 enabled:hover:bg-gray-200 dark:bg-gray-500 dark:enabled:hover:bg-gray-400"
             />
           </li>
         ))}

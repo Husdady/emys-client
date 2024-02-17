@@ -7,6 +7,10 @@ import useScrollToLastSelectedValue from '@components/MultiSelect/hooks/useScrol
 // Interfaces
 import { Option, MultiSelectProps } from '@components/MultiSelect/interfaces'
 
+// Utils
+import isEmptyString from '@utils/isEmptyString'
+import getDefaultListHeight from '@components/MultiSelect/utils/getDefaultListHeight'
+
 export interface UseSearchOptionsParams
   extends Pick<MultiSelectProps, 'selectedValues' | 'canSearchOptions' | 'enableVirtualization'> {
   initialOptions: MultiSelectProps['options']
@@ -25,10 +29,11 @@ export default function useSearchOptions({
   const ref = React.useRef<HTMLDivElement | null>(null)
   const [searchValue, setSearchValue] = React.useState('')
 
-  // Define flag for show the clear icon in the seeker
-  const isShowingClearIcon = React.useMemo(() => {
-    return searchValue.length > 0
-  }, [searchValue])
+  // Define the select options style
+  const selectOptionsStyle = React.useMemo(() => {
+    const { defaultListHeight } = getDefaultListHeight()
+    return { maxHeight: `${defaultListHeight}px` }
+  }, [])
 
   // Define the filtered options
   const filteredOptions = React.useMemo(() => {
@@ -71,6 +76,7 @@ export default function useSearchOptions({
     handleSearch: handleSearch,
     isLastActived: isLastActived,
     filteredOptions: filteredOptions,
-    isShowingClearIcon: isShowingClearIcon
+    selectOptionsStyle: selectOptionsStyle,
+    isShowingClearIcon: !isEmptyString(searchValue)
   }
 }
