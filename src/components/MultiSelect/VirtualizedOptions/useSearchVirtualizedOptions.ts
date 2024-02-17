@@ -6,12 +6,8 @@ import useSearchOptions, {
   UseSearchOptionsParams
 } from '@components/MultiSelect/Options/useSearchOptions'
 
-// Constants
-import {
-  MIN_OPTIONS_TO_SHOW,
-  DEFAULT_LIST_HEIGHT,
-  DEFAULT_OPTION_HEIGHT
-} from '@components/MultiSelect/constants'
+// Utils
+import getDefaultListHeight from '@components/MultiSelect/utils/getDefaultListHeight'
 
 /**
  * Hook for search virtualized options of the MultiSelect component
@@ -19,10 +15,11 @@ import {
  */
 export default function useSearchVirtualizedOptions(params: UseSearchOptionsParams) {
   const searchData = useSearchOptions(params)
+  const { defaultListHeight, defaultOptionHeight, minOptionsToShow } = getDefaultListHeight()
 
   const adjusts = useHeightForVirtualizedOption({
-    defaultOptionHeight: DEFAULT_OPTION_HEIGHT,
-    defaultContainerHeight: DEFAULT_LIST_HEIGHT
+    defaultOptionHeight: defaultOptionHeight,
+    defaultContainerHeight: defaultListHeight
   })
 
   // Get index of the last active item
@@ -39,7 +36,7 @@ export default function useSearchVirtualizedOptions(params: UseSearchOptionsPara
     if (
       lastActiveItemIndex !== -1 &&
       adjusts.listRef.current !== null &&
-      params.initialOptions.length > MIN_OPTIONS_TO_SHOW + 1
+      params.initialOptions.length > minOptionsToShow + 1
     ) {
       adjusts.listRef.current.scrollToItem(lastActiveItemIndex, 'start')
     }
