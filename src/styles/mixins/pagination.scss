@@ -60,6 +60,13 @@
       @apply px-3;
     }
   }
+
+  @media only screen and (max-width: 350px) {
+    & #{$sectionContainer},
+    & #{$filtersContainer} {
+      @apply px-3;
+    }
+  }
 }
 
 @mixin productsPagination($listSelector, $sectionContainer, $filtersContainer) {
