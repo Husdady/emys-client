@@ -115,4 +115,3 @@ export function clearFormDataFromRequestOnAxios(): void {
   Object.assign(instance.defaults.headers.post, common)
   Object.assign(instance.defaults.headers.common, common)
 }
-

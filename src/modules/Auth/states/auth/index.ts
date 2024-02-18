@@ -11,7 +11,7 @@ import { User, AuthState, AuthPayload } from './interfaces'
 
 export const AUTH_KEY = 'auth'
 
-const initialState: AuthState = {
+export const initialState: AuthState = {
   user: null,
   token: null,
   isAuthenticated: false

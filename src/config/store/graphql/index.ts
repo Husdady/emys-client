@@ -3,6 +3,9 @@ import { client } from '@libs/graphql'
 import { createApi } from '@reduxjs/toolkit/query/react'
 import { graphqlRequestBaseQuery } from '@rtk-query/graphql-request-base-query'
 
+// Utils
+import validateGraphqlErrors from './validateGraphqlErrors'
+
 // Constants
 import {
   REDUCER_PATH,
@@ -22,7 +25,11 @@ export const api = createApi({
   endpoints: () => ({}),
   reducerPath: REDUCER_PATH,
   refetchOnMountOrArgChange: true,
-  baseQuery: graphqlRequestBaseQuery({ client: client }),
+  baseQuery: graphqlRequestBaseQuery({
+    client: client,
+    customErrors: validateGraphqlErrors
+  }),
+
   tagTypes: [
     SELLERS_KEY,
     PRODUCTS_KEY,

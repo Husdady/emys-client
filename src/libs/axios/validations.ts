@@ -61,12 +61,10 @@ export default class AxiosValidations {
 
     // Get the refresh token
     const refreshToken = result?.refreshToken
+    if (!isString(refreshToken)) return // Check if not exists a 'refreshToken'
 
-    // Check if exists a 'refreshToken'
-    if (isString(refreshToken)) {
-      saveTokenOnAxios(refreshToken)
-      saveTokenOnGraphqlClient(refreshToken)
-    }
+    saveTokenOnAxios(refreshToken)
+    saveTokenOnGraphqlClient(refreshToken)
   }
 
   /**
