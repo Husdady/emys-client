@@ -41,7 +41,7 @@ export default function useSearchOptions({
 
     // Return the filtered options
     return initialOptions.filter((option) =>
-      option.label.toLowerCase().includes(searchValue.toLowerCase())
+      option.label?.toLowerCase().includes(searchValue?.toLowerCase())
     )
   }, [searchValue])
 

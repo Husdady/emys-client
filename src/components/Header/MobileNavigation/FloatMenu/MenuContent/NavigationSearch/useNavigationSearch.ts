@@ -57,7 +57,7 @@ export default function useNavigationSearch({
     return navigationItems.filter(
       (navigationItem) =>
         navigationItem.hideInResults !== true &&
-        navigationItem.title.toLowerCase().includes(watch('search').toLowerCase())
+        navigationItem.title?.toLowerCase().includes(watch('search')?.toLowerCase())
     )
   }, [user, watch('search'), watch('isShowingResults'), navigationItems])
 

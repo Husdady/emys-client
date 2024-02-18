@@ -42,7 +42,7 @@ export default function useSearchOptions({
     // Return the filtered options
     return initialOptions
       .filter((option) => isObject(option) && !('markup' in option))
-      .filter((option) => option.label.toLowerCase().includes(searchValue.toLowerCase()))
+      .filter((option) => option.label?.toLowerCase().includes(searchValue?.toLowerCase()))
   }, [searchValue, initialOptions])
 
   // Callback for clear the search value
