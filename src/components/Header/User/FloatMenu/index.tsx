@@ -39,7 +39,7 @@ export default function FloatMenu(props: MenuData) {
 
           <AppVersion
             className={classnames([
-              isAuthenticated ? 'border-t-2 border-gray-300/30 dark:border-gray-700 pt-2' : "mt-8"
+              isAuthenticated ? 'border-t border-gray-300/30 dark:border-gray-600 pt-2' : "mt-8"
             ])}
           />
         </div>
