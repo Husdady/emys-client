@@ -11,11 +11,12 @@ export default function Plus(props: IconSvgProps) {
         width="24"
         height="24"
         fill="none"
-        strokeWidth="2"
+        strokeWidth="3"
         viewBox="0 0 24 24"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        style={{ strokeWidth: '3' }}
         xmlns="http://www.w3.org/2000/svg"
       >
         <path stroke="none" d="M0 0h24v24H0z" fill="none" />

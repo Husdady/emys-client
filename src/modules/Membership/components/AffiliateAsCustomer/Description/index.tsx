@@ -18,7 +18,7 @@ export default function Description() {
       <h3
         className={classnames([
           Lato.className,
-          'dark:text-pink-300 text-[1.15rem] font-semibold dark:font-normal leading-tight mb-1.5 tracking-wide dark:font-lexend dark:tracking-[initial]'
+          'dark:text-pink-200 text-[1.15rem] font-semibold dark:font-normal leading-tight mb-1.5 tracking-wide dark:font-lexend dark:tracking-[initial]'
         ])}
       >
         ¿Cómo me afilio como Cliente Admirable?

@@ -46,7 +46,7 @@ export default function ModalFooter({
             {...acceptButtonProps}
             className={classnames([
               acceptButtonProps?.className,
-              'btn-accept-modal !py-[0.65rem] !px-4 text-white !rounded-[0.35rem] bg-main-700 dark:bg-pink-400 gap-x-2 hover:opacity-60'
+              'btn-accept-modal !py-[0.65rem] !px-4 text-white !rounded-[0.35rem] bg-main-700 dark:bg-pink-700 gap-x-2 hover:opacity-60'
             ])}
           />
         </Suspense>

@@ -52,7 +52,7 @@
   @apply pt-[13px] border-t border-gray-200 py-3 px-4;
 
   & .btn {
-    @apply min-h-[48px] sm:min-h-[44px] sm:max-h-[44px];
+    @apply min-h-[44px] sm:min-h-[40px] sm:max-h-[40px];
   }
 
   @media only screen and (max-width: 640px) {

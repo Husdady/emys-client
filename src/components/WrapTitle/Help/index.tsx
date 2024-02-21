@@ -14,7 +14,7 @@ export default function Help({ title }: HelpProps) {
         <HelpIcon
           size="sm"
           useHoverEffect
-          className="help rounded-full pointer-events-none bg-gray-600 text-gray-200 dark:bg-pink-300 dark:text-gray-800"
+          className="help rounded-full pointer-events-none bg-gray-600 text-gray-200 dark:bg-pink-200 dark:text-gray-800"
         />
       </div>
     </Tooltip>
