@@ -23,7 +23,7 @@ const Remember: React.FC<LoginRememberProps> = ({ remember, onRemember }: LoginR
       <Checkbox
         checkColor="#ffffff"
         label="Almacenar datos"
-        inputClassName="checked:!bg-main-500 dark:border-gray-600 dark:checked:!bg-main-400"
+        inputClassName="checked:!bg-pink-500 dark:border-gray-600 dark:checked:!bg-pink-400"
         customLabel={customLabel}
         onToggle={onRemember}
         checked={remember}
@@ -31,7 +31,7 @@ const Remember: React.FC<LoginRememberProps> = ({ remember, onRemember }: LoginR
 
       <Link
         href={FORGOT_PASSWORD_PATH}
-        className="text-sm font-semibold text-main-700 dark:text-main-200 hover:underline whitespace-nowrap"
+        className="text-sm font-semibold text-main-700 dark:text-pink-300 hover:underline whitespace-nowrap"
       >
         ¿Contraseña olvidada?
       </Link>

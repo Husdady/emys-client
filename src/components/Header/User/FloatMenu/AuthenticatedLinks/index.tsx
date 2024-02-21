@@ -19,7 +19,7 @@ const NavigationItem = dynamic(() => import('@components/Header/User/FloatMenu/N
 export default function UnauthenticatedLinks(props: MenuData) {
   return (
     <section className="navigation mobile-menu-content overflow-y-auto overflow-x-hidden">
-      <h6 className="navigation-title text-[0.76rem] mt-4 ml-4 mr-5 sm:ml-5 sm:mr-6 mb-2 font-bold uppercase font-lato tracking-wider text-main-700 dark:text-main-200">
+      <h6 className="navigation-title text-[0.76rem] mt-4 ml-4 mr-5 sm:ml-5 sm:mr-6 mb-2 font-bold uppercase font-lato tracking-wider text-main-700 dark:text-pink-300">
         Acciones
       </h6>
 

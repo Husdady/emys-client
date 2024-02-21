@@ -16,7 +16,7 @@ function Copyright() {
       id="copyright"
       className="py-2 px-4 flex items-center justify-center font-lexend text-[0.75rem] text-gray-300 border-t border-gray-500 overflow-hidden"
     >
-      <CopyrightIcon className="text-main-200" />
+      <CopyrightIcon className="text-pink-300" />
       <span className="ms-1">
         Aplicación desarrollada por&nbsp;
         <a

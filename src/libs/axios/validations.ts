@@ -26,6 +26,7 @@ import isUndefined from '@utils/isUndefined'
 
 // Constants
 import { JWT_ERRORS } from './constants'
+import { LOGIN_PATH } from '@assets/data/paths'
 import {
   INFO_STATUS,
   ERROR_STATUS,
@@ -118,6 +119,7 @@ export default class AxiosValidations {
 
     params.hideModal?.()
     params.signOut?.()
+    window.location.href = LOGIN_PATH
   }
 
   /**

@@ -61,15 +61,13 @@ export default function Product({
     >
       <Heart productId={id} productName={name} />
 
-      <div>
-        <ProductImage coverImage={coverImage} />
-        <ProductName name={name} isInStock={isInStock} />
-
-        <div className="flex items-center justify-between gap-x-4 my-2">
-          <Sku sku={sku} />
-          <StockTag isInStock={isInStock} />
+       <div className='flex'>
+        <StockTag isInStock={isInStock} />
         </div>
 
+      <div className='mt-3'>
+        <ProductImage coverImage={coverImage} />
+        <ProductName name={name} isInStock={isInStock} />
         <Description description={description} />
       </div>
 

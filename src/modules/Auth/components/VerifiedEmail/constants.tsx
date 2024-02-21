@@ -26,7 +26,7 @@ export const WarningIcon = (
 )
 
 export const CloseIcon = (
-  <X className="table text-white rounded-full p-1 border-4 mx-auto stroke-3 bg-red-700/80 border-red-800/70 dark:bg-main-400/90 dark:border-gray-700/70 hover:cursor-default" />
+  <X className="table text-white rounded-full p-1 border-4 mx-auto stroke-3 bg-red-700/80 border-red-800/70 dark:bg-pink-400/90 dark:border-gray-700/70 hover:cursor-default" />
 )
 
 export const getVerificationMessageProps = (status: WrongVerificationProps['status']) => ({

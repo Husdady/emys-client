@@ -24,7 +24,7 @@ function Buttons() {
         href={OMNILIFE_ENTREPRENEUR_URL}
         className="btn-entrepreneur-client bg-sky-200 text-sky-900 py-2.5 px-4 hover:bg-emerald-200 table"
       >
-        Empresario Admirable
+        Empresario Omnilife
       </a>
     </section>
   )

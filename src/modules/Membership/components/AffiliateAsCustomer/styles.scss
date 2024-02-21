@@ -1,0 +1,16 @@
+// Mixins
+@import '@styles/mixins/membership.scss';
+
+.affiliate-as-customer {
+  @include membershipButton('.btn-affiliate-as-customer');
+
+  @media only screen and (max-width: 503px) {
+    & .aside {
+      & .btn-affiliate-as-customer {
+        & span {
+          @apply max-w-[230px]
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 // Interfaces
-import { ProductId, ProductIdParams } from './interfaces'
+import { AddProductToFavoritesParams, RemoveProductFromFavoritesParams } from './interfaces'
 
 // API
 import { api } from '@config/store/api'
@@ -8,7 +8,7 @@ export const productsApi = api.injectEndpoints({
   endpoints: (builder) => ({
     // Add product to Favorites
     addProductToFavorites: builder.mutation({
-      query: (params: ProductIdParams) => ({
+      query: (params: AddProductToFavoritesParams) => ({
         ...params,
         method: 'POST',
         url: '/products/favorites'
@@ -17,7 +17,7 @@ export const productsApi = api.injectEndpoints({
 
     // Remove product from Favorites
     removeProductFromFavorites: builder.mutation({
-      query: (params: ProductId) => ({
+      query: (params: RemoveProductFromFavoritesParams) => ({
         ...params,
         method: 'PATCH',
         url: `/products/favorites/${params.productId}`

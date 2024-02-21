@@ -9,7 +9,7 @@ import Menu from '@assets/icons/menu'
 import { MenuData } from './useMobileNavigation/interfaces'
 
 export const SHARED_MENU_CLASSNAME =
-  'btn-menu scale py-1.5 !px-2 rounded bg-gray-200 text-main-700 dark:bg-gray-700/80 dark:text-main-200'
+  'btn-menu scale py-1.5 !px-2 rounded bg-gray-200 text-main-700 dark:bg-gray-700/80 dark:text-pink-300'
 
 function MenuIcon({ toggleMenu, isShowingMenu }: MenuData) {
   return (

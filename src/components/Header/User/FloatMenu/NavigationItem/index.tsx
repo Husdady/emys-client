@@ -29,9 +29,9 @@ export default function NavigationItem({
       className={classnames([
         className,
         router.pathname === path
-          ? 'bg-main-700/10 text-main-700 !border-l-main-700 dark:bg-main-200/30 dark:text-pink-200 dark:!border-l-main-200 !border-b-transparent'
+          ? 'bg-main-700/10 text-main-700 !border-l-main-700 dark:bg-pink-300/30 dark:text-pink-200 dark:!border-l-main-200 !border-b-transparent'
           : 'dark:text-gray-200',
-        'navigation-list-item-link flex items-center border-l-[5px] border-transparent py-3.5 sm:py-3 px-3 font-semibold tracking-wide md:hover:bg-main-700/10 md:hover:text-main-700 dark:!font-normal dark:md:hover:!font-normal dark:md:hover:bg-main-200/30 dark:md:hover:text-pink-200 whitespace-normal'
+        'navigation-list-item-link flex items-center border-l-[5px] border-transparent py-3.5 sm:py-3 px-3 font-semibold tracking-wide md:hover:bg-main-700/10 md:hover:text-main-700 dark:!font-normal dark:md:hover:!font-normal dark:md:hover:bg-pink-300/30 dark:md:hover:text-pink-200 whitespace-normal'
       ])}
     >
       <div className="inner flex items-center gap-x-2">

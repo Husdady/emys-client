@@ -22,7 +22,7 @@ export default function Aside({
         <h3
           className={classnames([
             titleClassName,
-            'dark:text-main-200 text-[1.15rem] font-semibold dark:font-normal leading-tight mb-1.5 tracking-wide dark:font-lexend dark:tracking-[initial]'
+            'dark:text-pink-300 text-[1.15rem] font-semibold dark:font-normal leading-tight mb-1.5 tracking-wide dark:font-lexend dark:tracking-[initial]'
           ])}
         >
           {title}

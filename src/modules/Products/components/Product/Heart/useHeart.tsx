@@ -8,6 +8,7 @@ import HeartRegular from '@assets/icons/heart-regular'
 
 // Hooks
 import useAuth from '@hooks/useAuth'
+import useMobileScreen from '@hooks/useMobileScreen'
 import {
   useAddProductToFavoritesMutation,
   useRemoveProductFromFavoritesMutation
@@ -25,8 +26,9 @@ import { HEART_SOLID, HEART_REGULAR, type HeartIconType } from './constants'
  * @param {HeartProps} params Receive a 'productId' and 'productName'
  */
 export default function useHeart({ productId, productName }: HeartProps) {
-  const { user, updateUser, isAuthenticated } = useAuth()
+  const isMobileScreen = useMobileScreen()
   const buttonWrapperRef = useRef<HTMLDivElement | null>(null)
+  const { user, signOut, updateUser, isAuthenticated } = useAuth()
 
   const [isAddedToFavorites, setAddedToFavorites] = useState(() => {
     if (isAuthenticated) {
@@ -82,6 +84,9 @@ export default function useHeart({ productId, productName }: HeartProps) {
   // Callback for add or remove the product to the favorites
   const handleToggleToFavorites = useCallback(
     async (e: MouseEvent<HTMLDivElement> | MouseEvent<HTMLButtonElement>) => {
+      e.stopPropagation()
+      e.preventDefault()
+
       // The user is not logged in
       if (!isAuthenticated) {
         return showFloatWarningMessage(
@@ -89,7 +94,7 @@ export default function useHeart({ productId, productName }: HeartProps) {
         )
       }
 
-      e.stopPropagation()
+      setAddedToFavorites((s) => !s) // Toggle added to favorites
 
       // Get the favorite products id of the user
       const favoriteProductsId = [...(user?.favoriteProductsId ?? [])]
@@ -98,7 +103,7 @@ export default function useHeart({ productId, productName }: HeartProps) {
         handleSetHeartRegular() // Show 'heart-regular' icon
 
         // Make request to the API for remove product from Favorites
-        const result = await removeFromFavorites({ productId: productId })
+        const result = await removeFromFavorites({ signOut: signOut, productId: productId })
 
         if ('data' in result) {
           // Update User data
@@ -112,15 +117,13 @@ export default function useHeart({ productId, productName }: HeartProps) {
         handleSetHeartSolid() // Show 'heart-solid' icon
 
         // Make request to the API for add product to Favorites
-        const result = await addToFavorites({ data: { productId: productId } })
+        const result = await addToFavorites({ signOut: signOut, data: { productId: productId } })
 
         if ('data' in result) {
           // Update User data
           updateUser({ favoriteProductsId: [...favoriteProductsId, productId] })
         }
       }
-
-      setAddedToFavorites((s) => !s) // Toggle added to favorites
     },
     [productName, isAuthenticated, isAddedToFavorites, handleSetHeartSolid, handleSetHeartRegular]
   )
@@ -142,6 +145,7 @@ export default function useHeart({ productId, productName }: HeartProps) {
   return {
     HeartIcon: HeartIcon,
     titlePopup: titlePopup,
+    isMobileScreen: isMobileScreen,
     handleMouseEnter: handleMouseEnter,
     handleMouseLeave: handleMouseLeave,
     buttonWrapperRef: buttonWrapperRef,

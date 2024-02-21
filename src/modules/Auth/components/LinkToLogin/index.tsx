@@ -14,7 +14,7 @@ export default function LinkToLogin() {
 
       <Link
         href={LOGIN_PATH}
-        className="link-to-login-form ml-[0.35rem] font-semibold text-main-700 dark:text-main-200 hover:underline"
+        className="link-to-login-form ml-[0.35rem] font-semibold text-main-700 dark:text-pink-300 hover:underline"
       >
         Iniciar sesión
       </Link>

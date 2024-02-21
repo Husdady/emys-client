@@ -12,7 +12,7 @@ import classnames from '@utils/classnames'
 // Lazy Components
 const BoxWrapper = lazy(() => import('@components/Wrapper'))
 
-export const customTitle = { className: 'text-main-500' }
+export const customTitle = { className: 'text-pink-500' }
 
 export default function EmptyScreen(props: EmptyProps) {
   return (

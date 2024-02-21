@@ -22,10 +22,6 @@ const config: Config = {
       },
       colors: {
         main: {
-          100: '#f43f5e',
-          200: '#be8282',
-          400: '#ab1515',
-          500: '#d51f56',
           700: '#b41344'
         },
         dark: {

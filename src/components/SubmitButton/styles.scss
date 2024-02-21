@@ -2,7 +2,7 @@
   @apply min-h-[50px];
 
   &:enabled:hover {
-    @apply bg-[#d62057] dark:bg-[#c72424];
+    @apply bg-rose-500 dark:bg-pink-600;
 
     & span {
       @apply underline;

@@ -1,0 +1,6 @@
+// Mixins
+@import '@styles/mixins/membership.scss';
+
+.affiliate-program {
+  @include membershipButton('.btn-download-affiliate-program');
+}

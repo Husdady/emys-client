@@ -1,4 +1,4 @@
-export default function MembershipDescription() {
+export default function Description() {
   return (
     <span className="mt-3 block">
       <span>

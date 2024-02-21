@@ -23,7 +23,7 @@ function MenuTop({ hideMenu }: MenuData) {
       <X
         size="xl"
         onClick={hideMenu}
-        className="p-2 cursor-pointer toggle-menu rounded stroke-3 bg-gray-200/70 text-main-700 dark:bg-gray-700/70 dark:text-main-200 hover:bg-gray-200 dark:hover:bg-gray-700"
+        className="p-2 cursor-pointer toggle-menu rounded stroke-3 bg-gray-200/70 text-main-700 dark:bg-gray-700/70 dark:text-pink-300 hover:bg-gray-200 dark:hover:bg-gray-700"
       />
     </div>
   )

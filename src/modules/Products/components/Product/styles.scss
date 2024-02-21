@@ -18,21 +18,21 @@
   @media only screen and (max-width: 520px) {
     @apply text-[15px];
 
-    & .btn-heart {
-      width: 33px;
-      height: 33px;
-      padding: 0 !important;
-      @apply p-0 flex items-center justify-center;
+    // & .btn-heart {
+    //   width: 33px;
+    //   height: 33px;
+    //   padding: 0 !important;
+    //   @apply p-0 flex items-center justify-center;
 
-      & .icon {
-        & svg {
-          width: 18px !important;
-          height: 18px !important;
-          min-width: 18px !important;
-          min-height: 18px !important;
-        }
-      }
-    }
+    //   & .icon {
+    //     & svg {
+    //       width: 18px !important;
+    //       height: 18px !important;
+    //       min-width: 18px !important;
+    //       min-height: 18px !important;
+    //     }
+    //   }
+    // }
 
     & .btn-contact-seller {
       padding-left: 1rem !important;
@@ -52,7 +52,16 @@
     }
 
     & .seller {
-      @apply text-[0.8rem];
+      @apply text-[0.8rem] text-center justify-center;
+
+      & .seller-photo {
+        @apply mx-auto;
+      }
+
+      & .seller-photo,
+      & .seller-fullname {
+        @apply w-full;
+      }
 
       @media only screen and (max-width: 373px) {
         @apply py-1.5 px-2.5 gap-x-[0.35rem] items-center;
@@ -74,10 +83,13 @@
       @apply text-[1.1rem];
     }
 
-    & .product-name,
+    & .product-description {
+      @apply mt-2;
+    }
+
     & .btn-contact-seller,
     & .product-description {
-      @apply text-[0.85rem];
+      @apply text-[0.9rem];
     }
   }
 

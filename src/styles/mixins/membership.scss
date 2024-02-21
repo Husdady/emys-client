@@ -1,0 +1,19 @@
+@mixin membershipButton($button) {
+  & .aside {
+    & #{$button} {
+      @media only screen and (max-width: 503px) {
+        @apply flex-col;
+
+        & .icon {
+          & svg {
+            @apply w-[30px] h-[30px] min-h-[30px] min-w-[30px];
+          }
+        }
+
+        & span {
+          @apply block max-w-[250px] mx-auto;
+        }
+      }
+    }
+  }
+}

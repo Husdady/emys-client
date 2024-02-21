@@ -64,8 +64,13 @@ export interface ProductId {
   productId: string
 }
 
-export interface ProductIdParams {
+export interface AddProductToFavoritesParams {
   data: ProductId
+  signOut?: () => void
+}
+
+export interface RemoveProductFromFavoritesParams extends ProductId {
+  signOut?: () => void
 }
 
 export interface Products {

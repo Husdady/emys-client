@@ -23,7 +23,7 @@ export default function MenuContent(props: MenuData) {
       ref={navigationRef}
       className="navigation mobile-menu-content overflow-y-auto sm:mt-[0.15rem] sm:mr-[0.21rem] overflow-x-hidden"
     >
-      <h6 className="navigation-title text-[0.76rem] mt-4 ml-4 mr-5 sm:ml-5 sm:mr-6 font-bold uppercase font-lato tracking-wider text-main-700 dark:text-main-200">
+      <h6 className="navigation-title text-[0.76rem] mt-4 ml-4 mr-5 sm:ml-5 sm:mr-6 font-bold uppercase font-lato tracking-wider text-main-700 dark:text-pink-300">
         Búsqueda de navegación
       </h6>
 
@@ -32,7 +32,7 @@ export default function MenuContent(props: MenuData) {
       {navigation.map((item, i: number) => {
         return (
           <Fragment key={i}>
-            <h6 className="navigation-title text-[0.76rem] mt-4 ml-4 mr-5 sm:ml-5 sm:mr-6 mb-2 font-bold uppercase font-lato tracking-wider text-main-700 dark:text-main-200">
+            <h6 className="navigation-title text-[0.76rem] mt-4 ml-4 mr-5 sm:ml-5 sm:mr-6 mb-2 font-bold uppercase font-lato tracking-wider text-main-700 dark:text-pink-300">
               {item.navigationTitle}
             </h6>
 

@@ -24,7 +24,7 @@ export default function ButtonRedirectToProducts() {
       <Button
         title=""
         titlePopup="Navegar a la sección de 'Últimos productos agregados'"
-        className="btn-redirect bg-transparent !p-0 animate-circle-arrow-bottom text-main-500 hover:text-rose-500 !w-[initial] dark:text-rose-300 dark:hover:text-rose-500"
+        className="btn-redirect bg-transparent !p-0 animate-circle-arrow-bottom text-pink-500 hover:text-rose-500 !w-[initial] dark:text-rose-300 dark:hover:text-rose-500"
         onClick={
           window.scrollY > (window.innerWidth <= 640 ? 550 : 450)
             ? scrollToWelcome

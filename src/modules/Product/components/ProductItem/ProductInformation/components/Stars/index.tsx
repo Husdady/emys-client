@@ -45,7 +45,7 @@ export default function Stars(product: Product) {
         })}
       </ul>
 
-      <h5 className="title mb-0 text-[1.02rem] text-gray-400 leading-tight text-right max-w-[300px]">
+      <h5 className="title mb-0 text-[1.02rem] text-gray-500 leading-tight text-right max-w-[300px]">
         ¡Hola!, ¿Qué puntuación le darías al producto, de 1 a 5 estrellas?
       </h5>
     </div>

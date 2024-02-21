@@ -18,7 +18,7 @@ export default function DownloadButton() {
       onClick={downloadPDF}
       icon={<PDF size="md" />}
       title="Descargar PDF sobre el Programa de Afiliados"
-      className="!py-3 !px-4 bg-sky-500 hover:bg-blue-600 dark:hover:bg-yellow-200 dark:bg-sky-200 text-white rounded-xl dark:text-sky-900 dark:font-semibold"
+      className="btn-download-affiliate-program !py-3 !px-4 bg-sky-500 hover:bg-blue-600 dark:hover:bg-yellow-200 dark:bg-sky-200 text-white rounded-xl dark:text-sky-900 dark:font-semibold"
     />
   )
 }

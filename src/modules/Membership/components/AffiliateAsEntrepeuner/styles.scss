@@ -1,0 +1,6 @@
+// Mixins
+@import '@styles/mixins/membership.scss';
+
+.affiliate-as-entrepeuner {
+  @include membershipButton('.btn-affiliate-as-entrepeuner');
+}

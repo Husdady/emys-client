@@ -29,7 +29,7 @@ function Header({
 }: HeaderProps) {
   return (
     <div className="latest-added-products-header flex flex-wrap items-center justify-between px-3 max-w-[1100px] mx-auto gap-x-[2.5rem] gap-y-4">
-      <h5 className="text-3xl font-lexend text-main-500 dark:text-rose-300 break-word">
+      <h5 className="text-3xl font-lexend text-pink-500 dark:text-rose-300 break-word">
         Últimos productos agregados
       </h5>
 
