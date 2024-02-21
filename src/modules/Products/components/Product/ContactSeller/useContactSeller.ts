@@ -5,14 +5,17 @@ import { showFloatWarningMessage } from '@libs/antd/message'
 import { useCallback, useMemo } from 'react'
 
 // Interfaces
-import { Product } from '@modules/Products/api/interfaces'
+import { ContactSellerProps } from './interfaces'
 
 // Utils
+import isString from '@utils/isString'
 import isObject from '@utils/isObject'
 import isUndefined from '@utils/isUndefined'
 import isEmptyObject from '@utils/isEmptyObject'
+import isEmptyString from '@utils/isEmptyString'
+import isFunction from '@root/src/utils/isFunction'
 
-export const ANONYMUS_SELLER = 'Este vendedor es anónimo'
+export const ANONYMUS_SELLER = 'Este vendedor es anónimo, por lo que se desconoce su Whatsapp'
 
 /**
  * Hook for implements the logic of the ContactSeller component
@@ -21,8 +24,9 @@ export const ANONYMUS_SELLER = 'Este vendedor es anónimo'
 export default function useContactSeller({
   name,
   isInStock,
-  mainSeller
-}: Pick<Product, 'name' | 'isInStock' | 'mainSeller'>) {
+  mainSeller,
+  defaultMessage
+}: ContactSellerProps) {
   // Define the title popup of the Contact button
   const titlePopup = useMemo(() => {
     if (!mainSeller && !isInStock) return 'Este vendedor no está disponible'
@@ -46,13 +50,20 @@ export default function useContactSeller({
       return showFloatWarningMessage(ANONYMUS_SELLER)
     }
 
-    const message = `Hola ${mainSeller?.fullname}. He visto el producto ${name} y me interesa saber más de este producto`
+    let message = `Hola ${mainSeller.fullname}. He visto el producto ${name} y me interesa saber más de este producto`
+
+    // Replace Whatsapp message for received message by props
+    if (isString(defaultMessage) && !isEmptyString(defaultMessage)) {
+      message = defaultMessage
+    } else if (isFunction(defaultMessage)) {
+      message = defaultMessage({ seller: mainSeller, productName: name })
+    }
 
     window.open(
       `https://api.whatsapp.com/send?phone=+51${mainSeller.phone}&text=${message}`,
       '_blank'
     )
-  }, [mainSeller])
+  }, [mainSeller, defaultMessage])
 
   return {
     titlePopup: titlePopup,

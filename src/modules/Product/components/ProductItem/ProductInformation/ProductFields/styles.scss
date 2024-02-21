@@ -1,0 +1,31 @@
+.product-item {
+  & .ant-collapse-item {
+    & .ant-collapse-header {
+      @apply font-lexend uppercase flex-row-reverse;
+    }
+
+    &.ant-collapse-item-active {
+      & .ant-collapse-expand-icon {
+        & .icon {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+
+    & .empty-screen {
+      @apply shadow-none min-h-[240px] max-h-[240px];
+
+      & .ant-empty {
+        @apply pt-0 pb-6 w-full;
+
+        & .ant-empty-description {
+          @apply max-w-[350px];
+        }
+
+        & .ant-empty-image {
+          @apply mb-[5px] h-[85px];
+        }
+      }
+    }
+  }
+}

@@ -5,16 +5,11 @@ import { createId } from '@libs/nanoid'
 import { SocialNetworkItem } from './interfaces'
 
 // Constants
-import icons from './icons'
-
-export const TWITTER = 'Twitter'
-export const FACEBOOK = 'Facebook'
-export const INSTAGRAM = 'Instagram'
-export const LINKEDIN = 'LinkedIn'
+import icons, { TWITTER, FACEBOOK, LINKEDIN, INSTAGRAM } from './icons'
 
 export const socialNetworkList: SocialNetworkItem[] = [
-  { name: TWITTER, icon: icons.twitter },
-  { name: LINKEDIN, icon: icons.linkedin },
-  { name: FACEBOOK, icon: icons.facebook },
-  { name: INSTAGRAM, icon: icons.instagram }
+  { name: TWITTER, icon: icons[TWITTER] },
+  { name: LINKEDIN, icon: icons[LINKEDIN] },
+  { name: FACEBOOK, icon: icons[FACEBOOK] },
+  { name: INSTAGRAM, icon: icons[INSTAGRAM] }
 ].map((socialNetwork) => ({ ...socialNetwork, id: createId() }))

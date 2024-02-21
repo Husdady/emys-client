@@ -15,7 +15,7 @@ export default function StockTag({ isInStock }: Pick<Product, 'isInStock'>) {
     <span
       className={classnames([
         props.className,
-        'font-semibold px-2 py-[0.15rem] flex items-center dark:text-white rounded'
+        'stock-tag font-semibold px-2 py-[0.15rem] flex items-center dark:text-white rounded'
       ])}
     >
       {props.title}

@@ -10,12 +10,16 @@ import ProductImage from './ProductImage'
 import SellerPlaceholder from './Seller/Placeholder'
 import StockTagPlaceholder from './StockTag/Placeholder'
 import ContactSellerPlaceholder from './ContactSeller/Placeholder'
+import Link from '@components/Link'
 
 // Interfaces
 import { Product } from '@modules/Products/api/interfaces'
 
 // Utils
 import classnames from '@utils/classnames'
+
+// Constants
+import { PRODUCTS_PATH } from '@assets/data/paths'
 
 // Dynamic Components
 const Heart = dynamic(() => import('./Heart'))
@@ -36,6 +40,7 @@ export default function Product({
   id,
   sku,
   name,
+  code,
   price,
   isInStock,
   mainSeller,
@@ -44,10 +49,9 @@ export default function Product({
   currencyType
 }: Product) {
   return (
-    <article
-      role="button"
-      tabIndex={0}
-      title={`Ver más detalles de ${name}`}
+    <Link
+      href={`${PRODUCTS_PATH}/${code}`}
+      title={`Click para ver más detalles de ${name}`}
       className={classnames([
         isInStock
           ? 'hover:shadow-sky-200 hover:border-sky-200 hover:border-sky-400 dark:hover:border-sky-400'
@@ -74,6 +78,6 @@ export default function Product({
         <Seller {...(mainSeller ?? {})} />
         <ContactSeller name={name} isInStock={isInStock} mainSeller={mainSeller} />
       </div>
-    </article>
+    </Link>
   )
 }

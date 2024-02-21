@@ -6,7 +6,7 @@ import BrandWhatsapp from '@assets/icons/brand-whatsapp'
 import useContactSeller from './useContactSeller'
 
 // Interfaces
-import { Product } from '@modules/Products/api/interfaces'
+import { ContactSellerProps } from './interfaces'
 
 // Utils
 import classnames from '@utils/classnames'
@@ -14,12 +14,14 @@ import classnames from '@utils/classnames'
 export default function ContactSeller({
   name,
   isInStock,
-  mainSeller
-}: Pick<Product, 'name' | 'isInStock' | 'mainSeller'>) {
+  mainSeller,
+  defaultMessage
+}: ContactSellerProps) {
   const { titlePopup, openWhatsappAPI } = useContactSeller({
     name: name,
     isInStock: isInStock,
-    mainSeller: mainSeller
+    mainSeller: mainSeller,
+    defaultMessage: defaultMessage
   })
 
   return (

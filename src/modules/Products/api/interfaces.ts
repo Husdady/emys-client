@@ -23,12 +23,14 @@ export interface ExtraInformation {
 export interface Product extends TimeStamps {
   id: string
   name: string
+  code: string
   tags: string[]
   origin: string
   countryOrigin: Country
   type: ProductType
   coverImage?: Image | null
   coverImageId?: string | null
+  totalVisits?: number | null
   isInStock: boolean
   isShowingPrice: boolean
   totalUnits?: number | null

@@ -2,13 +2,13 @@
 import Head from 'next/head'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from 'next-themes'
-import { Online, Offline } from 'react-detect-offline'
 import { PersistGate } from 'redux-persist/integration/react'
 
 // Components
 import OfflineView from '@components/OfflineView'
 
 // Hooks
+import useNetwork from '@root/src/hooks/useNetwork'
 import useNprogressDone from '@hooks/useNprogressDone'
 
 // Types
@@ -26,6 +26,7 @@ import '@styles/global.scss'
 
 export default function EmysApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   useNprogressDone()
+  const isOnline = useNetwork()
 
   return (
     <>
@@ -36,16 +37,14 @@ export default function EmysApp({ Component, pageProps: { session, ...pageProps 
       <Provider store={store}>
         <PersistGate persistor={persistor} loading={null}>
           <ThemeProvider attribute="class">
-            <Online>
+            {!isOnline && <OfflineView />}
+
+            {isOnline && (
               <main className={fonts}>
                 <div id="global-mask"></div>
                 <Component {...pageProps} />
               </main>
-            </Online>
-
-            <Offline>
-              <OfflineView />
-            </Offline>
+            )}
           </ThemeProvider>
         </PersistGate>
       </Provider>

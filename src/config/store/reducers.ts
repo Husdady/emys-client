@@ -13,6 +13,7 @@ import { verifySessionApi } from '@routes/DashboardRoute/verify-session'
 
 // GraphQL states
 import { sellersGraphqlApi } from '@modules/Sellers/api/graphql'
+import { productGraphqlApi } from '@modules/Product/api/graphql'
 import { productsGraphqlApi } from '@modules/Products/api/graphql'
 import { regionsGraphqlApi } from '@modules/Ubigeo/api/regions/graphql'
 import { countriesGraphqlApi } from '@modules/Ubigeo/api/countries/graphql'
@@ -45,6 +46,7 @@ const reducers = combineReducers({
 
   // GraphQL API
   [sellersGraphqlApi.reducerPath]: sellersGraphqlApi.reducer,
+  [productGraphqlApi.reducerPath]: productGraphqlApi.reducer,
   [productsGraphqlApi.reducerPath]: productsGraphqlApi.reducer,
   [regionsGraphqlApi.reducerPath]: regionsGraphqlApi.reducer,
   [countriesGraphqlApi.reducerPath]: countriesGraphqlApi.reducer,

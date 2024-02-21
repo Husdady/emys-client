@@ -1,6 +1,7 @@
 // Constants
 export const REDUCER_PATH = 'gql'
 export const SELLERS_KEY = 'Sellers'
+export const PRODUCT_KEY = 'Product'
 export const PRODUCTS_KEY = 'Products'
 export const CATEGORIES_KEY = 'Categories'
 export const TESTIMONIALS_KEY = 'Testimonials'

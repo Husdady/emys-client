@@ -10,6 +10,7 @@ import validateGraphqlErrors from './validateGraphqlErrors'
 import {
   REDUCER_PATH,
   SELLERS_KEY,
+  PRODUCT_KEY,
   PRODUCTS_KEY,
   CATEGORIES_KEY,
   TESTIMONIALS_KEY,
@@ -32,6 +33,7 @@ export const api = createApi({
 
   tagTypes: [
     SELLERS_KEY,
+    PRODUCT_KEY,
     PRODUCTS_KEY,
     CATEGORIES_KEY,
     TESTIMONIALS_KEY,

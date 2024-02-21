@@ -15,9 +15,6 @@ import { SocialNetworkItem, SocialNetworksProps } from './interfaces'
 // Utils
 import isEmptyArray from '@utils/isEmptyArray'
 
-// Constants
-import { socialNetworkList } from './constants'
-
 /**
  * Hook for implements the logic of the SocialNetworks
  * @param {SocialNetworksProps} data Receive a 'socialNetworks' and 'sellerFullname'
@@ -38,16 +35,19 @@ export default function useSocialNetworks({ socialNetworks, sellerFullname }: So
   }, [])
 
   // Callback for define the title popup of Button
-  const getTitlePopup = useCallback((socialNetwork: SocialNetworkItem) => {
-    // Social network has accounts
-    const hasAccounts = checkIfSocialNetowrkHasAccounts(socialNetwork)
+  const getTitlePopup = useCallback(
+    (socialNetwork: SocialNetworkItem) => {
+      // Social network has accounts
+      const hasAccounts = checkIfSocialNetowrkHasAccounts(socialNetwork)
 
-    if (hasAccounts) {
-      return `Mostrar cuentas de ${socialNetwork.name} de ${sellerFullname}`
-    }
+      if (hasAccounts) {
+        return `Mostrar cuentas de ${socialNetwork.name} de ${sellerFullname}`
+      }
 
-    return `${sellerFullname} no posee cuentas en ${socialNetwork.name}`
-  }, [sellerFullname])
+      return `${sellerFullname} no posee cuentas en ${socialNetwork.name}`
+    },
+    [sellerFullname]
+  )
 
   // Callback for show the list of accounts of a social network
   const handleShowAccountOfSocialNetwork = useCallback(
@@ -89,7 +89,6 @@ export default function useSocialNetworks({ socialNetworks, sellerFullname }: So
 
   return {
     getTitlePopup: getTitlePopup,
-    socialNetworkList: socialNetworkList,
     checkIfSocialNetowrkHasAccounts: checkIfSocialNetowrkHasAccounts,
     handleShowAccountOfSocialNetwork: handleShowAccountOfSocialNetwork
   }

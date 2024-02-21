@@ -10,6 +10,7 @@ const createProductsFragment = (model: string) => gql`
     id
     sku
     name
+    code
     price
     isInStock
     description

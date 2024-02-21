@@ -7,19 +7,12 @@ import useSocialNetworks from './useSocialNetworks'
 // Interfaces
 import { SocialNetworksProps } from './interfaces'
 
-// Utils
-import isEmptyArray from '@utils/isEmptyArray'
+// Constants
+import { socialNetworkList } from './constants'
 
 export default function SocialNetworks(props: SocialNetworksProps) {
-  const {
-    getTitlePopup,
-    socialNetworkList,
-    checkIfSocialNetowrkHasAccounts,
-    handleShowAccountOfSocialNetwork
-  } = useSocialNetworks(props)
-
-  // Empty accounts of Social Networks
-  if (isEmptyArray(socialNetworkList)) return null
+  const { getTitlePopup, checkIfSocialNetowrkHasAccounts, handleShowAccountOfSocialNetwork } =
+    useSocialNetworks(props)
 
   return (
     <section className="seller-social-networks">

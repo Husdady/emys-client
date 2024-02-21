@@ -70,8 +70,11 @@
       }
     }
 
+    & .product-price {
+      @apply text-[1.1rem];
+    }
+
     & .product-name,
-    & .product-price,
     & .btn-contact-seller,
     & .product-description {
       @apply text-[0.85rem];

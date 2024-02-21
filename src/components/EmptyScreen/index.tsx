@@ -16,8 +16,8 @@ export const customTitle = { className: 'text-main-500' }
 
 export default function EmptyScreen(props: EmptyProps) {
   return (
-    <Suspense fallback={<Fallback className="min-h-[500px]" />}>
-      <BoxWrapper className="w-full min-h-[500px] flex items-center justify-center">
+    <Suspense fallback={<Fallback className="empty-screen min-h-[500px]" />}>
+      <BoxWrapper className="empty-screen w-full min-h-[500px] flex items-center justify-center">
         <Empty
           {...props}
           className={classnames([
