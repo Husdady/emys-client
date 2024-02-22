@@ -1,3 +1,3 @@
 // Constants
-export const sharedClassName = 'max-w-[1100px] mx-6 xl:mx-auto py-[2.5rem]'
-export const customTitle = { className: 'text-pink-500 dark:text-main-300' }
+export const sharedClassName = 'max-w-[1100px] mx-auto py-5 sm:py-[2.5rem] rounded'
+export const customTitle = { className: 'text-red-600 dark:text-red-400' }

@@ -17,18 +17,15 @@ import { customTitle, sharedClassName } from './constants'
 
 // Lazy Components
 const Screen = lazy(() => import('@components/Screen'))
-const BoxWrapper = lazy(() => import('@components/Wrapper'))
 
-export default function ErrorScreen({ boxWrapperClassName, ...props }: ErrorScreenProps) {
+export default function ErrorScreen({ className, ...props }: ErrorScreenProps) {
+  const classes = classnames([className, sharedClassName])
+
   return (
-    <Suspense
-      fallback={
-        <BoxWrapperFallback className={classnames([sharedClassName, boxWrapperClassName])} />
-      }
-    >
-      <BoxWrapper className={classnames([sharedClassName, boxWrapperClassName])}>
-        <Screen {...props} image={DEFAULT_IMAGE} customTitle={customTitle} />
-      </BoxWrapper>
+    <Suspense fallback={<BoxWrapperFallback className={classes} />}>
+      <div className='mx-2 sm:mx-6'>
+        <Screen {...props} image={DEFAULT_IMAGE} className={classes} customTitle={customTitle} />
+      </div>
     </Suspense>
   )
 }

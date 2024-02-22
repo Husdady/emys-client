@@ -38,7 +38,7 @@ export default function FloatMenu(props: MenuData) {
           {isAuthenticated && (
             <>
               <MenuBottom />
-              <hr className="h-[1px] border-none bg-gray-300/30 dark:bg-gray-600" />
+              <hr className="h-[2px] border-none bg-gray-300/30 dark:bg-gray-600" />
             </>
           )}
 

@@ -1,5 +1,5 @@
 .submit-button {
-  @apply min-h-[50px];
+  @apply min-h-[50px] xl:min-h-[46px];
 
   &:enabled:hover {
     @apply bg-rose-500 dark:bg-pink-600;
