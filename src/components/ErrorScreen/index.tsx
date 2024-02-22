@@ -5,10 +5,11 @@ import { Suspense } from 'react'
 import BoxWrapperFallback from '@components/Wrapper/Fallback'
 
 // Interfaces
-import { ScreenProps } from '@components/Screen/interfaces'
+import { ErrorScreenProps } from './interfaces'
 
 // Utils
 import lazy from '@utils/lazy'
+import classnames from '@utils/classnames'
 
 // Constants
 import { DEFAULT_IMAGE } from '@assets/data/error-image'
@@ -18,10 +19,14 @@ import { customTitle, sharedClassName } from './constants'
 const Screen = lazy(() => import('@components/Screen'))
 const BoxWrapper = lazy(() => import('@components/Wrapper'))
 
-export default function ErrorScreen(props: Pick<ScreenProps, 'title' | 'description'>) {
+export default function ErrorScreen({ boxWrapperClassName, ...props }: ErrorScreenProps) {
   return (
-    <Suspense fallback={<BoxWrapperFallback className={sharedClassName} />}>
-      <BoxWrapper className={sharedClassName}>
+    <Suspense
+      fallback={
+        <BoxWrapperFallback className={classnames([sharedClassName, boxWrapperClassName])} />
+      }
+    >
+      <BoxWrapper className={classnames([sharedClassName, boxWrapperClassName])}>
         <Screen {...props} image={DEFAULT_IMAGE} customTitle={customTitle} />
       </BoxWrapper>
     </Suspense>

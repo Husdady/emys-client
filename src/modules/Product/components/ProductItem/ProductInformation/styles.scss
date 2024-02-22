@@ -27,7 +27,7 @@
 
     & .stars {
       & .star {
-        @apply text-gray-200;
+        @apply text-gray-200 dark:text-gray-600;
 
         &.active {
           &.normal-cursor {

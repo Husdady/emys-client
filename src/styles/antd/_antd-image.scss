@@ -1,0 +1,44 @@
+.ant-image-preview-root {
+  & .ant-image-preview-mask,
+  & .ant-image-preview-wrap {
+    @apply z-[99999999];
+  }
+
+  & .ant-image-preview-img-wrapper {
+    @apply mb-6;
+  }
+}
+
+.ant-image {
+  & .ant-image-mask {
+    & .ant-image-mask-info {
+      @apply font-poppins;
+    }
+  }
+}
+
+.ant-image-preview-close,
+.ant-image-preview-operations {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.dark {
+  & .ant-image .ant-image-mask {
+    background-color: rgba(78, 78, 78, 0.85);
+  }
+
+  & .ant-image-preview-close,
+  & .ant-image-preview-operations {
+    background-color: rgba(146, 146, 146, 0.3);
+  }
+
+  .ant-image-preview-close {
+    &:hover {
+      background-color: rgba(146, 146, 146, 0.5);
+    }
+  }
+}
+
+.ant-image-preview-operations-wrapper {
+  @apply z-[99999999];
+}

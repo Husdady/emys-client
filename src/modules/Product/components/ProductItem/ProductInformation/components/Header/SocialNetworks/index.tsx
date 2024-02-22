@@ -15,7 +15,7 @@ export default function SocialNetworks(props: Product) {
 
   return (
     <section className="product-share-by-social-networks flex items-center gap-x-2 flex-wrap">
-      <span className="font-lexend">Compartir producto en:</span>
+      <span className="font-lexend dark:text-gray-300">Compartir producto en:</span>
 
       <ul className="social-network-list flex items-center justify-start gap-y-2.5 gap-x-0.5">
         {socialNetworkList.map((socialNetwork) => (
@@ -24,7 +24,7 @@ export default function SocialNetworks(props: Product) {
               title=""
               icon={socialNetwork.icon}
               onClick={share(socialNetwork)}
-              className="!p-1 bg-transparent hover:bg-gray-200/50 rounded-md"
+              className="!p-1 bg-transparent hover:bg-gray-200/50 rounded-md dark:hover:bg-gray-600/200"
               titlePopup={`Compartir a travez de ${socialNetwork.name}`}
             />
           </li>

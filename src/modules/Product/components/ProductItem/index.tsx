@@ -17,9 +17,9 @@ const ProductInformation = lazy(() => import('./ProductInformation'))
 
 export default function ProductItem({ product }: ProductItemProps) {
   return (
-    <section className="product-item flex flex-wrap md:flex-nowrap mx-4 md:mx-6 xl:mx-[3.63rem] gap-x-4 gap-y-4.5">
+    <section className="product-item flex flex-wrap md:flex-nowrap mx-4 md:mx-6 xl:mx-[3.63rem] gap-x-1.5 gap-y-3 items-start">
       <Suspense fallback={<ProductImagesFallback />}>
-        <ProductImages />
+        <ProductImages {...product} />
       </Suspense>
 
       <Suspense fallback={<ProductInformationFallback />}>

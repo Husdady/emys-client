@@ -18,7 +18,7 @@ export default function Stars(product: Product) {
     useStars(product)
 
   return (
-    <div className="stars-container mt-2 flex items-center gap-x-3 mb-3 border-b border-gray-300 pb-2.5 justify-between">
+    <div className="stars-container mt-2 flex items-center gap-x-3 mb-3 border-b border-gray-300 pb-2.5 justify-between dark:border-gray-500">
       <ul className="stars flex items-center gap-x-2">
         {stars.map((i) => {
           const total = stars.length - i + 1
@@ -45,7 +45,7 @@ export default function Stars(product: Product) {
         })}
       </ul>
 
-      <h5 className="title mb-0 text-[1.02rem] text-gray-500 leading-tight text-right max-w-[300px]">
+      <h5 className="title mb-0 text-[1.02rem] text-gray-500 leading-tight text-right max-w-[300px] dark:text-gray-400">
         ¡Hola!, ¿Qué puntuación le darías al producto, de 1 a 5 estrellas?
       </h5>
     </div>

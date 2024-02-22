@@ -20,7 +20,7 @@ export default function ProductInformation(product: Product) {
   const { units, setUnits, setDefaultContactSellerMessage } = useProductInformation()
 
   return (
-    <aside className="product-information bg-white pt-3.5 pb-4 px-4 font-poppins rounded shadow-lg min-h-[500px]">
+    <aside className="product-information bg-white pt-3.5 pb-4 px-4 font-poppins rounded shadow-lg min-h-[500px] dark:shadow-none dark:bg-gray-900">
       <Header {...product} />
       <ProductName {...product} />
       <Stars {...product} />

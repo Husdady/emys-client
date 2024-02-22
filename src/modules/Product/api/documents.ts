@@ -17,6 +17,12 @@ export const ProductDocument = gql`
       countryOrigin {
         country
       }
+      images {
+        id
+        url
+        width
+        height
+      }
       ...ProductsFields
     }
   }

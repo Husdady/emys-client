@@ -1,5 +1,19 @@
 .product-item {
   & .product-images {
     @apply w-full md:w-[50%];
+
+    & .image-list {
+      & .image-item {
+        & .ant-image {
+          @apply static;
+          width: 100% !important;
+          height: 100% !important;
+
+          & .ant-image-img {
+            @apply object-contain;
+          }
+        }
+      }
+    }
   }
 }

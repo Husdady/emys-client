@@ -14,11 +14,13 @@ import { Product } from '@modules/Products/api/interfaces'
 import { PRODUCT_DESCRIPTION } from './constants'
 
 export default function ProductFields(product: Product) {
-  const { items } = useProductInformation(product)
+  const { items, activeKey, handleChangeKey } = useProductInformation(product)
 
   return (
     <Collapse
       items={items}
+      activeKey={activeKey}
+      onChange={handleChangeKey}
       className="product-fields my-4"
       defaultActiveKey={PRODUCT_DESCRIPTION}
       expandIcon={() => <ChevronDown />}
