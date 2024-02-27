@@ -3,10 +3,11 @@ import Benefits from './components/Benefits'
 import UsageMode from './components/UsageMode'
 import Description from './components/Description'
 import CustomFields from './components/CustomFields'
+import MainInformation from './components/MainInformation'
 import Characteristics from './components/Characteristics'
 
 // Interfaces
-import { ProductByCode } from '@modules/Product/api/interfaces'
+import { Product } from '@modules/Product/api/interfaces'
 
 // Constants
 import {
@@ -14,14 +15,15 @@ import {
   PRODUCT_USAGE_MODE,
   PRODUCT_DESCRIPTION,
   PRODUCT_CHARACTERISTICS,
+  PRODUCT_MAIN_INFORMATION,
   PRODUCT_EXTRA_INFORMATION
 } from './constants'
 
 /**
  * Create the Description item
- * @param {ProductByCode} product ProductByCode
+ * @param {Product} product Product
  */
-export function createDescriptionItem(product: ProductByCode) {
+export function createDescriptionItem(product: Product) {
   return {
     label: 'Descripción',
     key: PRODUCT_DESCRIPTION,
@@ -31,9 +33,9 @@ export function createDescriptionItem(product: ProductByCode) {
 
 /**
  * Create the UsageMode item
- * @param {ProductByCode} product ProductByCode
+ * @param {Product} product Product
  */
-export function createUsageModeItem(product: ProductByCode) {
+export function createUsageModeItem(product: Product) {
   return {
     label: 'Modo de Uso',
     key: PRODUCT_USAGE_MODE,
@@ -43,9 +45,9 @@ export function createUsageModeItem(product: ProductByCode) {
 
 /**
  * Create the Benefits item
- * @param {ProductByCode} product ProductByCode
+ * @param {Product} product Product
  */
-export function createBenefitsItem(product: ProductByCode) {
+export function createBenefitsItem(product: Product) {
   return {
     label: 'Beneficios',
     key: PRODUCT_BENEFITS,
@@ -55,9 +57,9 @@ export function createBenefitsItem(product: ProductByCode) {
 
 /**
  * Create the Characteristics item
- * @param {ProductByCode} product ProductByCode
+ * @param {Product} product Product
  */
-export function createCharacteristicsItem(product: ProductByCode) {
+export function createCharacteristicsItem(product: Product) {
   return {
     label: 'Características',
     key: PRODUCT_CHARACTERISTICS,
@@ -66,10 +68,22 @@ export function createCharacteristicsItem(product: ProductByCode) {
 }
 
 /**
- * Create the Extra Information item
- * @param {ProductByCode} product ProductByCode
+ * Create the Main Information item
+ * @param {Product} product Product
  */
-export function createExtraInformationItem(product: ProductByCode) {
+export function createMainInformationItem(product: Product) {
+  return {
+    label: 'Información Principal',
+    key: PRODUCT_MAIN_INFORMATION,
+    children: <MainInformation {...product} />
+  }
+}
+
+/**
+ * Create the Extra Information item
+ * @param {Product} product Product
+ */
+export function createExtraInformationItem(product: Product) {
   return {
     label: 'Información Extra',
     key: PRODUCT_EXTRA_INFORMATION,

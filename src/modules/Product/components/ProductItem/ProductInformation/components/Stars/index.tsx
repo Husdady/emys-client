@@ -6,7 +6,7 @@ import Button from '@components/Button'
 import useStars from './useStars'
 
 // Interfaces
-import { ProductByCode } from '@modules/Product/api/interfaces'
+import { Product } from '@modules/Product/api/interfaces'
 
 // Utils
 import classnames from '@utils/classnames'
@@ -14,12 +14,12 @@ import classnames from '@utils/classnames'
 // Constants
 import { stars } from './constants'
 
-export default function Stars(product: ProductByCode) {
+export default function Stars(product: Product) {
   const { isRating, setStars, starsGiven, prevStarsGiven, handleMouseEnter, handleMouseLeave } =
     useStars(product)
 
   return (
-    <div className="stars-container mt-2 flex items-center gap-x-3 mb-3 border-b border-gray-300 pb-2.5 justify-between dark:border-gray-500">
+    <div className="stars-container mt-2 flex items-center gap-x-3 justify-between">
       <ul className="stars flex flex-nowrap items-center">
         {stars.map((i) => {
           const total = stars.length - i + 1

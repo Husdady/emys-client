@@ -1,13 +1,15 @@
 // Components
 import Images from './Images'
+import ImageCarousel from './ImageCarousel'
 
 // Interfaces
-import { ProductByCode } from '@modules/Product/api/interfaces'
+import { Product } from '@modules/Product/api/interfaces'
 
-export default function ProductImages(product: ProductByCode) {
+export default function ProductImages(product: Product) {
   return (
     <aside className="product-images bg-white pt-3.5 pb-4 px-4 font-poppins rounded shadow-lg min-h-[500px] dark:shadow-none dark:bg-gray-900">
-      <Images images={product.images} />
+      <ImageCarousel images={product.images} coverImage={product.coverImage} />
+      <Images images={product.images} coverImage={product.coverImage} />
     </aside>
   )
 }

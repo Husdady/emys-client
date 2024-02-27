@@ -1,4 +1,4 @@
 // Interfaces
-import { ProductByCode } from '@modules/Product/api/interfaces'
+import { Product } from '@modules/Product/api/interfaces'
 
-export type CustomFieldsProps = Pick<ProductByCode, 'extraInformation' | 'customProductFields'>
+export type CustomFieldsProps = Pick<Product, 'extraInformation' | 'customProductFields'>

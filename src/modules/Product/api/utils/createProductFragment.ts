@@ -11,6 +11,7 @@ const createProductFragment = (model: string) => gql`
       weight
       weightType
       totalUnits
+      totalVisits
       benefits
       usageMode
       userRating

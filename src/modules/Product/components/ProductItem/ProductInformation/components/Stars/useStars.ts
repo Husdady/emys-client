@@ -7,13 +7,13 @@ import { useState, useCallback } from 'react'
 import { useRateProductMutation } from '@modules/Product/api'
 
 // Interfaces
-import { ProductByCode } from '@modules/Product/api/interfaces'
+import { Product } from '@modules/Product/api/interfaces'
 
 /**
  * Hook for implements the logic of the Stars component
- * @param {ProductByCode} product Receive a 'product'
+ * @param {Product} product Receive a 'product'
  */
-export default function useStars(product: ProductByCode) {
+export default function useStars(product: Product) {
   const { signOut, isAuthenticated } = useAuth()
   const [rateProduct, result] = useRateProductMutation()
   const [starsGiven, setStarsGiven] = useState<number>(product.userRating ?? 0)

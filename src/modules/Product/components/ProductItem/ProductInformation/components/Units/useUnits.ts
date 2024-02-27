@@ -11,14 +11,14 @@ import isEmptyString from '@utils/isEmptyString'
  * Hook for implements the logic of the Units component
  * @param {UnitsProps} params Receive props of the Units component
  */
-export default function useUnits({ units, setUnits, productUnits = 1 }: UnitsProps) {
+export default function useUnits({ units, setUnits, isInStock, productUnits = 1 }: UnitsProps) {
   // Define a flag for check if needs disable the decrease button
-  const isDisabledDecreaseButton = useMemo(() => units <= 1, [units])
+  const isDisabledDecreaseButton = useMemo(() => !isInStock || units <= 1, [units, isInStock])
 
   // Define a flag for check if needs disable the increase button
   const isDisabledIncreaseButton = useMemo(
-    () => units >= (productUnits ?? 1),
-    [units, productUnits]
+    () => !isInStock || units >= (productUnits ?? 1),
+    [units, isInStock, productUnits]
   )
 
   // Callback for increase the units

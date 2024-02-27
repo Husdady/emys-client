@@ -8,7 +8,7 @@ const MainNavigation = dynamic(() => import('./MainNavigation'))
 function Header() {
   return (
     <header className="main-header">
-      <div className="main-inner-header relative z-[99999] overflow-hidden">
+      <div className="main-inner-header overflow-hidden">
         <MainNavigation />
       </div>
     </header>

@@ -2,9 +2,7 @@
 import Stars from './components/Stars'
 import Units from './components/Units'
 import Header from './components/Header'
-import SubItem from './components/SubItem'
 import ProductFields from './ProductFields'
-import ProductName from './components/ProductName'
 import Price from '@modules/Products/components/Product/Price'
 import Seller from '@modules/Products/components/Product/Seller'
 import StockTag from '@modules/Products/components/Product/StockTag'
@@ -14,50 +12,49 @@ import ContactSeller from '@modules/Products/components/Product/ContactSeller'
 import useProductInformation from './useProductInformation'
 
 // Interfaces
-import { ProductByCode } from '@modules/Product/api/interfaces'
+import { Product } from '@modules/Product/api/interfaces'
 
-export default function ProductInformation(product: ProductByCode) {
-  const { units, setUnits, setDefaultContactSellerMessage } = useProductInformation()
+export default function ProductInformation(product: Product) {
+  const { units, setUnits, setDefaultContactSellerMessage } = useProductInformation(product)
 
   return (
-    <aside className="product-information overflow-hidden bg-white pt-3.5 pb-4 px-4 font-poppins rounded shadow-lg min-h-[500px] dark:shadow-none dark:bg-gray-900">
-      <Header {...product} />
-      <ProductName {...product} />
-      <Stars {...product} />
+    <aside className="product-information bg-white overflow-hidden pt-3.5 pb-4 font-poppins rounded shadow-lg dark:shadow-none dark:bg-gray-900 flex flex-col justify-between">
+      <div className="inner-information xl:min-h-[32.35rem] xl:max-h-[32.35rem] xl:overflow-y-auto pl-2 pr-3 ml-2 mr-1 pb-4">
+        <Header {...product} />
 
-      <div className="sub-item-container items-1 flex justify-between mt-1.5 gap-x-4">
-        <SubItem field="SKU:" value={product.sku} className="product-sku" />
-        <SubItem field="Código:" value={product.code} className="product-code" />
+        <h3 className="product-name text-[1.75rem] leading-tight break-word font-semibold text-gray-700 dark:text-white">
+          {product.name}
+        </h3>
+
+        <div className="price-container flex items-center justify-between gap-x-6 mt-3 mb-4">
+          <StockTag isInStock={product.isInStock} />
+          <Price price={product.price} currencyType={product.currencyType} />
+        </div>
+
+        <Stars {...product} />
+
+        <ProductFields {...product} />
       </div>
 
-      <div className="sub-item-container items-2 flex justify-between mt-0.5 gap-x-4">
-        <SubItem
-          field="País de origen:"
-          className="product-country-origin"
-          value={product.countryOrigin?.country}
+      <div className="pt-2 border-t border-gray-300 dark:border-gray-600 px-4">
+        <div className="mt-2 inner-wrapper flex items-center gap-x-2">
+          <Seller {...product.mainSeller} />
+
+          <Units
+            units={units}
+            setUnits={setUnits}
+            isInStock={product.isInStock}
+            productUnits={product.totalUnits}
+          />
+        </div>
+
+        <ContactSeller
+          name={product.name}
+          isInStock={product.isInStock}
+          mainSeller={product.mainSeller}
+          defaultMessage={setDefaultContactSellerMessage}
         />
-
-        <SubItem field="Fabricado por:" value={product.maker} className="product-maker" />
       </div>
-
-      <div className="price-container flex items-center justify-between gap-x-6 pr-3 mt-3">
-        <StockTag isInStock={product.isInStock} />
-        <Price price={product.price} currencyType={product.currencyType} />
-      </div>
-
-      <ProductFields {...product} />
-
-      <div className="mt-2 inner-wrapper flex items-center gap-x-2">
-        <Seller {...product.mainSeller} />
-        <Units units={units} setUnits={setUnits} productUnits={product.totalUnits} />
-      </div>
-
-      <ContactSeller
-        name={product.name}
-        isInStock={product.isInStock}
-        mainSeller={product.mainSeller}
-        defaultMessage={setDefaultContactSellerMessage}
-      />
     </aside>
   )
 }

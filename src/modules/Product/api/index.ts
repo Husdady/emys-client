@@ -1,5 +1,5 @@
 // Interfaces
-import { RateProductParams } from './interfaces'
+import { RateProductParams, VisitProductParams } from './interfaces'
 
 // API
 import { api } from '@config/store/api'
@@ -13,8 +13,17 @@ export const productApi = api.injectEndpoints({
         method: 'POST',
         url: `/products/rate/${params.productId}`
       })
+    }),
+
+    // Visit product
+    visitProduct: builder.mutation({
+      query: (params: VisitProductParams) => ({
+        ...params,
+        method: 'POST',
+        url: `/products/visit/${params.productId}`
+      })
     })
   })
 })
 
-export const { useRateProductMutation } = productApi
+export const { useRateProductMutation, useVisitProductMutation } = productApi

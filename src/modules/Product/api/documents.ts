@@ -2,7 +2,7 @@
 import { gql } from 'graphql-request'
 
 // Utils
-import createProductFragment from '@modules/Products/api/utils/createProductFragment'
+import createProductFragment from '@modules/Product/api/utils/createProductFragment'
 import createProductsFragment from '@modules/Products/api/utils/createProductsFragment'
 
 export const ProductDocument = gql`

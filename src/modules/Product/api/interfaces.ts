@@ -1,16 +1,16 @@
 // Interface
-import { Product, ProductId } from '@modules/Products/api/interfaces'
+import { ProductId, Product as ProductModel } from '@modules/Products/api/interfaces'
 
-export interface ProductByCode extends Product {
+export interface Product extends ProductModel {
   userRating: number | null
 }
 
 export interface ProductItem {
-  product?: ProductByCode | null
+  product?: Product | null
 }
 
 export interface ProductItemWithSession {
-  productWithSession?: ProductByCode | null
+  productWithSession?: Product | null
 }
 
 export interface ProductArgs {
@@ -19,6 +19,10 @@ export interface ProductArgs {
 
 export interface RatingBody {
   rating: number
+}
+
+export interface VisitProductParams extends ProductId {
+  signOut?: () => void
 }
 
 export interface RateProductParams extends ProductId {

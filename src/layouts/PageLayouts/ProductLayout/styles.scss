@@ -4,4 +4,12 @@
 .product-page {
   @include addPaddingTopToPage;
   @include fixPositionOfTheFloatButtons;
+
+  & .main-header {
+    & .main-inner-header {
+      & .main-navigation {
+        @apply absolute top-[1.5rem];
+      }
+    }
+  }
 }

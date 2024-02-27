@@ -5,7 +5,7 @@ import { useMemo, useCallback } from 'react'
 import type { CustomFieldsProps } from '@modules/Product/components/ProductItem/ProductInformation/ProductFields/components/CustomFields/types'
 
 // Interfaces
-import { ParsedExtraInformation } from './interfaces'
+import { TableItem } from '@modules/Product/components/Table/interfaces'
 import { ExtraInformation, CustomProductField } from '@modules/Products/api/interfaces'
 
 // Utils
@@ -20,7 +20,7 @@ import { LIST_TYPE } from '@modules/Products/api/constants'
  */
 export default function useTable({ extraInformation, customProductFields }: CustomFieldsProps) {
   // Callback for filter an extra information
-  const filterExtraInformation = useCallback((item: ParsedExtraInformation | null) => {
+  const filterExtraInformation = useCallback((item: TableItem | null) => {
     if (item === null) return false
     return item.fieldValue
   }, [])
@@ -49,20 +49,20 @@ export default function useTable({ extraInformation, customProductFields }: Cust
     [extraInformation, customProductFields]
   )
 
-  // Define the fields of the table
-  const fields = useMemo(() => {
+  // Define the items of the table
+  const items = useMemo(() => {
     if (!Array.isArray(extraInformation)) return []
     if (!Array.isArray(customProductFields)) return []
 
     // Parse and filter the extra information of the product
     const filteredExtraInformation = extraInformation
       .map(parseExtraInformation)
-      .filter(filterExtraInformation) as ParsedExtraInformation[]
+      .filter(filterExtraInformation) as TableItem[]
 
     return filteredExtraInformation
   }, [extraInformation, customProductFields, parseExtraInformation, filterExtraInformation])
 
   return {
-    fields: fields
+    items: items
   }
 }

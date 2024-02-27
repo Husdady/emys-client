@@ -5,6 +5,7 @@ import { useState, useCallback } from 'react'
 import useAuth from '@hooks/useAuth'
 
 // Interfaces
+import { Product } from '@modules/Product/api/interfaces'
 import { Message } from '@modules/Products/components/Product/ContactSeller/interfaces'
 
 // Constants
@@ -13,9 +14,9 @@ import { PUBLIC_URL } from '@config/envs'
 /**
  * Hook for implements the logic of the ProductInformation component
  */
-export default function useProductInformation() {
+export default function useProductInformation({ isInStock }: Product) {
   const { user } = useAuth()
-  const [units, setUnits] = useState(1)
+  const [units, setUnits] = useState(isInStock ? 1 : 0)
 
   // Callback for set a message for contacts the Seller
   const setDefaultContactSellerMessage = useCallback(

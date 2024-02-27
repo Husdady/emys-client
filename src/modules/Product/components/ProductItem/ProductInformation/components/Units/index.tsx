@@ -38,6 +38,7 @@ export default function Units(props: UnitsProps) {
         placeholder=""
         value={props.units}
         onBlur={handleBlur}
+        disabled={!props.isInStock}
         onChange={handleChangeUnit}
       />
 

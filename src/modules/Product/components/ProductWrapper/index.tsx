@@ -7,7 +7,7 @@ import ProductItem from '@modules/Product/components/ProductItem'
 import useProductWrapper from './useProductWrapper'
 
 // Interfaces
-import { ProductByCode } from '@modules/Product/api/interfaces'
+import { Product } from '@modules/Product/api/interfaces'
 
 export default function ProductWrapper() {
   const { data, isError, isLoading, isAuthenticated } = useProductWrapper()
@@ -21,7 +21,7 @@ export default function ProductWrapper() {
 
   return (
     <ProductItem
-      product={(graphqlData.product ?? graphqlData.productWithSession) as ProductByCode}
+      product={(graphqlData.product ?? graphqlData.productWithSession) as Product}
     />
   )
 }

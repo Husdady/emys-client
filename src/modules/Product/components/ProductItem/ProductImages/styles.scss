@@ -1,16 +1,37 @@
 .product-item {
   & .product-images {
-    @apply w-full md:w-[50%];
+    @apply w-full xl:w-[50%] xl:min-h-[41.35rem] xl:max-h-[42rem] overflow-y-auto;
 
-    & .image-list {
+    &::-webkit-scrollbar {
+      @apply w-[16px];
+    }
+
+    & .image-list,
+    & .image-carousel {
       & .image-item {
         & .ant-image {
           @apply static;
           width: 100% !important;
           height: 100% !important;
+        }
+      }
+    }
 
+    & .image-list {
+      & .image-item {
+        & .ant-image {
           & .ant-image-img {
             @apply object-contain;
+          }
+        }
+      }
+    }
+
+    & .image-carousel {
+      & .image-item {
+        & .ant-image {
+          & .ant-image-img {
+            @apply object-cover;
           }
         }
       }

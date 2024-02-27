@@ -4,10 +4,10 @@ import { Image } from 'antd/lib'
 // Hooks
 import useImages from './useImages'
 
-// Interfaces
-import { ProductByCode } from '@modules/Product/api/interfaces'
+// Types
+import type { SharedProps } from '@modules/Product/components/ProductItem/ProductImages/types'
 
-export default function Images({ images }: Pick<ProductByCode, 'images'>) {
+export default function Images({ images }: SharedProps) {
   useImages()
 
   return (

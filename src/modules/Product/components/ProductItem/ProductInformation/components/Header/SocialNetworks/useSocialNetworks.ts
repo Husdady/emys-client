@@ -5,14 +5,13 @@ import { showFloatInfoMessage } from '@libs/antd/message'
 import { useCallback } from 'react'
 
 // Interfaces
-import { ProductByCode } from '@modules/Product/api/interfaces'
 import { SocialNetworkItem } from '@modules/Sellers/components/Seller/SocialNetworks/interfaces'
 import {
+  TWITTER,
   FACEBOOK,
+  WHATSAPP,
   INSTAGRAM,
   MESSENGER,
-  TWITTER,
-  WHATSAPP
 } from '@modules/Sellers/components/Seller/SocialNetworks/icons'
 
 // Utils
@@ -21,9 +20,8 @@ import isEmptyString from '@utils/isEmptyString'
 
 /**
  * Hook for implements the logic of the SocialNetworks component
- * @param {ProductByCode} product ProductByCode
  */
-export default function useSocialNetworks(product: ProductByCode) {
+export default function useSocialNetworks() {
   // Callback for share the product in a Social Network
   const share = useCallback(
     (socialNetwork: SocialNetworkItem) => () => {

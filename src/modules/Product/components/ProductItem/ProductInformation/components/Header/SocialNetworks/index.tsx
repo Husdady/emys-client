@@ -4,14 +4,11 @@ import Button from '@components/Button'
 // Hooks
 import useSocialNetworks from './useSocialNetworks'
 
-// Interfaces
-import { ProductByCode } from '@modules/Product/api/interfaces'
-
 // Constants
 import { socialNetworkList } from './constants'
 
-export default function SocialNetworks(props: ProductByCode) {
-  const { share } = useSocialNetworks(props)
+export default function SocialNetworks() {
+  const { share } = useSocialNetworks()
 
   return (
     <section className="product-share-by-social-networks flex items-center gap-x-2 flex-wrap">

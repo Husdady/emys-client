@@ -1,6 +1,12 @@
 .product-item {
   & .product-information {
-    @apply w-full md:w-[50%];
+    @apply w-full xl:w-[50%];
+
+    & .inner-information {
+      &::-webkit-scrollbar {
+        @apply w-[16px];
+      }
+    }
 
     @media only screen and (max-width: 540px) {
       @apply px-3;
@@ -26,11 +32,11 @@
     }
 
     & .product-price {
-      @apply mt-0 text-2xl text-left;
+      @apply mt-0 text-3xl text-left;
     }
 
     & .stock-tag {
-      @apply w-full text-center justify-center rounded-[20px] p-1 max-w-[160px];
+      @apply w-full text-center justify-center rounded-[0.65rem] px-1 py-[0.3rem] max-w-[120px];
     }
 
     & .stars {
