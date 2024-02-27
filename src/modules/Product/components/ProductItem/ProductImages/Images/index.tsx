@@ -5,9 +5,9 @@ import { Image } from 'antd/lib'
 import useImages from './useImages'
 
 // Interfaces
-import { Product } from '@modules/Products/api/interfaces'
+import { ProductByCode } from '@modules/Product/api/interfaces'
 
-export default function Images({ images }: Pick<Product, 'images'>) {
+export default function Images({ images }: Pick<ProductByCode, 'images'>) {
   useImages()
 
   return (

@@ -1,5 +1,5 @@
 // Librarys
-import { useCallback, ChangeEvent, useMemo } from 'react'
+import { useMemo, useCallback, ChangeEvent } from 'react'
 
 // Interfaces
 import { UnitsProps } from './interfaces'

@@ -1,11 +1,11 @@
 // Interfaces
-import { ProductItem, ProductArgs } from './interfaces'
+import { ProductArgs, ProductItem, ProductItemWithSession } from './interfaces'
 
 // API
 import { api } from '@config/store/graphql'
 
 // Documents
-import { ProductDocument } from './documents'
+import { ProductDocument, ProductWithSessionDocument } from './documents'
 
 // Constants
 import { PRODUCT_KEY } from '@config/store/graphql/constants'
@@ -19,8 +19,17 @@ export const productGraphqlApi = api.injectEndpoints({
         variables: variables,
         document: ProductDocument
       })
+    }),
+
+    // Get products when user is authenticated
+    GetProductWithSession: builder.query<ProductItemWithSession, ProductArgs>({
+      providesTags: [PRODUCT_KEY],
+      query: (variables) => ({
+        variables: variables,
+        document: ProductWithSessionDocument
+      })
     })
   })
 })
 
-export const { useGetProductQuery, useLazyGetProductQuery } = productGraphqlApi
+export const { useLazyGetProductQuery, useLazyGetProductWithSessionQuery } = productGraphqlApi

@@ -44,7 +44,9 @@ html {
     }
 
     @media only screen and (max-width: 640px) {
-      @apply pt-[3rem] pb-4;
+      &:not(.has-error) {
+        @apply pt-[3rem] pb-4;
+      }
 
       & a {
         & .icon {

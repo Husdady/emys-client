@@ -92,6 +92,7 @@ const InputText: React.FC<InputTextProps> = ({
           onKeyDown={handleKeyDown}
           disabled={props.disabled}
           placeholder={placeholder}
+          autoFocus={props.autoFocus}
           readOnly={isUndefined(readOnly) && preventAutoComplete === true ? true : readOnly}
           onChange={
             isUndefined(props.customInput?.onChange) ? props.onChange : props.customInput?.onChange
@@ -129,6 +130,7 @@ export default React.memo(InputText, (prevProps, nextProps) => {
     prevProps.hasError === nextProps.hasError &&
     prevProps.disabled === nextProps.disabled &&
     prevProps.className === nextProps.className &&
+    prevProps.autoFocus === nextProps.autoFocus &&
     prevProps.customInput === nextProps.customInput &&
     prevProps.onPressEnter === nextProps.onPressEnter &&
     prevProps.isShowingClearIcon === nextProps.isShowingClearIcon &&

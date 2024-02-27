@@ -1,31 +1,39 @@
 // Librarys
-import { showFloatInfoMessage, showFloatWarningMessage } from '@libs/antd/message'
+import { showFloatWarningMessage } from '@libs/antd/message'
 
 // Hooks
 import useAuth from '@hooks/useAuth'
 import { useState, useCallback } from 'react'
+import { useRateProductMutation } from '@modules/Product/api'
 
 // Interfaces
-import { Product } from '@modules/Products/api/interfaces'
+import { ProductByCode } from '@modules/Product/api/interfaces'
 
 /**
  * Hook for implements the logic of the Stars component
+ * @param {ProductByCode} product Receive a 'product'
  */
-export default function useStars(product: Product) {
-  const { isAuthenticated } = useAuth()
-  const [starsGiven, setStarsGiven] = useState<number>(0)
-  const [prevStarsGiven, setPrevStarsGiven] = useState<number>(0)
+export default function useStars(product: ProductByCode) {
+  const { signOut, isAuthenticated } = useAuth()
+  const [rateProduct, result] = useRateProductMutation()
+  const [starsGiven, setStarsGiven] = useState<number>(product.userRating ?? 0)
+  const [prevStarsGiven, setPrevStarsGiven] = useState<number>(product.userRating ?? 0)
 
   // Callback for set the stars
   const setStars = useCallback(
-    (total: number) => {
+    async (total: number) => {
       if (!isAuthenticated) {
         return showFloatWarningMessage('Debes iniciar sesión para calificar productos')
       }
 
+      await rateProduct({
+        signOut: signOut,
+        productId: product.id,
+        data: { rating: total }
+      })
+
       setStarsGiven(total)
       setPrevStarsGiven(total)
-      showFloatInfoMessage(`Calificaste a ${product.name} con ${total} estrellas`)
     },
     [product]
   )
@@ -33,19 +41,22 @@ export default function useStars(product: Product) {
   // Callback for handle the mouse enter event
   const handleMouseEnter = useCallback(
     (total: number) => () => {
+      if (result.isLoading) return
       setStarsGiven(total)
     },
-    []
+    [result.isLoading]
   )
 
   // Callback for handle the mouse enter event
   const handleMouseLeave = useCallback(() => {
+    if (result.isLoading) return
     setStarsGiven(prevStarsGiven)
-  }, [prevStarsGiven])
+  }, [prevStarsGiven, result.isLoading])
 
   return {
     setStars: setStars,
     starsGiven: starsGiven,
+    isRating: result.isLoading,
     prevStarsGiven: prevStarsGiven,
     handleMouseEnter: handleMouseEnter,
     handleMouseLeave: handleMouseLeave

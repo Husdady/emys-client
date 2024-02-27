@@ -2,6 +2,7 @@
   @media only screen and (max-width: 428px) {
     & .main-title {
       @apply mb-[2.35rem];
+      word-break: break-word
     }
   }
 }

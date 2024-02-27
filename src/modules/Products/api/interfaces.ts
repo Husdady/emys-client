@@ -15,9 +15,9 @@ export interface CustomProductField extends TimeStamps {
 }
 
 export interface ExtraInformation {
+  fieldId: string
   textValue?: string
   listValues?: string[]
-  customProductFieldId: string
 }
 
 export interface Product extends TimeStamps {
@@ -38,7 +38,7 @@ export interface Product extends TimeStamps {
   mainSellerId?: string | null
   alliedSellers: Seller[]
   alliedSellersId: string[]
-  extraInformation: ExtraInformation[]
+  extraInformation: ExtraInformation[] | null
   relatedProducts: Product[]
   relatedProductsId: string[]
   content?: string | null
@@ -56,7 +56,7 @@ export interface Product extends TimeStamps {
   characteristics: string[]
   images: Image[] | null
   imagesId: string[] | null
-  customProductFields: CustomProductField[]
+  customProductFields: CustomProductField[] | null
   customProductFieldsId?: string[] | null
 }
 

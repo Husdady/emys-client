@@ -27,7 +27,7 @@ export default function Spin({
         className,
         center ? 'justify-center' : null,
         align === 'vertical' ? 'flex-col' : null,
-        'spinner flex items-center gap-x-2'
+        'spinner flex items-center gap-x-2.5'
       ])}
     >
       <svg

@@ -1,7 +1,11 @@
 // Hooks
+import useAuth from '@hooks/useAuth'
 import useMounted from '@hooks/useMounted'
 import { useParams } from 'next/navigation'
-import { useLazyGetProductQuery } from '@modules/Product/api/graphql'
+import {
+  useLazyGetProductQuery,
+  useLazyGetProductWithSessionQuery
+} from '@modules/Product/api/graphql'
 
 // Utils
 import isString from '@utils/isString'
@@ -12,7 +16,11 @@ import isEmptyString from '@utils/isEmptyString'
  */
 export default function useProductWrapper() {
   const params = useParams()
-  const [getProduct, result] = useLazyGetProductQuery()
+  const { isAuthenticated } = useAuth()
+
+  const useGetProduct = isAuthenticated ? useLazyGetProductWithSessionQuery : useLazyGetProductQuery
+
+  const [getProduct, result] = useGetProduct()
 
   useMounted(() => {
     const code = params?.code
@@ -22,5 +30,5 @@ export default function useProductWrapper() {
     }
   }, [params?.code])
 
-  return result
+  return { ...result, isAuthenticated: isAuthenticated }
 }

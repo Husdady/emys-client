@@ -5,19 +5,19 @@ import Button from '@components/Button'
 import useSocialNetworks from './useSocialNetworks'
 
 // Interfaces
-import { Product } from '@modules/Products/api/interfaces'
+import { ProductByCode } from '@modules/Product/api/interfaces'
 
 // Constants
 import { socialNetworkList } from './constants'
 
-export default function SocialNetworks(props: Product) {
+export default function SocialNetworks(props: ProductByCode) {
   const { share } = useSocialNetworks(props)
 
   return (
     <section className="product-share-by-social-networks flex items-center gap-x-2 flex-wrap">
       <span className="font-lexend dark:text-gray-300">Compartir producto en:</span>
 
-      <ul className="social-network-list flex items-center justify-start gap-y-2.5 gap-x-0.5">
+      <ul className="social-network-list flex flex-wrap items-center justify-start gap-y-2.5 gap-x-0.5">
         {socialNetworkList.map((socialNetwork) => (
           <li key={socialNetwork.id}>
             <Button

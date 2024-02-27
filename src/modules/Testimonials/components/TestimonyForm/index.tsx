@@ -62,28 +62,29 @@ export default function TestimonyForm(props: TestimonyFormProps) {
           textLabel="Nombre del autor"
           customInput={register('author')}
           placeholder="Ejemplo: Enrique Mena"
-          hasError={isString(errors.author?.message)}
           error={getFormError('author', errors)}
+          hasError={isString(errors.author?.message)}
+          autoFocus={isString(errors.author?.message)}
         />
       </Fallback>
 
       <section className="inner-wrapper flex align-center gap-3">
         <Fallback classLabel="w-40">
           <Countries
-            textLabel="País del autor"
             onChange={handleChangeCountryId}
             selectedValue={watch('countryId') ?? ''}
             error={getFormError('countryId', errors)}
+            textLabel="País del autor (opcional)"
           />
         </Fallback>
 
         <Fallback classLabel="w-36">
           <Regions
-            textLabel="Región del autor"
             onChange={handleChangeRegionId}
             countryId={watch('countryId') ?? ''}
             selectedValue={watch('regionId') ?? ''}
             error={getFormError('regionId', errors)}
+            textLabel="Región del autor (opcional)"
           />
         </Fallback>
       </section>
@@ -92,21 +93,21 @@ export default function TestimonyForm(props: TestimonyFormProps) {
         <Fallback classLabel="w-36">
           <Provinces
             onChange={change('provinceId')}
-            textLabel="Provincia del autor"
             regionId={watch('regionId') ?? ''}
             countryId={watch('countryId') ?? ''}
             selectedValue={watch('provinceId') ?? ''}
             error={getFormError('provinceId', errors)}
+            textLabel="Provincia del autor (opcional)"
           />
         </Fallback>
 
         <Fallback classLabel="w-36">
           <Districts
-            textLabel="Distrito del autor"
             onChange={change('districtId')}
             provinceId={watch('provinceId') ?? ''}
             selectedValue={watch('districtId') ?? ''}
             error={getFormError('districtId', errors)}
+            textLabel="Distrito del autor (opcional)"
           />
         </Fallback>
       </section>

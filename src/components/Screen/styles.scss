@@ -3,7 +3,7 @@
 
   @media only screen and (max-width: 450px) {
     & img {
-      @apply min-w-[245px];
+      @apply h-full min-w-[245px];
     }
 
     & .main-title {

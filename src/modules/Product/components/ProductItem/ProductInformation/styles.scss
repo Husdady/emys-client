@@ -2,6 +2,14 @@
   & .product-information {
     @apply w-full md:w-[50%];
 
+    @media only screen and (max-width: 540px) {
+      @apply px-3;
+    }
+
+    @media only screen and (max-width: 450px) {
+      @apply px-2.5;
+    }
+
     & .seller {
       @apply mt-0 w-[68%] items-center;
 
@@ -31,13 +39,16 @@
 
         &.active {
           &.normal-cursor {
-            @apply cursor-default;
+            &,
+            & .btn-star {
+              @apply cursor-default;
+            }
           }
         }
 
-        &:hover,
         &.active,
-        &:hover ~ .star {
+        &:not(.rating):hover,
+        &:not(.rating):hover ~ .star {
           @apply text-yellow-500;
         }
       }
@@ -59,6 +70,106 @@
       & .form-control {
         & .inner {
           @apply min-h-[32px] max-h-[32px];
+        }
+      }
+    }
+
+    & .stars-container {
+      @media only screen and (max-width: 640px) {
+        @apply flex-wrap gap-y-2.5;
+
+        & > .title {
+          @apply text-[0.95rem] text-left leading-snug max-w-[initial];
+        }
+
+        & .stars,
+        & > .title {
+          @apply w-full;
+        }
+      }
+    }
+
+    & .sub-item-container {
+      @media only screen and (max-width: 640px) {
+        word-break: break-word;
+        @apply flex-wrap gap-y-1.5;
+
+        &.items-2 {
+          @apply mt-1.5;
+        }
+
+        & .sub-item {
+          @apply w-full;
+        }
+      }
+    }
+
+    & .inner-wrapper {
+      @media only screen and (max-width: 640px) {
+        @apply flex-col flex-col-reverse gap-y-3;
+
+        & .seller,
+        & .pick-units,
+        & .form-control {
+          @apply w-full;
+        }
+
+        & .pick-units > button,
+        & .form-control .inner {
+          @apply min-h-[40px] max-h-[40px];
+        }
+
+        & .seller {
+          & .seller-photo {
+            &,
+            & img {
+              @apply w-[28px] h-[28px] min-h-[28px] min-w-[28px];
+            }
+          }
+        }
+      }
+
+      @media only screen and (max-width: 450px) {
+        @apply py-3;
+
+        & .seller-photo {
+          @apply mx-auto;
+
+          &,
+          & img {
+            width: 32px !important;
+            height: 32px !important;
+            min-width: 32px !important;
+            min-height: 32px !important;
+          }
+        }
+
+        & .seller-fullname {
+          @apply flex-wrap text-center;
+
+          &,
+          & > * {
+            @apply w-full;
+          }
+        }
+      }
+    }
+
+    & .price-container {
+      @media only screen and (max-width: 540px) {
+        @apply flex-col gap-y-2;
+
+        & .stock-tag {
+          @apply min-h-[40px] max-w-[initial];
+        }
+
+        & .product-price {
+          @apply text-right;
+        }
+
+        & .stock-tag,
+        & .product-price {
+          @apply w-full;
         }
       }
     }

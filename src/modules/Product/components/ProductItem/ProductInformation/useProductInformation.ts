@@ -1,5 +1,5 @@
 // Librarys
-import { useState, useCallback, ChangeEvent } from 'react'
+import { useState, useCallback } from 'react'
 
 // Hooks
 import useAuth from '@hooks/useAuth'

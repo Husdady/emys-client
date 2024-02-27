@@ -23,6 +23,7 @@ export default function LatestAddedTestimonials() {
     <section
       id={LATEST_ADDED_TESTIMONIALS_ID}
       className={classnames([
+        isError ? 'has-error' : null,
         'latest-added-testimonials mx-auto px-4 xl:px-0',
         !isError && !hasEmptyTestimonials ? 'pt-[3rem]' : null,
         isError || (!isLoading && hasEmptyTestimonials) ? 'white-screen' : null

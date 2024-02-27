@@ -3,15 +3,16 @@ import {
   createBenefitsItem,
   createUsageModeItem,
   createDescriptionItem,
-  createCharacteristicsItem
+  createCharacteristicsItem,
+  createExtraInformationItem
 } from './items'
 
 // Hooks
-import { useCallback, useMemo, useState } from 'react'
+import { useMemo, useState, useCallback } from 'react'
 
 // Interfaces
 import { CollapseProps } from 'antd/lib'
-import { Product } from '@modules/Products/api/interfaces'
+import { ProductByCode } from '@modules/Product/api/interfaces'
 
 // Utils
 import isString from '@utils/isString'
@@ -23,9 +24,9 @@ import isEmptyArray from '@root/src/utils/isEmptyArray'
 
 /**
  * Hook for implements the logic of the ProductFields component
- * @param {Product} product Product
+ * @param {ProductByCode} product Product
  */
-export default function useProductFields(product: Product) {
+export default function useProductFields(product: ProductByCode) {
   const [activeKey, setActiveKey] = useState(PRODUCT_DESCRIPTION)
 
   // Define the product items
@@ -34,7 +35,8 @@ export default function useProductFields(product: Product) {
       createDescriptionItem,
       createUsageModeItem,
       createBenefitsItem,
-      createCharacteristicsItem
+      createCharacteristicsItem,
+      createExtraInformationItem
     ].map((cb) => cb(product))
   }, [product])
 

@@ -2,12 +2,12 @@
 import EmptyScreen from '@components/EmptyScreen'
 
 // Interfaces
-import { Product } from '@modules/Products/api/interfaces'
+import { ProductByCode } from '@modules/Product/api/interfaces'
 
 // Utils
 import isEmptyArray from '@utils/isEmptyArray'
 
-export default function Characteristics({ characteristics }: Pick<Product, 'characteristics'>) {
+export default function Characteristics({ characteristics }: Pick<ProductByCode, 'characteristics'>) {
   if (!Array.isArray(characteristics) || isEmptyArray(characteristics)) {
     return <EmptyScreen description="Este producto no posee características" />
   }

@@ -2,6 +2,10 @@
   & .ant-collapse {
     @apply overflow-hidden;
 
+    @media only screen and (max-width: 540px) {
+      @apply mt-2;
+    }
+
     &,
     & .ant-collapse-item {
       @apply dark:border-gray-500;
@@ -9,7 +13,7 @@
 
     & .ant-collapse-item {
       & .ant-collapse-header {
-        @apply font-lexend uppercase flex-row-reverse dark:bg-gray-700;
+        @apply uppercase flex-row-reverse dark:bg-gray-700;
       }
 
       & .ant-collapse-content {
@@ -21,7 +25,7 @@
       }
 
       & .ant-collapse-header-text {
-        @apply dark:text-gray-300;
+        @apply text-gray-500 dark:text-gray-300 font-poppins font-semibold;
       }
 
       & .ant-collapse-expand-icon {

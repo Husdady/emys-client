@@ -2,13 +2,13 @@
 import EmptyScreen from '@components/EmptyScreen'
 
 // Interfaces
-import { Product } from '@modules/Products/api/interfaces'
+import { ProductByCode } from '@modules/Product/api/interfaces'
 
 // Utils
 import isString from '@utils/isString'
 import isEmptyString from '@utils/isEmptyString'
 
-export default function Description({ description }: Pick<Product, 'description'>) {
+export default function Description({ description }: Pick<ProductByCode, 'description'>) {
   if (!isString(description) || isEmptyString(description)) {
     return <EmptyScreen description="Este producto no posee una descripción" />
   }

@@ -8,12 +8,12 @@ import ChevronDown from '@assets/icons/chevron-down'
 import useProductInformation from './useProductFields'
 
 // Interfaces
-import { Product } from '@modules/Products/api/interfaces'
+import { ProductByCode } from '@modules/Product/api/interfaces'
 
 // Constants
 import { PRODUCT_DESCRIPTION } from './constants'
 
-export default function ProductFields(product: Product) {
+export default function ProductFields(product: ProductByCode) {
   const { items, activeKey, handleChangeKey } = useProductInformation(product)
 
   return (

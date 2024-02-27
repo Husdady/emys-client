@@ -1,6 +1,6 @@
 // Interfaces
-import { Product } from '@modules/Products/api/interfaces'
+import { ProductByCode } from '@modules/Product/api/interfaces'
 
 export interface ProductItemProps {
-  product: Product
+  product: ProductByCode
 }

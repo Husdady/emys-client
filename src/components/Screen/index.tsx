@@ -36,7 +36,7 @@ export default function Screen({
       style={style}
       className={classnames([
         className,
-        'page-screen flex flex-col items-center justify-center container mx-auto px-4 lg:px-0 dark:bg-gray-900 overflow-hidden min-h-[100vh]'
+        'page-screen flex flex-col items-center justify-center mx-auto px-4 lg:px-0 bg-white dark:bg-gray-900 overflow-hidden min-h-[100vh]'
       ])}
     >
       {!isUndefined(image.src) && (
@@ -53,7 +53,7 @@ export default function Screen({
         {...customTitle}
         className={classnames([
           customTitle.className,
-          'mb-2 font-poppins font-bold text-3xl text-center main-title max-w-[550px] leading-tight px-5'
+          'font-poppins font-bold text-3xl text-center main-title max-w-[550px] leading-tight px-5'
         ])}
       >
         {title}
@@ -77,7 +77,7 @@ export default function Screen({
           customTitle={constants.DEFAULT_CUSTOM_TITLE}
           className={classnames([
             button.className,
-            'text-white font-poppins ring-2 ring-transparent hover:bg-transparent !py-[0.9rem] rounded-full dark:hover:bg-transparent hover:font-semibold dark:hover:font-normal !gap-x-1.5'
+            'mt-5 text-white font-poppins ring-2 ring-transparent hover:bg-transparent !py-[0.9rem] rounded-full dark:hover:bg-transparent hover:font-semibold dark:hover:font-normal !gap-x-1.5'
           ])}
         />
       )}

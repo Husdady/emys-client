@@ -12,6 +12,8 @@ import { resetPasswordApi } from '@modules/Auth/api/reset-password'
 import { verifySessionApi } from '@routes/DashboardRoute/verify-session'
 
 // GraphQL states
+import { productApi } from '@modules/Product/api'
+import { productsApi } from '@modules/Products/api'
 import { sellersGraphqlApi } from '@modules/Sellers/api/graphql'
 import { productGraphqlApi } from '@modules/Product/api/graphql'
 import { productsGraphqlApi } from '@modules/Products/api/graphql'
@@ -42,6 +44,8 @@ const reducers = combineReducers({
   [forgotPasswordApi.reducerPath]: forgotPasswordApi.reducer,
 
   // Authenticated API
+  [productApi.reducerPath]: productApi.reducer,
+  [productsApi.reducerPath]: productsApi.reducer,
   [verifySessionApi.reducerPath]: verifySessionApi.reducer,
 
   // GraphQL API

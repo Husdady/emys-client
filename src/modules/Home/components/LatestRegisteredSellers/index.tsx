@@ -23,6 +23,7 @@ export default function LatestRegisteredSellers() {
     <section
       id={LATEST_REGISTERED_SELLERS_ID}
       className={classnames([
+        isError ? 'has-error' : null,
         'latest-registered-sellers mx-auto px-5 xl:px-0',
         !isError && !hasEmptySellers ? 'pt-[3rem]' : null,
         isError || (!isLoading && hasEmptySellers) ? 'white-screen' : null

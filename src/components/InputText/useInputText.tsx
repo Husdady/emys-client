@@ -1,5 +1,8 @@
 // Librarys
-import { useRef, useMemo, useCallback, useEffect, FocusEvent, KeyboardEvent } from 'react'
+import { useRef, useMemo, useCallback, FocusEvent, KeyboardEvent } from 'react'
+
+// Hooks
+import useMountedInputText from './useMountedInputText'
 
 // Types
 import type { UseInputTextParams } from './types'
@@ -13,7 +16,7 @@ import isUndefined from '@utils/isUndefined'
 import classnames from '@utils/classnames'
 
 // Constants
-import { PASSWORD, InputProps as Props } from './constants'
+import { InputProps as Props } from './constants'
 
 /**
  * Generate the logic of the InputText component
@@ -137,12 +140,15 @@ export default function useInputText({
     }
   }, [props.onClear, props.clearIconClassName])
 
-  useEffect(() => {
-    // Validate input type
-    if (type !== PASSWORD && props.isShowingPassword === true) {
-      throw new Error(Props.ERROR_TYPE_PASSWORD)
-    }
-  }, [])
+  useMountedInputText({
+    type: type,
+    refInput: refInput,
+    refInner: refInner,
+    hasError: hasError,
+    autoFocus: props.autoFocus,
+    isShowingPassword: props.isShowingPassword,
+    preventAutoComplete: props.preventAutoComplete
+  })
 
   return {
     refInner: refInner,

@@ -14,7 +14,9 @@ html {
     }
 
     @media only screen and (max-width: 640px) {
-      @apply pt-[3rem] pb-2;
+      &:not(.has-error) {
+        @apply pt-[3rem] pb-2;
+      }
 
       & a {
         & .icon {
