@@ -36,8 +36,8 @@ export default function ProductInformation(product: Product) {
         <ProductFields {...product} />
       </div>
 
-      <div className="pt-2 border-t border-gray-300 dark:border-gray-600 px-4">
-        <div className="mt-2 inner-wrapper flex items-center gap-x-2">
+      <div className="pt-2 border-t border-gray-300 dark:border-gray-600 px-4 footer-content">
+        <div className="mt-2 units-wrapper flex items-center gap-x-2">
           <Seller {...product.mainSeller} />
 
           <Units

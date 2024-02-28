@@ -42,7 +42,7 @@ export default function Stars(product: Product) {
               <Button
                 title=""
                 disabled={isRating}
-                className="btn-star bg-transparent !p-1.5"
+                className="btn-star bg-transparent !p-[0.3rem]"
                 onClick={() => (isEqual ? null : setStars(total))}
                 icon={<Star size="xxl" />}
               />
