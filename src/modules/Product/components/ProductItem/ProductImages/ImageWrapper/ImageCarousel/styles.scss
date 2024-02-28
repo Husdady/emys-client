@@ -1,0 +1,25 @@
+.image-carousel {
+  & .ant-image-mask {
+    @apply hidden;
+  }
+
+  & .slick-dots {
+    @apply items-center min-h-[18px] pointer-events-none;
+
+    & li {
+      @apply w-[24px];
+
+      & button {
+        @apply h-[4px] opacity-100 rounded-[20px] bg-main-700/20 dark:bg-rose-300/40 pointer-events-auto;
+      }
+
+      &.slick-active {
+        @apply w-[30px];
+
+        & button {
+          @apply bg-main-700 dark:bg-rose-200;
+        }
+      }
+    }
+  }
+}

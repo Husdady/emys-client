@@ -48,7 +48,6 @@
 @import '@modules/Membership/components/AffiliateAsEntrepeuner/styles.scss';
 @import '@modules/Product/components/ProductItem/ProductImages/styles.scss';
 @import '@modules/Product/components/ProductItem/ProductInformation/styles.scss';
-@import '@modules/Product/components/ProductItem/ProductInformation/ProductFields/styles.scss';
 @import '@modules/Products/components/ProductsPagination/styles.scss';
 @import '@modules/Products/components/FavoriteProductsPagination/styles.scss';
 @import '@modules/Testimonials/components/TestimonyForm/styles.scss';
@@ -58,6 +57,8 @@
 @import '@modules/Auth/components/LinkToForgottenEmailRecovery/styles.scss';
 @import '@modules/Testimonials/components/TestimonialsPagination/styles.scss';
 @import '@modules/Sellers/components/Seller/SocialNetworks/SocialNetworkList/styles.scss';
+@import '@modules/Product/components/ProductItem/ProductInformation/ProductFields/styles.scss';
+@import '@modules/Product/components/ProductItem/ProductImages/ImageWrapper/ImageCarousel/styles.scss';
 
 // Component Styles
 @import '@components/Icon/styles.scss';

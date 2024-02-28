@@ -1,4 +1,5 @@
 // Components
+import Focus from '@components/Focus'
 import {
   createBenefitsItem,
   createUsageModeItem,
@@ -9,8 +10,8 @@ import {
 } from './items'
 
 // Hooks
-import useMounted from '@hooks/useMounted'
-import { useRef, useMemo, useState, useCallback } from 'react'
+import { useMemo, useState, useCallback } from 'react'
+import useBiggestTabletScreen from '@hooks/useBiggestTabletScreen'
 
 // Interfaces
 import { CollapseProps } from 'antd/lib'
@@ -22,41 +23,15 @@ import isEmptyArray from '@utils/isEmptyArray'
 import isEmptyString from '@utils/isEmptyString'
 
 // Constants
-import { FOCUS_DELAY, QUERY_SELECTOR, PRODUCT_MAIN_INFORMATION } from './constants'
+import { SCROLL_TO_PARAMS, PRODUCT_MAIN_INFORMATION } from './constants'
 
 /**
  * Hook for implements the logic of the ProductFields component
  * @param {Product} product Product
  */
 export default function useProductFields(product: Product) {
-  const timeout = useRef<ReturnType<typeof setTimeout> | number>(0)
-  const contentRefs = useRef<Record<string, HTMLDivElement | null>>({})
+  const isBiggestTableScreen = useBiggestTabletScreen()
   const [activeKey, setActiveKey] = useState(PRODUCT_MAIN_INFORMATION)
-
-  // Event 'focus' on 'x' panel
-  const handleFocusPanel = useCallback(
-    (key: string) => {
-      clearTimeout(timeout.current)
-
-      // Key not found
-      if (!contentRefs.current[key]) {
-        const productInformation = document.querySelector(QUERY_SELECTOR)
-
-        // Make focus to the Item content
-        timeout.current = setTimeout(() => {
-          productInformation?.scrollIntoView({ block: 'start', behavior: 'smooth' })
-        }, FOCUS_DELAY)
-
-        return
-      }
-
-      // Make focus to the Item content
-      timeout.current = setTimeout(() => {
-        contentRefs.current[key]?.scrollIntoView({ block: 'start', behavior: 'smooth' })
-      }, FOCUS_DELAY)
-    },
-    [contentRefs.current]
-  )
 
   // Define the product items
   const items = useMemo<CollapseProps['items']>(() => {
@@ -71,15 +46,7 @@ export default function useProductFields(product: Product) {
       .map((cb) => cb(product))
       .map((el) => ({
         ...el,
-        children: (
-          <div
-            ref={(ref) => {
-              contentRefs.current[el.key] = ref
-            }}
-          >
-            {el.children}
-          </div>
-        )
+        children: <Focus>{el.children}</Focus>
       }))
   }, [product])
 
@@ -100,16 +67,13 @@ export default function useProductFields(product: Product) {
       }
 
       setActiveKey(newActiveKey)
-      handleFocusPanel(newActiveKey)
-    },
-    [handleFocusPanel]
-  )
 
-  useMounted(() => {
-    return () => {
-      clearTimeout(timeout.current)
-    }
-  }, [])
+      if (isEmptyString(newActiveKey) && !isBiggestTableScreen) {
+        window.scrollTo(SCROLL_TO_PARAMS)
+      }
+    },
+    [isBiggestTableScreen]
+  )
 
   return {
     items: items,

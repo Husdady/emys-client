@@ -2,6 +2,7 @@
 import Head from 'next/head'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from 'next-themes'
+import { ThemeConfig, ConfigProvider } from 'antd/lib'
 import { PersistGate } from 'redux-persist/integration/react'
 
 // Components
@@ -24,6 +25,12 @@ import { APP_NAME } from '@config/envs'
 // Styles
 import '@styles/global.scss'
 
+export const theme: ThemeConfig = {
+  token: {
+    motion: false
+  }
+}
+
 export default function EmysApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   useNprogressDone()
   const isOnline = useNetwork()
@@ -37,14 +44,16 @@ export default function EmysApp({ Component, pageProps: { session, ...pageProps 
       <Provider store={store}>
         <PersistGate persistor={persistor} loading={null}>
           <ThemeProvider attribute="class">
-            {!isOnline && <OfflineView />}
+            <ConfigProvider theme={theme}>
+              {!isOnline && <OfflineView />}
 
-            {isOnline && (
-              <main className={fonts}>
-                <div id="global-mask"></div>
-                <Component {...pageProps} />
-              </main>
-            )}
+              {isOnline && (
+                <main className={fonts}>
+                  <div id="global-mask"></div>
+                  <Component {...pageProps} />
+                </main>
+              )}
+            </ConfigProvider>
           </ThemeProvider>
         </PersistGate>
       </Provider>
