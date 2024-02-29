@@ -1,3 +1,6 @@
+// Librarys
+import { memo } from 'react'
+
 // Components
 import Plus from '@assets/icons/plus'
 import Minus from '@assets/icons/minus'
@@ -12,7 +15,7 @@ import { UnitsProps } from './interfaces'
 
 export const sharedBtnClassName = 'py-1 scale max-h-[32px] rounded-md disabled:bg-gray-300 dark:bg-gray-600 dark:disabled:bg-gray-400 dark:text-gray-300 dark:disabled:!text-gray-100'
 
-export default function Units(props: UnitsProps) {
+function Units(props: UnitsProps) {
   const {
     handleBlur,
     increaseUnits,
@@ -53,3 +56,5 @@ export default function Units(props: UnitsProps) {
     </div>
   )
 }
+
+export default memo(Units)

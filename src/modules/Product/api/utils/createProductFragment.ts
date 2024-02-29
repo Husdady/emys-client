@@ -7,34 +7,36 @@ import { gql } from 'graphql-request'
  */
 const createProductFragment = (model: string) => gql`
   fragment ProductFields on ${model} {
+    tags
+    type
     maker
-      weight
-      weightType
-      totalUnits
-      totalVisits
-      benefits
-      usageMode
-      userRating
-      customProductFields {
-        id
-        type
-        fieldName
-      }
-      extraInformation {
-        fieldId
-        textValue
-        listValues
-      }
-      characteristics
-      countryOrigin {
-        country
-      }
-      images {
-        id
-        url
-        width
-        height
-      }
+    weight
+    weightType
+    totalUnits
+    totalVisits
+    benefits
+    usageMode
+    userRating
+    customProductFields {
+      id
+      type
+      fieldName
+    }
+    extraInformation {
+      fieldId
+      textValue
+      listValues
+    }
+    characteristics
+    countryOrigin {
+      country
+    }
+    images {
+      id
+      url
+      width
+      height
+    }
   }
 `
 export default createProductFragment

@@ -1,3 +1,6 @@
+// Librarys
+import { memo } from 'react'
+
 // Interfaces
 import { Product } from '@modules/Products/api/interfaces'
 
@@ -8,7 +11,7 @@ import classnames from '@utils/classnames'
 import { tagProps } from './constants'
 import { AVAILABLE, UNAVAILABLE } from '@modules/Sellers/components/Seller/constants'
 
-export default function StockTag({ isInStock }: Pick<Product, 'isInStock'>) {
+function StockTag({ isInStock }: Pick<Product, 'isInStock'>) {
   const props = tagProps[isInStock ? AVAILABLE : UNAVAILABLE]
 
   return (
@@ -22,3 +25,7 @@ export default function StockTag({ isInStock }: Pick<Product, 'isInStock'>) {
     </span>
   )
 }
+
+export default memo(StockTag, (prevProps, nextProps) => {
+  return prevProps.isInStock === nextProps.isInStock
+})

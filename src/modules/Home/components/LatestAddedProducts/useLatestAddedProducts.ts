@@ -1,8 +1,8 @@
 // Hooks
 import { useMemo, useRef } from 'react'
 import { useGetLatestProductsQuery } from '@modules/Home/api/get-latest-products/graphql'
-import useCheckScrollbar from './hooks/useCheckScrollbar'
 import useScrollOnArrows from './hooks/useScrollOnArrows'
+import useCheckScrollbar from '@hooks/useCheckScrollbar'
 
 // Utils
 import isEmptyArray from '@utils/isEmptyArray'
@@ -35,8 +35,8 @@ export default function useLatestAddedProducts() {
   const hasEmptyProducts = useMemo(() => isEmptyArray(products), [products])
 
   const hasScrollbar = useCheckScrollbar({
-    isLoading: queryData.isLoading,
-    productItemsRef: productItemsRef
+    elementRef: productItemsRef,
+    arrayDeps: [queryData.isLoading]
   })
 
   const { showNextProducts, showPreviousProducts, isDisabledNextArrow, isDisabledPreviousArrow } =

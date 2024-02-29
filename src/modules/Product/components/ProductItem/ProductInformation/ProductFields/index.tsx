@@ -5,16 +5,16 @@ import { Collapse } from 'antd/lib'
 import ChevronDown from '@assets/icons/chevron-down'
 
 // Hooks
-import useProductInformation from './useProductFields'
+import useProductFields from './useProductFields'
 
 // Interfaces
-import { Product } from '@modules/Product/api/interfaces'
+import { ProductFieldsProps } from './interfaces'
 
 // Constants
 import { PRODUCT_DESCRIPTION } from './constants'
 
-export default function ProductFields(product: Product) {
-  const { items, activeKey, handleChangeKey } = useProductInformation(product)
+export default function ProductFields(props: ProductFieldsProps) {
+  const { items, activeKey, handleChangeKey } = useProductFields(props)
 
   return (
     <Collapse

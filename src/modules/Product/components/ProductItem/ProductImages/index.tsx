@@ -14,7 +14,7 @@ export default function ProductImages(product: Product) {
   // Check if the product has invalid images
   const hasInvalidImages = useMemo(() => {
     const images = [product.images]
-    return !Array.isArray(images) && isEmptyArray(images)
+    return isEmptyArray(images) || !Array.isArray(images)
   }, [product.images])
 
   return (

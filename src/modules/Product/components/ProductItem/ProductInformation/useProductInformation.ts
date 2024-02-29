@@ -1,5 +1,5 @@
 // Librarys
-import { useState, useCallback } from 'react'
+import { useRef, useState, useCallback } from 'react'
 
 // Hooks
 import useAuth from '@hooks/useAuth'
@@ -17,6 +17,7 @@ import { PUBLIC_URL } from '@config/envs'
 export default function useProductInformation({ isInStock }: Product) {
   const { user } = useAuth()
   const [units, setUnits] = useState(isInStock ? 1 : 0)
+  const innerInformationRef = useRef<HTMLDivElement | null>(null)
 
   // Callback for set a message for contacts the Seller
   const setDefaultContactSellerMessage = useCallback(
@@ -37,6 +38,7 @@ export default function useProductInformation({ isInStock }: Product) {
   return {
     units: units,
     setUnits: setUnits,
+    innerInformationRef: innerInformationRef,
     setDefaultContactSellerMessage: setDefaultContactSellerMessage
   }
 }

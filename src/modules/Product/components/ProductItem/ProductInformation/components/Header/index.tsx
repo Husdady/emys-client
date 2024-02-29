@@ -1,10 +1,11 @@
 // Components
+import { memo } from 'react'
 import SocialNetworks from './SocialNetworks'
 
 // Interfaces
 import { Product } from '@modules/Product/api/interfaces'
 
-export default function Header(product: Product) {
+function Header(product: Product) {
   const visits = product.totalVisits ?? 1
 
   return (
@@ -17,3 +18,7 @@ export default function Header(product: Product) {
     </header>
   )
 }
+
+export default memo(Header, (prevProps, nextProps) => {
+  return nextProps.totalVisits === nextProps.totalVisits
+})

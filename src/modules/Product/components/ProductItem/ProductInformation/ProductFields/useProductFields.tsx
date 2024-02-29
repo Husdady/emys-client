@@ -1,5 +1,15 @@
 // Components
 import Focus from '@components/Focus'
+
+// Hooks
+import { useMemo } from 'react'
+import useActiveKey from './useActiveKey'
+
+// Interfaces
+import { CollapseProps } from 'antd/lib'
+import { Product } from '@modules/Product/api/interfaces'
+
+// Data
 import {
   createBenefitsItem,
   createUsageModeItem,
@@ -8,30 +18,14 @@ import {
   createMainInformationItem,
   createExtraInformationItem
 } from './items'
-
-// Hooks
-import { useMemo, useState, useCallback } from 'react'
-import useBiggestTabletScreen from '@hooks/useBiggestTabletScreen'
-
-// Interfaces
-import { CollapseProps } from 'antd/lib'
-import { Product } from '@modules/Product/api/interfaces'
-
-// Utils
-import isString from '@utils/isString'
-import isEmptyArray from '@utils/isEmptyArray'
-import isEmptyString from '@utils/isEmptyString'
-
-// Constants
-import { SCROLL_TO_PARAMS, PRODUCT_MAIN_INFORMATION } from './constants'
+import { ProductFieldsProps } from './interfaces'
 
 /**
  * Hook for implements the logic of the ProductFields component
- * @param {Product} product Product
+ * @param {ProductFieldsProps} props Receive props of the ProductsFields component
  */
-export default function useProductFields(product: Product) {
-  const isBiggestTableScreen = useBiggestTabletScreen()
-  const [activeKey, setActiveKey] = useState(PRODUCT_MAIN_INFORMATION)
+export default function useProductFields({ innerInformationRef, ...props }: ProductFieldsProps) {
+  const activeKeyData = useActiveKey({ innerInformationRef: innerInformationRef })
 
   // Define the product items
   const items = useMemo<CollapseProps['items']>(() => {
@@ -43,41 +37,15 @@ export default function useProductFields(product: Product) {
       createCharacteristicsItem,
       createExtraInformationItem
     ]
-      .map((cb) => cb(product))
+      .map((cb) => cb(props))
       .map((el) => ({
         ...el,
         children: <Focus>{el.children}</Focus>
       }))
-  }, [product])
-
-  // Callback for handle the change event of the Collapse component
-  const handleChangeKey = useCallback(
-    (param: string | string[]) => {
-      let newActiveKey = ''
-
-      // Param is an array
-      if (Array.isArray(param) && !isEmptyArray(param)) {
-        const lastParam = param[param.length - 1]
-        newActiveKey = lastParam
-      }
-
-      // Param is an strng
-      if (isString(param) && !isEmptyString(param)) {
-        newActiveKey = param
-      }
-
-      setActiveKey(newActiveKey)
-
-      if (isEmptyString(newActiveKey) && !isBiggestTableScreen) {
-        window.scrollTo(SCROLL_TO_PARAMS)
-      }
-    },
-    [isBiggestTableScreen]
-  )
+  }, [props])
 
   return {
     items: items,
-    activeKey: activeKey,
-    handleChangeKey: handleChangeKey
+    ...activeKeyData
   }
 }

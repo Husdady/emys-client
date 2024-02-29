@@ -1,3 +1,6 @@
+// Librarys
+import { memo } from 'react'
+
 // Components
 import Star from '@assets/icons/star'
 import Button from '@components/Button'
@@ -14,7 +17,7 @@ import classnames from '@utils/classnames'
 // Constants
 import { stars } from './constants'
 
-export default function Stars(product: Product) {
+function Stars(product: Product) {
   const { isRating, setStars, starsGiven, prevStarsGiven, handleMouseEnter, handleMouseLeave } =
     useStars(product)
 
@@ -57,3 +60,5 @@ export default function Stars(product: Product) {
     </div>
   )
 }
+
+export default memo(Stars)
