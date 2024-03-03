@@ -23,12 +23,6 @@ const createProductsFragment = (model: string) => gql`
         height
       }
     }
-    coverImage {
-      url
-      width
-      height
-      filename
-    }
   }
 `
 export default createProductsFragment

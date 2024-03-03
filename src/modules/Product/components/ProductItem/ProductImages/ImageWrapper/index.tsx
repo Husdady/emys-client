@@ -9,21 +9,16 @@ import useImageWrapper from './useImageWrapper'
 import { Product } from '@modules/Product/api/interfaces'
 
 export default function ImageWrapper(product: Product) {
-  const { carouselRef, activeImageId, handleActiveImage } = useImageWrapper()
+  const { carouselRef, orderedImages, activeImageId, handleActiveImage } = useImageWrapper(product)
 
   return (
     <>
-      <ImageCarousel
-        images={product.images}
-        carouselRef={carouselRef}
-        coverImage={product.coverImage}
-      />
+      <ImageCarousel images={orderedImages} carouselRef={carouselRef} />
 
-      {(product.images?.length ?? 0) >= 2 && (
+      {(orderedImages.length ?? 0) >= 2 && (
         <Images
-          images={product.images}
+          images={orderedImages}
           activeImageId={activeImageId}
-          coverImage={product.coverImage}
           handleActiveImage={handleActiveImage}
         />
       )}

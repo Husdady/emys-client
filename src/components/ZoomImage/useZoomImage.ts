@@ -5,15 +5,15 @@ import { useRef, useMemo, useState, useCallback, MouseEvent } from 'react'
 import { Offset, ZoomImageProps } from './interfaces'
 
 // Constants
-import { DEFAULT_OFFSET } from './constants'
+import { DEFAULT_SCALE, DEFAULT_OFFSET, DEFAULT_TARGET_WIDTH, MIN_TARGET_WIDTH } from './constants'
 
-export type Params = Pick<ZoomImageProps, 'onMouseEnter' | 'isShowingTarget'>
+export type Params = Pick<ZoomImageProps, 'width' | 'scale' | 'onMouseEnter' | 'isShowingTarget'>
 
 /**
  * Hook for implements the logic of the ZoomImage component
  * @param {Params} params Receive a 'onMouseEnter'
  */
-export default function useZoomImage({ onMouseEnter, isShowingTarget }: Params) {
+export default function useZoomImage({ width, scale, onMouseEnter, isShowingTarget }: Params) {
   const [opacity, setOpacity] = useState(0)
   const sourceRef = useRef<HTMLDivElement | null>(null)
   const targetRef = useRef<HTMLImageElement | null>(null)
@@ -29,6 +29,15 @@ export default function useZoomImage({ onMouseEnter, isShowingTarget }: Params) 
     }),
     [offset, opacity]
   )
+
+  // Define the target width
+  const targetWidth = useMemo(() => {
+    const imageWidth = width * (scale ?? DEFAULT_SCALE) // Calculate image width
+
+    if (width > 1500) return imageWidth - 0.3
+    if (width < MIN_TARGET_WIDTH) return DEFAULT_TARGET_WIDTH
+    return imageWidth
+  }, [width, scale])
 
   // Callback for set Opacity
   const handleSetOpacity = useCallback(
@@ -79,8 +88,10 @@ export default function useZoomImage({ onMouseEnter, isShowingTarget }: Params) 
   )
 
   return {
+    opacity: opacity,
     targetRef: targetRef,
     sourceRef: sourceRef,
+    targetWidth: targetWidth,
     containerRef: containerRef,
     targetStyles: targetStyles,
     handleMouseMove: handleMouseMove,

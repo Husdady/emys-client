@@ -1,6 +1,5 @@
 // Librarys
 import axios, { AxiosError } from 'axios'
-import { hideAllFloatMessages } from '@libs/antd/message'
 
 // Types
 import type { AxiosBaseQueryResponse } from './types'
@@ -41,8 +40,6 @@ const validations = new AxiosValidations()
  */
 export const axiosBaseQuery = (): AxiosBaseQueryResponse => {
   return async (payload) => {
-    hideAllFloatMessages()
-
     try {
       // Make petition to any endpoint API
       const result = await instance<APIResponse>({

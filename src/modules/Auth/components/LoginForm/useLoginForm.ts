@@ -99,6 +99,8 @@ export default function useLoginForm() {
       }
     })
 
+    window.scrollTo({ top: 0 }) // Reset scroll
+
     // Save authenticated user
     auth.signIn({ user: userLogged, token: accessToken })
 

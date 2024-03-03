@@ -8,6 +8,12 @@ export const LatestProductsDocument = gql`
   query GetLatestProducts($limit: Int, $populate: Boolean) {
     latestProducts(limit: $limit, populate: $populate) {
       ...ProductsFields
+      images {
+        url
+        width
+        height
+        filename
+      }
     }
   }
 

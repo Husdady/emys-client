@@ -12,7 +12,7 @@ const MainNavigation = dynamic(() => import('./MainNavigation'))
 
 function Header() {
   const router = useRouter()
-  console.log({ router: router.pathname })
+
   return (
     <header
       className={classnames([

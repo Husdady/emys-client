@@ -38,10 +38,10 @@ const ContactSeller = dynamic(() => import('./ContactSeller'), {
 
 export default function Product({
   id,
-  sku,
   name,
   code,
   price,
+  images,
   isInStock,
   mainSeller,
   coverImage,
@@ -66,7 +66,7 @@ export default function Product({
         </div>
 
       <div className='mt-3'>
-        <ProductImage coverImage={coverImage} />
+        <ProductImage coverImage={coverImage} firstImage={images?.[0]} />
         <ProductName name={name} isInStock={isInStock} />
         <Description description={description} />
       </div>

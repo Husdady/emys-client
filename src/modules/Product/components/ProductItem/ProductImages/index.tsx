@@ -13,7 +13,7 @@ import classnames from '@root/src/utils/classnames'
 export default function ProductImages(product: Product) {
   // Check if the product has invalid images
   const hasInvalidImages = useMemo(() => {
-    const images = [product.images]
+    const images = product.images
     return isEmptyArray(images) || !Array.isArray(images)
   }, [product.images])
 

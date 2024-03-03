@@ -45,6 +45,18 @@ export const ProductDocument = gql`
     ) {
       data {
         ...ProductsFields
+        coverImage {
+          url
+          width
+          height
+          filename
+        }
+        images {
+          url
+          width
+          height
+          filename
+        }
       }
       meta {
         total

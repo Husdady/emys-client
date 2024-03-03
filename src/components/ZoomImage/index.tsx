@@ -22,14 +22,21 @@ export default function ZoomImage({
   onClickTarget
 }: ZoomImageProps) {
   const {
+    opacity,
     targetRef,
     sourceRef,
+    targetWidth,
     containerRef,
     targetStyles,
     handleMouseMove,
     handleMouseEnter,
     handleSetOpacity
-  } = useZoomImage({ onMouseEnter: onMouseEnter, isShowingTarget: isShowingTarget })
+  } = useZoomImage({
+    width: width,
+    scale: scale,
+    onMouseEnter: onMouseEnter,
+    isShowingTarget: isShowingTarget
+  })
 
   return (
     <div
@@ -39,17 +46,19 @@ export default function ZoomImage({
       onMouseLeave={handleSetOpacity(0)}
       className={classnames([className, 'relative overflow-hidden'])}
     >
-      <div ref={sourceRef}>{children}</div>
+      <div ref={sourceRef} className={opacity === 1 ? 'opacity-0' : undefined}>
+        {children}
+      </div>
 
       {isShowingTarget && (
         <img
           src={src}
           alt="target"
           ref={targetRef}
+          width={targetWidth}
           style={targetStyles}
           onClick={onClickTarget}
           height={height * scale}
-          width={width < MIN_TARGET_WIDTH ? DEFAULT_TARGET_WIDTH : width * scale}
           className="target-image absolute max-w-[initial]"
         />
       )}

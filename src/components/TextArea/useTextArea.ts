@@ -7,7 +7,6 @@ import { TextAreaProps } from './interfaces'
 // Utils
 import isFunction from '@utils/isFunction'
 import isUndefined from '@utils/isUndefined'
-import classnames from '@utils/classnames'
 
 // Constants
 import { TextAreaProps as Props } from './constants'
@@ -25,24 +24,6 @@ export default function useTextArea({
   customTextArea
 }: TextAreaProps) {
   const refTextArea = React.useRef<HTMLTextAreaElement | null>(null)
-
-  // Definir clases en etiquetas HTML
-  const classes = React.useMemo(() => {
-    return {
-      // Definir clases del contenedor
-      container: classnames([containerClassName, 'form-control w-full']),
-
-      // Definir clases del textarea
-      textarea: classnames([
-        className,
-        !resize ? 'resize-none' : null,
-        'appearance-none font-poppins w-full placeholder-gray-400 block p-3 w-full text-gray-700 bg-white rounded-md border leading-tight placeholder:font-normal focus:outline-none font-semibold dark:font-normal dark:text-gray-300 dark:placeholder-gray-400 dark:bg-gray-900 border-gray-400/50 dark:border-gray-400/70 outline outline-1 outline-gray-400/50 shadow-sm dark:outline-gray-400/70 focus:outline-0',
-        hidePlaceholderOnFocus
-          ? 'focus:placeholder-transparent dark:focus:placeholder-transparent'
-          : null
-      ])
-    }
-  }, [])
 
   // Event 'blur' in TextArea component
   const handleBlur = useCallback(() => {
@@ -65,19 +46,9 @@ export default function useTextArea({
     if (isFunction(customTextArea.ref)) customTextArea.ref(ref)
   }, [])
 
-  // Clases dinámicas del textarea
-  const textareaClasses = React.useMemo(() => {
-    return classnames([
-      classes.textarea,
-      hasError === true ? 'shadow-field-error' : 'focus-shadow-field'
-    ])
-  }, [hasError])
-
   return {
     onBlur: handleBlur,
     onFocus: handleFocus,
-    textareaClasses: textareaClasses,
-    containerClassName: classes.container,
     createRefTextArea: createRefTextArea
   }
 }

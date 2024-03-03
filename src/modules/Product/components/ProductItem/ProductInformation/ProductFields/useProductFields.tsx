@@ -7,7 +7,7 @@ import useActiveKey from './useActiveKey'
 
 // Interfaces
 import { CollapseProps } from 'antd/lib'
-import { Product } from '@modules/Product/api/interfaces'
+import { ProductFieldsProps } from './interfaces'
 
 // Data
 import {
@@ -18,14 +18,15 @@ import {
   createMainInformationItem,
   createExtraInformationItem
 } from './items'
-import { ProductFieldsProps } from './interfaces'
 
 /**
  * Hook for implements the logic of the ProductFields component
  * @param {ProductFieldsProps} props Receive props of the ProductsFields component
  */
 export default function useProductFields({ innerInformationRef, ...props }: ProductFieldsProps) {
-  const activeKeyData = useActiveKey({ innerInformationRef: innerInformationRef })
+  const activeKeyData = useActiveKey({
+    innerInformationRef: innerInformationRef
+  })
 
   // Define the product items
   const items = useMemo<CollapseProps['items']>(() => {
@@ -40,9 +41,9 @@ export default function useProductFields({ innerInformationRef, ...props }: Prod
       .map((cb) => cb(props))
       .map((el) => ({
         ...el,
-        children: <Focus>{el.children}</Focus>
+        children: <Focus canFocus={activeKeyData.canFocus}>{el.children}</Focus>
       }))
-  }, [props])
+  }, [props, activeKeyData.canFocus])
 
   return {
     items: items,

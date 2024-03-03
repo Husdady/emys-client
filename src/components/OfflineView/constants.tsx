@@ -11,7 +11,7 @@ export const DEFAULT_DESCRIPTION =
   'Lo sentimos, parece que no tienes conexión a Internet en este momento. Por favor, verifica tu configuración de red y vuelve a intentarlo más tarde'
 
 export const DEFAULT_CUSTOM_TITLE = {
-  className: 'text-red-500 w-full dark:text-red-300 lg:!px-0 max-w-[initial] mt-1'
+  className: 'text-red-500 w-full dark:text-red-300 lg:!px-0 max-w-[initial] mt-1 !max-w-[600px]'
 }
 
 export const DEFAULT_CUSTOM_DESCRIPTION = {

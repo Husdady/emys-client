@@ -63,7 +63,7 @@ export default function Screen({
         {...customDescription}
         className={classnames([
           customDescription.className,
-          'screen-description font-poppins font-bold text-base text-gray-700 sm-container text-center block mt-2 dark:text-gray-300 max-w-[650px] px-2'
+          'screen-description break-words font-poppins font-bold text-base text-gray-700 sm-container text-center block mt-2 dark:text-gray-300 max-w-[650px] px-2'
         ])}
       >
         {description}

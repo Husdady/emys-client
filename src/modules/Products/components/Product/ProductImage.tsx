@@ -6,18 +6,23 @@ import Photo from '@assets/icons/photo'
 
 // Interfaces
 import { Product } from '@modules/Products/api/interfaces'
+import { Image as ImageModel } from '@libs/axios/interfaces'
 
 // Utils
 import isObject from '@utils/isObject'
 
-export default function ProductImage({ coverImage }: Pick<Product, 'coverImage'>) {
-  if (isObject(coverImage)) {
+export interface ProductImageProps extends Pick<Product, 'coverImage'> {
+  firstImage?: ImageModel | null
+}
+
+export default function ProductImage({ coverImage, firstImage }: ProductImageProps) {
+  if (isObject(coverImage) || isObject(firstImage)) {
     return (
       <Image
-        width={coverImage?.width}
-        height={coverImage?.height}
-        src={coverImage?.url as string}
-        alt={coverImage?.filename as string}
+        width={coverImage?.width ?? firstImage?.width}
+        height={coverImage?.height ?? firstImage?.height}
+        src={(coverImage?.url ?? firstImage?.url) as string}
+        alt={(coverImage?.filename ?? firstImage?.filename) as string}
         className="product-image min-w-[120px] min-h-[120px] max-w-[120px] max-h-[120px] mb-2 mx-auto"
       />
     )

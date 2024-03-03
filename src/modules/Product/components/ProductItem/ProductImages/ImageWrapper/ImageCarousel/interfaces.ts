@@ -1,10 +1,11 @@
 // Types
 import type { Ref } from 'react'
-import type { SharedProps } from '@modules/Product/components/ProductItem/ProductImages/types'
 
 // Interfaces
+import { Image } from '@libs/axios/interfaces'
 import { CarouselRef } from 'antd/lib/carousel'
 
-export interface ImageCarouselProps extends SharedProps {
+export interface ImageCarouselProps {
+  images: Image[]
   carouselRef: Ref<CarouselRef>
 }

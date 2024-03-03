@@ -27,6 +27,7 @@ const createProductFragment = (model: string) => gql`
       textValue
       listValues
     }
+    coverImageId
     characteristics
     countryOrigin {
       country
@@ -36,6 +37,7 @@ const createProductFragment = (model: string) => gql`
       url
       width
       height
+      filename
     }
   }
 `

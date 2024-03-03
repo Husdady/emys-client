@@ -6,14 +6,16 @@ import useImages from './useImages'
 
 // Interfaces
 import { ImagesProps } from './interfaces'
-import classnames from '@root/src/utils/classnames'
+
+// Utils
+import classnames from '@utils/classnames'
 
 export default function Images({ images, activeImageId, handleActiveImage }: ImagesProps) {
   useImages()
 
   return (
     <ul className="image-list flex flex-wrap items-center overflow-hidden gap-2">
-      {images?.map((image, i) => (
+      {images.map((image, i) => (
         <li
           key={image.id}
           className={classnames([
@@ -24,6 +26,7 @@ export default function Images({ images, activeImageId, handleActiveImage }: Ima
           <Image
             src={image.url}
             width={image.width}
+            alt={image.filename}
             height={image.height}
             title="Visualizar imagen"
             className="!w-full !h-full"

@@ -1,6 +1,7 @@
 // Hooks
-import { useState, useCallback } from 'react'
+import { useMemo, useState, useCallback } from 'react'
 import useBiggestTabletScreen from '@hooks/useBiggestTabletScreen'
+import useMounted from '@hooks/useMounted'
 
 // Interfaces
 import { ProductFieldsProps } from './interfaces'
@@ -13,7 +14,6 @@ import isEmptyString from '@utils/isEmptyString'
 // Constants
 import { SCROLL_TO_PARAMS } from '../constants'
 import { PRODUCT_MAIN_INFORMATION } from './constants'
-import useMounted from '@root/src/hooks/useMounted'
 
 export type Params = Pick<ProductFieldsProps, 'innerInformationRef'>
 
@@ -22,8 +22,15 @@ export type Params = Pick<ProductFieldsProps, 'innerInformationRef'>
  * @param {Params} params Receive a 'innerInformationRef'
  */
 export default function useActiveKey({ innerInformationRef }: Params) {
+  const [canFocus, setCanFocus] = useState(false)
   const isBiggestTableScreen = useBiggestTabletScreen()
-  const [activeKey, setActiveKey] = useState(isBiggestTableScreen ? '' : PRODUCT_MAIN_INFORMATION)
+
+  // Define the default active key
+  const defaultActiveKey = useMemo(() => {
+    return isBiggestTableScreen ? '' : PRODUCT_MAIN_INFORMATION
+  }, [isBiggestTableScreen])
+
+  const [activeKey, setActiveKey] = useState(defaultActiveKey)
 
   // Callback for check if inner information element has a vertical scrollbar
   const checkIfHasVerticalScrollInnerInformation = useCallback(() => {
@@ -43,7 +50,7 @@ export default function useActiveKey({ innerInformationRef }: Params) {
 
       // Check vertical scrollbar
       const hasVerticalScrollbar = checkIfHasVerticalScrollInnerInformation()
-      console.log({ hasVerticalScrollbar })
+
       if (flag ?? hasVerticalScrollbar) {
         innerInformationRef.current?.classList.remove('pr-3')
         return innerInformationRef.current?.classList.add('pr-1.5')
@@ -59,6 +66,11 @@ export default function useActiveKey({ innerInformationRef }: Params) {
   const handleChangeKey = useCallback(
     (param: string | string[]) => {
       let newActiveKey = ''
+
+      // Allows can focus on Focus component
+      if (!canFocus) {
+        setCanFocus(true)
+      }
 
       // Param is an array
       if (Array.isArray(param) && !isEmptyArray(param)) {
@@ -78,7 +90,7 @@ export default function useActiveKey({ innerInformationRef }: Params) {
         window.scrollTo(SCROLL_TO_PARAMS)
       }
     },
-    [isBiggestTableScreen]
+    [canFocus, isBiggestTableScreen]
   )
 
   useMounted(() => {
@@ -86,7 +98,9 @@ export default function useActiveKey({ innerInformationRef }: Params) {
   }, [])
 
   return {
+    canFocus: canFocus,
     activeKey: activeKey,
-    handleChangeKey: handleChangeKey
+    handleChangeKey: handleChangeKey,
+    defaultActiveKey: defaultActiveKey
   }
 }
