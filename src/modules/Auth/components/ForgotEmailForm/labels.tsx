@@ -6,7 +6,7 @@ import ShieldLock from '@components/Icons/ShieldChevron'
 import { InputLabelProps } from '@components/InputLabel/interfaces'
 
 // Constants
-import { defaultIconProps } from '@components/InputLabel'
+import { defaultIconProps } from '@components/InputLabel/constants'
 
 const labels: Record<string, InputLabelProps> = {
   // Label for code field
