@@ -1,7 +1,7 @@
 // Hooks
 import { useMemo, useRef } from 'react'
-import { useGetLatestProductsQuery } from '@modules/Home/api/get-latest-products/graphql'
-import useScrollOnArrows from './hooks/useScrollOnArrows'
+import { useGetLatestProductsQuery } from '@root/src/modules/Home/api/getLatestProducts/graphql'
+import useScrollOnArrows from '@modules/Product/hooks/useScrollOnArrows'
 import useCheckScrollbar from '@hooks/useCheckScrollbar'
 
 // Utils
@@ -39,25 +39,21 @@ export default function useLatestAddedProducts() {
     arrayDeps: [queryData.isLoading]
   })
 
-  const { showNextProducts, showPreviousProducts, isDisabledNextArrow, isDisabledPreviousArrow } =
-    useScrollOnArrows({
-      hasScrollbar: hasScrollbar,
-      isError: queryData.isError,
-      isLoading: queryData.isLoading,
-      productItemsRef: productItemsRef,
-      hasEmptyProducts: hasEmptyProducts
-    })
+  const arrowsData = useScrollOnArrows({
+    hasScrollbar: hasScrollbar,
+    isError: queryData.isError,
+    isLoading: queryData.isLoading,
+    productItemsRef: productItemsRef,
+    hasEmptyProducts: hasEmptyProducts
+  })
 
   return {
+    ...arrowsData,
     products: products,
     hasScrollbar: hasScrollbar,
     isError: queryData.isError,
     isLoading: queryData.isLoading,
     productItemsRef: productItemsRef,
-    hasEmptyProducts: hasEmptyProducts,
-    showNextProducts: showNextProducts,
-    showPreviousProducts: showPreviousProducts,
-    isDisabledNextArrow: isDisabledNextArrow,
-    isDisabledPreviousArrow: isDisabledPreviousArrow
+    hasEmptyProducts: hasEmptyProducts
   }
 }

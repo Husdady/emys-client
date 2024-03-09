@@ -21,6 +21,7 @@ export default function useShowModalForReadTestimony(props: TestimonyData): () =
     showModal({
       width: 500,
       icon: null,
+      className: 'testimony-modal',
       isShowingAcceptButton: false,
       content: <Testimony {...props} />,
       title: 'Acerca de este Testimonio Omnilife',

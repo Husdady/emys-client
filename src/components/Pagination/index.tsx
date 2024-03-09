@@ -2,7 +2,7 @@
 import React from 'react'
 
 // Components
-import ArrowUpCircle from '@assets/icons/arrow-up-circle'
+import ArrowUpCircle from '@components/Icons/ArrowUpCircle'
 import PagePlaceholder from './Placeholders/PagePlaceholder'
 import ButtonPlaceholder from './Placeholders/ButtonPlaceholder'
 
@@ -48,7 +48,7 @@ const Pagination: React.FC<PaginationProps> = ({
     <section
       className={classnames([className, 'pagination w-full flex flex-col mt-3 xl:mt-1.5 gap-y-2'])}
     >
-      <div className='flex justify-center'>
+      <div className="flex justify-center">
         <span className="limits-wrapper font-semibold text-[0.75rem] py-2 border border-gray-300 dark:border-gray-500 border-l-[5px] px-3 rounded-tr rounded-br ml-1 bg-white dark:bg-gray-800 border-l-main-700 text-black dark:border-l-rose-200 dark:text-gray-300">
           <span className="sm:leading-snug block">
             Límite de &apos;{perPage}&apos; {'documento'.concat(perPage === 1 ? '' : 's')} por

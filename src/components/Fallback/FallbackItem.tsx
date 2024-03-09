@@ -4,7 +4,7 @@ import { FallbackProps } from './interfaces'
 // Utils
 import classnames from '@utils/classnames'
 
-export const sharedClassName = 'animate-pulse bg-gray-200 dark:bg-gray-700'
+const sharedClassName = 'animate-pulse bg-gray-200 dark:bg-gray-700'
 
 export default function FallbackItem({
   classComp,

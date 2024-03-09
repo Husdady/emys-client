@@ -1,7 +1,7 @@
 // Hooks
 import useAuth from '@hooks/useAuth'
 import { useCallback } from 'react'
-import { useGenerateKeyMutation } from '@modules/Account/api/update-information'
+import { useGenerateKeyMutation } from '@modules/Account/api/updateInformation'
 
 // Types
 import type { UseSecretKeyParams } from './types'

@@ -7,7 +7,7 @@ import useBiggestTabletScreen from '@root/src/hooks/useBiggestTabletScreen'
 import { FocusProps } from './interfaces'
 
 // Constants
-import { MOBILE_SCROLL_PARAMS, DESKTOP_SCROLL_PARAMS } from './constants'
+import { SCROLL_PARAMS } from './constants'
 
 export type Params = Pick<FocusProps, 'canFocus'>
 
@@ -20,13 +20,10 @@ export default function useFocus({ canFocus }: Params) {
   const isBiggestTabletScreen = useBiggestTabletScreen()
 
   useMounted(() => {
-
     if ((canFocus ?? true) && divRef.current) {
-      divRef.current.scrollIntoView(
-        isBiggestTabletScreen ? MOBILE_SCROLL_PARAMS : DESKTOP_SCROLL_PARAMS
-      )
+      divRef.current.scrollIntoView(SCROLL_PARAMS)
     }
-  }, [canFocus, isBiggestTabletScreen])
+  }, [canFocus])
 
   return {
     divRef: divRef

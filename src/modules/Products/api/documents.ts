@@ -3,6 +3,7 @@ import { gql } from 'graphql-request'
 
 // Utils
 import createProductsFragment from './utils/createProductsFragment'
+import createProductImageFragment from '@modules/Product/api/utils/createProductImageFragment'
 
 export const ProductDocument = gql`
   query GetProducts(
@@ -45,17 +46,11 @@ export const ProductDocument = gql`
     ) {
       data {
         ...ProductsFields
-        coverImage {
-          url
-          width
-          height
-          filename
-        }
         images {
-          url
-          width
-          height
-          filename
+          ...ProductImageFields
+        }
+        coverImage {
+          ...ProductImageFields
         }
       }
       meta {
@@ -68,6 +63,7 @@ export const ProductDocument = gql`
     }
   }
 
+  ${createProductImageFragment()}
   ${createProductsFragment('Product')}
 `
 
@@ -114,6 +110,12 @@ export const FavoriteProductDocument = gql`
     ) {
       data {
         ...ProductsFields
+        images {
+          ...ProductImagesFields
+        }
+        coverImage {
+          ...ProductImageFields
+        }
       }
       meta {
         total

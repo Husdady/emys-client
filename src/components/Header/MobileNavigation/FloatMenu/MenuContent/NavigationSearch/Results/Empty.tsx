@@ -1,5 +1,5 @@
 // Components
-import FaceFrown from '@assets/icons/face-frown'
+import FaceFrown from '@components/Icons/FaceFrown'
 
 export default function Empty() {
   return (

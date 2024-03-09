@@ -2,7 +2,7 @@
 import useAuth from '@hooks/useAuth'
 import { useCallback } from 'react'
 import { useForm } from 'react-hook-form'
-import { useUpdateUbigeoMutation } from '@modules/Account/api/update-information'
+import { useUpdateUbigeoMutation } from '@modules/Account/api/updateInformation'
 
 // Interfaces
 import { Option } from '@components/Select/interfaces'

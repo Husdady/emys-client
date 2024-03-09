@@ -3,7 +3,7 @@ import { memo } from 'react'
 import dynamic from 'next/dynamic'
 
 // Components
-import CircleArrowLeft from '@assets/icons/circle-arrow-left'
+import CircleArrowLeft from '@components/Icons/CircleArrowLeft'
 
 // Hooks
 import useAnimationInView from '@hooks/useAnimationInView'

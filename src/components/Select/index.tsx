@@ -2,10 +2,10 @@
 import React from 'react'
 
 // Component
-import Sort from '@assets/icons/sort'
+import Sort from '@components/Icons/Sort'
 import InputLabel from '@components/InputLabel'
 import InputError from '@components/InputError'
-import ChevronDown from '@assets/icons/chevron-down'
+import ChevronDown from '@components/Icons/ChevronDown'
 import OptionSelected from './OptionSelected'
 
 // Interfaces

@@ -3,9 +3,12 @@ import { memo } from 'react'
 import dynamic from 'next/dynamic'
 
 // Components
-import Eye from '@assets/icons/eye'
-import LongArrowLeft from '@assets/icons/long-arrow-left'
-import LongArrowRight from '@assets/icons/long-arrow-right'
+import Eye from '@components/Icons/Eye'
+import LongArrowLeft from '@components/Icons/LongArrowLeft'
+import LongArrowRight from '@components/Icons/LongArrowRight'
+
+// Hooks
+import useMobileScreen from '@hooks/useMobileScreen'
 
 // Interfaces
 import { HeaderProps } from './interfaces'
@@ -27,13 +30,13 @@ function Header({
   isDisabledNextArrow,
   isDisabledPreviousArrow
 }: HeaderProps) {
-  return (
-    <div className="latest-added-products-header flex flex-wrap items-center justify-between px-3 max-w-[1100px] mx-auto gap-x-[2.5rem] gap-y-4">
-      <h5 className="text-3xl font-lexend text-pink-500 dark:text-rose-300 break-word">
-        Últimos productos agregados
-      </h5>
+  const isMobileScreen = useMobileScreen()
 
-      <div className="flex items-center gap-x-2 inner-wrapper">
+  return (
+    <div className="latest-added-products-header max-w-[990px] xl:max-w-[1055px] 2xl:max-w-[1360px]">
+      <h5 className="main-title text-pink-500 dark:text-rose-300 mx-4 md:mx-0">Últimos productos agregados</h5>
+
+      <div className="flex items-center gap-x-2 inner-wrapper md:min-w-[341px]">
         <Link
           href={PRODUCTS_PATH}
           title="Ver todos los productos"
@@ -46,23 +49,25 @@ function Header({
           <span>Ver todos los productos</span>
         </Link>
 
-        <div className="flex items-center gap-x-1.5 arrows-wrapper">
-          <Button
-            title=""
-            onClick={showPreviousProducts}
-            disabled={isDisabledPreviousArrow}
-            icon={<LongArrowLeft size="smd" onClick={showPreviousProducts} />}
-            className={classnames([sharedClassName, 'btn-show-previous-products py-1 !px-3 scale'])}
-          />
+        {!isMobileScreen && (
+          <div className="arrows-wrapper">
+            <Button
+              title=""
+              onClick={showPreviousProducts}
+              disabled={isDisabledPreviousArrow}
+              icon={<LongArrowLeft size="lg" onClick={showPreviousProducts} />}
+              className={classnames([sharedClassName, 'btn-show-previous-products'])}
+            />
 
-          <Button
-            title=""
-            onClick={showNextProducts}
-            disabled={isDisabledNextArrow}
-            icon={<LongArrowRight size="smd" onClick={showNextProducts} />}
-            className={classnames([sharedClassName, 'btn-show-next-products py-1 !px-3 scale'])}
-          />
-        </div>
+            <Button
+              title=""
+              onClick={showNextProducts}
+              disabled={isDisabledNextArrow}
+              icon={<LongArrowRight size="lg" onClick={showNextProducts} />}
+              className={classnames([sharedClassName, 'btn-show-next-products'])}
+            />
+          </div>
+        )}
       </div>
     </div>
   )

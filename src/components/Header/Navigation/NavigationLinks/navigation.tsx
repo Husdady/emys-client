@@ -1,10 +1,10 @@
 // Components
-import Home from '@assets/icons/home'
-import BoxSeam from '@assets/icons/box-seam'
-import HeadPhones from '@assets/icons/headphones'
-import MoodDollar from '@assets/icons/mood-dollar'
-import BrandMyOppo from '@assets/icons/brand-my-oppo'
-import ReportMedical from '@assets/icons/report-medical'
+import Home from '@components/Icons/Home'
+import BoxSeam from '@components/Icons/BoxSeam'
+import HeadPhones from '@components/Icons/HeadPhones'
+import MoodDollar from '@components/Icons/MoodDollar'
+import BrandMyOppo from '@components/Icons/BrandMyOppo'
+import ReportMedical from '@components/Icons/ReportMedical'
 
 // Interfaces
 import { NavigationLinkProps } from './interfaces'

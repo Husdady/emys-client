@@ -1,5 +1,5 @@
 // Components
-import Photo from '@assets/icons/photo'
+import Photo from '@components/Icons/Photo'
 
 export default function EmptyImages() {
   return (

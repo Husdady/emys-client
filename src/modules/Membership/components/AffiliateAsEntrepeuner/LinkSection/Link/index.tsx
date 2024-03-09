@@ -2,7 +2,7 @@
 import dynamic from 'next/dynamic'
 
 // Components
-import ExternalLink from '@assets/icons/external-link'
+import ExternalLink from '@components/Icons/ExternalLink'
 
 // Constants
 import { OMNILIFE_ENTREPRENEUR_URL } from '@config/envs'

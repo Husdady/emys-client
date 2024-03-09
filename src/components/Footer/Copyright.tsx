@@ -2,7 +2,7 @@
 import { memo } from 'react'
 
 // Components
-import CopyrightIcon from '@assets/icons/copyright'
+import CopyrightIcon from '@components/Icons/Copyright'
 
 // Data
 import pk from '@root/package.json'

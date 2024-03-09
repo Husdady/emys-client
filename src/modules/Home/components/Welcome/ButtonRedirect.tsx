@@ -1,6 +1,6 @@
 // Components
 import Button from '@components/Button'
-import CircleArrowDown from '@assets/icons/circle-arrow-down'
+import CircleArrowDown from '@components/Icons/CircleArrowDown'
 
 // Hooks
 import useAnimationInView from '@hooks/useAnimationInView'

@@ -11,8 +11,8 @@ import { WELCOME_ID } from './constants'
 const Title = dynamic(() => import('./Title'))
 const Woman = dynamic(() => import('./Woman'))
 const Message = dynamic(() => import('./Message'))
-const WelcomeTopWave = dynamic(() => import('./waves/welcome-top-wave'))
-const WelcomeBottomWave = dynamic(() => import('./waves/welcome-bottom-wave'))
+const WelcomeTopWave = dynamic(() => import('./waves/WelcomeTopWave'))
+const WelcomeBottomWave = dynamic(() => import('./waves/WelcomeBottomWave'))
 const ButtonRedirect = dynamic(() => import('./ButtonRedirect'))
 
 export default function Welcome() {

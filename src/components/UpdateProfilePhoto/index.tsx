@@ -11,10 +11,11 @@ import useUpdateProfilePhotoForm from './useUpdateProfilePhoto'
 // Utils
 import lazy from '@utils/lazy'
 
+// Constants
+import { UPDATE_PROFILE_PHOTO_FORM_ID } from './constants'
+
 // Lazy Components
 const Upload = lazy(() => import('@components/Upload'))
-
-export const UPDATE_PROFILE_PHOTO_FORM_ID = 'update-profile-photo-form-0SLP120'
 
 export default function UpdateProfilePhotoForm() {
   const { watch, submit, handleSubmit, onChangeProfilePhoto, onRemoveProfilePhoto } =

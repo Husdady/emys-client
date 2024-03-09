@@ -2,7 +2,7 @@
 import React from 'react'
 
 // Components
-import Check from '@assets/icons/check'
+import Check from '@components/Icons/Check'
 
 // Interfaces
 import { CheckboxContentProps } from './interfaces'

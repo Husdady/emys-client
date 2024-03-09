@@ -1,6 +1,6 @@
 // Components
-import Sliders from '@assets/icons/sliders'
-import ReportMedical from '@assets/icons/report-medical'
+import Sliders from '@components/Icons/Sliders'
+import ReportMedical from '@components/Icons/ReportMedical'
 import TestimonialsFilters, {
   TESTIMONIALS_FILTERS_FORM_ID
 } from '@modules/Testimonials/components/TestimonialsFilters'

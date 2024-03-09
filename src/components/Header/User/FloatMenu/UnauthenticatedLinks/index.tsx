@@ -6,7 +6,7 @@ import { MenuData } from '@components/Header/User/interfaces'
 
 // Data
 import { CONTACT_PATH } from '@assets/data/paths'
-import navigation from '@assets/navigation/unauthenticated.navigation'
+import navigation from '@assets/navigation/unauthenticated'
 
 // Dynamic Components
 const Header = dynamic(() => import('./Header'))

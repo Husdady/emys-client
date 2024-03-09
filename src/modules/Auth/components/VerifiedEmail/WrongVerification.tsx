@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 // Components
-import Mail from '@assets/icons/mail'
+import Mail from '@components/Icons/Mail'
 import Note from '@modules/Auth/components/Note'
 import Message from '@modules/Auth/components/Message'
 import BackToLogin from '@modules/Auth/components/BackToLogin'

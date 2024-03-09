@@ -19,7 +19,7 @@ export default function Testimony({
   createdAt
 }: Testimony) {
   return (
-    <article>
+    <article className='testimony'>
       <div className="flex gap-x-2.5 mb-4 px-4 testimony-header items-center">
         <TestimonyPhoto photo={photo} />
 

@@ -9,95 +9,31 @@
 @import 'animate.css';
 
 // Antd Styles
-@import './antd/antd-empty';
-@import './antd/antd-image';
-@import './antd/antd-message';
-@import './antd/antd-tooltip';
-@import './antd/antd-dropdown';
+@import './antd/antdEmpty';
+@import './antd/antdImage';
+@import './antd/antdMessage';
+@import './antd/antdTooltip';
+@import './antd/antdDropdown';
 
-// Layout Styles
-@import '@layouts/AuthLayouts/AuthLayout/styles.scss';
-@import '@layouts/PageLayouts/SellersLayout/styles.scss';
-@import '@layouts/PageLayouts/ProductLayout/styles.scss';
-@import '@layouts/PageLayouts/ProductsLayout/styles.scss';
-@import '@layouts/PageLayouts/TestimonialsLayout/styles.scss';
-
-// Container Styles
-@import '@containers/FiltersContainer/styles.scss';
-@import '@containers/LinearBackgroundContainer/styles.scss';
-
-// Module Styles
-@import '@modules/Home/components/Card/styles.scss';
-@import '@modules/Home/components/Contact/styles.scss';
-@import '@modules/Home/components/Welcome/styles.scss';
-@import '@modules/Account/components/Aside/styles.scss';
-@import '@modules/Auth/components/Remember/styles.scss';
-@import '@modules/Sellers/components/Seller/styles.scss';
-@import '@modules/Home/components/SeytuCards/styles.scss';
-@import '@modules/Products/components/Product/styles.scss';
-@import '@modules/Auth/components/LinkToLogin/styles.scss';
-@import '@modules/Home/components/OmnilifeCards/styles.scss';
-@import '@modules/Auth/components/LinkToRegister/styles.scss';
-@import '@modules/Account/components/AccountStatus/styles.scss';
-@import '@modules/Sellers/components/SellersFilters/styles.scss';
-@import '@modules/Testimonials/components/Testimony/styles.scss';
-@import '@modules/Home/components/LatestAddedProducts/styles.scss';
-@import '@modules/Sellers/components/SellersPagination/styles.scss';
-@import '@modules/Membership/components/AffiliateProgram/styles.scss';
-@import '@modules/Membership/components/AffiliateAsCustomer/styles.scss';
-@import '@modules/Membership/components/AffiliateAsEntrepeuner/styles.scss';
-@import '@modules/Product/components/ProductItem/ProductImages/styles.scss';
-@import '@modules/Product/components/ProductItem/ProductInformation/styles.scss';
-@import '@modules/Products/components/ProductsPagination/styles.scss';
-@import '@modules/Products/components/FavoriteProductsPagination/styles.scss';
-@import '@modules/Testimonials/components/TestimonyForm/styles.scss';
-@import '@modules/Home/components/LatestAddedTestimonials/styles.scss';
-@import '@modules/Home/components/LatestRegisteredSellers/styles.scss';
-@import '@modules/Testimonials/components/TestimonialsFilters/styles.scss';
-@import '@modules/Auth/components/LinkToForgottenEmailRecovery/styles.scss';
-@import '@modules/Testimonials/components/TestimonialsPagination/styles.scss';
-@import '@modules/Sellers/components/Seller/SocialNetworks/SocialNetworkList/styles.scss';
-@import '@modules/Product/components/ProductItem/ProductInformation/ProductFields/styles.scss';
-@import '@modules/Product/components/ProductItem/ProductImages/ImageWrapper/ImageCarousel/styles.scss';
-
-// Component Styles
-@import '@components/Icon/styles.scss';
-@import '@components/Mask/styles.scss';
-@import '@components/Button/styles.scss';
-@import '@components/Loader/styles.scss';
-@import '@components/Header/styles.scss';
-@import '@components/Footer/styles.scss';
-@import '@components/Select/styles.scss';
-@import '@components/Screen/styles.scss';
-@import '@components/AppLogo/styles.scss';
-@import '@components/Loading/styles.scss';
-@import '@components/Checkbox/styles.scss';
-@import '@components/WrapTitle/styles.scss';
-@import '@components/Pagination/styles.scss';
-@import '@components/MainSeeker/styles.scss';
-@import '@components/Modal/styles/main.scss';
-@import '@components/InputError/styles.scss';
-@import '@components/MultiSelect/styles.scss';
-@import '@components/SwitchTheme/styles.scss';
-@import '@components/Header/User/styles.scss';
-@import '@components/FloatButtons/styles.scss';
-@import '@components/SubmitButton/styles.scss';
-@import '@components/InputText/styles/main.scss';
-@import '@components/FilterByPriceRange/styles.scss';
-@import '@components/Header/User/FloatMenu/styles.scss';
-@import '@components/FloatButtons/SearchButton/styles.scss';
-@import '@components/FloatButtons/ContactButton/styles.scss';
-@import '@components/Header/MobileNavigation/FloatMenu/MenuContent/styles.scss';
-
-// Routes styles
-@import '@routes/BlockedRoute/styles.scss';
-@import '@routes/MissingRoute/styles.scss';
+// App Styles
+@import './app.scss';
 
 @layer base {
   .hide-scrollbar {
     &::-webkit-scrollbar {
       @apply hidden;
     }
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 
   ::-webkit-scrollbar {
@@ -119,7 +55,7 @@
   }
 
   body {
-    @apply font-lato text-[0.88rem];
+    @apply font-lato text-[0.88rem] overflow-x-hidden;
   }
 
   html:not(.dark) {

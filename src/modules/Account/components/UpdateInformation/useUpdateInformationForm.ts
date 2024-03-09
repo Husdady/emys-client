@@ -3,7 +3,7 @@ import useAuth from '@hooks/useAuth'
 import useMounted from '@hooks/useMounted'
 import { useCallback } from 'react'
 import { useForm } from 'react-hook-form'
-import { useUpdateInformationMutation } from '@modules/Account/api/update-information'
+import { useUpdateInformationMutation } from '@modules/Account/api/updateInformation'
 
 // Interfaces
 import { UpdateInformationFormState } from './interfaces'

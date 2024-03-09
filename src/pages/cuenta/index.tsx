@@ -2,7 +2,7 @@
 import LinearBackgroundContainer from '@containers/LinearBackgroundContainer'
 
 // Routes
-import DashboardRoute from '@routes/DashboardRoute'
+import SessionRoute from '@routes/SessionRoute'
 
 // Layouts
 import MainLayout from '@layouts/MainLayout'
@@ -10,12 +10,12 @@ import AccountLayout from '@layouts/PageLayouts/AccountLayout'
 
 export default function AccountPage() {
   return (
-    <DashboardRoute>
+    <SessionRoute>
       <LinearBackgroundContainer>
         <MainLayout>
           <AccountLayout />
         </MainLayout>
       </LinearBackgroundContainer>
-    </DashboardRoute>
+    </SessionRoute>
   )
 }

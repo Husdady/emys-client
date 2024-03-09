@@ -1,6 +1,6 @@
 // Components
 import InputText from '@components/InputText'
-import MagnifyingGlass from '@assets/icons/magnifying-glass'
+import MagnifyingGlass from '@components/Icons/MagnifyingGlass'
 
 // Hooks
 import useInputSearch from './useInputSearch'
@@ -34,7 +34,7 @@ export default function InputSearch({ products, setResults }: InputSearchProps) 
         icon={<MagnifyingGlass size="xsm" className="text-gray-400" />}
         containerClassName={classnames([
           animationClassName,
-          'input-search-latest-products !border-none max-w-[1100px] mx-auto animate__animated animate__fadeIn'
+          'input-search-latest-products !border-none max-w-[1035px] xl:max-w-[1100px] 2xl:max-w-[1400px] mx-5 lg:mx-auto animate__animated animate__fadeIn'
         ])}
         innerClassName="!rounded-full !px-7 !py-4 text-[0.95rem] !outline-transparent dark:!bg-gray-800"
         placeholder="Buscar productos por nombre, sku, precio o descripción..."

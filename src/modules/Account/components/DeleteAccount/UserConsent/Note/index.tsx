@@ -1,5 +1,5 @@
 // Components
-import CircleXmarkSolid from '@assets/icons/x'
+import CircleXmarkSolid from '@components/Icons/X'
 
 // Hooks
 import useNote from './useNote'

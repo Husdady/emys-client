@@ -6,7 +6,7 @@ import InputIcon from './InputIcon'
 import InputEye from '@components/InputEye'
 import InputError from '@components/InputError'
 import InputLabel from '@components/InputLabel'
-import CircleXmarkSolid from '@assets/icons/circle-xmark-solid'
+import CircleXmarkSolid from '@components/Icons/CircleXmarkSolid'
 
 // Hooks
 import useInputText from './useInputText'

@@ -5,6 +5,7 @@ export const PRODUCT_KEY = 'Product'
 export const PRODUCTS_KEY = 'Products'
 export const CATEGORIES_KEY = 'Categories'
 export const TESTIMONIALS_KEY = 'Testimonials'
+export const RELATED_PRODUCTS_KEY = 'RelatedProducts'
 
 // Ubigeo
 export const REGIONS_KEY = 'Regions'

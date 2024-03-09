@@ -2,7 +2,7 @@
 import dynamic from 'next/dynamic'
 
 // Components
-import BrandMyOppo from '@assets/icons/brand-my-oppo'
+import BrandMyOppo from '@components/Icons/BrandMyOppo'
 import DownloadMembershipPDF from './DownloadMembershipPDF'
 import MembershipDescription from './Description'
 

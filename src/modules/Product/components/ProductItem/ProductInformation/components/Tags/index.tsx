@@ -20,7 +20,7 @@ function ProductTags(product: Product) {
   }
 
   return (
-    <section className="pl-1.5 product-tags-wrapper mt-4 mb-5">
+    <section className="pl-1.5 product-tags-wrapper mt-4 mb-5 xl:mt-2.5 xl:mb-3.5">
       <h5 className="mb-2 font-semibold text-gray-600 dark:text-gray-300 text-base">Etiquetas:</h5>
 
       <ul className="product-tags flex flex-wrap gap-x-1.5 gap-y-1">

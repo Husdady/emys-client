@@ -32,7 +32,6 @@ export interface Product extends TimeStamps {
   coverImageId?: string | null
   totalVisits?: number | null
   isInStock: boolean
-  isShowingPrice: boolean
   totalUnits?: number | null
   mainSeller?: Seller | null
   mainSellerId?: string | null

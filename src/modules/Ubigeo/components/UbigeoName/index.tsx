@@ -1,5 +1,5 @@
 // Components
-import World from '@assets/icons/world'
+import World from '@components/Icons/World'
 
 // Utils
 import truncate from '@utils/truncate'

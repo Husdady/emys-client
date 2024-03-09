@@ -3,7 +3,7 @@ import { memo } from 'react'
 import dynamic from 'next/dynamic'
 
 // Components
-import Brush from '@assets/icons/brush'
+import Brush from '@components/Icons/Brush'
 
 // Hooks
 import useSwitchTheme from './useSwitchTheme'

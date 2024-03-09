@@ -2,7 +2,7 @@
 import { Suspense } from 'react'
 
 // Components
-import Power from '@assets/icons/power'
+import Power from '@components/Icons/Power'
 
 // Hooks
 import useDeleteButton from './useDeleteButton'

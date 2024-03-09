@@ -1,5 +1,5 @@
 // Interfaces
-import { OnlyChildrenProp } from '@config/global-interfaces'
+import { OnlyChildrenProp } from '@config/globalInterfaces'
 
 export interface FocusProps extends OnlyChildrenProp {
   canFocus?: boolean

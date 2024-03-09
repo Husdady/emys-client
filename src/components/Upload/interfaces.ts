@@ -6,7 +6,7 @@ import React from 'react'
 import type { InfoParam } from './types'
 
 // Interfaces
-import { OnlyClassNameProp } from '@config/global-interfaces'
+import { OnlyClassNameProp } from '@config/globalInterfaces'
 
 export interface ChangeParams extends Omit<InfoParam, 'event'> {
   previewFile: string

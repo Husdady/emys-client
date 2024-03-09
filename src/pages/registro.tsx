@@ -1,5 +1,5 @@
 // Routes
-import AuthRoute from '@routes/AuthRoute'
+import AuthRoute from '@root/src/routes/AuthRoute/AuthRoute'
 
 // Layouts
 import MainLayout from '@layouts/MainLayout'

@@ -1,9 +1,9 @@
 // Types
 import type { ReactNode } from 'react'
-import type { SpanType } from '@config/global-types'
+import type { SpanType } from '@config/globalTypes'
 
 // Interfaces
-import { OnlyClassNameProp } from '@config/global-interfaces'
+import { OnlyClassNameProp } from '@config/globalInterfaces'
 
 export interface TagProps extends OnlyClassNameProp, Omit<SpanType, 'title'> {
   title: string

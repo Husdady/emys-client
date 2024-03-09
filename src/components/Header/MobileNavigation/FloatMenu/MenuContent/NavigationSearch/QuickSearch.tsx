@@ -2,7 +2,7 @@
 import dynamic from 'next/dynamic'
 
 // Components
-import MagnifyingGlass from '@assets/icons/magnifying-glass'
+import MagnifyingGlass from '@components/Icons/MagnifyingGlass'
 import FallbackItem from '@components/Fallback/FallbackItem'
 
 // Interfaces

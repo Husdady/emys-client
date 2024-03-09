@@ -1,13 +1,14 @@
 // Components
-import Camera from '@assets/icons/camera'
-import DeviceFloppy from '@assets/icons/device-floppy'
-import UpdateProfilePhotoForm, {
-  UPDATE_PROFILE_PHOTO_FORM_ID
-} from '@components/UpdateProfilePhoto'
+import Camera from '@components/Icons/Camera'
+import DeviceFloppy from '@components/Icons/DeviceFloppy'
+import UpdateProfilePhotoForm from '@components/UpdateProfilePhoto'
 
 // Hooks
 import { useCallback } from 'react'
 import useModal from '@hooks/useModal'
+
+// Constants
+import { UPDATE_PROFILE_PHOTO_FORM_ID } from '@components/UpdateProfilePhoto/constants'
 
 /**
  * Hook for show a Profile Photo modal

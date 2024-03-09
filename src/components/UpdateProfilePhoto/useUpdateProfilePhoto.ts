@@ -4,7 +4,7 @@ import useModal from '@hooks/useModal'
 import useDisableButtonInModalForm from '@hooks/useDisableButtonInModalForm'
 import { useForm } from 'react-hook-form'
 import { useCallback, useMemo } from 'react'
-import { useUpdateProfilePhotoMutation } from '@modules/Account/api/update-profile-photo'
+import { useUpdateProfilePhotoMutation } from '@modules/Account/api/updateProfilePhoto'
 
 // Interfaces
 import { UpdateProfilePhotoState } from './interfaces'

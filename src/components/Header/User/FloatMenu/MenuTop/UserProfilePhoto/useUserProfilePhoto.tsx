@@ -1,7 +1,10 @@
 // Hooks
-import { useMemo } from 'react'
 import useAuth from '@hooks/useAuth'
 import useShowProfilePhotoModal from './useShowProfilePhotoModal'
+import { useMemo, useCallback } from 'react'
+
+// Interfaces
+import { UserProfilePhotoProps } from './interfaces'
 
 // Utils
 import isUndefined from '@utils/isUndefined'
@@ -11,8 +14,9 @@ import avatarImage from '@assets/images/avatar.webp'
 
 /**
  * Hook that implements the logic of Avatar component
+ * @param {UserProfilePhotoProps} props Receive an 'onOpen'
  */
-export default function useUserProfilePhoto() {
+export default function useUserProfilePhoto(props: UserProfilePhotoProps) {
   const { user } = useAuth()
   const showModalForUpdateProfilePhoto = useShowProfilePhotoModal()
 
@@ -26,8 +30,14 @@ export default function useUserProfilePhoto() {
     return img.url // Return the user profile photo
   }, [user?.profilePhoto?.url])
 
+  // Callback for show a modal for update the profile photo of the user
+  const onOpen = useCallback(() => {
+    props.onOpen?.() // Execute 'onOpen' callback
+    showModalForUpdateProfilePhoto()
+  }, [])
+
   return {
     src: avatarUrl,
-    onOpen: showModalForUpdateProfilePhoto
+    onOpen: onOpen
   }
 }

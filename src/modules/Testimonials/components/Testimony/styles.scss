@@ -15,3 +15,15 @@
     }
   }
 }
+
+.testimony-modal {
+  & .testimony {
+    & .testimony-header {
+      @apply py-2 rounded-md bg-gray-100 dark:bg-gray-700;
+    }
+
+    & .wrapper-author-testimony {
+      @apply px-0;
+    }
+  }
+}

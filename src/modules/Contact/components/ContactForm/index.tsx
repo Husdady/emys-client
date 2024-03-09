@@ -2,7 +2,7 @@
 import { Suspense } from 'react'
 
 // Components
-import SendIcon from '@assets/icons/send'
+import SendIcon from '@components/Icons/Send'
 import Fallback from '@components/Fallback'
 
 // Hooks

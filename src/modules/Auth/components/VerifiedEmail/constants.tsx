@@ -1,6 +1,6 @@
 // Components
-import X from '@assets/icons/x'
-import AlertCircle from '@assets/icons/alert-circle'
+import X from '@components/Icons/X'
+import AlertCircle from '@components/Icons/AlertCircle'
 
 // Interfaces
 import { WrongVerificationProps } from './interfaces'

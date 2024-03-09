@@ -4,7 +4,7 @@ import AntdAvatar from 'antd/lib/avatar'
 
 // Components
 import Button from '@components/Button'
-import Camera from '@assets/icons/camera'
+import Camera from '@components/Icons/Camera'
 
 // Types
 import type { ReactNode } from 'react'

@@ -1,5 +1,5 @@
 // Interfaces
-import { OnlyClassNameProp } from '@config/global-interfaces'
+import { OnlyClassNameProp } from '@config/globalInterfaces'
 import { InputTextProps } from '@components/InputText/interfaces'
 
 export interface SearchFallbackProps extends OnlyClassNameProp {

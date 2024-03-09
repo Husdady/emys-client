@@ -7,7 +7,7 @@ import { saveTokenOnAxios, removeTokenFromAxios } from '@libs/axios'
 import useAuth from '@hooks/useAuth'
 import useModal from '@hooks/useModal'
 import useDisableButtonInModalForm from '@hooks/useDisableButtonInModalForm'
-import { useDeleteAccountMutation } from '@modules/Account/api/close-account'
+import { useDeleteAccountMutation } from '@modules/Account/api/closeAccount'
 import { useCallback } from 'react'
 
 // Types

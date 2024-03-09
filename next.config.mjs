@@ -1,14 +1,7 @@
-// Librarys
-import million from 'million/compiler'
-import withPlaiceholder from '@plaiceholder/next'
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    remotePatterns: [
-      { protocol: 'https', hostname: 'res.cloudinary.com' },
-      { protocol: 'https', hostname: 'boo-prod.b-cdn.net' }
-    ]
+    remotePatterns: [{ protocol: 'https', hostname: 'res.cloudinary.com' }]
   },
   env: {
     API_URL: process.env.API_URL,
@@ -33,12 +26,4 @@ const nextConfig = {
   }
 }
 
-// Combine Plaiceholder with Next.js
-// const nextPlaiceholder = withPlaiceholder(nextConfig)
-
-export default withPlaiceholder(nextConfig)
-
-/** @type {import('million').Options} */
-// const millionConfig = { auto: true }
-
-// export default million.next(nextPlaiceholder, millionConfig)
+export default nextConfig

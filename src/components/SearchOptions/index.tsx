@@ -2,7 +2,7 @@
 import { memo, Suspense } from 'react'
 
 // Components
-import MagnifyingGlass from '@assets/icons/magnifying-glass'
+import MagnifyingGlass from '@components/Icons/MagnifyingGlass'
 
 // Types
 import { SearchOptionsProps } from './types'

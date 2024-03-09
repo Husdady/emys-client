@@ -36,7 +36,7 @@ export default function Screen({
       style={style}
       className={classnames([
         className,
-        'page-screen flex flex-col items-center justify-center mx-auto px-4 lg:px-0 bg-white dark:bg-gray-900 overflow-hidden min-h-[100vh]'
+        'page-screen flex flex-col items-center justify-center mx-auto px-4 lg:px-0 bg-white dark:bg-gray-900 overflow-hidden min-h-[100vh] 2xl:min-h-[600px]'
       ])}
     >
       {!isUndefined(image.src) && (
@@ -53,7 +53,7 @@ export default function Screen({
         {...customTitle}
         className={classnames([
           customTitle.className,
-          'font-poppins font-bold text-3xl text-center main-title max-w-[550px] leading-tight px-5'
+          'font-poppins font-bold text-3xl text-center main-title max-w-[550px] 2xl:max-w-[650px] leading-tight px-5'
         ])}
       >
         {title}

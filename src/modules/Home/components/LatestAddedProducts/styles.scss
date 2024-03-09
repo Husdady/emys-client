@@ -1,38 +1,39 @@
 // Styles
 @import './styles/search.scss';
-@import './styles/shadows.scss';
-@import './styles/product-items.scss';
+
+// Mixins
+@import '@styles/mixins/productsWithDrag/layout';
+
+@include createLayout('.latest-added-products', '.latest-added-products-header');
 
 .latest-added-products {
-  @media only screen and (min-width: 640px) and (max-width: 1200px) {
-    & .input-search-latest-products,
-    & .latest-added-products-header {
-      @apply mx-4;
+  & .product-items {
+    @apply sm:gap-x-2.5;
+
+    & .product-item {
+      &:first-of-type {
+        @apply sm:ml-3;
+      }
+
+      &:last-of-type {
+        @apply sm:mr-3;
+      }
     }
   }
 
-  @media only screen and (min-width: 521px) and (max-width: 639px) {
-    & .input-search-latest-products,
-    & .latest-added-products-header {
-      @apply mx-2.5;
+  @media screen and (min-width: 1020px) and (max-width: 1080px) {
+    & .input-search-latest-products {
+      @apply px-4;
     }
   }
 
-  @media only screen and (max-width: 892px) {
-    & #products {
-      @apply mt-2;
-    }
-
-    & .product-items {
-      @apply mt-[1.5rem];
-    }
-
-    & .latest-added-products-header {
-      @apply px-0;
-    }
-
+  @media only screen and (max-width: 908px) {
     & .inner-wrapper {
       @apply my-2 justify-between;
+    }
+
+    & .main-title {
+      @apply text-[2.25rem] leading-[2.5rem] #{!important};
     }
 
     & .inner-wrapper,
@@ -49,66 +50,21 @@
         }
       }
     }
-
-    & .btn-show-next-products,
-    & .btn-show-previous-products {
-      @apply py-1.5;
-      padding-left: 1.35rem !important;
-      padding-right: 1.35rem !important;
-
-      & .icon {
-        & svg {
-          @apply w-[24px] h-[24px] min-w-[24px] min-h-[24px];
-        }
-      }
-    }
   }
 
   @media only screen and (max-width: 640px) {
-    @apply px-2;
+    & .see-all-products-link {
+      @apply max-w-[initial];
+    }
 
-    & .input-search-latest-products,
-    & .latest-added-products-header {
+    & .input-search-latest-products {
       @apply mx-2;
-    }
-
-    & .btn-heart {
-      & svg {
-        width: 19px !important;
-        height: 19px !important;
-        min-width: 19px !important;
-        min-height: 19px !important;
-      }
-    }
-
-    & .product-item {
-      width: calc(50% - 0.375rem);
-
-      & .product {
-        @apply pt-5 w-full min-w-[initial] max-w-[initial];
-
-        & .btn-heart {
-          @apply top-2.5 right-2.5;
-        }
-      }
     }
   }
 
   @media only screen and (max-width: 515px) {
-    & .latest-added-products-header {
-      @apply gap-y-3;
-    }
-
-    & #products {
-      @apply mt-3;
-    }
-
     & .inner-wrapper {
-      @apply my-0 gap-y-3 flex-wrap flex-col-reverse;
-
-      & .arrows-wrapper {
-        @apply ml-auto flex-wrap gap-y-2 justify-center;
-      }
+      @apply my-0 gap-y-5 flex-wrap flex-col-reverse;
 
       & .see-all-products-link {
         @apply mr-0;

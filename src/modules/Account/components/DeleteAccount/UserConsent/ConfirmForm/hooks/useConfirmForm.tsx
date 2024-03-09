@@ -3,13 +3,13 @@
 import { saveTokenOnAxios } from '@libs/axios'
 
 // Components
-import Trash from '@assets/icons/trash'
+import Trash from '@components/Icons/Trash'
 import ModalContent from '@modules/Account/components/DeleteAccount/UserConsent/ConfirmForm/ModalContent'
 
 // Hooks
 import { useCallback } from 'react'
 import { useForm } from 'react-hook-form'
-import { useAuthorizeCloseAccountMutation } from '@modules/Account/api/close-account'
+import { useAuthorizeCloseAccountMutation } from '@modules/Account/api/closeAccount'
 import useDeleteAccount from './useDeleteAccount'
 import useModal from '@hooks/useModal'
 

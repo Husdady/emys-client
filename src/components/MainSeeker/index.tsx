@@ -3,7 +3,7 @@ import { Suspense } from 'react'
 
 // Components
 import Fallback from './Fallback'
-import MagnifyingGlass from '@assets/icons/magnifying-glass'
+import MagnifyingGlass from '@components/Icons/MagnifyingGlass'
 
 // Interfaces
 import { InputTextProps } from '@components/InputText/interfaces'

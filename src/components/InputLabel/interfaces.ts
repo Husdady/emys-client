@@ -1,5 +1,5 @@
 // Types
-import { LabelType } from '@config/global-types'
+import { LabelType } from '@config/globalTypes'
 
 // Interfaces
 import React from 'react'

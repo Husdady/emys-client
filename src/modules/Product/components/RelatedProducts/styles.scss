@@ -1,0 +1,8 @@
+// Mixins
+@import '@styles/mixins/productsWithDrag/layout.scss';
+
+@include createLayout('.related-products', '.related-products-header');
+
+.related-products {
+  
+}

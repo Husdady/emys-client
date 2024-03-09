@@ -1,6 +1,6 @@
 // Interfaces
 import { MouseEvent } from 'react'
-import { OnlyChildrenProp, OnlyClassNameProp } from '@config/global-interfaces'
+import { OnlyChildrenProp, OnlyClassNameProp } from '@config/globalInterfaces'
 
 export interface Offset {
   top: number

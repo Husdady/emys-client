@@ -2,6 +2,6 @@
 import type { TooltipProps as AntdTooltipProps } from 'antd/lib'
 
 // Interfaces
-import { OnlyChildrenProp } from '@config/global-interfaces'
+import { OnlyChildrenProp } from '@config/globalInterfaces'
 
 export type TooltipProps = AntdTooltipProps & OnlyChildrenProp

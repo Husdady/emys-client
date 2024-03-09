@@ -9,7 +9,7 @@ export default function ProductName({ name, isInStock }: Pick<Product, 'name' | 
     <span
       className={classnames([
         !isInStock ? 'line-through text-gray-500 dark:text-gray-400' : 'dark:text-gray-300',
-        'product-name text-lg font-lexend block text-center leading-5'
+        'product-name text-lg font-lexend block text-center leading-5 mx-3'
       ])}
     >
       {name}

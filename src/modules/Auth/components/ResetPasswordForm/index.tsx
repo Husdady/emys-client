@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 
 // Components
-import Lock from '@assets/icons/lock'
+import Lock from '@components/Icons/Lock'
 import Fallback from '@components/Fallback'
 import SubmitButton from '@components/SubmitButton'
 
@@ -9,7 +9,7 @@ import SubmitButton from '@components/SubmitButton'
 import useResetPasswordForm from './useResetPasswordForm'
 
 // Interfaces
-import { LoaderResponse } from '@config/global-interfaces'
+import { LoaderResponse } from '@config/globalInterfaces'
 
 // Data
 import { passwordLabel, confirmPasswordLabel } from './labels'

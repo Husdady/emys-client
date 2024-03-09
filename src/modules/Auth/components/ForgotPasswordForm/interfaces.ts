@@ -1,5 +1,5 @@
 // Interfaces
-import { OnlyMessageProp } from '@config/global-interfaces'
+import { OnlyMessageProp } from '@config/globalInterfaces'
 
 export interface ForgotPasswordFormState {
   email: string

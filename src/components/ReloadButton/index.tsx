@@ -3,7 +3,7 @@ import { Suspense } from 'react'
 
 // Components
 import Fallback from './Fallback'
-import Reload from '@assets/icons/reload'
+import Reload from '@components/Icons/Reload'
 
 // Interfaces
 import { ButtonProps } from '@components/Button/interfaces'

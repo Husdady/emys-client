@@ -5,8 +5,8 @@ import Avatar from 'antd/lib/avatar'
 import Upload from 'antd/lib/upload/Upload'
 
 // Components
-import Edit from '@assets/icons/edit'
-import Trash from '@assets/icons/trash'
+import Edit from '@components/Icons/Edit'
+import Trash from '@components/Icons/Trash'
 
 // Hooks
 import useUpload from './useUpload'
@@ -23,7 +23,7 @@ import { AVATAR_IMG } from '@assets/data/images'
 // Dynamic Components
 const Button = dynamic(() => import('@components/Button'))
 
-export const AVATAR_SIZE = 200
+const AVATAR_SIZE = 200
 
 const UploadPhoto = ({
   photo,

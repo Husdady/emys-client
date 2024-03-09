@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 // Components
 import Description from './Description'
 import LinkSection from './LinkSection'
-import UserTie from '@assets/icons/user-tie'
+import UserTie from '@components/Icons/UserTie'
 
 // Dynamic Components
 const BoxWrapper = dynamic(() => import('@components/Wrapper'))

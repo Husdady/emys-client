@@ -1,7 +1,7 @@
 // Components
 import Button from '@components/Button'
 import Tooltip from '@components/Tooltip'
-import MagnifyingGlass from '@assets/icons/magnifying-glass'
+import MagnifyingGlass from '@components/Icons/MagnifyingGlass'
 
 // Hooks
 import useShowQuickSearchModal from './useShowQuickSearchModal'

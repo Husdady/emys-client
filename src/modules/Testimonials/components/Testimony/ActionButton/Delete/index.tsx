@@ -1,5 +1,5 @@
 // Components
-import Trash from '@assets/icons/trash'
+import Trash from '@components/Icons/Trash'
 import Button from '@components/Button'
 
 // Hooks

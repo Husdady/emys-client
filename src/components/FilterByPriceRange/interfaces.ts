@@ -1,5 +1,5 @@
 // Interfaces
-import { FormLabel } from '@config/global-interfaces'
+import { FormLabel } from '@config/globalInterfaces'
 
 export interface PriceFilterProps extends FormLabel {
   minPrice?: number

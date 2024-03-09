@@ -3,7 +3,7 @@ import { memo } from 'react'
 import dynamic from 'next/dynamic'
 
 // Components
-import X from '@assets/icons/x'
+import X from '@components/Icons/X'
 
 // Interfaces
 import { MenuData } from '@components/Header/User/interfaces'
@@ -16,7 +16,7 @@ function MenuTop({ hideMenu }: MenuData) {
   return (
     <div className="menu-header flex items-center justify-between p-3.5 gap-x-4 overflow-y-hidden overflow-x-auto border-b-2 border-gray-300/30 dark:border-gray-700/90 dark:bg-gray-900">
       <div className="wrapper-profile-photo flex items-center gap-x-2 truncate">
-        <UserProfilePhoto />
+        <UserProfilePhoto onOpen={hideMenu} />
         <UserFullnameAndEmail />
       </div>
 

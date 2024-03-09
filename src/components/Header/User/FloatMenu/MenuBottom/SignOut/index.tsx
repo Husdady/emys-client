@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 // Components
-import Logout from '@assets/icons/logout'
+import Logout from '@components/Icons/Logout'
 import SubmitButton from '@components/SubmitButton'
 
 // Hooks

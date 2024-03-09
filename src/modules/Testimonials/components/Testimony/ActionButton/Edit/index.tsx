@@ -1,5 +1,5 @@
 // Components
-import Edit from '@assets/icons/edit'
+import Edit from '@components/Icons/Edit'
 import Button from '@components/Button'
 
 // Hooks

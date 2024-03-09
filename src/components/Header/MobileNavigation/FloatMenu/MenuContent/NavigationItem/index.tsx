@@ -2,7 +2,7 @@
 import dynamic from 'next/dynamic'
 
 // Components
-import ChevronRight from '@assets/icons/chevron-right'
+import ChevronRight from '@components/Icons/ChevronRight'
 
 // Hooks
 import { useRouter } from 'next/router'

@@ -3,7 +3,7 @@ import type { ReactNode } from 'react'
 
 // Interfaces
 import { LinkProps } from '@components/Link/interfaces'
-import { OnlyClassNameProp } from '@config/global-interfaces'
+import { OnlyClassNameProp } from '@config/globalInterfaces'
 import { MenuData } from '@components/Header/MobileNavigation/useMobileNavigation/interfaces'
 
 export interface NavigationItemProps extends OnlyClassNameProp {

@@ -2,8 +2,8 @@
 import React from 'react'
 
 // Components
-import Eye from '@assets/icons/eye'
-import EyeOff from '@assets/icons/eye-off'
+import Eye from '@components/Icons/Eye'
+import EyeOff from '@components/Icons/EyeOff'
 
 // Interfaces
 import { EyeProps } from './interfaces'

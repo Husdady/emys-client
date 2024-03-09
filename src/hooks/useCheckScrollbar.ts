@@ -36,12 +36,12 @@ export default function useCheckScrollbar({ elementRef, arrayDeps = [] }: Params
 
   useMounted(() => {
     updateHasScrollbar()
-    elementRef.current?.addEventListener('resize', updateHasScrollbar)
+    window.addEventListener('resize', updateHasScrollbar)
 
     return () => {
-      elementRef.current?.removeEventListener('resize', updateHasScrollbar)
+      window.removeEventListener('resize', updateHasScrollbar)
     }
-  }, [arrayDeps])
+  }, [arrayDeps, updateHasScrollbar])
 
   return hasScrollbar
 }

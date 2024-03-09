@@ -12,7 +12,7 @@ import VerifiedEmail from '@modules/Auth/components/VerifiedEmail'
 import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next'
 
 // Interfaces
-import { LoaderResponse } from '@config/global-interfaces'
+import { LoaderResponse } from '@config/globalInterfaces'
 
 // Loaders
 import verifyAccount from '@modules/Auth/loaders/verify-account'

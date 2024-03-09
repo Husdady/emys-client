@@ -1,5 +1,5 @@
 // Components
-import Check from '@assets/icons/check'
+import Check from '@components/Icons/Check'
 
 export const succesMessageProps = {
   customValue: { className: 'text-gray-700' },

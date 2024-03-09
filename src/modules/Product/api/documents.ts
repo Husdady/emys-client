@@ -2,7 +2,8 @@
 import { gql } from 'graphql-request'
 
 // Utils
-import createProductFragment from '@modules/Product/api/utils/createProductFragment'
+import createProductFragment from './utils/createProductFragment'
+import createProductImageFragment from './utils/createProductImageFragment'
 import createProductsFragment from '@modules/Products/api/utils/createProductsFragment'
 
 export const ProductDocument = gql`
@@ -10,9 +11,19 @@ export const ProductDocument = gql`
     product(code: $code) {
       ...ProductFields
       ...ProductsFields
+      relatedProducts {
+        ...ProductsFields
+        images {
+          ...ProductImageFields
+        }
+        coverImage {
+          ...ProductImageFields
+        }
+      }
     }
   }
 
+  ${createProductImageFragment()}
   ${createProductFragment('ProductByCode')}
   ${createProductsFragment('ProductByCode')}
 `
@@ -22,9 +33,19 @@ export const ProductWithSessionDocument = gql`
     productWithSession(code: $code) {
       ...ProductFields
       ...ProductsFields
+      relatedProducts {
+        ...ProductsFields
+        images {
+          ...ProductImageFields
+        }
+        coverImage {
+          ...ProductImageFields
+        }
+      }
     }
   }
 
+  ${createProductImageFragment()}
   ${createProductFragment('ProductByCode')}
   ${createProductsFragment('ProductByCode')}
 `

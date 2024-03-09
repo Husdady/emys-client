@@ -2,7 +2,7 @@
 import React from 'react'
 
 // Components
-import AlertCircle from '@assets/icons/alert-circle'
+import AlertCircle from '@components/Icons/AlertCircle'
 
 // Hooks
 import useClasses from './useClasses'

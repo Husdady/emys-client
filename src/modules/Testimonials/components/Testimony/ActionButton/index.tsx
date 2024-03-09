@@ -1,7 +1,7 @@
 // Components
 import Button from '@components/Button'
 import Dropdown from 'antd/lib/dropdown/dropdown'
-import DotsVertical from '@assets/icons/dots-vertical'
+import DotsVertical from '@components/Icons/DotsVertical'
 
 // Hooks
 import useActionButton from './useActionButton'

@@ -1,0 +1,20 @@
+@mixin productItems {
+  & .product-items {
+    scroll-behavior: smooth;
+    @apply mt-[2.5rem] flex gap-y-2.5 sm:gap-y-3.5 gap-x-2 pb-[1.1rem] relative flex-wrap sm:flex-nowrap;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &.drag {
+      scroll-behavior: auto;
+      @apply cursor-grab;
+
+      & .product,
+      & .product-item {
+        @apply select-none pointer-events-none;
+      }
+    }
+  }
+}

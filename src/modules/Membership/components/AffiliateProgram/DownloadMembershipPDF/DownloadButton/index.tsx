@@ -2,7 +2,7 @@
 import dynamic from 'next/dynamic'
 
 // Components
-import PDF from '@assets/icons/pdf'
+import PDF from '@components/Icons/Pdf'
 
 // Hooks
 import useDownloadButton from './useDownloadButton'

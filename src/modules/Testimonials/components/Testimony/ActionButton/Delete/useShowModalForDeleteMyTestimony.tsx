@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 // Components
-import Trash from '@assets/icons/trash'
-import ReportMedical from '@assets/icons/report-medical'
+import Trash from '@components/Icons/Trash'
+import ReportMedical from '@components/Icons/ReportMedical'
 import ContentDeleteModal from './ContentDeleteModal'
 
 // Hooks

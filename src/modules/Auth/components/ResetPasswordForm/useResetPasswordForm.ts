@@ -6,13 +6,13 @@ import { saveTokenOnGraphqlClient } from '@libs/graphql'
 import { useCallback } from 'react'
 import { useRouter } from 'next/router'
 import { useForm } from 'react-hook-form'
-import { useResetPasswordMutation } from '@modules/Auth/api/reset-password'
+import { useResetPasswordMutation } from '@modules/Auth/api/resetPassword'
 import useValidateLoader from '@hooks/useValidateLoader'
 import useAuth from '@hooks/useAuth'
 
 // Interfaces
 import { ResetPasswordFormState } from './interfaces'
-import { LoaderResponse } from '@config/global-interfaces'
+import { LoaderResponse } from '@config/globalInterfaces'
 
 // Utils
 import isString from '@utils/isString'

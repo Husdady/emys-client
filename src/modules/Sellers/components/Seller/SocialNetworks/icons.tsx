@@ -1,14 +1,14 @@
 // Components
-import Twitter from '@assets/icons/twitter'
-import LinkedIn from '@assets/icons/linkedin'
-import Facebook from '@assets/icons/facebook'
-import Instagram from '@assets/icons/instagram'
-import BrandWhatsapp from '@assets/icons/brand-whatsapp'
+import Twitter from '@components/Icons/Twitter'
+import LinkedIn from '@components/Icons/Linkedin'
+import Facebook from '@components/Icons/Facebook'
+import Instagram from '@components/Icons/Instagram'
+import BrandWhatsapp from '@components/Icons/BrandWhatsapp'
 
 // Types
 import type { ReactNode } from 'react'
 import type { SocialNetworkType, ExtraSocialNetworkType } from '@modules/Sellers/api/types'
-import FacebookMessenger from '@root/src/assets/icons/facebook-messenger'
+import FacebookMessenger from '@components/Icons/FacebookMessenger'
 
 export const TWITTER = 'twitter'
 export const FACEBOOK = 'facebook'

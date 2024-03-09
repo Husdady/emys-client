@@ -3,13 +3,13 @@ import { Suspense } from 'react'
 
 // Components
 import Fallback from './Fallback'
-import Plus from '@assets/icons/plus'
+import Plus from '@components/Icons/Plus'
 
 // Hooks
 import useShowModalForAddMyTestimony from './useShowModalForAddTestimony'
 
 // Interfaces
-import { OnlyClassNameProp } from '@config/global-interfaces'
+import { OnlyClassNameProp } from '@config/globalInterfaces'
 
 // Utils
 import lazy from '@utils/lazy'

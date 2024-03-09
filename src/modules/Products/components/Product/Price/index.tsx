@@ -5,7 +5,7 @@ import { memo } from 'react'
 import { Product } from '@modules/Products/api/interfaces'
 
 // Constants
-import currencyTypes from './currency-types'
+import currencyTypes from './currencyTypes'
 
 function Price({ price, currencyType }: Pick<Product, 'price' | 'currencyType'>) {
   return (

@@ -1,6 +1,6 @@
 // Components
-import Sliders from '@assets/icons/sliders'
-import BoxSeam from '@assets/icons/box-seam'
+import Sliders from '@components/Icons/Sliders'
+import BoxSeam from '@components/Icons/BoxSeam'
 import ProductsFilters, {
   PRODUCTS_FILTERS_FORM_ID
 } from '@modules/Products/components/ProductsFilters'

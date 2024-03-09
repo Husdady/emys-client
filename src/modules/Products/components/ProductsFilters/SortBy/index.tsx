@@ -5,7 +5,7 @@ import SortBy from '@components/SortBy'
 import type { FilterProps } from '@components/Select/types'
 
 // Constants
-import sortOptions from './sort-options'
+import sortOptions from './sortOptions'
 import classnames from '@utils/classnames'
 
 export default function ProductsSortBy(props: FilterProps) {

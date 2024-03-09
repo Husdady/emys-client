@@ -25,10 +25,7 @@ export default function ProductInformation(product: Product) {
 
   return (
     <aside className="product-information bg-white overflow-hidden pt-3.5 pb-4 font-poppins rounded shadow-lg dark:shadow-none dark:bg-gray-900 flex flex-col justify-between">
-      <div
-        ref={innerInformationRef}
-        className="pr-3 inner-information xl:min-h-[32.35rem] xl:max-h-[32.35rem] xl:overflow-y-auto pl-2 ml-2 mr-1 pb-4"
-      >
+      <div className="px-4 xl:pb-4 xl:border-b xl:border-gray-300 dark:xl:border-gray-600">
         <Header {...product} />
 
         <h3 className="product-name text-[1.75rem] leading-tight break-word font-semibold text-gray-700 dark:text-white">
@@ -41,12 +38,18 @@ export default function ProductInformation(product: Product) {
         </div>
 
         <Stars {...product} />
+      </div>
+
+      <div
+        ref={innerInformationRef}
+        className="pr-3 inner-information xl:min-h-[19.75rem] xl:max-h-[19.75rem] xl:overflow-y-auto pl-2 ml-2 mr-1 pb-4"
+      >
         {product.type !== PRODUCT_TYPE && <OmnilifeMessage />}
         <Tags {...product} />
         <ProductFields {...product} innerInformationRef={innerInformationRef} />
       </div>
 
-      <div className="pt-2 border-t border-gray-300 dark:border-gray-600 px-4 footer-content">
+      <div className="pt-2 xl:border-t xl:border-gray-300 dark:xl:border-gray-600 px-4 footer-content">
         <div className="mt-2 units-wrapper flex items-center gap-x-2">
           <Seller {...product.mainSeller} />
 

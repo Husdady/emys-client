@@ -1,0 +1,108 @@
+// Mixins
+@import './shadows';
+@import './productItems';
+
+@mixin createLayout($mainSelector, $mainHeader) {
+  @include addShadows($mainSelector: $mainSelector);
+
+  #{$mainSelector} {
+    @apply mx-auto;
+    @include productItems;
+
+    #{$mainHeader} {
+      @apply flex flex-wrap items-center justify-between mx-5 lg:mx-auto gap-x-[1.5rem] gap-y-4;
+
+      @media screen and (min-width: 909px) and (max-width: 1080px) {
+        @apply px-[2rem] flex-nowrap;
+      }
+
+      & .main-title {
+        @apply text-3xl font-lexend break-word;
+      }
+
+      & .arrows-wrapper {
+        @apply flex items-center gap-x-1.5;
+      }
+
+      & .btn-show-next-products,
+      & .btn-show-previous-products {
+        @apply py-1 scale;
+        @apply px-3 #{!important};
+      }
+    }
+
+    @media only screen and (max-width: 908px) {
+      & .products {
+        @apply mt-2;
+      }
+
+      & .main-title {
+        @apply w-full text-center;
+      }
+
+      & .product-items {
+        @apply mt-[1.5rem];
+      }
+
+      // & #{$mainHeader} {
+      //   @apply px-0;
+      // }
+
+      & .btn-show-next-products,
+      & .btn-show-previous-products {
+        @apply py-1.5;
+        padding-left: 1.35rem !important;
+        padding-right: 1.35rem !important;
+
+        & .icon {
+          & svg {
+            @apply w-[32px] h-[32px] min-w-[32px] min-h-[32px];
+          }
+        }
+      }
+    }
+
+    @media only screen and (max-width: 640px) {
+      @apply px-2;
+
+      & #{$mainHeader} {
+        @apply mx-2;
+      }
+
+      & .btn-heart {
+        & svg {
+          width: 19px !important;
+          height: 19px !important;
+          min-width: 19px !important;
+          min-height: 19px !important;
+        }
+      }
+
+      & .product-item {
+        width: calc(50% - 0.375rem);
+
+        & .product {
+          @apply pt-5 w-full min-w-[initial] max-w-[initial];
+
+          & .btn-heart {
+            @apply top-2.5 right-2.5;
+          }
+        }
+      }
+    }
+
+    @media only screen and (max-width: 515px) {
+      & #{$mainHeader} {
+        @apply gap-y-3;
+      }
+
+      & .products {
+        @apply mt-3;
+      }
+
+      & .arrows-wrapper {
+        @apply ml-auto flex-wrap gap-y-2 justify-center;
+      }
+    }
+  }
+}

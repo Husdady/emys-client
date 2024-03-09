@@ -1,6 +1,6 @@
 // Interfaces
 import { ReactNode, HTMLAttributes } from 'react'
-import { OnlyStyleProp, OnlyClassNameProp } from '@config/global-interfaces'
+import { OnlyStyleProp, OnlyClassNameProp } from '@config/globalInterfaces'
 
 export interface MessageProps extends OnlyStyleProp, OnlyClassNameProp {
   value: string

@@ -1,7 +1,7 @@
 // Hooks
 import { useCallback, useState } from 'react'
 import useAuth from '@hooks/useAuth'
-import { useRequestCodeMutation } from '@modules/Account/api/request-code'
+import { useRequestCodeMutation } from '@modules/Account/api/requestCode'
 
 export const TIMES_FOR_REQUEST = 2
 

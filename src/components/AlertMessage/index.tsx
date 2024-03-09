@@ -2,10 +2,10 @@
 import { memo } from 'react'
 
 // Components
-import AlertCircle from '@assets/icons/alert-circle'
+import AlertCircle from '@components/Icons/AlertCircle'
 
 // Interfaces
-import { OnlyChildrenProp } from '@config/global-interfaces'
+import { OnlyChildrenProp } from '@config/globalInterfaces'
 
 function AlertMessage({ children }: OnlyChildrenProp) {
   return (

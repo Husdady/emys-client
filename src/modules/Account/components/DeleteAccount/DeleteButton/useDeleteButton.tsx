@@ -2,8 +2,8 @@
 import { useCallback } from 'react'
 
 // Components
-import AlertTriangle from '@assets/icons/alert-triangle'
-import ArrowUpCircle from '@assets/icons/arrow-up-circle'
+import AlertTriangle from '@components/Icons/AlertTriangle'
+import ArrowUpCircle from '@components/Icons/ArrowUpCircle'
 import UserConsent from '@modules/Account/components/DeleteAccount/UserConsent'
 
 // Hooks

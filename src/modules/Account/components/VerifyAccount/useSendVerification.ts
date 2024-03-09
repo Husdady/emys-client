@@ -2,7 +2,7 @@
 // Hooks
 import useAuth from '@hooks/useAuth'
 import { useState, useCallback } from 'react'
-import { useSendVerificationMutation } from '@modules/Account/api/send-verification'
+import { useSendVerificationMutation } from '@modules/Account/api/sendVerification'
 
 // Utils
 import isUndefined from '@utils/isUndefined'

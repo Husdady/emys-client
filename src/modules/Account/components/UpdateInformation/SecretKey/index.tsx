@@ -3,8 +3,8 @@
 import dynamic from 'next/dynamic'
 
 // Components
-import Reload from '@assets/icons/reload'
-import ClipboardCopy from '@assets/icons/clipboard-copy'
+import Reload from '@components/Icons/Reload'
+import ClipboardCopy from '@components/Icons/ClipboardCopy'
 import FallbackItem from '@components/Fallback/FallbackItem'
 
 // Hooks

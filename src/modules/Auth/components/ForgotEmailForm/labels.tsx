@@ -1,6 +1,6 @@
 // Components
-import Key from '@assets/icons/key'
-import ShieldLock from '@assets/icons/shield-chevron'
+import Key from '@components/Icons/Key'
+import ShieldLock from '@components/Icons/ShieldChevron'
 
 // Interfaces
 import { InputLabelProps } from '@components/InputLabel/interfaces'

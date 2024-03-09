@@ -9,9 +9,10 @@ import useUserProfilePhoto from './useUserProfilePhoto'
 
 // Interfaces
 import { StaticImageData } from 'next/image'
+import { UserProfilePhotoProps } from './interfaces'
 
-function UserProfilePhoto() {
-  const { src, onOpen } = useUserProfilePhoto()
+function UserProfilePhoto(props: UserProfilePhotoProps) {
+  const { src, onOpen } = useUserProfilePhoto(props)
   return <Avatar src={src as string|StaticImageData} onOpen={onOpen} />
 }
 

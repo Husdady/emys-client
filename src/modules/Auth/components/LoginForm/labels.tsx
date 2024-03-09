@@ -1,6 +1,6 @@
 // Components
-import Key from '@assets/icons/key'
-import BrandGmail from '@assets/icons/brand-gmail'
+import Key from '@components/Icons/Key'
+import BrandGmail from '@components/Icons/BrandGmail'
 
 // Interfaces
 import { defaultIconProps } from '@components/InputLabel'

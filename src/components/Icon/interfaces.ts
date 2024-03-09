@@ -2,10 +2,10 @@
 import React from 'react'
 
 // Types
-import type { DivType } from '@config/global-types'
+import type { DivType } from '@config/globalTypes'
 
 // Interfaces
-import { OnlyStyleProp, OnlyClassNameProp } from '@config/global-interfaces'
+import { OnlyStyleProp, OnlyClassNameProp } from '@config/globalInterfaces'
 
 export interface IconProps
   extends OnlyStyleProp,

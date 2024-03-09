@@ -3,7 +3,7 @@ import { memo } from 'react'
 import dynamic from 'next/dynamic'
 
 // Components
-import MagnifyingGlass from '@assets/icons/magnifying-glass'
+import MagnifyingGlass from '@components/Icons/MagnifyingGlass'
 
 // Hooks
 import useMobileNavigation from './useMobileNavigation'

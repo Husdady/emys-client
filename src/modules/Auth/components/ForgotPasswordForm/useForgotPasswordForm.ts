@@ -1,7 +1,7 @@
 // Hooks
 import { useForm } from 'react-hook-form'
 import { useState, useCallback } from 'react'
-import { useForgotPasswordMutation } from '@modules/Auth/api/forgot-password'
+import { useForgotPasswordMutation } from '@modules/Auth/api/forgotPassword'
 
 // Interfaces
 import { Verification, ForgotPasswordFormState } from './interfaces'

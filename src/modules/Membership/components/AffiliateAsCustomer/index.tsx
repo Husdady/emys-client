@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 // Components
 import Description from './Description'
 import LinkSection from './LinkSection'
-import UserCircleSolid from '@assets/icons/user-circle-solid'
+import UserCircleSolid from '@components/Icons/UserCircleSolid'
 
 // Dynamic Components
 const BoxWrapper = dynamic(() => import('@components/Wrapper'))

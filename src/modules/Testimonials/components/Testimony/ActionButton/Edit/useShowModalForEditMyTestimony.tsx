@@ -1,6 +1,6 @@
 // Components
-import ReportMedical from '@assets/icons/report-medical'
-import DeviceFloppy from '@assets/icons/device-floppy'
+import ReportMedical from '@components/Icons/ReportMedical'
+import DeviceFloppy from '@components/Icons/DeviceFloppy'
 import TestimonyForm, { TESTIMONY_FORM_ID } from '@modules/Testimonials/components/TestimonyForm'
 
 // Hooks

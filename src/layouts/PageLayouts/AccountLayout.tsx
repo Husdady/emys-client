@@ -1,9 +1,12 @@
 // Librarys
 import dynamic from 'next/dynamic'
 
-// Components
-import Edit from '@assets/icons/edit'
+// Containers
 import BoxContainer from '@containers/BoxContainer'
+
+// Components
+import Edit from '@components/Icons/Edit'
+import BackButton from '@components/BackButton'
 import UserRole from '@modules/Account/components/UserRole'
 import PersonalCode from '@modules/Account/components/PersonalCode'
 import AccountStatus from '@modules/Account/components/AccountStatus'
@@ -12,11 +15,12 @@ import VerifyAccount from '@modules/Account/components/VerifyAccount'
 import UpdateUbigeoForm from '@modules/Account/components/UpdateUbigeo'
 import ApplicationTheme from '@modules/Account/components/ApplicationTheme'
 import UpdatePasswordForm from '@modules/Account/components/UpdatePassword'
-import DeviceDesktopAnalytics from '@assets/icons/device-desktop-analytics'
+import DeviceDesktopAnalytics from '@components/Icons/DeviceDesktopAnalytics'
 import UpdateInformationForm from '@modules/Account/components/UpdateInformation'
 
 // Environment variables
 import { APP_NAME } from '@config/envs'
+import { HOME_PATH } from '@assets/data/paths'
 
 // Dynamic Components
 const BoxWrapper = dynamic(() => import('@components/Wrapper'))
@@ -26,6 +30,8 @@ const Separator = dynamic(() => import('@components/Separator'))
 export default function AccountLayout() {
   return (
     <BoxContainer className="account">
+      <BackButton path={HOME_PATH} title="Volver al Inicio" className="max-w-[175px]" />
+
       <BoxTitle
         icon={<Edit />}
         value="Actualizar mi información personal"

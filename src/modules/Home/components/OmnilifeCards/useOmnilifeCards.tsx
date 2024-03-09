@@ -1,5 +1,5 @@
 // Components
-import Eye from '@assets/icons/eye'
+import Eye from '@components/Icons/Eye'
 import AboutOmnilifeCompany from './modals/AboutOmnilifeCompany'
 import AboutOmnilifeProducts from './modals/AboutOmnilifeProducts'
 import AboutOmnilifeMicellization from './modals/AboutOmnilifeMicellization'
@@ -14,8 +14,8 @@ import isFunction from '@utils/isFunction'
 
 // Constants
 import { PRODUCTS_PATH } from '@assets/data/paths'
-import { CARD_01_ID, CARD_02_ID, CARD_03_ID } from './card-list'
-import sharedShowModalProps from '@modules/Home/data/shared-show-modal-props'
+import { CARD_01_ID, CARD_02_ID, CARD_03_ID } from './cardList'
+import sharedShowModalProps from '@root/src/modules/Home/data/sharedShowModalProps'
 
 /**
  * Hook for manage the logic of the OmnilifeCards component

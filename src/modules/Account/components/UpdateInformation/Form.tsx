@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 
 // Components
 import SecretKey from './SecretKey'
-import DeviceFloppy from '@assets/icons/device-floppy'
+import DeviceFloppy from '@components/Icons/DeviceFloppy'
 import UploadFallback from '@components/Upload/Fallback'
 import FallbackItem from '@components/Fallback/FallbackItem'
 

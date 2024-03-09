@@ -1,10 +1,10 @@
 // Types
 import type { CustomInputProps } from './types'
-import type { DivType, InputType } from '@config/global-types'
+import type { DivType, InputType } from '@config/globalTypes'
 
 // Interfaces
 import { CSSProperties, KeyboardEvent } from 'react'
-import { FormError, FormLabel } from '@config/global-interfaces'
+import { FormError, FormLabel } from '@config/globalInterfaces'
 
 export interface InputTextProps extends Omit<InputType, 'type'>, FormError, FormLabel {
   type?: 'text' | 'email' | 'number' | 'password'

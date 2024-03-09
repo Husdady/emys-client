@@ -2,8 +2,8 @@
 import React from 'react'
 
 // Components
-import Mail from '@assets/icons/mail'
-import Lock from '@assets/icons/lock'
+import Mail from '@components/Icons/Mail'
+import Lock from '@components/Icons/Lock'
 
 // Types
 import type { InputIconProps } from './types'

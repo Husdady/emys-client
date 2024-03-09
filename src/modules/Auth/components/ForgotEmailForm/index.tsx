@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 // Components
-import Lock from '@assets/icons/lock'
+import Lock from '@components/Icons/Lock'
 import Loader from '@components/Loader'
-import LockOpen from '@assets/icons/lock-open'
-import ShieldLock from '@assets/icons/shield-lock'
+import LockOpen from '@components/Icons/LockOpen'
+import ShieldLock from '@components/Icons/ShieldLock'
 import SubmitButton from '@components/SubmitButton'
 import FallbackItem from '@components/Fallback/FallbackItem'
 

@@ -2,7 +2,7 @@
 import { SelectProps } from '@components/Select/interfaces'
 
 // Constants
-import { nullOption, sortDateOptionsNotNullables } from '@assets/data/sort-options'
+import { nullOption, sortDateOptionsNotNullables } from '@assets/data/sortOptions'
 
 export const sortOptions: SelectProps['options'] = [
   ...nullOption,

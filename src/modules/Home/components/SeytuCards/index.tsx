@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic'
 import useSeytuCards from './useSeytuCards'
 
 // Data
-import cards from './card-list'
+import cards from './cardList'
 
 // Dynamic Components
 const HomeCard = dynamic(() => import('@modules/Home/components/Card'))

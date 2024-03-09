@@ -2,7 +2,7 @@
 // Hooks
 import { useCallback } from 'react'
 import { useForm } from 'react-hook-form'
-import { useForgotEmailMutation } from '@modules/Auth/api/forgot-email'
+import { useForgotEmailMutation } from '@modules/Auth/api/forgotEmail'
 
 // Interfaces
 import { ForgotEmailFormState } from './interfaces'

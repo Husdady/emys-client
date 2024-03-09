@@ -21,7 +21,7 @@ export default function InputSearch({ setResults, testimonials }: InputSearchPro
       onClear={handleClearSearchValue}
       isShowingClearIcon={isShowingClearIcon}
       placeholder="Buscar testimonios por datos del autor..."
-      containerClassName="mx-auto max-w-[1100px] input-search-latest-testimonials"
+      containerClassName="mx-auto max-w-[1040px] 2xl:max-w-[1440px] input-search-latest-testimonials"
     />
   )
 }

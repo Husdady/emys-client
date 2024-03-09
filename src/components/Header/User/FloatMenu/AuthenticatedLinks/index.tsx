@@ -2,8 +2,8 @@
 import dynamic from 'next/dynamic'
 
 // Components
-import BoxSeam from '@assets/icons/box-seam'
-import Settings from '@assets/icons/settings'
+import BoxSeam from '@components/Icons/BoxSeam'
+import Settings from '@components/Icons/Settings'
 
 // Interfaces
 import { MenuData } from '@components/Header/User/interfaces'

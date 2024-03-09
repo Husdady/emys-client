@@ -1,8 +1,8 @@
 // Components
-import Eye from '@assets/icons/eye'
+import Eye from '@components/Icons/Eye'
 import Button from '@components/Button'
 import Tooltip from '@components/Tooltip'
-import EyeOff from '@assets/icons/eye-off'
+import EyeOff from '@components/Icons/EyeOff'
 
 // Hooks
 import useEyeButton from './useEyeButton'

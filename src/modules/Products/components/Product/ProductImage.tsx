@@ -2,7 +2,7 @@
 import Image from 'next/image'
 
 // Components
-import Photo from '@assets/icons/photo'
+import Photo from '@components/Icons/Photo'
 
 // Interfaces
 import { Product } from '@modules/Products/api/interfaces'

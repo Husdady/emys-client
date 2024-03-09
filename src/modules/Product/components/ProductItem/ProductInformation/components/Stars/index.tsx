@@ -2,7 +2,7 @@
 import { memo } from 'react'
 
 // Components
-import Star from '@assets/icons/star'
+import Star from '@components/Icons/Star'
 import Button from '@components/Button'
 
 // Hooks

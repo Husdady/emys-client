@@ -2,7 +2,6 @@
 import dynamic from 'next/dynamic'
 
 // Components
-import Sku from './Sku'
 import Price from './Price'
 import ProductName from './ProductName'
 import Description from './Description'

@@ -2,8 +2,8 @@
 import { showFloatWarningMessage } from '@libs/antd/message'
 
 // Components
-import Plus from '@assets/icons/plus'
-import ReportMedical from '@assets/icons/report-medical'
+import Plus from '@components/Icons/Plus'
+import ReportMedical from '@components/Icons/ReportMedical'
 import TestimonyForm, { TESTIMONY_FORM_ID } from '@modules/Testimonials/components/TestimonyForm'
 
 // Hooks

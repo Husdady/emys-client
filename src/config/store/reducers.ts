@@ -4,12 +4,12 @@ import { combineReducers } from 'redux'
 // Auth API states
 import { loginApi } from '@modules/Auth/api/login'
 import { registerApi } from '@modules/Auth/api/register'
-import { forgotEmailApi } from '@modules/Auth/api/forgot-email'
-import { forgotPasswordApi } from '@modules/Auth/api/forgot-password'
-import { resetPasswordApi } from '@modules/Auth/api/reset-password'
+import { forgotEmailApi } from '@modules/Auth/api/forgotEmail'
+import { forgotPasswordApi } from '@modules/Auth/api/forgotPassword'
+import { resetPasswordApi } from '@modules/Auth/api/resetPassword'
 
 // Authenticated API states
-import { verifySessionApi } from '@routes/DashboardRoute/verify-session'
+import { verifySessionApi } from '@root/src/routes/SessionRoute/verifySession'
 
 // GraphQL states
 import { productApi } from '@modules/Product/api'

@@ -2,7 +2,7 @@
 import dynamic from 'next/dynamic'
 
 // Components
-import Camera from '@assets/icons/camera'
+import Camera from '@components/Icons/Camera'
 
 // Hooks
 import useUpdateProfilePhoto from './useUpdateProfilePhoto'
@@ -13,7 +13,7 @@ import { MenuData } from '@components/Header/User/interfaces'
 // Dynamic Components
 const Button = dynamic(() => import('@components/Button'))
 
-export const customTitle = {
+const customTitle = {
   className: 'text-left !leading-snug'
 }
 

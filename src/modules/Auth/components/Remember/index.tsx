@@ -12,7 +12,7 @@ import { FORGOT_PASSWORD_PATH } from '@assets/data/paths'
 const Link = dynamic(() => import('@components/Link'))
 const Checkbox = dynamic(() => import('@components/Checkbox'))
 
-export const customLabel = {
+const customLabel = {
   className:
     'font-lexend tracking-wide text-[0.82rem] dark:font-normal dark:!text-gray-300 whitespace-nowrap'
 }

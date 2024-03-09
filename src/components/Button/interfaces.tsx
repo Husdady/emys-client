@@ -2,10 +2,10 @@
 import React from 'react'
 
 // Types
-import type { ButtonType } from '@config/global-types'
+import type { ButtonType } from '@config/globalTypes'
 
 // Interfaces
-import { TitleProp, OnlyStyleProp, OnlyClassNameProp } from '@config/global-interfaces'
+import { TitleProp, OnlyStyleProp, OnlyClassNameProp } from '@config/globalInterfaces'
 
 export interface SpinProps extends OnlyStyleProp, OnlyClassNameProp {
   title?: React.ReactNode

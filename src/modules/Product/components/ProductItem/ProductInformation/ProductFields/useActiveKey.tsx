@@ -1,7 +1,7 @@
 // Hooks
-import { useMemo, useState, useCallback } from 'react'
-import useBiggestTabletScreen from '@hooks/useBiggestTabletScreen'
 import useMounted from '@hooks/useMounted'
+import useBiggestTabletScreen from '@hooks/useBiggestTabletScreen'
+import { useMemo, useState, useCallback } from 'react'
 
 // Interfaces
 import { ProductFieldsProps } from './interfaces'
@@ -12,7 +12,6 @@ import isEmptyArray from '@utils/isEmptyArray'
 import isEmptyString from '@utils/isEmptyString'
 
 // Constants
-import { SCROLL_TO_PARAMS } from '../constants'
 import { PRODUCT_MAIN_INFORMATION } from './constants'
 
 export type Params = Pick<ProductFieldsProps, 'innerInformationRef'>
@@ -85,10 +84,6 @@ export default function useActiveKey({ innerInformationRef }: Params) {
 
       setActiveKey(newActiveKey)
       fixPaddingRight({ flag: !isEmptyString(newActiveKey) })
-
-      if (isEmptyString(newActiveKey) && !isBiggestTableScreen) {
-        window.scrollTo(SCROLL_TO_PARAMS)
-      }
     },
     [canFocus, isBiggestTableScreen]
   )

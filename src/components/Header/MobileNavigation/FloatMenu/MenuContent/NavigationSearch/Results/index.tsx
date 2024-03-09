@@ -1,7 +1,7 @@
 // Components
 import Empty from './Empty'
 import Result from './Result'
-import CircleXmarkSolid from '@assets/icons/circle-xmark-solid'
+import CircleXmarkSolid from '@components/Icons/CircleXmarkSolid'
 
 // Hooks
 import useCalculateSeparatorHeight from './useCalculateSeparatorHeight'

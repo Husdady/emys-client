@@ -1,5 +1,5 @@
 // Components
-import BrandGmail from '@assets/icons/brand-gmail'
+import BrandGmail from '@components/Icons/BrandGmail'
 
 // Interfaces
 import { InputLabelProps } from '@components/InputLabel/interfaces'

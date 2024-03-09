@@ -1,11 +1,11 @@
 // Routes
-import AuthRoute from '@routes/AuthRoute'
+import AuthRoute from '@root/src/routes/AuthRoute/AuthRoute'
 
 // Types
 import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next'
 
 // Interfaces
-import { LoaderResponse } from '@config/global-interfaces'
+import { LoaderResponse } from '@config/globalInterfaces'
 
 // Layouts
 import MainLayout from '@layouts/MainLayout'

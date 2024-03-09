@@ -1,6 +1,6 @@
 // Components
-import Sliders from '@assets/icons/sliders'
-import MoodDollar from '@assets/icons/mood-dollar'
+import Sliders from '@components/Icons/Sliders'
+import MoodDollar from '@components/Icons/MoodDollar'
 import SellersFilters, { SELLERS_FILTERS_FORM_ID } from '@modules/Sellers/components/SellersFilters'
 
 // Hooks

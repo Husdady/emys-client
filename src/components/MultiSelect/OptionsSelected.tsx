@@ -8,7 +8,7 @@ import Mask from '@components/Mask'
 import Button from '@components/Button'
 import EmptyOptions from '@components/EmptyOptions'
 import VirtualizedOptions from './VirtualizedOptions'
-import ChevronDown from '@assets/icons/chevron-down'
+import ChevronDown from '@components/Icons/ChevronDown'
 
 // Hooks
 import useMultiSelect from './hooks/useMultiSelect'

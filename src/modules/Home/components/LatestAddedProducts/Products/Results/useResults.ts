@@ -2,7 +2,7 @@
 import { useState } from 'react'
 
 // Hooks
-import useDrag from '@modules/Home/components/LatestAddedProducts/hooks/useDrag'
+import useDrag from '@modules/Product/hooks/useDrag'
 
 // Interfaces
 import { ProductsProps } from '@modules/Home/components/LatestAddedProducts/Products/interfaces'

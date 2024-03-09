@@ -5,7 +5,7 @@ import SortBy from '@components/SortBy'
 import type { FilterProps } from '@components/Select/types'
 
 // Constants
-import { sortNameAndEmailOptions } from '@assets/data/sort-options'
+import { sortNameAndEmailOptions } from '@assets/data/sortOptions'
 
 export default function SellersSortBy(props: FilterProps) {
   return (

@@ -4,7 +4,7 @@ import { Product } from '@modules/Products/api/interfaces'
 
 export interface ProductsProps {
   isLoading: boolean
-  hasScrollbar: boolean
   products: Product[]
+  hasScrollbar: boolean
   productItemsRef: MutableRefObject<HTMLUListElement | null>
 }

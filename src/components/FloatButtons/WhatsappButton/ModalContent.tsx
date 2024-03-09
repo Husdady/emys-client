@@ -1,6 +1,6 @@
 // Components
 import Link from '@components/Link'
-import BrandWhatsapp from '@assets/icons/brand-whatsapp'
+import BrandWhatsapp from '@components/Icons/BrandWhatsapp'
 
 // Constants
 import { whatsappNumbers } from './constants'

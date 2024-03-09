@@ -1,6 +1,6 @@
 // Components
-import Lock from '@assets/icons/lock'
-import LockOpen from '@assets/icons/lock-open'
+import Lock from '@components/Icons/Lock'
+import LockOpen from '@components/Icons/LockOpen'
 
 // Interfaces
 import { InputLabelProps } from '@components/InputLabel/interfaces'

@@ -8,7 +8,7 @@ import { api } from '@config/store/graphql'
 import { ProductDocument, ProductWithSessionDocument } from './documents'
 
 // Constants
-import { PRODUCT_KEY } from '@config/store/graphql/constants'
+import { PRODUCT_KEY, RELATED_PRODUCTS_KEY } from '@config/store/graphql/constants'
 
 export const productGraphqlApi = api.injectEndpoints({
   endpoints: (builder) => ({
@@ -21,7 +21,7 @@ export const productGraphqlApi = api.injectEndpoints({
       })
     }),
 
-    // Get products when user is authenticated
+    // Get products when the user is authenticated
     GetProductWithSession: builder.query<ProductItemWithSession, ProductArgs>({
       providesTags: [PRODUCT_KEY],
       query: (variables) => ({

@@ -1,6 +1,6 @@
 // Components
 import ModalContent from './ModalContent'
-import BrandWhatsapp from '@assets/icons/brand-whatsapp'
+import BrandWhatsapp from '@components/Icons/BrandWhatsapp'
 
 // Hooks
 import { useCallback } from 'react'

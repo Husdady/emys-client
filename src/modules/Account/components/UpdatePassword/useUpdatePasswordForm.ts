@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 // Hooks
 import useAuth from '@hooks/useAuth'
-import { useUpdatePasswordMutation } from '@modules/Account/api/update-password'
+import { useUpdatePasswordMutation } from '@modules/Account/api/updatePassword'
 import { useForm } from 'react-hook-form'
 import { useCallback } from 'react'
 

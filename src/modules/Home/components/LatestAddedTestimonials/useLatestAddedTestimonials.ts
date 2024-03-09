@@ -1,6 +1,6 @@
 // Hooks
 import { useMemo } from 'react'
-import { useGetLatestTestimonialsQuery } from '@modules/Home/api/get-latest-testimonials/graphql'
+import { useGetLatestTestimonialsQuery } from '@modules/Home/api/getLatestTestimonials/graphql'
 
 // Utils
 import isEmptyArray from '@utils/isEmptyArray'

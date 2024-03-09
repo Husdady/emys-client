@@ -1,5 +1,5 @@
 // Components
-import LoginIcon from '@assets/icons/login'
+import LoginIcon from '@components/Icons/Login'
 
 // Types
 import type { ImageProps } from 'next/image'

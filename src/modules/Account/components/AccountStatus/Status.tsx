@@ -10,7 +10,7 @@ import classnames from '@utils/classnames'
 import isUndefined from '@utils/isUndefined'
 
 // Constants
-import allowedStatus from './allowed-status'
+import allowedStatus from './allowedStatus'
 
 export default function Status() {
   const auth = useAuth()

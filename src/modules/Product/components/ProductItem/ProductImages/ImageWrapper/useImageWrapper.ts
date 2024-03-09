@@ -16,7 +16,6 @@ import isEmptyString from '@utils/isEmptyString'
  */
 export default function useImageWrapper(product: Product) {
   const carouselRef = useRef<CarouselRef | null>(null)
-  const [activeImageId, setActiveImageId] = useState('')
 
   // Callback for sort product images by cover image id
   const sortImagesByCoverImageId = useCallback((a: Image, b: Image) => {
@@ -43,6 +42,8 @@ export default function useImageWrapper(product: Product) {
 
     return images
   }, [product])
+
+  const [activeImageId, setActiveImageId] = useState(orderedImages[0]?.id ?? '')
 
   // Callback for set an active image and move the Image Carousel
   const handleActiveImage = useCallback(

@@ -1,8 +1,8 @@
 // Components
-import Key from '@assets/icons/key'
-import LockOpen from '@assets/icons/lock-open'
-import BrandGmail from '@assets/icons/brand-gmail'
-import UserCircleRegular from '@assets/icons/user-circle-regular'
+import Key from '@components/Icons/Key'
+import LockOpen from '@components/Icons/LockOpen'
+import BrandGmail from '@components/Icons/BrandGmail'
+import UserCircleRegular from '@components/Icons/UserCircleRegular'
 
 // Interfaces
 import { InputLabelProps } from '@components/InputLabel/interfaces'

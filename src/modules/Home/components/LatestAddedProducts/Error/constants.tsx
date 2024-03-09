@@ -1,5 +1,5 @@
 // Components
-import Home from '@assets/icons/home'
+import Home from '@components/Icons/Home'
 
 // Types
 import type { ImageProps } from 'next/image'

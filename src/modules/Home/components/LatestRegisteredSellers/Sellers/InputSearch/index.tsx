@@ -20,7 +20,7 @@ export default function InputSearch({ sellers, setResults }: InputSearchProps) {
       onChange={handleSearchProducts}
       onClear={handleClearSearchValue}
       isShowingClearIcon={isShowingClearIcon}
-      containerClassName="input-search-latest-sellers max-w-[1100px] mx-auto"
+      containerClassName="input-search-latest-sellers max-w-[1000px] 2xl:max-w-[1400px] mx-auto"
       placeholder="Buscar vendedores por nombre, dni, ruc, correo electrónico o número telefónico..."
     />
   )

@@ -1,13 +1,21 @@
+// Containers
+import MainButtonsContainer from '@containers/MainButtonsContainer'
+
 // Components
+import BackButton from '@components/BackButton'
 import ReloadFavoriteProducts from '@modules/Products/components/ReloadFavoriteProducts'
 import FavoriteProductsPagination from '@modules/Products/components/FavoriteProductsPagination'
+
+// Constants
+import { HOME_PATH } from '@assets/data/paths'
 
 export default function MyFavoriteProductsLayout() {
   return (
     <section className="my-favorite-products-layout mt-2 pb-6">
-      <div className="my-3 sm:mt-0 sm:mb-[2rem] flex items-center justify-end max-w-[1150px] mx-4 sm:mx-[2rem] xl:mx-auto">
+      <MainButtonsContainer>
+        <BackButton path={HOME_PATH} title="Volver al Inicio" />
         <ReloadFavoriteProducts />
-      </div>
+      </MainButtonsContainer>
 
       <FavoriteProductsPagination />
     </section>

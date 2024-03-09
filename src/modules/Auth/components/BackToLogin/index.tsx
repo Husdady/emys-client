@@ -3,7 +3,7 @@ import { useCallback } from 'react'
 import { useRouter } from 'next/router'
 
 // Components
-import Login from '@assets/icons/login'
+import Login from '@components/Icons/Login'
 import SubmitButton from '@components/SubmitButton'
 
 // Constants

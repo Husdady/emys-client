@@ -1,13 +1,13 @@
 // Components
 import Button from '@components/Button'
 import Tooltip from '@components/Tooltip'
-import BrandWhatsapp from '@assets/icons/brand-whatsapp'
+import BrandWhatsapp from '@components/Icons/BrandWhatsapp'
 
 // Hooks
 import useShowContactWhatsappModal from './useShowContactWhatsappModal'
 
 // Interfaces
-import { OnlyClassNameProp } from '@config/global-interfaces'
+import { OnlyClassNameProp } from '@config/globalInterfaces'
 
 // Utils
 import classnames from '@utils/classnames'

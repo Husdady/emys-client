@@ -4,7 +4,7 @@ import AntdModal from 'antd/lib/modal'
 import { memo, Suspense } from 'react'
 
 // Components
-import CircleXmarkSolid from '@assets/icons/circle-xmark-solid'
+import CircleXmarkSolid from '@components/Icons/CircleXmarkSolid'
 
 // Hooks
 import useModal from './hooks/useModal'

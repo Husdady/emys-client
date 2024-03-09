@@ -2,7 +2,7 @@
 import Tooltip from '@components/Tooltip'
 
 // Components
-import HelpIcon from '@assets/icons/help'
+import HelpIcon from '@components/Icons/Help'
 
 // Interfaces
 import { HelpProps } from './interfaces'

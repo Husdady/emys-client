@@ -19,12 +19,14 @@ export default function ProductsPlaceholder() {
   })
 
   return (
-    <ul className="product-list">
-      {createList(count).map((i) => (
-        <li key={String(i)} className="product-item">
-          <Placeholder />
-        </li>
-      ))}
-    </ul>
+    <div className="relative product-items-container">
+      <ul className="product-list">
+        {createList(count).map((i) => (
+          <li key={String(i)} className="product-item">
+            <Placeholder />
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }

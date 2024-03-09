@@ -3,7 +3,7 @@
 import dynamic from 'next/dynamic'
 
 // Components
-import Lock from '@assets/icons/lock'
+import Lock from '@components/Icons/Lock'
 import Loader from '@components/Loader'
 import SubmitButton from '@components/SubmitButton'
 import FallbackItem from '@components/Fallback/FallbackItem'

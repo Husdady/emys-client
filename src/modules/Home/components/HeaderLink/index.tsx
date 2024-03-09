@@ -2,7 +2,7 @@
 import dynamic from 'next/dynamic'
 
 // Components
-import ExternalLinkIcon from '@assets/icons/external-link'
+import ExternalLinkIcon from '@components/Icons/ExternalLink'
 
 // Interfaces
 import { HeaderLinkProps } from './interfaces'

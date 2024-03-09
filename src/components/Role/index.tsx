@@ -1,6 +1,6 @@
 // Components
 import Tag from '@components/Tag'
-import ShieldChevron from '@assets/icons/shield-chevron'
+import ShieldChevron from '@components/Icons/ShieldChevron'
 
 // Interfaces
 import { RoleProps } from './interfaces'

@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 
 // Components
 import ZoomImage from '@components/ZoomImage'
-import MagnifyingGlass from '@assets/icons/magnifying-glass'
+import MagnifyingGlass from '@components/Icons/MagnifyingGlass'
 
 // Hooks
 import useImageItem from './useImageItem'

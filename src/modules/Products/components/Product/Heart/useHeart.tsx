@@ -3,8 +3,8 @@ import { showFloatWarningMessage } from '@libs/antd/message'
 import { useRef, useMemo, useState, useCallback, MouseEvent } from 'react'
 
 // Components
-import HeartSolid from '@assets/icons/heart-solid'
-import HeartRegular from '@assets/icons/heart-regular'
+import HeartSolid from '@components/Icons/HeartSolid'
+import HeartRegular from '@components/Icons/HeartRegular'
 
 // Hooks
 import useAuth from '@hooks/useAuth'

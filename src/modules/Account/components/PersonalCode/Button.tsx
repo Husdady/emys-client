@@ -3,7 +3,7 @@
 import dynamic from 'next/dynamic'
 
 // Components
-import Mail from '@assets/icons/mail'
+import Mail from '@components/Icons/Mail'
 
 // Hooks
 import useRequestMyCode from './useRequestMyCode'

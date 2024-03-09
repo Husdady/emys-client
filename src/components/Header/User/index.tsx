@@ -15,7 +15,7 @@ import classnames from '@utils/classnames'
 // Dynamic Components
 const FloatMenu = dynamic(() => import('./FloatMenu'))
 const Button = dynamic(() => import('@components/Button'))
-const UserCircleSolid = dynamic(() => import('@assets/icons/user-circle-solid'))
+const UserCircleSolid = dynamic(() => import('@components/Icons/UserCircleSolid'))
 
 export default function User({ menuData, className }: UserProps) {
   const { user, avatarUrl, isTabletScreen, isAuthenticated } = useUser()

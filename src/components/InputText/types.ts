@@ -1,9 +1,9 @@
 // Types
-import type { InputType } from '@config/global-types'
+import type { InputType } from '@config/globalTypes'
 
 // Interfaces
 import { InputTextProps } from './interfaces'
-import { InputTypeRef } from '@config/global-interfaces'
+import { InputTypeRef } from '@config/globalInterfaces'
 
 export type InputIconProps = Pick<InputTextProps, 'icon' | 'type'>
 

@@ -2,7 +2,7 @@
 import dynamic from 'next/dynamic'
 
 // Components
-import Login from '@assets/icons/login'
+import Login from '@components/Icons/Login'
 import Fallback from '@components/SubmitButton/Fallback'
 
 // Hooks

@@ -5,7 +5,7 @@ import { memo } from 'react'
 import useAnimationInView from '@hooks/useAnimationInView'
 
 // Components
-import CircleCheck from '@assets/icons/circle-check'
+import CircleCheck from '@components/Icons/CircleCheck'
 
 // Utils
 import classnames from '@utils/classnames'

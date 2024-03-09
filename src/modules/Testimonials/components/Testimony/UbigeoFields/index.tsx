@@ -1,5 +1,5 @@
 // Components
-import World from '@assets/icons/world'
+import World from '@components/Icons/World'
 
 // Interfaces
 import { Testimony } from '@modules/Testimonials/api/interfaces'
@@ -15,7 +15,7 @@ export default function UbigeoFields(
   return (
     <section className="mt-1 w-full ubigeo-fields flex flex-nowrap items-center gap-y-2 gap-x-[0.2rem] text-[0.9rem] dark:text-gray-200 truncate">
       <World size="xsm" />
-      <span className='truncate'>{ubigeoValues}</span>
+      <span className="truncate">{ubigeoValues}</span>
     </section>
   )
 }

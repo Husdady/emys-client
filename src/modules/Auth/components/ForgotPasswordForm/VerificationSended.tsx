@@ -3,7 +3,7 @@
 import { memo, useRef } from 'react'
 
 // Components
-import Mail from '@assets/icons/mail'
+import Mail from '@components/Icons/Mail'
 import Note from '@modules/Auth/components/Note'
 import Message from '@modules/Auth/components/Message'
 import SubmitButton from '@components/SubmitButton'

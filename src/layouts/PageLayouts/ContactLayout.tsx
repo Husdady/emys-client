@@ -2,12 +2,14 @@
 import dynamic from 'next/dynamic'
 
 // Components
-import HeadPhones from '@assets/icons/headphones'
+import BackButton from '@components/BackButton'
+import HeadPhones from '@components/Icons/HeadPhones'
 import BoxContainer from '@containers/BoxContainer'
 import ContactForm from '@modules/Contact/components/ContactForm'
 
 // Constants
 import { APP_NAME } from '@config/envs'
+import { HOME_PATH } from '@assets/data/paths'
 
 // Dynamic Components
 const BoxWrapper = dynamic(() => import('@components/Wrapper'))
@@ -17,6 +19,8 @@ const Aside = dynamic(() => import('@modules/Account/components/Aside'))
 export default function ContactLayout() {
   return (
     <BoxContainer className="contact">
+      <BackButton path={HOME_PATH} title="Volver al Inicio" className="max-w-[175px]" />
+
       <BoxTitle
         value="Envíanos un mensaje"
         icon={<HeadPhones size="md" />}

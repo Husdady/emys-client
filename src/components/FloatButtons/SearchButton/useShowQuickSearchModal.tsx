@@ -1,5 +1,5 @@
 // Components
-import MagnifyingGlass from '@assets/icons/magnifying-glass'
+import MagnifyingGlass from '@components/Icons/MagnifyingGlass'
 import NavigationSearch from '@components/Header/MobileNavigation/FloatMenu/MenuContent/NavigationSearch'
 
 // Hooks

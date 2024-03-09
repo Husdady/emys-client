@@ -3,16 +3,10 @@ import React from 'react'
 
 // Interfaces
 import { InputLabelProps } from './interfaces'
-import { IconProps } from '@components/Icon/interfaces'
 
 // Utils
 import classnames from '@utils/classnames'
 import isUndefined from '@utils/isUndefined'
-
-export const defaultIconProps: IconProps = {
-  size: 'sm',
-  className: 'hover:cursor-default'
-}
 
 const InputLabel: React.FC<InputLabelProps> = ({
   id,

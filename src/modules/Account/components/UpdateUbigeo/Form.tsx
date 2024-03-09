@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 
 // Components
 import Fallback from '@components/Fallback'
-import DeviceFloppy from '@assets/icons/device-floppy'
+import DeviceFloppy from '@components/Icons/DeviceFloppy'
 
 // Hooks
 import useUpdateUbigeoForm from './useUpdateUbigeoForm'

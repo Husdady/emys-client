@@ -1,6 +1,6 @@
 // Components
-import QuoteLeft from '@assets/icons/quote-left'
-import QuoteRight from '@assets/icons/quote-right'
+import QuoteLeft from '@components/Icons/QuoteLeft'
+import QuoteRight from '@components/Icons/QuoteRight'
 
 // Interfaces
 import { Testimony } from '@modules/Testimonials/api/interfaces'

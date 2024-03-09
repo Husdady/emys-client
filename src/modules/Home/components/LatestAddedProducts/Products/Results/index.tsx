@@ -2,10 +2,12 @@
 import { Suspense } from 'react'
 
 // Components
-import ShadowLeft from './ShadowLeft'
-import ShadowRight from './ShadowRight'
 import InputSearchPlaceholder from './InputSearch/Placeholder'
 import ProductPlaceholder from '@modules/Products/components/Product/Placeholder'
+import {
+  ShadowLeft,
+  ShadowRight
+} from '@root/src/modules/Home/components/LatestAddedProducts/Shadows'
 
 // Hooks
 import useResults from './useResults'
@@ -33,11 +35,11 @@ export default function Results({
     results,
     setResults,
     handleScroll,
+    isMobileScreen,
     handleMouseMove,
     handleMouseDown,
     isShowingLeftShadow,
-    isShowingRightShadow,
-    isBiggestTabletScreen
+    isShowingRightShadow
   } = useResults({
     products: products,
     hasScrollbar: hasScrollbar,
@@ -50,7 +52,7 @@ export default function Results({
         <InputSearch products={products} setResults={setResults} />
       </Suspense>
 
-      <div className="relative product-items-container">
+      <div className="relative product-items-container rounded-xl">
         {hasScrollbar && isShowingLeftShadow && <ShadowLeft />}
         {hasScrollbar && isShowingRightShadow && <ShadowRight />}
 
@@ -61,8 +63,8 @@ export default function Results({
           onMouseMove={handleMouseMove}
           onMouseDown={handleMouseDown}
           className={classnames([
-            isBiggestTabletScreen ? 'overflow-x-auto' : 'overflow-x-hidden',
-            'product-items mt-[2.5rem] flex gap-y-2.5 sm:gap-y-3.5 gap-x-2 pb-[1.1rem] relative flex-wrap sm:flex-nowrap sm:gap-x-3'
+            'product-items rounded-xl',
+            isMobileScreen ? 'overflow-x-hidden' : 'overflow-x-auto'
           ])}
         >
           {results.map((product) => (

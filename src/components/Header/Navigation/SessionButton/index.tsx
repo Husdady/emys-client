@@ -12,7 +12,7 @@ import { customTitle, sharedClassName } from './constants'
 
 // Dynamic Components
 const Link = dynamic(() => import('@components/Link'))
-const Login = dynamic(() => import('@assets/icons/login'))
+const Login = dynamic(() => import('@components/Icons/Login'))
 const Button = dynamic(() => import('@components/Button'))
 
 function SessionButton() {

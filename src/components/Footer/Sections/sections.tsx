@@ -1,13 +1,13 @@
 // Components
-import Home from '@assets/icons/home'
-import Mail from '@assets/icons/mail'
-import BoxSeam from '@assets/icons/box-seam'
-import Facebook from '@assets/icons/facebook'
-import HeadPhones from '@assets/icons/headphones'
-import MoodDollar from '@assets/icons/mood-dollar'
-import BrandMyOppo from '@assets/icons/brand-my-oppo'
-import ReportMedical from '@assets/icons/report-medical'
-import BrandWhatsapp from '@assets/icons/brand-whatsapp'
+import Home from '@components/Icons/Home'
+import Mail from '@components/Icons/Mail'
+import BoxSeam from '@components/Icons/BoxSeam'
+import Facebook from '@components/Icons/Facebook'
+import HeadPhones from '@components/Icons/HeadPhones'
+import MoodDollar from '@components/Icons/MoodDollar'
+import BrandMyOppo from '@components/Icons/BrandMyOppo'
+import ReportMedical from '@components/Icons/ReportMedical'
+import BrandWhatsapp from '@components/Icons/BrandWhatsapp'
 
 // Interfaces
 import { SectionProps } from './interfaces'

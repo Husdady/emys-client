@@ -2,7 +2,7 @@
 import { Collapse } from 'antd/lib'
 
 // Components
-import ChevronDown from '@assets/icons/chevron-down'
+import ChevronDown from '@components/Icons/ChevronDown'
 
 // Hooks
 import useProductFields from './useProductFields'

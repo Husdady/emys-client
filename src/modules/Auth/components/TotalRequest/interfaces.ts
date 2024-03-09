@@ -1,5 +1,5 @@
 // Interfaces
-import { OnlyClassNameProp } from '@config/global-interfaces'
+import { OnlyClassNameProp } from '@config/globalInterfaces'
 
 export interface TotalRequestProps extends OnlyClassNameProp {
   maxRequest: number

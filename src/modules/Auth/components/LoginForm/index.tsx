@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 // Components
-import LoginIcon from '@assets/icons/login'
+import LoginIcon from '@components/Icons/Login'
 import Fallback from '@components/Fallback'
 import SubmitButton from '@components/SubmitButton'
 import Remember from '@modules/Auth/components/Remember'

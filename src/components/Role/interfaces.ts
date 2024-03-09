@@ -1,5 +1,5 @@
 // Interfaces
-import { OnlyClassNameProp } from '@config/global-interfaces'
+import { OnlyClassNameProp } from '@config/globalInterfaces'
 
 export interface RoleProps extends OnlyClassNameProp {
   name: string

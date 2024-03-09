@@ -1,9 +1,9 @@
 // Types
 import type { CustomTextAreaProps } from './types'
-import type { DivType, TextAreaType } from '@config/global-types'
+import type { DivType, TextAreaType } from '@config/globalTypes'
 
 // Interfaces
-import type { FormError, FormLabel } from '@config/global-interfaces'
+import type { FormError, FormLabel } from '@config/globalInterfaces'
 
 export interface TextAreaProps
   extends Pick<TextAreaType, 'rows' | 'value' | 'onChange' | 'placeholder' | 'className' | 'style'>,

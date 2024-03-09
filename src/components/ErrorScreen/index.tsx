@@ -12,7 +12,7 @@ import lazy from '@utils/lazy'
 import classnames from '@utils/classnames'
 
 // Constants
-import { DEFAULT_IMAGE } from '@assets/data/error-image'
+import { DEFAULT_IMAGE } from '@assets/data/errorImage'
 import { customTitle, sharedClassName } from './constants'
 
 // Lazy Components

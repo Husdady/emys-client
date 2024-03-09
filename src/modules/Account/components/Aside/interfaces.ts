@@ -2,7 +2,7 @@
 import type { ReactNode } from 'react'
 
 // Interfaces
-import { OnlyChildrenProp, OnlyClassNameProp } from '@config/global-interfaces'
+import { OnlyChildrenProp, OnlyClassNameProp } from '@config/globalInterfaces'
 
 export interface AsideProps extends OnlyChildrenProp, OnlyClassNameProp {
   title: string

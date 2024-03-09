@@ -1,6 +1,6 @@
 // Hooks
 import { useMemo } from 'react'
-import { useGetLatestSellersQuery } from '@modules/Home/api/get-latest-sellers/graphql'
+import { useGetLatestSellersQuery } from '@modules/Home/api/getLatestSellers/graphql'
 
 // Utils
 import isEmptyArray from '@utils/isEmptyArray'

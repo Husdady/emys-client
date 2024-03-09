@@ -1,8 +1,8 @@
 // Global types
-import type { TextAreaType } from '@config/global-types'
+import type { TextAreaType } from '@config/globalTypes'
 
 // Interfaces
-import { TextAreaTypeRef } from '@config/global-interfaces'
+import { TextAreaTypeRef } from '@config/globalInterfaces'
 
 // Types
 export type CustomTextAreaProps = TextAreaTypeRef &

@@ -12,16 +12,16 @@ import { LATEST_ADDED_PRODUCTS_ID } from './constants'
 
 // Dynamic Components
 const Error = dynamic(() => import('./Error'))
+const Empty = dynamic(() => import('./Empty'))
 const Header = dynamic(() => import('./Header'))
 const Products = dynamic(() => import('./Products'))
-const EmptyLatestProducts = dynamic(() => import('./EmptyLatestProducts'))
 
 export default function LatestAddedProducts() {
   const {
     isError,
+    products,
     isLoading,
     hasScrollbar,
-    products,
     productItemsRef,
     hasEmptyProducts,
     showNextProducts,
@@ -36,19 +36,18 @@ export default function LatestAddedProducts() {
       className={classnames([
         isError ? 'sm:!pb-[2rem]' : null,
         !isError && hasEmptyProducts ? 'pb-4 lg:pb-[3rem]' : 'pb-[0.65rem] sm:pb-4 xl:pb-6',
-        'latest-added-products mx-auto pt-4 px-4 xl:px-0'
+        'latest-added-products pt-4 px-4 xl:px-0'
       ])}
     >
       <Header
         showNextProducts={showNextProducts}
         showPreviousProducts={showPreviousProducts}
-        isDisabledNextArrow={isDisabledNextArrow}
         isDisabledPreviousArrow={isDisabledPreviousArrow}
+        isDisabledNextArrow={isDisabledNextArrow}
       />
 
       {isError && <Error />}
-
-      {!isError && !isLoading && hasEmptyProducts && <EmptyLatestProducts />}
+      {!isError && !isLoading && hasEmptyProducts && <Empty />}
 
       {(isLoading || (!isError && !hasEmptyProducts)) && (
         <Products
