@@ -1,6 +1,6 @@
 // Components
 import BackButton from '@components/BackButton'
-import ProductWrapper from '@root/src/modules/Product/components/ProductContainer'
+import ProductWrapper from '@modules/Product/components/ProductContainer'
 
 // Constants
 import { PRODUCTS_PATH } from '@assets/data/paths'

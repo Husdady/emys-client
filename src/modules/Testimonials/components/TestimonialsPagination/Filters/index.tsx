@@ -1,7 +1,7 @@
 // Components
 import InputSearch from './InputSearch'
 import ButtonShowFilters from './ButtonShowFilters'
-import ButtonClearFilters from '@root/src/components/ClearFiltersButton'
+import ButtonClearFilters from '@components/ClearFiltersButton'
 
 // Containers
 import FiltersContainer from '@containers/FiltersContainer'

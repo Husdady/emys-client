@@ -1,5 +1,5 @@
 // Components
-import HeadPhones from '@root/src/components/Icons/HeadPhones'
+import HeadPhones from '@components/Icons/HeadPhones'
 import ContactForm from '@modules/Contact/components/ContactForm'
 
 // Hooks

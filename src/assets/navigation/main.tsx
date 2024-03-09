@@ -1,7 +1,7 @@
 // Components
 import Home from '@components/Icons/Home'
 import BoxSeam from '@components/Icons/BoxSeam'
-import HeadPhones from '@root/src/components/Icons/HeadPhones'
+import HeadPhones from '@components/Icons/HeadPhones'
 import MoodDollar from '@components/Icons/MoodDollar'
 import BrandMyOppo from '@components/Icons/BrandMyOppo'
 import ReportMedical from '@components/Icons/ReportMedical'

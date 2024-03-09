@@ -5,7 +5,9 @@ import dynamic from 'next/dynamic'
 
 // Utils
 import classnames from '@utils/classnames'
-import { PRODUCTS_PATH, PRODUCT_PATH } from '@root/src/assets/data/paths'
+
+// Constants
+import { PRODUCT_PATH } from '@assets/data/paths'
 
 // Dynamic Components
 const MainNavigation = dynamic(() => import('./MainNavigation'))

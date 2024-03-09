@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic'
 import useAuth from '@hooks/useAuth'
 
 // Constants
-import { UNVERIFIED } from '@root/src/modules/Account/components/AccountStatus/allowedStatus'
+import { UNVERIFIED } from '@modules/Account/components/AccountStatus/allowedStatus'
 
 // Dynamic Components
 const BtnSendVerification = dynamic(() => import('./Button'))

@@ -7,7 +7,7 @@ import ProductPlaceholder from '@modules/Products/components/Product/Placeholder
 import {
   ShadowLeft,
   ShadowRight
-} from '@root/src/modules/Home/components/LatestAddedProducts/Shadows'
+} from '@modules/Home/components/LatestAddedProducts/Shadows'
 
 // Hooks
 import useResults from './useResults'

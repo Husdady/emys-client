@@ -10,10 +10,10 @@ import { ContactSellerProps } from './interfaces'
 // Utils
 import isString from '@utils/isString'
 import isObject from '@utils/isObject'
+import isFunction from '@utils/isFunction'
 import isUndefined from '@utils/isUndefined'
 import isEmptyObject from '@utils/isEmptyObject'
 import isEmptyString from '@utils/isEmptyString'
-import isFunction from '@root/src/utils/isFunction'
 
 export const ANONYMUS_SELLER = 'Este vendedor es anónimo, por lo que se desconoce su Whatsapp'
 

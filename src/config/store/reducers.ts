@@ -9,7 +9,7 @@ import { forgotPasswordApi } from '@modules/Auth/api/forgotPassword'
 import { resetPasswordApi } from '@modules/Auth/api/resetPassword'
 
 // Authenticated API states
-import { verifySessionApi } from '@root/src/routes/SessionRoute/verifySession'
+import { verifySessionApi } from '@routes/SessionRoute/verifySession'
 
 // GraphQL states
 import { productApi } from '@modules/Product/api'

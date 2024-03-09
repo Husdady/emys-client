@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic'
 
 // Components
 import BackButton from '@components/BackButton'
-import HeadPhones from '@root/src/components/Icons/HeadPhones'
+import HeadPhones from '@components/Icons/HeadPhones'
 import BoxContainer from '@containers/BoxContainer'
 import ContactForm from '@modules/Contact/components/ContactForm'
 

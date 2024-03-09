@@ -1,5 +1,5 @@
 // Components
-import ButtonShowFilters from '@root/src/components/ShowFiltersButton'
+import ButtonShowFilters from '@components/ShowFiltersButton'
 
 // Hooks
 import useButtonShowFilters from './useButtonShowFilters'

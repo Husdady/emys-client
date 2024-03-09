@@ -1,6 +1,6 @@
 // Hooks
 import { useMemo, useRef } from 'react'
-import { useGetLatestProductsQuery } from '@root/src/modules/Home/api/getLatestProducts/graphql'
+import { useGetLatestProductsQuery } from '@modules/Home/api/getLatestProducts/graphql'
 import useScrollOnArrows from '@modules/Product/hooks/useScrollOnArrows'
 import useCheckScrollbar from '@hooks/useCheckScrollbar'
 

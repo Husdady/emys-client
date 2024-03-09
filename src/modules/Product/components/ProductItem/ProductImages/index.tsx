@@ -8,7 +8,7 @@ import { Product } from '@modules/Product/api/interfaces'
 
 // Utils
 import isEmptyArray from '@utils/isEmptyArray'
-import classnames from '@root/src/utils/classnames'
+import classnames from '@utils/classnames'
 
 export default function ProductImages(product: Product) {
   // Check if the product has invalid images

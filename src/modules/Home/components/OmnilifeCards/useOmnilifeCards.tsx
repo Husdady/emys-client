@@ -15,7 +15,7 @@ import isFunction from '@utils/isFunction'
 // Constants
 import { PRODUCTS_PATH } from '@assets/data/paths'
 import { CARD_01_ID, CARD_02_ID, CARD_03_ID } from './cardList'
-import sharedShowModalProps from '@root/src/modules/Home/data/sharedShowModalProps'
+import sharedShowModalProps from '@modules/Home/data/sharedShowModalProps'
 
 /**
  * Hook for manage the logic of the OmnilifeCards component
