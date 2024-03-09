@@ -15,7 +15,7 @@ import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next'
 import { LoaderResponse } from '@config/globalInterfaces'
 
 // Loaders
-import verifyAccount from '@modules/Auth/loaders/verify-account'
+import verifyAccount from '@modules/Auth/loaders/verifyAccount'
 
 export default function VerifyAccountPage() {
   return (
