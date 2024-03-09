@@ -6,7 +6,7 @@ import LockOpen from '@components/Icons/LockOpen'
 import { InputLabelProps } from '@components/InputLabel/interfaces'
 
 // Constants
-import { defaultIconProps } from '@components/InputLabel'
+import { defaultIconProps } from '@components/InputLabel/constants'
 
 export const passwordLabel: InputLabelProps = {
   icon: <Lock {...defaultIconProps} />,

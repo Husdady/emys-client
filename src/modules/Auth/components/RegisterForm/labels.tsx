@@ -8,7 +8,7 @@ import UserCircleRegular from '@components/Icons/UserCircleRegular'
 import { InputLabelProps } from '@components/InputLabel/interfaces'
 
 // Constants
-import { defaultIconProps } from '@components/InputLabel'
+import { defaultIconProps } from '@components/InputLabel/constants'
 
 const labels: Record<string, InputLabelProps> = {
   // Label for fullname field
