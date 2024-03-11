@@ -13,7 +13,7 @@ import useModal from '@hooks/useModal'
 import isFunction from '@utils/isFunction'
 
 // Constants
-import { PRODUCTS_PATH } from '@assets/data/paths'
+import { PRODUCTS_PATH } from '@data/paths'
 import { CARD_01_ID, CARD_02_ID, CARD_03_ID } from './cardList'
 import sharedShowModalProps from '@modules/Home/data/sharedShowModalProps'
 

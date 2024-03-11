@@ -18,7 +18,7 @@ import classnames from '@utils/classnames'
 
 // Constants
 import { sharedClassName } from './constants'
-import { PRODUCTS_PATH } from '@assets/data/paths'
+import { PRODUCTS_PATH } from '@data/paths'
 
 // Dynamic Components
 const Link = dynamic(() => import('@components/Link'))
@@ -34,7 +34,9 @@ function Header({
 
   return (
     <div className="latest-added-products-header max-w-[990px] xl:max-w-[1055px] 2xl:max-w-[1360px]">
-      <h5 className="main-title text-pink-500 dark:text-rose-300 mx-4 md:mx-0">Últimos productos agregados</h5>
+      <h5 className="main-title text-pink-500 dark:text-rose-300 mx-4 md:mx-0">
+        Últimos productos agregados
+      </h5>
 
       <div className="flex items-center gap-x-2 inner-wrapper md:min-w-[341px]">
         <Link

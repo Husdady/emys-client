@@ -26,7 +26,7 @@ import isUndefined from '@utils/isUndefined'
 
 // Constants
 import { JWT_ERRORS } from './constants'
-import { LOGIN_PATH } from '@assets/data/paths'
+import { LOGIN_PATH } from '@data/paths'
 import {
   INFO_STATUS,
   ERROR_STATUS,

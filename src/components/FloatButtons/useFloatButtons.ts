@@ -5,7 +5,7 @@ import { useRef, useCallback, useMemo } from 'react'
 import { usePathname } from 'next/navigation'
 
 // Constants
-import { HOME_PATH } from '@assets/data/paths'
+import { HOME_PATH } from '@data/paths'
 
 /**
  * Hook for implements the logic of the FloatButtons component

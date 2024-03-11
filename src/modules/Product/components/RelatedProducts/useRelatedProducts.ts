@@ -10,13 +10,13 @@ import { RelatedProductsProps } from './interfaces'
 import isEmptyArray from '@utils/isEmptyArray'
 
 /**
- * Hook for implements the logic of the LatestAddedProducts component
+ * Hook for implements the logic of the RelatedProducts component
  * @param {RelatedProductsProps} params Receive a 'products'
  */
 export default function useRelatedProducts({ products }: RelatedProductsProps) {
   const productItemsRef = useRef<HTMLUListElement | null>(null)
 
-  // Check if has empty latest products
+  // Check if has empty related products
   const hasEmptyProducts = useMemo(() => isEmptyArray(products), [products])
 
   const hasScrollbar = useCheckScrollbar({

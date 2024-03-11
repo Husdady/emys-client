@@ -7,7 +7,7 @@ import Login from '@components/Icons/Login'
 import SubmitButton from '@components/SubmitButton'
 
 // Constants
-import { LOGIN_PATH } from '@assets/data/paths'
+import { LOGIN_PATH } from '@data/paths'
 
 export default function BackToLogin() {
   const router = useRouter()

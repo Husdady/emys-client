@@ -7,10 +7,9 @@ import type { ImageProps } from 'next/image'
 // Interfaces
 import { ButtonProps } from '@components/Button/interfaces'
 
-// Images
-import unauthorizedImage from '@assets/images/unauthorized-access.webp'
-
 // Constants
+import { UNAUTHORIZED_ACCESS_IMAGE } from '@data/images'
+
 export const DEFAULT_TITLE = 'Actualmente no puedes visualizar esta ruta porque está protegida'
 
 export const DEFAULT_DESCRIPTION =
@@ -30,7 +29,7 @@ export const DEFAULT_BUTTON: ButtonProps = {
 export const DEFAULT_IMAGE: ImageProps = {
   width: 280,
   height: 280,
-  src: unauthorizedImage,
   className: 'h-[280px]',
-  alt: 'blocked-route-image'
+  alt: 'blocked-route-image',
+  src: UNAUTHORIZED_ACCESS_IMAGE
 }

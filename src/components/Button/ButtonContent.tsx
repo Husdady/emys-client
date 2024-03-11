@@ -10,6 +10,7 @@ import { ButtonContentProps } from './interfaces'
 // Utils
 import isString from '@utils/isString'
 import classnames from '@utils/classnames'
+import isEmptyString from '@utils/isEmptyString'
 
 const ButtonContent: React.FC<ButtonContentProps> = ({
   icon,
@@ -20,11 +21,6 @@ const ButtonContent: React.FC<ButtonContentProps> = ({
   titleClassName,
   titleStyle
 }: ButtonContentProps) => {
-  // Define title classes
-  const titleClasses = React.useMemo(() => {
-    return classnames([titleClassName, 'text-inherit font-poppins leading-tight'])
-  }, [])
-
   // Show spin when is fetching to some API
   if (loading === true) {
     return <Spin title={loadingTitle} {...customSpin} />
@@ -36,8 +32,11 @@ const ButtonContent: React.FC<ButtonContentProps> = ({
 
       {!isString(title) && title}
 
-      {isString(title) && title.length > 0 && (
-        <span style={titleStyle} className={titleClasses}>
+      {isString(title) && !isEmptyString(title) && (
+        <span
+          style={titleStyle}
+          className={classnames([titleClassName, 'text-inherit font-poppins leading-tight'])}
+        >
           {title}
         </span>
       )}
@@ -45,4 +44,4 @@ const ButtonContent: React.FC<ButtonContentProps> = ({
   )
 }
 
-export default React.memo(ButtonContent)
+export default ButtonContent

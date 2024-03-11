@@ -18,7 +18,7 @@ import { UploadPhotoProps } from './interfaces'
 import classnames from '@utils/classnames'
 
 // Constants
-import { AVATAR_IMG } from '@assets/data/images'
+import { AVATAR_IMG } from '@data/images'
 
 // Dynamic Components
 const Button = dynamic(() => import('@components/Button'))

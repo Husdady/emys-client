@@ -9,7 +9,7 @@ import SubmitButton from '@components/SubmitButton'
 import useResetPasswordForm from './useResetPasswordForm'
 
 // Interfaces
-import { LoaderResponse } from '@config/globalInterfaces'
+import { LoaderResponse } from '@config/interfaces'
 
 // Data
 import { passwordLabel, confirmPasswordLabel } from './labels'

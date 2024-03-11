@@ -20,7 +20,7 @@ import UpdateInformationForm from '@modules/Account/components/UpdateInformation
 
 // Environment variables
 import { APP_NAME } from '@config/envs'
-import { HOME_PATH } from '@assets/data/paths'
+import { HOME_PATH } from '@data/paths'
 
 // Dynamic Components
 const BoxWrapper = dynamic(() => import('@components/Wrapper'))

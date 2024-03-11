@@ -2,7 +2,7 @@
 import { memo } from 'react'
 
 // Interfaces
-import { OnlyClassNameProp } from '@config/globalInterfaces'
+import { OnlyClassNameProp } from '@config/interfaces'
 
 // Utils
 import classnames from '@utils/classnames'

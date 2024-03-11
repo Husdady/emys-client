@@ -8,7 +8,7 @@ import useAnimationInView from '@hooks/useAnimationInView'
 import classnames from '@utils/classnames'
 
 // Images
-import woman from '@assets/images/woman.webp'
+import { WOMAN_IMAGE } from '@data/images'
 
 export default function Woman() {
   const { ref, animationClassName } = useAnimationInView('animate__fadeInUp')
@@ -20,7 +20,7 @@ export default function Woman() {
         alt="woman"
         width={330}
         height={250}
-        src={woman.src}
+        src={WOMAN_IMAGE}
         className={classnames([
           animationClassName,
           'welcome-image relative left-[6%] xl:left-[3%] min-w-[330px] min-h-[250px]'

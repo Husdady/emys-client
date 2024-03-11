@@ -2,7 +2,7 @@
 import ProductPlaceholder from '@modules/Products/components/Product/Placeholder'
 
 // Interfaces
-import { OnlyClassNameProp } from '@config/globalInterfaces'
+import { OnlyClassNameProp } from '@config/interfaces'
 
 // Utils
 import createList from '@utils/createList'
@@ -19,7 +19,7 @@ export default function ProductsPlaceholder({ className }: OnlyClassNameProp) {
     <ul
       className={classnames([
         className,
-        'product-items flex flex-wrap sm:flex-nowrap items-start overflow-x-auto gap-y-3.5 no-scrollbar gap-x-2'
+        'product-items fallback flex flex-wrap sm:flex-nowrap items-start overflow-x-auto gap-y-3.5 no-scrollbar gap-x-2'
       ])}
     >
       {createList(

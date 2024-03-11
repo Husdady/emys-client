@@ -1,6 +1,6 @@
 // Interfaces
 import { MetaPagination } from '@libs/graphql/interfaces'
-import { OnlyClassNameProp } from '@config/globalInterfaces'
+import { OnlyClassNameProp } from '@config/interfaces'
 
 export interface PageProps {
   value: number

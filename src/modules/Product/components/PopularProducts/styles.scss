@@ -1,0 +1,4 @@
+// Mixins
+@import '@styles/mixins/productsWithDrag/layout.scss';
+
+@include createLayout('.popular-products', '.popular-products-header');

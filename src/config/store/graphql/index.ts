@@ -14,7 +14,7 @@ import {
   PRODUCTS_KEY,
   CATEGORIES_KEY,
   TESTIMONIALS_KEY,
-  RELATED_PRODUCTS_KEY,
+  POPULAR_PRODUCTS_KEY,
 
   // Ubigeo keys
   REGIONS_KEY,
@@ -38,7 +38,7 @@ export const api = createApi({
     PRODUCTS_KEY,
     CATEGORIES_KEY,
     TESTIMONIALS_KEY,
-    RELATED_PRODUCTS_KEY,
+    POPULAR_PRODUCTS_KEY,
 
     // Ubigeo
     REGIONS_KEY,

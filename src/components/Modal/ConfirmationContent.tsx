@@ -1,5 +1,5 @@
 // Interfaces
-import { OnlyChildrenProp } from '@config/globalInterfaces'
+import { OnlyChildrenProp } from '@config/interfaces'
 
 export default function ConfirmationContent({ children }: OnlyChildrenProp) {
   return (

@@ -1,10 +1,9 @@
 // Types
 import type { ImageProps } from 'next/image'
 
-// Images
-import offlineImage from '@assets/images/offline-image.webp'
-
 // Constants
+import { OFFLINE_IMAGE } from '@data/images'
+
 export const DEFAULT_TITLE = 'Se ha perdido la conexión a internet...'
 
 export const DEFAULT_DESCRIPTION =
@@ -21,7 +20,7 @@ export const DEFAULT_CUSTOM_DESCRIPTION = {
 export const DEFAULT_IMAGE: ImageProps = {
   width: 300,
   height: 260,
-  src: offlineImage,
+  className: 'h-auto',
   alt: 'offline-picture',
-  className: 'h-auto'
+  src: OFFLINE_IMAGE
 }

@@ -9,7 +9,7 @@ import Plus from '@components/Icons/Plus'
 import useShowModalForAddMyTestimony from './useShowModalForAddTestimony'
 
 // Interfaces
-import { OnlyClassNameProp } from '@config/globalInterfaces'
+import { OnlyClassNameProp } from '@config/interfaces'
 
 // Utils
 import lazy from '@utils/lazy'

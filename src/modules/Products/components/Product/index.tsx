@@ -18,7 +18,7 @@ import { Product } from '@modules/Products/api/interfaces'
 import classnames from '@utils/classnames'
 
 // Constants
-import { PRODUCTS_PATH } from '@assets/data/paths'
+import { PRODUCTS_PATH } from '@data/paths'
 
 // Dynamic Components
 const Heart = dynamic(() => import('./Heart'))
@@ -60,11 +60,11 @@ export default function Product({
     >
       <Heart productId={id} productName={name} />
 
-       <div className='flex'>
+      <div className="flex">
         <StockTag isInStock={isInStock} />
-        </div>
+      </div>
 
-      <div className='mt-3'>
+      <div className="mt-3">
         <ProductImage coverImage={coverImage} firstImage={images?.[0]} />
         <ProductName name={name} isInStock={isInStock} />
         <Description description={description} />

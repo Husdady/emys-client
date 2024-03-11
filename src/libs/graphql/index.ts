@@ -2,7 +2,7 @@
 import { GraphQLClient } from 'graphql-request'
 
 // Constants
-import { GRAPHQL_PATH } from '@assets/data/paths'
+import { GRAPHQL_PATH } from '@data/paths'
 
 // Environment variables
 import { API_URL } from '@config/envs'

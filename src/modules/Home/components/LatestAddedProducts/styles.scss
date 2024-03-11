@@ -33,7 +33,7 @@
     }
 
     & .main-title {
-      @apply text-[2.25rem] leading-[2.5rem] #{!important};
+      @apply w-full text-center text-[2.25rem] leading-[2.5rem] #{!important};
     }
 
     & .inner-wrapper,

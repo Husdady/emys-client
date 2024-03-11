@@ -6,7 +6,7 @@ import Favicons from '@components/Favicons'
 
 // Data
 import pk from '@root/package.json'
-import fonts from '@assets/data/fonts'
+import fonts from '@data/fonts'
 
 export default function Document() {
   return (

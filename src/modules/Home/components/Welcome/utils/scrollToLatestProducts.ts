@@ -1,5 +1,5 @@
 // Constants
-import { scrollIntoViewStartSmoothArgs } from '@assets/data/scroll'
+import { scrollIntoViewStartSmoothArgs } from '@data/scroll'
 import { LATEST_ADDED_PRODUCTS_ID } from '@modules/Home/components/LatestAddedProducts/constants'
 
 /**

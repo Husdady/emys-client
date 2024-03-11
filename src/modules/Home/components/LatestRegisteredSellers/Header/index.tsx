@@ -2,7 +2,7 @@
 import dynamic from 'next/dynamic'
 
 // Constants
-import { SELLERS_PATH } from '@assets/data/paths'
+import { SELLERS_PATH } from '@data/paths'
 
 // Dynamic Components
 const HeaderLink = dynamic(() => import('@modules/Home/components/HeaderLink'))

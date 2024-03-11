@@ -9,7 +9,7 @@ import classnames from '@utils/classnames'
 
 // Constants
 import { APP_NAME } from '@config/envs'
-import { Mansalva } from '@assets/data/fonts'
+import { Mansalva } from '@data/fonts'
 
 function Title() {
   const { ref, animationClassName } = useAnimationInView('animate__fadeIn animate__slow')

@@ -2,7 +2,7 @@
 import dynamic from 'next/dynamic'
 
 // Constants
-import { REGISTER_PATH } from '@assets/data/paths'
+import { REGISTER_PATH } from '@data/paths'
 
 // Dynamic Components
 const Link = dynamic(() => import('@components/Link'))

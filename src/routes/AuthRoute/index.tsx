@@ -5,10 +5,10 @@ import OfflineView from '@components/OfflineView'
 import useAuthRoute from './useAuthRoute'
 
 // Interfaces
-import { OnlyChildrenProp } from '@config/globalInterfaces'
+import { OnlyChildrenProp } from '@config/interfaces'
 
 // onstants
-import { ACCOUNT_PATH } from '@assets/data/paths'
+import { ACCOUNT_PATH } from '@data/paths'
 
 export default function AuthRoute({ children }: OnlyChildrenProp) {
   const { token, router, isOnline } = useAuthRoute()

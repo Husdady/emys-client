@@ -9,7 +9,7 @@ import Settings from '@components/Icons/Settings'
 import { MenuData } from '@components/Header/User/interfaces'
 
 // Data
-import { ACCOUNT_PATH, FAVORITE_PRODUCTS_PATH } from '@assets/data/paths'
+import { ACCOUNT_PATH, FAVORITE_PRODUCTS_PATH } from '@data/paths'
 
 // Dynamic Components
 const SwitchTheme = dynamic(() => import('./SwitchTheme'))

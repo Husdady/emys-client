@@ -2,11 +2,11 @@
 import React from 'react'
 
 // Types
-import type { DivType, InputType } from '@config/globalTypes'
+import type { DivType, InputType } from '@config/types'
 
 // Interfaces
 import { IconProps } from '@components/Icon/interfaces'
-import { OnlyStyleProp, OnlyClassNameProp } from '@config/globalInterfaces'
+import { OnlyStyleProp, OnlyClassNameProp } from '@config/interfaces'
 
 export interface CheckboxEventParams extends Pick<CheckboxProps, 'id' | 'label' | 'value'> {
   isActive?: boolean

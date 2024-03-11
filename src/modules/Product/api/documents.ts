@@ -49,3 +49,24 @@ export const ProductWithSessionDocument = gql`
   ${createProductFragment('ProductByCode')}
   ${createProductsFragment('ProductByCode')}
 `
+
+export const PopularProductsDocument = gql`
+  query GetPopularProducts($limit: Int, $sortRandomly: Boolean, $excludeProductsByCode: [String!]) {
+    popularProducts(
+      limit: $limit
+      sortRandomly: $sortRandomly
+      excludeProductsByCode: $excludeProductsByCode
+    ) {
+      ...ProductsFields
+      images {
+        ...ProductImageFields
+      }
+      coverImage {
+        ...ProductImageFields
+      }
+    }
+  }
+
+  ${createProductImageFragment()}
+  ${createProductsFragment('Product')}
+`

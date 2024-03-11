@@ -17,7 +17,7 @@ import {
   PRODUCTS_PATH,
   MEMBERSHIP_PATH,
   TESTIMONIALS_PATH
-} from '@assets/data/paths'
+} from '@data/paths'
 
 const navigation: NavigationLinkProps[] = [
   { text: 'Inicio', href: HOME_PATH, icon: <Home className="smd home-icon" /> },

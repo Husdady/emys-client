@@ -22,7 +22,7 @@ import isEmptyString from '@utils/isEmptyString'
 import isEmptyObject from '@utils/isEmptyObject'
 
 // Constants
-import { ACCOUNT_PATH } from '@assets/data/paths'
+import { ACCOUNT_PATH } from '@data/paths'
 
 /**
  * Hook that implements the Login functionality

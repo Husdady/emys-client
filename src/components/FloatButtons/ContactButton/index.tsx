@@ -7,7 +7,7 @@ import Tooltip from '@components/Tooltip'
 import useContactButton from './useContactButton'
 
 // Interfaces
-import { OnlyClassNameProp } from '@config/globalInterfaces'
+import { OnlyClassNameProp } from '@config/interfaces'
 
 // Utils
 import classnames from '@utils/classnames'

@@ -9,7 +9,7 @@ import type { modes } from './constants'
 
 // Constants
 import { DEFAULT_MENU, USER_MENU } from './constants'
-import { scrollIntoViewArgs } from '@assets/data/scroll'
+import { scrollIntoViewArgs } from '@data/scroll'
 import { ACTIVE_NAVIGATION_ITEM } from '@components/Header/MobileNavigation/FloatMenu/MenuContent/useMenuContent'
 
 /**

@@ -12,7 +12,7 @@ import lazy from '@utils/lazy'
 import classnames from '@utils/classnames'
 
 // Constants
-import { DEFAULT_IMAGE } from '@assets/data/errorImage'
+import { DEFAULT_IMAGE } from '@data/errorImage'
 import { customTitle, sharedClassName } from './constants'
 
 // Lazy Components
@@ -23,7 +23,7 @@ export default function ErrorScreen({ className, ...props }: ErrorScreenProps) {
 
   return (
     <Suspense fallback={<BoxWrapperFallback className={classes} />}>
-      <div className='mx-2 sm:mx-6'>
+      <div className="mx-2 sm:mx-6">
         <Screen {...props} image={DEFAULT_IMAGE} className={classes} customTitle={customTitle} />
       </div>
     </Suspense>

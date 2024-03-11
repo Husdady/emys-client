@@ -6,7 +6,7 @@
   @include addShadows($mainSelector: $mainSelector);
 
   #{$mainSelector} {
-    @apply mx-auto;
+    // @apply mx-auto;
     @include productItems;
 
     #{$mainHeader} {
@@ -36,17 +36,9 @@
         @apply mt-2;
       }
 
-      & .main-title {
-        @apply w-full text-center;
+      & .product-items:not(.fallback) {
+        @apply mt-[1.25rem];
       }
-
-      & .product-items {
-        @apply mt-[1.5rem];
-      }
-
-      // & #{$mainHeader} {
-      //   @apply px-0;
-      // }
 
       & .btn-show-next-products,
       & .btn-show-previous-products {

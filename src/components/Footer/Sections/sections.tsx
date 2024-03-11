@@ -21,7 +21,7 @@ import {
   PRODUCTS_PATH,
   MEMBERSHIP_PATH,
   TESTIMONIALS_PATH
-} from '@assets/data/paths'
+} from '@data/paths'
 import {
   CONTACT_EMAIL_01,
   CONTACT_EMAIL_02,

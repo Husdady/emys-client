@@ -7,7 +7,7 @@ import BrandWhatsapp from '@components/Icons/BrandWhatsapp'
 import useShowContactWhatsappModal from './useShowContactWhatsappModal'
 
 // Interfaces
-import { OnlyClassNameProp } from '@config/globalInterfaces'
+import { OnlyClassNameProp } from '@config/interfaces'
 
 // Utils
 import classnames from '@utils/classnames'

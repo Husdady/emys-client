@@ -2,7 +2,7 @@
 import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next'
 
 // Interfaces
-import { LoaderResponse } from '@config/globalInterfaces'
+import { LoaderResponse } from '@config/interfaces'
 
 // Environment variables
 import { API_URL, SECRET_PASSWORD } from '@config/envs'
@@ -12,7 +12,7 @@ import isString from '@utils/isString'
 import isEmptyString from '@utils/isEmptyString'
 
 // Constants
-import { DEFAULT_LOADER_RESPONSE } from '@assets/data/loaders'
+import { DEFAULT_LOADER_RESPONSE } from '@data/loaders'
 
 /**
  * Validate API token

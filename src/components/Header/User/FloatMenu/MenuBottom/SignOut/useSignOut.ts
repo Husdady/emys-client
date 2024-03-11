@@ -4,7 +4,7 @@ import { useCallback } from 'react'
 import { useRouter } from 'next/router'
 
 // Constants
-import { LOGIN_PATH } from '@assets/data/paths'
+import { LOGIN_PATH } from '@data/paths'
 
 /**
  * Hook for implements the logic of the SignOut component

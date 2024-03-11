@@ -1,11 +1,11 @@
 // Interfaces
-import { OnlyChildrenProp } from '@config/globalInterfaces'
+import { OnlyChildrenProp } from '@config/interfaces'
 
 // Utils
 import classnames from '@utils/classnames'
 
 // Data
-import fonts from '@assets/data/fonts'
+import fonts from '@data/fonts'
 
 export default function MainContainer({ children }: OnlyChildrenProp) {
   return (

@@ -16,7 +16,7 @@ import { ValidateLoaderParams } from './interfaces'
 import isObject from '@utils/isObject'
 
 // Constants
-import { HOME_PATH } from '@assets/data/paths'
+import { HOME_PATH } from '@data/paths'
 import { ERROR_STATUS, SUCCESS_STATUS, WARNING_STATUS } from '@libs/axios/status'
 
 /**

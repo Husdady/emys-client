@@ -1,8 +1,8 @@
 // Librarys
 import Image from 'next/image'
 
-// Images
-import developingImg from '@assets/images/developing-content.webp'
+// Contants
+import { DEVELOPING_CONTENT_IMAGE } from '@data/images'
 
 export default function Developing() {
   return (
@@ -10,7 +10,7 @@ export default function Developing() {
       <Image
         width={400}
         height={400}
-        src={developingImg.src}
+        src={DEVELOPING_CONTENT_IMAGE}
         className="block mb-4 mx-auto min-w-[250px]"
         alt="developing"
         loading="lazy"

@@ -3,7 +3,7 @@ import useMounted from '@hooks/useMounted'
 import { useRef, useCallback } from 'react'
 
 // Constants
-import { scrollIntoViewArgs } from '@assets/data/scroll'
+import { scrollIntoViewArgs } from '@data/scroll'
 
 export const SCROLL_DELAY = 3000
 export const ACTIVE_NAVIGATION_ITEM = '.navigation-list-item > a[aria-current="page"]'

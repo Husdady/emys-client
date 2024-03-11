@@ -5,7 +5,7 @@ import { memo } from 'react'
 import AlertCircle from '@components/Icons/AlertCircle'
 
 // Interfaces
-import { OnlyChildrenProp } from '@config/globalInterfaces'
+import { OnlyChildrenProp } from '@config/interfaces'
 
 function AlertMessage({ children }: OnlyChildrenProp) {
   return (

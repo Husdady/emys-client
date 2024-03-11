@@ -8,7 +8,7 @@ import { useMemo, useCallback } from 'react'
 import { usePathname } from 'next/navigation'
 
 // Constants
-import { CONTACT_PATH } from '@assets/data/paths'
+import { CONTACT_PATH } from '@data/paths'
 
 /**
  * Hook that implements the logic of the ContactButton component

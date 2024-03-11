@@ -2,7 +2,7 @@
 import dynamic from 'next/dynamic'
 
 // Interfaces
-import { LoaderResponse } from '@config/globalInterfaces'
+import { LoaderResponse } from '@config/interfaces'
 
 // Lazy Components
 const LinkToLogin = dynamic(() => import('@modules/Auth/components/LinkToLogin'))

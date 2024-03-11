@@ -1,10 +1,9 @@
 // Types
 import type { ImageProps } from 'next/image'
 
-// Images
-import emptyLatestProductsImage from '@assets/images/empty-latest-products.webp'
-
 // Constants
+import { EMPTY_LATEST_PRODUCTS_IMAGE } from '@data/images'
+
 export const DEFAULT_TITLE = 'Aún no se han añadido productos...'
 
 export const DEFAULT_DESCRIPTION =
@@ -19,5 +18,6 @@ export const DEFAULT_IMAGE: ImageProps = {
   height: 275,
   className: 'h-[275px]',
   alt: 'empty-latest-products',
-  src: emptyLatestProductsImage
+  src: EMPTY_LATEST_PRODUCTS_IMAGE
+  // src: emptyLatestProductsImage
 }

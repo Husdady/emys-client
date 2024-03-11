@@ -9,8 +9,8 @@ import { UserProfilePhotoProps } from './interfaces'
 // Utils
 import isUndefined from '@utils/isUndefined'
 
-// Images
-import avatarImage from '@assets/images/avatar.webp'
+// Constants
+import { AVATAR_IMAGE } from '@data/images'
 
 /**
  * Hook that implements the logic of Avatar component
@@ -26,7 +26,7 @@ export default function useUserProfilePhoto(props: UserProfilePhotoProps) {
     const img = user.profilePhoto // Get profile photo
 
     // Return default image if not exists a user profile photo
-    if (img === null || isUndefined(img)) return avatarImage.src
+    if (img === null || isUndefined(img)) return AVATAR_IMAGE
     return img.url // Return the user profile photo
   }, [user?.profilePhoto?.url])
 

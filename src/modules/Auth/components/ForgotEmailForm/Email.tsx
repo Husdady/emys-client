@@ -4,7 +4,7 @@ import Message from '@modules/Auth/components/Message'
 import BackToLogin from '@modules/Auth/components/BackToLogin'
 
 // Interfaces
-import { OnlyMessageProp } from '@config/globalInterfaces'
+import { OnlyMessageProp } from '@config/interfaces'
 
 // Constants
 import { succesMessageProps } from '@modules/Auth/components/Message/constants'

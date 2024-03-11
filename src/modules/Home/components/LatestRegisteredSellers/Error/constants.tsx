@@ -7,10 +7,9 @@ import type { ImageProps } from 'next/image'
 // Interfaces
 import { ButtonProps } from '@components/Button/interfaces'
 
-// Images
-import missingImage from '@assets/images/bug-found.webp'
-
 // Constants
+import { BUG_FOUND_IMAGE } from '@data/images'
+
 export const DEFAULT_TITLE = 'Ah ocurrido un error al mostrar los últimos vendedores registrados'
 
 export const DEFAULT_DESCRIPTION =
@@ -34,7 +33,7 @@ export const DEFAULT_BUTTON: ButtonProps = {
 export const DEFAULT_IMAGE: ImageProps = {
   width: 375,
   height: 275,
-  src: missingImage,
+  src: BUG_FOUND_IMAGE,
   className: 'h-[275px]',
   alt: 'error-latest-registered-sellers'
 }

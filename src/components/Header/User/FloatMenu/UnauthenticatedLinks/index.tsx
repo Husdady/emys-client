@@ -5,8 +5,8 @@ import dynamic from 'next/dynamic'
 import { MenuData } from '@components/Header/User/interfaces'
 
 // Data
-import { CONTACT_PATH } from '@assets/data/paths'
-import navigation from '@assets/navigation/unauthenticated'
+import { CONTACT_PATH } from '@data/paths'
+import navigation from '@data/navigation/links/unauthenticated'
 
 // Dynamic Components
 const Header = dynamic(() => import('./Header'))

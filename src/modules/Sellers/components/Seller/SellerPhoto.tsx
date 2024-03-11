@@ -4,8 +4,8 @@ import Image from 'next/image'
 // Interfaces
 import { Seller } from '@modules/Sellers/api/interfaces'
 
-// Images
-import avatarImage from '@assets/images/avatar.webp'
+// Constants
+import { AVATAR_IMAGE } from '@data/images'
 
 export default function SellerPhoto({ photo }: Pick<Seller, 'photo'>) {
   return (
@@ -15,7 +15,7 @@ export default function SellerPhoto({ photo }: Pick<Seller, 'photo'>) {
         height={100}
         alt="seller-photo"
         className="object-cover min-h-[100px] min-w-[100px] max-h-[100px] max-w-[100px]"
-        src={photo?.url ?? avatarImage.src}
+        src={photo?.url ?? AVATAR_IMAGE}
       />
     </div>
   )

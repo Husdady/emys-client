@@ -16,15 +16,18 @@ export interface Params {
 export default function useCheckScrollbar({ elementRef, arrayDeps = [] }: Params) {
   // Define callback for check if the products container has scrollbar
   const checkScrollbar = useCallback(() => {
-    if (elementRef.current === null) return false // Validates ref
+    const el = elementRef?.current // Get element
+    if (el === null) return false // Validates ref
 
-    const scrollWidth = elementRef.current.scrollWidth // Get the scroll width
-    const clientWidth = elementRef.current.clientWidth // Get the client width
-
+    const scrollWidth = el.scrollWidth // Get the scroll width
+    const clientWidth = el.clientWidth // Get the client width
+    console.log('[SET_HAS_SCROLLBAR]', { scrollWidth, clientWidth })
     return scrollWidth > clientWidth // Check scrollbar
-  }, [])
+  }, [elementRef])
 
-  const [hasScrollbar, setScrollbar] = useState(() => checkScrollbar())
+  const [hasScrollbar, setScrollbar] = useState(() => {
+    return checkScrollbar()
+  })
 
   // Callback for update the validation of the scrollbar visibility
   const updateHasScrollbar = useCallback(() => {
@@ -36,12 +39,13 @@ export default function useCheckScrollbar({ elementRef, arrayDeps = [] }: Params
 
   useMounted(() => {
     updateHasScrollbar()
+    console.log('[HI_BRO]', elementRef)
     window.addEventListener('resize', updateHasScrollbar)
 
     return () => {
       window.removeEventListener('resize', updateHasScrollbar)
     }
-  }, [arrayDeps, updateHasScrollbar])
+  }, [arrayDeps, elementRef, updateHasScrollbar])
 
   return hasScrollbar
 }

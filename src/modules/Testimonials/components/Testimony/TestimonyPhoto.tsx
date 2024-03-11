@@ -4,8 +4,8 @@ import Image from 'next/image'
 // Interfaces
 import { Testimony } from '@modules/Testimonials/api/interfaces'
 
-// Images
-import avatarImage from '@assets/images/avatar.webp'
+// Constants
+import { AVATAR_IMAGE } from '@data/images'
 
 export default function TestimonyPhoto({ photo }: Pick<Testimony, 'photo'>) {
   return (
@@ -15,7 +15,7 @@ export default function TestimonyPhoto({ photo }: Pick<Testimony, 'photo'>) {
         height={100}
         alt="testimony-photo"
         className="object-cover min-h-[80px] min-w-[80px] max-h-[80px] max-w-[80px]"
-        src={photo?.url ?? avatarImage.src}
+        src={photo?.url ?? AVATAR_IMAGE}
       />
     </div>
   )

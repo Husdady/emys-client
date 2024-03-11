@@ -7,7 +7,7 @@ import isEmptyArray from '@utils/isEmptyArray'
 
 // Constants
 import { LIMIT_LATEST_SELLERS } from './constants'
-import { THREE_MINUTES } from '@assets/data/interval'
+import { THREE_MINUTES } from '@data/interval'
 
 /**
  * Hook for implements the logic of the LatestRegisteredSellers component

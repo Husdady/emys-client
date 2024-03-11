@@ -2,14 +2,14 @@
 import type { GetServerSidePropsResult, GetServerSidePropsContext } from 'next'
 
 // Interfaces
-import { LoaderResponse } from '@config/globalInterfaces'
+import { LoaderResponse } from '@config/interfaces'
 
 // Utils
 import isString from '@utils/isString'
 import isEmptyString from '@utils/isEmptyString'
 
 // Constants
-import { DEFAULT_LOADER_RESPONSE } from '@assets/data/loaders'
+import { DEFAULT_LOADER_RESPONSE } from '@data/loaders'
 
 // Environment variables
 import { API_URL, SECRET_PASSWORD } from '@config/envs'

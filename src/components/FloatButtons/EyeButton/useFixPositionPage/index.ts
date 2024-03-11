@@ -5,7 +5,7 @@ import useMounted from '@hooks/useMounted'
 
 // Constants
 import querySelectors from './querySelectors'
-import { HOME_PATH, CONTACT_PATH, ACCOUNT_PATH, MEMBERSHIP_PATH } from '@assets/data/paths'
+import { HOME_PATH, CONTACT_PATH, ACCOUNT_PATH, MEMBERSHIP_PATH } from '@data/paths'
 
 export const MARGIN_CLASSNAME = '!mt-[3.5rem]'
 export const PADDING_CLASSNAME = '!pt-[1.25rem]'

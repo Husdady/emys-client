@@ -10,11 +10,8 @@ import useTheme from '@hooks/useTheme'
 import type { ImageProps } from 'next/image'
 
 // Constants
-import { HOME_PATH } from '@assets/data/paths'
-
-// Images
-import logo from '@assets/images/logo.webp'
-import logoDark from '@assets/images/logo-dark.webp'
+import { HOME_PATH } from '@data/paths'
+import { LOGO_IMAGE, LOGO_DARK_IMAGE } from '@data/images'
 
 // Dynamic Components
 const Link = dynamic(() => import('@components/Link'))
@@ -31,7 +28,7 @@ function AppLogo(props: AppLogo) {
         priority
         loading="eager"
         alt="logo-image"
-        src={isLightTheme ? logo.src : logoDark}
+        src={isLightTheme ? LOGO_IMAGE : LOGO_DARK_IMAGE}
       />
     </Link>
   )

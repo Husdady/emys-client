@@ -7,7 +7,7 @@ import ReloadFavoriteProducts from '@modules/Products/components/ReloadFavoriteP
 import FavoriteProductsPagination from '@modules/Products/components/FavoriteProductsPagination'
 
 // Constants
-import { HOME_PATH } from '@assets/data/paths'
+import { HOME_PATH } from '@data/paths'
 
 export default function MyFavoriteProductsLayout() {
   return (

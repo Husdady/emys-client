@@ -7,7 +7,7 @@ import dynamic from 'next/dynamic'
 import classnames from '@utils/classnames'
 
 // Constants
-import { LOGIN_PATH } from '@assets/data/paths'
+import { LOGIN_PATH } from '@data/paths'
 import { customTitle, sharedClassName } from './constants'
 
 // Dynamic Components

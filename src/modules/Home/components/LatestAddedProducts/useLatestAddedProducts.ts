@@ -8,7 +8,7 @@ import useCheckScrollbar from '@hooks/useCheckScrollbar'
 import isEmptyArray from '@utils/isEmptyArray'
 
 // Constants
-import { THREE_MINUTES } from '@assets/data/interval'
+import { THREE_MINUTES } from '@data/interval'
 import { LIMIT_LATEST_PRODUCTS, LIMIT_LATEST_PRODUCTS_FOR_MOBILE } from './constants'
 
 /**

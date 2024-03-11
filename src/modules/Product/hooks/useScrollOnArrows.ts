@@ -37,15 +37,12 @@ export default function useScrollOnArrows({
   // Callback for make scroll and show the next products
   const showNextProducts = useCallback(() => {
     if (productItemsRef.current === null) return
-    console.log('[BUG]')
     productItemsRef.current.scrollTo({ left: MIN_WIDTH })
   }, [productItemsRef.current])
 
   // Callback for make scroll and show the previous products
   const showPreviousProducts = useCallback(() => {
     if (productItemsRef.current === null) return
-    console.log('[BUG.2]', productItemsRef.current.scrollLeft)
-
     productItemsRef.current.scrollTo({ left: -MIN_WIDTH })
   }, [productItemsRef.current])
 

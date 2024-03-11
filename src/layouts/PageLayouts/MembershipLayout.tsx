@@ -8,7 +8,7 @@ import AffiliateAsCustomer from '@modules/Membership/components/AffiliateAsCusto
 import AffiliateAsEntrepeuner from '@modules/Membership/components/AffiliateAsEntrepeuner'
 
 // Constants
-import { HOME_PATH } from '@assets/data/paths'
+import { HOME_PATH } from '@data/paths'
 
 export default function MembershipLayout() {
   return (

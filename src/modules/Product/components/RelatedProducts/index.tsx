@@ -1,5 +1,6 @@
-// Librarys
-import dynamic from 'next/dynamic'
+// Components
+import ProductItems from '@modules/Product/components/ProductItems'
+import ProductsHeader from '@modules/Product/components/ProductsHeader'
 
 // Hooks
 import useRelatedProducts from './useRelatedProducts'
@@ -9,10 +10,6 @@ import { RelatedProductsProps } from './interfaces'
 
 // Constants
 import { RELATED_PRODUCTS_ID } from './constants'
-
-// Dynamic Components
-const Products = dynamic(() => import('./Products'))
-const ProductsHeader = dynamic(() => import('@modules/Product/components/ProductsHeader'))
 
 export default function RelatedProducts({ products }: RelatedProductsProps) {
   const {
@@ -41,7 +38,11 @@ export default function RelatedProducts({ products }: RelatedProductsProps) {
         onNext={showNextProducts}
       />
 
-      <Products products={products} hasScrollbar={hasScrollbar} productItemsRef={productItemsRef} />
+      <ProductItems
+        products={products}
+        hasScrollbar={hasScrollbar}
+        productItemsRef={productItemsRef}
+      />
     </section>
   )
 }

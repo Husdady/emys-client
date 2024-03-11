@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic'
 import ExternalLinkIcon from '@components/Icons/ExternalLink'
 
 // Constants
-import { TESTIMONIALS_PATH } from '@assets/data/paths'
+import { TESTIMONIALS_PATH } from '@data/paths'
 
 // Dynamic Components
 const HeaderLink = dynamic(() => import('@modules/Home/components/HeaderLink'))

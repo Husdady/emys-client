@@ -8,10 +8,10 @@ import OfflineView from '@components/OfflineView'
 import useSessionRoute from './useSessionRoute'
 
 // Interfaces
-import { OnlyChildrenProp } from '@config/globalInterfaces'
+import { OnlyChildrenProp } from '@config/interfaces'
 
 // Constants
-import { LOGIN_PATH } from '@assets/data/paths'
+import { LOGIN_PATH } from '@data/paths'
 
 // Lazy Routes
 const BlockedRoute = dynamic(() => import('@routes/BlockedRoute'))

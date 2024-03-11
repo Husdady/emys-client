@@ -7,7 +7,7 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 
 // Interfaces
 import { ModalState } from './interfaces'
-import { UnknownObj } from '@config/globalInterfaces'
+import { UnknownObj } from '@config/interfaces'
 
 // Utils
 import leaf from '@utils/leaf'

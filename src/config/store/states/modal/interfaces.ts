@@ -4,7 +4,7 @@ import type { ModalPayload } from './types'
 
 // Interfaces
 import { ModalProps } from 'antd'
-import { UnknownObj } from '@config/globalInterfaces'
+import { UnknownObj } from '@config/interfaces'
 import { ModalFooterProps } from '@components/Modal/interfaces'
 
 export interface ModalState

@@ -2,7 +2,7 @@
 import type { GetServerSidePropsResult } from 'next'
 
 // Interfaces
-import { LoaderResponse } from '@config/globalInterfaces'
+import { LoaderResponse } from '@config/interfaces'
 
 // Constants
 import { HOME_PATH } from './paths'

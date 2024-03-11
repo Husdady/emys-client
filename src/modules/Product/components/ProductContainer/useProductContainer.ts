@@ -51,7 +51,7 @@ export default function useProductContainer() {
 
     // Get product by code
     if (isString(code) && !isEmptyString(code)) {
-      getProduct({ code: params?.code as string })
+      getProduct({ code: code as string })
     }
   }, [params?.code])
 

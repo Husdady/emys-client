@@ -3,11 +3,10 @@
     "baseUrl": ".",
     "paths": {
       "@root/*": ["*"],
-      "@public/*": ["./public/*"],
+      "@data/*": ["./src/data/*"],
       "@libs/*": ["./src/libs/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@utils/*": ["./src/utils/*"],
-      "@assets/*": ["./src/assets/*"],
       "@config/*": ["./src/config/*"],
       "@routes/*": ["./src/routes/*"],
       "@styles/*": ["./src/styles/*"],

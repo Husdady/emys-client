@@ -11,7 +11,10 @@ import useButton from './useButton'
 import { ButtonProps } from './interfaces'
 
 // Utils
+import isString from '@utils/isString'
+import classnames from '@utils/classnames'
 import isUndefined from '@utils/isUndefined'
+import isEmptyString from '@utils/isEmptyString'
 
 // Constants
 import { ButtonProps as Props } from './constants'
@@ -33,8 +36,7 @@ const Button: React.FC<ButtonProps> = ({
   customSpin = {},
   ...props
 }: ButtonProps) => {
-  const { buttonClassName, handleDoubleClick } = useButton({
-    className: className,
+  const { handleDoubleClick } = useButton({
     onClick: onClick,
     onDoubleClick: onDoubleClick
   })
@@ -45,10 +47,13 @@ const Button: React.FC<ButtonProps> = ({
       id={id}
       type={type}
       style={style}
-      className={buttonClassName}
-      title={titlePopup ?? title as string}
       disabled={disabled || isShowingSpin === true}
       onClick={isUndefined(onDoubleClick) ? onClick : handleDoubleClick}
+      title={titlePopup ?? (isString(title) && !isEmptyString(title) ? title : undefined)}
+      className={classnames([
+        className,
+        'btn overflow-hidden relative outline-none flex flex-wrap items-center justify-center gap-x-2 gap-y-1'
+      ])}
     >
       <ButtonContent
         icon={icon}

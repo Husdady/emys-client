@@ -17,7 +17,7 @@ import {
   PRODUCTS_PATH,
   MEMBERSHIP_PATH,
   TESTIMONIALS_PATH
-} from '@assets/data/paths'
+} from '@data/paths'
 
 const mainNavigation: NavigationLink[] = [
   {

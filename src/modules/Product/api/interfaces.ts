@@ -13,8 +13,18 @@ export interface ProductItemWithSession {
   productWithSession?: Product | null
 }
 
+export interface PopularProducts {
+  popularProducts: Product[]
+}
+
 export interface ProductArgs {
   code: string
+}
+
+export interface PopularProductsArgs {
+  limit: number
+  sortRandomly?: boolean
+  excludeProductsByCode: string[]
 }
 
 export interface RatingBody {

@@ -6,7 +6,7 @@ import { hideFloatMessageByKey, showFloatWarningMessage } from '@libs/antd/messa
 import removeAuthKey from './removeAuthKey'
 
 // Constants
-import { LOGIN_PATH } from '@assets/data/paths'
+import { LOGIN_PATH } from '@data/paths'
 
 export const UNAUTHORIZED_KEY = 'unauthorized-key'
 

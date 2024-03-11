@@ -8,7 +8,7 @@ import ReloadTestimonials from '@modules/Testimonials/components/ReloadTestimoni
 import TestimonialsPagination from '@modules/Testimonials/components/TestimonialsPagination'
 
 // Constants
-import { HOME_PATH } from '@assets/data/paths'
+import { HOME_PATH } from '@data/paths'
 
 export default function TestimonialsLayout() {
   return (

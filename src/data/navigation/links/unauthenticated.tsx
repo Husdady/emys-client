@@ -8,12 +8,7 @@ import UserCircleRegular from '@components/Icons/UserCircleRegular'
 import { NavigationLink } from '@components/Header/MobileNavigation/FloatMenu/MenuContent/NavigationItem/interfaces'
 
 // Constants
-import {
-  FORGOT_EMAIL_PATH,
-  FORGOT_PASSWORD_PATH,
-  LOGIN_PATH,
-  REGISTER_PATH
-} from '@assets/data/paths'
+import { FORGOT_EMAIL_PATH, FORGOT_PASSWORD_PATH, LOGIN_PATH, REGISTER_PATH } from '@data/paths'
 
 const unauthenticatedNavigation: NavigationLink[] = [
   {

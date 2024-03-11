@@ -2,7 +2,7 @@
 import dynamic from 'next/dynamic'
 
 // Constants
-import { FORGOT_EMAIL_PATH } from '@assets/data/paths'
+import { FORGOT_EMAIL_PATH } from '@data/paths'
 
 // Dynamic Components
 const Link = dynamic(() => import('@components/Link'))

@@ -7,7 +7,7 @@ import ReloadProducts from '@modules/Products/components/ReloadProducts'
 import ProductsPagination from '@modules/Products/components/ProductsPagination'
 
 // Constants
-import { HOME_PATH } from '@assets/data/paths'
+import { HOME_PATH } from '@data/paths'
 
 export default function ProductsLayout() {
   return (

@@ -2,10 +2,10 @@
 import { NavigationLink } from '@components/Header/MobileNavigation/FloatMenu/MenuContent/NavigationItem/interfaces'
 
 // Navigation
-import mainNavigation from './main'
-import emailNavigation from './email'
-import membershipNavigation from './membership'
-import socialNetworksNavigation from './socialNetworks'
+import mainNavigation from './links/main'
+import emailNavigation from './links/email'
+import membershipNavigation from './links/membership'
+import socialNetworksNavigation from './links/socialNetworks'
 
 const navigation: NavigationLink[] = [
   ...mainNavigation,

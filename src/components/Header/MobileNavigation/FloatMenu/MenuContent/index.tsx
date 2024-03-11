@@ -9,7 +9,7 @@ import useMenuContent from './useMenuContent'
 import { MenuData } from '@components/Header/MobileNavigation/useMobileNavigation/interfaces'
 
 // Data
-import navigation from '@assets/navigation'
+import navigation from '@data/navigation'
 
 // Dynamic Components
 const NavigationItem = dynamic(() => import('./NavigationItem'))

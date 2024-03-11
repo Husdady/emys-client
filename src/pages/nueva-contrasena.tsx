@@ -5,7 +5,7 @@ import AuthRoute from '@routes/AuthRoute'
 import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next'
 
 // Interfaces
-import { LoaderResponse } from '@config/globalInterfaces'
+import { LoaderResponse } from '@config/interfaces'
 
 // Layouts
 import MainLayout from '@layouts/MainLayout'

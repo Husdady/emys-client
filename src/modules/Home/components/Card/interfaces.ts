@@ -3,7 +3,7 @@ import type { ImageProps } from 'next/image'
 
 // Interfaces
 import { MouseEventHandler } from 'react'
-import { OnlyClassNameProp } from '@config/globalInterfaces'
+import { OnlyClassNameProp } from '@config/interfaces'
 
 export interface HomeCardProps extends OnlyClassNameProp {
   id?: string

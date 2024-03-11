@@ -12,7 +12,7 @@ import useAuth from '@hooks/useAuth'
 
 // Interfaces
 import { ResetPasswordFormState } from './interfaces'
-import { LoaderResponse } from '@config/globalInterfaces'
+import { LoaderResponse } from '@config/interfaces'
 
 // Utils
 import isString from '@utils/isString'
@@ -20,7 +20,7 @@ import isEmptyString from '@utils/isEmptyString'
 import getQueryParam from '@utils/getQueryParam'
 
 // Constants
-import { HOME_PATH } from '@assets/data/paths'
+import { HOME_PATH } from '@data/paths'
 
 export const DEFAULT_VALUES = {
   password: '',

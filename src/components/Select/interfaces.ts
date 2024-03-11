@@ -1,10 +1,10 @@
 // Types
 import type { SelectMode } from './types'
-import type { DivType } from '@config/globalTypes'
+import type { DivType } from '@config/types'
 
 // Interfaces
 import { ReactNode, CSSProperties } from 'react'
-import { FormError, FormLabel, OnlyStyleProp, OnlyClassNameProp } from '@config/globalInterfaces'
+import { FormError, FormLabel, OnlyStyleProp, OnlyClassNameProp } from '@config/interfaces'
 
 export interface Option {
   label: string

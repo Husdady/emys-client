@@ -7,10 +7,9 @@ import type { ImageProps } from 'next/image'
 // Interfaces
 import { ButtonProps } from '@components/Button/interfaces'
 
-// Images
-import missingImage from '@assets/images/404.webp'
-
 // Constants
+import { PAGE_NOT_FOUND_IMAGE } from '@data/images'
+
 export const DEFAULT_TITLE = 'Lo siento. Página no encontrada'
 
 export const DEFAULT_DESCRIPTION =
@@ -30,7 +29,7 @@ export const DEFAULT_BUTTON: ButtonProps = {
 export const DEFAULT_IMAGE: ImageProps = {
   width: 375,
   height: 250,
-  src: missingImage,
   className: 'h-[250px]',
-  alt: 'missing-route-image'
+  alt: 'missing-route-image',
+  src: PAGE_NOT_FOUND_IMAGE
 }

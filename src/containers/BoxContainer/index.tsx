@@ -1,5 +1,5 @@
 // Interfaces
-import { OnlyChildrenProp, OnlyClassNameProp } from '@config/globalInterfaces'
+import { OnlyChildrenProp, OnlyClassNameProp } from '@config/interfaces'
 
 // Interfaces
 import classnames from '@utils/classnames'

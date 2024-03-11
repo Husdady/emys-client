@@ -4,12 +4,9 @@ import { createId } from '@libs/nanoid'
 // Interfaces
 import { HomeCardProps } from '@modules/Home/components/Card/interfaces'
 
-// Images
-import micellizationImage from '@assets/images/micellization.webp'
-import omnilifeCampusImage from '@assets/images/omnilife-campus.webp'
-import healthPriorityImage from '@assets/images/health-priority.webp'
-
 // Constants
+import { MICELLIZATION_IMAGE, OMNILIFE_CAMPUS_IMAGE, HEALTH_PRIORITY_IMAGE } from '@data/images'
+
 export const CARD_01_ID = createId()
 export const CARD_02_ID = createId()
 export const CARD_03_ID = createId()
@@ -18,7 +15,7 @@ const cards: HomeCardProps[] = [
   {
     id: CARD_01_ID,
     title: 'Nosotros también vendemos Omnilife',
-    imageProps: { alt: 'omnilife-campus', src: omnilifeCampusImage },
+    imageProps: { width: 194, height: 259, alt: 'omnilife-campus', src: OMNILIFE_CAMPUS_IMAGE },
     description:
       'Omnilife es una empresa de marketing multinivel mexicano radicado en la ciudad de Guadalajara, Jalisco, México...'
   },
@@ -27,7 +24,7 @@ const cards: HomeCardProps[] = [
     buttonTitle: '¿Qué es eso?',
     title: 'El proceso de Micelización',
     animationUtilityClassName: 'animate__delay-1s',
-    imageProps: { alt: 'omnilife-campus', src: micellizationImage },
+    imageProps: { width: 700, height: 453, alt: 'micellization', src: MICELLIZATION_IMAGE },
     description:
       'La Micelización de Omnilife consiste en hacer que las moléculas grasas o lípidas como las de la vitamina A, D...'
   },
@@ -36,7 +33,7 @@ const cards: HomeCardProps[] = [
     buttonTitle: 'Me interesa!',
     title: 'Tu bienestar es nuestra prioridad',
     animationUtilityClassName: 'animate__delay-2s',
-    imageProps: { alt: 'omnilife-campus', src: healthPriorityImage },
+    imageProps: { width: 626, height: 417, alt: 'health-priority', src: HEALTH_PRIORITY_IMAGE },
     description:
       'Omnilife es una empresa que se especializa en la fabricación y venta de suplementos nutricionales y productos...'
   }

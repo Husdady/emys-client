@@ -2,7 +2,7 @@
 import classnames from '@utils/classnames'
 
 // Constants
-import { Lato } from '@assets/data/fonts'
+import { Lato } from '@data/fonts'
 
 export default function Description() {
   return (

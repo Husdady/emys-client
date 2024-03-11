@@ -1,18 +1,24 @@
 // Interfaces
-import { ProductArgs, ProductItem, ProductItemWithSession } from './interfaces'
+import {
+  ProductArgs,
+  ProductItem,
+  ProductItemWithSession,
+  PopularProducts,
+  PopularProductsArgs
+} from './interfaces'
 
 // API
 import { api } from '@config/store/graphql'
 
 // Documents
-import { ProductDocument, ProductWithSessionDocument } from './documents'
+import { ProductDocument, PopularProductsDocument, ProductWithSessionDocument } from './documents'
 
 // Constants
-import { PRODUCT_KEY, RELATED_PRODUCTS_KEY } from '@config/store/graphql/constants'
+import { PRODUCT_KEY, POPULAR_PRODUCTS_KEY } from '@config/store/graphql/constants'
 
 export const productGraphqlApi = api.injectEndpoints({
   endpoints: (builder) => ({
-    // Get products
+    // Get product information
     GetProduct: builder.query<ProductItem, ProductArgs>({
       providesTags: [PRODUCT_KEY],
       query: (variables) => ({
@@ -21,15 +27,28 @@ export const productGraphqlApi = api.injectEndpoints({
       })
     }),
 
-    // Get products when the user is authenticated
+    // Get product information when the user is authenticated
     GetProductWithSession: builder.query<ProductItemWithSession, ProductArgs>({
       providesTags: [PRODUCT_KEY],
       query: (variables) => ({
         variables: variables,
         document: ProductWithSessionDocument
       })
+    }),
+
+    // Get popular products
+    GetPopularProducts: builder.query<PopularProducts, PopularProductsArgs>({
+      providesTags: [POPULAR_PRODUCTS_KEY],
+      query: (variables) => ({
+        variables: variables,
+        document: PopularProductsDocument
+      })
     })
   })
 })
 
-export const { useLazyGetProductQuery, useLazyGetProductWithSessionQuery } = productGraphqlApi
+export const {
+  useLazyGetProductQuery,
+  useLazyGetPopularProductsQuery,
+  useLazyGetProductWithSessionQuery
+} = productGraphqlApi

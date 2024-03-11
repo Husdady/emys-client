@@ -32,7 +32,7 @@ export default function useDrag({
 
     // Check if is at end
     return scrollLeft < 1
-  }, [])
+  }, [productItemsRef.current])
 
   // Check if the scrollbar is at end
   const isScrollbarAtEnd = useCallback(() => {
@@ -47,7 +47,7 @@ export default function useDrag({
 
     // Check if is at end
     return scrollLeft >= scrollWidth - clientWidth
-  }, [])
+  }, [productItemsRef.current])
 
   // Callback for catch the mouse down
   const handleMouseDown = useCallback(() => {
@@ -75,7 +75,7 @@ export default function useDrag({
 
     setDragging(false)
     productItemsRef.current.classList.remove('drag')
-  }, [isDragging, isMobileScreen])
+  }, [isDragging, isMobileScreen, productItemsRef.current])
 
   // Callback for catch the mouse move
   const handleMouseMove = useCallback(
@@ -123,7 +123,7 @@ export default function useDrag({
       isScrollbarAtStart,
       isShowingLeftShadow,
       isShowingRightShadow,
-      isMobileScreen
+      productItemsRef.current
     ]
   )
 
@@ -133,7 +133,7 @@ export default function useDrag({
     return () => {
       document.removeEventListener('mouseup', stopDragging)
     }
-  }, [stopDragging])
+  }, [stopDragging, productItemsRef.current])
 
   return {
     handleScroll: handleScroll,

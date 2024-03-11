@@ -6,7 +6,7 @@ import { useGetLatestTestimonialsQuery } from '@modules/Home/api/getLatestTestim
 import isEmptyArray from '@utils/isEmptyArray'
 
 // Constants
-import { THREE_MINUTES } from '@assets/data/interval'
+import { THREE_MINUTES } from '@data/interval'
 import { LIMIT_LATEST_TESTIMONIALS } from './constants'
 
 /**

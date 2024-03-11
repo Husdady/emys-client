@@ -11,7 +11,7 @@ import { extractNavigation } from './utils'
 import isEmptyString from '@utils/isEmptyString'
 
 // Data
-import navigation from '@assets/navigation'
+import navigation from '@data/navigation'
 
 export interface Params {
   isShowingResults?: boolean
