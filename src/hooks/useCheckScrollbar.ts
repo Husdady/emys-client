@@ -21,7 +21,7 @@ export default function useCheckScrollbar({ elementRef, arrayDeps = [] }: Params
 
     const scrollWidth = el.scrollWidth // Get the scroll width
     const clientWidth = el.clientWidth // Get the client width
-    console.log('[SET_HAS_SCROLLBAR]', { scrollWidth, clientWidth })
+
     return scrollWidth > clientWidth // Check scrollbar
   }, [elementRef])
 
@@ -39,7 +39,6 @@ export default function useCheckScrollbar({ elementRef, arrayDeps = [] }: Params
 
   useMounted(() => {
     updateHasScrollbar()
-    console.log('[HI_BRO]', elementRef)
     window.addEventListener('resize', updateHasScrollbar)
 
     return () => {

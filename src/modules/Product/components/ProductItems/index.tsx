@@ -26,7 +26,7 @@ export default function ProductItems({
     hasScrollbar: hasScrollbar,
     productItemsRef: productItemsRef
   })
-  console.log({ productItemsRef: productItemsRef.current })
+
   return (
     <div className="relative product-items-container">
       <ul

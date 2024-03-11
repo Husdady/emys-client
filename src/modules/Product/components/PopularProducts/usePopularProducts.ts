@@ -22,7 +22,7 @@ export default function usePopularProducts() {
   const params = useParams()
   const productItemsRef = useRef<HTMLUListElement | null>(null)
   const [getPopularProducts, queryData] = useLazyGetPopularProductsQuery()
-// console.log({ productItemsRef: productItemsRef.current })
+
   // Get the popular products
   const popularProducts = useMemo(() => {
     return queryData?.data?.popularProducts ?? []

@@ -19,7 +19,7 @@ export default function ProductsPlaceholder({ className }: OnlyClassNameProp) {
     <ul
       className={classnames([
         className,
-        'product-items fallback flex flex-wrap sm:flex-nowrap items-start overflow-x-auto gap-y-3.5 no-scrollbar gap-x-2'
+        'product-items products-placeholder flex flex-wrap sm:flex-nowrap items-start overflow-x-auto gap-y-3 no-scrollbar gap-x-2 pb-3'
       ])}
     >
       {createList(
