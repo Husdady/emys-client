@@ -18,7 +18,7 @@ import { UploadPhotoProps } from './interfaces'
 import classnames from '@utils/classnames'
 
 // Constants
-import { AVATAR_IMG } from '@data/images'
+import { AVATAR_IMAGE } from '@data/images'
 
 // Dynamic Components
 const Button = dynamic(() => import('@components/Button'))
@@ -68,7 +68,7 @@ const UploadPhoto = ({
 
         <Avatar
           size={AVATAR_SIZE}
-          src={isInvalidPhoto ? AVATAR_IMG : photo}
+          src={isInvalidPhoto ? AVATAR_IMAGE : photo}
           className={classnames([
             className,
             'border-4 dark:border-gray-700',
