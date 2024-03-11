@@ -1,0 +1,13 @@
+.product-items-container {
+  @media only screen and (max-width: 374px) {
+    & .product-items {
+      & .product-item {
+        @apply w-full;
+
+        & .product {
+          @apply max-w-[initial];
+        }
+      }
+    }
+  }
+}

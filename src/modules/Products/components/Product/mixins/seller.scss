@@ -14,16 +14,16 @@
     }
 
     @media only screen and (max-width: 373px) {
-      @apply py-1.5 px-2.5 gap-x-[0.35rem] items-center;
+      @apply px-2.5 gap-x-[0.35rem] items-center text-[0.94rem] leading-[1rem];
 
       & .seller-fullname {
-        @apply flex gap-x-1;
+        @apply flex flex-col gap-y-0.5;
       }
 
       & .seller-photo {
         &,
         & img {
-          @apply w-[25px] h-[25px] min-w-[25px] max-w-[25px] min-h-[25px] max-h-[25px];
+          @apply w-[38px] h-[38px] min-w-[38px] max-w-[38px] min-h-[38px] max-h-[38px];
         }
       }
     }
