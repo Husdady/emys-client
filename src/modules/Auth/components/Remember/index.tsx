@@ -23,7 +23,7 @@ const Remember: React.FC<LoginRememberProps> = ({ remember, onRemember }: LoginR
       <Checkbox
         checkColor="#ffffff"
         label="Almacenar datos"
-        inputClassName="checked:!bg-pink-500 dark:border-gray-600 dark:checked:!bg-pink-400"
+        inputClassName="checked:!bg-pink-500 dark:border-gray-600 dark:checked:!bg-pink-600"
         customLabel={customLabel}
         onToggle={onRemember}
         checked={remember}

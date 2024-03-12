@@ -5,7 +5,7 @@ import { createId } from '@libs/nanoid'
 import { HomeCardProps } from '@modules/Home/components/Card/interfaces'
 
 // Constants
-import { MICELLIZATION_IMAGE, OMNILIFE_CAMPUS_IMAGE, HEALTH_PRIORITY_IMAGE } from '@data/images'
+import { MICELLIZATION_IMAGE, PEOPLE_HEALTHY_IMAGE, HEALTH_PRIORITY_IMAGE } from '@data/images'
 
 export const CARD_01_ID = createId()
 export const CARD_02_ID = createId()
@@ -15,7 +15,7 @@ const cards: HomeCardProps[] = [
   {
     id: CARD_01_ID,
     title: 'Nosotros también vendemos Omnilife',
-    imageProps: { width: 194, height: 259, alt: 'omnilife-campus', src: OMNILIFE_CAMPUS_IMAGE },
+    imageProps: { width: 958, height: 541, alt: 'omnilife-campus', src: PEOPLE_HEALTHY_IMAGE },
     description:
       'Omnilife es una empresa de marketing multinivel mexicano radicado en la ciudad de Guadalajara, Jalisco, México...'
   },

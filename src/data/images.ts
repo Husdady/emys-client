@@ -12,7 +12,7 @@ export const PAGE_NOT_FOUND_IMAGE = `${CLOUDINARY_UPLOAD_URL}/v1710104411/app-im
 
 export const MICELLIZATION_IMAGE = `${CLOUDINARY_UPLOAD_URL}/v1710104413/app-images/micellization_t8p17a.webp`
 
-export const OMNILIFE_CAMPUS_IMAGE = `${CLOUDINARY_UPLOAD_URL}/v1710104414/app-images/omnilife-campus_lxwd7u.webp`
+export const PEOPLE_HEALTHY_IMAGE = `${CLOUDINARY_UPLOAD_URL}/v1710264700/app-images/people-healthy_z2s5bv.webp`
 
 export const HEALTH_PRIORITY_IMAGE = `${CLOUDINARY_UPLOAD_URL}/v1710104412/app-images/health-priority_evhqi6.webp`
 
