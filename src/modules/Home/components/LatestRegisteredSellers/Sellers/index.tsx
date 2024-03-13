@@ -34,7 +34,7 @@ export default function Sellers({ sellers, isLoading }: SellersProps) {
       {!isLoading && Array.isArray(sellers) && !isEmptyArray(sellers) && (
         <ul
           id={SELLER_ITEMS_ID}
-          className="seller-items mt-[2rem] lg:mt-[2.15rem] flex gap-y-2.5 sm:gap-y-3.5 gap-x-2 pb-[3rem] relative sm:gap-x-2.5 justify-center flex-wrap"
+          className="seller-items mt-[2rem] flex gap-y-2.5 sm:gap-y-3.5 gap-x-2 pb-[3rem] relative sm:gap-x-2.5 justify-center flex-wrap"
         >
           {results.map((seller) => (
             <li

@@ -4,7 +4,7 @@
     @apply flex gap-y-2.5 sm:gap-y-3.5 gap-x-2 pb-[1.1rem] relative flex-wrap sm:flex-nowrap;
 
     &:not(.fallback) {
-      @apply mt-[2.5rem];
+      @apply mt-[2rem];
     }
 
     &::-webkit-scrollbar {

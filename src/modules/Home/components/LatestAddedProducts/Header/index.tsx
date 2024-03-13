@@ -77,6 +77,8 @@ function Header({
 
 export default memo(Header, (prevProps, nextProps) => {
   return (
+    prevProps.showNextProducts === nextProps.showNextProducts &&
+    prevProps.showPreviousProducts === nextProps.showPreviousProducts &&
     prevProps.isDisabledNextArrow === nextProps.isDisabledNextArrow &&
     prevProps.isDisabledPreviousArrow === nextProps.isDisabledPreviousArrow
   )

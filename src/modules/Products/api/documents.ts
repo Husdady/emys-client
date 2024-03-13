@@ -111,7 +111,7 @@ export const FavoriteProductDocument = gql`
       data {
         ...ProductsFields
         images {
-          ...ProductImagesFields
+          ...ProductImageFields
         }
         coverImage {
           ...ProductImageFields
@@ -127,5 +127,6 @@ export const FavoriteProductDocument = gql`
     }
   }
 
+  ${createProductImageFragment()}
   ${createProductsFragment('Product')}
 `
