@@ -45,6 +45,12 @@ const nextConfig = {
 function createNextConfig() {
   const isDevelopmentMode = process.env.NODE_ENV === 'development'
   if (isDevelopmentMode) return nextConfig
+
+  // Define the Million config
+  const millionConfig = {
+    auto: true
+  }
+
   return million.next(nextConfig, millionConfig)
 }
 
