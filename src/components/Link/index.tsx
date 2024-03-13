@@ -1,6 +1,5 @@
 // Librarys
 import NextLink from 'next/link'
-import NProgress from 'nprogress'
 import { memo, useMemo, forwardRef } from 'react'
 
 // Interfaces
@@ -8,7 +7,6 @@ import { LinkProps } from './interfaces'
 
 // Utils
 import isString from '@utils/isString'
-import shouldTriggerStartEvent from './utils/shouldTriggerStartEvent'
 
 const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
   { href, onClick, children, ...rest },
@@ -27,16 +25,7 @@ const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
   }
 
   return (
-    <NextLink
-      {...rest}
-      shallow
-      ref={ref}
-      href={href}
-      onClick={(event) => {
-        if (shouldTriggerStartEvent(href, event)) NProgress.start()
-        if (onClick) onClick(event)
-      }}
-    >
+    <NextLink {...rest} shallow ref={ref} href={href} onClick={onClick}>
       {children}
     </NextLink>
   )
