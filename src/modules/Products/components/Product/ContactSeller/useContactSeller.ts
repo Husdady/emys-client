@@ -1,8 +1,6 @@
 // Librarys
+import { useMemo, useCallback, MouseEvent } from 'react'
 import { showFloatWarningMessage } from '@libs/antd/message'
-
-// Hooks
-import { useCallback, useMemo } from 'react'
 
 // Interfaces
 import { ContactSellerProps } from './interfaces'
@@ -40,30 +38,35 @@ export default function useContactSeller({
   }, [isInStock])
 
   // Callback for open the Whatsapp API
-  const openWhatsappAPI = useCallback(() => {
-    if (
-      mainSeller === null ||
-      !isObject(mainSeller) ||
-      isUndefined(mainSeller) ||
-      isEmptyObject(mainSeller as any)
-    ) {
-      return showFloatWarningMessage(ANONYMUS_SELLER)
-    }
+  const openWhatsappAPI = useCallback(
+    (e: MouseEvent<HTMLButtonElement>) => {
+      e.preventDefault()
 
-    let message = `Hola ${mainSeller.fullname}. He visto el producto ${name} y me interesa saber más de este producto`
+      if (
+        mainSeller === null ||
+        !isObject(mainSeller) ||
+        isUndefined(mainSeller) ||
+        isEmptyObject(mainSeller as any)
+      ) {
+        return showFloatWarningMessage(ANONYMUS_SELLER)
+      }
 
-    // Replace Whatsapp message for received message by props
-    if (isString(defaultMessage) && !isEmptyString(defaultMessage)) {
-      message = defaultMessage
-    } else if (isFunction(defaultMessage)) {
-      message = defaultMessage({ seller: mainSeller, productName: name })
-    }
+      let message = `Hola ${mainSeller.fullname}. He visto el producto ${name} y me interesa saber más de este producto`
 
-    window.open(
-      `https://api.whatsapp.com/send?phone=+51${mainSeller.phone}&text=${message}`,
-      '_blank'
-    )
-  }, [mainSeller, defaultMessage])
+      // Replace Whatsapp message for received message by props
+      if (isString(defaultMessage) && !isEmptyString(defaultMessage)) {
+        message = defaultMessage
+      } else if (isFunction(defaultMessage)) {
+        message = defaultMessage({ seller: mainSeller, productName: name })
+      }
+
+      window.open(
+        `https://api.whatsapp.com/send?phone=+51${mainSeller.phone}&text=${message}`,
+        '_blank'
+      )
+    },
+    [mainSeller, defaultMessage]
+  )
 
   return {
     titlePopup: titlePopup,

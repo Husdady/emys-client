@@ -16,6 +16,7 @@ const createProductsFragment = (model: string) => gql`
     description
     currencyType
     mainSeller {
+      phone
       fullname
       photo {
         url
