@@ -58,28 +58,6 @@ export default function ProductsFiltersForm() {
         onClear={onClear('productName')}
       />
 
-      <div className="flex flex-col items-center sm:flex-row flex-wrap sm:flex-nowrap gap-x-2.5 gap-y-3">
-        <SearchFilter
-          textLabel="Código"
-          textLabelClassName="w-20"
-          onClear={onClear('code')}
-          customInput={register('code')}
-          containerClassName="w-full sm:w-[50%]"
-          placeholder="Buscar productos por código..."
-          isShowingClearIcon={isShowingClearIcon('code')}
-        />
-
-        <SearchFilter
-          textLabelClassName="w-28"
-          textLabel="Código Referencial"
-          containerClassName="w-full sm:w-[50%]"
-          placeholder="Buscar productos por código referencial..."
-          isShowingClearIcon={isShowingClearIcon('sku')}
-          customInput={register('sku')}
-          onClear={onClear('sku')}
-        />
-      </div>
-
       <div className="flex flex-col items-center sm:flex-row flex-wrap sm:flex-nowrap gap-x-2.5 gap-y-3 justify-between">
         <SearchFilter
           type="number"
@@ -119,6 +97,28 @@ export default function ProductsFiltersForm() {
         />
 
         <FilterByCategories onChange={onPickCategories} selectedValues={getValues('categories')} />
+      </div>
+
+      <div className="flex flex-col items-center sm:flex-row flex-wrap sm:flex-nowrap gap-x-2.5 gap-y-3">
+        <SearchFilter
+          textLabel="Código"
+          textLabelClassName="w-20"
+          onClear={onClear('code')}
+          customInput={register('code')}
+          containerClassName="w-full sm:w-[50%]"
+          placeholder="Buscar productos por código..."
+          isShowingClearIcon={isShowingClearIcon('code')}
+        />
+
+        <SearchFilter
+          textLabelClassName="w-28"
+          textLabel="Código Referencial"
+          containerClassName="w-full sm:w-[50%]"
+          placeholder="Buscar productos por código referencial..."
+          isShowingClearIcon={isShowingClearIcon('sku')}
+          customInput={register('sku')}
+          onClear={onClear('sku')}
+        />
       </div>
 
       <Fallback classLabel="w-28">

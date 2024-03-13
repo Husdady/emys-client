@@ -26,7 +26,7 @@ export default function FilterByCategories(
   }
 
   return (
-    <Suspense fallback={<Fallback />}>
+    <Suspense fallback={<Fallback className="w-full sm:w-[50%]" textLabelClassName="w-20" />}>
       <MultiSelect
         {...props}
         options={options}
