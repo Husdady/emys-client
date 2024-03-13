@@ -8,9 +8,9 @@ import AuthorTestimony from './AuthorTestimony'
 import AuthorName from './UbigeoFields/AuthorName'
 
 // Interfaces
-import { Testimony } from '@modules/Testimonials/api/interfaces'
+import { Testimony as TestimonyModel } from '@modules/Testimonials/api/interfaces'
 
-export default function Testimony(props: Testimony) {
+export default function Testimony(props: TestimonyModel) {
   return (
     <article className="relative testimony animate__animated animate__fadeIn animate__slow bg-white shadow-2xl border-[3px] border-gray-300 rounded-lg pt-4 pb-[0.95rem] px-2.5 sm:px-3.5 dark:shadow-none dark:bg-dark-800 dark:border-gray-500/90 flex flex-col text-[0.92rem] shadow-blue-200 h-full">
       {props.userId && <ActionButton testimony={props} />}

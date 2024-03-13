@@ -12,7 +12,7 @@ import ContactSellerPlaceholder from './ContactSeller/Placeholder'
 import Link from '@components/Link'
 
 // Interfaces
-import { Product } from '@modules/Products/api/interfaces'
+import { Product as ProductModel } from '@modules/Products/api/interfaces'
 
 // Utils
 import classnames from '@utils/classnames'
@@ -46,7 +46,7 @@ export default function Product({
   coverImage,
   description,
   currencyType
-}: Product) {
+}: ProductModel) {
   return (
     <Link
       href={`${PRODUCTS_PATH}/${code}`}
