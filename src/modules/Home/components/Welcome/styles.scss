@@ -52,7 +52,7 @@
     }
 
     & .welcome-image {
-      @apply left-0 w-[375px] h-[300px] min-w-[375px] min-h-[300px];
+      @apply left-0 h-[300px] min-h-[300px];
     }
 
     & .welcome-top-wave {
@@ -114,7 +114,7 @@
 
   & .welcome-image {
     @media only screen and (max-width: 475px) {
-      @apply w-[95%] h-[285px] min-w-[initial] min-h-[initial];
+      @apply min-w-[initial] min-h-[initial];
     }
 
     @media only screen and (max-width: 400px) {

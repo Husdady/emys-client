@@ -27,10 +27,16 @@ export default function useLatestRegisteredTestimonials() {
   // Check if has empty latest testimonials
   const hasEmptyTestimonials = useMemo(() => isEmptyArray(testimonials), [testimonials])
 
+  // return {
+  //   testimonials: testimonials,
+  //   isError: queryData.isError,
+  //   isLoading: queryData.isLoading,
+  //   hasEmptyTestimonials: hasEmptyTestimonials
+  // }
   return {
-    testimonials: testimonials,
-    isError: queryData.isError,
-    isLoading: queryData.isLoading,
-    hasEmptyTestimonials: hasEmptyTestimonials
+    testimonials: [],
+    isError: false,
+    isLoading: false,
+    hasEmptyTestimonials: true
   }
 }

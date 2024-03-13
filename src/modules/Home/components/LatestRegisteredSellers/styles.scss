@@ -1,5 +1,8 @@
 html {
   & .latest-registered-sellers {
+    background: rgb(255, 186, 59);
+    background: linear-gradient(90deg, rgb(255, 186, 59), rgb(111, 185, 234), rgb(242, 124, 255));
+
     @media screen and (min-width: 1536px) {
       & .seller-items {
         & .seller-item {
@@ -64,24 +67,12 @@ html {
     @media only screen and (max-width: 374px) {
       @apply px-2;
     }
-
-    &:not(.white-screen) {
-      background: rgb(255, 186, 59);
-      background: linear-gradient(90deg, rgb(255, 186, 59), rgb(111, 185, 234), rgb(242, 124, 255));
-    }
   }
 
   &.dark {
     & .latest-registered-sellers {
-      &:not(.white-screen) {
-        background: rgb(196, 131, 12);
-        background: linear-gradient(
-          90deg,
-          rgb(242, 210, 152),
-          rgb(169, 221, 255),
-          rgb(236, 70, 254)
-        );
-      }
+      background: rgb(196, 131, 12);
+      background: linear-gradient(90deg, rgb(242, 210, 152), rgb(169, 221, 255), rgb(236, 70, 254));
     }
   }
 }

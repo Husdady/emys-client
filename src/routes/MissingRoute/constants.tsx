@@ -16,7 +16,7 @@ export const DEFAULT_DESCRIPTION =
   'La ruta que intentas acceder no existe o tal vez está mal escrita. Te recomendamos que verifiques la ruta por si exista un error tipográfico o en cambio, puedes volver a una ruta inicial de la aplicación.'
 
 export const DEFAULT_CUSTOM_TITLE = {
-  className: 'mt-1 text-red-500 w-full dark:text-red-400'
+  className: 'mt-2 text-red-500 w-full dark:text-red-400'
 }
 
 export const DEFAULT_BUTTON: ButtonProps = {

@@ -7,6 +7,10 @@
 @include createLayout('.latest-added-products', '.latest-added-products-header');
 
 .latest-added-products {
+  &:not(.fallback) {
+    @apply mt-[2rem];
+  }
+
   & .product-items {
     @apply sm:gap-x-2.5;
 
@@ -28,6 +32,12 @@
   }
 
   @media only screen and (max-width: 908px) {
+    &:not(.fallback) {
+      & .product-items {
+        @apply mt-[2rem] #{!important};
+      }
+    }
+
     & .inner-wrapper {
       @apply my-2 justify-between;
     }
@@ -63,8 +73,16 @@
   }
 
   @media only screen and (max-width: 515px) {
+    & .main-title {
+      @apply mx-1;
+    }
+
+    & .latest-added-products-header {
+      @apply gap-y-5;
+    }
+
     & .inner-wrapper {
-      @apply my-0 gap-y-5 flex-wrap flex-col-reverse;
+      @apply mb-0 flex-wrap flex-col-reverse;
 
       & .see-all-products-link {
         @apply mr-0;

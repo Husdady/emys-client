@@ -53,7 +53,7 @@ export default function Screen({
         {...customTitle}
         className={classnames([
           customTitle.className,
-          'font-poppins font-bold text-3xl text-center main-title max-w-[550px] 2xl:max-w-[650px] leading-tight px-5'
+          'font-poppins font-bold text-3xl text-center main-title max-w-[550px] 2xl:max-w-[650px] leading-tight px-3 sm:px-5'
         ])}
       >
         {title}
@@ -63,7 +63,7 @@ export default function Screen({
         {...customDescription}
         className={classnames([
           customDescription.className,
-          'screen-description break-word font-poppins font-bold text-base text-gray-700 sm-container text-center block mt-2 dark:text-gray-300 max-w-[650px] px-2'
+          'screen-description break-word font-poppins font-bold text-base text-gray-700 sm-container text-center block mt-3.5 dark:text-gray-300 max-w-[650px] px-2'
         ])}
       >
         {description}

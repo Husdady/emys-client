@@ -16,7 +16,7 @@ export const DEFAULT_DESCRIPTION =
   '¡Lo sentimos! Parece que hemos encontrado un problema al intentar obtener la información de los últimos vendedores registrados.'
 
 export const DEFAULT_CUSTOM_TITLE = {
-  className: 'text-red-500 w-full !px-0 dark:text-red-400 mb-4 md:mb-2'
+  className: 'text-red-500 w-full !px-0 dark:text-red-400 mt-1.5'
 }
 
 export const DEFAULT_CUSTOM_DESCRIPTION = {

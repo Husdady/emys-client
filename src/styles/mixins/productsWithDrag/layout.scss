@@ -6,7 +6,6 @@
   @include addShadows($mainSelector: $mainSelector);
 
   #{$mainSelector} {
-    // @apply mx-auto;
     @include productItems;
 
     #{$mainHeader} {

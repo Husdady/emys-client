@@ -4,9 +4,6 @@ import dynamic from 'next/dynamic'
 // Hooks
 import useLatestAddedProducts from './useLatestAddedProducts'
 
-// Utils
-import classnames from '@utils/classnames'
-
 // Constants
 import { LATEST_ADDED_PRODUCTS_ID } from './constants'
 
@@ -30,14 +27,18 @@ export default function LatestAddedProducts() {
     isDisabledPreviousArrow
   } = useLatestAddedProducts()
 
+  // Show Error view
+  if (isError) return <Error />
+
+  // Show Empty view
+  if (!isLoading && hasEmptyProducts) {
+    return <Empty />
+  }
+
   return (
     <section
       id={LATEST_ADDED_PRODUCTS_ID}
-      className={classnames([
-        isError ? 'sm:!pb-[2rem]' : null,
-        !isError && hasEmptyProducts ? 'pb-4 lg:pb-[3rem]' : 'pb-[0.65rem] sm:pb-4 xl:pb-6',
-        'latest-added-products pt-4 px-4 xl:px-0'
-      ])}
+      className="latest-added-products px-4 xl:px-0 pb-6 sm:pb-8"
     >
       <Header
         showNextProducts={showNextProducts}
@@ -46,17 +47,12 @@ export default function LatestAddedProducts() {
         isDisabledNextArrow={isDisabledNextArrow}
       />
 
-      {isError && <Error />}
-      {!isError && !isLoading && hasEmptyProducts && <Empty />}
-
-      {(isLoading || (!isError && !hasEmptyProducts)) && (
-        <Products
-          products={products}
-          isLoading={isLoading}
-          hasScrollbar={hasScrollbar}
-          productItemsRef={productItemsRef}
-        />
-      )}
+      <Products
+        products={products}
+        isLoading={isLoading}
+        hasScrollbar={hasScrollbar}
+        productItemsRef={productItemsRef}
+      />
     </section>
   )
 }

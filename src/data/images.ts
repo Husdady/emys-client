@@ -26,6 +26,8 @@ export const DEVELOPING_CONTENT_IMAGE = `${CLOUDINARY_UPLOAD_URL}/v1710104843/ap
 
 export const EMPTY_LATEST_SELLERS_IMAGE = `${CLOUDINARY_UPLOAD_URL}/v1710104412/app-images/empty-latest-sellers_gxai2j.webp`
 
+export const EMPTY_LATEST_TESTIMONIALS_IMAGE = `${CLOUDINARY_UPLOAD_URL}/v1710364204/app-images/people_vyatoq.webp`
+
 export const EMPTY_LATEST_PRODUCTS_IMAGE = `${CLOUDINARY_UPLOAD_URL}/v1710104412/app-images/empty-latest-products_brcy2s.webp`
 
 export const OFFLINE_IMAGE = `${CLOUDINARY_UPLOAD_URL}/v1710104413/app-images/offline-image_jfkkr1.webp`
