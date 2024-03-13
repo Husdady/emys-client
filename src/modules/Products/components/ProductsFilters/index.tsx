@@ -46,19 +46,9 @@ export default function ProductsFiltersForm() {
       noValidate
       id={PRODUCTS_FILTERS_FORM_ID}
       onSubmit={handleSubmit(submit)}
-      className="products-filters-form flex flex-col gap-y-3 mt-1.5 mb-3"
+      className="products-filters-form flex flex-col gap-y-3 sm:gap-y-3.5 mt-1.5 mb-3"
     >
-      <SearchFilter
-        textLabelClassName="w-32"
-        containerClassName="w-full"
-        textLabel="Nombre del producto"
-        placeholder="Buscar productos por nombre..."
-        isShowingClearIcon={isShowingClearIcon('productName')}
-        customInput={register('productName')}
-        onClear={onClear('productName')}
-      />
-
-      <div className="flex flex-col items-center sm:flex-row flex-wrap sm:flex-nowrap gap-x-2.5 gap-y-3 justify-between">
+      <div className="flex flex-col items-center sm:flex-row flex-wrap sm:flex-nowrap gap-x-3 gap-y-3 sm:gap-y-3.5 justify-between">
         <SearchFilter
           type="number"
           textLabel="Unidades"
@@ -73,7 +63,19 @@ export default function ProductsFiltersForm() {
         <ByStock selectedValue={watch('isInStock')} onChange={change('isInStock')} />
       </div>
 
-      <div className="flex flex-col items-center flex-col-reverse sm:flex-row flex-wrap sm:flex-nowrap gap-x-2.5 gap-y-3 justify-between">
+      <div className="flex flex-col items-center sm:flex-row flex-wrap sm:flex-nowrap gap-x-3 gap-y-3 sm:gap-y-3.5">
+        <FilterByCountry
+          textLabel="País de origen"
+          onChange={change('origin')}
+          selectedValue={watch('origin')}
+          containerClassName="w-full sm:w-[50%]"
+          noSelectionLabel="Filtrar productos por país de origen"
+        />
+
+        <FilterByCategories onChange={onPickCategories} selectedValues={getValues('categories')} />
+      </div>
+
+      <div className="flex flex-col items-center flex-col-reverse sm:flex-row flex-wrap sm:flex-nowrap gap-x-3 gap-y-3 sm:gap-y-3.5 justify-between">
         <SearchFilter
           textLabel="Fabricante"
           textLabelClassName="w-24"
@@ -87,19 +89,7 @@ export default function ProductsFiltersForm() {
         <SortBy onChange={onChangeSortBy} selectedValue={sortBySelectedOption} />
       </div>
 
-      <div className="flex flex-col items-center sm:flex-row flex-wrap sm:flex-nowrap gap-x-2.5 gap-y-3">
-        <FilterByCountry
-          textLabel="País de origen"
-          onChange={change('origin')}
-          selectedValue={watch('origin')}
-          containerClassName="w-full sm:w-[50%]"
-          noSelectionLabel="Filtrar productos por país de origen"
-        />
-
-        <FilterByCategories onChange={onPickCategories} selectedValues={getValues('categories')} />
-      </div>
-
-      <div className="flex flex-col items-center sm:flex-row flex-wrap sm:flex-nowrap gap-x-2.5 gap-y-3">
+      <div className="flex flex-col items-center sm:flex-row flex-wrap sm:flex-nowrap gap-x-3 gap-y-3 sm:gap-y-3.5">
         <SearchFilter
           textLabel="Código"
           textLabelClassName="w-20"
@@ -120,6 +110,16 @@ export default function ProductsFiltersForm() {
           onClear={onClear('sku')}
         />
       </div>
+
+      <SearchFilter
+        textLabelClassName="w-32"
+        containerClassName="w-full"
+        textLabel="Nombre del producto"
+        placeholder="Buscar productos por nombre..."
+        isShowingClearIcon={isShowingClearIcon('productName')}
+        customInput={register('productName')}
+        onClear={onClear('productName')}
+      />
 
       <Fallback classLabel="w-28">
         <FilterByPriceRange
