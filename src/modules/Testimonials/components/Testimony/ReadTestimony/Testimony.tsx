@@ -6,7 +6,7 @@ import AuthorTestimony from '@modules/Testimonials/components/Testimony/AuthorTe
 import AuthorName from '@modules/Testimonials/components/Testimony/UbigeoFields/AuthorName'
 
 // Interfaces
-import { Testimony } from '@modules/Testimonials/api/interfaces'
+import { Testimony as TestimonyModel } from '@modules/Testimonials/api/interfaces'
 
 export default function Testimony({
   photo,
@@ -17,7 +17,7 @@ export default function Testimony({
   district,
   testimony,
   createdAt
-}: Testimony) {
+}: TestimonyModel) {
   return (
     <article className='testimony'>
       <div className="flex gap-x-2.5 mb-4 px-4 testimony-header items-center">
