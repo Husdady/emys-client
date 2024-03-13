@@ -8,6 +8,9 @@ import { PersistGate } from 'redux-persist/integration/react'
 // Containers
 import MainContainer from '@containers/MainContainer'
 
+// Components
+import ProgressBar from '@components/ProgressBar'
+
 // Types
 import type { AppProps } from 'next/app'
 
@@ -39,6 +42,7 @@ export default function EmysApp({ Component, pageProps: pageProps }: AppProps) {
             <ConfigProvider theme={theme}>
               <MainContainer>
                 <Component {...pageProps} />
+                <ProgressBar/>
               </MainContainer>
             </ConfigProvider>
           </ThemeProvider>

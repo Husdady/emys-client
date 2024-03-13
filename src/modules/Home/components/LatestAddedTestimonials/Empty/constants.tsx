@@ -10,7 +10,7 @@ export const DEFAULT_DESCRIPTION =
   'Queremos informarle que, hasta el momento, no se han añadido testimonios en nuestra plataforma. Estamos trabajando diligentemente en anexar testimonios de gente que haya usado nuestros productos.'
 
 export const DEFAULT_CUSTOM_TITLE = {
-  className: 'text-purple-500 w-full dark:text-purple-400 mt-2'
+  className: 'text-purple-500 w-full dark:text-purple-400 mt-1'
 }
 
 export const DEFAULT_IMAGE: ImageProps = {

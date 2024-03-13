@@ -1,3 +1,6 @@
+// Librarys
+import million from 'million/compiler'
+
 // Constants
 export const PROTOCOL = 'https'
 export const CLOUDINARY_HOST = 'res.cloudinary.com'
@@ -35,4 +38,14 @@ const nextConfig = {
   }
 }
 
-export default nextConfig
+/**
+ * Callback for create the Next config based the node environment
+ * @returns {object} NextConfig
+ */
+function createNextConfig() {
+  const isDevelopmentMode = process.env.NODE_ENV === 'development'
+  if (isDevelopmentMode) return nextConfig
+  return million.next(nextConfig, millionConfig)
+}
+
+export default createNextConfig()
