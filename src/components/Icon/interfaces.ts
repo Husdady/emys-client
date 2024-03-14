@@ -23,6 +23,7 @@ export interface IconProps
     | 'md'
     | 'lg'
     | 'xl'
+    | 'xsx'
     | 'xxl'
     | 'xxxl'
     | 'xml'

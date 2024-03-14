@@ -36,7 +36,7 @@ export default function FilterByRegion({
       enableVirtualization
       noSelectionLabel={noSelectionLabel}
       containerClassName={containerClassName}
-      searchPalceholder="Buscar uno o varias regiones por nombre..."
+      searchPalceholder="Buscar regiones por nombre..."
       emptyText="Sin regiones disponibles"
       textLabel="Regiones"
     />

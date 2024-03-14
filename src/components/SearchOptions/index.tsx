@@ -13,7 +13,7 @@ import lazy from '@utils/lazy'
 // Lazy Components
 const InputText = lazy(() => import('@components/InputText'))
 
-function SearchOptions(props: SearchOptionsProps) {
+export default function SearchOptions(props: SearchOptionsProps) {
   return (
     <Suspense fallback={null}>
       <InputText
@@ -21,11 +21,9 @@ function SearchOptions(props: SearchOptionsProps) {
         hidePlaceholderOnFocus
         containerClassName="w-full"
         className="placeholder-gray-500 dark:placeholder-gray-300/80"
-        icon={<MagnifyingGlass size="xs" className="text-gray-400 dark:text-gray-300/80" />}
-        innerClassName="search-options !min-h-[initial] py-[0.65rem] text-[0.8rem] dark:!bg-gray-900 dark:!border-gray-300/40 dark:outline-gray-300/40 !gap-x-2"
+        icon={<MagnifyingGlass size="xsx" className="text-gray-400 dark:text-gray-300/80" />}
+        innerClassName="search-options dark:!bg-gray-900 dark:!border-gray-300/40 dark:outline-gray-300/40 !gap-x-2 !rounded-xl"
       />
     </Suspense>
   )
 }
-
-export default memo(SearchOptions)

@@ -25,7 +25,6 @@ import isString from '@utils/isString'
 import isNumber from '@utils/isNumber'
 import isBoolean from '@utils/isBoolean'
 import isEmptyString from '@utils/isEmptyString'
-import getQueryParam from '@utils/getQueryParam'
 import hasSameObjectData from '@utils/hasSameObjectData'
 import createSortByFilter from '@utils/createSortByFilter'
 import createSortBySelectedOption from '@utils/createSortBySelectedOption'
@@ -116,16 +115,6 @@ export default function useProductsFilters() {
     void handleSubmit(submit)()
   }, [])
 
-  // Callback for execute manually the submit event
-  const handlePressEnter = useCallback(
-    (field: keyof ProductsFiltersState) => () => {
-      // Prevent make request if has invalid search value
-      if ((!query[field] && isEmptyString(watch(field))) || watch(field) === query[field]) return
-      onFilter() // Executes submit event
-    },
-    [query, watch()]
-  )
-
   // Callback for change a Select value
   const change = useCallback(
     (field: keyof ProductsFiltersState) => (option: Option) => {
@@ -133,9 +122,8 @@ export default function useProductsFilters() {
 
       // Update field
       setValue(field, type === NULLABLE ? undefined : type)
-      onFilter() // Execute submit event
     },
-    [onFilter]
+    []
   )
 
   // Callback for change the price range
@@ -163,9 +151,6 @@ export default function useProductsFilters() {
   const clearSearchValue = useCallback(
     (field: keyof ProductsFiltersState) => () => {
       setValue(field, '', { shouldDirty: false }) // Clear seeker value
-      const querySearch = getQueryParam(field) // Get query param
-      if (querySearch === null) return // Check if exists query param
-      onFilter() // Execute submit event
     },
     [onFilter]
   )
@@ -185,13 +170,9 @@ export default function useProductsFilters() {
   }, [])
 
   // Event 'onChange' in Filter by Categories Select component for add one or multiples categories to the filters
-  const onPickCategories = useCallback(
-    (categoriesId: string[]) => {
-      setValue('categories', categoriesId) // Update categories
-      onFilter() // Execute submit event
-    },
-    [onFilter]
-  )
+  const onPickCategories = useCallback((categoriesId: string[]) => {
+    setValue('categories', categoriesId) // Update categories
+  }, [])
 
   // Event 'submit' that executes when the form is valid
   const submit = useCallback(

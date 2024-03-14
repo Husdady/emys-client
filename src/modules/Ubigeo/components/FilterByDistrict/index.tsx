@@ -40,7 +40,7 @@ export default function FilterByDistrict({
       enableVirtualization
       noSelectionLabel={noSelectionLabel}
       containerClassName={containerClassName}
-      searchPalceholder="Buscar uno o varias distritos por nombre..."
+      searchPalceholder="Buscar distritos por nombre..."
       emptyText="Sin distritos disponibles"
       textLabel="Distritos"
     />

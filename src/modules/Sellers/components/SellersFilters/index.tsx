@@ -40,6 +40,19 @@ export default function SellersFiltersForm() {
       onSubmit={handleSubmit(submit)}
       className="sellers-filters-form flex flex-col gap-y-3 mt-1.5 mb-3"
     >
+      <UbigeoFilters
+        watch={watch}
+        setValue={setValue}
+        getValues={getValues}
+        config={ubigeoConfigFilters}
+        deleteQueryParam={deleteQueryParam}
+      />
+
+      <div className="flex items-center flex-wrap sm:flex-nowrap gap-x-2.5 gap-y-3">
+        <FilterByStatus onChange={onChangeStatus} selectedValue={getValues('status')} />
+        <SortBy onChange={onChangeSortBy} selectedValue={sortBySelectedOption} />
+      </div>
+
       <SearchFilter
         onClear={onClear('fullname')}
         customInput={register('fullname')}
@@ -101,19 +114,6 @@ export default function SellersFiltersForm() {
           placeholder="Buscar vendedores por número telefónico..."
         />
       </div>
-
-      <div className="flex items-center flex-wrap sm:flex-nowrap gap-x-2.5 gap-y-3">
-        <FilterByStatus onChange={onChangeStatus} selectedValue={getValues('status')} />
-        <SortBy onChange={onChangeSortBy} selectedValue={sortBySelectedOption} />
-      </div>
-
-      <UbigeoFilters
-        watch={watch}
-        setValue={setValue}
-        getValues={getValues}
-        config={ubigeoConfigFilters}
-        deleteQueryParam={deleteQueryParam}
-      />
     </form>
   )
 }

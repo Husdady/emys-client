@@ -38,7 +38,7 @@ export default function FilterByProvince({
       enableVirtualization
       noSelectionLabel={noSelectionLabel}
       containerClassName={containerClassName}
-      searchPalceholder="Buscar uno o varias provincias por nombre..."
+      searchPalceholder="Buscar provincias por nombre..."
       emptyText="Sin provincias disponibles"
       textLabel="Provincias"
     />

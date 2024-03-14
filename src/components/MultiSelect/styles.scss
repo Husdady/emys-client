@@ -21,7 +21,7 @@
     & .checkbox-options,
     & .virtualized-checkbox-options > div {
       @include select-scrollbar;
-      @apply bg-white dark:bg-gray-900 rounded w-full border-t border-l border-gray-400 dark:border-gray-500;
+      @apply bg-white dark:bg-gray-900 rounded-md w-full border-t border-l border-gray-400 dark:border-gray-500;
     }
 
     & .checkbox-option-item,
@@ -65,11 +65,6 @@
     & input[type='checkbox'] {
       width: 1.15rem !important;
       height: 1.15rem !important;
-    }
-
-    & .inner svg {
-      width: 12px !important;
-      height: 12px !important;
     }
   }
 }

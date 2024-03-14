@@ -1,6 +1,6 @@
 @mixin select-button {
   & .search-options {
-    @apply mb-1;
+    @apply mb-1.5 md:mb-1;
   }
 
   & .btn {

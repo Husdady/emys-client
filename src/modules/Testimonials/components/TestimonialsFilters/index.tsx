@@ -37,6 +37,14 @@ export default function TestimonialsFiltersForm() {
       id={TESTIMONIALS_FILTERS_FORM_ID}
       className="testimonials-filters-form flex flex-col gap-y-3.5 mt-1.5 mb-3 sm:flex-col"
     >
+      <UbigeoFilters
+        watch={watch}
+        setValue={setValue}
+        getValues={getValues}
+        config={ubigeoConfigFilters}
+        deleteQueryParam={deleteQueryParam}
+      />
+
       <div className="flex flex-col items-center sm:flex-row gap-x-3 gap-y-3.5">
         <SearchFilter
           onClear={clearSeeker}
@@ -50,14 +58,6 @@ export default function TestimonialsFiltersForm() {
 
         <SortBy onChange={onChangeSortBy} selectedValue={sortBySelectedOption} />
       </div>
-
-      <UbigeoFilters
-        watch={watch}
-        setValue={setValue}
-        getValues={getValues}
-        config={ubigeoConfigFilters}
-        deleteQueryParam={deleteQueryParam}
-      />
     </form>
   )
 }

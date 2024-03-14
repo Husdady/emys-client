@@ -20,7 +20,7 @@
     & .select-options,
     & .virtualized-options {
       @include select-scrollbar;
-      @apply bg-white dark:bg-gray-900 rounded w-full border-t border-l border-gray-400 dark:border-gray-500;
+      @apply bg-white dark:bg-gray-900 rounded-md w-full border-t border-l border-gray-400 dark:border-gray-500;
 
       & .select-option,
       & .virtualized-option-item {
