@@ -8,7 +8,7 @@ import useMounted from './useMounted'
  * @returns {boolean} Boolean
  */
 export default function useResponsiveQuery(query: number): boolean {
-  const [matches, setMatches] = useState(false)
+  const [matches, setMatches] = useState(window.innerWidth <= query)
 
   useMounted(() => {
     // Callback for handle the resize event

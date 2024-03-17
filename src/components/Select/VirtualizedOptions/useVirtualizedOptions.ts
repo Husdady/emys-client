@@ -4,7 +4,7 @@ import useHeightForVirtualizedOption from '@hooks/useHeightForVirtualizedOption'
 import useSearchOptions, { UseSearchOptionsParams } from '@components/Select/hooks/useSearchOptions'
 
 // Utils
-import getDefaultListHeight from '@components/Select/utils/getDefaultListHeight'
+import getVirtualizedListHeight from '@utils/getVirtualizedListHeight'
 
 /**
  * Hook for implements the logic of the VirtualizedOptions component
@@ -12,12 +12,13 @@ import getDefaultListHeight from '@components/Select/utils/getDefaultListHeight'
  */
 export default function useVirtualizedOptions(params: UseSearchOptionsParams) {
   const searchData = useSearchOptions(params)
-  const { defaultOptionHeight, defaultContainerHeight } = getDefaultListHeight()
+  const { defaultOptionHeight, defaultContainerHeight } = getVirtualizedListHeight()
 
   const adjusts = useHeightForVirtualizedOption({
     defaultOptionHeight: defaultOptionHeight,
     defaultContainerHeight: defaultContainerHeight
   })
+
   // Callback for find the active item index
   const findActiveItemIndex = useCallback(() => {
     return params.initialOptions.findIndex((option) => option.value === params.selectedValue)

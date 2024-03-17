@@ -28,9 +28,9 @@ export default function Aside({
           {title}
         </h3>
 
-        <p className="text-gray-700 dark:text-gray-400 font-medium text-[0.9rem] leading-snug font-lexend">
+        <div className="text-gray-700 dark:text-gray-400 font-medium text-[0.9rem] leading-snug font-lexend">
           {description}
-        </p>
+        </div>
       </div>
 
       <div className="w-full mt-6 lg:mt-0 lg:w-6/12">{children}</div>

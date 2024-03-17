@@ -1,19 +1,17 @@
 // Constants
-import {
-  VIRTUALIZED_OPTION_HEIGHT_FOR_MOBILE,
-  VIRTUALIZED_OPTION_HEIGHT_FOR_DESKTOP
-} from '@components/Select/constants'
+export const VIRTUALIZED_OPTION_HEIGHT_FOR_MOBILE = 55
+export const VIRTUALIZED_OPTION_HEIGHT_FOR_DESKTOP = 41
 
 /**
- * Get the default list height
+ * Get virtualized list height for Virtualized components
  */
-export default function getDefaultListHeight() {
+export default function getVirtualizedListHeight() {
   const minOptionsToShow = window.innerWidth > 768 ? 5 : 6
 
   const defaultOptionHeight =
-    window.innerWidth > 768
-      ? VIRTUALIZED_OPTION_HEIGHT_FOR_DESKTOP
-      : VIRTUALIZED_OPTION_HEIGHT_FOR_MOBILE
+    window.innerWidth <= 768
+      ? VIRTUALIZED_OPTION_HEIGHT_FOR_MOBILE
+      : VIRTUALIZED_OPTION_HEIGHT_FOR_DESKTOP
 
   const defaultContainerHeight = defaultOptionHeight * minOptionsToShow + defaultOptionHeight / 2
 

@@ -10,7 +10,7 @@ import { SearchOptionsProps } from './types'
 
 export default function SearchOptions(props: SearchOptionsProps) {
   const isTabletScreen = useTabletScreen()
-
+console.log({ isTabletScreen })
   return (
     <InputText
       {...props}

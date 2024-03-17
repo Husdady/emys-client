@@ -6,7 +6,7 @@ import { useRef, useMemo, useState, useCallback } from 'react'
 
 // Types
 import type { UseSelectParams } from '@components/Select/types'
-import type { OnChangeOption } from '@components/Select/VirtualizedOptions/types'
+import type { OnChangeOption } from '@root/src/components/Select/VirtualizedOptions/types'
 
 // Utils
 import isUndefined from '@utils/isUndefined'

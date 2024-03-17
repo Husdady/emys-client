@@ -18,7 +18,7 @@ import classnames from '@utils/classnames'
 // Lazy Components
 const Button = lazy(() => import('@components/Button'))
 
-export default function ReloadButton({ path, ...props }: BackButtonProps) {
+export default function BackButton({ path, ...props }: BackButtonProps) {
   const { goToPath } = useBackButton({ path: path })
 
   return (
@@ -29,7 +29,7 @@ export default function ReloadButton({ path, ...props }: BackButtonProps) {
         icon={<ArrowBackIcon size="md" className="stroke-3" />}
         className={classnames([
           props.className,
-          'gap-x-2.5 btn-back-button bg-white shadow-lg text-main-700 py-2.5 rounded-2xl hover:opacity-70 dark:text-rose-300 dark:bg-gray-800 font-semibold min-w-[159px] min-h-[46px] sm:min-h-[42px]'
+          'gap-x-2.5 btn-back-button bg-white shadow-lg text-main-700 py-2.5 rounded-2xl hover:opacity-70 dark:text-rose-300 dark:bg-gray-800 font-semibold min-h-[46px] sm:min-h-[42px]'
         ])}
       />
     </Suspense>

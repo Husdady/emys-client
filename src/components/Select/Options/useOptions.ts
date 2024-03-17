@@ -4,7 +4,7 @@ import useCheckVerticalScrollbar from '@hooks/useCheckVerticalScrollbar'
 import useSearchOptions, { UseSearchOptionsParams } from '@components/Select/hooks/useSearchOptions'
 
 // Utils
-import getDefaultListHeight from '@components/Select/utils/getDefaultListHeight'
+import getVirtualizedListHeight from '@utils/getVirtualizedListHeight'
 
 /**
  * Hook for implements the logic of the Options component
@@ -17,7 +17,7 @@ export default function useOptions(params: UseSearchOptionsParams) {
 
   // Define the select options style
   const selectOptionsStyle = useMemo(() => {
-    const { defaultContainerHeight } = getDefaultListHeight()
+    const { defaultContainerHeight } = getVirtualizedListHeight()
     return { maxHeight: `${defaultContainerHeight}px` }
   }, [])
 

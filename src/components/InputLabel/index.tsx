@@ -15,19 +15,18 @@ const InputLabel: React.FC<InputLabelProps> = ({
   style,
   className
 }: InputLabelProps) => {
-  // Definir clases del label
-  const labelClasses = React.useMemo(() => {
-    return classnames([
-      className,
-      icon === null || isUndefined(icon) ? 'block' : 'flex items-center',
-      'mb-[0.35rem] text-[0.9rem] flex gap-x-1 font-bold select-text text-gray-600 dark:text-gray-400'
-    ])
-  }, [icon, className])
-
   if (isUndefined(title)) return null
 
   return (
-    <label id={id} style={style} className={labelClasses}>
+    <label
+      id={id}
+      style={style}
+      className={classnames([
+        className,
+        icon === null || isUndefined(icon) ? 'block' : 'flex items-center',
+        'input-label mb-[0.35rem] text-[0.9rem] flex gap-x-1 font-bold select-text text-gray-600 dark:text-gray-400'
+      ])}
+    >
       {icon}
       <span className="hover:cursor-text leading-tight">{title}</span>
     </label>

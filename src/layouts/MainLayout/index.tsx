@@ -11,7 +11,7 @@ const Header = dynamic(() => import('@components/Header'))
 const Footer = dynamic(() => import('@components/Footer'))
 const FloatButtons = dynamic(() => import('@components/FloatButtons'))
 
-function MainLayout({ children, isShowingFloatButtons = true }: MainLayoutProps) {
+export default function MainLayout({ children, isShowingFloatButtons = true }: MainLayoutProps) {
   return (
     <>
       <Header />
@@ -22,5 +22,3 @@ function MainLayout({ children, isShowingFloatButtons = true }: MainLayoutProps)
     </>
   )
 }
-
-export default memo(MainLayout)

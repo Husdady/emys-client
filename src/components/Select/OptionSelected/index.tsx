@@ -1,9 +1,9 @@
 // Component
-import Options from '../Options'
 import Mask from '@components/Mask'
 import Button from '@components/Button'
+import Options from '@components/Select/Options'
 import EmptyOptions from '@components/EmptyOptions'
-import VirtualizedOptions from '../VirtualizedOptions'
+import VirtualizedOptions from '@components/Select/VirtualizedOptions'
 
 // Hooks
 import useOptionSelected from './useOptionSelected'

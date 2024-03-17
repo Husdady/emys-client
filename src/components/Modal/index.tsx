@@ -16,7 +16,7 @@ import { modalStyle } from './constants'
 const ModalTitle = dynamic(() => import('./Title'))
 const ModalFooter = dynamic(() => import('./Footer'))
 
-function Modal() {
+export default function Modal() {
   const {
     icon,
     title,
@@ -79,5 +79,3 @@ function Modal() {
     </AntdModal>
   )
 }
-
-export default memo(Modal)
