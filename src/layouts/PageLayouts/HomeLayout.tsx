@@ -16,7 +16,7 @@ const LatestRegisteredSellers = dynamic(
 
 export default function HomeLayout() {
   return (
-    <>
+    <div>
       <Welcome />
       <LatestAddedProducts />
       <SeytuCards />
@@ -24,6 +24,6 @@ export default function HomeLayout() {
       <OmnilifeCards />
       <LatestAddedTestimonials />
       <Contact />
-    </>
+    </div>
   )
 }

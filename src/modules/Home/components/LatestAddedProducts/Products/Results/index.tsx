@@ -47,7 +47,7 @@ export default function Results({
   })
 
   return (
-    <>
+    <div>
       <Suspense fallback={<InputSearchPlaceholder />}>
         <InputSearch products={products} setResults={setResults} />
       </Suspense>
@@ -76,6 +76,6 @@ export default function Results({
           ))}
         </ul>
       </div>
-    </>
+    </div>
   )
 }

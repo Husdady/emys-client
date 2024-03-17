@@ -16,7 +16,7 @@ export default function RequestCode() {
   const { request, isLoading, timesRequested, maxRequest, requestLimit } = useRequestMyCode()
 
   return (
-    <>
+    <div>
       <Button
         onClick={request}
         isShowingSpin={isLoading}
@@ -38,6 +38,6 @@ export default function RequestCode() {
         timesRequested={timesRequested}
         className="!pr-0 text-right"
       />
-    </>
+    </div>
   )
 }

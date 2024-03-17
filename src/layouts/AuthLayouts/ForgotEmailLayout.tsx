@@ -8,13 +8,13 @@ const ForgotEmailForm = dynamic(() => import('@modules/Auth/components/ForgotEma
 
 export default function ForgotEmailLayout() {
   return (
-    <>
+    <div>
       <ForgotEmailForm />
 
       <div className="pt-3">
         <LinkToRegister />
         <LinkToLogin />
       </div>
-    </>
+    </div>
   )
 }

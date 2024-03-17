@@ -13,10 +13,10 @@ const SHARED_MENU_CLASSNAME =
 
 function MenuIcon({ toggleMenu, isShowingMenu }: MenuData) {
   return (
-    <>
+    <div>
       {isShowingMenu && <X size="xl" onClick={toggleMenu} className={SHARED_MENU_CLASSNAME} />}
       {!isShowingMenu && <Menu size="xl" onClick={toggleMenu} className={SHARED_MENU_CLASSNAME} />}
-    </>
+    </div>
   )
 }
 

@@ -7,12 +7,12 @@ const RegisterForm = dynamic(() => import('@modules/Auth/components/RegisterForm
 
 export default function RegisterLayout() {
   return (
-    <>
+    <div>
       <RegisterForm />
 
       <div className="pt-3">
         <LinkToLogin />
       </div>
-    </>
+    </div>
   )
 }

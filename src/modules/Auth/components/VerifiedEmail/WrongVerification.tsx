@@ -33,7 +33,7 @@ export default function WrongVerification({ status, title }: WrongVerificationPr
 
       <div className="flex flex-col gap-y-2">
         {status !== WARNING_STATUS && (
-          <>
+          <div>
             <SubmitButton
               type="button"
               title="Verificar de nuevo mi cuenta"
@@ -48,7 +48,7 @@ export default function WrongVerification({ status, title }: WrongVerificationPr
               timesRequested={timesRequested}
               requestLimit={requestLimit}
             />
-          </>
+          </div>
         )}
         <BackToLogin />
       </div>

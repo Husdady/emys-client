@@ -42,7 +42,7 @@ export default function Heart(props: HeartProps) {
     />
   )
 
-  if (isMobileScreen) return <>{btn}</>
+  if (isMobileScreen) return <div>{btn}</div>
 
   return (
     <Tooltip placement="top" title={titlePopup} trigger={['hover']}>

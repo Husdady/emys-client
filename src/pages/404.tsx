@@ -1,18 +1,18 @@
 // Components
 import OfflineView from '@components/OfflineView'
+import Metadata from '@modules/PageNotFound/components/Metadata'
+import MissingRoute from '@modules/PageNotFound/components/MissingPage'
 
 // Hooks
 import useNetwork from '@hooks/useNetwork'
 
-// Routes
-import MissingRoute from '@routes/MissingRoute'
-
 export default function PageNotFound() {
   const isOnline = useNetwork()
 
-  if (!isOnline) {
-    return <OfflineView />
-  }
-
-  return <MissingRoute />
+  return (
+    <div>
+      <Metadata />
+      {isOnline ? <MissingRoute /> : <OfflineView />}
+    </div>
+  )
 }

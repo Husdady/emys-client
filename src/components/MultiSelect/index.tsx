@@ -13,6 +13,7 @@ import { MultiSelectProps } from './interfaces'
 import isString from '@utils/isString'
 import classnames from '@utils/classnames'
 import isUndefined from '@utils/isUndefined'
+import isEmptyArray from '@utils/isEmptyArray'
 import isEmptyString from '@utils/isEmptyString'
 
 const MultiSelect: React.FC<MultiSelectProps> = ({
@@ -27,7 +28,11 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
   return (
     <div
       style={containerStyle}
-      className={classnames(['multi-select relative', containerClassName])}
+      className={classnames([
+        'multi-select relative',
+        containerClassName,
+        props.canSearchOptions && !isEmptyArray(props.options) ? 'searchable' : null
+      ])}
     >
       <InputLabel {...label} title={isUndefined(label.title) ? textLabel : label.title} />
       <OptionsSelected {...props} hasError={isString(error) && !isEmptyString(error)} />

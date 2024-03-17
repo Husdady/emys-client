@@ -1,4 +1,5 @@
 // Containers
+import Metadata from '@modules/Products/components/Metadata/FavoriteProducts'
 import LinearBackgroundContainer from '@containers/LinearBackgroundContainer'
 
 // Layouts
@@ -8,6 +9,8 @@ import MyFavoriteProductsLayout from '@layouts/PageLayouts/MyFavoriteProductsLay
 export default function MyFavoriteProductsPage() {
   return (
     <LinearBackgroundContainer className="my-favorite-products-page">
+      <Metadata />
+
       <MainLayout>
         <MyFavoriteProductsLayout />
       </MainLayout>

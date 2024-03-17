@@ -16,7 +16,7 @@
   & .wrapper-options {
     cursor: default;
     position: absolute !important;
-    @apply w-full mt-1 top-[30%] z-[9999];
+    @apply w-full mt-1 top-[100%] z-[9999];
 
     & .checkbox-options,
     & .virtualized-checkbox-options > div {
@@ -50,6 +50,12 @@
           @apply cursor-pointer;
         }
       }
+    }
+  }
+
+  &.searchable {
+    & .wrapper-options {
+      @apply md:top-[30%];
     }
   }
 }

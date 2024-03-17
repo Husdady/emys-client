@@ -1,6 +1,9 @@
 // Routes
 import AuthRoute from '@routes/AuthRoute'
 
+// Components
+import Metadata from '@modules/Auth/components/Metadata/NewPassword'
+
 // Types
 import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next'
 
@@ -18,6 +21,8 @@ import validateToken from '@modules/Auth/loaders/validateToken'
 export default function NewPasswordPage(props: LoaderResponse) {
   return (
     <AuthRoute>
+      <Metadata />
+
       <MainLayout>
         <AuthLayout>
           <ResetPasswordLayout {...props} />

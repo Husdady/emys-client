@@ -26,7 +26,7 @@ export default function SessionRoute({ children }: OnlyChildrenProp) {
 
   // Show Session content
   if (token !== null) {
-    return <>{children}</>
+    return <div>{children}</div>
   }
 
   // Redirect to login

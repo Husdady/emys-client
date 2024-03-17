@@ -30,7 +30,7 @@ export default function QuickSearch({
   ...props
 }: QuickSearchProps) {
   return (
-    <>
+    <div>
       <InputText
         {...props}
         hidePlaceholderOnFocus
@@ -50,6 +50,6 @@ export default function QuickSearch({
           navigationSeekerRef={navigationSeekerRef}
         />
       )}
-    </>
+    </div>
   )
 }

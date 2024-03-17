@@ -17,8 +17,7 @@ export default function FiltersContainer({
       ])}
     >
       {inputSearch}
-
-      <div className="wrapper-buttons flex items-center gap-x-1.5 gap-y-2.5">{buttons}</div>
+      {buttons}
     </section>
   )
 }

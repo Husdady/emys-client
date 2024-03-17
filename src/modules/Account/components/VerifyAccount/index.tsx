@@ -19,7 +19,7 @@ export default function VerifyAccount() {
   if (auth.user.status !== UNVERIFIED) return null
 
   return (
-    <>
+    <div>
       <Aside
         title="Verificar mi cuenta"
         className="items-center px-4 py-6 sm:px-6"
@@ -30,6 +30,6 @@ export default function VerifyAccount() {
       </Aside>
 
       <Separator />
-    </>
+    </div>
   )
 }

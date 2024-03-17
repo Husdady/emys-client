@@ -5,13 +5,13 @@ import LinkToForgottenEmailRecovery from '@modules/Auth/components/LinkToForgott
 
 export default function LoginLayout() {
   return (
-    <>
+    <div>
       <LoginForm />
 
       <div className="pb-2 pt-3">
         <LinkToForgottenEmailRecovery />
         <LinkToRegister />
       </div>
-    </>
+    </div>
   )
 }

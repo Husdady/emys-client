@@ -1,3 +1,6 @@
+// Components
+import Metadata from '@modules/Membership/components/Metadata'
+
 // Containers
 import LinearBackgroundContainer from '@containers/LinearBackgroundContainer'
 
@@ -8,6 +11,8 @@ import MembershipLayout from '@layouts/PageLayouts/MembershipLayout'
 export default function MembershipPage() {
   return (
     <LinearBackgroundContainer>
+      <Metadata />
+
       <MainLayout>
         <MembershipLayout />
       </MainLayout>

@@ -12,7 +12,7 @@ export default function ImageWrapper(product: Product) {
   const { carouselRef, orderedImages, activeImageId, handleActiveImage } = useImageWrapper(product)
 
   return (
-    <>
+    <div>
       <ImageCarousel images={orderedImages} carouselRef={carouselRef} />
 
       {(orderedImages.length ?? 0) >= 2 && (
@@ -22,6 +22,6 @@ export default function ImageWrapper(product: Product) {
           handleActiveImage={handleActiveImage}
         />
       )}
-    </>
+    </div>
   )
 }

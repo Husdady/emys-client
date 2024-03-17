@@ -20,7 +20,7 @@ const InputIcon: React.FC<InputIconProps> = ({
 }: InputIconProps) => {
   if (icon === null || isUndefined(icon)) return null // Hide icon
 
-  if (![EMAIL, PASSWORD].includes(type)) return <>{icon}</> // Show custom icon
+  if (![EMAIL, PASSWORD].includes(type)) return <div>{icon}</div> // Show custom icon
   if (type === EMAIL) return <Mail {...sharedIconProps} /> // Show email icon
   if (type === PASSWORD) return <Lock {...sharedIconProps} /> // Show password icon
 

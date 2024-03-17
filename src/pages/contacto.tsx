@@ -1,3 +1,6 @@
+// Components
+import Metadata from '@modules/Contact/components/Metadata'
+
 // Containers
 import LinearBackgroundContainer from '@containers/LinearBackgroundContainer'
 
@@ -8,6 +11,8 @@ import ContactLayout from '@layouts/PageLayouts/ContactLayout'
 export default function ContactPage() {
   return (
     <LinearBackgroundContainer>
+      <Metadata />
+
       <MainLayout>
         <ContactLayout />
       </MainLayout>

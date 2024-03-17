@@ -18,7 +18,7 @@ export default function FloatMenu(props: MenuData) {
   const { isAuthenticated } = useAuth()
 
   return (
-    <>
+    <div>
       <div
         className={classnames([
           props.isShowingMenu ? null : 'hidden',
@@ -35,6 +35,6 @@ export default function FloatMenu(props: MenuData) {
           className="top-0 w-full h-full fixed !z-[999] ant-modal-mask hidden md:block"
         ></div>
       )}
-    </>
+    </div>
   )
 }

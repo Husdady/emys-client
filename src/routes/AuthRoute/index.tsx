@@ -20,7 +20,7 @@ export default function AuthRoute({ children }: OnlyChildrenProp) {
 
   // Show auth route
   if (token === null) {
-    return <>{children}</>
+    return <div>{children}</div>
   }
 
   // Redirect to Account page if the user is authenticated

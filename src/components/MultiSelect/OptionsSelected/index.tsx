@@ -35,7 +35,7 @@ const OptionsSelected: React.FC<OptionsSelectedProps> = ({
     useOptionsSelected(props)
 
   return (
-    <div role="button" className="options-selected">
+    <div role="button" className="options-selected relative">
       {isShowingOptions && <Mask onHide={hideOptions} />}
 
       {isShowingOptions && !enableVirtualization && !isEmptyArray(props.options) && (

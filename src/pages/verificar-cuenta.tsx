@@ -1,6 +1,9 @@
 // Routes
 import AuthRoute from '@routes/AuthRoute'
 
+// Components
+import Metadata from '@modules/Auth/components/Metadata/VerifiedAccount'
+
 // Layouts
 import MainLayout from '@layouts/MainLayout'
 import AuthLayout from '@layouts/AuthLayouts/AuthLayout'
@@ -20,6 +23,8 @@ import verifyAccount from '@modules/Auth/loaders/verifyAccount'
 export default function VerifyAccountPage() {
   return (
     <AuthRoute>
+      <Metadata />
+
       <MainLayout>
         <AuthLayout>
           <VerifiedEmail />

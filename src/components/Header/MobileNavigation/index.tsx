@@ -22,7 +22,7 @@ function MobileNavigation() {
   const { customQueries, showQuickSearchModal, menuData, userMenuData } = useMobileNavigation()
 
   return (
-    <>
+    <div>
       <nav className="min-h-[60px] overflow-hidden main-mobile-navigation top-0 md:top-[1.5rem] fixed mx-auto left-0 right-0 navigation flex gap-x-[1.5rem] justify-between font-poppins bg-white shadow-xl items-center py-1 pl-4 pr-[0.15rem] md:pr-[0.3rem] z-[999999] whitespace-nowrap md:mx-[2rem] md:max-w-[970px] lg:mx-auto md:rounded-full md:pl-6 md:pr-[0.55rem] dark:bg-black border-b border-gray-200 dark:border-gray-600 md:border">
         <div className="flex items-center gap-x-5">
           <MenuIcon {...menuData} />
@@ -44,10 +44,10 @@ function MobileNavigation() {
           )}
 
           {!customQueries.isSmallMobileDevice && (
-            <>
+            <div>
               <ContactButton className="mx-2" />
               <WhatsappButton className="mx-2" />
-            </>
+            </div>
           )}
 
           <User menuData={userMenuData} />
@@ -55,7 +55,7 @@ function MobileNavigation() {
       </nav>
 
       <FloatMenu {...menuData} />
-    </>
+    </div>
   )
 }
 

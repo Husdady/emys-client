@@ -30,7 +30,7 @@ export default function BoxWrapper({
         'box-wrapper rounded-md px-4 py-2 overflow-hidden bg-white shadow-md text-gray-700 dark:shadow-none dark:bg-dark-800 dark:text-gray-300'
       ])}
     >
-      {hasChildren && <>{children}</>}
+      {hasChildren && <div>{children}</div>}
 
       {!hasChildren && (
         <Suspense fallback={fallback}>

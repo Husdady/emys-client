@@ -5,7 +5,7 @@ import LinearBackgroundContainer from '@containers/LinearBackgroundContainer'
 import MainLayout from '@layouts/MainLayout'
 import ProductLayout from '@layouts/PageLayouts/ProductLayout'
 
-export default function ProductsPage() {
+export default function ProductPage() {
   return (
     <LinearBackgroundContainer className="product-page">
       <MainLayout>

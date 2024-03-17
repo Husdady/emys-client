@@ -17,7 +17,7 @@ const ButtonRedirect = dynamic(() => import('./ButtonRedirect'))
 
 export default function Welcome() {
   return (
-    <>
+    <div>
       <section
         id={WELCOME_ID}
         className="welcome relative overflow-hidden min-h-[300px] bg-pink-200"
@@ -39,6 +39,6 @@ export default function Welcome() {
 
       <WelcomeBottomWave />
       <ButtonRedirect />
-    </>
+    </div>
   )
 }

@@ -12,10 +12,10 @@ export default function Filters() {
       inputSearch={<InputSearch />}
       className="main-products-filters"
       buttons={
-        <>
+        <div className="wrapper-buttons flex items-center gap-x-1.5 gap-y-2.5">
           <ButtonShowFilters />
           <ButtonClearFilters />
-        </>
+        </div>
       }
     />
   )

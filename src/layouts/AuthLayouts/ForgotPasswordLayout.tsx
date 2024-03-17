@@ -12,7 +12,7 @@ const LinkToForgottenEmailRecovery = dynamic(
 
 export default function ForgotPasswordLayout() {
   return (
-    <>
+    <div>
       <ForgotPasswordForm />
 
       <div className="pt-3">
@@ -20,6 +20,6 @@ export default function ForgotPasswordLayout() {
         <LinkToRegister />
         <LinkToLogin />
       </div>
-    </>
+    </div>
   )
 }

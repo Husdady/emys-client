@@ -16,7 +16,7 @@ export default function BtnSendVerification() {
   const { result, submit, timesRequested, maxRequest, requestLimit } = useSendVerification()
 
   return (
-    <>
+    <div>
       <Button
         onClick={submit}
         disabled={requestLimit}
@@ -32,6 +32,6 @@ export default function BtnSendVerification() {
         timesRequested={timesRequested}
         requestLimit={requestLimit}
       />
-    </>
+    </div>
   )
 }

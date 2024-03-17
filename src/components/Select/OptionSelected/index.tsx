@@ -38,7 +38,26 @@ export default function OptionSelected({
   } = useOptionSelected(props)
 
   return (
-    <>
+    <div ref={ref} role="button" className="option-selected relative">
+      <Button
+        icon={icon}
+        title={label}
+        style={style}
+        disabled={props.disabled}
+        onClick={triggerOptions}
+        className={classnames([
+          className,
+          hasError === true ? 'has-error' : null,
+          !isTabletScreen &&
+          isShowingOptions &&
+          props.canSearchOptions &&
+          !isEmptyArray(props.options)
+            ? 'opacity-0'
+            : null,
+          'border border-gray-400/50 rounded outline outline-1 outline-offset-0 outline-gray-400/50 dark:outline-gray-400/70 dark:border-gray-400/70'
+        ])}
+      />
+
       {isShowingOptions && <Mask onHide={hideOptions} />}
 
       {isShowingOptions && !enableVirtualization && !isEmptyArray(props.options) && (
@@ -54,27 +73,6 @@ export default function OptionSelected({
           <EmptyOptions text={emptyText} />
         </section>
       )}
-
-      <div ref={ref} role="button" className="option-selected">
-        <Button
-          icon={icon}
-          title={label}
-          style={style}
-          disabled={props.disabled}
-          onClick={triggerOptions}
-          className={classnames([
-            className,
-            hasError === true ? 'has-error' : null,
-            !isTabletScreen &&
-            isShowingOptions &&
-            props.canSearchOptions &&
-            !isEmptyArray(props.options)
-              ? 'opacity-0'
-              : null,
-            'border border-gray-400/50 rounded outline outline-1 outline-offset-0 outline-gray-400/50 dark:outline-gray-400/70 dark:border-gray-400/70'
-          ])}
-        />
-      </div>
-    </>
+    </div>
   )
 }

@@ -26,7 +26,7 @@ function Section(props: SectionProps) {
               className="footer-link-item text-white font-lexend text-[0.84rem] mb-[0.15rem] last:mb-0"
             >
               {isString(link.href) && (
-                <>
+                <div>
                   {!props.hasExternalLinks && (
                     <Link href={link.href} className="footer-link">
                       {link.icon}
@@ -40,7 +40,7 @@ function Section(props: SectionProps) {
                       {link.text}
                     </a>
                   )}
-                </>
+                </div>
               )}
             </li>
           ))}

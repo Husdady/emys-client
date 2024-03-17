@@ -13,12 +13,12 @@ const FloatButtons = dynamic(() => import('@components/FloatButtons'))
 
 export default function MainLayout({ children, isShowingFloatButtons = true }: MainLayoutProps) {
   return (
-    <>
+    <div>
       <Header />
       {children}
       <Footer />
       <Modal />
       {isShowingFloatButtons && <FloatButtons />}
-    </>
+    </div>
   )
 }

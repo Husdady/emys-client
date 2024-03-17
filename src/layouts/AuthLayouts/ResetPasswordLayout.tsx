@@ -11,13 +11,13 @@ const ResetPasswordForm = dynamic(() => import('@modules/Auth/components/ResetPa
 
 export default function ResetPasswordLayout(props: LoaderResponse) {
   return (
-    <>
+    <div>
       <ResetPasswordForm {...props} />
 
       <div className="pt-3">
         <LinkToRegister />
         <LinkToLogin />
       </div>
-    </>
+    </div>
   )
 }

@@ -36,10 +36,10 @@ export default function FloatMenu(props: MenuData) {
 
         <div>
           {isAuthenticated && (
-            <>
+            <div>
               <MenuBottom />
               <hr className="h-[2px] border-none bg-gray-300/30 dark:bg-gray-600" />
-            </>
+            </div>
           )}
 
           <AppVersion className={classnames([isAuthenticated ? 'pt-2' : 'mt-8'])} />

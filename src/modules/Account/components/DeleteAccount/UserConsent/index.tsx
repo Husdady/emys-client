@@ -10,7 +10,7 @@ const ConfirmForm = lazy(() => import('./ConfirmForm'))
 
 export default function UserConsent() {
   return (
-    <>
+    <div>
       <Suspense fallback={null}>
         <Note />
       </Suspense>
@@ -18,6 +18,6 @@ export default function UserConsent() {
       <Suspense fallback={null}>
         <ConfirmForm />
       </Suspense>
-    </>
+    </div>
   )
 }

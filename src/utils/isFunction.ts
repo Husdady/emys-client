@@ -4,6 +4,6 @@
  * @param {unknown} func function as parameter
  * @returns {boolean} Boolean
  */
-export default function isFunction<T>(func: unknown): func is (data: T) => void {
+export default function isFunction<T>(func: unknown): func is (data: T) => any {
   return typeof func === 'function'
 }

@@ -65,7 +65,7 @@ const CheckboxContent: React.FC<CheckboxContentProps> = ({
       </div>
 
       <div className="flex flex-col pl-2">
-        {!isString(label) && <>{label}</>}
+        {!isString(label) && <div>{label}</div>}
 
         {!isEmptyString(label) && (
           <label htmlFor={checkboxId} style={labelStyle} className={labelClassName}>

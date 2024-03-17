@@ -22,7 +22,7 @@ export default function User({ menuData, className }: UserProps) {
 
   if (!isAuthenticated) {
     return (
-      <>
+      <div>
         <Button
           title=""
           onClick={menuData.showMenu}
@@ -34,12 +34,12 @@ export default function User({ menuData, className }: UserProps) {
         />
 
         {createPortal(<FloatMenu {...menuData} />, document.body)}
-      </>
+      </div>
     )
   }
 
   return (
-    <>
+    <div>
       <article
         role="button"
         onClick={menuData.showMenu}
@@ -65,6 +65,6 @@ export default function User({ menuData, className }: UserProps) {
       </article>
 
       {createPortal(<FloatMenu {...menuData} />, document.body)}
-    </>
+    </div>
   )
 }
