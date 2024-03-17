@@ -20,7 +20,7 @@ export default function EmptyScreen(props: EmptyProps) {
           {...props}
           className={classnames([
             props.className,
-            'font-poppins w-full xl:w-5/12 !mx-auto text-lg py-4'
+            'font-poppins w-full text-lg py-4'
           ])}
         />
       </BoxWrapper>
