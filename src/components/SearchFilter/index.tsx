@@ -1,8 +1,5 @@
-// Librarys
-import { Suspense } from 'react'
-
 // Components
-import Fallback from './Fallback'
+import Fallback from '@components/Fallback'
 import MagnifyingGlass from '@components/Icons/MagnifyingGlass'
 
 // Interfaces
@@ -21,9 +18,7 @@ export default function SearchFilter({
   ...props
 }: SearchFilterProps) {
   return (
-    <Suspense
-      fallback={<Fallback className={containerClassName} textLabelClassName={textLabelClassName} />}
-    >
+    <Fallback classContainer={containerClassName} classLabel={textLabelClassName}>
       <InputText
         {...props}
         hidePlaceholderOnFocus
@@ -33,6 +28,6 @@ export default function SearchFilter({
         icon={<MagnifyingGlass size="smaller" className="text-gray-400 dark:text-gray-300/80" />}
         innerClassName="search-filter py-[0.73rem] !rounded-lg text-[0.87rem] dark:!bg-gray-900 dark:!border-gray-300/40 dark:outline-gray-300/40"
       />
-    </Suspense>
+    </Fallback>
   )
 }

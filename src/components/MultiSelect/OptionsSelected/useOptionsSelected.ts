@@ -1,14 +1,17 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 // Hooks
-import useMounted from '@hooks/useMounted'
+import useTabletScreen from '@hooks/useTabletScreen'
+import useMountedOptionsSelected from './useMountedOptionsSelected'
 import { useMemo, useState, useCallback } from 'react'
 
 // Types
-import type { OnChangeOption, UseMultiSelectParams } from '../types'
+import type { OnChangeOption, UseMultiSelectParams } from '@components/MultiSelect/types'
+
+// Utils
 import isUndefined from '@utils/isUndefined'
 
 /**
- * Hook that implements the logic of the MultiSelect component
+ * Hook that implements the logic of the OptionsSelected component
  * @param {UseMultiSelectParams} props MultiSelect props
  */
 export default function useMultiSelect({
@@ -19,6 +22,7 @@ export default function useMultiSelect({
   canSearchOptions,
   selectedValues = []
 }: UseMultiSelectParams) {
+  const isTabletScreen = useTabletScreen()
   const [isShowingOptions, setShowingOptions] = useState(false)
 
   const [values, setValues] = useState(() => {
@@ -94,19 +98,19 @@ export default function useMultiSelect({
     [values, options, handleOnChange, isMarkedOption, searchPalceholder, canSearchOptions]
   )
 
-  useMounted(() => {
-    const isNotEmptyValues = values.length > 0
-    const isEmptySelectedValues = Array.isArray(selectedValues) && selectedValues.length === 0
-
-    if (isNotEmptyValues && isEmptySelectedValues) {
-      setValues([])
-    }
-  }, [selectedValues])
+  useMountedOptionsSelected({
+    values: values,
+    setValues: setValues,
+    selectedValues: selectedValues,
+    isTabletScreen: isTabletScreen,
+    isShowingOptions: isShowingOptions
+  })
 
   return {
     values: values,
     hideOptions: hideOptions,
     optionsProps: optionsProps,
+    isTabletScreen: isTabletScreen,
     triggerOptions: triggerOptions,
     onChangeOptions: handleOnChange,
     isMarkedOption: isMarkedOption,

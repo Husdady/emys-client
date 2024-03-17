@@ -5,6 +5,7 @@ import { useRef, useMemo, useCallback, useState, CSSProperties } from 'react'
 // Hooks
 import useMounted from './useMounted'
 import useWindowSize from './useWindowSize'
+import useCheckVerticalScrollbar from './useCheckVerticalScrollbar'
 
 // Utils
 import isNumber from '@utils/isNumber'
@@ -31,6 +32,11 @@ export default function useHeightForVirtualizedOption({
   const containerStyle = useMemo<CSSProperties>(() => {
     return { height: defaultContainerHeight, maxHeight: defaultContainerHeight }
   }, [])
+
+  // Check if the container has scrollbar
+  const hasScrollbar = useCheckVerticalScrollbar({
+    elementRef: { current: containerListRef.current?.firstChild as HTMLElement }
+  })
 
   // Callback for set the size for an option
   const setSize = useCallback((index: number, size: number) => {
@@ -66,6 +72,7 @@ export default function useHeightForVirtualizedOption({
 
   return {
     listRef: listRef,
+    hasScrollbar: hasScrollbar,
     containerStyle: containerStyle,
     containerListRef: containerListRef,
     listHeight: listHeight,

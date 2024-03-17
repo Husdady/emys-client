@@ -8,13 +8,14 @@ import SearchOptions from '@components/SearchOptions'
 import VariableSizeList from '@components/VariableSizeList'
 
 // Hooks
-import useSearchVirtualizedOptions from './useSearchVirtualizedOptions'
+import useSearchVirtualizedOptions from './useVirtualizedOptions'
 
 // Interfaces
 import { VirtualizedOptionsProps } from './interfaces'
 
 // Utils
 import classnames from '@utils/classnames'
+import isEmptyArray from '@utils/isEmptyArray'
 
 // Constants
 import { DEFAULT_CAN_SEARCH_OPTIONS } from '@components/MultiSelect/constants'
@@ -31,6 +32,7 @@ const VirtualizedOptions: React.FC<VirtualizedOptionsProps> = ({
   const {
     listRef,
     wrapperRef,
+    hasScrollbar,
     isLastActived,
     containerStyle,
     containerListRef,
@@ -62,9 +64,9 @@ const VirtualizedOptions: React.FC<VirtualizedOptionsProps> = ({
       )}
 
       <div ref={containerListRef} style={containerStyle} className="virtualized-checkbox-options">
-        {filteredOptions.length === 0 && <EmptyOptions text={emptyText} />}
+        {isEmptyArray(filteredOptions) && <EmptyOptions text={emptyText} />}
 
-        {filteredOptions.length > 0 && (
+        {!isEmptyArray(filteredOptions) && (
           <VariableSizeList
             ref={listRef}
             height={listHeight}
@@ -79,7 +81,8 @@ const VirtualizedOptions: React.FC<VirtualizedOptionsProps> = ({
                 onClick={() => onChange(filteredOptions[index])}
                 className={classnames([
                   'virtualized-checkbox-option-item',
-                  isLastActived(filteredOptions[index]) ? 'last-item-actived' : null
+                  isLastActived(filteredOptions[index]) ? 'last-item-actived' : null,
+                  hasScrollbar ? 'border-r' : index < filteredOptions.length ? 'border-b' : null
                 ])}
               >
                 <VirtualizedOption

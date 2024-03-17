@@ -4,8 +4,6 @@ import { FallbackProps } from './interfaces'
 // Utils
 import classnames from '@utils/classnames'
 
-const sharedClassName = 'animate-pulse bg-gray-200 dark:bg-gray-700'
-
 export default function FallbackItem({
   classComp,
   classLabel,
@@ -16,18 +14,16 @@ export default function FallbackItem({
       <div
         className={classnames([
           classLabel,
-          sharedClassName,
-          'fallback-text-label h-[20px] sm:h-[18px] rounded mb-[0.35rem]'
+          'allback-text-label min-h-[20px] sm:min-h-[18px] mb-[0.35rem] bg-gray-300/60 rounded animation-pulse dark:!bg-gray-700'
         ])}
-      />
+      ></div>
 
       <div
         className={classnames([
           classComp,
-          sharedClassName,
-          'fallback-input h-[46px] sm:h-[43px] rounded'
+          'fallback-input w-full min-h-[47px] sm:min-h-[43px] rounded-lg animation-pulse rounded animation-pulse search-filter-fallback py-[0.73rem] outline outline-1 border !border-gray-400/50 outline-gray-400/50 dark:!bg-gray-900 dark:!border-gray-300/40 dark:outline-gray-300/40'
         ])}
-      />
+      ></div>
     </div>
   )
 }

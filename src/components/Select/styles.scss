@@ -4,7 +4,7 @@
 @import '@styles/mixins/select';
 
 .select {
-  @include select-button;
+  @include select-button('.select-filter');
 
   & .option-selected {
     & .has-error {
@@ -20,17 +20,21 @@
     & .select-options,
     & .virtualized-options {
       @include select-scrollbar;
-      @apply bg-white dark:bg-gray-900 rounded-md w-full border-t border-l border-gray-400 dark:border-gray-500;
+      @apply bg-white dark:bg-gray-900 rounded-md w-full;
 
       & .select-option,
       & .virtualized-option-item {
-        @apply w-full text-left dark:text-gray-300 dark:bg-gray-900;
+        @apply w-full text-left dark:text-gray-300 dark:bg-gray-900 border-gray-300 dark:border-gray-600;
 
         &:hover {
           & > .option,
           & > .virtualized-option {
             @apply bg-gray-200/80 dark:bg-gray-700;
           }
+        }
+
+        &:not(:last-of-type) {
+          @apply border-b;
         }
 
         &:hover,
@@ -51,13 +55,28 @@
         & > .option,
         & > .virtualized-option {
           word-break: normal;
-          @apply py-2 bg-transparent text-left w-full block font-poppins px-4 border-b border-r border-gray-400 dark:border-gray-500 leading-snug;
+          @apply bg-transparent text-left w-full block font-poppins px-4 leading-snug;
         }
       }
     }
   }
 
- 
+  &.searchable {
+    & .wrapper-options {
+      @apply md:top-[30%];
+    }
+  }
+
+  &:not(.select-filter) {
+    & .option,
+    & .virtualized-option {
+      @apply py-[0.65rem];
+    }
+
+    & .search-options {
+      font-size: 0.84rem;
+    }
+  }
 }
 
 .dark {

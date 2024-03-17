@@ -1,26 +1,23 @@
 // Hooks
 import { useCallback, useLayoutEffect } from 'react'
 import useHeightForVirtualizedOption from '@hooks/useHeightForVirtualizedOption'
-import useSearchOptions, {
-  UseSearchOptionsParams
-} from '@components/Select/Options/useSearchOptions'
+import useSearchOptions, { UseSearchOptionsParams } from '@components/Select/hooks/useSearchOptions'
 
 // Utils
 import getDefaultListHeight from '@components/Select/utils/getDefaultListHeight'
 
 /**
- * Hook for search virtualized options of the Select component
+ * Hook for implements the logic of the VirtualizedOptions component
  * @param {UseSearchOptionsParams} params Receive a 'initialOptions'
  */
-export default function useSearchVirtualizedOptions(params: UseSearchOptionsParams) {
+export default function useVirtualizedOptions(params: UseSearchOptionsParams) {
   const searchData = useSearchOptions(params)
-  const { defaultListHeight, defaultOptionHeight } = getDefaultListHeight()
+  const { defaultOptionHeight, defaultContainerHeight } = getDefaultListHeight()
 
   const adjusts = useHeightForVirtualizedOption({
     defaultOptionHeight: defaultOptionHeight,
-    defaultContainerHeight: defaultListHeight
+    defaultContainerHeight: defaultContainerHeight
   })
-
   // Callback for find the active item index
   const findActiveItemIndex = useCallback(() => {
     return params.initialOptions.findIndex((option) => option.value === params.selectedValue)

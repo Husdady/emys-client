@@ -63,7 +63,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
       inputClassName={classnames([
         inputClassName,
         disabled ? 'hover:cursor-not-allowed' : 'hover:cursor-pointer',
-        'w-5 h-5 status appearance-none border-2 checked:!border-transparent focus:outline-none dark:border-gray-500'
+        'w-5 h-5 status appearance-none border-2 checked:!border-transparent focus:outline-none border-gray-300 dark:border-gray-600'
       ])}
       labelClassName={classnames([
         'font-semibold dark:font-normal select-none',

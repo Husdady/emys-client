@@ -11,10 +11,13 @@ const config: Config = {
     './src/layouts/**/*.{js,ts,jsx,tsx,mdx}',
     './src/modules/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/containers/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/containers/**/*.{js,ts,jsx,tsx,mdx}'
   ],
   theme: {
     extend: {
+      screens: {
+        sm: '641px'
+      },
       fontFamily: {
         lato: ['var(--lato-regular)'],
         lexend: ['var(--lexend-regular)'],
@@ -27,7 +30,7 @@ const config: Config = {
         dark: {
           800: '#192230'
         }
-      },
+      }
     }
   },
   plugins: []

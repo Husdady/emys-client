@@ -1,6 +1,6 @@
 // Components
-import Select from '@components/Select'
-import Fallback from '@components/Select/Fallback'
+import Fallback from '@components/Fallback'
+import FallbackItem from '@components/Fallback/FallbackItem'
 
 // Hooks
 import useDistrictList from '@modules/Ubigeo/hooks/useDistrictList'
@@ -8,8 +8,14 @@ import useDistrictList from '@modules/Ubigeo/hooks/useDistrictList'
 // Interfaces
 import { FilterByDistrictProps } from './interfaces'
 
+// Utils
+import lazy from '@utils/lazy'
+
 // Constants
 import { DEFAULT_NO_SELECTION_VALUE } from './constants'
+
+// Lazy Components
+const Select = lazy(() => import('@components/Select'))
 
 export default function FilterByDistrict({
   regionId,
@@ -28,21 +34,23 @@ export default function FilterByDistrict({
   })
 
   if (isLoading || isFetching) {
-    return <Fallback className={containerClassName} textLabelClassName="w-20" />
+    return <FallbackItem classLabel="w-20" classContainer={containerClassName} />
   }
 
   return (
-    <Select
-      {...props}
-      options={options}
-      disabled={isError}
-      canSearchOptions
-      enableVirtualization
-      noSelectionLabel={noSelectionLabel}
-      containerClassName={containerClassName}
-      searchPalceholder="Buscar distritos por nombre..."
-      emptyText="Sin distritos disponibles"
-      textLabel="Distritos"
-    />
+    <Fallback classLabel="w-20" classContainer={containerClassName}>
+      <Select
+        {...props}
+        options={options}
+        disabled={isError}
+        canSearchOptions
+        enableVirtualization
+        noSelectionLabel={noSelectionLabel}
+        containerClassName={containerClassName}
+        searchPalceholder="Buscar distritos por nombre..."
+        emptyText="Sin distritos disponibles"
+        textLabel="Distritos"
+      />
+    </Fallback>
   )
 }

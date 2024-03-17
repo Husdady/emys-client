@@ -31,7 +31,7 @@ export default function PopularProducts() {
       className="popular-products pt-2 px-4 xl:px-0 xl:ml-[2.85rem] xl:mr-[3.63rem]"
     >
       <ProductsHeader
-        title="También prodía interesarte:"
+        title="También podría interesarte:"
         className="popular-products-header"
         isDisabledPreviousArrow={isDisabledPreviousArrow}
         isDisabledNextArrow={isDisabledNextArrow}

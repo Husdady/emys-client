@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 // Hooks
-import useMountedSelect from './useMountedSelect'
+import useTabletScreen from '@hooks/useTabletScreen'
+import useMountedOptionSelected from './useMountedOptionSelected'
 import { useRef, useMemo, useState, useCallback } from 'react'
 
 // Types
@@ -11,10 +12,10 @@ import type { OnChangeOption } from '@components/Select/VirtualizedOptions/types
 import isUndefined from '@utils/isUndefined'
 
 /**
- * Hook that implements the logic of the Select component
+ * Hook that implements the logic of the OptionSelected component
  * @param {UseSelectParams} props Select props
  */
-export default function useSelect({
+export default function useOptionSelected({
   options,
   onChange,
   emptyText,
@@ -24,6 +25,7 @@ export default function useSelect({
   searchPalceholder,
   enableVirtualization
 }: UseSelectParams) {
+  const isTabletScreen = useTabletScreen()
   const ref = useRef<HTMLDivElement | null>(null)
   const [value, setValue] = useState(selectedValue)
   const [isShowingOptions, setShowingOptions] = useState(false)
@@ -72,6 +74,7 @@ export default function useSelect({
       emptyText: emptyText,
       selectedValue: value,
       onChange: handleOnChange,
+      hideOptions: hideOptions,
       canSearchOptions: canSearchOptions,
       searchPalceholder: searchPalceholder,
       enableVirtualization: enableVirtualization
@@ -80,6 +83,7 @@ export default function useSelect({
       value,
       options,
       emptyText,
+      hideOptions,
       handleOnChange,
       searchPalceholder,
       canSearchOptions,
@@ -87,10 +91,12 @@ export default function useSelect({
     ]
   )
 
-  useMountedSelect({
+  useMountedOptionSelected({
     value: value,
     setValue: setValue,
-    selectedValue: selectedValue
+    selectedValue: selectedValue,
+    isTabletScreen: isTabletScreen,
+    isShowingOptions: isShowingOptions
   })
 
   return {
@@ -99,6 +105,7 @@ export default function useSelect({
     value: value,
     hideOptions: hideOptions,
     optionsProps: optionsProps,
+    isTabletScreen: isTabletScreen,
     onChangeOption: handleOnChange,
     triggerOptions: triggerOptions,
     isShowingOptions: isShowingOptions

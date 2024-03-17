@@ -4,7 +4,7 @@
 @import '@styles/mixins/select';
 
 .multi-select {
-  @include select-button;
+  @include select-button('.multi-filter');
 
   & .options-selected {
     & .has-error {
@@ -16,26 +16,30 @@
   & .wrapper-options {
     cursor: default;
     position: absolute !important;
-    @apply w-full mt-1 top-[100%] z-[9999];
+    @apply w-full mt-1 top-[30%] z-[9999];
 
     & .checkbox-options,
     & .virtualized-checkbox-options > div {
       @include select-scrollbar;
-      @apply bg-white dark:bg-gray-900 rounded-md w-full border-t border-l border-gray-400 dark:border-gray-500;
+      @apply bg-white dark:bg-gray-900 rounded-md w-full;
     }
 
     & .checkbox-option-item,
     & .virtualized-checkbox-option-item {
-      @apply w-full text-left dark:bg-gray-900;
+      @apply w-full text-left dark:bg-gray-900 border-gray-300 dark:border-gray-600;
 
       & > .checkbox-option {
         @apply py-3;
       }
 
+      &:not(:last-of-type) {
+        @apply border-b;
+      }
+
       & > .checkbox-option,
       & > .virtualized-checkbox-option {
         word-break: normal;
-        @apply bg-transparent cursor-default text-left w-full h-full font-poppins px-4 border-b border-r border-gray-400 dark:border-gray-500 leading-snug;
+        @apply bg-transparent cursor-default text-left w-full h-full font-poppins px-4 leading-snug;
 
         & label {
           @apply font-normal dark:text-gray-300 truncate;

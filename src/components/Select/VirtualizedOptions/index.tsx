@@ -8,7 +8,7 @@ import SearchOptions from '@components/SearchOptions'
 import VariableSizeList from '@components/VariableSizeList'
 
 // Hooks
-import useSearchVirtualizedOptions from './useSearchVirtualizedOptions'
+import useVirtualizedOptions from './useVirtualizedOptions'
 
 // Interfaces
 import { VirtualizedOptionsProps } from './interfaces'
@@ -40,10 +40,11 @@ const VirtualizedOptions: React.FC<VirtualizedOptionsProps> = ({
     setOptionSize,
     searchValue,
     handleClear,
+    hasScrollbar,
     handleSearch,
     filteredOptions,
     isShowingClearIcon
-  } = useSearchVirtualizedOptions({
+  } = useVirtualizedOptions({
     initialOptions: options,
     selectedValue: selectedValue,
     canSearchOptions: canSearchOptions,
@@ -79,7 +80,8 @@ const VirtualizedOptions: React.FC<VirtualizedOptionsProps> = ({
                 style={style}
                 className={classnames([
                   'virtualized-option-item',
-                  selectedValue === filteredOptions[index]?.value ? 'active' : null
+                  selectedValue === filteredOptions[index]?.value ? 'active' : null,
+                  hasScrollbar ? 'border-r' : index < filteredOptions.length ? 'border-b' : null
                 ])}
               >
                 <VirtualizedOption

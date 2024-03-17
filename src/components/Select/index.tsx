@@ -15,6 +15,7 @@ import { SelectProps } from './interfaces'
 import isString from '@utils/isString'
 import classnames from '@utils/classnames'
 import isUndefined from '@utils/isUndefined'
+import isEmptyArray from '@utils/isEmptyArray'
 import isEmptyString from '@utils/isEmptyString'
 
 // Constants
@@ -37,7 +38,14 @@ const Select: React.FC<SelectProps> = ({
   }, [])
 
   return (
-    <div style={containerStyle} className={classnames(['select relative', containerClassName])}>
+    <div
+      style={containerStyle}
+      className={classnames([
+        'select relative',
+        containerClassName,
+        props.canSearchOptions && !isEmptyArray(props.options) ? 'searchable' : null
+      ])}
+    >
       <InputLabel {...label} title={isUndefined(label.title) ? textLabel : label.title} />
 
       <OptionSelected

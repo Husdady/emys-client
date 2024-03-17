@@ -1,8 +1,6 @@
-// Librarys
-import { Suspense } from 'react'
-
 // Components
-import Fallback from '@components/Select/Fallback'
+import Fallback from '@components/Fallback'
+import FallbackItem from '@components/Fallback/FallbackItem'
 
 // Hooks
 import useCategoryList from '@modules/Products/hooks/useCategoryList'
@@ -22,11 +20,11 @@ export default function FilterByCategories(
   const { options, isError, isFetching, isLoading } = useCategoryList()
 
   if (isLoading || isFetching) {
-    return <Fallback className="w-full sm:w-[50%]" textLabelClassName="w-20" />
+    return <FallbackItem classLabel="w-20" classContainer="w-full sm:w-[50%]" />
   }
 
   return (
-    <Suspense fallback={<Fallback className="w-full sm:w-[50%]" textLabelClassName="w-20" />}>
+    <Fallback classLabel="w-20" classContainer="w-full sm:w-[50%]">
       <MultiSelect
         {...props}
         options={options}
@@ -38,6 +36,6 @@ export default function FilterByCategories(
         searchPalceholder="Ejemplo: Cajas 200ml"
         noSelectionLabel="Filtrar productos por categoría"
       />
-    </Suspense>
+    </Fallback>
   )
 }

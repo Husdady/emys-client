@@ -21,10 +21,6 @@ export interface OptionSelectedProps
   hasError?: boolean
 }
 
-export interface SelectFallbackProps extends OnlyClassNameProp {
-  textLabelClassName?: string
-}
-
 export interface SelectProps
   extends FormLabel,
     OnlyStyleProp,

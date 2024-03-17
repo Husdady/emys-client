@@ -1,8 +1,5 @@
-// Librarys
-import { Suspense } from 'react'
-
 // Components
-import Fallback from '@components/Select/Fallback'
+import Fallback from '@components/Fallback'
 
 // Types
 import type { FilterProps } from '@components/Select/types'
@@ -18,7 +15,7 @@ const Select = lazy(() => import('@components/Select'))
 
 export default function FilterByStatus(props: FilterProps) {
   return (
-    <Suspense fallback={<Fallback className="w-full sm:w-[50%]" textLabelClassName="w-16" />}>
+    <Fallback classLabel="w-16" classContainer="w-full sm:w-[50%]">
       <Select
         {...props}
         options={options}
@@ -26,6 +23,6 @@ export default function FilterByStatus(props: FilterProps) {
         containerClassName="w-full md:w-[50%]"
         noSelectionLabel="Filtrar por estado del vendedor"
       />
-    </Suspense>
+    </Fallback>
   )
 }

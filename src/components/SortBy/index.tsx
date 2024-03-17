@@ -1,8 +1,5 @@
-// Librarys
-import { Suspense } from 'react'
-
 // Components
-import Fallback from '@components/Select/Fallback'
+import Fallback from '@components/Fallback'
 
 // Types
 import type { SortByProps } from './types'
@@ -16,15 +13,8 @@ const Select = lazy(() => import('@components/Select'))
 
 export default function SortBy(props: SortByProps) {
   return (
-    <Suspense
-      fallback={
-        <Fallback
-          textLabelClassName="w-20"
-          className={classnames(['w-full', props.containerClassName])}
-        />
-      }
-    >
+    <Fallback classLabel="w-20" classContainer={classnames(['w-full', props.containerClassName])}>
       <Select {...props} mode="sort" textLabel="Ordenar por" />
-    </Suspense>
+    </Fallback>
   )
 }

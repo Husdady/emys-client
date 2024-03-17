@@ -4,22 +4,25 @@ import useMounted from '@hooks/useMounted'
 import useHeightForVirtualizedOption from '@hooks/useHeightForVirtualizedOption'
 import useSearchOptions, {
   UseSearchOptionsParams
-} from '@components/MultiSelect/Options/useSearchOptions'
+} from '@components/MultiSelect/hooks/useSearchOptions'
 
-// Utils
-import getDefaultListHeight from '@components/MultiSelect/utils/getDefaultListHeight'
+// Constants
+import {
+  MIN_OPTIONS_TO_SHOW,
+  DEFAULT_LIST_HEIGHT,
+  DEFAULT_OPTION_HEIGHT
+} from '@components/MultiSelect/constants'
 
 /**
- * Hook for search virtualized options of the MultiSelect component
- * @param {UseSearchOptionsParams} params Receive a 'initialOptions'
+ * Hook for implements the logic of the VirtualizedOptions component
+ * @param {UseSearchOptionsParams} params Receive props of MultiSelect component
  */
-export default function useSearchVirtualizedOptions(params: UseSearchOptionsParams) {
+export default function useVirtualizedOptions(params: UseSearchOptionsParams) {
   const searchData = useSearchOptions(params)
-  const { defaultListHeight, defaultOptionHeight, minOptionsToShow } = getDefaultListHeight()
 
   const adjusts = useHeightForVirtualizedOption({
-    defaultOptionHeight: defaultOptionHeight,
-    defaultContainerHeight: defaultListHeight
+    defaultOptionHeight: DEFAULT_OPTION_HEIGHT,
+    defaultContainerHeight: DEFAULT_LIST_HEIGHT
   })
 
   // Get index of the last active item
@@ -36,7 +39,7 @@ export default function useSearchVirtualizedOptions(params: UseSearchOptionsPara
     if (
       lastActiveItemIndex !== -1 &&
       adjusts.listRef.current !== null &&
-      params.initialOptions.length > minOptionsToShow + 1
+      params.initialOptions.length > MIN_OPTIONS_TO_SHOW + 1
     ) {
       adjusts.listRef.current.scrollToItem(lastActiveItemIndex, 'start')
     }

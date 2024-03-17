@@ -9,7 +9,6 @@ import { Option, MultiSelectProps } from '@components/MultiSelect/interfaces'
 
 // Utils
 import isEmptyString from '@utils/isEmptyString'
-import getDefaultListHeight from '@components/MultiSelect/utils/getDefaultListHeight'
 
 export interface UseSearchOptionsParams
   extends Pick<MultiSelectProps, 'selectedValues' | 'canSearchOptions' | 'enableVirtualization'> {
@@ -26,14 +25,8 @@ export default function useSearchOptions({
   initialOptions = [],
   enableVirtualization
 }: UseSearchOptionsParams) {
-  const ref = React.useRef<HTMLDivElement | null>(null)
   const [searchValue, setSearchValue] = React.useState('')
-
-  // Define the select options style
-  const selectOptionsStyle = React.useMemo(() => {
-    const { defaultListHeight } = getDefaultListHeight()
-    return { maxHeight: `${defaultListHeight}px` }
-  }, [])
+  const wrapperRef = React.useRef<HTMLDivElement | null>(null)
 
   // Define the filtered options
   const filteredOptions = React.useMemo(() => {
@@ -41,7 +34,7 @@ export default function useSearchOptions({
 
     // Return the filtered options
     return initialOptions.filter((option) =>
-      option.label?.toLowerCase().includes(searchValue?.toLowerCase())
+      option.label.toLowerCase().includes(searchValue.toLowerCase())
     )
   }, [searchValue])
 
@@ -67,16 +60,15 @@ export default function useSearchOptions({
     [selectedValues]
   )
 
-  useScrollToLastSelectedValue({ ref: ref, enableVirtualization: enableVirtualization })
+  useScrollToLastSelectedValue({ ref: wrapperRef, enableVirtualization: enableVirtualization })
 
   return {
-    wrapperRef: ref,
+    wrapperRef: wrapperRef,
     searchValue: searchValue,
     handleClear: handleClear,
     handleSearch: handleSearch,
     isLastActived: isLastActived,
     filteredOptions: filteredOptions,
-    selectOptionsStyle: selectOptionsStyle,
     isShowingClearIcon: !isEmptyString(searchValue)
   }
 }

@@ -1,6 +1,10 @@
-@mixin select-button {
+@mixin select-button($filterClass) {
   & .search-options {
-    @apply mb-1.5 md:mb-1;
+    @apply mb-1.5;
+  }
+
+  &:not(#{$filterClass}):disabled {
+    @apply opacity-100 bg-gray-100 dark:bg-gray-700;
   }
 
   & .btn {
@@ -20,10 +24,6 @@
 
     &:active {
       transform: none;
-    }
-
-    &:disabled {
-      @apply opacity-100 bg-gray-100 dark:bg-gray-700;
     }
   }
 }
@@ -58,10 +58,6 @@
         transform: translate(-50%, -50%);
 
         @apply w-[70%] border-0 max-w-[350px] mx-auto mt-0 top-[50%] left-[50%];
-
-        & .search-options {
-          @apply shadow-lg;
-        }
 
         & #{$optionsSelector},
         & #{$virtualizedOptionsSelector} {

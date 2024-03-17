@@ -1,8 +1,6 @@
-// Librarys
-import { Suspense } from 'react'
-
 // Components
-import Fallback from '@components/Select/Fallback'
+import Fallback from '@components/Fallback'
+import FallbackItem from '@components/Fallback/FallbackItem'
 
 // Hooks
 import useCountryList from '@modules/Ubigeo/hooks/useCountryList'
@@ -27,11 +25,11 @@ export default function FilterByCountry({
   const { options, isError, isFetching, isLoading } = useCountryList()
 
   if (isLoading || isFetching) {
-    return <Fallback className={containerClassName} textLabelClassName="w-12" />
+    return <FallbackItem classLabel="w-12" classContainer={containerClassName} />
   }
 
   return (
-    <Suspense fallback={<Fallback className={containerClassName} textLabelClassName="w-12" />}>
+    <Fallback classLabel="w-12" classContainer={containerClassName}>
       <Select
         {...props}
         options={options}
@@ -44,6 +42,6 @@ export default function FilterByCountry({
         searchPalceholder="Buscar países por nombre..."
         emptyText="Sin países disponibles"
       />
-    </Suspense>
+    </Fallback>
   )
 }

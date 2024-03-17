@@ -7,7 +7,7 @@ import EmptyOptions from '@components/EmptyOptions'
 import SearchOptions from '@components/SearchOptions'
 
 // Hooks
-import useSearchOptions from '@components/MultiSelect/Options/useSearchOptions'
+import useOptions from './useOptions'
 
 // Interfaces
 import { OptionsProps } from './interfaces'
@@ -17,7 +17,9 @@ import classnames from '@utils/classnames'
 import isEmptyArray from '@utils/isEmptyArray'
 
 // Constants
-import { DEFAULT_CAN_SEARCH_OPTIONS } from '@components/MultiSelect/constants'
+import { DEFAULT_LIST_HEIGHT, DEFAULT_CAN_SEARCH_OPTIONS } from '@components/MultiSelect/constants'
+
+export const style: React.CSSProperties = { maxHeight: DEFAULT_LIST_HEIGHT }
 
 const Options: React.FC<OptionsProps> = ({
   options,
@@ -33,12 +35,13 @@ const Options: React.FC<OptionsProps> = ({
     wrapperRef,
     searchValue,
     handleClear,
+    hasScrollbar,
     handleSearch,
     isLastActived,
     filteredOptions,
     isShowingClearIcon,
-    selectOptionsStyle
-  } = useSearchOptions({
+    checkboxOptionsRef
+  } = useOptions({
     initialOptions: options,
     selectedValues: selectedValues,
     canSearchOptions: canSearchOptions,
@@ -60,14 +63,15 @@ const Options: React.FC<OptionsProps> = ({
       {isEmptyArray(filteredOptions) && <EmptyOptions text={emptyText} />}
 
       {!isEmptyArray(filteredOptions) && (
-        <ul style={selectOptionsStyle} className="checkbox-options overflow-y-auto">
-          {filteredOptions.map((item) => (
+        <ul ref={checkboxOptionsRef} style={style} className="checkbox-options overflow-y-auto">
+          {filteredOptions.map((item, i) => (
             <li
               key={item.value}
               onClick={() => onChange(item)}
               className={classnames([
                 'checkbox-option-item',
-                isLastActived(item) ? 'last-item-actived' : null
+                isLastActived(item) ? 'last-item-actived' : null,
+                hasScrollbar ? 'border-r' : i < filteredOptions.length ? 'border-b' : null
               ])}
             >
               <Option {...item} onChange={onChange} isMarkedOption={isMarkedOption} />
@@ -81,6 +85,7 @@ const Options: React.FC<OptionsProps> = ({
 
 export default React.memo(Options, (prevProps, nextProps) => {
   return (
+    prevProps.options === nextProps.options &&
     prevProps.onChange === nextProps.onChange &&
     prevProps.isMarkedOption === nextProps.isMarkedOption &&
     prevProps.selectedValues === nextProps.selectedValues

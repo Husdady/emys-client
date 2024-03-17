@@ -7,7 +7,7 @@ import SearchOptions from '@components/SearchOptions'
 import EmptyOptions from '@components/EmptyOptions'
 
 // Hooks
-import useSearchOptions from './useSearchOptions'
+import useOptions from './useOptions'
 
 // Interfaces
 import { OptionsProps } from './interfaces'
@@ -32,10 +32,12 @@ const Options: React.FC<OptionsProps> = ({
     searchValue,
     handleClear,
     handleSearch,
+    hasScrollbar,
     filteredOptions,
-    isShowingClearIcon,
-    selectOptionsStyle
-  } = useSearchOptions({
+    selectOptionsRef,
+    selectOptionsStyle,
+    isShowingClearIcon
+  } = useOptions({
     initialOptions: options,
     canSearchOptions: canSearchOptions
   })
@@ -55,13 +57,18 @@ const Options: React.FC<OptionsProps> = ({
       {isEmptyArray(filteredOptions) && <EmptyOptions text={emptyText} />}
 
       {!isEmptyArray(filteredOptions) && (
-        <ul style={selectOptionsStyle} className="select-options overflow-y-auto">
-          {filteredOptions.map((item) => (
+        <ul
+          ref={selectOptionsRef}
+          style={selectOptionsStyle}
+          className="select-options overflow-y-auto"
+        >
+          {filteredOptions.map((item, i) => (
             <li
               key={item.value}
               className={classnames([
                 'select-option',
-                selectedValue === item.value ? 'active' : null
+                selectedValue === item.value ? 'active' : null,
+                hasScrollbar ? 'border-r' : i < filteredOptions.length ? 'border-b' : null
               ])}
             >
               <Option {...item} onChange={onChange} />

@@ -8,18 +8,18 @@ import {
  * Get the default list height
  */
 export default function getDefaultListHeight() {
-  const minOptionsToShow = window.innerWidth > 768 ? 4 : 6
+  const minOptionsToShow = window.innerWidth > 768 ? 5 : 6
 
   const defaultOptionHeight =
     window.innerWidth > 768
       ? VIRTUALIZED_OPTION_HEIGHT_FOR_DESKTOP
       : VIRTUALIZED_OPTION_HEIGHT_FOR_MOBILE
 
-  const defaultListHeight = defaultOptionHeight * minOptionsToShow + defaultOptionHeight / 2
+  const defaultContainerHeight = defaultOptionHeight * minOptionsToShow + defaultOptionHeight / 2
 
   return {
     minOptionsToShow: minOptionsToShow,
-    defaultListHeight: defaultListHeight,
-    defaultOptionHeight: defaultOptionHeight
+    defaultOptionHeight: defaultOptionHeight,
+    defaultContainerHeight: defaultContainerHeight
   }
 }

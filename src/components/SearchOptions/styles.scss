@@ -1,7 +1,0 @@
-.form-control {
-  & .search-options {
-    @media only screen and (max-width: 768px) {
-      @apply text-[1rem];
-    }
-  }
-}

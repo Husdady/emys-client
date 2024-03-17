@@ -24,6 +24,8 @@
     }
 
     & .icon {
+      @apply text-blue-600;
+
       & > svg {
         stroke-width: 4px;
         @apply w-[16px] h-[16px] min-w-[16px] min-h-[16px];

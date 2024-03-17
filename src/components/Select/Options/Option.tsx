@@ -1,5 +1,5 @@
 // Librarys
-import { memo, isValidElement, useCallback } from 'react'
+import { isValidElement, useCallback } from 'react'
 
 // Types
 import type { OptionProps } from './types'
@@ -7,7 +7,7 @@ import type { OptionProps } from './types'
 // Interfaces
 import { Option as OptionItem } from '@components/Select/interfaces'
 
-function Option({ value, label, markup, onChange }: OptionProps) {
+export default function Option({ value, label, markup, onChange }: OptionProps) {
   // Callback 'onChange' when an option is selected
   const handleOnChange = useCallback(() => {
     // Define option
@@ -30,5 +30,3 @@ function Option({ value, label, markup, onChange }: OptionProps) {
     </button>
   )
 }
-
-export default memo(Option)
