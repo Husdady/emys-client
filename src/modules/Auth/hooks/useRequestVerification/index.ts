@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 // Hooks
 import { useState, useCallback } from 'react'
-import { useRequestVerificationMutation } from '@modules/Auth/api/register'
+import { useRequestNewVerificationMutation } from '@modules/Auth/api/register'
 
 // Utils
 import isUndefined from '@utils/isUndefined'
@@ -10,7 +10,7 @@ export const TIMES_FOR_REQUEST = 7
 
 export default function useRequestVerification(times?: number) {
   const [timesRequested, setTimeRequested] = useState(0)
-  const [requestVerificationResend, result] = useRequestVerificationMutation()
+  const [requestVerificationResend, result] = useRequestNewVerificationMutation()
 
   // Event 'submit' that executes when the form is valid
   const submit = useCallback(async () => {

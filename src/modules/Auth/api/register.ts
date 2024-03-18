@@ -6,11 +6,11 @@ import { api } from '@config/store/api'
 
 export const registerApi = api.injectEndpoints({
   endpoints: (builder) => ({
-    // 'POST' request for resend email verification
-    requestVerification: builder.mutation({
+    // 'POST' request for resend new email verification
+    requestNewVerification: builder.mutation({
       query: () => ({
         method: 'POST',
-        url: '/send-account-verification'
+        url: '/request-verification'
       })
     }),
 
@@ -25,4 +25,4 @@ export const registerApi = api.injectEndpoints({
   })
 })
 
-export const { useRegisterUserMutation, useRequestVerificationMutation } = registerApi
+export const { useRegisterUserMutation, useRequestNewVerificationMutation } = registerApi
