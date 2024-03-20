@@ -11,6 +11,7 @@ const createProductFragment = (model: string) => gql`
     type
     maker
     weight
+    content
     weightType
     totalUnits
     totalVisits

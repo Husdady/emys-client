@@ -55,7 +55,7 @@ export default function Product({
         isInStock
           ? 'hover:shadow-sky-200 hover:border-sky-200 hover:border-sky-400 dark:hover:border-sky-400'
           : 'hover:shadow-red-200 hover:border-red-200 hover:border-red-400 dark:hover:border-pink-600',
-        'product animate__animated animate__fadeIn h-full relative bg-white shadow-lg border border-gray-200 min-w-[290px] max-w-[290px] md:min-w-[250px] md:max-w-[250px] min-h-[200px] rounded-xl pb-4 pt-3.5 px-2.5 sm:px-3.5 dark:shadow-none dark:bg-gray-800 dark:border-gray-500 flex flex-col justify-between'
+        'product animate__animated animate__fadeIn h-full relative bg-white shadow-lg border border-gray-200 min-w-[290px] max-w-[290px] md:min-w-[250px] md:max-w-[250px] min-h-[200px] rounded-xl pb-4 pt-3.5 px-2.5 sm:px-3.5 dark:shadow-none dark:bg-gray-800 dark:border-gray-500 flex flex-col sm:justify-between'
       ])}
     >
       <Heart productId={id} productName={name} />
@@ -70,7 +70,7 @@ export default function Product({
         <Description description={description} />
       </div>
 
-      <div>
+      <div className="mt-auto sm:mt-[initial]">
         <Price price={price} currencyType={currencyType} />
         <Seller {...(mainSeller ?? {})} />
         <ContactSeller name={name} isInStock={isInStock} mainSeller={mainSeller} />

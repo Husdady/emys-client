@@ -16,10 +16,16 @@ import useProductInformation from './useProductInformation'
 // Interfaces
 import { Product } from '@modules/Product/api/interfaces'
 
+// Utils
+import isString from '@utils/isString'
+import isEmptyString from '@utils/isEmptyString'
+
 // Constnats
 import { PRODUCT_TYPE } from '@modules/Products/api/constants'
 
 export default function ProductInformation(product: Product) {
+  const content = product.content // Get product content
+
   const { units, setUnits, innerInformationRef, setDefaultContactSellerMessage } =
     useProductInformation(product)
 
@@ -30,6 +36,7 @@ export default function ProductInformation(product: Product) {
 
         <h3 className="product-name text-[1.75rem] leading-tight break-word font-semibold text-gray-700 dark:text-white">
           {product.name}
+          {isString(content) && !isEmptyString(content) ? `, ${content}` : ''}
         </h3>
 
         <div className="price-container flex items-center justify-between gap-x-6 mt-3 mb-4">
