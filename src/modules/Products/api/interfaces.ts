@@ -88,6 +88,7 @@ export interface ProductsPaginationArgs extends PaginationArgs {
   maxPrice?: number
   totalUnits?: number
   populate?: boolean
+  isInStock?: boolean
   productName?: string
   categories?: string[]
   excludeProducts?: string[]
