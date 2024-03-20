@@ -13,11 +13,17 @@ export default function ImageWrapper(product: Product) {
 
   return (
     <div>
-      <ImageCarousel images={orderedImages} carouselRef={carouselRef} />
+      <ImageCarousel
+        images={orderedImages}
+        carouselRef={carouselRef}
+        activeImageId={activeImageId}
+        handleActiveImage={handleActiveImage}
+      />
 
       {(orderedImages.length ?? 0) >= 2 && (
         <Images
           images={orderedImages}
+          carouselRef={carouselRef}
           activeImageId={activeImageId}
           handleActiveImage={handleActiveImage}
         />

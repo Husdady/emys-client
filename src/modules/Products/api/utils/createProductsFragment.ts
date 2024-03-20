@@ -8,7 +8,6 @@ import { gql } from 'graphql-request'
 const createProductsFragment = (model: string) => gql`
   fragment ProductsFields on ${model} {
     id
-    sku
     name
     code
     price

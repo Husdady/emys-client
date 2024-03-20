@@ -19,17 +19,23 @@ const Select = lazy(() => import('@components/Select'))
 
 export default function FilterByCountry({
   containerClassName,
+  classLabelPlaceholder,
   noSelectionLabel = DEFAULT_NO_SELECTION_VALUE,
   ...props
 }: FilterByCountryProps) {
   const { options, isError, isFetching, isLoading } = useCountryList()
 
   if (isLoading || isFetching) {
-    return <FallbackItem classLabel="w-12" classContainer={containerClassName} />
+    return (
+      <FallbackItem
+        classContainer={containerClassName}
+        classLabel={classLabelPlaceholder ?? 'w-12'}
+      />
+    )
   }
 
   return (
-    <Fallback classLabel="w-12" classContainer={containerClassName}>
+    <Fallback classContainer={containerClassName} classLabel={classLabelPlaceholder ?? 'w-12'}>
       <Select
         {...props}
         options={options}

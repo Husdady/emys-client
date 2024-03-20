@@ -63,7 +63,7 @@
 
   &.searchable {
     & .wrapper-options {
-      @apply md:top-[30%];
+      @apply md:top-[0%] md:mt-0;
     }
   }
 

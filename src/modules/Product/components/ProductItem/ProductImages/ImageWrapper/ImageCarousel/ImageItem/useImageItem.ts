@@ -1,18 +1,23 @@
+// Librarys
+import { useMemo, useState, useCallback, useImperativeHandle, ForwardedRef } from 'react'
+
 // Hooks
-import { useMemo, useState, useCallback } from 'react'
 import useBiggestTabletScreen from '@hooks/useBiggestTabletScreen'
 
 // Interfaces
-import { Image } from '@libs/axios/interfaces'
+import { ImageItemProps } from './interfaces'
+
+export interface Params extends ImageItemProps {
+  ref: ForwardedRef<unknown>
+}
 
 /**
  * Hook for implements the logic of the ImageItem component
- * @param {Image} params
+ * @param {Params} params Receive a 'ref', 'handlePauseOnHover' and Image props
  */
-export default function useImageItem(image: Image) {
+export default function useImageItem({ ref, handlePauseOnHover, ...image }: Params) {
   const isBiggestTabletScreen = useBiggestTabletScreen()
-  const [isShowingTarget, setShowingTarget] = useState(true)
-  const [isPreviewVisible, setPreviewVisible] = useState(false)
+  const [isShowingPreview, setShowingPreview] = useState(false)
 
   // Define shared props of the Image
   const imageProps = useMemo(
@@ -23,37 +28,38 @@ export default function useImageItem(image: Image) {
       height: image.height,
       className: '!w-full !h-[32.5rem] !max-h-[32.5rem] px-4 pt-4 pb-8',
       preview: {
-        visible: isPreviewVisible,
-        onVisibleChange: (visible: boolean) => setPreviewVisible(visible)
+        visible: isShowingPreview,
+        onVisibleChange: (visible: boolean) => setShowingPreview(visible)
       }
     }),
-    [image, isPreviewVisible]
+    [image, isShowingPreview]
   )
 
-   // Callback for show preview Image
-   const showPreview = useCallback(() => {
-    setPreviewVisible(true)
-    setShowingTarget(false)
+  // Callback for show preview Image
+  const showPreview = useCallback(() => {
+    setShowingPreview(true)
   }, [])
 
-  // Callback for show Image target
-  const showTarget = useCallback(() => {
-    if (isShowingTarget || isPreviewVisible) return
-    setShowingTarget(true)
-  }, [isShowingTarget, isPreviewVisible])
+  // Event 'MouseEnter' on ZoomImage component
+  const onMouseEnter = useCallback(() => {
+    handlePauseOnHover?.(true)
+  }, [handlePauseOnHover])
 
-  // Callback for handle click on Image target (Zoom image)
-  const handleClickTarget = useCallback(() => {
-    setShowingTarget(false)
-    setPreviewVisible(true)
-  }, [])
+  // Event 'MouseLeave' on ZoomImage component
+  const onMouseLeave = useCallback(() => {
+    handlePauseOnHover?.(false)
+  }, [handlePauseOnHover])
+
+  useImperativeHandle(ref, () => ({
+    showPreview: showPreview
+  }))
 
   return {
     imageProps: imageProps,
-    showTarget: showTarget,
     showPreview: showPreview,
-    isShowingTarget: isShowingTarget,
-    isBiggestTabletScreen: isBiggestTabletScreen,
-    handleClickTarget: handleClickTarget
+    onMouseEnter: onMouseEnter,
+    onMouseLeave: onMouseLeave,
+    isShowingPreview: isShowingPreview,
+    isBiggestTabletScreen: isBiggestTabletScreen
   }
 }

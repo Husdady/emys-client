@@ -9,11 +9,15 @@ import useActiveKey from './useActiveKey'
 import { CollapseProps } from 'antd/lib'
 import { ProductFieldsProps } from './interfaces'
 
+// Utils
+import isUndefined from '@utils/isUndefined'
+
 // Data
 import {
   createBenefitsItem,
   createUsageModeItem,
   createDescriptionItem,
+  createIngredientsItem,
   createCharacteristicsItem,
   createMainInformationItem,
   createExtraInformationItem
@@ -34,14 +38,16 @@ export default function useProductFields({ innerInformationRef, ...props }: Prod
       createMainInformationItem,
       createDescriptionItem,
       createUsageModeItem,
+      createIngredientsItem,
       createBenefitsItem,
       createCharacteristicsItem,
       createExtraInformationItem
     ]
       .map((cb) => cb(props))
+      .filter((el) => !isUndefined(el))
       .map((el) => ({
         ...el,
-        children: <Focus canFocus={activeKeyData.canFocus}>{el.children}</Focus>
+        children: <Focus canFocus={activeKeyData.canFocus}>{el?.children}</Focus>
       }))
   }, [props, activeKeyData.canFocus])
 

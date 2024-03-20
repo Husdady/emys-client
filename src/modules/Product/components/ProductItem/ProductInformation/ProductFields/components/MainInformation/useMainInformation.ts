@@ -43,7 +43,6 @@ export default function useMainInformation(product: Product) {
   // Define the items of the table
   const items = useMemo<TableItem[]>(() => {
     return [
-      { fieldName: 'SKU', fieldValue: product.sku },
       { fieldName: 'Fabricante', fieldValue: product.maker },
       { fieldName: 'País de origen', fieldValue: product.countryOrigin?.country ?? '-' },
       productWeight,

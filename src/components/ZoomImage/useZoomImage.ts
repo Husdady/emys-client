@@ -6,14 +6,24 @@ import { Offset, ZoomImageProps } from './interfaces'
 
 // Constants
 import { DEFAULT_SCALE, DEFAULT_OFFSET, DEFAULT_TARGET_WIDTH, MIN_TARGET_WIDTH } from './constants'
+import useMounted from '@root/src/hooks/useMounted'
 
-export type Params = Pick<ZoomImageProps, 'width' | 'scale' | 'onMouseEnter' | 'isShowingTarget'>
+export type Params = Pick<
+  ZoomImageProps,
+  'width' | 'scale' | 'onMouseEnter' | 'onMouseLeave' | 'isShowingPreview'
+>
 
 /**
  * Hook for implements the logic of the ZoomImage component
  * @param {Params} params Receive a 'onMouseEnter'
  */
-export default function useZoomImage({ width, scale, onMouseEnter, isShowingTarget }: Params) {
+export default function useZoomImage({
+  width,
+  scale,
+  onMouseEnter,
+  onMouseLeave,
+  isShowingPreview
+}: Params) {
   const [opacity, setOpacity] = useState(0)
   const sourceRef = useRef<HTMLDivElement | null>(null)
   const targetRef = useRef<HTMLImageElement | null>(null)
@@ -43,27 +53,39 @@ export default function useZoomImage({ width, scale, onMouseEnter, isShowingTarg
   const handleSetOpacity = useCallback(
     (newOpacityLevel: number) => (e: MouseEvent<HTMLDivElement>) => {
       e.stopPropagation()
-      if (!isShowingTarget) return
 
       if (opacity === newOpacityLevel) return
       setOpacity(newOpacityLevel)
     },
-    [opacity, isShowingTarget]
+    [opacity]
   )
 
   // Event 'MouseEnter' on Container
   const handleMouseEnter = useCallback(
     (e: MouseEvent<HTMLDivElement>) => {
-      handleSetOpacity(1)(e)
       onMouseEnter?.(e)
+
+      if (isShowingPreview) return
+      handleSetOpacity(1)(e)
     },
-    [onMouseEnter, handleSetOpacity]
+    [onMouseEnter, handleSetOpacity, isShowingPreview]
+  )
+
+  // Event 'MouseLeave' on Container
+  const handleMouseLeave = useCallback(
+    (e: MouseEvent<HTMLDivElement>) => {
+      onMouseLeave?.(e)
+
+      if (isShowingPreview) return
+      handleSetOpacity(0)(e)
+    },
+    [onMouseLeave, handleSetOpacity, isShowingPreview]
   )
 
   // Event 'MouseMove' on Container
   const handleMouseMove = useCallback(
     (e: MouseEvent<HTMLDivElement>) => {
-      if (!isShowingTarget) return
+      if (isShowingPreview) return
 
       // Validates ref
       if (!targetRef.current || !sourceRef.current || !containerRef.current) return
@@ -84,8 +106,15 @@ export default function useZoomImage({ width, scale, onMouseEnter, isShowingTarg
       // Update offset
       setOffset({ top: top * -yRatio, left: left * -xRatio })
     },
-    [isShowingTarget, targetRef.current, sourceRef.current, containerRef.current]
+    [isShowingPreview, targetRef.current, sourceRef.current, containerRef.current]
   )
+
+  useMounted(() => {
+    if (isShowingPreview && opacity !== 0) {
+      setOpacity(0)
+      setOffset(DEFAULT_OFFSET)
+    }
+  }, [opacity])
 
   return {
     opacity: opacity,
@@ -96,6 +125,6 @@ export default function useZoomImage({ width, scale, onMouseEnter, isShowingTarg
     targetStyles: targetStyles,
     handleMouseMove: handleMouseMove,
     handleMouseEnter: handleMouseEnter,
-    handleSetOpacity: handleSetOpacity
+    handleMouseLeave: handleMouseLeave
   }
 }

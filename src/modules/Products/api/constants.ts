@@ -20,7 +20,6 @@ export const LARGE_TEXT_TYPE = 'large-text'
 
 export const PARAMS = [
   'populate',
-  'sku',
   'code',
   'maker',
   'origin',

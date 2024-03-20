@@ -44,7 +44,7 @@ function MobileNavigation() {
           )}
 
           {!customQueries.isSmallMobileDevice && (
-            <div>
+            <div className='flex items-center'>
               <ContactButton className="mx-2" />
               <WhatsappButton className="mx-2" />
             </div>

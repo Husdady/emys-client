@@ -5,13 +5,21 @@ import { Image } from 'antd/lib'
 import useImages from './useImages'
 
 // Interfaces
-import { ImagesProps } from './interfaces'
+import { SharedProps } from '@modules/Product/components/ProductItem/ProductImages/ImageWrapper/interfaces'
 
 // Utils
 import classnames from '@utils/classnames'
 
-export default function Images({ images, activeImageId, handleActiveImage }: ImagesProps) {
-  useImages()
+export default function Images({
+  images,
+  carouselRef,
+  activeImageId,
+  handleActiveImage
+}: SharedProps) {
+  const { handleClickImage } = useImages({
+    carouselRef: carouselRef,
+    handleActiveImage: handleActiveImage
+  })
 
   return (
     <ul className="image-list flex flex-wrap items-center overflow-hidden gap-2">
@@ -30,7 +38,7 @@ export default function Images({ images, activeImageId, handleActiveImage }: Ima
             height={image.height}
             title="Visualizar imagen"
             className="!w-full !h-full"
-            onClick={handleActiveImage(image, i)}
+            onClick={handleClickImage(image, i)}
           />
         </li>
       ))}

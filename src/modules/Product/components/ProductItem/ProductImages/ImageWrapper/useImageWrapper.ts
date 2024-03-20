@@ -48,6 +48,8 @@ export default function useImageWrapper(product: Product) {
   // Callback for set an active image and move the Image Carousel
   const handleActiveImage = useCallback(
     (image: Image, i: number) => () => {
+      if (activeImageId === image.id) return
+
       setActiveImageId(image.id ?? '')
 
       // Go to 'x' image in the Image Carousel
@@ -55,7 +57,7 @@ export default function useImageWrapper(product: Product) {
         carouselRef.current.goTo(i)
       }
     },
-    [carouselRef.current]
+    [activeImageId, carouselRef.current]
   )
 
   return {

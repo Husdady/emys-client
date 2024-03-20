@@ -12,7 +12,8 @@ export interface ZoomImageProps
     OnlyClassNameProp,
     Pick<HTMLImageElement, 'src' | 'width' | 'height'> {
   scale?: number
-  isShowingTarget?: boolean
+  isShowingPreview?: boolean
   onMouseEnter?: (e: MouseEvent<HTMLDivElement>) => void
+  onMouseLeave?: (e: MouseEvent<HTMLDivElement>) => void
   onClickTarget?: (e: MouseEvent<HTMLImageElement>) => void
 }

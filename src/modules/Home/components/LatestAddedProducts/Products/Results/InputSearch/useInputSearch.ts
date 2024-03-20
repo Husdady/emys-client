@@ -36,7 +36,7 @@ export default function useInputSearch({ products, setResults }: InputSearchProp
       // Filter the new results
       const newResults = products.filter((product) => {
         // Define the fields that can search
-        const fieldsForSearch = [product.name, product.description, product.price, product.sku].map(
+        const fieldsForSearch = [product.name, product.description, product.price].map(
           (item) => String(item).toLowerCase()
         )
 

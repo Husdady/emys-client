@@ -66,6 +66,7 @@ export default function ProductsFiltersForm() {
       <div className="flex flex-col items-center sm:flex-row flex-wrap sm:flex-nowrap gap-x-3 gap-y-3 sm:gap-y-3.5">
         <FilterByCountry
           textLabel="País de origen"
+          classLabelPlaceholder="w-28"
           onChange={change('origin')}
           selectedValue={watch('origin')}
           containerClassName="w-full sm:w-[50%]"
@@ -100,7 +101,7 @@ export default function ProductsFiltersForm() {
           isShowingClearIcon={isShowingClearIcon('code')}
         />
 
-        <SearchFilter
+        {/* <SearchFilter
           textLabelClassName="w-28"
           textLabel="Código Referencial"
           containerClassName="w-full sm:w-[50%]"
@@ -108,7 +109,7 @@ export default function ProductsFiltersForm() {
           isShowingClearIcon={isShowingClearIcon('sku')}
           customInput={register('sku')}
           onClear={onClear('sku')}
-        />
+        /> */}
       </div>
 
       <SearchFilter

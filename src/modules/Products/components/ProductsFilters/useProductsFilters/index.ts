@@ -61,7 +61,6 @@ export default function useProductsFilters() {
     () => ({
       origin: query.origin,
       sortBy: query.sortBy,
-      sku: query.sku ?? '',
       code: query.code ?? '',
       sortType: query.sortType,
       maker: query.maker ?? '',
@@ -78,7 +77,6 @@ export default function useProductsFilters() {
   // Register form
   const { watch, register, setValue, getValues, handleSubmit } = useForm<ProductsFiltersState>({
     defaultValues: {
-      sku: query.sku,
       code: query.code,
       maker: query.maker,
       origin: query.origin,
@@ -177,7 +175,6 @@ export default function useProductsFilters() {
   // Event 'submit' that executes when the form is valid
   const submit = useCallback(
     async ({
-      sku,
       code,
       maker,
       minPrice,
@@ -194,7 +191,6 @@ export default function useProductsFilters() {
       // Define arguments for the filtering
       const args: ProductsPaginationArgs = {
         page: DEFAULT_QUERY.page,
-        sku: isEmptyString(sku) ? undefined : sku,
         code: isEmptyString(code) ? undefined : code,
         maker: isEmptyString(maker) ? undefined : maker,
         origin: isEmptyString(origin) ? undefined : origin,

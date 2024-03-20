@@ -1,3 +1,6 @@
+// Librarys
+import { memo } from 'react'
+
 // Hooks
 import useZoomImage from './useZoomImage'
 
@@ -8,17 +11,18 @@ import { ZoomImageProps } from './interfaces'
 import classnames from '@utils/classnames'
 
 // Constants
-import { DEFAULT_SCALE, DEFAULT_TARGET_WIDTH, MIN_TARGET_WIDTH } from './constants'
+import { DEFAULT_SCALE } from './constants'
 
-export default function ZoomImage({
+function ZoomImage({
   scale = DEFAULT_SCALE,
-  isShowingTarget = true,
+  isShowingPreview = true,
   src,
   width,
   height,
   children,
   className,
   onMouseEnter,
+  onMouseLeave,
   onClickTarget
 }: ZoomImageProps) {
   const {
@@ -30,38 +34,48 @@ export default function ZoomImage({
     targetStyles,
     handleMouseMove,
     handleMouseEnter,
-    handleSetOpacity
+    handleMouseLeave
   } = useZoomImage({
     width: width,
     scale: scale,
     onMouseEnter: onMouseEnter,
-    isShowingTarget: isShowingTarget
+    onMouseLeave: onMouseLeave,
+    isShowingPreview: isShowingPreview
   })
 
   return (
     <div
       ref={containerRef}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleSetOpacity(0)}
+      onMouseMove={isShowingPreview ? undefined : handleMouseMove}
+      onMouseEnter={isShowingPreview ? undefined : handleMouseEnter}
+      onMouseLeave={isShowingPreview ? undefined : handleMouseLeave}
       className={classnames([className, 'relative overflow-hidden'])}
     >
       <div ref={sourceRef} className={opacity === 1 ? 'opacity-0' : undefined}>
         {children}
       </div>
 
-      {isShowingTarget && (
-        <img
-          src={src}
-          alt="target"
-          ref={targetRef}
-          width={targetWidth}
-          style={targetStyles}
-          onClick={onClickTarget}
-          height={height * scale}
-          className="target-image absolute max-w-[initial]"
-        />
-      )}
+      <img
+        src={src}
+        alt="target"
+        ref={targetRef}
+        width={targetWidth}
+        style={targetStyles}
+        onClick={onClickTarget}
+        height={height * scale}
+        className="target-image absolute max-w-[initial]"
+      />
     </div>
   )
 }
+
+export default memo(ZoomImage, (prevProps, nextProps) => {
+  return (
+    prevProps.children === nextProps.children &&
+    prevProps.className === nextProps.className &&
+    prevProps.isShowingPreview === nextProps.isShowingPreview &&
+    prevProps.onMouseEnter?.toString() === nextProps.onMouseEnter?.toString() &&
+    prevProps.onMouseLeave?.toString() === nextProps.onMouseLeave?.toString() &&
+    prevProps.onClickTarget?.toString() === nextProps.onClickTarget?.toString()
+  )
+})

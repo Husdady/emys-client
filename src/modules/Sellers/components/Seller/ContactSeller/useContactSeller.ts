@@ -26,9 +26,13 @@ export default function useContactSeller({
 
   // Callback for open the Whatsapp API
   const openWhatsappAPI = useCallback(() => {
-    if (user === null) return
+    let message = ''
 
-    const message = `Hola ${fullname}. Soy ${user.fullname}, te contacto desde ${window.location.origin}, me interesa los productos que vendes. ¿Puedes brindarme más información?`
+    if (user === null) {
+      message = `Hola ${fullname}, te contacto desde ${window.location.origin}, me interesa los productos que vendes. ¿Puedes brindarme más información?`
+    } else {
+      message = `Hola ${fullname}. Soy ${user.fullname}, te contacto desde ${window.location.origin}, me interesa los productos que vendes. ¿Puedes brindarme más información?`
+    }
 
     window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${message}`, '_blank')
   }, [user, phone, fullname])

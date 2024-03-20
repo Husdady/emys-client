@@ -26,12 +26,12 @@ export interface Product extends TimeStamps {
   code: string
   tags: string[]
   origin: string
-  countryOrigin: Country
   type: ProductType
+  isInStock: boolean
+  countryOrigin: Country
   coverImage?: Image | null
   coverImageId?: string | null
   totalVisits?: number | null
-  isInStock: boolean
   totalUnits?: number | null
   mainSeller?: Seller | null
   mainSellerId?: string | null
@@ -42,7 +42,6 @@ export interface Product extends TimeStamps {
   relatedProductsId: string[]
   content?: string | null
   usageMode?: string | null
-  sku: string
   price: number
   maker: string
   weight: number
@@ -52,6 +51,7 @@ export interface Product extends TimeStamps {
   categories?: Category[] | null
   categoriesId?: string[] | null
   benefits: string[]
+  ingredients: string[]
   characteristics: string[]
   images: Image[] | null
   imagesId: string[] | null
@@ -81,13 +81,11 @@ export interface FavoriteProducts {
 }
 
 export interface ProductsPaginationArgs extends PaginationArgs {
-  sku?: string
   code?: string
   maker?: string
   origin?: string
   minPrice?: number
   maxPrice?: number
-  isInStock?: boolean
   totalUnits?: number
   populate?: boolean
   productName?: string
