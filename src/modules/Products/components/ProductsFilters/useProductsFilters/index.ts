@@ -59,11 +59,11 @@ export default function useProductsFilters() {
   // Define the default values
   const defaultValues = useMemo(
     () => ({
-      origin: query.origin,
       sortBy: query.sortBy,
       code: query.code ?? '',
       sortType: query.sortType,
       maker: query.maker ?? '',
+      countryId: query.countryId,
       categories: query.categories,
       productName: query.productName ?? '',
       minPrice: String(!isNumber(query.minPrice) ? MIN : query.minPrice),
@@ -79,9 +79,9 @@ export default function useProductsFilters() {
     defaultValues: {
       code: query.code,
       maker: query.maker,
-      origin: query.origin,
       sortBy: query.sortBy,
       sortType: query.sortType,
+      countryId: query.countryId,
       categories: query.categories,
       productName: query.productName,
       minPrice: String(!isNumber(query.minPrice) ? MIN : query.minPrice),
@@ -180,6 +180,7 @@ export default function useProductsFilters() {
       minPrice,
       maxPrice,
       isInStock,
+      countryId,
       totalUnits,
       productName,
       ...state
@@ -193,7 +194,7 @@ export default function useProductsFilters() {
         page: DEFAULT_QUERY.page,
         code: isEmptyString(code) ? undefined : code,
         maker: isEmptyString(maker) ? undefined : maker,
-        origin: isEmptyString(origin) ? undefined : origin,
+        countryId: isEmptyString(countryId) ? undefined : countryId,
         productName: isEmptyString(productName) ? undefined : productName,
         minPrice: !isString(minPrice) || isEmptyString(minPrice) ? undefined : Number(minPrice),
         maxPrice: !isString(maxPrice) || isEmptyString(maxPrice) ? undefined : Number(maxPrice),

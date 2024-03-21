@@ -67,8 +67,8 @@ export default function ProductsFiltersForm() {
         <FilterByCountry
           textLabel="País de origen"
           classLabelPlaceholder="w-28"
-          onChange={change('origin')}
-          selectedValue={watch('origin')}
+          onChange={change('countryId')}
+          selectedValue={watch('countryId')}
           containerClassName="w-full sm:w-[50%]"
           noSelectionLabel="Filtrar productos por país de origen"
         />

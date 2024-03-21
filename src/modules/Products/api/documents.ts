@@ -16,10 +16,10 @@ export const ProductDocument = gql`
     $populate: Boolean
     $code: String
     $maker: String
-    $origin: String
     $minPrice: Float
     $maxPrice: Float
     $totalUnits: Int
+    $countryId: String
     $productName: String
     $categories: [String!]
   ) {
@@ -35,9 +35,9 @@ export const ProductDocument = gql`
       productName: $productName
       code: $code
       maker: $maker
-      origin: $origin
       minPrice: $minPrice
       maxPrice: $maxPrice
+      countryId: $countryId
       totalUnits: $totalUnits
     ) {
       data {
@@ -74,10 +74,10 @@ export const FavoriteProductDocument = gql`
     $populate: Boolean
     $code: String
     $maker: String
-    $origin: String
     $minPrice: Float
     $maxPrice: Float
     $totalUnits: Int
+    $countryId: String
     $productName: String
     $categories: [String!]
     $favoriteProductsId: [String!]!
@@ -94,9 +94,9 @@ export const FavoriteProductDocument = gql`
       productName: $productName
       code: $code
       maker: $maker
-      origin: $origin
       minPrice: $minPrice
       maxPrice: $maxPrice
+      countryId: $countryId
       totalUnits: $totalUnits
       favoriteProductsId: $favoriteProductsId
     ) {

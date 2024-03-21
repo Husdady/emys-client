@@ -25,8 +25,8 @@ export interface Product extends TimeStamps {
   name: string
   code: string
   tags: string[]
-  origin: string
   type: ProductType
+  countryId: string
   isInStock: boolean
   countryOrigin: Country
   coverImage?: Image | null
@@ -83,9 +83,9 @@ export interface FavoriteProducts {
 export interface ProductsPaginationArgs extends PaginationArgs {
   code?: string
   maker?: string
-  origin?: string
   minPrice?: number
   maxPrice?: number
+  countryId?: string
   totalUnits?: number
   populate?: boolean
   isInStock?: boolean
