@@ -33,7 +33,7 @@ export default function ProductInformation(product: Product) {
   return (
     <aside
       className={classnames([
-        (product.images?.length ?? 0) > 4 ? 'xl:min-h-[44.4rem]' : 'xl:min-h-[43.2rem]',
+        (product.images?.length ?? 0) > 4 ? 'xl:min-h-[44.38rem]' : 'xl:min-h-[43.2rem]',
         'min-h-[44.15rem] product-information bg-white overflow-hidden pt-3.5 pb-4 font-poppins rounded shadow-lg dark:shadow-none dark:bg-gray-900 flex flex-col justify-between'
       ])}
     >
