@@ -22,6 +22,7 @@ import isEmptyString from '@utils/isEmptyString'
 
 // Constnats
 import { PRODUCT_TYPE } from '@modules/Products/api/constants'
+import classnames from '@root/src/utils/classnames'
 
 export default function ProductInformation(product: Product) {
   const content = product.content // Get product content
@@ -30,7 +31,12 @@ export default function ProductInformation(product: Product) {
     useProductInformation(product)
 
   return (
-    <aside className="min-h-[44.15rem] product-information bg-white overflow-hidden pt-3.5 pb-4 font-poppins rounded shadow-lg dark:shadow-none dark:bg-gray-900 flex flex-col justify-between">
+    <aside
+      className={classnames([
+        product.images?.length ?? 0 > 4 ? 'xl:min-h-[44.5rem]' : 'xl:min-h-[43rem]',
+        'min-h-[44.15rem] product-information bg-white overflow-hidden pt-3.5 pb-4 font-poppins rounded shadow-lg dark:shadow-none dark:bg-gray-900 flex flex-col justify-between'
+      ])}
+    >
       <div className="px-4 xl:pb-4 xl:border-b xl:border-gray-300 dark:xl:border-gray-600">
         <Header {...product} />
 

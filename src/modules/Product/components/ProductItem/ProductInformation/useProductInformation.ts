@@ -22,9 +22,16 @@ export default function useProductInformation({ isInStock }: Product) {
   // Callback for set a message for contacts the Seller
   const setDefaultContactSellerMessage = useCallback(
     (message: Message) => {
-      if (!user) return ''
-
       const { seller, productName } = message
+
+      // Without session
+      if (!user) {
+        return `Hola ${
+          seller.fullname
+        }, he visto el producto ${productName} en ${PUBLIC_URL}. Me interesa adquirir ${units} unidad${
+          units > 1 ? 'es' : ''
+        }, espero su pronta respuesta. Muchas gracias.`
+      }
 
       return `Hola ${seller.fullname}. Soy ${
         user.fullname
