@@ -22,7 +22,7 @@ export default function Images({
   })
 
   return (
-    <ul className="image-list flex flex-nowrap items-center xl:overflow-x-auto gap-2 pb-2">
+    <ul className="image-list flex flex-wrap xl:flex-nowrap items-center xl:overflow-x-auto gap-2 pb-2">
       {images.map((image, i) => (
         <li
           key={image.id}
