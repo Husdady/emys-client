@@ -5,7 +5,7 @@ import { useMemo, useState, useCallback, useImperativeHandle, ForwardedRef } fro
 import useBiggestTabletScreen from '@hooks/useBiggestTabletScreen'
 
 // Interfaces
-import { ImageItemProps } from './interfaces'
+import { ImageItemProps } from './types'
 
 export interface Params extends ImageItemProps {
   ref: ForwardedRef<unknown>
@@ -15,7 +15,7 @@ export interface Params extends ImageItemProps {
  * Hook for implements the logic of the ImageItem component
  * @param {Params} params Receive a 'ref', 'handlePauseOnHover' and Image props
  */
-export default function useImageItem({ ref, handlePauseOnHover, ...image }: Params) {
+export default function useImageItem({ ref, ...image }: Params) {
   const isBiggestTabletScreen = useBiggestTabletScreen()
   const [isShowingPreview, setShowingPreview] = useState(false)
 
@@ -40,16 +40,6 @@ export default function useImageItem({ ref, handlePauseOnHover, ...image }: Para
     setShowingPreview(true)
   }, [])
 
-  // Event 'MouseEnter' on ZoomImage component
-  const onMouseEnter = useCallback(() => {
-    handlePauseOnHover?.(true)
-  }, [handlePauseOnHover])
-
-  // Event 'MouseLeave' on ZoomImage component
-  const onMouseLeave = useCallback(() => {
-    handlePauseOnHover?.(false)
-  }, [handlePauseOnHover])
-
   useImperativeHandle(ref, () => ({
     showPreview: showPreview
   }))
@@ -57,8 +47,6 @@ export default function useImageItem({ ref, handlePauseOnHover, ...image }: Para
   return {
     imageProps: imageProps,
     showPreview: showPreview,
-    onMouseEnter: onMouseEnter,
-    onMouseLeave: onMouseLeave,
     isShowingPreview: isShowingPreview,
     isBiggestTabletScreen: isBiggestTabletScreen
   }

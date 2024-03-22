@@ -61,7 +61,7 @@ export default function useContactSeller({
       }
 
       window.open(
-        `https://api.whatsapp.com/send?phone=+51${mainSeller.phone}&text=${message}`,
+        `https://api.whatsapp.com/send?phone=${mainSeller.phone}&text=${message}`,
         '_blank'
       )
     },

@@ -16,7 +16,6 @@ interface ImageItemRefProps {
  * @returns
  */
 export default function useImageCarousel({ images, handleActiveImage }: Params) {
-  const [pauseOnHover, setPauseOnHover] = useState(false)
   const activeImageRef = useRef<ImageItemRefProps | null>(null)
 
   // Callback for show the preview of the active image
@@ -24,15 +23,6 @@ export default function useImageCarousel({ images, handleActiveImage }: Params) 
     if (!activeImageRef.current) return
     activeImageRef.current.showPreview()
   }, [])
-
-  // Callback for update 'pauseOnHover'
-  const handlePauseOnHover = useCallback(
-    (newPauseOnHover: boolean) => {
-      if (pauseOnHover === newPauseOnHover) return
-      setPauseOnHover(newPauseOnHover)
-    },
-    [pauseOnHover]
-  )
 
   // Callback for change active image
   const afterChange = useCallback(
@@ -50,9 +40,7 @@ export default function useImageCarousel({ images, handleActiveImage }: Params) 
 
   return {
     afterChange: afterChange,
-    pauseOnHover: pauseOnHover,
     activeImageRef: activeImageRef,
-    handlePauseOnHover: handlePauseOnHover,
     showPreviewActiveImage: showPreviewActiveImage
   }
 }

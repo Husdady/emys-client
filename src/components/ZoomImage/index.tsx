@@ -49,9 +49,12 @@ function ZoomImage({
       onMouseMove={isShowingPreview ? undefined : handleMouseMove}
       onMouseEnter={isShowingPreview ? undefined : handleMouseEnter}
       onMouseLeave={isShowingPreview ? undefined : handleMouseLeave}
-      className={classnames([className, 'relative overflow-hidden'])}
+      className={classnames([className, 'relative overflow-hidden zoom-image'])}
     >
-      <div ref={sourceRef} className={opacity === 1 ? 'opacity-0' : undefined}>
+      <div
+        ref={sourceRef}
+        className={opacity === 1 ? 'opacity-0' : 'animate__animated animate__fadeIn'}
+      >
         {children}
       </div>
 
@@ -63,7 +66,7 @@ function ZoomImage({
         style={targetStyles}
         onClick={onClickTarget}
         height={height * scale}
-        className="target-image absolute max-w-[initial]"
+        className="target-image absolute max-w-[initial] cursor-zoom-in"
       />
     </div>
   )

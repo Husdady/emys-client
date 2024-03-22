@@ -48,7 +48,7 @@ export default function useZoomImage({
     if (width < MIN_TARGET_WIDTH) return DEFAULT_TARGET_WIDTH
     return imageWidth
   }, [width, scale])
-
+console.log({ scale, targetWidth })
   // Callback for set Opacity
   const handleSetOpacity = useCallback(
     (newOpacityLevel: number) => (e: MouseEvent<HTMLDivElement>) => {

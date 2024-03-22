@@ -3,7 +3,6 @@ import { Carousel } from 'antd/lib'
 
 // Components
 import ImageItem from './ImageItem'
-import ZoomButton from './ZoomButton'
 
 // Hooks
 import useImageCarousel from './useImageCarousel'
@@ -20,27 +19,21 @@ export default function ImageCarousel({
   activeImageId,
   handleActiveImage
 }: SharedProps) {
-  const { afterChange, pauseOnHover, activeImageRef, handlePauseOnHover, showPreviewActiveImage } =
-    useImageCarousel({
-      images: images,
-      handleActiveImage: handleActiveImage
-    })
+  const { afterChange, activeImageRef } = useImageCarousel({
+    images: images,
+    handleActiveImage: handleActiveImage
+  })
 
   return (
-    <section className="image-carousel-wrapper mb-3 border-2 border-gray-100 dark:border-gray-700 relative rounded h-[32.5rem] max-h-[32.5rem] leading-[32.5rem] overflow-hidden">
-      <ZoomButton onClick={showPreviewActiveImage} />
-
+    <section className="image-carousel-wrapper mb-6 border-2 border-gray-100 dark:border-gray-700 relative rounded h-[32.5rem] max-h-[32.5rem] overflow-hidden">
       <Carousel
         swipe
         arrows
+        dots={false}
         speed={SPEED}
         id={CAROUSEL_ID}
         ref={carouselRef}
-        autoplay={pauseOnHover}
-        pauseOnFocus={pauseOnHover}
-        pauseOnDotsHover={pauseOnHover}
         afterChange={afterChange}
-        pauseOnHover={pauseOnHover}
         autoplaySpeed={AUTOPLAY_SPEED}
         className="image-carousel"
       >
@@ -49,7 +42,6 @@ export default function ImageCarousel({
             key={image.id}
             {...image}
             carouselRef={carouselRef}
-            handlePauseOnHover={handlePauseOnHover}
             ref={activeImageId === image.id ? activeImageRef : undefined}
           />
         ))}

@@ -8,9 +8,16 @@ import { useMemo } from 'react'
 import { Product } from '@modules/Product/api/interfaces'
 import { TableItem } from '@modules/Product/components/Table/interfaces'
 
+// Utils
+import isString from '@utils/isString'
+import isEmptyString from '@utils/isEmptyString'
+
 // Constants
 import { weightTypes } from './constants'
 import { TEXT_TYPE } from '@modules/Products/api/constants'
+import isNumber from '@root/src/utils/isNumber'
+
+const NO_DEFINED = 'No definido'
 
 /**
  * Hook for implements the logic of the MainInformaton component
@@ -22,9 +29,18 @@ export default function useMainInformation(product: Product) {
     const weight = product.weight // Get the product weight
     const weightType = product.weightType // Get the product weight
 
+    let fieldValue = ''
+
+    // Validate 'weight' and 'weightType'
+    if (!isNumber(weight) || weight <= 0 || !isString(weightType) || isEmptyString(weightType)) {
+      fieldValue = NO_DEFINED
+    } else {
+      fieldValue = `${weight} ${weightTypes[weightType]}`
+    }
+
     return {
       fieldName: 'Peso del producto',
-      fieldValue: `${weight} ${weightTypes[weightType]}`
+      fieldValue: fieldValue
     }
   }, [product])
 
@@ -42,9 +58,22 @@ export default function useMainInformation(product: Product) {
 
   // Define the items of the table
   const items = useMemo<TableItem[]>(() => {
+    const maker = product.maker // Get product maker
+    const countryOrigin = product.countryOrigin?.country // Get product origin
+
     return [
-      { fieldName: 'Fabricante', fieldValue: product.maker },
-      { fieldName: 'País de origen', fieldValue: product.countryOrigin?.country ?? '-' },
+      // Product maker
+      {
+        fieldName: 'Fabricante',
+        fieldValue: isString(maker) && !isEmptyString(maker) ? maker : NO_DEFINED
+      },
+
+      // Product origin
+      {
+        fieldName: 'País de origen',
+        fieldValue:
+          isString(countryOrigin) && !isEmptyString(countryOrigin) ? countryOrigin : NO_DEFINED
+      },
       productWeight,
       { fieldName: 'Código del producto', fieldValue: product.code },
       units

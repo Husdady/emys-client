@@ -8,18 +8,14 @@ import ZoomImage from '@components/ZoomImage'
 // Hooks
 import useImageItem from './useImageItem'
 
-// Interfaces
-import { ImageItemProps } from './interfaces'
+// Types
+import type { ImageItemProps } from './types'
 
 const ImageItem = forwardRef((props: ImageItemProps, ref) => {
-  const {
-    imageProps,
-    showPreview,
-    onMouseEnter,
-    onMouseLeave,
-    isShowingPreview,
-    isBiggestTabletScreen
-  } = useImageItem({ ref: ref, ...props })
+  const { imageProps, showPreview, isShowingPreview, isBiggestTabletScreen } = useImageItem({
+    ref: ref,
+    ...props
+  })
 
   return (
     <article className="image-item relative !w-full !h-[32.5rem] !max-h-[32.5rem]">
@@ -31,8 +27,6 @@ const ImageItem = forwardRef((props: ImageItemProps, ref) => {
           width={props.width}
           height={props.height}
           onClickTarget={showPreview}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
           isShowingPreview={isShowingPreview}
         >
           <Image {...imageProps} />
