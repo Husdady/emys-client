@@ -44,11 +44,11 @@ export default function useZoomImage({
   const targetWidth = useMemo(() => {
     const imageWidth = width * (scale ?? DEFAULT_SCALE) // Calculate image width
 
-    if (width > 1500) return imageWidth - 0.3
+    if (width > 1500) return imageWidth - 0.1
     if (width < MIN_TARGET_WIDTH) return DEFAULT_TARGET_WIDTH
     return imageWidth
   }, [width, scale])
-console.log({ scale, targetWidth })
+
   // Callback for set Opacity
   const handleSetOpacity = useCallback(
     (newOpacityLevel: number) => (e: MouseEvent<HTMLDivElement>) => {

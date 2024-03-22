@@ -9,6 +9,7 @@ import { Product } from '@modules/Product/api/interfaces'
 // Utils
 import isString from '@utils/isString'
 import isEmptyString from '@utils/isEmptyString'
+import useMounted from '@root/src/hooks/useMounted'
 
 /**
  * Hook for implements the logic of the ImageWrapper component
@@ -28,7 +29,7 @@ export default function useImageWrapper(product: Product) {
     }
 
     return a.id.localeCompare(b.id) // Normal order
-  }, [])
+  }, [product])
 
   // Order images by cover image
   const orderedImages = useMemo<Image[]>(() => {
@@ -59,6 +60,19 @@ export default function useImageWrapper(product: Product) {
     },
     [activeImageId, carouselRef.current]
   )
+
+  useMounted(() => {
+    // Get the first ordered image id
+    const firstOrderedImageId = orderedImages[0]?.id
+
+    if (
+      isString(firstOrderedImageId) &&
+      !isEmptyString(firstOrderedImageId) &&
+      activeImageId !== firstOrderedImageId
+    ) {
+      setActiveImageId(firstOrderedImageId)
+    }
+  }, [orderedImages])
 
   return {
     carouselRef: carouselRef,

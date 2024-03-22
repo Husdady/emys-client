@@ -21,7 +21,7 @@ export default function ProductImages(product: Product) {
     <aside
       className={classnames([
         hasInvalidImages ? 'flex items-center justify-center' : null,
-        'product-images bg-white pt-3.5 pb-4 px-4 font-poppins rounded shadow-lg min-h-[35rem] dark:shadow-none dark:bg-gray-900'
+        'product-images bg-white p-[1.35rem] font-poppins rounded shadow-lg min-h-[35rem] dark:shadow-none dark:bg-gray-900'
       ])}
     >
       {hasInvalidImages ? <EmptyImages /> : <ImageWrapper {...product} />}

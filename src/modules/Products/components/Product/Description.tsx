@@ -6,7 +6,7 @@ import truncate from '@utils/truncate'
 
 export default function Description({ description }: Pick<Product, 'description'>) {
   return (
-    <span className="product-description block text-gray-500 leading-tight mt-1 md:mt-1.5 xl:mt-2 text-[0.96rem] break-word dark:text-gray-300 font-lexend min-h-[52px] text-center">
+    <span className="product-description block text-gray-500 leading-tight mt-2.5 text-[0.96rem] break-word dark:text-gray-300 font-lexend min-h-[52px] text-center">
       {truncate(
         description,
         window.innerWidth <= 375

@@ -26,7 +26,7 @@ export default function useImageItem({ ref, ...image }: Params) {
       width: image.width,
       alt: image.filename,
       height: image.height,
-      className: '!w-full !h-[32.5rem] !max-h-[32.5rem] px-4 pt-4 pb-8',
+      className: '!w-full !h-full px-4 pt-4 pb-8',
       preview: {
         visible: isShowingPreview,
         onVisibleChange: (visible: boolean) => setShowingPreview(visible)

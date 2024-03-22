@@ -23,7 +23,6 @@ export default function ImageWrapper(product: Product) {
       {(orderedImages.length ?? 0) >= 2 && (
         <Images
           images={orderedImages}
-          carouselRef={carouselRef}
           activeImageId={activeImageId}
           handleActiveImage={handleActiveImage}
         />

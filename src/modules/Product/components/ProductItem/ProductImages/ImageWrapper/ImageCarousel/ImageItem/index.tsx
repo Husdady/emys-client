@@ -10,15 +10,21 @@ import useImageItem from './useImageItem'
 
 // Types
 import type { ImageItemProps } from './types'
+import classnames from '@root/src/utils/classnames'
 
-const ImageItem = forwardRef((props: ImageItemProps, ref) => {
+const ImageItem = forwardRef(({ className, ...props }: ImageItemProps, ref) => {
   const { imageProps, showPreview, isShowingPreview, isBiggestTabletScreen } = useImageItem({
     ref: ref,
     ...props
   })
 
   return (
-    <article className="image-item relative !w-full !h-[32.5rem] !max-h-[32.5rem]">
+    <article
+      className={classnames([
+        className,
+        'image-item relative !w-full flex items-center justify-center'
+      ])}
+    >
       {isBiggestTabletScreen && <Image {...imageProps} />}
 
       {!isBiggestTabletScreen && (

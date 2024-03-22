@@ -10,8 +10,12 @@
       & .image-item {
         @apply border-2 border-transparent;
 
+        &:hover {
+          @apply border-blue-300 dark:border-pink-300;
+        }
+
         &.active {
-          @apply border-blue-400 dark:border-pink-300;
+          @apply border-blue-400 dark:border-pink-400;
         }
       }
     }

@@ -23,14 +23,14 @@ export default function ProductImage({ coverImage, firstImage }: ProductImagePro
         height={coverImage?.height ?? firstImage?.height}
         src={(coverImage?.url ?? firstImage?.url) as string}
         alt={(coverImage?.filename ?? firstImage?.filename) as string}
-        className="product-image min-w-[120px] min-h-[120px] max-w-[120px] max-h-[120px] mb-2 mx-auto"
+        className="product-image min-w-[150px] min-h-[150px] max-w-[150px] max-h-[150px] mb-3 mx-auto bg-gray-100 dark:bg-gray-700 p-3 rounded-md"
       />
     )
   }
 
   return (
-    <div className="mb-2 w-[90px] min-w-[90px] max-w-[90px] h-[120px] min-h-[120px] max-h-[120px] bg-gray-100 flex items-center justify-center rounded mx-auto dark:bg-gray-700 dark:text-gray-400">
-      <Photo size="xxl" />
+    <div className="mb-3 w-[120px] min-w-[120px] max-w-[120px] h-[150px] min-h-[150px] max-h-[150px] bg-gray-100 flex items-center justify-center rounded-md mx-auto dark:bg-gray-700 dark:text-gray-400">
+      <Photo size="xxxl" />
     </div>
   )
 }

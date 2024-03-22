@@ -10,8 +10,11 @@ import useImageCarousel from './useImageCarousel'
 // Interfaces
 import { SharedProps } from '@modules/Product/components/ProductItem/ProductImages/ImageWrapper/interfaces'
 
+// Utils
+import classnames from '@utils/classnames'
+
 // Constants
-import { SPEED, CAROUSEL_ID, AUTOPLAY_SPEED } from './constants'
+import { SPEED, CAROUSEL_ID } from './constants'
 
 export default function ImageCarousel({
   images,
@@ -25,7 +28,12 @@ export default function ImageCarousel({
   })
 
   return (
-    <section className="image-carousel-wrapper mb-6 border-2 border-gray-100 dark:border-gray-700 relative rounded h-[32.5rem] max-h-[32.5rem] overflow-hidden">
+    <section
+      className={classnames([
+        images.length > 1 ? 'h-[32.5rem] max-h-[32.5rem] mb-6' : 'xl:min-h-[40.95rem]',
+        'image-carousel-wrapper border-2 border-gray-100 dark:border-gray-700 relative rounded overflow-hidden'
+      ])}
+    >
       <Carousel
         swipe
         arrows
@@ -34,7 +42,6 @@ export default function ImageCarousel({
         id={CAROUSEL_ID}
         ref={carouselRef}
         afterChange={afterChange}
-        autoplaySpeed={AUTOPLAY_SPEED}
         className="image-carousel"
       >
         {images?.map((image) => (
@@ -43,6 +50,7 @@ export default function ImageCarousel({
             {...image}
             carouselRef={carouselRef}
             ref={activeImageId === image.id ? activeImageRef : undefined}
+            className={images?.length <= 1 ? 'min-h-[40.95rem]' : '!h-[32.5rem] !max-h-[32.5rem]'}
           />
         ))}
       </Carousel>
