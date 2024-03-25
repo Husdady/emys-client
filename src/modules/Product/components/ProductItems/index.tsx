@@ -5,7 +5,7 @@ import { Suspense } from 'react'
 import ProductPlaceholder from '@modules/Products/components/Product/Placeholder'
 
 // Hooks
-import useDrag from '@modules/Product/hooks/useDrag'
+import useProductItems from './useProductItems'
 
 // Interfaces
 import { ProductItemsProps } from './interfaces'
@@ -22,10 +22,11 @@ export default function ProductItems({
   hasScrollbar,
   productItemsRef
 }: ProductItemsProps) {
-  const { handleScroll, handleMouseMove, handleMouseDown, isMobileScreen } = useDrag({
-    hasScrollbar: hasScrollbar,
-    productItemsRef: productItemsRef
-  })
+  const { handleScroll, handleMouseMove, handleMouseDown, isMobileScreen, ...validateRequestData } =
+    useProductItems({
+      hasScrollbar: hasScrollbar,
+      productItemsRef: productItemsRef
+    })
 
   return (
     <div className="relative product-items-container">
@@ -42,7 +43,7 @@ export default function ProductItems({
         {products.map((product) => (
           <li key={product.id} className="product-item">
             <Suspense fallback={<ProductPlaceholder />}>
-              <Product {...product} />
+              <Product {...product} {...validateRequestData} />
             </Suspense>
           </li>
         ))}

@@ -12,7 +12,7 @@ import ContactSellerPlaceholder from './ContactSeller/Placeholder'
 import Link from '@components/Link'
 
 // Interfaces
-import { Product as ProductModel } from '@modules/Products/api/interfaces'
+import { ProductProps } from './interfaces'
 
 // Utils
 import classnames from '@utils/classnames'
@@ -45,8 +45,11 @@ export default function Product({
   mainSeller,
   coverImage,
   description,
-  currencyType
-}: ProductModel) {
+  currencyType,
+  makeRequest,
+  stopRequest,
+  isMakingRequest
+}: ProductProps) {
   return (
     <Link
       href={`${PRODUCTS_PATH}/${code}`}
@@ -58,7 +61,13 @@ export default function Product({
         'product animate__animated animate__fadeIn h-full relative bg-white shadow-lg border border-gray-200 min-w-[290px] max-w-[290px] md:min-w-[250px] md:max-w-[250px] min-h-[200px] rounded-xl pb-4 pt-3.5 px-2.5 sm:px-3.5 dark:shadow-none dark:bg-gray-800 dark:border-gray-500 flex flex-col sm:justify-between'
       ])}
     >
-      <Heart productId={id} productName={name} />
+      <Heart
+        productId={id}
+        productName={name}
+        makeRequest={makeRequest}
+        stopRequest={stopRequest}
+        isMakingRequest={isMakingRequest}
+      />
 
       <div className="flex">
         <StockTag isInStock={isInStock} />

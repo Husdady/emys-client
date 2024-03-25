@@ -29,7 +29,7 @@ export default function LoginForm() {
       onSubmit={handleSubmit(submit)}
       className="login-form mb-2 sm:mb-0 flex flex-col gap-y-4"
     >
-      <Fallback classLabel="w-28">
+      <Fallback classLabel="w-32">
         <InputText
           type="email"
           label={labels.email}
@@ -39,7 +39,7 @@ export default function LoginForm() {
         />
       </Fallback>
 
-      <Fallback classLabel="w-20">
+      <Fallback classLabel="w-24">
         <InputText
           type="password"
           isShowingPassword

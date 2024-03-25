@@ -1,6 +1,7 @@
 // Hooks
 import { useRef, useMemo } from 'react'
 import { useParams } from 'next/navigation'
+import useMounted from '@hooks/useMounted'
 import useCheckScrollbar from '@hooks/useCheckScrollbar'
 import useScrollOnArrows from '@modules/Product/hooks/useScrollOnArrows'
 import { useLazyGetPopularProductsQuery } from '@modules/Product/api/graphql'
@@ -12,7 +13,6 @@ import isEmptyArray from '@utils/isEmptyArray'
 
 // Constants
 import { LIMIT_POPULAR_PRODUCTS } from './constants'
-import useMounted from '@root/src/hooks/useMounted'
 
 /**
  * Hook for implements the logic of the PopularProducts component

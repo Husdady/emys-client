@@ -5,6 +5,7 @@ import { createId } from '@libs/nanoid'
 // Components
 import SortBy from './SortBy'
 import ByStock from './ByStock'
+import ProductType from './ProductType'
 import Fallback from '@components/Fallback'
 import SearchFilter from '@components/SearchFilter'
 import FilterByCategories from './FilterByCategories'
@@ -48,6 +49,20 @@ export default function ProductsFiltersForm() {
       onSubmit={handleSubmit(submit)}
       className="products-filters-form flex flex-col gap-y-3 sm:gap-y-3.5 mt-1.5 mb-3"
     >
+      <div className="flex flex-col items-center sm:flex-row flex-wrap sm:flex-nowrap gap-x-3 gap-y-3 sm:gap-y-3.5">
+        <SearchFilter
+          textLabel="Código"
+          textLabelClassName="w-20"
+          onClear={onClear('code')}
+          customInput={register('code')}
+          containerClassName="w-full sm:w-[50%]"
+          placeholder="Buscar productos por código..."
+          isShowingClearIcon={isShowingClearIcon('code')}
+        />
+
+        <FilterByCategories onChange={onPickCategories} selectedValues={getValues('categories')} />
+      </div>
+
       <div className="flex flex-col items-center sm:flex-row flex-wrap sm:flex-nowrap gap-x-3 gap-y-3 sm:gap-y-3.5 justify-between">
         <SearchFilter
           type="number"
@@ -64,19 +79,6 @@ export default function ProductsFiltersForm() {
       </div>
 
       <div className="flex flex-col items-center sm:flex-row flex-wrap sm:flex-nowrap gap-x-3 gap-y-3 sm:gap-y-3.5">
-        <FilterByCountry
-          textLabel="País de origen"
-          classLabelPlaceholder="w-28"
-          onChange={change('countryId')}
-          selectedValue={watch('countryId')}
-          containerClassName="w-full sm:w-[50%]"
-          noSelectionLabel="Filtrar productos por país de origen"
-        />
-
-        <FilterByCategories onChange={onPickCategories} selectedValues={getValues('categories')} />
-      </div>
-
-      <div className="flex flex-col items-center flex-col-reverse sm:flex-row flex-wrap sm:flex-nowrap gap-x-3 gap-y-3 sm:gap-y-3.5 justify-between">
         <SearchFilter
           textLabel="Fabricante"
           textLabelClassName="w-24"
@@ -87,29 +89,19 @@ export default function ProductsFiltersForm() {
           isShowingClearIcon={isShowingClearIcon('maker')}
         />
 
-        <SortBy onChange={onChangeSortBy} selectedValue={sortBySelectedOption} />
+        <FilterByCountry
+          textLabel="País de origen"
+          classLabelPlaceholder="w-28"
+          onChange={change('countryId')}
+          selectedValue={watch('countryId')}
+          containerClassName="w-full sm:w-[50%]"
+          noSelectionLabel="Filtrar productos por país de origen"
+        />
       </div>
 
-      <div className="flex flex-col items-center sm:flex-row flex-wrap sm:flex-nowrap gap-x-3 gap-y-3 sm:gap-y-3.5">
-        <SearchFilter
-          textLabel="Código"
-          textLabelClassName="w-20"
-          onClear={onClear('code')}
-          customInput={register('code')}
-          containerClassName="w-full sm:w-[50%]"
-          placeholder="Buscar productos por código..."
-          isShowingClearIcon={isShowingClearIcon('code')}
-        />
-
-        {/* <SearchFilter
-          textLabelClassName="w-28"
-          textLabel="Código Referencial"
-          containerClassName="w-full sm:w-[50%]"
-          placeholder="Buscar productos por código referencial..."
-          isShowingClearIcon={isShowingClearIcon('sku')}
-          customInput={register('sku')}
-          onClear={onClear('sku')}
-        /> */}
+      <div className="flex flex-col items-center flex-col-reverse sm:flex-row flex-wrap sm:flex-nowrap gap-x-3 gap-y-3 sm:gap-y-3.5 justify-between">
+        <ProductType selectedValue={watch('type')} onChange={change('type')} />
+        <SortBy onChange={onChangeSortBy} selectedValue={sortBySelectedOption} />
       </div>
 
       <SearchFilter

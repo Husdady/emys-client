@@ -1,4 +1,5 @@
 // Hooks
+import useMounted from '@hooks/useMounted'
 import { useRef, useMemo, useState, useCallback } from 'react'
 
 // Interfaces
@@ -9,7 +10,6 @@ import { Product } from '@modules/Product/api/interfaces'
 // Utils
 import isString from '@utils/isString'
 import isEmptyString from '@utils/isEmptyString'
-import useMounted from '@root/src/hooks/useMounted'
 
 /**
  * Hook for implements the logic of the ImageWrapper component

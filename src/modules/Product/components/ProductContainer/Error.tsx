@@ -4,7 +4,7 @@ import Metadata from '@modules/Product/components/Metadata/ProductNotFound'
 
 export default function ProductError() {
   return (
-    <div>
+    <div className='mb-5'>
       <Metadata />
 
       <ErrorScreen

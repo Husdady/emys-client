@@ -73,11 +73,13 @@ export default React.memo(Button, (prevProps, nextProps) => {
     prevProps.type === nextProps.type &&
     prevProps.icon === nextProps.icon &&
     prevProps.title === nextProps.title &&
-    prevProps.onClick === nextProps.onClick &&
     prevProps.disabled === nextProps.disabled &&
     prevProps.className === nextProps.className &&
     prevProps.loadingTitle === nextProps.loadingTitle &&
     prevProps.isShowingSpin === nextProps.isShowingSpin &&
-    prevProps.onDoubleClick === nextProps.onDoubleClick
+    prevProps.onClick?.toString() === nextProps.onClick?.toString() &&
+    prevProps.onMouseEnter?.toString() === nextProps.onMouseEnter?.toString() &&
+    prevProps.onMouseLeave?.toString() === nextProps.onMouseLeave?.toString() &&
+    prevProps.onDoubleClick?.toString() === nextProps.onDoubleClick?.toString()
   )
 })

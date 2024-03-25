@@ -59,6 +59,7 @@ export default function useProductsFilters() {
   // Define the default values
   const defaultValues = useMemo(
     () => ({
+      type: query.type,
       sortBy: query.sortBy,
       code: query.code ?? '',
       sortType: query.sortType,
@@ -78,6 +79,7 @@ export default function useProductsFilters() {
   const { watch, register, setValue, getValues, handleSubmit } = useForm<ProductsFiltersState>({
     defaultValues: {
       code: query.code,
+      type: query.type,
       maker: query.maker,
       sortBy: query.sortBy,
       sortType: query.sortType,
@@ -176,6 +178,7 @@ export default function useProductsFilters() {
   const submit = useCallback(
     async ({
       code,
+      type,
       maker,
       minPrice,
       maxPrice,
@@ -193,6 +196,7 @@ export default function useProductsFilters() {
       const args: ProductsPaginationArgs = {
         page: DEFAULT_QUERY.page,
         code: isEmptyString(code) ? undefined : code,
+        type: isEmptyString(type) ? undefined : type,
         maker: isEmptyString(maker) ? undefined : maker,
         countryId: isEmptyString(countryId) ? undefined : countryId,
         productName: isEmptyString(productName) ? undefined : productName,

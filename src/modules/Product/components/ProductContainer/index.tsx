@@ -14,7 +14,7 @@ export default function ProductContainer() {
   const { data, isLoading, hasInvalidData, relatedProducts } = useProductContainer()
 
   if (isLoading) return <Loading />
-  if (hasInvalidData) return <Error />
+  if (!isLoading && hasInvalidData) return <Error />
 
   return (
     <section className="product-container">

@@ -1,4 +1,5 @@
 // Hooks
+import useMounted from '@hooks/useMounted'
 import { useRef, useMemo, useState, useCallback, MouseEvent } from 'react'
 
 // Interfaces
@@ -6,7 +7,6 @@ import { Offset, ZoomImageProps } from './interfaces'
 
 // Constants
 import { DEFAULT_SCALE, DEFAULT_OFFSET, DEFAULT_TARGET_WIDTH, MIN_TARGET_WIDTH } from './constants'
-import useMounted from '@root/src/hooks/useMounted'
 
 export type Params = Pick<
   ZoomImageProps,

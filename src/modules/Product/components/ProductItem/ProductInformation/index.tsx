@@ -18,14 +18,15 @@ import { Product } from '@modules/Product/api/interfaces'
 
 // Utils
 import isString from '@utils/isString'
+import classnames from '@utils/classnames'
 import isEmptyString from '@utils/isEmptyString'
 
-// Constnats
+// Constants
 import { PRODUCT_TYPE } from '@modules/Products/api/constants'
-import classnames from '@root/src/utils/classnames'
 
 export default function ProductInformation(product: Product) {
   const content = product.content // Get product content
+  const totalImages = product.images?.length ?? 0 // Get total of images
 
   const { units, setUnits, innerInformationRef, setDefaultContactSellerMessage } =
     useProductInformation(product)
@@ -33,7 +34,11 @@ export default function ProductInformation(product: Product) {
   return (
     <aside
       className={classnames([
-        (product.images?.length ?? 0) > 4 ? 'xl:min-h-[45.19rem]' : 'xl:min-h-[44.1rem]',
+        totalImages > 4
+          ? 'xl:min-h-[45.19rem]'
+          : totalImages === 0
+          ? 'xl:min-h-[40rem]'
+          : 'xl:min-h-[44rem]',
         'min-h-[44.15rem] product-information bg-white overflow-hidden pt-3.5 pb-4 font-poppins rounded shadow-lg dark:shadow-none dark:bg-gray-900 flex flex-col justify-between'
       ])}
     >
@@ -56,7 +61,12 @@ export default function ProductInformation(product: Product) {
 
         <div
           ref={innerInformationRef}
-          className="pr-3 inner-information xl:min-h-[19.75rem] xl:max-h-[19.75rem] xl:overflow-y-auto pl-2 ml-2 mr-1 pb-4"
+          className={classnames([
+            'pr-3 inner-information xl:overflow-y-auto pl-2 ml-2 mr-1 pb-4',
+            totalImages >= 2
+              ? 'xl:min-h-[21.75rem] xl:max-h-[21.75rem]'
+              : 'xl:min-h-[19.75rem] xl:max-h-[19.75rem]'
+          ])}
         >
           {product.type !== PRODUCT_TYPE && <OmnilifeMessage />}
           <Tags {...product} />

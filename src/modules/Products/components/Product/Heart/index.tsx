@@ -19,25 +19,30 @@ export default function Heart(props: HeartProps) {
     HeartIcon,
     titlePopup,
     isMobileScreen,
-    isAddedToFavorites,
     handleMouseEnter,
     handleMouseLeave,
+    isAddedToFavorites,
+    isRemovingFromFavorites,
     handleToggleToFavorites
   } = useHeart(props)
 
   const btn = (
     <Button
       title=""
-      disabled={disabled}
       icon={<HeartIcon />}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
       onClick={handleToggleToFavorites}
+      disabled={disabled || props.isMakingRequest}
+      onMouseEnter={!isMobileScreen ? handleMouseEnter : undefined}
+      onMouseLeave={!isMobileScreen ? handleMouseLeave : undefined}
       className={classnames([
-        isAddedToFavorites
-          ? 'bg-rose-200 text-red-700 dark:bg-pink-300 dark:text-pink-900 animate__rubberBand cursor-default'
-          : 'animate__wobble dark:bg-gray-600 dark:text-gray-400 lg:hover:bg-rose-200 lg:hover:text-red-700 dark:lg:hover:bg-pink-300 dark:lg:hover:text-pink-900',
-        'animate__animated btn-heart !p-2 rounded-full !absolute left-[initial] right-2 top-2  z-[9999]'
+        props.isMakingRequest === true ? '!opacity-100' : null,
+        'animate__animated btn-heart !p-2 rounded-full !absolute left-[initial] right-2 top-2  z-[9999]',
+        !isAddedToFavorites
+          ? 'animate__wobble dark:bg-gray-600 dark:text-gray-400'
+          : 'bg-rose-200 text-red-700 dark:bg-pink-300 dark:text-pink-900 animate__rubberBand cursor-default',
+        !isAddedToFavorites && !isRemovingFromFavorites
+          ? 'lg:hover:bg-rose-200 lg:hover:text-red-700 dark:lg:hover:bg-pink-300 dark:lg:hover:text-pink-900'
+          : null
       ])}
     />
   )

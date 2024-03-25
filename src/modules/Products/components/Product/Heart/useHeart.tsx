@@ -25,7 +25,7 @@ import { HEART_SOLID, HEART_REGULAR, type HeartIconType } from './constants'
  * Hook for implements the logic of the Heart component
  * @param {HeartProps} params Receive a 'productId' and 'productName'
  */
-export default function useHeart({ productId, productName }: HeartProps) {
+export default function useHeart({ productId, productName, makeRequest, stopRequest }: HeartProps) {
   const isMobileScreen = useMobileScreen()
   const buttonWrapperRef = useRef<HTMLDivElement | null>(null)
   const { user, signOut, updateUser, isAuthenticated } = useAuth()
@@ -50,12 +50,14 @@ export default function useHeart({ productId, productName }: HeartProps) {
 
   // Define the title popup of the Heart button
   const titlePopup = useMemo(() => {
+    if (queryDataForAdd.isLoading || queryDataForRemove.isLoading) return ''
+
     if (isAddedToFavorites) {
       return `Remover ${productName} de tus productos favoritos`
     }
 
     return `Añadir ${productName} a tus productos favoritos`
-  }, [isAddedToFavorites])
+  }, [isAddedToFavorites, queryDataForAdd.isLoading, queryDataForRemove.isLoading])
 
   // Callback for set the icon typeto 'heart-solid'
   const handleSetHeartSolid = useCallback(() => {
@@ -71,9 +73,15 @@ export default function useHeart({ productId, productName }: HeartProps) {
 
   // Event 'mouse-enter' in Heart button
   const handleMouseEnter = useCallback(() => {
+    // if (queryDataForAdd.isLoading || queryDataForRemove.isLoading) return
     if (!isAddedToFavorites) return handleSetHeartSolid()
-    // handleSetHeartRegular()
-  }, [isAddedToFavorites, handleSetHeartSolid, handleSetHeartRegular])
+  }, [
+    isAddedToFavorites,
+    handleSetHeartSolid,
+    handleSetHeartRegular
+    // queryDataForAdd.isLoading,
+    // queryDataForRemove.isLoading
+  ])
 
   // Event 'mouse-leave' in Heart button
   const handleMouseLeave = useCallback(() => {
@@ -81,7 +89,67 @@ export default function useHeart({ productId, productName }: HeartProps) {
     handleSetHeartRegular()
   }, [isAddedToFavorites, handleSetHeartSolid, handleSetHeartRegular])
 
-  // Callback for add or remove the product to the favorites
+  // Callback for add the product to favorites
+  const handleAddToFavorites = useCallback(
+    async ({ favoriteProductsId }: { favoriteProductsId: string[] }) => {
+      handleSetHeartSolid() // Show 'heart-regular' icon
+
+      // Make request to the API for add product to Favorites
+      const result = await addToFavorites({ signOut: signOut, data: { productId: productId } })
+
+      // Remove the favorite product id in the User data
+      if ('data' in result) {
+        return updateUser({ favoriteProductsId: [...favoriteProductsId, productId] })
+      }
+
+      setAddedToFavorites(false) // Rollback to prev state
+      setIconType(HEART_REGULAR) // Show 'heart-regular' icon
+
+      // Check if the favorite product id exists in the favorite products id
+      const hasProductId = favoriteProductsId.includes(productId)
+      if (hasProductId) return // Stop function
+
+      // Define the new favorite products id
+      const newFavoriteProductsId = favoriteProductsId.filter(
+        (favoriteProductId) => favoriteProductId !== productId
+      )
+
+      return updateUser({ favoriteProductsId: newFavoriteProductsId })
+    },
+    [productId, handleSetHeartSolid, handleSetHeartRegular]
+  )
+
+  // Callback for remove the product from the favorites
+  const handleRemoveToFavorites = useCallback(
+    async ({ favoriteProductsId }: { favoriteProductsId: string[] }) => {
+      handleSetHeartRegular() // Show 'heart-regular' icon
+
+      // Make request to the API for remove product from Favorites
+      const result = await removeFromFavorites({ signOut: signOut, productId: productId })
+
+      // Remove the favorite product id in the User data
+      if ('data' in result) {
+        // Define the new favorite products id
+        const newFavoriteProductsId = favoriteProductsId.filter(
+          (favoriteProductId) => favoriteProductId !== productId
+        )
+
+        return updateUser({ favoriteProductsId: newFavoriteProductsId })
+      }
+
+      setAddedToFavorites(true) // Rollback to prev state
+      setIconType(HEART_SOLID) // Show 'heart-solid' icon
+
+      // Check if the favorite product id not exists in the favorite products id
+      const hasNotProductId = !favoriteProductsId.includes(productId)
+      if (hasNotProductId) return // Stop function
+
+      return updateUser({ favoriteProductsId: [...favoriteProductsId, productId] })
+    },
+    [productId, handleSetHeartSolid, handleSetHeartRegular]
+  )
+
+  // Callback for add product to favorites or remove the product from the favorites
   const handleToggleToFavorites = useCallback(
     async (e: MouseEvent<HTMLDivElement> | MouseEvent<HTMLButtonElement>) => {
       e.stopPropagation()
@@ -94,38 +162,33 @@ export default function useHeart({ productId, productName }: HeartProps) {
         )
       }
 
+      makeRequest?.() // Make request
       setAddedToFavorites((s) => !s) // Toggle added to favorites
 
       // Get the favorite products id of the user
       const favoriteProductsId = [...(user?.favoriteProductsId ?? [])]
 
+      // Product is already added to favorites
       if (isAddedToFavorites) {
-        handleSetHeartRegular() // Show 'heart-regular' icon
-
-        // Make request to the API for remove product from Favorites
-        const result = await removeFromFavorites({ signOut: signOut, productId: productId })
-
-        if ('data' in result) {
-          // Update User data
-          updateUser({
-            favoriteProductsId: favoriteProductsId.filter(
-              (favoriteProductId) => favoriteProductId !== productId
-            )
-          })
-        }
+        // Remove product from favorites
+        await handleRemoveToFavorites({ favoriteProductsId: favoriteProductsId })
       } else {
-        handleSetHeartSolid() // Show 'heart-solid' icon
-
-        // Make request to the API for add product to Favorites
-        const result = await addToFavorites({ signOut: signOut, data: { productId: productId } })
-
-        if ('data' in result) {
-          // Update User data
-          updateUser({ favoriteProductsId: [...favoriteProductsId, productId] })
-        }
+        // Add product from favorites
+        await handleAddToFavorites({ favoriteProductsId: favoriteProductsId })
       }
+
+      stopRequest?.() // Stop request
     },
-    [productName, isAuthenticated, isAddedToFavorites, handleSetHeartSolid, handleSetHeartRegular]
+    [
+      productName,
+      makeRequest,
+      stopRequest,
+      isAuthenticated,
+      isAddedToFavorites,
+      handleAddToFavorites,
+      handleRemoveToFavorites,
+      user?.favoriteProductsId
+    ]
   )
 
   // Define the Heart icon
@@ -153,6 +216,7 @@ export default function useHeart({ productId, productName }: HeartProps) {
     handleSetHeartSolid: handleSetHeartSolid,
     handleSetHeartRegular: handleSetHeartRegular,
     handleToggleToFavorites: handleToggleToFavorites,
+    isRemovingFromFavorites: queryDataForRemove.isLoading,
     disabled: queryDataForAdd.isLoading || queryDataForRemove.isLoading
   }
 }

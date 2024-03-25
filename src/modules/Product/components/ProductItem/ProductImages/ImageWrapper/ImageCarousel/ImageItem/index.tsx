@@ -10,7 +10,9 @@ import useImageItem from './useImageItem'
 
 // Types
 import type { ImageItemProps } from './types'
-import classnames from '@root/src/utils/classnames'
+
+// Utils
+import classnames from '@utils/classnames'
 
 const ImageItem = forwardRef(({ className, ...props }: ImageItemProps, ref) => {
   const { imageProps, showPreview, isShowingPreview, isBiggestTabletScreen } = useImageItem({
@@ -19,12 +21,7 @@ const ImageItem = forwardRef(({ className, ...props }: ImageItemProps, ref) => {
   })
 
   return (
-    <article
-      className={classnames([
-        className,
-        'image-item relative !w-full flex items-center justify-center'
-      ])}
-    >
+    <article className={classnames([className, 'image-item relative !w-full'])}>
       {isBiggestTabletScreen && <Image {...imageProps} />}
 
       {!isBiggestTabletScreen && (
@@ -32,6 +29,7 @@ const ImageItem = forwardRef(({ className, ...props }: ImageItemProps, ref) => {
           src={props.url}
           width={props.width}
           height={props.height}
+          className={className}
           onClickTarget={showPreview}
           isShowingPreview={isShowingPreview}
         >

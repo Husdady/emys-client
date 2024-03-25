@@ -9,13 +9,13 @@ import { Product } from '@modules/Product/api/interfaces'
 import { TableItem } from '@modules/Product/components/Table/interfaces'
 
 // Utils
+import isNumber from '@utils/isNumber'
 import isString from '@utils/isString'
 import isEmptyString from '@utils/isEmptyString'
 
 // Constants
 import { weightTypes } from './constants'
 import { TEXT_TYPE } from '@modules/Products/api/constants'
-import isNumber from '@root/src/utils/isNumber'
 
 const NO_DEFINED = 'No definido'
 

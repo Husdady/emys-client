@@ -1,5 +1,5 @@
 // Components
-import ProductItems from './ProductItems'
+import ProductItems from '@modules/Product/components/ProductItems'
 
 // Interfaces
 import { ProductsProps } from './interfaces'

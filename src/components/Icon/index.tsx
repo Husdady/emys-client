@@ -44,4 +44,11 @@ const Icon = ({
   )
 }
 
-export default memo(Icon)
+export default memo(Icon, (prevProps, nextProps) => {
+  return (
+    prevProps.style === nextProps.style &&
+    prevProps.children === nextProps.children &&
+    prevProps.className === nextProps.className &&
+    prevProps.onClick?.toString() === nextProps.onClick?.toString()
+  )
+})

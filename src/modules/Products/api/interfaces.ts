@@ -81,6 +81,7 @@ export interface FavoriteProducts {
 }
 
 export interface ProductsPaginationArgs extends PaginationArgs {
+  type?: string
   code?: string
   maker?: string
   minPrice?: number

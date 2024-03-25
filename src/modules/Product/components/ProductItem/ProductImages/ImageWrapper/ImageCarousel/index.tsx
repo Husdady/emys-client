@@ -50,7 +50,11 @@ export default function ImageCarousel({
             {...image}
             carouselRef={carouselRef}
             ref={activeImageId === image.id ? activeImageRef : undefined}
-            className={images?.length <= 1 ? 'min-h-[40.95rem]' : '!h-[32.5rem] !max-h-[32.5rem]'}
+            className={
+              images?.length <= 1
+                ? 'min-h-[40.95rem] flex items-center justify-center'
+                : '!h-[32.5rem] !max-h-[32.5rem]'
+            }
           />
         ))}
       </Carousel>

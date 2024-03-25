@@ -3,6 +3,7 @@ import { ProductsPaginationArgs } from '@modules/Products/api/interfaces'
 
 export interface ProductsFiltersState
   extends Pick<ProductsPaginationArgs, 'sortBy' | 'sortType' | 'categories'> {
+  type?: string
   code?: string
   maker?: string
   maxPrice?: string
