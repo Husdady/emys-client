@@ -1,6 +1,6 @@
 // Hooks
 import { useMemo } from 'react'
-import useAuth from '@hooks/useAuth'
+import useAuth from '@modules/Auth/states/auth/useAuth'
 import useTabletScreen from '@hooks/screen/useTabletScreen'
 
 // Utils

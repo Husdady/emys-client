@@ -6,7 +6,7 @@ import { useCallback, useMemo } from 'react'
 import { useLazyGetFavoriteProductsQuery } from '@modules/Products/api/graphql'
 import useFiltersQuery from '@hooks/useFiltersQuery'
 import useReloadQuery from '@hooks/useReloadQuery'
-import useAuth from '@hooks/useAuth'
+import useAuth from '@modules/Auth/states/auth/useAuth'
 
 // Interfaces
 import { FavoriteProductsPaginationArgs } from '@modules/Products/api/interfaces'

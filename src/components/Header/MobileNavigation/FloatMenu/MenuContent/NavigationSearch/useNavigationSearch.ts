@@ -1,5 +1,5 @@
 // Hooks
-import useAuth from '@hooks/useAuth'
+import useAuth from '@modules/Auth/states/auth/useAuth'
 import { useForm } from 'react-hook-form'
 import { useRef, useMemo, useCallback } from 'react'
 

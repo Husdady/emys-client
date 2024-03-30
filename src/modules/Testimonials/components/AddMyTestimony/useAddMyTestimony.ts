@@ -2,8 +2,8 @@
 import { useCallback } from 'react'
 import { useAddMyTestimonyMutation } from '@modules/Testimonials/api'
 import useReloadQuery from '@hooks/useReloadQuery'
-import useModal from '@root/src/config/store/states/modal/useModal'
-import useAuth from '@hooks/useAuth'
+import useModal from '@config/store/states/modal/useModal'
+import useAuth from '@modules/Auth/states/auth/useAuth'
 
 // Interfaces
 import {

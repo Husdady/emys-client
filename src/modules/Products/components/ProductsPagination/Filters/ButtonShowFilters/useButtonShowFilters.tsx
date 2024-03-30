@@ -5,7 +5,7 @@ import ProductsFilters from '@modules/Products/components/ProductsFilters'
 
 // Hooks
 import { useCallback } from 'react'
-import useModal from '@root/src/config/store/states/modal/useModal'
+import useModal from '@config/store/states/modal/useModal'
 
 // Constants
 import { PRODUCTS_FILTERS_FORM_ID } from '@modules/Products/components/ProductsFilters/constants'

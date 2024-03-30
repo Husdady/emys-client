@@ -2,7 +2,7 @@
 import { memo } from 'react'
 
 // Hooks
-import useAuth from '@hooks/useAuth'
+import useAuth from '@modules/Auth/states/auth/useAuth'
 
 function UserFullnameAndEmail() {
   const { user } = useAuth()

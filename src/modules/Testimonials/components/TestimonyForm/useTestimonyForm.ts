@@ -4,7 +4,7 @@ import { useCallback } from 'react'
 import { useForm } from 'react-hook-form'
 import useDisableButtonInModalForm from '@hooks/useDisableButtonInModalForm'
 import useAutoAdjustFooterButtons from '@components/Modal/hooks/useAutoAdjustFooterButtons'
-import useModal from '@root/src/config/store/states/modal/useModal'
+import useModal from '@config/store/states/modal/useModal'
 
 // Interfaces
 import { Option } from '@components/Select/interfaces'

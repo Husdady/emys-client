@@ -2,7 +2,7 @@
 import { useMemo, useState, useCallback, useImperativeHandle, ForwardedRef } from 'react'
 
 // Hooks
-import useBiggestTabletScreen from '@root/src/hooks/screen/useBiggestTabletScreen'
+import useBiggestTabletScreen from '@hooks/screen/useBiggestTabletScreen'
 
 // Interfaces
 import { ImageItemProps } from './types'

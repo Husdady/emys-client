@@ -8,6 +8,10 @@ import { loginActions } from '@modules/Auth/states/login'
 // Types
 import type { LoginPayload, LoginContext } from '@modules/Auth/states/login/interfaces'
 
+/**
+ * Hook for implements the logic of the Login state
+ * @returns {LoginContext} Data
+ */
 export default function useLogin(): LoginContext {
   const dispatch = useDispatch() // Get dispatch
   const login = useSelector((state) => state.login) // Get login state
@@ -28,8 +32,5 @@ export default function useLogin(): LoginContext {
     []
   )
 
-  return {
-    ...login,
-    ...actions
-  }
+  return { ...login, ...actions }
 }

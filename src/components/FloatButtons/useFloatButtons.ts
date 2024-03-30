@@ -1,6 +1,6 @@
 // Hooks
 import useMounted from '@hooks/useMounted'
-import useBiggestTabletScreen from '@root/src/hooks/screen/useBiggestTabletScreen'
+import useBiggestTabletScreen from '@hooks/screen/useBiggestTabletScreen'
 import { useRef, useCallback, useMemo } from 'react'
 import { usePathname } from 'next/navigation'
 

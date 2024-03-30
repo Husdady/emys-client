@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 // Hooks
-import useAuth from '@hooks/useAuth'
+import useAuth from '@modules/Auth/states/auth/useAuth'
 import { useState, useCallback } from 'react'
 import { useSendVerificationMutation } from '@modules/Account/api/sendVerification'
 

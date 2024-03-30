@@ -2,7 +2,7 @@
 import { useMemo, useCallback } from 'react'
 
 // Hooks
-import useModalContext from '@root/src/config/store/states/modal/useModal'
+import useModalContext from '@config/store/states/modal/useModal'
 
 /**
  * Hook for implements the logic of the Modal component

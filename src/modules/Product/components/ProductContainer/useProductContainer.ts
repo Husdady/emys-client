@@ -1,6 +1,6 @@
 // Hooks
 import { useMemo } from 'react'
-import useAuth from '@hooks/useAuth'
+import useAuth from '@modules/Auth/states/auth/useAuth'
 import useMounted from '@hooks/useMounted'
 import { useParams } from 'next/navigation'
 import { useVisitProductMutation } from '@modules/Product/api'

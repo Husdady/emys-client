@@ -3,8 +3,8 @@ import { useCallback } from 'react'
 import { useDeleteMyTestimonyMutation } from '@modules/Testimonials/api'
 import useFiltersQuery from '@hooks/useFiltersQuery'
 import useReloadQuery from '@hooks/useReloadQuery'
-import useModal from '@root/src/config/store/states/modal/useModal'
-import useAuth from '@hooks/useAuth'
+import useModal from '@config/store/states/modal/useModal'
+import useAuth from '@modules/Auth/states/auth/useAuth'
 
 // Interfaces
 import { Testimony } from '@modules/Testimonials/api/interfaces'

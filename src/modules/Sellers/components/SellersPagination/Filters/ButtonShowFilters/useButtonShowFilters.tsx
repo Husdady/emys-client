@@ -5,7 +5,7 @@ import SellersFilters from '@modules/Sellers/components/SellersFilters'
 
 // Hooks
 import { useCallback } from 'react'
-import useModal from '@root/src/config/store/states/modal/useModal'
+import useModal from '@config/store/states/modal/useModal'
 
 // Constants
 import { SELLERS_FILTERS_FORM_ID } from '@modules/Sellers/components/SellersFilters/constants'

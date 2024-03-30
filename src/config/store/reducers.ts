@@ -27,8 +27,8 @@ import { testimonialsGraphqlApi } from '@modules/Testimonials/api/graphql'
 import { modalSlice } from './states/modal'
 import { filtersSlice } from './states/filters'
 import { placeholderSlice } from './states/placeholder'
-import { authSlice } from '@modules/Auth/states/auth'
 import { loginSlice } from '@modules/Auth/states/login'
+import { authSlice } from '@modules/Auth/states/auth'
 
 const reducers = combineReducers({
   // Slices

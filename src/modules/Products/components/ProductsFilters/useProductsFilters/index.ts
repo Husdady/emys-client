@@ -7,7 +7,7 @@ import {
 } from '@libs/antd/message'
 
 // Hooks
-import useModal from '@root/src/config/store/states/modal/useModal'
+import useModal from '@config/store/states/modal/useModal'
 import { useForm } from 'react-hook-form'
 import { useMemo, useCallback } from 'react'
 import { useLazyGetProductsQuery } from '@modules/Products/api/graphql'
@@ -43,7 +43,7 @@ import {
   ERROR_MESSAGE_FILTERS,
   SUCCESS_MESSAGE_FILTERS
 } from './constants'
-import { ChangeOptionParams } from '@root/src/components/GroupRadioButton/interfaces'
+import { ChangeOptionParams } from '@components/GroupRadioButton/interfaces'
 
 /**
  * Hook that implements the filters of the Testimonials

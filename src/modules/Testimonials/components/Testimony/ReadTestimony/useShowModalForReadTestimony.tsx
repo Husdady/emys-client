@@ -3,7 +3,7 @@ import Testimony from './Testimony'
 
 // Hooks
 import { useCallback } from 'react'
-import useModal from '@root/src/config/store/states/modal/useModal'
+import useModal from '@config/store/states/modal/useModal'
 
 // Interfaces
 import { Testimony as TestimonyData } from '@modules/Testimonials/api/interfaces'

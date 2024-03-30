@@ -3,7 +3,7 @@ import Tag from '@components/Tag'
 
 // Hooks
 import { useMemo } from 'react'
-import useAuth from '@hooks/useAuth'
+import useAuth from '@modules/Auth/states/auth/useAuth'
 
 // Utils
 import classnames from '@utils/classnames'

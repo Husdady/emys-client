@@ -5,7 +5,7 @@ import TestimonialsFilters from '@modules/Testimonials/components/TestimonialsFi
 
 // Hooks
 import { useCallback } from 'react'
-import useModal from '@root/src/config/store/states/modal/useModal'
+import useModal from '@config/store/states/modal/useModal'
 
 // Constants
 import { TESTIMONIALS_FILTERS_FORM_ID } from '@modules/Testimonials/components/TestimonialsFilters/constants'

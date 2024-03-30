@@ -2,7 +2,7 @@
 import { Suspense } from 'react'
 
 // Components
-import Fallback from '@root/src/components/GroupRadioButton/Fallback'
+import Fallback from '@components/GroupRadioButton/Fallback'
 
 // Utils
 import lazy from '@utils/lazy'

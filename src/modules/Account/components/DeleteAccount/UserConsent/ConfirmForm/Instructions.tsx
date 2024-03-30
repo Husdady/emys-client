@@ -1,5 +1,5 @@
 // Hooks
-import useAuth from '@hooks/useAuth'
+import useAuth from '@modules/Auth/states/auth/useAuth'
 
 export default function Instructions() {
   const auth = useAuth() // Get authentication

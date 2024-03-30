@@ -1,5 +1,5 @@
 // Hooks
-import useAuth from '@hooks/useAuth'
+import useAuth from '@modules/Auth/states/auth/useAuth'
 import { useCallback } from 'react'
 import { useForm } from 'react-hook-form'
 import { useUpdateUbigeoMutation } from '@modules/Account/api/updateInformation'

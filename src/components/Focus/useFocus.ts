@@ -1,7 +1,7 @@
 // Hooks
 import { useRef } from 'react'
 import useMounted from '@hooks/useMounted'
-import useBiggestTabletScreen from '@root/src/hooks/screen/useBiggestTabletScreen'
+import useBiggestTabletScreen from '@hooks/screen/useBiggestTabletScreen'
 
 // Interfaces
 import { FocusProps } from './interfaces'

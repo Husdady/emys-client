@@ -1,5 +1,5 @@
 // Hooks
-import useResponsiveQuery from '@root/src/hooks/screen/useResponsiveQuery'
+import useResponsiveQuery from '@hooks/screen/useResponsiveQuery'
 
 const MEDIA_QUERY_FOR_XS_DEVICES = 373
 const MEDIA_QUERY_FOR_SMALL_DEVICES = 480

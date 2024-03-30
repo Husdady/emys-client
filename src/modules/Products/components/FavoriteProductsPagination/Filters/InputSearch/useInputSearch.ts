@@ -8,7 +8,7 @@ import {
 } from '@libs/antd/message'
 
 // Hooks
-import useAuth from '@hooks/useAuth'
+import useAuth from '@modules/Auth/states/auth/useAuth'
 import useFiltersQuery from '@hooks/useFiltersQuery'
 import useValidateSearchValue from '@components/MainSeeker/useValidateSearchValue'
 import { useLazyGetFavoriteProductsQuery } from '@modules/Products/api/graphql'

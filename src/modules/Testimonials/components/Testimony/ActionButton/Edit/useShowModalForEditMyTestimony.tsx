@@ -5,7 +5,7 @@ import TestimonyForm from '@modules/Testimonials/components/TestimonyForm'
 
 // Hooks
 import { useCallback } from 'react'
-import useModal from '@root/src/config/store/states/modal/useModal'
+import useModal from '@config/store/states/modal/useModal'
 import useEditTestimony from './useEditMyTestimony'
 
 // Interfaces

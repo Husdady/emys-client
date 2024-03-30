@@ -1,6 +1,6 @@
 // Hooks
-import useAuth from '@hooks/useAuth'
-import useModal from '@root/src/config/store/states/modal/useModal'
+import useAuth from '@modules/Auth/states/auth/useAuth'
+import useModal from '@config/store/states/modal/useModal'
 import useDisableButtonInModalForm from '@hooks/useDisableButtonInModalForm'
 import { useForm } from 'react-hook-form'
 import { useCallback, useMemo } from 'react'

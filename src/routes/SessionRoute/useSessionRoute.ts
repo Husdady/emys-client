@@ -1,5 +1,5 @@
 // Hooks
-import useAuth from '@hooks/useAuth'
+import useAuth from '@modules/Auth/states/auth/useAuth'
 import useNetwork from '@hooks/useNetwork'
 import { useVerifySessionMutation } from './verifySession'
 import { useLayoutEffect } from 'react'

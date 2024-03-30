@@ -1,6 +1,6 @@
 // Hooks
 import { useMemo } from 'react'
-import { useSelector, useDispatch } from './useRedux'
+import { useSelector, useDispatch } from '@hooks/useRedux'
 
 // Actions
 import { authActions } from '@modules/Auth/states/auth'

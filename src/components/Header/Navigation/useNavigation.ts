@@ -1,5 +1,5 @@
 // Hooks
-import useAuth from '@hooks/useAuth'
+import useAuth from '@modules/Auth/states/auth/useAuth'
 import useMounted from '@hooks/useMounted'
 import { usePathname } from 'next/navigation'
 import { useRef, useMemo, useCallback } from 'react'

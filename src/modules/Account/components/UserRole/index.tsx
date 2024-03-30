@@ -2,7 +2,7 @@
 import dynamic from 'next/dynamic'
 
 // Hooks
-import useAuth from '@hooks/useAuth'
+import useAuth from '@modules/Auth/states/auth/useAuth'
 
 // Utils
 import isUndefined from '@utils/isUndefined'

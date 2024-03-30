@@ -4,8 +4,8 @@ import { showFloatErrorMessage } from '@libs/antd/message'
 import { saveTokenOnAxios, removeTokenFromAxios } from '@libs/axios'
 
 // Hooks
-import useAuth from '@hooks/useAuth'
-import useModal from '@root/src/config/store/states/modal/useModal'
+import useAuth from '@modules/Auth/states/auth/useAuth'
+import useModal from '@config/store/states/modal/useModal'
 import useDisableButtonInModalForm from '@hooks/useDisableButtonInModalForm'
 import { useDeleteAccountMutation } from '@modules/Account/api/closeAccount'
 import { useCallback } from 'react'

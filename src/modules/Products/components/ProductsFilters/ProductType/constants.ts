@@ -3,7 +3,7 @@ import { GroupRadioButtonProps } from '@components/GroupRadioButton/interfaces'
 
 // Constants
 import { SEYTU_TYPE, PRODUCT_TYPE, OMNILIFE_TYPE } from '@modules/Products/api/constants'
-import { FallbackItemConfig } from '@root/src/components/GroupRadioButton/Fallback/interfaces'
+import { FallbackItemConfig } from '@components/GroupRadioButton/Fallback/interfaces'
 
 export const ALL = 'all'
 export const PRODUCT_TYPES = 'product-types'

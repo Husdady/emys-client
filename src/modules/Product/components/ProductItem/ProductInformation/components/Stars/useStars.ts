@@ -2,7 +2,7 @@
 import { showFloatWarningMessage } from '@libs/antd/message'
 
 // Hooks
-import useAuth from '@hooks/useAuth'
+import useAuth from '@modules/Auth/states/auth/useAuth'
 import { useState, useCallback } from 'react'
 import { useRateProductMutation } from '@modules/Product/api'
 

@@ -2,9 +2,9 @@
 import { useCallback } from 'react'
 
 // Hooks
-import useAuth from '@hooks/useAuth'
+import useAuth from '@modules/Auth/states/auth/useAuth'
 import useFiltersQuery from '@hooks/useFiltersQuery'
-import useDocumentCount from '@root/src/hooks/useDocumentCount'
+import useDocumentCount from '@hooks/useDocumentCount'
 import { useGetFavoriteProductsQuery } from '@modules/Products/api/graphql'
 
 // Interfaces

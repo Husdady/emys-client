@@ -8,8 +8,8 @@ import TestimonyForm from '@modules/Testimonials/components/TestimonyForm'
 
 // Hooks
 import { useCallback } from 'react'
-import useAuth from '@hooks/useAuth'
-import useModal from '@root/src/config/store/states/modal/useModal'
+import useAuth from '@modules/Auth/states/auth/useAuth'
+import useModal from '@config/store/states/modal/useModal'
 import useRegisterTestimony from './useAddMyTestimony'
 
 // Interfaces

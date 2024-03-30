@@ -1,5 +1,5 @@
 // Interfaces
-import useAuth from '@hooks/useAuth'
+import useAuth from '@modules/Auth/states/auth/useAuth'
 import { useForm } from 'react-hook-form'
 import { useMemo, useCallback } from 'react'
 import { useSendMessageMutation } from '@modules/Contact/api'

@@ -3,7 +3,7 @@ import HeadPhones from '@components/Icons/HeadPhones'
 import ContactForm from '@modules/Contact/components/ContactForm'
 
 // Hooks
-import useModal from '@root/src/config/store/states/modal/useModal'
+import useModal from '@config/store/states/modal/useModal'
 import { useMemo, useCallback } from 'react'
 import { usePathname } from 'next/navigation'
 

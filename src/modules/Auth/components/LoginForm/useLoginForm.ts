@@ -4,8 +4,8 @@ import { saveTokenOnAxios } from '@libs/axios'
 import { saveTokenOnGraphqlClient } from '@libs/graphql'
 
 // Hooks
-import useLogin from './useLogin'
-import useAuth from '@hooks/useAuth'
+import useLogin from '../../states/login/useLogin'
+import useAuth from '@modules/Auth/states/auth/useAuth'
 import useMounted from '@hooks/useMounted'
 import { useLoginMutation } from '@modules/Auth/api/login'
 import { useRouter } from 'next/dist/client/router'

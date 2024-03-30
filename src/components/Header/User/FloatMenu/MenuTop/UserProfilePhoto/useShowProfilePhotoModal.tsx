@@ -5,7 +5,7 @@ import UpdateProfilePhotoForm from '@components/UpdateProfilePhoto'
 
 // Hooks
 import { useCallback } from 'react'
-import useModal from '@root/src/config/store/states/modal/useModal'
+import useModal from '@config/store/states/modal/useModal'
 
 // Constants
 import { UPDATE_PROFILE_PHOTO_FORM_ID } from '@components/UpdateProfilePhoto/constants'
