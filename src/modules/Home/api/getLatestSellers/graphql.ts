@@ -10,7 +10,7 @@ import { LatestSellersDocument } from './documents'
 // Constants
 import { SELLERS_KEY } from '@config/store/graphql/constants'
 
-export const latestSellersGraphqlApi = api.injectEndpoints({
+const latestSellersGraphqlApi = api.injectEndpoints({
   endpoints: (builder) => ({
     // Get latest sellers in format list
     GetLatestSellers: builder.query<LatestSellers, LatestSellersArgs>({

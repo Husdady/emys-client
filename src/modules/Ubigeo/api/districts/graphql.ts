@@ -10,7 +10,7 @@ import { DistrictListDocument } from './documents'
 // Constants
 import { DISTRICTS_KEY } from '@config/store/graphql/constants'
 
-export const districtsGraphqlApi = api.injectEndpoints({
+const districtsGraphqlApi = api.injectEndpoints({
   endpoints: (builder) => ({
     // Get districts in format list
     GetDistrictsInListFormat: builder.query<DistrictList, DistrictListArgs>({

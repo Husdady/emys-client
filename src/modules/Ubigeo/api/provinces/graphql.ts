@@ -10,7 +10,7 @@ import { ProvincesListDocument } from './documents'
 // Constants
 import { PROVINCES_KEY } from '@config/store/graphql/constants'
 
-export const provincesGraphqlApi = api.injectEndpoints({
+const provincesGraphqlApi = api.injectEndpoints({
   endpoints: (builder) => ({
     // Get provinces in format list
     GetProvincesInListFormat: builder.query<ProvinceList, ProvinceListArgs>({

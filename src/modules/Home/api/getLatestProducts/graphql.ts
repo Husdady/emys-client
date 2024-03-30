@@ -10,7 +10,7 @@ import { LatestProductsDocument } from './documents'
 // Constants
 import { PRODUCTS_KEY } from '@config/store/graphql/constants'
 
-export const latestProductsGraphqlApi = api.injectEndpoints({
+const latestProductsGraphqlApi = api.injectEndpoints({
   endpoints: (builder) => ({
     // Get latest products in format list
     GetLatestProducts: builder.query<LatestProducts, LatestProductsArgs>({

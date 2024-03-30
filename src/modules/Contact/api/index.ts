@@ -4,7 +4,7 @@ import { SendMessageParams } from './interfaces'
 // API
 import { api } from '@config/store/api'
 
-export const contactApi = api.injectEndpoints({
+const contactApi = api.injectEndpoints({
   endpoints: (builder) => ({
     // Register new seller
     sendMessage: builder.mutation({

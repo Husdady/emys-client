@@ -5,7 +5,7 @@ interface VerifySessionParams {
   signOut: () => void
 }
 
-export const verifySessionApi = api.injectEndpoints({
+const verifySessionApi = api.injectEndpoints({
   endpoints: (builder) => ({
     // 'POST' request for check user session
     verifySession: builder.mutation({

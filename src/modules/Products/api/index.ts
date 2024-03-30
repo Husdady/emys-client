@@ -4,7 +4,7 @@ import { AddProductToFavoritesParams, RemoveProductFromFavoritesParams } from '.
 // API
 import { api } from '@config/store/api'
 
-export const productsApi = api.injectEndpoints({
+const productsApi = api.injectEndpoints({
   endpoints: (builder) => ({
     // Add product to Favorites
     addProductToFavorites: builder.mutation({

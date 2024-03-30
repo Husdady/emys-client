@@ -10,7 +10,7 @@ import { CATEGORIES_KEY } from '@config/store/graphql/constants'
 // Documents
 import { CategoryListDocument } from './documents'
 
-export const categoriesGraphqlApi = api.injectEndpoints({
+const categoriesGraphqlApi = api.injectEndpoints({
   endpoints: (builder) => ({
     // Get categories in format list
     GetCategoriesInListFormat: builder.query<CategoryList, CategoryListArgs>({

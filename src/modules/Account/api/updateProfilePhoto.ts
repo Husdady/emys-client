@@ -4,7 +4,7 @@ import { UpdateProfilePhotoParams } from './interfaces'
 // API
 import { api } from '@config/store/api'
 
-export const updateProfilePhotoApi = api.injectEndpoints({
+const updateProfilePhotoApi = api.injectEndpoints({
   endpoints: (builder) => ({
     // 'PUT' request for update the user profile photo
     updateProfilePhoto: builder.mutation({

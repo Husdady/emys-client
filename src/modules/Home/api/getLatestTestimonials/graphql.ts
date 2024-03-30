@@ -10,7 +10,7 @@ import { LatestTestimonialsDocument } from './documents'
 // Constants
 import { TESTIMONIALS_KEY } from '@config/store/graphql/constants'
 
-export const latestTestimonialsGraphqlApi = api.injectEndpoints({
+const latestTestimonialsGraphqlApi = api.injectEndpoints({
   endpoints: (builder) => ({
     // Get latest testimonials in format list
     GetLatestTestimonials: builder.query<LatestTestimonials, LatestTestimonialsArgs>({

@@ -5,7 +5,7 @@ import { AuthorizeCloseAccountParams } from './interfaces'
 // Graphql API
 import { api } from '@config/store/api'
 
-export const closeAccountApi = api.injectEndpoints({
+const closeAccountApi = api.injectEndpoints({
   endpoints: (builder) => ({
     // 'DELETE' request for delete user account
     deleteAccount: builder.mutation<null, null>({

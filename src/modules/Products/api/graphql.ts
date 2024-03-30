@@ -15,7 +15,7 @@ import { ProductDocument, FavoriteProductDocument } from './documents'
 // Constants
 import { PRODUCTS_KEY } from '@config/store/graphql/constants'
 
-export const productsGraphqlApi = api.injectEndpoints({
+const productsGraphqlApi = api.injectEndpoints({
   endpoints: (builder) => ({
     // Get products
     GetProducts: builder.query<Products, ProductsPaginationArgs>({

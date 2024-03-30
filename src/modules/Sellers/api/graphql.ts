@@ -10,7 +10,7 @@ import { SellerDocument } from './documents'
 // Constants
 import { SELLERS_KEY } from '@config/store/graphql/constants'
 
-export const sellersGraphqlApi = api.injectEndpoints({
+const sellersGraphqlApi = api.injectEndpoints({
   endpoints: (builder) => ({
     // Get Sellers with pagination format
     GetSellers: builder.query<Sellers, SellersPaginationArgs>({

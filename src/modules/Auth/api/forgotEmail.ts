@@ -4,7 +4,7 @@ import { ForgotEmailParams } from './interfaces'
 // API
 import { api } from '@config/store/api'
 
-export const forgotEmailApi = api.injectEndpoints({
+const forgotEmailApi = api.injectEndpoints({
   endpoints: (builder) => ({
     // 'POST' request for recovery email
     forgotEmail: builder.mutation({

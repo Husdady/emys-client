@@ -1,7 +1,7 @@
 // API
 import { api } from '@config/store/api'
 
-export const requestCodeApi = api.injectEndpoints({
+const requestCodeApi = api.injectEndpoints({
   endpoints: (builder) => ({
     // 'POST' request for send an email verification
     requestCode: builder.mutation({

@@ -4,7 +4,7 @@ import { GenerateKeyParams, UpdateUbigeoParams, UpdateInformationParams } from '
 // API
 import { api } from '@config/store/api'
 
-export const updateInformationApi = api.injectEndpoints({
+const updateInformationApi = api.injectEndpoints({
   endpoints: (builder) => ({
     // 'POST' request for generate new secret key for the user
     generateKey: builder.mutation({

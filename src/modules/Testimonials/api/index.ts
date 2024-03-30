@@ -4,7 +4,7 @@ import { AddMyTestimonyParams, EditMyTestimonyParams, DeleteMyTestimonyParams } 
 // API
 import { api } from '@config/store/api'
 
-export const testimonialsApi = api.injectEndpoints({
+const testimonialsApi = api.injectEndpoints({
   endpoints: (builder) => ({
     // Add my Testimony
     addMyTestimony: builder.mutation({

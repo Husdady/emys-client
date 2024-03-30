@@ -4,7 +4,7 @@ import { ForgotPasswordParams } from './interfaces'
 // API
 import { api } from '@config/store/api'
 
-export const forgotPasswordApi = api.injectEndpoints({
+const forgotPasswordApi = api.injectEndpoints({
   endpoints: (builder) => ({
     // 'POST' request for recovery password
     forgotPassword: builder.mutation({

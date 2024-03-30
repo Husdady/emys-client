@@ -10,7 +10,7 @@ import { CountryListDocument } from './documents'
 // Constants
 import { COUNTRIES_KEY } from '@config/store/graphql/constants'
 
-export const countriesGraphqlApi = api.injectEndpoints({
+const countriesGraphqlApi = api.injectEndpoints({
   endpoints: (builder) => ({
     // Get countries in format list
     GetCountriesInListFormat: builder.query<CountryList, null>({

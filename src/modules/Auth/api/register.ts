@@ -4,7 +4,7 @@ import { RegisterUserParams } from './interfaces'
 // API
 import { api } from '@config/store/api'
 
-export const registerApi = api.injectEndpoints({
+const registerApi = api.injectEndpoints({
   endpoints: (builder) => ({
     // 'POST' request for resend new email verification
     requestNewVerification: builder.mutation({

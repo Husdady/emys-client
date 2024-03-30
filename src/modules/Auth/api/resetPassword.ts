@@ -4,7 +4,7 @@ import { NewPasswordParams } from './interfaces'
 // API
 import { api } from '@config/store/api'
 
-export const resetPasswordApi = api.injectEndpoints({
+const resetPasswordApi = api.injectEndpoints({
   endpoints: (builder) => ({
     // 'POST' request for reset the password of the user
     resetPassword: builder.mutation({

@@ -10,7 +10,7 @@ import { RegionsListDocument } from './documents'
 // Constants
 import { REGIONS_KEY } from '@config/store/graphql/constants'
 
-export const regionsGraphqlApi = api.injectEndpoints({
+const regionsGraphqlApi = api.injectEndpoints({
   endpoints: (builder) => ({
     // Get regions in format list
     GetRegionsInListFormat: builder.query<RegionList, RegionListArgs>({

@@ -11,7 +11,7 @@ import { TestimonyDocument } from './documents'
 // Constants
 import { TESTIMONIALS_KEY } from '@config/store/graphql/constants'
 
-export const testimonialsGraphqlApi = api.injectEndpoints({
+const testimonialsGraphqlApi = api.injectEndpoints({
   endpoints: (builder) => ({
     // Get testimonials
     GetTestimonials: builder.query<Testimonials, PaginationArgs>({
