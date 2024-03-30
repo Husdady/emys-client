@@ -9,12 +9,7 @@
     "browser": true,
     "es2021": true
   },
-  "extends": [
-    "next/core-web-vitals",
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime",
-    "standard-with-typescript"
-  ],
+  "extends": ["next/core-web-vitals", "plugin:react/recommended", "plugin:react/jsx-runtime"],
   "overrides": [],
   "plugins": ["react", "react-hooks", "@typescript-eslint/eslint-plugin"],
   "ignorePatterns": [
@@ -39,10 +34,7 @@
       "error",
       { "anonymous": "always", "named": "never", "asyncArrow": "always" }
     ],
-    "@typescript-eslint/promise-function-async": [
-      "off",
-      { "allowedPromiseNames": ["lazy"] }
-    ]
+    "@typescript-eslint/promise-function-async": ["off", { "allowedPromiseNames": ["lazy"] }]
   },
   "settings": {
     "import/resolver": {
