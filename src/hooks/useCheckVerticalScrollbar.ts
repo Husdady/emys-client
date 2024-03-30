@@ -4,7 +4,7 @@ import { useState, useCallback, MutableRefObject, DependencyList } from 'react'
 // Hooks
 import useMounted from '@hooks/useMounted'
 
-export interface Params {
+interface Params {
   arrayDeps?: DependencyList
   elementRef: MutableRefObject<HTMLElement | null>
 }

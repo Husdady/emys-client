@@ -6,7 +6,7 @@ import SocialNetworkList from './SocialNetworkList'
 
 // Hooks
 import { useCallback } from 'react'
-import useModal from '@hooks/useModal'
+import useModal from '@root/src/config/store/states/modal/useModal'
 
 // Interfaces
 import { SocialNetwork } from '@modules/Sellers/api/interfaces'

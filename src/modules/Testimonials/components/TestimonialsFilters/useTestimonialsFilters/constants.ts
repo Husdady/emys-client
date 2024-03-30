@@ -23,21 +23,25 @@ export const LOADING_FILTERS = {
 export const ubigeoConfigFilters: UbigeoFiltersProps['config'] = {
   // Country settings
   [COUNTRY_FIELD]: {
-    noSelectionLabel: 'Filtrar testimonios por país'
+    classLabelPlaceholder: 'w-32',
+    textLabel: 'Filtrar testimonios por país'
   },
 
   // Region settings
   [REGION_FIELD]: {
-    noSelectionLabel: 'Filtrar testimonios por región'
+    classLabelPlaceholder: 'w-36',
+    textLabel: 'Filtrar testimonios por región'
   },
 
   // Province settings
   [PROVINCE_FIELD]: {
-    noSelectionLabel: 'Filtrar testimonios por provincia'
+    classLabelPlaceholder: 'w-40',
+    textLabel: 'Filtrar testimonios por provincia'
   },
 
   // District settings
   [DISTRICT_FIELD]: {
-    noSelectionLabel: 'Filtrar testimonios por distrito'
+    classLabelPlaceholder: 'w-40',
+    textLabel: 'Filtrar testimonios por distrito'
   }
 }

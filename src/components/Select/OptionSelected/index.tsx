@@ -9,14 +9,14 @@ import VirtualizedOptions from '@components/Select/VirtualizedOptions'
 import useOptionSelected from './useOptionSelected'
 
 // Interfaces
-import { OptionSelectedProps } from '../interfaces'
+import { OptionSelectedProps } from '@components/Select/interfaces'
 
 // Utils
 import classnames from '@utils/classnames'
 import isEmptyArray from '@utils/isEmptyArray'
 
 // Constants
-import { DEFAULT_ENABLE_VIRTUALIZATION } from '../constants'
+import { DEFAULT_ENABLE_VIRTUALIZATION } from '@components/Select/constants'
 
 export default function OptionSelected({
   icon,
@@ -33,7 +33,7 @@ export default function OptionSelected({
     hideOptions,
     optionsProps,
     triggerOptions,
-    isTabletScreen,
+    hiddenClassName,
     isShowingOptions
   } = useOptionSelected(props)
 
@@ -47,13 +47,8 @@ export default function OptionSelected({
         onClick={triggerOptions}
         className={classnames([
           className,
+          hiddenClassName,
           hasError === true ? 'has-error' : null,
-          !isTabletScreen &&
-          isShowingOptions &&
-          props.canSearchOptions &&
-          !isEmptyArray(props.options)
-            ? 'opacity-0'
-            : null,
           'border border-gray-400/50 rounded outline outline-1 outline-offset-0 outline-gray-400/50 dark:outline-gray-400/70 dark:border-gray-400/70'
         ])}
       />
@@ -69,9 +64,7 @@ export default function OptionSelected({
       )}
 
       {isShowingOptions && isEmptyArray(props.options) && (
-        <section style={style} className="wrapper-options overflow-y-auto">
-          <EmptyOptions text={emptyText} />
-        </section>
+        <EmptyOptions style={style} text={emptyText} />
       )}
     </div>
   )

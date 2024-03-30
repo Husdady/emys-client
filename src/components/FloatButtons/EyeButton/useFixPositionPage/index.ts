@@ -7,11 +7,11 @@ import useMounted from '@hooks/useMounted'
 import querySelectors from './querySelectors'
 import { HOME_PATH, CONTACT_PATH, ACCOUNT_PATH, MEMBERSHIP_PATH } from '@data/paths'
 
-export const MARGIN_CLASSNAME = '!mt-[3.5rem]'
-export const PADDING_CLASSNAME = '!pt-[1.25rem]'
-export const QUERY_SELECTOR = '#__next > main > section'
+const MARGIN_CLASSNAME = '!mt-[3.5rem]'
+const PADDING_CLASSNAME = '!pt-[1.25rem]'
+const QUERY_SELECTOR = '#__next > main > section'
 
-export interface Params {
+interface Params {
   isShowingHeader: boolean
 }
 

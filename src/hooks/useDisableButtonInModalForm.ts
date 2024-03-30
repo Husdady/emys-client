@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 // Hooks
 import { useMemo } from 'react'
-import useModal from './useModal'
+import useModal from '../config/store/states/modal/useModal'
 import useMounted from './useMounted'
 
 // Types

@@ -1,7 +1,7 @@
 // Librarys
 import { message } from 'antd'
 
-export const DURATION = 2 // Define the duration for show the float message
+const DURATION = 2 // Define the duration for show the float message
 
 /**
  * Copy text to clipboard

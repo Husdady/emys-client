@@ -4,7 +4,7 @@ import { useCallback } from 'react'
 // Hooks
 import useAuth from '@hooks/useAuth'
 import useFiltersQuery from '@hooks/useFiltersQuery'
-import useDocumentCount from '@hooks/useDocumentCount'
+import useDocumentCount from '@root/src/hooks/useDocumentCount'
 import { useGetFavoriteProductsQuery } from '@modules/Products/api/graphql'
 
 // Interfaces

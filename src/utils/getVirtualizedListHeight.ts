@@ -1,6 +1,6 @@
 // Constants
-export const VIRTUALIZED_OPTION_HEIGHT_FOR_MOBILE = 55
-export const VIRTUALIZED_OPTION_HEIGHT_FOR_DESKTOP = 41
+const VIRTUALIZED_OPTION_HEIGHT_FOR_MOBILE = 55
+const VIRTUALIZED_OPTION_HEIGHT_FOR_DESKTOP = 41
 
 /**
  * Get virtualized list height for Virtualized components

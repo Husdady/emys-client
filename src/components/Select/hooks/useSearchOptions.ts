@@ -2,6 +2,7 @@
 import React from 'react'
 
 // Hooks
+import useFixPositionOfFloatOptions from '@hooks/useFixPositionOfFloatOptions'
 import useScrollToSelectedValue from '@components/Select/hooks/useScrollToSelectedValue'
 
 // Interfaces
@@ -25,8 +26,8 @@ export default function useSearchOptions({
   canSearchOptions,
   enableVirtualization
 }: UseSearchOptionsParams) {
-  const ref = React.useRef<HTMLDivElement | null>(null)
   const [searchValue, setSearchValue] = React.useState('')
+  const wrapperRef = React.useRef<HTMLDivElement | null>(null)
 
   // Define the filtered options
   const filteredOptions = React.useMemo(() => {
@@ -46,13 +47,15 @@ export default function useSearchOptions({
     setSearchValue(e.target.value)
   }, [])
 
+  useFixPositionOfFloatOptions({ ref: wrapperRef })
+
   useScrollToSelectedValue({
-    ref: ref,
+    ref: wrapperRef,
     enableVirtualization: enableVirtualization
   })
 
   return {
-    wrapperRef: ref,
+    wrapperRef: wrapperRef,
     handleClear: handleClear,
     searchValue: searchValue,
     handleSearch: handleSearch,

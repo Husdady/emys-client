@@ -1,0 +1,80 @@
+// Styles
+@import './colors.scss';
+
+@mixin createStyles($primary-color, $secondary-color, $colors-primary, $colors-600-radio, $theme) {
+  &.radio-button {
+    & > input[type='radio'] + label {
+      @each $color, $value in $colors-600-radio {
+        &.#{$color} {
+          &:before {
+            box-shadow: inset 0 0 0 1px $radio-btn-grey-900, inset 0 0 0 16px $primary-color,
+              inset 0 0 0 16px $value;
+          }
+
+          &:hover {
+            color: $value;
+          }
+
+          &:hover:before {
+            animation-name: change-#{$color}-size-#{$theme};
+            box-shadow: inset 0 0 0 1px $value, inset 0 0 0 16px $primary-color, inset 0 0 0 16px $value;
+          }
+
+          @keyframes change-#{$color}-size-#{$theme} {
+            from {
+              box-shadow: 0 0 0 0 $value, inset 0 0 0 1px $value, inset 0 0 0 16px $primary-color,
+                inset 0 0 0 16px $value;
+            }
+
+            to {
+              box-shadow: 0 0 0 1px $value, inset 0 0 0 1px $value, inset 0 0 0 16px $primary-color,
+                inset 0 0 0 16px $value;
+            }
+          }
+        }
+      }
+    }
+
+    & > input[type='radio']:checked + label {
+      &:hover {
+        color: $secondary-color;
+      }
+
+      @each $color, $value in $colors-600-radio {
+        &.#{$color} {
+          color: $value;
+
+          &:before {
+            animation-name: select-#{$color}-radio-#{$theme};
+            box-shadow: inset 0 0 0 1px $value, inset 0 0 0 3px $primary-color, inset 0 0 0 16px $value;
+          }
+
+          @keyframes select-#{$color}-radio-#{$theme} {
+            0% {
+              box-shadow: 0 0 0 0 map-get($colors-300, $color), inset 0 0 0 2px $primary-color,
+                inset 0 0 0 3px $value, inset 0 0 0 16px $primary-color, inset 0 0 0 16px $value;
+            }
+
+            90% {
+              box-shadow: 0 0 0 6px map-get($colors-primary, $color), inset 0 0 0 0 $primary-color,
+                inset 0 0 0 1px $value, inset 0 0 0 2px $primary-color, inset 0 0 0 16px $value;
+            }
+
+            100% {
+              box-shadow: 0 0 0 8px map-get($colors-primary, $color), inset 0 0 0 0 $primary-color,
+                inset 0 0 0 1px $value, inset 0 0 0 3px $primary-color, inset 0 0 0 16px $value;
+            }
+          }
+        }
+      }
+    }
+
+    &.disabled {
+      & > input[type='radio'] + label {
+        &:before {
+          box-shadow: inset 0 0 0 1px $gray-100, inset 0 0 0 16px $primary-color, inset 0 0 0 16px $primary-color;
+        }
+      }
+    }
+  }
+}

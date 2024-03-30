@@ -7,9 +7,9 @@ import { HomeCardProps } from '@modules/Home/components/Card/interfaces'
 // Constants
 import { MICELLIZATION_IMAGE, PEOPLE_HEALTHY_IMAGE, HEALTH_PRIORITY_IMAGE } from '@data/images'
 
-export const CARD_01_ID = createId()
-export const CARD_02_ID = createId()
-export const CARD_03_ID = createId()
+const CARD_01_ID = createId()
+const CARD_02_ID = createId()
+const CARD_03_ID = createId()
 
 const cards: HomeCardProps[] = [
   {

@@ -1,13 +1,14 @@
 // Components
 import Sliders from '@components/Icons/Sliders'
 import BoxSeam from '@components/Icons/BoxSeam'
-import ProductsFilters, {
-  PRODUCTS_FILTERS_FORM_ID
-} from '@modules/Products/components/ProductsFilters'
+import ProductsFilters from '@modules/Products/components/ProductsFilters'
 
 // Hooks
 import { useCallback } from 'react'
-import useModal from '@hooks/useModal'
+import useModal from '@root/src/config/store/states/modal/useModal'
+
+// Constants
+import { PRODUCTS_FILTERS_FORM_ID } from '@modules/Products/components/ProductsFilters/constants'
 
 /**
  * Hook for implements the logic of the ButtonShowFilters component

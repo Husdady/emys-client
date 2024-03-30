@@ -31,7 +31,7 @@ export interface SelectProps
   disabled?: boolean
   emptyText?: string
   selectedValue?: string
-  noSelectionLabel: string
+  noSelectionLabel?: string
   searchPalceholder?: string
   canSearchOptions?: boolean
   enableVirtualization?: boolean

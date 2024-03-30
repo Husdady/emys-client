@@ -10,7 +10,7 @@ import { PRODUCTS_PATH } from '@data/paths'
 export default function ProductLayout() {
   return (
     <section className="product-layout mt-2 pb-4 sm:pb-6 max-w-[1600px] mx-auto flex flex-col gap-y-3">
-      <div className="flex flex-wrap items-center gap-x-3 mx-2 sm:mx-3 md:mx-6 xl:mx-[3.63rem]">
+      <div className="flex flex-wrap items-center gap-x-3 mx-2 sm:mx-3 md:mx-6 xl:mx-[3.63rem] gap-y-2.5 mb-3 md:mb-1">
         <BackButton
           path={PRODUCTS_PATH}
           title="Volver a la sección de Productos"

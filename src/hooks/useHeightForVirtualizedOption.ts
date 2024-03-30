@@ -10,7 +10,7 @@ import useCheckVerticalScrollbar from './useCheckVerticalScrollbar'
 // Utils
 import isNumber from '@utils/isNumber'
 
-export interface Params {
+interface Params {
   defaultOptionHeight: number
   defaultContainerHeight: number
 }

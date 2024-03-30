@@ -10,7 +10,7 @@ import type { UseInputTextParams } from './types'
 // Constants
 import { PASSWORD, InputProps as Props } from './constants'
 
-export interface Params extends UseInputTextParams {
+interface Params extends UseInputTextParams {
   refInner: MutableRefObject<HTMLDivElement | null>
   refInput: MutableRefObject<HTMLInputElement | null>
 }

@@ -7,7 +7,7 @@ import {
 } from '@libs/antd/message'
 
 // Hooks
-import useModal from '@hooks/useModal'
+import useModal from '@root/src/config/store/states/modal/useModal'
 import { useForm } from 'react-hook-form'
 import { useMemo, useCallback } from 'react'
 import { useLazyGetProductsQuery } from '@modules/Products/api/graphql'
@@ -36,12 +36,14 @@ import checkDisabledFilterButton from '@components/FilterByPriceRange/utils/chec
 import { NULLABLE } from '@components/Select/constants'
 import { MAX, MIN } from '@components/FilterByPriceRange/constants'
 import { PARAMS, DEFAULT_QUERY } from '@modules/Products/api/constants'
+import { ALL } from '@modules/Products/components/ProductsFilters/ProductType/constants'
 import {
   LOADING_FILTERS,
   FILTERING_PRODUCTS,
   ERROR_MESSAGE_FILTERS,
   SUCCESS_MESSAGE_FILTERS
 } from './constants'
+import { ChangeOptionParams } from '@root/src/components/GroupRadioButton/interfaces'
 
 /**
  * Hook that implements the filters of the Testimonials
@@ -79,9 +81,9 @@ export default function useProductsFilters() {
   const { watch, register, setValue, getValues, handleSubmit } = useForm<ProductsFiltersState>({
     defaultValues: {
       code: query.code,
-      type: query.type,
       maker: query.maker,
       sortBy: query.sortBy,
+      type: query.type ?? ALL,
       sortType: query.sortType,
       countryId: query.countryId,
       categories: query.categories,
@@ -169,9 +171,39 @@ export default function useProductsFilters() {
     createSortByFilter(option)({ setValue: setValue })
   }, [])
 
-  // Event 'onChange' in Filter by Categories Select component for add one or multiples categories to the filters
-  const onPickCategories = useCallback((categoriesId: string[]) => {
-    setValue('categories', categoriesId) // Update categories
+  // Callback for check if a category is actived (highlighted)
+  const isActiveCategory = useCallback(
+    (categoryId: string) => {
+      return watch('categories')?.includes(categoryId) ?? false
+    },
+    [watch('categories')]
+  )
+
+  // Callback for filter products for some categories picked
+  const toggleCategoryId = useCallback(
+    (categoryId: string) => () => {
+      const categories = watch('categories') ?? [] // Get current categories
+
+      // Check if the category already exists
+      const hasCategoryId = categories.some((category) => category === categoryId)
+
+      // Define the new categories
+      let newCategories = [...categories]
+
+      if (hasCategoryId) {
+        newCategories = newCategories.filter((item) => item !== categoryId)
+      } else {
+        newCategories.push(categoryId)
+      }
+
+      setValue('categories', newCategories) // Update categories
+    },
+    [watch('categories')]
+  )
+
+  // Callback for change the product type
+  const onChangeProductType = useCallback((params: ChangeOptionParams) => {
+    setValue('type', params.currentOption.value as string)
   }, [])
 
   // Event 'submit' that executes when the form is valid
@@ -196,9 +228,9 @@ export default function useProductsFilters() {
       const args: ProductsPaginationArgs = {
         page: DEFAULT_QUERY.page,
         code: isEmptyString(code) ? undefined : code,
-        type: isEmptyString(type) ? undefined : type,
         maker: isEmptyString(maker) ? undefined : maker,
         countryId: isEmptyString(countryId) ? undefined : countryId,
+        type: type === ALL || isEmptyString(type) ? undefined : type,
         productName: isEmptyString(productName) ? undefined : productName,
         minPrice: !isString(minPrice) || isEmptyString(minPrice) ? undefined : Number(minPrice),
         maxPrice: !isString(maxPrice) || isEmptyString(maxPrice) ? undefined : Number(maxPrice),
@@ -242,9 +274,11 @@ export default function useProductsFilters() {
     handleSubmit: handleSubmit,
     onClear: clearSearchValue,
     onChangeSortBy: onChangeSortBy,
-    onPickCategories: onPickCategories,
+    isActiveCategory: isActiveCategory,
+    toggleCategoryId: toggleCategoryId,
     onChangePriceRange: onChangePriceRange,
     isShowingClearIcon: isShowingClearIcon,
+    onChangeProductType: onChangeProductType,
     sortBySelectedOption: sortBySelectedOption,
     isDisableApplyPriceFilterButton: isDisableApplyPriceFilterButton
   }

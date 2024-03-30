@@ -3,7 +3,7 @@ import { useCallback } from 'react'
 
 // Hooks
 import useFiltersQuery from '@hooks/useFiltersQuery'
-import useDocumentCount from '@hooks/useDocumentCount'
+import useDocumentCount from '@root/src/hooks/useDocumentCount'
 import { useGetSellersQuery } from '@modules/Sellers/api/graphql'
 
 // Interfaces

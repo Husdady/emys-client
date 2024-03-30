@@ -6,8 +6,12 @@ import { useRequestNewVerificationMutation } from '@modules/Auth/api/register'
 // Utils
 import isUndefined from '@utils/isUndefined'
 
-export const TIMES_FOR_REQUEST = 7
+const TIMES_FOR_REQUEST = 7
 
+/**
+ * Hook for request a new verification
+ * @param {number|undefined} times Times for request again the verification 
+ */
 export default function useRequestVerification(times?: number) {
   const [timesRequested, setTimeRequested] = useState(0)
   const [requestVerificationResend, result] = useRequestNewVerificationMutation()

@@ -3,8 +3,8 @@ import { useRef, useState, useCallback, MouseEvent } from 'react'
 
 // Hooks
 import useMounted from '@hooks/useMounted'
-import useMobileScreen from '@hooks/useMobileScreen'
-import useBiggestTabletScreen from '@hooks/useBiggestTabletScreen'
+import useMobileScreen from '@hooks/screen/useMobileScreen'
+import useBiggestTabletScreen from '@hooks/screen/useBiggestTabletScreen'
 
 // Interfaces
 import { ProductsProps } from '@modules/Home/components/LatestAddedProducts/Products/interfaces'

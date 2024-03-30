@@ -3,7 +3,7 @@ import { useCallback, useState } from 'react'
 import useAuth from '@hooks/useAuth'
 import { useRequestCodeMutation } from '@modules/Account/api/requestCode'
 
-export const TIMES_FOR_REQUEST = 2
+const TIMES_FOR_REQUEST = 2
 
 /**
  * Hook that request the user code and send message to the user email

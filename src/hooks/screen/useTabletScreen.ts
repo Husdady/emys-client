@@ -1,7 +1,7 @@
 // Hooks
 import useResponsiveQuery from './useResponsiveQuery'
 
-export const MEDIA_QUERY_FOR_TABLET_SCREEN = 768
+const MEDIA_QUERY_FOR_TABLET_SCREEN = 768
 
 /**
  * Hook for check if is a tablet screen

@@ -5,11 +5,11 @@ import useMounted from '@hooks/useMounted'
 import isString from '@utils/isString'
 import isEmptyString from '@utils/isEmptyString'
 
-export interface QueryObject extends Object {
+interface QueryObject extends Object {
   q?: string
 }
 
-export interface Params<T extends QueryObject> {
+interface Params<T extends QueryObject> {
   query: T
   searchValue: string
   setSearchValue: (value: string) => void

@@ -1,7 +1,4 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
-// Librarys
-import { createId } from '@libs/nanoid'
-
 // Components
 import SortBy from './SortBy'
 import ByStock from './ByStock'
@@ -18,26 +15,29 @@ import useProductsFilters from './useProductsFilters'
 import lazy from '@utils/lazy'
 import isString from '@utils/isString'
 
+// Constants
+import { ALL } from './ProductType/constants'
+import { PRODUCTS_FILTERS_FORM_ID } from './constants'
+
 // Lazy Components
 const FilterByPriceRange = lazy(() => import('@components/FilterByPriceRange'))
-
-export const PRODUCTS_FILTERS_FORM_ID = createId()
 
 export default function ProductsFiltersForm() {
   const {
     watch,
     submit,
     register,
-    getValues,
-    handleSubmit,
     change,
     onClear,
     onFilter,
     changePrice,
-    isShowingClearIcon,
+    handleSubmit,
     onChangeSortBy,
-    onPickCategories,
+    isActiveCategory,
+    toggleCategoryId,
+    isShowingClearIcon,
     onChangePriceRange,
+    onChangeProductType,
     sortBySelectedOption,
     isDisableApplyPriceFilterButton
   } = useProductsFilters()
@@ -47,29 +47,33 @@ export default function ProductsFiltersForm() {
       noValidate
       id={PRODUCTS_FILTERS_FORM_ID}
       onSubmit={handleSubmit(submit)}
-      className="products-filters-form flex flex-col gap-y-3 sm:gap-y-3.5 mt-1.5 mb-3"
+      className="products-filters-form flex flex-col gap-y-3 sm:gap-y-3.5 mt-1.5"
     >
-      <div className="flex flex-col items-center sm:flex-row flex-wrap sm:flex-nowrap gap-x-3 gap-y-3 sm:gap-y-3.5">
-        <SearchFilter
-          textLabel="Código"
-          textLabelClassName="w-20"
-          onClear={onClear('code')}
-          customInput={register('code')}
-          containerClassName="w-full sm:w-[50%]"
-          placeholder="Buscar productos por código..."
-          isShowingClearIcon={isShowingClearIcon('code')}
-        />
+      <ProductType defaultOption={watch('type')} onChange={onChangeProductType} />
 
-        <FilterByCategories onChange={onPickCategories} selectedValues={getValues('categories')} />
-      </div>
+      <FilterByCategories
+        isActiveCategory={isActiveCategory}
+        toggleCategoryId={toggleCategoryId}
+        productType={watch('type') === ALL ? undefined : watch('type')}
+      />
+
+      <SearchFilter
+        textLabelClassName="w-40"
+        containerClassName="w-full"
+        placeholder="Ejemplo: Laptop ASUS..."
+        textLabel="Buscar productos por nombre"
+        isShowingClearIcon={isShowingClearIcon('productName')}
+        customInput={register('productName')}
+        onClear={onClear('productName')}
+      />
 
       <div className="flex flex-col items-center sm:flex-row flex-wrap sm:flex-nowrap gap-x-3 gap-y-3 sm:gap-y-3.5 justify-between">
         <SearchFilter
           type="number"
-          textLabel="Unidades"
-          textLabelClassName="w-20"
+          textLabelClassName="w-36"
+          placeholder="Ejemplo: 6 unidades..."
           containerClassName="w-full sm:w-[50%]"
-          placeholder="Buscar productos por total de unidades..."
+          textLabel="Buscar productos por cantidad"
           isShowingClearIcon={isShowingClearIcon('totalUnits')}
           customInput={register('totalUnits')}
           onClear={onClear('totalUnits')}
@@ -80,49 +84,47 @@ export default function ProductsFiltersForm() {
 
       <div className="flex flex-col items-center sm:flex-row flex-wrap sm:flex-nowrap gap-x-3 gap-y-3 sm:gap-y-3.5">
         <SearchFilter
-          textLabel="Fabricante"
           textLabelClassName="w-24"
           onClear={onClear('maker')}
           customInput={register('maker')}
+          placeholder="Ejemplo: Emys ASC..."
           containerClassName="w-full sm:w-[50%]"
-          placeholder="Buscar productos por fabricante..."
+          textLabel="Buscar productos por fabricante"
           isShowingClearIcon={isShowingClearIcon('maker')}
         />
 
         <FilterByCountry
-          textLabel="País de origen"
-          classLabelPlaceholder="w-28"
+          classLabelPlaceholder="w-44"
           onChange={change('countryId')}
           selectedValue={watch('countryId')}
+          noSelectionLabel="Selecciona un país"
           containerClassName="w-full sm:w-[50%]"
-          noSelectionLabel="Filtrar productos por país de origen"
+          textLabel="Filtrar productos por país de origen"
         />
       </div>
 
-      <div className="flex flex-col items-center flex-col-reverse sm:flex-row flex-wrap sm:flex-nowrap gap-x-3 gap-y-3 sm:gap-y-3.5 justify-between">
-        <ProductType selectedValue={watch('type')} onChange={change('type')} />
+      <div className="flex flex-col items-center sm:flex-row flex-wrap sm:flex-nowrap gap-x-3 gap-y-3 sm:gap-y-3.5 justify-between">
+        <SearchFilter
+          textLabelClassName="w-32"
+          onClear={onClear('code')}
+          customInput={register('code')}
+          containerClassName="w-full sm:w-[50%]"
+          textLabel="Buscar productos por código"
+          placeholder="Ejemplo: Y7U8MLY3OIQDB2..."
+          isShowingClearIcon={isShowingClearIcon('code')}
+        />
+
         <SortBy onChange={onChangeSortBy} selectedValue={sortBySelectedOption} />
       </div>
 
-      <SearchFilter
-        textLabelClassName="w-32"
-        containerClassName="w-full"
-        textLabel="Nombre del producto"
-        placeholder="Buscar productos por nombre..."
-        isShowingClearIcon={isShowingClearIcon('productName')}
-        customInput={register('productName')}
-        onClear={onClear('productName')}
-      />
-
-      <Fallback classLabel="w-28">
+      <Fallback classLabel="w-28" classComp='h-[142.28px] sm:h-[90.33px]'>
         <FilterByPriceRange
-          onApplyPriceFilter={onFilter}
-          onChangePriceRange={onChangePriceRange}
+          hideButtonApplyFilters
           innerClassName="w-full"
           textLabel="Rango de precios"
           buttonTitle="Filtrar por precio"
+          onChangePriceRange={onChangePriceRange}
           containerClassName="flex-wrap sm:flex-nowrap"
-          buttonClassName="w-full sm:min-w-[123px] sm:max-w-[123px] !px-2"
           isDisableApplyPriceFilterButton={isDisableApplyPriceFilterButton}
           minPrice={isString(watch('minPrice')) ? Number(watch('minPrice')) : undefined}
           maxPrice={isString(watch('maxPrice')) ? Number(watch('maxPrice')) : undefined}

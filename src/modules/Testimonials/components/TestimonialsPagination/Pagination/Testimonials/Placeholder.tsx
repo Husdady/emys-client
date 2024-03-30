@@ -2,7 +2,7 @@
 import Placeholder from '@modules/Testimonials/components/Testimony/Placeholder'
 
 // Hooks
-import useDocumentCount from '@hooks/useDocumentCount'
+import useDocumentCount from '@root/src/hooks/useDocumentCount'
 
 // Utils
 import createList from '@utils/createList'

@@ -1,16 +1,19 @@
 // Components
 import ReportMedical from '@components/Icons/ReportMedical'
 import DeviceFloppy from '@components/Icons/DeviceFloppy'
-import TestimonyForm, { TESTIMONY_FORM_ID } from '@modules/Testimonials/components/TestimonyForm'
+import TestimonyForm from '@modules/Testimonials/components/TestimonyForm'
 
 // Hooks
 import { useCallback } from 'react'
-import useModal from '@hooks/useModal'
+import useModal from '@root/src/config/store/states/modal/useModal'
 import useEditTestimony from './useEditMyTestimony'
 
 // Interfaces
 import { Testimony } from '@modules/Testimonials/api/interfaces'
 import { TestimonyFormState } from '@modules/Testimonials/components/TestimonyForm/interfaces'
+
+// Constants
+import { TESTIMONY_FORM_ID } from '@modules/Testimonials/components/TestimonyForm/constants'
 
 /**
  * Hook that shows a modal with a Testimony Form for edit my Testimony information

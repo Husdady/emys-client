@@ -1,8 +1,8 @@
 // Hooks
-import useResponsiveQuery from '@hooks/useResponsiveQuery'
+import useResponsiveQuery from '@root/src/hooks/screen/useResponsiveQuery'
 
-export const MEDIA_QUERY_FOR_XS_DEVICES = 373
-export const MEDIA_QUERY_FOR_SMALL_DEVICES = 480
+const MEDIA_QUERY_FOR_XS_DEVICES = 373
+const MEDIA_QUERY_FOR_SMALL_DEVICES = 480
 
 /**
  * Hook for define a custom queries

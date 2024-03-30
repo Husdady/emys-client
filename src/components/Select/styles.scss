@@ -17,6 +17,12 @@
     position: absolute !important;
     @apply w-full mt-1 top-[100%] z-[9999];
 
+    &.to-bottom {
+      @apply md:mt-0 #{!important};
+      @apply md:top-[initial] #{!important};
+      @apply md:bottom-[100%] md:mb-[1.85rem];
+    }
+
     & .select-options,
     & .virtualized-options {
       @include select-scrollbar;

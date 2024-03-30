@@ -1,11 +1,8 @@
-// Tailwind styles
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 // Library styles
-@import 'antd/dist/reset.css';
+@import './base';
 @import 'animate.css';
+@import 'antd/dist/reset.css';
+@import './tailwind/styles.scss';
 
 // Antd Styles
 @import './antd/antdEmpty';
@@ -15,118 +12,5 @@
 @import './antd/antdDropdown';
 
 // App Styles
-@import './app.scss';
-
-@layer base {
-  .hide-scrollbar {
-    &::-webkit-scrollbar {
-      @apply hidden;
-    }
-  }
-
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* Hide scrollbar for IE, Edge and Firefox */
-  .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-
-  ::-webkit-scrollbar {
-    width: 20px;
-
-    &:vertical {
-      width: 18px;
-    }
-
-    &:horizontal {
-      height: 18px;
-    }
-  }
-
-  ::-webkit-scrollbar-thumb {
-    border-radius: 20px;
-    border: 6px solid transparent;
-    background-clip: content-box;
-  }
-
-  body {
-    @apply font-lato text-[0.88rem] overflow-x-hidden;
-  }
-
-  html:not(.dark) {
-    ::-webkit-scrollbar-track {
-      @apply bg-[#ffffff];
-    }
-
-    ::-webkit-scrollbar-thumb {
-      @apply bg-gray-300;
-
-      &:hover {
-        @apply bg-gray-400;
-      }
-    }
-  }
-
-  html.dark {
-    @apply bg-gray-700;
-
-    ::-webkit-scrollbar-track {
-      @apply bg-black;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      @apply bg-gray-500;
-
-      &:hover {
-        @apply bg-gray-400;
-      }
-    }
-  }
-
-  button,
-  [type='button'],
-  [type='reset'],
-  [type='submit'] {
-    @apply bg-gray-100;
-  }
-
-  .without-transform {
-    &:active {
-      transform: none !important;
-    }
-  }
-}
-
-.break-word {
-  word-break: break-word;
-}
-
-.ant-input-number-handler-wrap {
-  display: none !important;
-}
-
-.transition-ease-out {
-  transition: ease-out all 0.25s;
-}
-
-html {
-  @media only screen and (min-width: 1450px) {
-    font-size: 18px;
-  }
-
-  @media only screen and (min-width: 2200px) {
-    font-size: 24px;
-  }
-
-  @media only screen and (min-width: 3400px) {
-    font-size: 30px;
-  }
-
-  @media only screen and (max-width: 640px) {
-    font-size: 18px;
-  }
-}
+@import './app';
+@import './modalFilters';

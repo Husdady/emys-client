@@ -13,7 +13,7 @@ import useUnits from './useUnits'
 // Interfaces
 import { UnitsProps } from './interfaces'
 
-export const sharedBtnClassName =
+const sharedBtnClassName =
   'py-1 scale max-h-[32px] rounded-md disabled:bg-gray-300 dark:bg-gray-600 dark:disabled:bg-gray-400 dark:text-gray-300 dark:disabled:!text-gray-100'
 
 function Units(props: UnitsProps) {

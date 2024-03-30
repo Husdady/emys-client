@@ -11,6 +11,7 @@ export const remotePatterns = hosts.map((hostname) => ({ protocol: PROTOCOL, hos
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  transpilePackages: ['rc-util', 'rc-picker', '@ant-design', 'rc-pagination'],
   images: {
     remotePatterns: remotePatterns
   },

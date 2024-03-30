@@ -1,7 +1,7 @@
 // Hooks
 import { useMemo } from 'react'
 import { useInView } from 'react-intersection-observer'
-import useBiggestTabletScreen from './useBiggestTabletScreen'
+import useBiggestTabletScreen from './screen/useBiggestTabletScreen'
 
 // Utils
 import classnames from '@utils/classnames'

@@ -1,13 +1,14 @@
 // Components
 import Sliders from '@components/Icons/Sliders'
 import BoxSeam from '@components/Icons/BoxSeam'
-import ProductsFilters, {
-  PRODUCTS_FILTERS_FORM_ID
-} from '@modules/Products/components/ProductsFilters'
+import ProductsFilters from '@modules/Products/components/ProductsFilters'
 
 // Hooks
 import { useCallback } from 'react'
-import useModal from '@hooks/useModal'
+import useModal from '@root/src/config/store/states/modal/useModal'
+
+// Constants
+import { PRODUCTS_FILTERS_FORM_ID } from '@modules/Products/components/ProductsFilters/constants'
 
 /**
  * Hook for implements the logic of the ButtonShowFilters component
@@ -18,11 +19,12 @@ export default function useButtonShowFilters() {
   // Event click on button for show a modal of the Products filters
   const show = useCallback(() => {
     showModal({
-      width: 700,
+      width: 575,
       icon: <BoxSeam />,
       content: <ProductsFilters />,
       title: 'Filtrar Productos',
-      className: 'modal-products-filters',
+      wrapClassName: 'wrap-modal-filters',
+      className: 'modal-filters modal-products-filters',
       acceptButtonProps: {
         type: 'submit',
         title: 'Aplicar filtros',

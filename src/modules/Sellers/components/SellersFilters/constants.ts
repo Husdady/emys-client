@@ -1,3 +1,6 @@
+// Librarys
+import { createId } from '@libs/nanoid'
+
 // Interfaces
 import { UbigeoFiltersProps } from '@modules/Ubigeo/components/UbigeoFilters/interfaces'
 
@@ -9,24 +12,30 @@ import {
   PROVINCE_FIELD
 } from '@modules/Ubigeo/components/UbigeoFilters/constants'
 
+export const SELLERS_FILTERS_FORM_ID = `sellers-filters-${createId()}`
+
 export const ubigeoConfigFilters: UbigeoFiltersProps['config'] = {
   // Country settings
   [COUNTRY_FIELD]: {
-    noSelectionLabel: 'Filtrar vendedores por país'
+    classLabelPlaceholder: 'w-32',
+    textLabel: 'Filtrar vendedores por país'
   },
 
   // Region settings
   [REGION_FIELD]: {
-    noSelectionLabel: 'Filtrar vendedores por región'
+    classLabelPlaceholder: 'w-36',
+    textLabel: 'Filtrar vendedores por región'
   },
 
   // Province settings
   [PROVINCE_FIELD]: {
-    noSelectionLabel: 'Filtrar vendedores por provincia'
+    classLabelPlaceholder: 'w-40',
+    textLabel: 'Filtrar vendedores por provincia'
   },
 
   // District settings
   [DISTRICT_FIELD]: {
-    noSelectionLabel: 'Filtrar vendedores por distrito'
+    classLabelPlaceholder: 'w-40',
+    textLabel: 'Filtrar vendedores por distrito'
   }
 }

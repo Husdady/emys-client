@@ -8,7 +8,7 @@ import useMounted from '@hooks/useMounted'
 // Constants
 import { ACTIVE_OPTION_SELECTOR, OPTIONS_CONTAINER_SELECTOR } from '@components/Select/constants'
 
-export interface UseScrollToSelectedValueParams {
+interface UseScrollToSelectedValueParams {
   enableVirtualization?: boolean
   ref: MutableRefObject<HTMLDivElement | null>
 }

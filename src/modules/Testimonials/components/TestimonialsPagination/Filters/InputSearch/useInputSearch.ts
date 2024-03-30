@@ -30,7 +30,7 @@ import {
   SUCCESS_MESSAGE_FILTERS
 } from '@modules/Testimonials/components/TestimonialsFilters/useTestimonialsFilters/constants'
 
-export const CLEAR_VALUE_SLUG = 'clear-value'
+const CLEAR_VALUE_SLUG = 'clear-value'
 
 /**
  * Hook for implements the logic of the InputSearch component

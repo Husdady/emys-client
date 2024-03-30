@@ -12,8 +12,9 @@ export default function ProductsSortBy(props: FilterProps) {
   return (
     <SortBy
       {...props}
+      classLabel='w-32'
       options={sortOptions}
-      noSelectionLabel="Ordenar productos por"
+      textLabel="Ordenar productos por"
       containerClassName={classnames([props.containerClassName, 'w-full sm:w-[50%]'])}
     />
   )

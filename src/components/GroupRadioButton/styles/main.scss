@@ -1,0 +1,55 @@
+// Mixins
+@import './mixin.scss';
+
+li {
+  &.radio-button {
+    & > input[type='radio'] {
+      & + label {
+        @apply pl-[24px] leading-[20px];
+        transition: all 0.2s ease-in-out;
+
+        &:after,
+        &:before {
+          transition: all 0.3s ease;
+          transform: translateY(-50%);
+          @apply content-[''] top-[50%] left-0 absolute w-[16px] h-[16px] text-center rounded-full;
+        }
+      }
+    }
+
+    & > input[type='radio'] + label {
+      &:hover:before {
+        animation-duration: 0.5s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+      }
+    }
+
+    & > input[type='radio']:checked + label {
+      &:hover {
+        @apply cursor-default;
+      }
+
+      &:before {
+        animation-duration: 0.2s;
+        animation-direction: Normal;
+        animation-iteration-count: 1;
+      }
+    }
+
+    &.disabled {
+      &:after {
+        transform: translateY(-50%);
+        @apply content-[''] w-full h-full cursor-not-allowed top-[50%] left-0 right-0 bottom-0 absolute;
+      }
+    }
+  }
+
+  @include createStyles(#ffffff, $radio-btn-grey-1200, $colors-100, $colors-600, 'light');
+}
+
+html.dark {
+  & li {
+    @include createStyles(#000000, #e5e7eb, $dark-colors-100, $dark-colors-600, 'dark');
+  }
+}

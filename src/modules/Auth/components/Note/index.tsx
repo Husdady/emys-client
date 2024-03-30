@@ -4,7 +4,7 @@ import React from 'react'
 // Interfaces
 import { NoteProps } from './interfaces'
 
-export const noteStyle = { fontSize: '0.80rem' }
+const noteStyle = { fontSize: '0.80rem' }
 
 const Note: React.FC<NoteProps> = ({ value }: NoteProps) => {
   return (

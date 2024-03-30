@@ -7,4 +7,5 @@ export interface FilterByDistrictProps extends FilterProps {
   provinceId?: string
   addDefaultValue?: boolean
   noSelectionLabel?: string
+  classLabelPlaceholder?: string
 }

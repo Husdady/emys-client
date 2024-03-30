@@ -21,37 +21,33 @@ export default function UbigeoFilters({ watch, config, getValues, ...props }: Ub
   return (
     <section className="ubigeo-filters flex flex-col items-center flex-col sm:flex-row flex-wrap sm:justify-end gap-x-3.5 gap-y-3">
       <FilterByCountry
-        onChange={onChangeCountry}
+        {...(config[COUNTRY_FIELD] ?? {})}
         selectedValue={getValues(COUNTRY_FIELD)}
-        noSelectionLabel={config[COUNTRY_FIELD]?.noSelectionLabel}
-        containerClassName={config[COUNTRY_FIELD]?.containerClassName}
+        onChange={onChangeCountry}
       />
 
       <FilterByRegion
-        onChange={onChangeRegion}
-        countryId={watch(COUNTRY_FIELD)}
+        {...(config[REGION_FIELD] ?? {})}
         selectedValue={getValues(REGION_FIELD)}
-        noSelectionLabel={config[REGION_FIELD]?.noSelectionLabel}
-        containerClassName={config[REGION_FIELD]?.containerClassName}
+        countryId={watch(COUNTRY_FIELD)}
+        onChange={onChangeRegion}
       />
 
       <FilterByProvince
-        onChange={onChangeProvince}
-        regionId={watch(REGION_FIELD)}
-        countryId={watch(COUNTRY_FIELD)}
+        {...(config[PROVINCE_FIELD] ?? {})}
         selectedValue={getValues(PROVINCE_FIELD)}
-        noSelectionLabel={config[PROVINCE_FIELD]?.noSelectionLabel}
-        containerClassName={config[PROVINCE_FIELD]?.containerClassName}
+        countryId={watch(COUNTRY_FIELD)}
+        regionId={watch(REGION_FIELD)}
+        onChange={onChangeProvince}
       />
 
       <FilterByDistrict
-        onChange={onChangeDistrict}
-        regionId={watch(REGION_FIELD)}
-        countryId={watch(COUNTRY_FIELD)}
-        provinceId={watch(PROVINCE_FIELD)}
+        {...(config[DISTRICT_FIELD] ?? {})}
         selectedValue={getValues(DISTRICT_FIELD)}
-        noSelectionLabel={config[DISTRICT_FIELD]?.noSelectionLabel}
-        containerClassName={config[DISTRICT_FIELD]?.containerClassName}
+        provinceId={watch(PROVINCE_FIELD)}
+        countryId={watch(COUNTRY_FIELD)}
+        regionId={watch(REGION_FIELD)}
+        onChange={onChangeDistrict}
       />
     </section>
   )

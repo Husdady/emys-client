@@ -8,7 +8,7 @@ import { Testimony } from '@modules/Testimonials/api/interfaces'
 import isString from '@utils/isString'
 import isEmptyString from '@utils/isEmptyString'
 
-export interface UbigeoField {
+interface UbigeoField {
   id?: string
   name?: string
 }

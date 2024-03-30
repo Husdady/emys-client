@@ -11,7 +11,7 @@ import {
   OPTIONS_CONTAINER_SELECTOR
 } from '@components/MultiSelect/constants'
 
-export interface UseScrollToLastSelectedValueParams {
+interface UseScrollToLastSelectedValueParams {
   enableVirtualization?: boolean
   ref: MutableRefObject<HTMLDivElement | null>
 }

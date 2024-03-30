@@ -9,11 +9,18 @@ import { SelectProps } from '@components/Select/interfaces'
 // Utils
 import isUndefined from '@utils/isUndefined'
 
+interface Params {
+  productType?: string
+}
+
 /**
  * Hook for get a Category list
+ * @param {Params} params Params
  */
-export default function useCategoryList() {
-  const { data, isError, isFetching, isLoading } = useGetCategoriesInListFormatQuery({})
+export default function useCategoryList({ productType }: Params = {}) {
+  const { data, isError, isFetching, isLoading } = useGetCategoriesInListFormatQuery({
+    type: productType
+  })
 
   // Define options for show categories
   const options: SelectProps['options'] = useMemo(() => {

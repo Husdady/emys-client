@@ -1,7 +1,4 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
-// Librarys
-import { createId } from '@libs/nanoid'
-
 // Components
 import SortBy from './SortBy'
 import SearchFilter from '@components/SearchFilter'
@@ -11,9 +8,8 @@ import UbigeoFilters from '@modules/Ubigeo/components/UbigeoFilters'
 import useTestimonialsFilters from './useTestimonialsFilters'
 
 // Constants
+import { TESTIMONIALS_FILTERS_FORM_ID } from './constants'
 import { ubigeoConfigFilters } from './useTestimonialsFilters/constants'
-
-export const TESTIMONIALS_FILTERS_FORM_ID = createId()
 
 export default function TestimonialsFiltersForm() {
   const {
@@ -45,19 +41,17 @@ export default function TestimonialsFiltersForm() {
         deleteQueryParam={deleteQueryParam}
       />
 
-      <div className="flex flex-col items-center sm:flex-row gap-x-3 gap-y-3.5">
-        <SearchFilter
-          onClear={clearSeeker}
-          textLabelClassName="w-20"
-          containerClassName="w-full"
-          textLabel="Nombre del autor"
-          customInput={register('authorName')}
-          placeholder="Buscar por nombre del autor..."
-          isShowingClearIcon={isShowingClearIcon}
-        />
+      <SearchFilter
+        onClear={clearSeeker}
+        textLabelClassName="w-44"
+        containerClassName="w-full"
+        customInput={register('authorName')}
+        placeholder="Ejemplo: Imanol Enrique..."
+        textLabel="Buscar testimonios por nombre del autor"
+        isShowingClearIcon={isShowingClearIcon}
+      />
 
-        <SortBy onChange={onChangeSortBy} selectedValue={sortBySelectedOption} />
-      </div>
+      <SortBy onChange={onChangeSortBy} selectedValue={sortBySelectedOption} />
     </form>
   )
 }

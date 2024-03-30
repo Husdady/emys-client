@@ -1,5 +1,5 @@
 // Librarys
-import { createSlice, current } from '@reduxjs/toolkit'
+import { current, createSlice } from '@reduxjs/toolkit'
 
 // Types
 import type { PayloadAction } from '@reduxjs/toolkit'

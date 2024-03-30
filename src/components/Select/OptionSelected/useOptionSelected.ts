@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 // Hooks
-import useTabletScreen from '@hooks/useTabletScreen'
+import useTabletScreen from '@hooks/screen/useTabletScreen'
 import useMountedOptionSelected from './useMountedOptionSelected'
 import { useRef, useMemo, useState, useCallback } from 'react'
 
@@ -10,6 +10,7 @@ import type { OnChangeOption } from '@components/Select/VirtualizedOptions/types
 
 // Utils
 import isUndefined from '@utils/isUndefined'
+import isEmptyArray from '@utils/isEmptyArray'
 
 /**
  * Hook that implements the logic of the OptionSelected component
@@ -20,15 +21,31 @@ export default function useOptionSelected({
   onChange,
   emptyText,
   selectedValue,
-  noSelectionLabel,
   canSearchOptions,
   searchPalceholder,
-  enableVirtualization
+  enableVirtualization,
+  noSelectionLabel = 'Selecciona una opción'
 }: UseSelectParams) {
   const isTabletScreen = useTabletScreen()
   const ref = useRef<HTMLDivElement | null>(null)
   const [value, setValue] = useState(selectedValue)
   const [isShowingOptions, setShowingOptions] = useState(false)
+
+  // Check if the selected option is hidden
+  const hiddenClassName = useMemo(() => {
+    // Check if wrapper is positioned at bottom
+    const wrapperIsAtBottom = !document.querySelector('.wrapper-options.to-bottom')
+
+    // Check if the option selected is hidden
+    const isHidden =
+      !isTabletScreen &&
+      isShowingOptions &&
+      canSearchOptions &&
+      wrapperIsAtBottom &&
+      !isEmptyArray(options)
+
+    return isHidden ? 'opacity-0' : null
+  }, [options, isTabletScreen, isShowingOptions, canSearchOptions])
 
   // Define label
   const label = useMemo(() => {
@@ -105,9 +122,9 @@ export default function useOptionSelected({
     value: value,
     hideOptions: hideOptions,
     optionsProps: optionsProps,
-    isTabletScreen: isTabletScreen,
     onChangeOption: handleOnChange,
     triggerOptions: triggerOptions,
+    hiddenClassName: hiddenClassName,
     isShowingOptions: isShowingOptions
   }
 }

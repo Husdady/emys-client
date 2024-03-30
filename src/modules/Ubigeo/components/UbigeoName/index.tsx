@@ -4,7 +4,7 @@ import World from '@components/Icons/World'
 // Utils
 import truncate from '@utils/truncate'
 
-export const MAX_LIMIT = 20
+const MAX_LIMIT = 20
 
 export default function UbigeoName(ubigeo: string) {
   return (

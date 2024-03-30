@@ -5,12 +5,12 @@ import isEmptyString from '@utils/isEmptyString'
 // Constants
 import { MIN, MAX } from '@components/FilterByPriceRange/constants'
 
-export interface QueryParams {
+interface QueryParams {
   minPrice?: number
   maxPrice?: number
 }
 
-export interface Params {
+interface Params {
   query: QueryParams
   minPrice?: string
   maxPrice?: string

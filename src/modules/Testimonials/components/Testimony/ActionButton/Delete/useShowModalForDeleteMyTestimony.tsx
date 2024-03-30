@@ -6,7 +6,7 @@ import ContentDeleteModal from './ContentDeleteModal'
 
 // Hooks
 import { useCallback } from 'react'
-import useModal from '@hooks/useModal'
+import useModal from '@root/src/config/store/states/modal/useModal'
 import useDeleteTestimony from './useDeleteMyTestimony'
 
 // Interfaces

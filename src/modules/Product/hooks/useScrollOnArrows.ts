@@ -4,9 +4,9 @@ import { useMemo, useState, useCallback, MutableRefObject } from 'react'
 // Hooks
 import useMounted from '@hooks/useMounted'
 
-export const MIN_WIDTH = 1000
+const MIN_WIDTH = 1000
 
-export interface Params {
+interface Params {
   isError: boolean
   isLoading: boolean
   hasScrollbar: boolean

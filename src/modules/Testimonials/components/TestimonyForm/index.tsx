@@ -17,6 +17,9 @@ import lazy from '@utils/lazy'
 import isString from '@utils/isString'
 import getFormError from '@utils/getFormError'
 
+// Constants
+import { TESTIMONY_FORM_ID } from './constants'
+
 // Lazy Components
 const TextArea = lazy(() => import('@components/TextArea'))
 const InputText = lazy(() => import('@components/InputText'))
@@ -25,8 +28,6 @@ const Regions = lazy(() => import('@modules/Ubigeo/components/Regions'))
 const Countries = lazy(() => import('@modules/Ubigeo/components/Countries'))
 const Districts = lazy(() => import('@modules/Ubigeo/components/Districts'))
 const Provinces = lazy(() => import('@modules/Ubigeo/components/Provinces'))
-
-export const TESTIMONY_FORM_ID = 'testimony-form-79530uob'
 
 export default function TestimonyForm(props: TestimonyFormProps) {
   const {

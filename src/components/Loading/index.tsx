@@ -1,4 +1,4 @@
-export interface LoadingProps {
+interface LoadingProps {
   title: string
 }
 

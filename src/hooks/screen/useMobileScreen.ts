@@ -1,7 +1,7 @@
 // Hooks
 import useResponsiveQuery from './useResponsiveQuery'
 
-export const MEDIA_QUERY_FOR_MOBILE_DEVICES = 640
+const MEDIA_QUERY_FOR_MOBILE_DEVICES = 640
 
 /**
  * Hook for check if is mobile device

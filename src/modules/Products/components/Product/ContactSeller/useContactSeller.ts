@@ -13,7 +13,7 @@ import isUndefined from '@utils/isUndefined'
 import isEmptyObject from '@utils/isEmptyObject'
 import isEmptyString from '@utils/isEmptyString'
 
-export const ANONYMUS_SELLER = 'Este vendedor es anónimo, por lo que se desconoce su Whatsapp'
+const ANONYMUS_SELLER = 'Este vendedor es anónimo, por lo que se desconoce su Whatsapp'
 
 /**
  * Hook for implements the logic of the ContactSeller component

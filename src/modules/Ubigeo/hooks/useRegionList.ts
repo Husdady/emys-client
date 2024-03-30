@@ -13,7 +13,7 @@ import isEmptyString from '@utils/isEmptyString'
 // Constants
 import { PREDEFINED_VALUE } from '@components/Select/constants'
 
-export interface UseRegionList extends RegionListArgs {
+interface UseRegionList extends RegionListArgs {
   addDefaultValue?: boolean
 }
 

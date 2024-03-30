@@ -3,7 +3,7 @@ import InputText from '@components/InputText'
 import MagnifyingGlass from '@components/Icons/MagnifyingGlass'
 
 // Hooks
-import useTabletScreen from '@hooks/useTabletScreen'
+import useTabletScreen from '@hooks/screen/useTabletScreen'
 
 // Types
 import { SearchOptionsProps } from './types'

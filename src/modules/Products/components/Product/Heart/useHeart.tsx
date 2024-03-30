@@ -8,7 +8,7 @@ import HeartRegular from '@components/Icons/HeartRegular'
 
 // Hooks
 import useAuth from '@hooks/useAuth'
-import useMobileScreen from '@hooks/useMobileScreen'
+import useMobileScreen from '@hooks/screen/useMobileScreen'
 import {
   useAddProductToFavoritesMutation,
   useRemoveProductFromFavoritesMutation

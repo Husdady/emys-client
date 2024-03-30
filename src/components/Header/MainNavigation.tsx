@@ -3,7 +3,7 @@ import { memo } from 'react'
 import dynamic from 'next/dynamic'
 
 // Hooks
-import useSmallDesktopScreen from '@hooks/useSmallDesktopScreen'
+import useSmallDesktopScreen from '@hooks/screen/useSmallDesktopScreen'
 
 // Dynamic Components
 const Navigation = dynamic(() => import('./Navigation'))

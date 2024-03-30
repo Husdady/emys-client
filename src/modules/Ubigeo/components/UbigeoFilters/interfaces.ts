@@ -1,7 +1,14 @@
 // Types
-import type { ReactNode } from 'react'
+import type { UbigeoFilterFields } from './types'
 import type { FieldValues, UseFormSetValue } from 'react-hook-form'
-import type { UbigeoFilterFields, UbigeoFiltersConfig } from './types'
+
+// Interfaces
+import { SelectProps } from '@components/Select/interfaces'
+
+export interface UbigeoFiltersConfig
+  extends Pick<SelectProps, 'textLabel' | 'noSelectionLabel' | 'containerClassName'> {
+  classLabelPlaceholder?: string
+}
 
 export interface UbigeoFiltersProps {
   setValue: UseFormSetValue<FieldValues>

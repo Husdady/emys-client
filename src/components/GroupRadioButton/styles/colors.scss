@@ -1,0 +1,76 @@
+// Styles
+@import '@styles/colors.scss';
+
+// Radio button colors
+$radio-btn-grey-900: #666565;
+$radio-btn-grey-1200: #333333;
+
+$radio-btn-orange-100: #fff6f1;
+$radio-btn-orange-300: #ffcfb1;
+$radio-btn-orange-600: #ff873d;
+$dark-radio-btn-orange-100: #9a3412;
+$dark-radio-btn-orange-600: #ffcfb1;
+
+$radio-btn-red-100: #ffefef;
+$radio-btn-red-300: #ffaeab;
+$radio-btn-red-600: #ff3f3f;
+$dark-radio-btn-red-100: #991b1b;
+$dark-radio-btn-red-600: #ffaeab;
+
+$radio-btn-green-100: #e8fff0;
+$radio-btn-green-300: #91deac;
+$radio-btn-green-600: #44bb6e;
+$dark-radio-btn-green-100: #166534;
+$dark-radio-btn-green-600: #91deac;
+
+$radio-btn-blue-100: #edf8ff;
+$radio-btn-blue-300: #99d1f7;
+$radio-btn-blue-600: #3399e0;
+$dark-radio-btn-blue-100: #1e40af;
+$dark-radio-btn-blue-600: #99d1f7;
+
+$radio-btn-purple-100: #fbf6ff;
+$radio-btn-purple-300: #e8cbfb;
+$radio-btn-purple-600: #bc75ea;
+$dark-radio-btn-purple-100: #6b21a8;
+$dark-radio-btn-purple-600: #e8cbfb;
+
+$colors-100: (
+  'red': $radio-btn-red-100,
+  'blue': $radio-btn-blue-100,
+  'green': $radio-btn-green-100,
+  'purple': $radio-btn-purple-100,
+  'orange': $radio-btn-orange-100
+);
+
+$dark-colors-100: (
+  'red': $dark-radio-btn-red-100,
+  'blue': $dark-radio-btn-blue-100,
+  'green': $dark-radio-btn-green-100,
+  'purple': $dark-radio-btn-purple-100,
+  'orange': $dark-radio-btn-orange-100
+);
+
+$colors-300: (
+  'red': $radio-btn-red-300,
+  'blue': $radio-btn-blue-300,
+  'green': $radio-btn-green-300,
+  'purple': $radio-btn-purple-300,
+  'orange': $radio-btn-orange-300
+);
+
+$colors-600: (
+  'red': $radio-btn-red-600,
+  'blue': $radio-btn-blue-600,
+  'green': $radio-btn-green-600,
+  'purple': $radio-btn-purple-600,
+  'orange': $radio-btn-orange-600
+);
+
+$dark-colors-600: (
+  'red': $dark-radio-btn-red-600,
+  'blue': $dark-radio-btn-blue-600,
+  'green': $dark-radio-btn-green-600,
+  'purple': $dark-radio-btn-purple-600,
+  'orange': $dark-radio-btn-orange-600
+);

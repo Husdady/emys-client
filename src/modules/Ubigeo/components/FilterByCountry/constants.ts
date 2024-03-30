@@ -1,2 +1,2 @@
 // Constants
-export const DEFAULT_NO_SELECTION_VALUE = 'Filtrar por país'
+export const DEFAULT_NO_SELECTION_VALUE = 'Selecciona un país'

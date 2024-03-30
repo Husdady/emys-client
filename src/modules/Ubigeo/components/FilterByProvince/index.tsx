@@ -22,6 +22,7 @@ export default function FilterByProvince({
   countryId,
   addDefaultValue,
   containerClassName,
+  classLabelPlaceholder,
   noSelectionLabel = DEFAULT_NO_SELECTION_VALUE,
   ...props
 }: FilterByProvinceProps) {
@@ -32,11 +33,16 @@ export default function FilterByProvince({
   })
 
   if (isLoading || isFetching) {
-    return <FallbackItem classLabel="w-20" classContainer={containerClassName} />
+    return (
+      <FallbackItem
+        classContainer={containerClassName}
+        classLabel={classLabelPlaceholder ?? 'w-20'}
+      />
+    )
   }
 
   return (
-    <Fallback classLabel="w-20" classContainer={containerClassName}>
+    <Fallback classContainer={containerClassName} classLabel={classLabelPlaceholder ?? 'w-20'}>
       <Select
         {...props}
         options={options}
@@ -45,9 +51,9 @@ export default function FilterByProvince({
         enableVirtualization
         noSelectionLabel={noSelectionLabel}
         containerClassName={containerClassName}
+        textLabel={props.textLabel ?? 'Provincias'}
         searchPalceholder="Buscar provincias por nombre..."
         emptyText="Sin provincias disponibles"
-        textLabel="Provincias"
       />
     </Fallback>
   )

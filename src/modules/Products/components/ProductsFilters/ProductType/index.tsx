@@ -1,28 +1,30 @@
-// Components
-import Fallback from '@components/Fallback'
+// Librarys
+import { Suspense } from 'react'
 
-// Types
-import type { FilterProps } from '@components/Select/types'
+// Components
+import Fallback from '@root/src/components/GroupRadioButton/Fallback'
 
 // Utils
 import lazy from '@utils/lazy'
 
 // Constants
-import options from './options'
+import { options, fallbackConfig, PRODUCT_TYPES } from './constants'
+import { GroupRadioButtonProps } from '@components/GroupRadioButton/interfaces'
 
 // Lazy Components
-const Select = lazy(() => import('@components/Select'))
+const GroupRadioButton = lazy(() => import('@components/GroupRadioButton'))
 
-export default function ProductType(props: FilterProps) {
+type ProductTypeProps = Pick<GroupRadioButtonProps, 'onChange' | 'defaultOption'>
+
+export default function ProductType(props: ProductTypeProps) {
   return (
-    <Fallback classLabel="w-24" classContainer="w-full sm:w-[50%]">
-      <Select
+    <Suspense fallback={<Fallback classLabel="w-44" config={fallbackConfig} />}>
+      <GroupRadioButton
         {...props}
         options={options}
-        textLabel="Tipo de producto"
-        containerClassName="w-full sm:w-[50%]"
-        noSelectionLabel="Filtrar por tipo de producto"
+        name={PRODUCT_TYPES}
+        textLabel="Selecciona el tipo de producto"
       />
-    </Fallback>
+    </Suspense>
   )
 }

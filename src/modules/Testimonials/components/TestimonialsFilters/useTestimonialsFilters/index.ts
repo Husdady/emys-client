@@ -12,7 +12,7 @@ import { useMemo, useCallback } from 'react'
 import { useLazyGetTestimonialsQuery } from '@modules/Testimonials/api/graphql'
 import useDisableButtonInModalFilters from '@hooks/useDisableButtonInModalFilters'
 import useFiltersQuery from '@hooks/useFiltersQuery'
-import useModal from '@hooks/useModal'
+import useModal from '@root/src/config/store/states/modal/useModal'
 
 // Interfaces
 import { Option } from '@components/Select/interfaces'

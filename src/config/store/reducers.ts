@@ -26,6 +26,7 @@ import { testimonialsGraphqlApi } from '@modules/Testimonials/api/graphql'
 // Global states
 import { modalSlice } from './states/modal'
 import { filtersSlice } from './states/filters'
+import { placeholderSlice } from './states/placeholder'
 import { authSlice } from '@modules/Auth/states/auth'
 import { loginSlice } from '@modules/Auth/states/login'
 
@@ -35,6 +36,7 @@ const reducers = combineReducers({
   [loginSlice.name]: loginSlice.reducer,
   [modalSlice.name]: modalSlice.reducer,
   [filtersSlice.name]: filtersSlice.reducer,
+  [placeholderSlice.name]: placeholderSlice.reducer,
 
   // Auth API
   [loginApi.reducerPath]: loginApi.reducer,

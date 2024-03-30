@@ -19,9 +19,9 @@ export default function FilterByStatus(props: FilterProps) {
       <Select
         {...props}
         options={options}
-        textLabel="Estado"
         containerClassName="w-full md:w-[50%]"
-        noSelectionLabel="Filtrar por estado del vendedor"
+        noSelectionLabel="Selecciona un estado"
+        textLabel="Filtrar vendedores por estado"
       />
     </Fallback>
   )

@@ -22,7 +22,7 @@ import getQueryParam from '@utils/getQueryParam'
 // Constants
 import { HOME_PATH } from '@data/paths'
 
-export const DEFAULT_VALUES = {
+const DEFAULT_VALUES = {
   password: '',
   confirmPassword: ''
 }

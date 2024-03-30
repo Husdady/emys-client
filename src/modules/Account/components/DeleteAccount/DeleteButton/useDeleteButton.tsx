@@ -7,7 +7,7 @@ import ArrowUpCircle from '@components/Icons/ArrowUpCircle'
 import UserConsent from '@modules/Account/components/DeleteAccount/UserConsent'
 
 // Hooks
-import useModal from '@hooks/useModal'
+import useModal from '@root/src/config/store/states/modal/useModal'
 
 // Constants
 import { DELETE_ACCOUNT_FORM_ID } from '@modules/Account/components/DeleteAccount/UserConsent/ConfirmForm'

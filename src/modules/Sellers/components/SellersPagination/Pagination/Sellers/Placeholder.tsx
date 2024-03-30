@@ -2,7 +2,7 @@
 import Placeholder from '@modules/Sellers/components/Seller/Placeholder'
 
 // Hooks
-import useDocumentCount from '@hooks/useDocumentCount'
+import useDocumentCount from '@root/src/hooks/useDocumentCount'
 
 // Utils
 import createList from '@utils/createList'

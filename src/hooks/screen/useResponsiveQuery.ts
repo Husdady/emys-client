@@ -1,6 +1,6 @@
 // Hooks
 import { useState } from 'react'
-import useMounted from './useMounted'
+import useMounted from '@hooks/useMounted'
 
 /**
  * Hook for make responsive query

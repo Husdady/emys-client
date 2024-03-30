@@ -1,3 +1,4 @@
+// Interfaces
 export interface FilterQueryParams<DefaultQuery extends object> {
   queryParamsFields: string[]
   defaultQueryParams?: DefaultQuery

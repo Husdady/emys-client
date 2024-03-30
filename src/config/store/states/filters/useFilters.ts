@@ -19,7 +19,7 @@ export default function useFilters(): FiltersContext {
   // Create context actions
   const actions = useMemo(
     () => ({
-      // Show filters in a application module
+      // Update count of the filters state
       updateCount: function (payload: UpdateCountPayload) {
         dispatch(filtersActions.updateCount(payload))
       },

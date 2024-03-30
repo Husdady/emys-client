@@ -1,7 +1,7 @@
 // Hooks
 import { useCallback } from 'react'
 
-export const PDF_PATH = '/pdfs/membership-omnilife.pdf'
+const PDF_PATH = '/pdfs/membership-omnilife.pdf'
 
 /**
  * Hook for implements the logic of the DownloadButton components

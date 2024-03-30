@@ -6,9 +6,9 @@ import { UploadFile } from 'antd'
 import isString from './isString'
 import isUndefined from './isUndefined'
 
-export const DEFAULT_FILENAME = 'image'
+const DEFAULT_FILENAME = 'image'
 
-export interface ConvertImageUrlToFileParams {
+interface ConvertImageUrlToFileParams {
   url?: string
   filename?: string
   backupFilename?: string

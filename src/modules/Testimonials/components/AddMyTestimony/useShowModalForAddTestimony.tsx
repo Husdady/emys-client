@@ -4,12 +4,12 @@ import { showFloatWarningMessage } from '@libs/antd/message'
 // Components
 import Plus from '@components/Icons/Plus'
 import ReportMedical from '@components/Icons/ReportMedical'
-import TestimonyForm, { TESTIMONY_FORM_ID } from '@modules/Testimonials/components/TestimonyForm'
+import TestimonyForm from '@modules/Testimonials/components/TestimonyForm'
 
 // Hooks
 import { useCallback } from 'react'
 import useAuth from '@hooks/useAuth'
-import useModal from '@hooks/useModal'
+import useModal from '@root/src/config/store/states/modal/useModal'
 import useRegisterTestimony from './useAddMyTestimony'
 
 // Interfaces
@@ -17,6 +17,7 @@ import { TestimonyFormState } from '@modules/Testimonials/components/TestimonyFo
 
 // Constants
 import { MESSAGE_VALIDATION_FOR_ADD_MY_TESTIMONY } from './constants'
+import { TESTIMONY_FORM_ID } from '@modules/Testimonials/components/TestimonyForm/constants'
 
 /**
  * Hook for show a modal for Add My Testimony

@@ -1,7 +1,7 @@
 // Hooks
 import { useMemo } from 'react'
 import useAuth from '@hooks/useAuth'
-import useTabletScreen from '@hooks/useTabletScreen'
+import useTabletScreen from '@hooks/screen/useTabletScreen'
 
 // Utils
 import isUndefined from '@utils/isUndefined'

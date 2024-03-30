@@ -1,0 +1,33 @@
+.products-filters-form {
+  & .filter-by-price-range {
+    @apply py-3 sm:max-h-[initial] px-4;
+
+    @media only screen and (max-width: 450px) {
+      @apply px-3;
+
+      & .min-price-filter {
+        @apply mb-0 flex-col px-0;
+      }
+
+      & .ant-slider {
+        width: calc(100% - 1rem) !important;
+      }
+    }
+
+    & .min-price-filter {
+      @apply gap-x-2.5 flex-wrap;
+
+      & .ant-slider {
+        @apply w-full mt-1 mb-1.5;
+      }
+
+      & .ant-input-number {
+        @apply w-full px-2 sm:w-[calc(50%-0.3125rem)] max-w-[initial] h-[35px] max-h-[35px];
+
+        & .ant-input-number-input {
+          @apply text-[0.9rem];
+        }
+      }
+    }
+  }
+}

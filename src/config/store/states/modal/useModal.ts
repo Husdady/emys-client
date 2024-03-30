@@ -1,6 +1,6 @@
 // Hooks
 import { useMemo } from 'react'
-import { useSelector, useDispatch } from './useRedux'
+import { useSelector, useDispatch } from '../../../../hooks/useRedux'
 
 // Actions
 import { modalActions } from '@config/store/states/modal'

@@ -11,9 +11,9 @@ export default function TestimonialsSortBy(props: FilterProps) {
   return (
     <SortBy
       {...props}
-      containerClassName="w-full"
-      noSelectionLabel="Ordenar testimonios por"
       options={sortOptions}
+      containerClassName="w-full"
+      textLabel="Ordenar testimonios por"
     />
   )
 }

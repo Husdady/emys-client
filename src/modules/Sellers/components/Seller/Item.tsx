@@ -1,4 +1,4 @@
-export interface SellerItemProps {
+interface SellerItemProps {
   field: string
   value?: string | number | null
 }

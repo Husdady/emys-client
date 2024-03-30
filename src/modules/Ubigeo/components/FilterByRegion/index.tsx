@@ -21,6 +21,7 @@ export default function FilterByRegion({
   countryId,
   addDefaultValue,
   containerClassName,
+  classLabelPlaceholder,
   noSelectionLabel = DEFAULT_NO_SELECTION_VALUE,
   ...props
 }: FilterByRegionProps) {
@@ -30,11 +31,16 @@ export default function FilterByRegion({
   })
 
   if (isLoading || isFetching) {
-    return <FallbackItem classLabel="w-16" classContainer={containerClassName} />
+    return (
+      <FallbackItem
+        classContainer={containerClassName}
+        classLabel={classLabelPlaceholder ?? 'w-16'}
+      />
+    )
   }
 
   return (
-    <Fallback classLabel="w-16" classContainer={containerClassName}>
+    <Fallback classContainer={containerClassName} classLabel={classLabelPlaceholder ?? 'w-16'}>
       <Select
         {...props}
         options={options}
@@ -43,9 +49,9 @@ export default function FilterByRegion({
         enableVirtualization
         noSelectionLabel={noSelectionLabel}
         containerClassName={containerClassName}
+        textLabel={props.textLabel ?? 'Regiones'}
         searchPalceholder="Buscar regiones por nombre..."
         emptyText="Sin regiones disponibles"
-        textLabel="Regiones"
       />
     </Fallback>
   )

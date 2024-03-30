@@ -10,7 +10,7 @@ import isString from '@utils/isString'
 // Constants
 import { scrollIntoViewCenterArgs } from '@data/scroll'
 
-export interface Params {
+interface Params {
   value?: string
   selectedValue?: string
   isTabletScreen: boolean

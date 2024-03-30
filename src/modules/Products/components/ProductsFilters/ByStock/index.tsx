@@ -15,13 +15,13 @@ const Select = lazy(() => import('@components/Select'))
 
 export default function ByStock(props: FilterProps) {
   return (
-    <Fallback classLabel="w-24" classContainer="w-full sm:w-[50%]">
+    <Fallback classLabel="w-48" classContainer="w-full sm:w-[50%]">
       <Select
         {...props}
         options={options}
-        textLabel="Disponibilidad"
         containerClassName="w-full sm:w-[50%]"
-        noSelectionLabel="Filtrar productos por disponibilidad"
+        noSelectionLabel="Selecciona una opción"
+        textLabel="Filtrar productos por disponibilidad"
       />
     </Fallback>
   )

@@ -1,6 +1,7 @@
-import { Path, UseFormSetValue, PathValue, FieldValues } from 'react-hook-form'
+// Types
+import type { Path, UseFormSetValue, PathValue, FieldValues } from 'react-hook-form'
 
-export interface Params<T extends FieldValues> {
+interface Params<T extends FieldValues> {
   fields: [Path<T>, Path<T>]
   values: Array<number | null>
   setValue: UseFormSetValue<T>

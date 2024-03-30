@@ -1,6 +1,6 @@
 // Hooks
 import useMounted from '@hooks/useMounted'
-import useBiggestTabletScreen from '@hooks/useBiggestTabletScreen'
+import useBiggestTabletScreen from '@root/src/hooks/screen/useBiggestTabletScreen'
 import { useMemo, useState, useCallback } from 'react'
 
 // Interfaces

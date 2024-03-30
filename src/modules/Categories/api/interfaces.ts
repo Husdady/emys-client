@@ -3,6 +3,7 @@ import type { ProductType } from '@modules/Products/api/types'
 
 // Interfaces
 import { TimeStamps } from '@libs/axios/interfaces'
+import { PaginationArgs } from '@libs/graphql/interfaces'
 
 export interface Category extends TimeStamps {
   id: string
@@ -10,6 +11,10 @@ export interface Category extends TimeStamps {
   type: ProductType
 }
 
-export interface CategoriesList {
+export interface CategoryList {
   categoryList: Category[]
+}
+
+export interface CategoryListArgs extends PaginationArgs {
+  type?: string
 }

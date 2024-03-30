@@ -8,7 +8,7 @@ import LongArrowLeft from '@components/Icons/LongArrowLeft'
 import LongArrowRight from '@components/Icons/LongArrowRight'
 
 // Hooks
-import useMobileScreen from '@hooks/useMobileScreen'
+import useMobileScreen from '@hooks/screen/useMobileScreen'
 
 // Interfaces
 import { HeaderProps } from './interfaces'

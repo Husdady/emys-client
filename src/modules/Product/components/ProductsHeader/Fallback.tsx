@@ -2,7 +2,7 @@
 import { OnlyClassNameProp } from '@config/interfaces'
 
 // Hooks
-import useMobileScreen from '@hooks/useMobileScreen'
+import useMobileScreen from '@hooks/screen/useMobileScreen'
 
 // Utils
 import classnames from '@utils/classnames'

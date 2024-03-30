@@ -1,7 +1,7 @@
 // Types
 import type { Path, UseFormSetValue, PathValue, FieldValues } from 'react-hook-form'
 
-export interface Params<T extends FieldValues> {
+interface Params<T extends FieldValues> {
   field: Path<T>
   minPrice: number
   maxPrice: number

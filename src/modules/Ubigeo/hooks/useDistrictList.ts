@@ -13,7 +13,7 @@ import isEmptyString from '@utils/isEmptyString'
 // Constants
 import { PREDEFINED_VALUE } from '@components/Select/constants'
 
-export interface UseDistrictListParams extends DistrictListArgs {
+interface UseDistrictListParams extends DistrictListArgs {
   addDefaultValue?: boolean
 }
 

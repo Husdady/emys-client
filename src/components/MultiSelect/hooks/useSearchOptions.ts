@@ -2,6 +2,7 @@
 import React from 'react'
 
 // Hooks
+import useFixPositionOfFloatOptions from '@hooks/useFixPositionOfFloatOptions'
 import useScrollToLastSelectedValue from '@components/MultiSelect/hooks/useScrollToLastSelectedValue'
 
 // Interfaces
@@ -60,6 +61,7 @@ export default function useSearchOptions({
     [selectedValues]
   )
 
+  useFixPositionOfFloatOptions({ ref: wrapperRef })
   useScrollToLastSelectedValue({ ref: wrapperRef, enableVirtualization: enableVirtualization })
 
   return {

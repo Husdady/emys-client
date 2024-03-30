@@ -5,7 +5,7 @@ import { addFormDataToRequestOnAxios, clearFormDataFromRequestOnAxios } from '@l
 // Utils
 import isUndefined from './isUndefined'
 
-export interface CreateFormDataParams<T extends object> {
+interface CreateFormDataParams<T extends object> {
   state: object
   excludeFields?: Array<keyof T | null>
 }

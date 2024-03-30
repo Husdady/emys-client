@@ -7,7 +7,7 @@ import AboutSeytuParabens from './modals/AboutSeytuParabens'
 // Hooks
 import { useCallback } from 'react'
 import { useRouter } from 'next/router'
-import useModal from '@hooks/useModal'
+import useModal from '@root/src/config/store/states/modal/useModal'
 
 // Utils
 import isFunction from '@utils/isFunction'

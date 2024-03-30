@@ -20,7 +20,7 @@ const InputText = dynamic(() => import('@components/InputText'), {
   loading: () => <FallbackItem classLabel="w-24" />
 })
 
-export const customSpin = {
+const customSpin = {
   style: { width: '24px', height: '24px' }
 }
 
@@ -46,8 +46,8 @@ export default function SecretKey({ secret, setValue, ...props }: SecretKeyProps
           title=""
           loadingTitle=""
           onClick={generate}
-          isShowingSpin={isLoading}
           customSpin={customSpin}
+          isShowingSpin={isLoading}
           className="!p-[0.40rem] rounded-md bg-blue-500 dark:bg-blue-600"
           icon={
             <Reload

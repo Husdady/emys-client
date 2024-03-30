@@ -1,7 +1,7 @@
 // API
 import { api } from '@config/store/api'
 
-export interface VerifySessionParams {
+interface VerifySessionParams {
   signOut: () => void
 }
 

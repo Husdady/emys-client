@@ -13,7 +13,7 @@ import isEmptyArray from '@utils/isEmptyArray'
 // Constants
 import { PREDEFINED_VALUE } from '@components/Select/constants'
 
-export interface UseCountryListParams {
+interface UseCountryListParams {
   addDefaultValue?: boolean
   defaultCountryName?: string | null
   onChangeCountry?: SelectProps['onChange']

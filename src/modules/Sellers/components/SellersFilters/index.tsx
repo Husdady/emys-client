@@ -12,9 +12,7 @@ import UbigeoFilters from '@modules/Ubigeo/components/UbigeoFilters'
 import useSellersFilters from './useSellersFilters'
 
 // Constants
-import { ubigeoConfigFilters } from './constants'
-
-export const SELLERS_FILTERS_FORM_ID = createId()
+import { ubigeoConfigFilters, SELLERS_FILTERS_FORM_ID } from './constants'
 
 export default function SellersFiltersForm() {
   const {
@@ -38,7 +36,7 @@ export default function SellersFiltersForm() {
       noValidate
       id={SELLERS_FILTERS_FORM_ID}
       onSubmit={handleSubmit(submit)}
-      className="sellers-filters-form flex flex-col gap-y-3 mt-1.5 mb-3"
+      className="sellers-filters-form flex flex-col gap-y-3 mt-1.5"
     >
       <UbigeoFilters
         watch={watch}
@@ -58,8 +56,8 @@ export default function SellersFiltersForm() {
         customInput={register('fullname')}
         onPressEnter={handlePressEnter('fullname')}
         isShowingClearIcon={isShowingClearIcon('fullname')}
-        placeholder="Buscar vendedores por nombre..."
-        textLabel="Nombre de vendedor"
+        textLabel="Buscar vendedores por nombre..."
+        placeholder="Ejemplo: Imanol Enrique..."
         textLabelClassName="w-28"
       />
 
@@ -71,9 +69,9 @@ export default function SellersFiltersForm() {
           onPressEnter={handlePressEnter('dni')}
           isShowingClearIcon={isShowingClearIcon('dni')}
           containerClassName="w-full sm:w-[50%]"
-          placeholder="Buscar vendedores por DNI..."
-          textLabelClassName="w-8"
-          textLabel="DNI"
+          textLabel="Buscar vendedores por DNI"
+          placeholder="Ejemplo 74232337..."
+          textLabelClassName="w-32"
         />
 
         <SearchFilter
@@ -83,9 +81,9 @@ export default function SellersFiltersForm() {
           onPressEnter={handlePressEnter('ruc')}
           isShowingClearIcon={isShowingClearIcon('ruc')}
           containerClassName="w-full sm:w-[50%]"
-          placeholder="Buscar vendedores por RUC..."
-          textLabelClassName="w-8"
-          textLabel="RUC"
+          textLabel="Buscar vendedores por RUC"
+          placeholder="Ejemplo: 7423233710..."
+          textLabelClassName="w-32"
         />
       </div>
 
@@ -93,25 +91,25 @@ export default function SellersFiltersForm() {
         <SearchFilter
           type="email"
           textLabelClassName="w-28"
-          textLabel="Correo electrónico"
           onClear={onClear('email')}
           customInput={register('email')}
-          containerClassName="w-full sm:w-[50%] email-field"
           onPressEnter={handlePressEnter('email')}
           isShowingClearIcon={isShowingClearIcon('email')}
-          placeholder="Buscar vendedores por correo electrónico..."
+          textLabel="Buscar vendedores por correo electrónico"
+          containerClassName="w-full sm:w-[50%] email-field"
+          placeholder="Ejemplo: husdadymena@gm..."
         />
 
         <SearchFilter
           type="number"
           textLabelClassName="w-24"
-          textLabel="Número telefónico"
           onClear={onClear('phone')}
           customInput={register('phone')}
           containerClassName="w-full sm:w-[50%]"
           onPressEnter={handlePressEnter('phone')}
           isShowingClearIcon={isShowingClearIcon('phone')}
-          placeholder="Buscar vendedores por número telefónico..."
+          textLabel="Buscar vendedores por número telefónico"
+          placeholder="Ejemplo: 952 968 893..."
         />
       </div>
     </form>

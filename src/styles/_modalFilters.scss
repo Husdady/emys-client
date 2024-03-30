@@ -1,0 +1,44 @@
+.wrap-modal-filters {
+  @media only screen and (max-width: 768px) {
+    @apply px-0 #{!important};
+  }
+}
+
+.modal-filters {
+  @apply ml-auto mr-[initial];
+
+  @media only screen and (max-width: 768px) {
+    @apply h-[100vh];
+  }
+
+  & .ant-modal-content {
+    @apply my-0;
+
+    & .ant-modal-body {
+      @apply pt-0;
+    }
+
+    & .ant-modal-footer {
+      @apply py-5;
+    }
+
+    & .ant-modal-header,
+    & .ant-modal-footer {
+      @apply border-0;
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    &,
+    & .ant-modal-content {
+      @apply h-[100vh];
+    }
+
+    & .ant-modal-content {
+      & .ant-modal-body {
+        @apply overflow-y-auto;
+        height: calc(100vh - 77px - 59px);
+      }
+    }
+  }
+}

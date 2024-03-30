@@ -1,6 +1,5 @@
 // Interfaces
-import { CategoriesList } from './interfaces'
-import { PaginationArgs } from '@libs/graphql/interfaces'
+import { CategoryList, CategoryListArgs } from './interfaces'
 
 // API
 import { api } from '@config/store/graphql'
@@ -14,10 +13,7 @@ import { CategoryListDocument } from './documents'
 export const categoriesGraphqlApi = api.injectEndpoints({
   endpoints: (builder) => ({
     // Get categories in format list
-    GetCategoriesInListFormat: builder.query<
-      CategoriesList,
-      Omit<PaginationArgs, 'page' | 'limit'>
-    >({
+    GetCategoriesInListFormat: builder.query<CategoryList, CategoryListArgs>({
       providesTags: [CATEGORIES_KEY],
       query: (variables) => ({
         variables: variables,

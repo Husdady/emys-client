@@ -11,7 +11,7 @@ import { useCallback } from 'react'
 import { useForm } from 'react-hook-form'
 import { useAuthorizeCloseAccountMutation } from '@modules/Account/api/closeAccount'
 import useDeleteAccount from './useDeleteAccount'
-import useModal from '@hooks/useModal'
+import useModal from '@root/src/config/store/states/modal/useModal'
 
 // Utils
 import isString from '@utils/isString'

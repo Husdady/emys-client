@@ -14,7 +14,7 @@ export default function FallbackItem({
       <div
         className={classnames([
           classLabel,
-          'allback-text-label min-h-[20px] sm:min-h-[18px] mb-[0.35rem] bg-gray-300/60 rounded animation-pulse dark:!bg-gray-700'
+          'fallback-text-label min-h-[20px] sm:min-h-[18px] mb-[0.35rem] bg-gray-300/60 rounded animation-pulse dark:!bg-gray-700'
         ])}
       ></div>
 

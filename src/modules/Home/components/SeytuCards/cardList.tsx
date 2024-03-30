@@ -7,9 +7,9 @@ import { HomeCardProps } from '@modules/Home/components/Card/interfaces'
 // Constants
 import { PARABENS_IMAGE, SEYTU_MAKEUP_IMAGE, BEAUTY_PRODUCTS_IMAGE } from '@data/images'
 
-export const CARD_01_ID = createId()
-export const CARD_02_ID = createId()
-export const CARD_03_ID = createId()
+const CARD_01_ID = createId()
+const CARD_02_ID = createId()
+const CARD_03_ID = createId()
 
 const cards: HomeCardProps[] = [
   {

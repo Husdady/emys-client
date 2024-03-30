@@ -8,12 +8,12 @@ import isEmptyArray from './isEmptyArray'
 // Constants
 import { NULLABLE } from '@components/Select/constants'
 
-export const SORT_BY_FIELD = 'sortBy'
-export const SORT_TYPE_FIELD = 'sortType'
+const SORT_BY_FIELD = 'sortBy'
+const SORT_TYPE_FIELD = 'sortType'
 
-export type Field = 'sortBy' | 'sortType'
+type Field = 'sortBy' | 'sortType'
 
-export interface CreateSortByParams {
+interface CreateSortByParams {
   setValue: (field: Field, value: string | undefined) => void
 }
 

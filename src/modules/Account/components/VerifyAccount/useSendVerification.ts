@@ -7,7 +7,7 @@ import { useSendVerificationMutation } from '@modules/Account/api/sendVerificati
 // Utils
 import isUndefined from '@utils/isUndefined'
 
-export const TIMES_FOR_REQUEST = 3
+const TIMES_FOR_REQUEST = 3
 
 export default function useSendVerification(times?: number) {
   const auth = useAuth()

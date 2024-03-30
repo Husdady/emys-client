@@ -2,7 +2,7 @@
 import { useMemo, useCallback } from 'react'
 
 // Hooks
-import useModalContext from '@hooks/useModal'
+import useModalContext from '@root/src/config/store/states/modal/useModal'
 
 /**
  * Hook for implements the logic of the Modal component
@@ -11,7 +11,7 @@ export default function useModal() {
   const { onAccept, onCancel, onCloseModal, hideModal, ...modal } = useModalContext()
 
   // Define 'getContainer' prop
-  const getContainer = useMemo(() => window.innerWidth <= 900 ? '#root' : undefined, [])  
+  const getContainer = useMemo(() => (window.innerWidth <= 900 ? '#root' : undefined), [])
 
   // Callback for close the modal
   const handleClose = useCallback(() => {

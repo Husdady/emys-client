@@ -8,9 +8,9 @@ import { Testimony } from '@modules/Testimonials/api/interfaces'
 // Utils
 import truncate from '@utils/truncate'
 
-export const TESTIMONY_LIMIT = 175
+const TESTIMONY_LIMIT = 175
 
-export interface AuthorTestimonyProps extends Pick<Testimony, 'testimony'> {
+interface AuthorTestimonyProps extends Pick<Testimony, 'testimony'> {
   showCompletedTestimony?: boolean
 }
 

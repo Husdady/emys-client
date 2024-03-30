@@ -23,7 +23,6 @@ export default function FilterByPriceRange({
   maxPrice,
   textLabel,
   label = {},
-  buttonTitle = 'Filtrar',
   buttonClassName,
   innerClassName,
   containerClassName,
@@ -31,6 +30,8 @@ export default function FilterByPriceRange({
   onChangeMaxPrice,
   onChangePriceRange,
   onApplyPriceFilter,
+  buttonTitle = 'Filtrar',
+  hideButtonApplyFilters = false,
   isDisableApplyPriceFilterButton
 }: PriceFilterProps) {
   return (
@@ -80,12 +81,14 @@ export default function FilterByPriceRange({
           />
         </div>
 
-        <Button
-          title={buttonTitle}
-          onClick={onApplyPriceFilter}
-          disabled={isDisableApplyPriceFilterButton}
-          className={classnames([buttonClassName, 'btn-apply-filters-by-price scale'])}
-        />
+        {!hideButtonApplyFilters && (
+          <Button
+            title={buttonTitle}
+            onClick={onApplyPriceFilter}
+            disabled={isDisableApplyPriceFilterButton}
+            className={classnames([buttonClassName, 'btn-apply-filters-by-price scale'])}
+          />
+        )}
       </section>
     </div>
   )

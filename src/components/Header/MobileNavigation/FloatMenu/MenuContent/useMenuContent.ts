@@ -5,8 +5,8 @@ import { useRef, useCallback } from 'react'
 // Constants
 import { scrollIntoViewArgs } from '@data/scroll'
 
-export const SCROLL_DELAY = 3000
-export const ACTIVE_NAVIGATION_ITEM = '.navigation-list-item > a[aria-current="page"]'
+const SCROLL_DELAY = 3000
+const ACTIVE_NAVIGATION_ITEM = '.navigation-list-item > a[aria-current="page"]'
 
 /**
  * Hook for implements the logic of the MenuContent component

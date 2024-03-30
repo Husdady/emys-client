@@ -23,6 +23,7 @@ export default function FilterByDistrict({
   provinceId,
   addDefaultValue,
   containerClassName,
+  classLabelPlaceholder,
   noSelectionLabel = DEFAULT_NO_SELECTION_VALUE,
   ...props
 }: FilterByDistrictProps) {
@@ -34,11 +35,16 @@ export default function FilterByDistrict({
   })
 
   if (isLoading || isFetching) {
-    return <FallbackItem classLabel="w-20" classContainer={containerClassName} />
+    return (
+      <FallbackItem
+        classContainer={containerClassName}
+        classLabel={classLabelPlaceholder ?? 'w-20'}
+      />
+    )
   }
 
   return (
-    <Fallback classLabel="w-20" classContainer={containerClassName}>
+    <Fallback classContainer={containerClassName} classLabel={classLabelPlaceholder ?? 'w-20'}>
       <Select
         {...props}
         options={options}
@@ -47,9 +53,9 @@ export default function FilterByDistrict({
         enableVirtualization
         noSelectionLabel={noSelectionLabel}
         containerClassName={containerClassName}
+        textLabel={props.textLabel ?? 'Distritos'}
         searchPalceholder="Buscar distritos por nombre..."
         emptyText="Sin distritos disponibles"
-        textLabel="Distritos"
       />
     </Fallback>
   )

@@ -3,7 +3,7 @@
 import { ComponentType, MutableRefObject } from 'react'
 import { VariableSizeListProps, VariableSizeList as _VariableSizeList } from 'react-window'
 
-export interface ListProps extends VariableSizeListProps {
+interface ListProps extends VariableSizeListProps {
   ref: MutableRefObject<_VariableSizeList<any> | null>
 }
 

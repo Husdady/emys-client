@@ -8,7 +8,7 @@ import useMounted from '@hooks/useMounted'
 import { scrollIntoViewCenterArgs } from '@data/scroll'
 import isEmptyArray from '@utils/isEmptyArray'
 
-export interface Params {
+interface Params {
   values: string[]
   selectedValues?: string[]
   isTabletScreen: boolean

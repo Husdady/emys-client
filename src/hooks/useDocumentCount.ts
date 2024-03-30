@@ -1,18 +1,22 @@
 // Hooks
 import useMounted from '@hooks/useMounted'
-import useFilters from '@hooks/useFilters'
+import useFilters from '@config/store/states/filters/useFilters'
 import { useMemo, useCallback } from 'react'
-
-// Interfaces
-import { UseDcoumentCountParams } from './interfaces'
 
 // Utils
 import isNumber from '@utils/isNumber'
 import isUndefined from '@utils/isUndefined'
 
+interface UseDcoumentCountParams<T = unknown> {
+  data?: T[]
+  filterId: string
+  defaultLimit?: number
+  autoIncreaseCount?: boolean
+}
+
 /**
  * Hook that implements the logic of the Document counts
- * @param {UseDcoumentCountParams} params Receive a 'filterId' and a 'defaultLimit'
+ * @param {UseDcoumentCountParams} params Params
  * @returns {UseDcoumentCountResponse} Object
  */
 export default function useDocumentCount({

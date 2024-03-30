@@ -1,13 +1,14 @@
 // Components
 import Sliders from '@components/Icons/Sliders'
 import ReportMedical from '@components/Icons/ReportMedical'
-import TestimonialsFilters, {
-  TESTIMONIALS_FILTERS_FORM_ID
-} from '@modules/Testimonials/components/TestimonialsFilters'
+import TestimonialsFilters from '@modules/Testimonials/components/TestimonialsFilters'
 
 // Hooks
 import { useCallback } from 'react'
-import useModal from '@hooks/useModal'
+import useModal from '@root/src/config/store/states/modal/useModal'
+
+// Constants
+import { TESTIMONIALS_FILTERS_FORM_ID } from '@modules/Testimonials/components/TestimonialsFilters/constants'
 
 /**
  * Hook for implements the logic of the ButtonShowFilters component
@@ -18,11 +19,12 @@ export default function useButtonShowFilters() {
   // Event click on button for show a modal of the Testimonials filters
   const show = useCallback(() => {
     showModal({
-      width: 700,
+      width: 540,
       icon: <ReportMedical />,
       content: <TestimonialsFilters />,
       title: 'Filtrar Testimonios',
-      className: 'modal-testimonials-filters',
+      wrapClassName: 'wrap-modal-filters',
+      className: 'modal-filters modal-testimonials-filters',
       acceptButtonProps: {
         type: 'submit',
         title: 'Aplicar filtros',

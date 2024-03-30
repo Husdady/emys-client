@@ -17,9 +17,9 @@ import isObject from '@utils/isObject'
 import isString from '@utils/isString'
 import isEmptyString from '@utils/isEmptyString'
 
-export const EMAIL_QUERY_PARAM = 'email'
-export const STATUS_QUERY_PARAM = 'status'
-export const MESSAGE_ID_QUERY_PARAM = 'messageId'
+const EMAIL_QUERY_PARAM = 'email'
+const STATUS_QUERY_PARAM = 'status'
+const MESSAGE_ID_QUERY_PARAM = 'messageId'
 
 export default function useRegisterForm() {
   const searchParams = useSearchParams()

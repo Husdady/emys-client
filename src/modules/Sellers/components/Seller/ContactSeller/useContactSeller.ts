@@ -8,7 +8,7 @@ import { Seller } from '@modules/Sellers/api/interfaces'
 // Constants
 import { AVAILABLE } from '@modules/Sellers/components/Seller/constants'
 
-export const ANONYMUS_SELLER = 'Este vendedor es anónimo'
+const ANONYMUS_SELLER = 'Este vendedor es anónimo'
 
 /**
  * Hook for implements the logic of the ContactSeller component

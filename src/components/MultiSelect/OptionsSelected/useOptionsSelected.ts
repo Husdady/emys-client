@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 // Hooks
-import useTabletScreen from '@hooks/useTabletScreen'
+import useTabletScreen from '@hooks/screen/useTabletScreen'
 import useMountedOptionsSelected from './useMountedOptionsSelected'
 import { useMemo, useState, useCallback } from 'react'
 
@@ -9,6 +9,7 @@ import type { OnChangeOption, UseMultiSelectParams } from '@components/MultiSele
 
 // Utils
 import isUndefined from '@utils/isUndefined'
+import isEmptyArray from '@utils/isEmptyArray'
 
 /**
  * Hook that implements the logic of the OptionsSelected component
@@ -29,6 +30,22 @@ export default function useMultiSelect({
     if (Array.isArray(selectedValues)) return selectedValues
     return []
   })
+
+  // Check if the selected options is hidden
+  const hiddenClassName = useMemo(() => {
+    // Check if wrapper is positioned at bottom
+    const wrapperIsAtBottom = !document.querySelector('.wrapper-options.to-bottom')
+
+    // Check if the option selected is hidden
+    const isHidden =
+      !isTabletScreen &&
+      isShowingOptions &&
+      canSearchOptions &&
+      wrapperIsAtBottom &&
+      !isEmptyArray(options)
+
+    return isHidden ? 'opacity-0' : null
+  }, [options, isTabletScreen, isShowingOptions, canSearchOptions])
 
   // Callback for hide options
   const hideOptions = useCallback(() => {
@@ -114,6 +131,7 @@ export default function useMultiSelect({
     triggerOptions: triggerOptions,
     onChangeOptions: handleOnChange,
     isMarkedOption: isMarkedOption,
+    hiddenClassName: hiddenClassName,
     isShowingOptions: isShowingOptions
   }
 }
