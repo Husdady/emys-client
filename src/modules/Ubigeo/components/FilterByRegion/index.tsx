@@ -50,7 +50,7 @@ export default function FilterByRegion({
         noSelectionLabel={noSelectionLabel}
         containerClassName={containerClassName}
         textLabel={props.textLabel ?? 'Regiones'}
-        searchPalceholder="Buscar regiones por nombre..."
+        searchPlaceholder="Buscar regiones por nombre..."
         emptyText="Sin regiones disponibles"
       />
     </Fallback>

@@ -24,8 +24,8 @@ export interface MultiSelectProps
   disabled?: boolean
   emptyText?: string
   selectedValues?: string[]
-  noSelectionLabel: string
-  searchPalceholder?: string
+  noSelectionLabel?: string
+  searchPlaceholder?: string
   canSearchOptions?: boolean
   enableVirtualization?: boolean
   containerStyle?: CSSProperties

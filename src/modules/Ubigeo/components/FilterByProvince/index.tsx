@@ -52,7 +52,7 @@ export default function FilterByProvince({
         noSelectionLabel={noSelectionLabel}
         containerClassName={containerClassName}
         textLabel={props.textLabel ?? 'Provincias'}
-        searchPalceholder="Buscar provincias por nombre..."
+        searchPlaceholder="Buscar provincias por nombre..."
         emptyText="Sin provincias disponibles"
       />
     </Fallback>

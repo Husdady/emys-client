@@ -28,7 +28,7 @@ export default function Districts({ regionId, countryId, provinceId, ...props }:
       canSearchOptions
       enableVirtualization
       emptyText="Selecciona una provincia"
-      searchPalceholder="Buscar distritos..."
+      searchPlaceholder="Buscar distritos..."
       noSelectionLabel="Selecciona un distrito"
       options={!isString(provinceId) || isEmptyString(provinceId) ? [] : options}
     />

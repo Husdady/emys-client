@@ -5,7 +5,7 @@ import Table from '@modules/Product/components/Table'
 import useTable from './useTable'
 
 // Types
-import type { CustomFieldsProps } from '../types'
+import type { CustomFieldsProps } from '@modules/Product/components/ProductItem/ProductInformation/ProductFields/components/CustomFields/types'
 
 export default function CustomProductFieldsTable(props: CustomFieldsProps) {
   const { items } = useTable(props)

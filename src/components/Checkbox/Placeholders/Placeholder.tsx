@@ -9,7 +9,7 @@ import createList from '@utils/createList'
 import classnames from '@utils/classnames'
 
 // Constants
-import { PlaceholderProps } from '../constants'
+import { PlaceholderProps } from '@components/Checkbox/constants'
 
 function CheckboxPlaceholder({
   totalRows = PlaceholderProps.DEFAULT_TOTAL_ROWS,

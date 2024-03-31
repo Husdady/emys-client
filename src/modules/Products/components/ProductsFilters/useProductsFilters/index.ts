@@ -18,6 +18,7 @@ import useFiltersQuery from '@hooks/useFiltersQuery'
 import { ProductsFiltersState } from './interfaces'
 import { Option } from '@components/Select/interfaces'
 import { ProductsPaginationArgs } from '@modules/Products/api/interfaces'
+import { ChangeOptionParams } from '@components/GroupRadioButton/interfaces'
 
 // Utils
 import { showMask, hideMask } from '@utils/mask'
@@ -43,7 +44,6 @@ import {
   ERROR_MESSAGE_FILTERS,
   SUCCESS_MESSAGE_FILTERS
 } from './constants'
-import { ChangeOptionParams } from '@components/GroupRadioButton/interfaces'
 
 /**
  * Hook that implements the filters of the Testimonials
@@ -80,18 +80,14 @@ export default function useProductsFilters() {
   // Register form
   const { watch, register, setValue, getValues, handleSubmit } = useForm<ProductsFiltersState>({
     defaultValues: {
-      code: query.code,
-      maker: query.maker,
       sortBy: query.sortBy,
       type: query.type ?? ALL,
       sortType: query.sortType,
-      countryId: query.countryId,
       categories: query.categories,
       productName: query.productName,
       minPrice: String(!isNumber(query.minPrice) ? MIN : query.minPrice),
       maxPrice: String(!isNumber(query.maxPrice) ? MAX : query.maxPrice),
-      isInStock: !isBoolean(query.isInStock) ? undefined : String(query.isInStock),
-      totalUnits: !isNumber(query.totalUnits) ? undefined : String(query.totalUnits)
+      isInStock: !isBoolean(query.isInStock) ? undefined : String(query.isInStock)
     }
   })
 
@@ -209,14 +205,10 @@ export default function useProductsFilters() {
   // Event 'submit' that executes when the form is valid
   const submit = useCallback(
     async ({
-      code,
       type,
-      maker,
       minPrice,
       maxPrice,
       isInStock,
-      countryId,
-      totalUnits,
       productName,
       ...state
     }: ProductsFiltersState) => {
@@ -227,17 +219,12 @@ export default function useProductsFilters() {
       // Define arguments for the filtering
       const args: ProductsPaginationArgs = {
         page: DEFAULT_QUERY.page,
-        code: isEmptyString(code) ? undefined : code,
-        maker: isEmptyString(maker) ? undefined : maker,
-        countryId: isEmptyString(countryId) ? undefined : countryId,
         type: type === ALL || isEmptyString(type) ? undefined : type,
         productName: isEmptyString(productName) ? undefined : productName,
         minPrice: !isString(minPrice) || isEmptyString(minPrice) ? undefined : Number(minPrice),
         maxPrice: !isString(maxPrice) || isEmptyString(maxPrice) ? undefined : Number(maxPrice),
         isInStock:
           !isString(isInStock) || isEmptyString(isInStock) ? undefined : isInStock === 'true',
-        totalUnits:
-          !isString(totalUnits) || isEmptyString(totalUnits) ? undefined : Number(totalUnits),
         ...state
       }
 
@@ -268,7 +255,6 @@ export default function useProductsFilters() {
     submit: submit,
     change: change,
     register: register,
-    onFilter: onFilter,
     getValues: getValues,
     changePrice: changePrice,
     handleSubmit: handleSubmit,

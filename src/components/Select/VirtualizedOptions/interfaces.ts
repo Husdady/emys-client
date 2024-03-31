@@ -11,7 +11,7 @@ export interface VirtualizedOptionsProps
     | 'emptyText'
     | 'selectedValue'
     | 'canSearchOptions'
-    | 'searchPalceholder'
+    | 'searchPlaceholder'
     | 'enableVirtualization'
   > {
   onChange: OnChangeOption

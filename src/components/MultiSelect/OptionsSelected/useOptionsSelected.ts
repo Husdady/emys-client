@@ -19,7 +19,7 @@ export default function useMultiSelect({
   options,
   onChange,
   disabled,
-  searchPalceholder,
+  searchPlaceholder,
   canSearchOptions,
   selectedValues = []
 }: UseMultiSelectParams) {
@@ -110,9 +110,9 @@ export default function useMultiSelect({
       onChange: handleOnChange,
       isMarkedOption: isMarkedOption,
       canSearchOptions: canSearchOptions,
-      searchPalceholder: searchPalceholder
+      searchPlaceholder: searchPlaceholder
     }),
-    [values, options, handleOnChange, isMarkedOption, searchPalceholder, canSearchOptions]
+    [values, options, handleOnChange, isMarkedOption, searchPlaceholder, canSearchOptions]
   )
 
   useMountedOptionsSelected({

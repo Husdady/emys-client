@@ -7,7 +7,7 @@ import { Option, MultiSelectProps } from '@components/MultiSelect/interfaces'
 export interface VirtualizedOptionsProps
   extends Pick<
     MultiSelectProps,
-    'options' | 'emptyText' | 'selectedValues' | 'searchPalceholder' | 'canSearchOptions'
+    'options' | 'emptyText' | 'selectedValues' | 'searchPlaceholder' | 'canSearchOptions'
   > {
   onChange: OnChangeOption
   isMarkedOption: (value: string) => boolean

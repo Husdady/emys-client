@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 // Hooks
-import useModal from '../config/store/states/modal/useModal'
 import useMounted from './useMounted'
+import useModal from '@config/store/states/modal/useModal'
 
 interface Params {
   disabled: boolean

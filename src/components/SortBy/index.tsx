@@ -1,8 +1,8 @@
 // Components
 import Fallback from '@components/Fallback'
 
-// Types
-import type { SortByProps } from './interfaces'
+// Interfaces
+import { SortByProps } from './interfaces'
 
 // Utils
 import lazy from '@utils/lazy'

@@ -28,7 +28,7 @@ export default function Provinces({ regionId, countryId, ...props }: ProvincesPr
       canSearchOptions
       enableVirtualization
       emptyText="Selecciona una región"
-      searchPalceholder="Buscar provincias..."
+      searchPlaceholder="Buscar provincias..."
       noSelectionLabel="Selecciona una provincia"
       options={!isString(regionId) || isEmptyString(regionId) ? [] : options}
     />

@@ -5,10 +5,10 @@ import React from 'react'
 import RadioButton from './RadioButton'
 
 // Hooks
-import useOptions from './hooks/useOptions'
+import useOptions from './useOptions'
 
 // Types
-import type { RadioButtonOptionsProps } from '../types'
+import type { RadioButtonOptionsProps } from '@components/GroupRadioButton/types'
 
 // Interfaces
 import { RadioButtonProps } from '@components/GroupRadioButton/Options/interfaces'

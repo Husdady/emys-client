@@ -5,13 +5,13 @@ import { Tag } from 'antd/lib'
 import useCategories from './useCategories'
 
 // Interfaces
-import { CategoriesProps } from '../interfaces'
+import { CategoriesProps } from '@modules/Products/components/ProductsFilters/FilterByCategories/interfaces'
 
 // Utils
 import classnames from '@utils/classnames'
 
 // Constants
-import { DISABLE_CATEGORY_TITLE } from '../constants'
+import { DISABLE_CATEGORY_TITLE } from '@modules/Products/components/ProductsFilters/FilterByCategories/constants'
 
 export default function Categories({
   categories,

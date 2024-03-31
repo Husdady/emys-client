@@ -26,7 +26,7 @@ const VirtualizedOptions: React.FC<VirtualizedOptionsProps> = ({
   emptyText,
   isMarkedOption,
   selectedValues,
-  searchPalceholder,
+  searchPlaceholder,
   canSearchOptions = DEFAULT_CAN_SEARCH_OPTIONS
 }: VirtualizedOptionsProps) => {
   const {
@@ -58,7 +58,7 @@ const VirtualizedOptions: React.FC<VirtualizedOptionsProps> = ({
           value={searchValue}
           onClear={handleClear}
           onChange={handleSearch}
-          placeholder={searchPalceholder}
+          placeholder={searchPlaceholder}
           isShowingClearIcon={isShowingClearIcon}
         />
       )}

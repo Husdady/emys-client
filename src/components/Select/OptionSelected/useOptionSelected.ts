@@ -22,7 +22,7 @@ export default function useOptionSelected({
   emptyText,
   selectedValue,
   canSearchOptions,
-  searchPalceholder,
+  searchPlaceholder,
   enableVirtualization,
   noSelectionLabel = 'Selecciona una opción'
 }: UseSelectParams) {
@@ -93,7 +93,7 @@ export default function useOptionSelected({
       onChange: handleOnChange,
       hideOptions: hideOptions,
       canSearchOptions: canSearchOptions,
-      searchPalceholder: searchPalceholder,
+      searchPlaceholder: searchPlaceholder,
       enableVirtualization: enableVirtualization
     }),
     [
@@ -102,7 +102,7 @@ export default function useOptionSelected({
       emptyText,
       hideOptions,
       handleOnChange,
-      searchPalceholder,
+      searchPlaceholder,
       canSearchOptions,
       enableVirtualization
     ]

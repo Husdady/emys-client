@@ -1,11 +1,13 @@
 // Librarys
 import React from 'react'
 
-// Hooks
-import useRadioButton from './hooks/useRadioButton'
-
 // Interfaces
 import { RadioButtonProps } from './interfaces'
+
+// Utils
+import isString from '@utils/isString'
+import classnames from '@utils/classnames'
+import isEmptyString from '@utils/isEmptyString'
 
 // Constants
 import { DEFAULT_CHECKED, DEFAULT_OPTION_LABEL } from './constants'
@@ -23,32 +25,46 @@ const RadioButton: React.FC<RadioButtonProps> = ({
   className,
   customContainer
 }: RadioButtonProps) => {
-  const radioButton = useRadioButton({
-    id: id,
-    color: color,
-    style: style,
-    disabled: disabled,
-    className: className,
-    customContainer: customContainer
-  })
+  const tmpId = React.useId() // Create a temporal id
+
+  // Define the radio button id
+  const radioButtonId = React.useMemo<string>(
+    () => (isString(id) && !isEmptyString(id) ? id : tmpId),
+    [id]
+  )
 
   return (
-    <li role="button" style={customContainer?.style} className={radioButton.className}>
+    <li
+      role="button"
+      style={customContainer?.style}
+      className={classnames([
+        customContainer?.className,
+        disabled ? 'disabled' : null,
+        'radio-button relative hover:cursor-default'
+      ])}
+    >
       <input
         type="radio"
-        id={radioButton.id}
         name={name}
         value={value}
+        id={radioButtonId}
         disabled={disabled}
-        defaultChecked={checked}
-        className={radioButton.input}
         onChange={onChange}
+        defaultChecked={checked}
+        className="hidden"
       />
 
       <label
-        htmlFor={radioButton.id}
-        style={radioButton.label.style}
-        className={radioButton.label.className}
+        style={style}
+        htmlFor={radioButtonId}
+        className={classnames([
+          color,
+          className,
+          !disabled
+            ? 'hover:cursor-pointer font-semibold text-gray-700 dark:text-gray-200 dark:font-normal'
+            : 'text-gray-400 hover:cursor-not-allowed pointer-events-none',
+          'relative inline-block select-none hover:cursor-pointer'
+        ])}
       >
         {label}
       </label>

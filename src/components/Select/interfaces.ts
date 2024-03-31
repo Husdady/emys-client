@@ -32,7 +32,7 @@ export interface SelectProps
   emptyText?: string
   selectedValue?: string
   noSelectionLabel?: string
-  searchPalceholder?: string
+  searchPlaceholder?: string
   canSearchOptions?: boolean
   enableVirtualization?: boolean
   containerStyle?: CSSProperties

@@ -37,7 +37,7 @@ export default function Seller({
   socialNetworks
 }: SellerModal) {
   return (
-    <article className="seller-card animate__animated animate__fadeIn animate__slow bg-white shadow-2xl border-[3px] border-gray-300 rounded-2xl pt-4 pb-[0.95rem] px-2.5 sm:px-3.5 dark:shadow-none dark:bg-dark-800 dark:border-gray-500/90 flex flex-col text-[0.92rem] shadow-blue-200 h-full">
+    <article className="seller-card animate__animated animate__fadeIn animate__slow bg-white shadow-2xl border-[3px] border-gray-200 rounded-2xl pt-4 pb-[0.95rem] px-2.5 sm:px-3.5 dark:shadow-none dark:bg-dark-800 dark:border-gray-500/90 flex flex-col text-[0.92rem] shadow-blue-200 h-full">
       <div className="flex gap-x-3.5 mb-3 px-4 seller-header">
         <SellerPhoto photo={photo} />
 

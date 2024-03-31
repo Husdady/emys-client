@@ -5,8 +5,6 @@ import usePlaceholder from './usePlaceholder'
 import createList from '@utils/createList'
 import createAleatoryWidth from './createAleatoryWidth'
 
-const MIN_ITEMS = 6
-
 export default function Placeholder() {
   const { items, totalItems } = usePlaceholder()
 
@@ -15,7 +13,7 @@ export default function Placeholder() {
       <div className="w-48 placeholder-text-label min-h-[20px] sm:min-h-[18px] mb-2 bg-gray-300/60 rounded animation-pulse dark:!bg-gray-700"></div>
 
       <ul className="product-categories flex flex-wrap gap-1.5 mt-2.5">
-        {createList(totalItems ?? MIN_ITEMS).map((i) => (
+        {createList(totalItems).map((i) => (
           <li
             key={String(i)}
             style={{ width: items?.[i - 1]?.width ?? createAleatoryWidth() }}

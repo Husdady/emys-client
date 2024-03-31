@@ -27,7 +27,7 @@ export default function Regions({ countryId, ...props }: RegionsProps) {
       canSearchOptions
       enableVirtualization
       emptyText="Selecciona un país"
-      searchPalceholder="Buscar regiones..."
+      searchPlaceholder="Buscar regiones..."
       noSelectionLabel="Selecciona una region"
       options={!isString(countryId) || isEmptyString(countryId) ? [] : options}
     />

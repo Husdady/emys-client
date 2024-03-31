@@ -6,7 +6,6 @@ import ProductType from './ProductType'
 import Fallback from '@components/Fallback'
 import SearchFilter from '@components/SearchFilter'
 import FilterByCategories from './FilterByCategories'
-import FilterByCountry from '@modules/Ubigeo/components/FilterByCountry'
 
 // Hooks
 import useProductsFilters from './useProductsFilters'
@@ -29,7 +28,6 @@ export default function ProductsFiltersForm() {
     register,
     change,
     onClear,
-    onFilter,
     changePrice,
     handleSubmit,
     onChangeSortBy,
@@ -68,56 +66,11 @@ export default function ProductsFiltersForm() {
       />
 
       <div className="flex flex-col items-center sm:flex-row flex-wrap sm:flex-nowrap gap-x-3 gap-y-3 sm:gap-y-3.5 justify-between">
-        <SearchFilter
-          type="number"
-          textLabelClassName="w-36"
-          placeholder="Ejemplo: 6 unidades..."
-          containerClassName="w-full sm:w-[50%]"
-          textLabel="Buscar productos por cantidad"
-          isShowingClearIcon={isShowingClearIcon('totalUnits')}
-          customInput={register('totalUnits')}
-          onClear={onClear('totalUnits')}
-        />
-
         <ByStock selectedValue={watch('isInStock')} onChange={change('isInStock')} />
-      </div>
-
-      <div className="flex flex-col items-center sm:flex-row flex-wrap sm:flex-nowrap gap-x-3 gap-y-3 sm:gap-y-3.5">
-        <SearchFilter
-          textLabelClassName="w-24"
-          onClear={onClear('maker')}
-          customInput={register('maker')}
-          placeholder="Ejemplo: Emys ASC..."
-          containerClassName="w-full sm:w-[50%]"
-          textLabel="Buscar productos por fabricante"
-          isShowingClearIcon={isShowingClearIcon('maker')}
-        />
-
-        <FilterByCountry
-          classLabelPlaceholder="w-44"
-          onChange={change('countryId')}
-          selectedValue={watch('countryId')}
-          noSelectionLabel="Selecciona un país"
-          containerClassName="w-full sm:w-[50%]"
-          textLabel="Filtrar productos por país de origen"
-        />
-      </div>
-
-      <div className="flex flex-col items-center sm:flex-row flex-wrap sm:flex-nowrap gap-x-3 gap-y-3 sm:gap-y-3.5 justify-between">
-        <SearchFilter
-          textLabelClassName="w-32"
-          onClear={onClear('code')}
-          customInput={register('code')}
-          containerClassName="w-full sm:w-[50%]"
-          textLabel="Buscar productos por código"
-          placeholder="Ejemplo: Y7U8MLY3OIQDB2..."
-          isShowingClearIcon={isShowingClearIcon('code')}
-        />
-
         <SortBy onChange={onChangeSortBy} selectedValue={sortBySelectedOption} />
       </div>
 
-      <Fallback classLabel="w-28" classComp='h-[142.28px] sm:h-[90.33px]'>
+      <Fallback classLabel="w-28" classComp="h-[142.28px] sm:h-[90.33px]">
         <FilterByPriceRange
           hideButtonApplyFilters
           innerClassName="w-full"

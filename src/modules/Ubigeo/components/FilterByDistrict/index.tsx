@@ -54,7 +54,7 @@ export default function FilterByDistrict({
         noSelectionLabel={noSelectionLabel}
         containerClassName={containerClassName}
         textLabel={props.textLabel ?? 'Distritos'}
-        searchPalceholder="Buscar distritos por nombre..."
+        searchPlaceholder="Buscar distritos por nombre..."
         emptyText="Sin distritos disponibles"
       />
     </Fallback>

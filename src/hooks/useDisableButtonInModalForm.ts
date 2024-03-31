@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 // Hooks
 import { useMemo } from 'react'
-import useModal from '../config/store/states/modal/useModal'
 import useMounted from './useMounted'
+import useModal from '@config/store/states/modal/useModal'
 
 // Types
 import type { FieldValues, FieldErrorsImpl } from 'react-hook-form'

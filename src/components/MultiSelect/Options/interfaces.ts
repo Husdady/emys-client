@@ -10,7 +10,7 @@ export interface OptionsProps
     | 'options'
     | 'emptyText'
     | 'selectedValues'
-    | 'searchPalceholder'
+    | 'searchPlaceholder'
     | 'canSearchOptions'
     | 'enableVirtualization'
   > {

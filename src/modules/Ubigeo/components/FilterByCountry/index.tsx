@@ -45,7 +45,7 @@ export default function FilterByCountry({
         noSelectionLabel={noSelectionLabel}
         containerClassName={containerClassName}
         textLabel={props.textLabel ?? 'Países'}
-        searchPalceholder="Buscar países por nombre..."
+        searchPlaceholder="Buscar países por nombre..."
         emptyText="Sin países disponibles"
       />
     </Fallback>

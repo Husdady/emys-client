@@ -24,7 +24,7 @@ const Options: React.FC<OptionsProps> = ({
   onChange,
   emptyText,
   selectedValue,
-  searchPalceholder,
+  searchPlaceholder,
   canSearchOptions = DEFAULT_CAN_SEARCH_OPTIONS
 }: OptionsProps) => {
   const {
@@ -49,7 +49,7 @@ const Options: React.FC<OptionsProps> = ({
           value={searchValue}
           onClear={handleClear}
           onChange={handleSearch}
-          placeholder={searchPalceholder}
+          placeholder={searchPlaceholder}
           isShowingClearIcon={isShowingClearIcon}
         />
       )}

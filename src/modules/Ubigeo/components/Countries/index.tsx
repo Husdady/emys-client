@@ -25,7 +25,7 @@ export default function Countries({ defaultCountryName, ...props }: CountriesPro
       canSearchOptions
       enableVirtualization
       noSelectionLabel="Selecciona un país"
-      searchPalceholder="Buscar países..."
+      searchPlaceholder="Buscar países..."
     />
   )
 }

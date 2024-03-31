@@ -4,7 +4,7 @@ import React from 'react'
 // Component
 import Mask from '@components/Mask'
 import Button from '@components/Button'
-import Label from '@components/MultiSelect/Badge'
+import Badge from '@components/MultiSelect/Badge'
 import EmptyOptions from '@components/EmptyOptions'
 import Options from '@components/MultiSelect/Options'
 import ChevronDown from '@components/Icons/ChevronDown'
@@ -48,7 +48,7 @@ export default function OptionsSelected({
           'border border-gray-400/50 rounded outline outline-1 outline-offset-0 outline-gray-400/50 dark:outline-gray-400/70 dark:border-gray-400/70'
         ])}
         title={
-          <Label
+          <Badge
             values={values}
             options={props.options}
             noSelectionLabel={props.noSelectionLabel}
